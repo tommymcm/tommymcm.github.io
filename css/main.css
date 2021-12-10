@@ -346,14 +346,17 @@ code {
 /* Animations */
 .nav {
     color: var(--eggshell);
+    border-color: var(--viridian);
+    border-bottom-style: hidden;
     text-transform: lowercase;
-    transition-property: text-transform;
+    transition-property: text-transform, border-bottom-style;
     transition-duration: 0.5s;
  }
 
 .nav:hover {
     text-transform: uppercase;
-    transition-property: text-transform;
+    border-bottom-style: solid;
+    transition-property: text-transform, border-bottom-style;
     transition-duration: 0.5s;
 }
 
@@ -373,14 +376,4 @@ code {
     font-family: 'Noto Sans Mono', monospace;
     white-space: nowrap;
     margin: 0 auto;
-}
-
-.blinking-cursor {
-    border-right: .15em var(--viridian);
-    animation: cursor-blinker .75s infinite;
-}
-
-@keyframes cursor-blinker {
-    from, to { border-color: transparent }
-    50% { border-color: var(--viridian) }
 }

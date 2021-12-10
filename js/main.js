@@ -5,14 +5,15 @@ var text = texts[0];
 var typing = true;
 var holding = false;
 var cursor_status = true;
-var speed = 250;
+var speed = 200;
+var hold_speed = (speed / 4);
 var hold_time = 3500;
 var time_held = 0;
 
 function typeWriter() {
   if ( holding ) {
     if ( time_held < hold_time ) {
-      time_held += speed;
+      time_held += hold_speed;
     } else {
       time_held = 0;
       holding = false;
@@ -35,13 +36,15 @@ function typeWriter() {
         time_held = 0;
       }
     }
-    
-    if ( typing ) {
-      // type next letter
-      ++text_i;
-    } else {
-      // erase next letter
-      --text_i;
+
+    if ( !holding ) {
+      if ( typing ) {
+        // type next letter
+        ++text_i;
+      } else {
+        // erase next letter
+        --text_i;
+      }
     }
 
     document.getElementById("typewriter-title").innerHTML = text.substr(0, text_i);
