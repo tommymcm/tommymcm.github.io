@@ -48,7 +48,7 @@ function typeWriter() {
   }
 
   if ( cursorStatus ) {
-    document.getElementById("typewriter-title").style.borderRightStyle = "solid";s
+    document.getElementById("typewriter-title").style.borderRightStyle = "solid";
   } else {
     document.getElementById("typewriter-title").style.borderRightStyle = "hidden";
   }
