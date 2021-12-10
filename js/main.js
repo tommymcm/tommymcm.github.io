@@ -47,10 +47,12 @@ function typeWriter() {
     document.getElementById("typewriter-title").innerHTML = text.substr(0, text_i);
   }
 
-  if ( cursorStatus ) {
-//    document.getElementById("typewriter-title").style.borderColor = "var(--viridian)";
+  if ( cursor_status ) {
+    document.getElementById("typewriter-title").style.borderRightStyle = "solid";
+    cursor_status = false;
   } else {
-//    document.getElementById("typewriter-title").style.borderColor = "transparent";
+    document.getElementById("typewriter-title").style.borderRightStyle = "none";
+    cursor_status = true;
   }
   
   setTimeout(typeWriter, speed);
