@@ -48,9 +48,9 @@ function typeWriter() {
   }
 
   if ( cursorStatus ) {
-    document.getElementById("typewriter-title").style.borderRightStyle = "solid";
+//    document.getElementById("typewriter-title").style.borderColor = "var(--viridian)";
   } else {
-    document.getElementById("typewriter-title").style.borderRightStyle = "hidden";
+//    document.getElementById("typewriter-title").style.borderColor = "transparent";
   }
   
   setTimeout(typeWriter, speed);
