@@ -26,7 +26,10 @@ function typeWriter() {
     --text_i;
   }
 
-  document.getElementById("typewriter-title").innerHTML = text.substr(0, stext_i);
+  console.log('debug');
+  console.log(text.substr(0, text_i));
+
+  document.getElementById("typewriter-title").innerHTML = text.substr(0, text_i);
   
   setTimeout(typeWriter, speed);
 }
