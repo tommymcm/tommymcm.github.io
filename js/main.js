@@ -51,10 +51,10 @@ function typeWriter() {
   }
 
   if ( cursor_status ) {
-    document.getElementById("typewriter-title").style.borderRightStyle = "solid";
+    document.getElementById("typewriter-title").style.boxShadow = "3px 0px var(--viridian)";
     cursor_status = false;
   } else {
-    document.getElementById("typewriter-title").style.borderRightStyle = "none";
+    document.getElementById("typewriter-title").style.boxShadow = "0px 0px var(--viridian)";
     cursor_status = true;
   }
   
