@@ -5,15 +5,17 @@ var text = texts[0];
 var typing = true;
 var holding = false;
 var cursor_status = true;
+var cursor_time = 400;
+var cursor_held = 0;
 var speed = 200;
 var hold_speed = (speed / 4);
-var hold_time = 3500;
+var hold_time = 1000;
 var time_held = 0;
 
 function typeWriter() {
   if ( holding ) {
     if ( time_held < hold_time ) {
-      time_held += hold_speed;
+      time_held += speed;
     } else {
       time_held = 0;
       holding = false;
@@ -50,12 +52,18 @@ function typeWriter() {
     document.getElementById("typewriter-title").innerHTML = text.substr(0, text_i);
   }
 
-  if ( cursor_status ) {
-    document.getElementById("typewriter-title").style.boxShadow = "3px 0px var(--viridian)";
-    cursor_status = false;
+  if ( cursor_held < cursor_time ) {
+    cursor_held += speed;
   } else {
-    document.getElementById("typewriter-title").style.boxShadow = "0px 0px var(--viridian)";
-    cursor_status = true;
+    if ( cursor_status ) {
+      document.getElementById("typewriter-title").style.boxShadow = "3px 0px var(--viridian)";
+      cursor_status = false;
+      cursor_held = 0;
+    } else {
+      document.getElementById("typewriter-title").style.boxShadow = "0px 0px var(--viridian)";
+      cursor_status = true;
+      cursor_held = 0;
+    }
   }
   
   setTimeout(typeWriter, speed);
