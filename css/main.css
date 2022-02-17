@@ -295,6 +295,7 @@ textarea {
     --purple: #5F5B6B;
     --coral: #FF8360;
     --mauve: #86626E;
+    --gray: #404240;
     --black: #000200;
     --eggshell: #FAF9F1;
     --viridian: #498467;
@@ -342,19 +343,16 @@ code {
 
 .nopadding {
     padding: 0 !important;
+    margin: 0 !important;
 }
 
 
 /* Header */
 
 .header {
-    position: fixed;
     top: 0;
     left: 0;
     min-height: 100%;
-    min-width: 7em;
-    padding-left: 2em;
-    padding-right: 1em;
     line-height: 2em;
     color: var(--eggshell);
     background-color: var(--purple);
@@ -364,16 +362,15 @@ code {
 /* Body */
 
 .body {
-    top: 45px;
     color: var(--black);
     background-color: var(--eggshell);
+    height: 100%;
 }
 
 
 /* Footer */
 
 .footer {
-    position: fixed;
     padding-right: 1em;
     padding-bottom: 2em;
     bottom: 0;
@@ -386,54 +383,56 @@ code {
 
 /* Animations */
 
-.nav {
+.nav-vertical {
     border-color: var(--coral);
+    padding-left: 2em;
+    padding-right: 1em;
     border-right-style: hidden;
-    transition-property: border-bottom-style;
+    border-left-style: hidden;
+    transition-property: border-right-style border-left-style;
     transition-duration: 0.5s;
-    
+
+    color: var(--eggshell);
     font-weight: normal;
     text-transform: lowercase;
     text-decoration-line: none;
-    transition-property: text-transform font-weight;
+    transition-property: text-transform;
     transition-duration: 0.5s;
+    text-decoration-line: none;
 }
 
-.nav:hover {
+.nav-vertical:hover {
     border-color: var(--coral);
-    border-right-style: solid;
-    transition-property: border-bottom-style;
+    padding-right: 1em;
+    border-right-style: inset;
+    border-right-width: thick;
+    transition-property: border-right-style border-left-style;
     transition-duration: 0.5s;
-    
+
+    color: var(--coral);
     font-weight: bold;
     text-transform: uppercase;
     transition-property: text-transform;
     transition-duration: 0.5s;
+    text-decoration-line: none;
 }
 
 .nav-text {
+    margin-left: 1em;
     font-size: 1.2em;
-    color: var(--eggshell);
     text-decoration-line: none;
 }
 
 .nav-text:hover {
     font-size: 1.2em;
-    color: var(--eggshell);
     text-decoration-line: none;
 }
 
 .footer-nav {
-    min-height:3em;
-    max-height:3em;
-    line-height:2em;
+    min-height: 100%;
+    max-height: 100%;
     vertical-align: middle;
 }
-
-.footer-nav-icon {
-    color: var(--eggshell);
-}
-
 
 .footer-nav-text,
 .footer-nav-icon {
@@ -441,8 +440,9 @@ code {
     color: var(--eggshell);
     text-transform: font-size;
     text-decoration-line: none;
-    transition-property: text-transform font-size;
+    transition-property: text-transform;
     transition-duration: 0.5s;
+    border-bottom-style: hidden;
 }
 
 
@@ -453,6 +453,8 @@ code {
     text-decoration-line: none;
     transition-property: text-transform font-size;
     transition-duration: 0.5s;
+    border-color: var(--coral);
+    border-bottom-style: solid;
 }
 
 
@@ -472,6 +474,40 @@ code {
     text-decoration-line: none;
     transition-property: text-transform font-size;
     transition-duration: 0.5s;
+}
+
+/*
+ * Images
+ */
+.personal-photo {
+    border-radius: 50%;
+    margin-top: 1em;
+    box-shadow: 3px 3px 8px;
+}
+
+.logo-image {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/*
+  * About section
+  */
+.about-text {
+    font-family: 'Noto Sans', 'sans-serif';
+    font-size: larger;
+}
+
+.section-title {
+    border-left: 8px inset var(--coral);
+    border-bottom: 8px inset var(--coral);
+}
+
+.section-title-text {
+    margin-left: 8px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    font-weight: bold;
 }
 
 
@@ -494,4 +530,12 @@ code {
     white-space: nowrap;
     margin: 0 auto;
     width: auto;
+    white-space: pre;
 }
+
+/*
+ * Papers
+ */
+ .authors {
+    color: var(--gray);
+ }
