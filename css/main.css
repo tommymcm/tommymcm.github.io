@@ -313,7 +313,8 @@ h6 {
 }
 
 h3 {
-    font-style: bold;
+    font-size: larger;
+    font-weight: bold;
 }
 
 
@@ -337,6 +338,11 @@ code {
 .ogham {
     font-family: 'Noto Sans Ogham', sans-serif;
     color: var(--eggshell);
+}
+
+a,
+a:hover {
+    text-decoration-line: none;
 }
 
 /* Utility */
@@ -387,8 +393,7 @@ code {
     border-color: var(--coral);
     padding-left: 2em;
     padding-right: 1em;
-    border-right-style: hidden;
-    border-left-style: hidden;
+    border-style: hidden;
     transition-property: border-right-style border-left-style;
     transition-duration: 0.5s;
 
@@ -402,10 +407,12 @@ code {
 }
 
 .nav-vertical:hover {
-    border-color: var(--coral);
+    border-right-color: var(--coral);
+    border-bottom-color: var(--purple);
     padding-right: 1em;
     border-right-style: inset;
-    border-right-width: thick;
+    border-bottom-style: inset;
+    border-width: thick;
     transition-property: border-right-style border-left-style;
     transition-duration: 0.5s;
 
@@ -476,6 +483,21 @@ code {
     transition-duration: 0.5s;
 }
 
+.icon-link {
+    color: var(--purple);
+    font-size: 1.5em;
+    transition-property: text-transform;
+    transition-duration: 0.5s;
+}
+
+
+.icon-link:hover {
+    color: var(--coral);
+    font-size: 1.5em;
+    transition-property: text-transform;
+    transition-duration: 0.5s;
+}
+
 /*
  * Images
  */
@@ -499,12 +521,11 @@ code {
 }
 
 .section-title {
-    border-left: 8px inset var(--coral);
+    border-right: 8px inset var(--eggshell);
     border-bottom: 8px inset var(--coral);
 }
 
 .section-title-text {
-    margin-left: 8px;
     margin-bottom: 4px;
     margin-top: 4px;
     font-weight: bold;
@@ -538,4 +559,21 @@ code {
  */
  .authors {
     color: var(--gray);
+ }
+
+.conference,
+.conference:visited {
+    color: var(--purple);
+    font-weight: bold;
+    text-decoration-line: none;
+}
+
+.conference:hover {
+    color: var(--coral);
+    font-weight: bolder;
+    text-decoration-line: none;
+}
+
+ .align-middle {
+    vertical-align: middle;
  }
