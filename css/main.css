@@ -312,6 +312,10 @@ h6 {
     color: var(--black);
 }
 
+h2 {
+    font-weight: bold;
+}
+
 h3 {
     font-size: larger;
     font-weight: bold;
@@ -338,10 +342,18 @@ code {
 .ogham {
     font-family: 'Noto Sans Ogham', sans-serif;
     color: var(--eggshell);
+    font-weight: normal !important;
 }
 
-a,
+a {
+    color: var(--purple);
+    font-weight: bold;
+    text-decoration-line: none;
+}
+
 a:hover {
+    color: var(--coral);
+    font-weight: bolder;
     text-decoration-line: none;
 }
 
@@ -384,6 +396,7 @@ a:hover {
     line-height: 2em;
     color: var(--eggshell);
     background-color: var(--purple);
+    margin-top: 2em;
 }
 
 
@@ -484,19 +497,36 @@ a:hover {
     transition-duration: 0.5s;
 }
 
-.icon-link {
-    color: var(--purple);
+.icon-large {
     font-size: 1.5em;
-    transition-property: text-transform;
-    transition-duration: 0.5s;
 }
 
+.icon-link {
+    color: var(--purple);
+    transition-property: text-transform;
+    transition-duration: 0.5s;
+    text-decoration-line: none;
+}
 
 .icon-link:hover {
     color: var(--coral);
-    font-size: 1.5em;
     transition-property: text-transform;
     transition-duration: 0.5s;
+    text-decoration-line: none;
+}
+
+.text-link {
+    color: var(--purple);
+    transition-property: text-transform;
+    transition-duration: 0.5s;
+    text-decoration-line: none;
+}
+
+.text-link:hover {
+    color: var(--coral);
+    transition-property: text-transform;
+    transition-duration: 0.5s;
+    text-decoration-line: none;
 }
 
 /*
@@ -524,6 +554,8 @@ a:hover {
 .section-title {
     border-right: thick inset var(--eggshell);
     border-bottom: thick inset var(--coral);
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
 
 .section-title-text {
@@ -558,9 +590,9 @@ a:hover {
 /*
  * Papers
  */
- .authors {
+.authors {
     color: var(--gray);
- }
+}
 
 .conference,
 .conference:visited {
@@ -575,6 +607,46 @@ a:hover {
     text-decoration-line: none;
 }
 
- .align-middle {
+.align-middle {
     vertical-align: middle;
- }
+}
+
+/*
+  * CV Styling
+  */
+
+.cv-name {
+    font-weight: bolder;
+}
+
+.cv-subtitle {
+    color: var(--gray);
+    font-weight: bold;
+}
+
+.cv-info {
+    color: var(--gray);
+}
+
+.cv-location {
+    color: var(--coral);
+    font-style: italic;
+}
+
+.cv-year {
+    color: var(--gray);
+    font-style: italic;
+}
+
+.cv-link,
+.cv-link:visited {
+    color: var(--purple);
+    font-weight: bold;
+    text-decoration-line: none;
+}
+
+.cv-link:hover {
+    color: var(--coral);
+    font-weight: bolder;
+    text-decoration-line: none;
+}
