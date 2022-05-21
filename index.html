@@ -16,10 +16,6 @@
   <link rel="apple-touch-icon" href="tm_ogham.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
   <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+Mono">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+Ogham">
@@ -33,262 +29,247 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="https://latex.now.sh/style.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://latex.now.sh/prism/prism.css">
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
 
   <meta name="theme-color" content="#000000">
 
 </head>
 
 <body id="home">
-  <div class="row nopadding">
-    <div class="container-fluid">
-      <div class="row">
-        <!-- vertical navbar on desktop -->
-        <div class="col-xl-2 d-none d-xl-block header nopadding text-left">
-          <div class="container-fluid nopadding sticky-top">
-            <a class="row nav-vertical nopadding" href="index.html#home" target="_self">
-              <span class="nav-text">
-                Home
-              </span>
-            </a>
-            <a class="row nav-vertical nopadding" href="index.html#research" target="_self">
-              <span class="nav-text">
-                Research
-              </span>
-            </a>
-            <a class="row nav-vertical nopadding" href="index.html#contact" target="_self">
-              <span class="nav-text">
-                Contact
-              </span>
-            </a>
-            <a class="row nav-vertical nopadding" href="cv.html">
-              <span class="nav-text">
-                C/V
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-10 body top">
-          <div id="home" class="container body">
-            <h1>
-              Tommy McMichen
-            </h1>
-            <div class="abstract">
-              <h2>
-                <strong>Abstract</strong>
-              </h2>
-              <span class="sidenote">
-                <img src="img/personal_photo.jpg" alt="me" class="personal-photo">
-              </span>
-              <p>
-                I am a PhD candidate at Northwestern University with a B.S.
-                in Computer Engineering and Computer Science from Rose-Hulman
-                Institute of Technology. I study compilers, specifically
-                looking into new abstractions and representations. My research 
-                aims to rethink existing compiler paradigms to improve how we
-                handle data movement in traditional and emerging domains.
-              </p>
-            </div>
-          </div>
-          <article>
-            <div id="research">
-              <h2>
-                <strong>Research</strong>
-              </h2>
+  <!-- vertical navbar on desktop -->
+  <div class="sidenote left sticky-top">
+    <p class="nav-vertical">
+      <a href="index.html#home" target="_self">
+        <span class="nav-text">
+          Home
+        </span>
+      </a>
+      <br>
+      <a href="index.html#research" target="_self">
+        <span class="nav-text">
+          Research
+        </span>
+      </a>
+      <br>
+      <a href="index.html#contact" target="_self">
+        <span class="nav-text">
+          Contact
+        </span>
+      </a>
+      <br>
+      <a href="cv.html">
+        <span class="nav-text">
+          C/V
+        </span>
+      </a>
+      </span>
+    </p>
+  </div>
 
-
-
-
-              <h3>
-                <u>N</u>OELLE <u>O</u>ffers <u>E</u>mpowering <u>LL</u>VM <u>E</u>xtensions
-              </h3>
-              <label for="sn-plus" class="sidenote-toggle">⊕</label>
-              <input type="checkbox" id="sn-plus" class="sidenote-toggle">
-              <span class="sidenote">
-                The paper is available
-                <a href="files/NOELLE_CGO_2022.pdf" target="_blank">
-                  here.
-                </a>
-                <br>
-                The source code is available on
-                <a href="https://github.com/scampanoni/noelle" target="_blank">
-                  GitHub.
-                </a>
-                <br>
-                For more information, see the
-                <a href="https://dl.acm.org/doi/abs/10.1145/3349569.3351536" target="_blank">
-                  ACM DL.
-                </a>
-              </span>
-              <p>
-                <em class="authors">
-                  Angelo Matni, Enrico Armenio Deiana, Yian Su, Lukas Gross, Souradip Ghosh, Sotiris Apostolakis,
-                  Ziyang
-                  Xu, Zujun Tan, Ishita Chaturvedi, Brian Homerding, <b>Tommy McMichen</b>, David I. August, and
-                  Simone
-                  Campanoni
-                </em>
-                <br>
-                <a href="https://conf.researchr.org/home/cgo-2022" target="_blank">
-                  <span class="conference">
-                    International Conference on Code Generation and Optimization (CGO), 2022
-                  </span>
-                </a>
-                <br>
-                NOELLE provides abstractions to help build advanced code analyses and transformations on top of the
-                production quality LLVM compiler.
-                NOELLE has been used to accelerate a diverse set of research prototypes, with a powerful
-                automatically
-                parallelizing compiler built upon it.
-                It is available open source on github to help accelerate your compiler research.
-              </p>
-
-
-
-
-              <h3>
-                Fine-Grained Acceleration using Runtime Integrated Custom Execution (RICE)
-              </h3>
-              <p>
-                <em class="authors">
-                  Leela Pakanati, <b>Tommy McMichen</b>, and Zachary Estrada
-                </em>
-                <label for="sn-plus" class="sidenote-toggle">⊕</label>
-                <input type="checkbox" id="sn-plus" class="sidenote-toggle">
-                <span class="sidenote">
-                  The paper is available
-                  <a href="files/RICE_CASES_2019.pdf" target="_blank">
-                    here.
-                  </a>
-                  <br>
-                  For more information, see the
-                  <a href="https://dl.acm.org/doi/abs/10.1145/3349569.3351536" target="_blank">
-                    ACM DL.
-                  </a>
-                </span>
-
-                <a href="https://conf.researchr.org/home/cgo-2022" target="_blank">
-                  <span class="conference">
-                    International Conference on Compliers, Architectures and Synthesis for Embedded Systems
-                    (CASES),
-                    2019
-                  </span>
-                </a>
-
-                <br>
-                Runtime Integrated Custom Execution (RICE) relocates traditional peripheral reconfigurable
-                acceleration devices into the pipeline of the processor. This relocation unlocks fine-grained
-                acceleration previously impeded by communication overhead to a peripheral
-                accelerator. Preliminary simulation results on a subset of the PARSEC benchmark suite shows
-                promise for RICE in HPC applications. This was published in a 'work-in-progress' paper track.
-              </p>
-
-
-
-
-              <h3>
-                Developing Parallel Computation Architectures
-              </h3>
-              <p>
-                <label for="sn-plus" class="sidenote-toggle">⊕</label>
-                <input type="checkbox" id="sn-plus" class="sidenote-toggle">
-                <span class="sidenote">
-                  Available on
-                  <a href="https://github.com/rhit-neuro" target="_blank">
-                    GitHub
-                  </a>
-                </span>
-                Senior design project to improve the performance and efficiency of biologically-accurate neuron
-                simulations using the Hodgkin-Huxley model and a LUT accelerator approach. Designed and developed
-                novel parallel architecture to allow for parallel variable time-step integrators (VITAMIN), which
-                achieved strong scaling on multi-core machines. Minimized hardware area usage of LUT accelerator,
-                with
-                similar execution time performance. Implemented software improvements to improve execution time
-                performance.
-
-
-              </p>
-            </div>
-          </article>
-          <article>
-            <h2>
-              <strong>Affiliations</strong>
-            </h2>
-            <div class="row align-items-center text-center">
-              <div class="col-md-6">
-                <a href="https://users.cs.northwestern.edu/~simonec/index.html#gsc.tab=0" target="_blank">
-                  <image src="img/arcana_logo.png" class="img-fluid logo-image">
-                </a>
-              </div>
-              <div class="col-md-6">
-                <a href="https://www.mccormick.northwestern.edu/computer-science/" target="_blank">
-                  <image src="img/nu_logo.svg" class="img-fluid logo-image">
-                </a>
-              </div>
-              <!--
-                <div class="col-md-4">
-                  <a href="http://interweaving.org/" target="_blank">
-                    <image src="img/iweave.png" class="img-fluid logo-image" style="width:50%;">
-                  </a>
-                </div>
-                -->
-            </div>
-          </article>
-          <br>
-          <div id="contact" class="footnotes">
-            <p id="fn1">
-              1. Feel free to email me at
-              <a class="footer-nav-icon" href="mailto:mcmichen@u.northwestern.edu">
-                mcmichen at u dot northwestern dot edu
-              </a>
-            </p>
-            <p id="fn2">
-              2. Follow my work on
-              <a class="footer-nav-icon" href="https://github.com/tommymcm" target="_blank">
-                GitHub
-              </a>
-            </p>
-            <p id="fn3">
-              3. Connect with me on
-              <a class="footer-nav-icon" href="https://www.linkedin.com/in/tommy-mcmichen-57048a128" target="_blank">
-                LinkedIn
-              </a>
-            </p>
-
-          </div>
-        </div>
+  <div id="top">
+    <header id="home">
+      <h1>
+        Tommy McMichen
+      </h1>
+      <div class="abstract">
+        <h2>
+          <strong>Abstract</strong>
+        </h2>
+        <span class="sidenote">
+          <img src="img/personal_photo.jpg" alt="me" class="personal-photo">
+        </span>
+        <p>
+          I am a PhD candidate at Northwestern University with a B.S.
+          in Computer Engineering and Computer Science from Rose-Hulman
+          Institute of Technology. I study compilers, specifically
+          looking into new abstractions and representations. My research
+          aims to rethink existing compiler paradigms to improve how we
+          handle data movement in traditional and emerging domains.
+        </p>
       </div>
+    </header>
+    <article>
+      <div id="research">
+        <h2>
+          <strong>Research</strong>
+        </h2>
+
+        <!-- PAPER -->
+        <h3>
+          <u>N</u>OELLE <u>O</u>ffers <u>E</u>mpowering <u>LL</u>VM <u>E</u>xtensions
+        </h3>
+        <label for="sn-noelle" class="sidenote-toggle">⊕</label>
+        <input type="checkbox" id="sn-noelle" class="sidenote-toggle">
+        <span id="sn-noelle" class="sidenote">
+          The paper is available
+          <a href="files/NOELLE_CGO_2022.pdf" target="_blank">
+            here.
+          </a>
+          <br>
+          The source code is available on
+          <a href="https://github.com/scampanoni/noelle" target="_blank">
+            GitHub.
+          </a>
+          <br>
+          For more information, see the
+          <a href="https://dl.acm.org/doi/abs/10.1145/3349569.3351536" target="_blank">
+            ACM DL.
+          </a>
+        </span>
+        <p>
+          <em class="authors">
+            Angelo Matni, Enrico Armenio Deiana, Yian Su, Lukas Gross, Souradip Ghosh, Sotiris Apostolakis,
+            Ziyang
+            Xu, Zujun Tan, Ishita Chaturvedi, Brian Homerding, <b>Tommy McMichen</b>, David I. August, and
+            Simone
+            Campanoni
+          </em>
+          <br>
+          <a href="https://conf.researchr.org/home/cgo-2022" target="_blank">
+            <span class="conference">
+              International Conference on Code Generation and Optimization (CGO), 2022
+            </span>
+          </a>
+          <br>
+          NOELLE provides abstractions to help build advanced code analyses and transformations on top of the
+          production quality LLVM compiler.
+          NOELLE has been used to accelerate a diverse set of research prototypes, with a powerful
+          automatically
+          parallelizing compiler built upon it.
+          It is available open source on github to help accelerate your compiler research.
+        </p>
+
+        <!-- PAPER -->
+        <h3>
+          Fine-Grained Acceleration using Runtime Integrated Custom Execution (RICE)
+        </h3>
+        <label for="sn-rice" class="sidenote-toggle">⊕</label>
+        <input type="checkbox" id="sn-rice" class="sidenote-toggle">
+        <span id="sn-rice" class="sidenote">
+          The paper is available
+          <a href="files/RICE_CASES_2019.pdf" target="_blank">
+            here.
+          </a>
+          <br>
+          For more information, see the
+          <a href="https://dl.acm.org/doi/abs/10.1145/3349569.3351536" target="_blank">
+            ACM DL.
+          </a>
+        </span>
+        <p>
+          <em class="authors">
+            Leela Pakanati, <b>Tommy McMichen</b>, and Zachary Estrada
+          </em>
+          <br>
+          <a href="https://conf.researchr.org/home/cgo-2022" target="_blank">
+            <span class="conference">
+              International Conference on Compliers, Architectures and Synthesis for Embedded Systems
+              (CASES),
+              2019
+            </span>
+          </a>
+
+          <br>
+          Runtime Integrated Custom Execution (RICE) relocates traditional peripheral reconfigurable
+          acceleration devices into the pipeline of the processor. This relocation unlocks fine-grained
+          acceleration previously impeded by communication overhead to a peripheral
+          accelerator. Preliminary simulation results on a subset of the PARSEC benchmark suite shows
+          promise for RICE in HPC applications. This was published in a 'work-in-progress' paper track.
+        </p>
+
+        <!-- PAPER -->
+        <h3>
+          Developing Parallel Computation Architectures
+        </h3>
+        <label for="sn-neuro" class="sidenote-toggle">⊕</label>
+        <input id="sn-neuro" type="checkbox" class="sidenote-toggle">
+        <span class="sidenote">
+          Available on
+          <a href="https://github.com/rhit-neuro" target="_blank">
+            GitHub
+          </a>
+        </span>
+        <p>
+          Senior design project to improve the performance and efficiency of biologically-accurate neuron
+          simulations using the Hodgkin-Huxley model and a LUT accelerator approach. Designed and developed
+          novel parallel architecture to allow for parallel variable time-step integrators (VITAMIN), which
+          achieved strong scaling on multi-core machines. Minimized hardware area usage of LUT accelerator,
+          with
+          similar execution time performance. Implemented software improvements to improve execution time
+          performance.
+        </p>
+      </div>
+    </article>
+    <article>
+      <h2>
+        <strong>Affiliations</strong>
+      </h2>
+
+      <div>
+        <a href="https://users.cs.northwestern.edu/~simonec/index.html#gsc.tab=0" target="_blank">
+          <image src="img/arcana_logo.png" class="img-fluid logo-image">
+        </a>
+        <br>
+        <a href="https://www.mccormick.northwestern.edu/computer-science/" target="_blank">
+          <image src="img/nu_logo.svg" class="img-fluid logo-image">
+        </a>
+      </div>
+    </article>
+
+    <br>
+
+    <!-- CONTACT INFO -->
+    <div id="contact" class="footnotes">
+      <p id="fn1">
+        <sup>1</sup> Feel free to email me at
+        <a class="footer-nav-icon" href="mailto:mcmichen@u.northwestern.edu">
+          mcmichen@u.northwestern.edu
+        </a>
+      </p>
+      <p id="fn2">
+        <sup>2</sup> Follow my work on
+        <a class="footer-nav-icon" href="https://github.com/tommymcm" target="_blank">
+          GitHub.
+        </a>
+      </p>
+      <p id="fn3">
+        <sup>3</sup> Connect with me on
+        <a class="footer-nav-icon" href="https://www.linkedin.com/in/tommy-mcmichen-57048a128" target="_blank">
+          LinkedIn.
+        </a>
+      </p>
     </div>
+  </div>
+
+  <!-- USER CONTENT DONE -->
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
 
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <script>
-      window.ga = function () {
-        ga.q.push(arguments)
-      };
-      ga.q = [];
-      ga.l = +new Date;
-      ga('create', 'G-E92GMXV91B', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('set', 'transport', 'beacon');
-      ga('send', 'pageview')
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'G-E92GMXV91B', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('set', 'transport', 'beacon');
+    ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>
