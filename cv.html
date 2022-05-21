@@ -39,41 +39,29 @@
 
   <meta name="theme-color" content="#000000">
 
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+  </script>
+
+  <!-- LOAD THE HEADER AND FOOTER -->
+  <script>
+    $(document).ready(function () {
+      $('#header').load("header.html");
+      $('#footer').load("footer.html");
+    });
+  </script>
+
 </head>
 
 <body id="home">
   <!-- vertical navbar on desktop -->
-  <div class="sidenote left sticky-top">
-    <p class="nav-vertical">
-      <a href="index.html#home" target="_self">
-        <span class="nav-text">
-          Home
-        </span>
-      </a>
-      <br>
-      <a href="index.html#research" target="_self">
-        <span class="nav-text">
-          Research
-        </span>
-      </a>
-      <br>
-      <a href="index.html#contact" target="_self">
-        <span class="nav-text">
-          Contact
-        </span>
-      </a>
-      <br>
-      <a href="cv.html">
-        <span class="nav-text">
-          C/V
-        </span>
-      </a>
-      </span>
-    </p>
-  </div>
+  <div id="header"></div>
 
+  <!-- content -->
   <body id="top">
-    <header id="home">
+    <article id="home">
       <h1>
         Tommy McMichen
       </h1>
@@ -83,7 +71,7 @@
         Northwestern University
         <br>
       </div>
-    </header>
+    </article>
     <article id="research">
       <h3>
         <strong>Research Experience</strong>
@@ -178,31 +166,10 @@
 
 
     <!-- CONTACT INFO -->
-    <div id="contact" class="footnotes">
-      <p id="fn1">
-        <sup>1</sup> Feel free to email me at
-        <a class="footer-nav-icon" href="mailto:mcmichen@u.northwestern.edu">
-          mcmichen@u.northwestern.edu
-        </a>
-      </p>
-      <p id="fn2">
-        <sup>2</sup> Follow my work on
-        <a class="footer-nav-icon" href="https://github.com/tommymcm" target="_blank">
-          GitHub
-        </a>
-      </p>
-      <p id="fn3">
-        <sup>3</sup> Connect with me on
-        <a class="footer-nav-icon" href="https://www.linkedin.com/in/tommy-mcmichen-57048a128" target="_blank">
-          LinkedIn
-        </a>
-      </p>
-    </div>
+    <div id="footer"></div>
+    
     <!-- USER CONTENT DONE -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
       crossorigin="anonymous"></script>
