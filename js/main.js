@@ -66,11 +66,11 @@ function typeWriter() {
   }
 
   if (cursor_status) {
-    document.getElementById("typewriter-title").style.boxShadow = "3px 0px var(--coral)";
+    document.getElementById("typewriter-title").style.boxShadow = "3px 0px var(--fire-opal)";
     cursor_status = false;
     cursor_held = 0;
   } else {
-    document.getElementById("typewriter-title").style.boxShadow = "0px 0px var(--coral)";
+    document.getElementById("typewriter-title").style.boxShadow = "0px 0px var(--fire-opal)";
     cursor_status = true;
     cursor_held = 0;
   }
