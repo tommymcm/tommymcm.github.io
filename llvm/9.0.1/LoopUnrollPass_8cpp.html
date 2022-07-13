@@ -57,7 +57,7 @@ $(function() {
   <div class="headertitle"><div class="title">LoopUnrollPass.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/LoopUnrollPass.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="LoopUnrollPass_8h_source.html">llvm/Transforms/Scalar/LoopUnrollPass.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/DenseMapInfo.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/DenseSet.h&quot;</code><br />
@@ -68,43 +68,43 @@ $(function() {
 <code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/BlockFrequencyInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/CodeMetrics.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LazyBlockFrequencyInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopAnalysisManager.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopPass.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopUnrollAnalyzer.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/OptimizationRemarkEmitter.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ScalarEvolution.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DiagnosticInfo.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
-<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BlockFrequencyInfo_8h_source.html">llvm/Analysis/BlockFrequencyInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CodeMetrics_8h_source.html">llvm/Analysis/CodeMetrics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LazyBlockFrequencyInfo_8h_source.html">llvm/Analysis/LazyBlockFrequencyInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopAnalysisManager_8h_source.html">llvm/Analysis/LoopAnalysisManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopPass_8h_source.html">llvm/Analysis/LoopPass.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopUnrollAnalyzer_8h_source.html">llvm/Analysis/LoopUnrollAnalyzer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="OptimizationRemarkEmitter_8h_source.html">llvm/Analysis/OptimizationRemarkEmitter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScalarEvolution_8h_source.html">llvm/Analysis/ScalarEvolution.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DiagnosticInfo_8h_source.html">llvm/IR/DiagnosticInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Scalar/LoopPassManager.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/LoopSimplify.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/LoopUtils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/SizeOpts.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/UnrollLoop.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopPassManager_8h_source.html">llvm/Transforms/Scalar/LoopPassManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Utils_8h_source.html">llvm/Transforms/Utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopSimplify_8h_source.html">llvm/Transforms/Utils/LoopSimplify.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopUtils_8h_source.html">llvm/Transforms/Utils/LoopUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SizeOpts_8h_source.html">llvm/Transforms/Utils/SizeOpts.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="UnrollLoop_8h_source.html">llvm/Transforms/Utils/UnrollLoop.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
@@ -122,66 +122,66 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7f84e3cc8680d29865f80d5bf5c12969"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a7f84e3cc8680d29865f80d5bf5c12969">UnrollThreshold</a> (&quot;unroll-threshold&quot;, cl::Hidden, cl::desc(&quot;The cost threshold for loop unrolling&quot;))</td></tr>
-<tr class="separator:a7f84e3cc8680d29865f80d5bf5c12969"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7975437a12c2beb830b9b0561f652089"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a7975437a12c2beb830b9b0561f652089">UnrollPartialThreshold</a> (&quot;unroll-partial-threshold&quot;, cl::Hidden, cl::desc(&quot;The cost threshold for partial loop unrolling&quot;))</td></tr>
-<tr class="separator:a7975437a12c2beb830b9b0561f652089"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b65ecd62d61f0ebbd703b2b968c4d7e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a1b65ecd62d61f0ebbd703b2b968c4d7e">UnrollMaxPercentThresholdBoost</a> (&quot;unroll-max-percent-threshold-boost&quot;, cl::init(400), cl::Hidden, cl::desc(&quot;The maximum 'boost' (represented as a percentage &gt;= 100) applied &quot; &quot;to the threshold when aggressively unrolling a loop due to the &quot; &quot;dynamic cost savings. If completely unrolling a loop will <a class="el" href="LoopStrengthReduce_8cpp.html#a6d827fc34f1b4371a0b7183d3ca5bcac">reduce</a> &quot; &quot;the total runtime from <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a> to <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y</a>, we boost the loop unroll &quot; &quot;threshold to DefaultThreshold*std::min(MaxPercentThresholdBoost, &quot; &quot;<a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>/<a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y</a>). This limit avoids excessive code bloat.&quot;))</td></tr>
-<tr class="separator:a1b65ecd62d61f0ebbd703b2b968c4d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75e238daf0704930ac5297dd970743c1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a75e238daf0704930ac5297dd970743c1">UnrollMaxIterationsCountToAnalyze</a> (&quot;unroll-max-iteration-count-to-analyze&quot;, cl::init(10), cl::Hidden, cl::desc(&quot;Don't allow loop unrolling to simulate more than this number of&quot; &quot;iterations when <a class="el" href="BoundsChecking_8cpp.html#aa3457fd2a1e7ae19c2a53d231b99517b">checking</a> full unroll profitability&quot;))</td></tr>
-<tr class="separator:a75e238daf0704930ac5297dd970743c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb7f30404c9f6ed541a5182d929835da"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#adb7f30404c9f6ed541a5182d929835da">UnrollCount</a> (&quot;unroll-count&quot;, cl::Hidden, cl::desc(&quot;Use this unroll count for all <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> including those with &quot; &quot;unroll_count pragma <a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">values</a>, for testing purposes&quot;))</td></tr>
-<tr class="separator:adb7f30404c9f6ed541a5182d929835da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16fac99af1572e7817422bebaa3c4482"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a16fac99af1572e7817422bebaa3c4482">UnrollMaxCount</a> (&quot;unroll-max-count&quot;, cl::Hidden, cl::desc(&quot;Set the max unroll count for partial and runtime unrolling, for&quot; &quot;testing purposes&quot;))</td></tr>
-<tr class="separator:a16fac99af1572e7817422bebaa3c4482"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf1cfe91b7a7c78528050e46cb1b2c64"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#aaf1cfe91b7a7c78528050e46cb1b2c64">UnrollFullMaxCount</a> (&quot;unroll-full-max-count&quot;, cl::Hidden, cl::desc(&quot;Set the max unroll count for full unrolling, for testing purposes&quot;))</td></tr>
-<tr class="separator:aaf1cfe91b7a7c78528050e46cb1b2c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19a16349d3bd414d860d7230b1161bcd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a19a16349d3bd414d860d7230b1161bcd">UnrollPeelCount</a> (&quot;unroll-peel-count&quot;, cl::Hidden, cl::desc(&quot;Set the unroll peeling count, for testing purposes&quot;))</td></tr>
-<tr class="separator:a19a16349d3bd414d860d7230b1161bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07bb1f4f004388d85af7bb4980de0f95"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a07bb1f4f004388d85af7bb4980de0f95">UnrollAllowPartial</a> (&quot;unroll-allow-partial&quot;, cl::Hidden, cl::desc(&quot;Allows <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> to be partially unrolled until &quot; &quot;-unroll-threshold loop size is reached.&quot;))</td></tr>
-<tr class="separator:a07bb1f4f004388d85af7bb4980de0f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf3224d83546f79de3e44823f73f92dd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#acf3224d83546f79de3e44823f73f92dd">UnrollAllowRemainder</a> (&quot;unroll-allow-remainder&quot;, cl::Hidden, cl::desc(&quot;Allow generation of a loop <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> (extra iterations) &quot; &quot;when unrolling a loop.&quot;))</td></tr>
-<tr class="separator:acf3224d83546f79de3e44823f73f92dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac95478f11dc74306a4d520f8a894757a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#ac95478f11dc74306a4d520f8a894757a">UnrollRuntime</a> (&quot;unroll-runtime&quot;, cl::ZeroOrMore, cl::Hidden, cl::desc(&quot;Unroll <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> with run-time trip counts&quot;))</td></tr>
-<tr class="separator:ac95478f11dc74306a4d520f8a894757a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad98398cfa89bce8a6031b158aff7d02c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#ad98398cfa89bce8a6031b158aff7d02c">UnrollMaxUpperBound</a> (&quot;unroll-max-upperbound&quot;, cl::init(8), cl::Hidden, cl::desc(&quot;The max of trip count upper bound that is considered in unrolling&quot;))</td></tr>
-<tr class="separator:ad98398cfa89bce8a6031b158aff7d02c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af880627859d2df0f9170d84ebecb7727"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#af880627859d2df0f9170d84ebecb7727">PragmaUnrollThreshold</a> (&quot;pragma-unroll-threshold&quot;, cl::init(16 *1024), cl::Hidden, cl::desc(&quot;Unrolled size limit for <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> with an unroll(full) or &quot; &quot;unroll_count pragma.&quot;))</td></tr>
-<tr class="separator:af880627859d2df0f9170d84ebecb7727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aace4b8362216f8afd249a92388f4cbaa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#aace4b8362216f8afd249a92388f4cbaa">FlatLoopTripCountThreshold</a> (&quot;flat-loop-tripcount-threshold&quot;, cl::init(5), cl::Hidden, cl::desc(&quot;If the runtime tripcount for the loop is lower than the &quot; &quot;threshold, the loop is considered as flat and will be less &quot; &quot;aggressively unrolled.&quot;))</td></tr>
-<tr class="separator:aace4b8362216f8afd249a92388f4cbaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa60f561fb6c55bfcdbde427cb9c3d992"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#aa60f561fb6c55bfcdbde427cb9c3d992">UnrollAllowPeeling</a> (&quot;unroll-allow-peeling&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, cl::desc(&quot;Allows <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> to be peeled when the dynamic &quot; &quot;trip count is known to be low.&quot;))</td></tr>
-<tr class="separator:aa60f561fb6c55bfcdbde427cb9c3d992"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bb0b325ce5cf173d95ef44752ad7087"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a7bb0b325ce5cf173d95ef44752ad7087">UnrollUnrollRemainder</a> (&quot;unroll-remainder&quot;, cl::Hidden, cl::desc(&quot;Allow the loop <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> to be unrolled.&quot;))</td></tr>
-<tr class="separator:a7bb0b325ce5cf173d95ef44752ad7087"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4504337b36054f800f53a5677e53cd4b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a4504337b36054f800f53a5677e53cd4b">UnrollRevisitChildLoops</a> (&quot;unroll-revisit-child-loops&quot;, cl::Hidden, cl::desc(&quot;Enqueue and re-visit child <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> in the loop PM after unrolling. &quot; &quot;This shouldn't typically be needed as child <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> (or their &quot; &quot;clones) were already visited.&quot;))</td></tr>
-<tr class="separator:a4504337b36054f800f53a5677e53cd4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f1f0c53358f3779a4542487468fa381"><td class="memItemLeft" align="right" valign="top">static Optional&lt; EstimatedUnrollCost &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a7f1f0c53358f3779a4542487468fa381">analyzeLoopUnrollCost</a> (const Loop *L, unsigned TripCount, DominatorTree &amp;DT, ScalarEvolution &amp;SE, const SmallPtrSetImpl&lt; const Value * &gt; &amp;EphValues, const TargetTransformInfo &amp;TTI, unsigned MaxUnrolledLoopSize)</td></tr>
+<tr class="memitem:a7f1f0c53358f3779a4542487468fa381"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; EstimatedUnrollCost &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a7f1f0c53358f3779a4542487468fa381">analyzeLoopUnrollCost</a> (const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classunsigned.html">unsigned</a> TripCount, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE, const <a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;EphValues, const <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;TTI, <a class="el" href="classunsigned.html">unsigned</a> MaxUnrolledLoopSize)</td></tr>
 <tr class="memdesc:a7f1f0c53358f3779a4542487468fa381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Figure out if the loop is worth full unrolling.  <a href="LoopUnrollPass_8cpp.html#a7f1f0c53358f3779a4542487468fa381">More...</a><br /></td></tr>
 <tr class="separator:a7f1f0c53358f3779a4542487468fa381"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9eb059a5b3301b22871464b91285cf2c"><td class="memItemLeft" align="right" valign="top">static MDNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a9eb059a5b3301b22871464b91285cf2c">GetUnrollMetadataForLoop</a> (const Loop *L, StringRef Name)</td></tr>
+<tr class="memitem:a9eb059a5b3301b22871464b91285cf2c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1MDNode.html">MDNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a9eb059a5b3301b22871464b91285cf2c">GetUnrollMetadataForLoop</a> (const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, StringRef Name)</td></tr>
 <tr class="separator:a9eb059a5b3301b22871464b91285cf2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accd8f7df275ca8d78c3a51540539e529"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#accd8f7df275ca8d78c3a51540539e529">HasUnrollFullPragma</a> (const Loop *L)</td></tr>
+<tr class="memitem:accd8f7df275ca8d78c3a51540539e529"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#accd8f7df275ca8d78c3a51540539e529">HasUnrollFullPragma</a> (const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L)</td></tr>
 <tr class="separator:accd8f7df275ca8d78c3a51540539e529"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a370e937ef22e6fd1d724dc224deb3c90"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a370e937ef22e6fd1d724dc224deb3c90">HasUnrollEnablePragma</a> (const Loop *L)</td></tr>
+<tr class="memitem:a370e937ef22e6fd1d724dc224deb3c90"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a370e937ef22e6fd1d724dc224deb3c90">HasUnrollEnablePragma</a> (const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L)</td></tr>
 <tr class="separator:a370e937ef22e6fd1d724dc224deb3c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf88f11ea9bbdfee768ca3ab1dc07297"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#acf88f11ea9bbdfee768ca3ab1dc07297">HasRuntimeUnrollDisablePragma</a> (const Loop *L)</td></tr>
+<tr class="memitem:acf88f11ea9bbdfee768ca3ab1dc07297"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#acf88f11ea9bbdfee768ca3ab1dc07297">HasRuntimeUnrollDisablePragma</a> (const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L)</td></tr>
 <tr class="separator:acf88f11ea9bbdfee768ca3ab1dc07297"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a219387ddfb67c9743065fed1986fa802"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a219387ddfb67c9743065fed1986fa802">UnrollCountPragmaValue</a> (const Loop *L)</td></tr>
+<tr class="memitem:a219387ddfb67c9743065fed1986fa802"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a219387ddfb67c9743065fed1986fa802">UnrollCountPragmaValue</a> (const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L)</td></tr>
 <tr class="separator:a219387ddfb67c9743065fed1986fa802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbbbc7e7d7a179db52a59d70392a1e9c"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#acbbbc7e7d7a179db52a59d70392a1e9c">getFullUnrollBoostingFactor</a> (const EstimatedUnrollCost &amp;Cost, unsigned MaxPercentThresholdBoost)</td></tr>
+<tr class="memitem:acbbbc7e7d7a179db52a59d70392a1e9c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#acbbbc7e7d7a179db52a59d70392a1e9c">getFullUnrollBoostingFactor</a> (const EstimatedUnrollCost &amp;Cost, <a class="el" href="classunsigned.html">unsigned</a> MaxPercentThresholdBoost)</td></tr>
 <tr class="separator:acbbbc7e7d7a179db52a59d70392a1e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a752c37268f55822c7c73f1428ace4dd7"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a752c37268f55822c7c73f1428ace4dd7">getUnrolledLoopSize</a> (unsigned LoopSize, TargetTransformInfo::UnrollingPreferences &amp;UP)</td></tr>
+<tr class="memitem:a752c37268f55822c7c73f1428ace4dd7"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a752c37268f55822c7c73f1428ace4dd7">getUnrolledLoopSize</a> (<a class="el" href="classunsigned.html">unsigned</a> LoopSize, <a class="el" href="structllvm_1_1TargetTransformInfo_1_1UnrollingPreferences.html">TargetTransformInfo::UnrollingPreferences</a> &amp;UP)</td></tr>
 <tr class="separator:a752c37268f55822c7c73f1428ace4dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e7f72de79991d23957e3b3aac4789a5"><td class="memItemLeft" align="right" valign="top">static LoopUnrollResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a6e7f72de79991d23957e3b3aac4789a5">tryToUnrollLoop</a> (Loop *L, DominatorTree &amp;DT, LoopInfo *LI, ScalarEvolution &amp;SE, const TargetTransformInfo &amp;TTI, AssumptionCache &amp;AC, OptimizationRemarkEmitter &amp;ORE, BlockFrequencyInfo *BFI, ProfileSummaryInfo *PSI, bool PreserveLCSSA, int OptLevel, bool OnlyWhenForced, bool ForgetAllSCEV, Optional&lt; unsigned &gt; ProvidedCount, Optional&lt; unsigned &gt; ProvidedThreshold, Optional&lt; bool &gt; ProvidedAllowPartial, Optional&lt; bool &gt; ProvidedRuntime, Optional&lt; bool &gt; ProvidedUpperBound, Optional&lt; bool &gt; ProvidedAllowPeeling)</td></tr>
+<tr class="memitem:a6e7f72de79991d23957e3b3aac4789a5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespacellvm.html#a8c861ddf753ab3690437dceaadf5c7e1">LoopUnrollResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a6e7f72de79991d23957e3b3aac4789a5">tryToUnrollLoop</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, <a class="el" href="classllvm_1_1LoopInfo.html">LoopInfo</a> *LI, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE, const <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;TTI, <a class="el" href="classllvm_1_1AssumptionCache.html">AssumptionCache</a> &amp;AC, <a class="el" href="classllvm_1_1OptimizationRemarkEmitter.html">OptimizationRemarkEmitter</a> &amp;ORE, <a class="el" href="classllvm_1_1BlockFrequencyInfo.html">BlockFrequencyInfo</a> *BFI, <a class="el" href="classllvm_1_1ProfileSummaryInfo.html">ProfileSummaryInfo</a> *PSI, <a class="el" href="classbool.html">bool</a> PreserveLCSSA, int OptLevel, <a class="el" href="classbool.html">bool</a> OnlyWhenForced, <a class="el" href="classbool.html">bool</a> ForgetAllSCEV, <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; ProvidedCount, <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; ProvidedThreshold, <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ProvidedAllowPartial, <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ProvidedRuntime, <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ProvidedUpperBound, <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ProvidedAllowPeeling)</td></tr>
 <tr class="separator:a6e7f72de79991d23957e3b3aac4789a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1250cac36cd8445a70561ec25779b9ee"><td class="memTemplParams" colspan="2">template&lt;typename RangeT &gt; </td></tr>
-<tr class="memitem:a1250cac36cd8445a70561ec25779b9ee"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classSmallVector.html">SmallVector</a>&lt; Loop *, 8 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a1250cac36cd8445a70561ec25779b9ee">appendLoopsToWorklist</a> (RangeT &amp;&amp;<a class="el" href="LoopRotation_8cpp.html#a54b902588fe483b06e0bcbd08bed6bba">Loops</a>)</td></tr>
+<tr class="memitem:a1250cac36cd8445a70561ec25779b9ee"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classSmallVector.html">SmallVector</a>&lt; <a class="el" href="classllvm_1_1Loop.html">Loop</a> *, 8 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a1250cac36cd8445a70561ec25779b9ee">appendLoopsToWorklist</a> (RangeT &amp;&amp;<a class="el" href="LoopRotation_8cpp.html#a54b902588fe483b06e0bcbd08bed6bba">Loops</a>)</td></tr>
 <tr class="separator:a1250cac36cd8445a70561ec25779b9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aa2e7d58f32215958839220d8ffbde13b"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#aa2e7d58f32215958839220d8ffbde13b">NoThreshold</a> = std::numeric_limits&lt;unsigned&gt;::max()</td></tr>
+<tr class="memitem:ab5709dc220a64908090b46d1d1f6309b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#ab5709dc220a64908090b46d1d1f6309b">UnrollThreshold</a> (&quot;unroll-threshold&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The cost threshold for loop unrolling&quot;))</td></tr>
+<tr class="separator:ab5709dc220a64908090b46d1d1f6309b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e49d89441ec06d7187568cb0adcf1c2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a7e49d89441ec06d7187568cb0adcf1c2">UnrollPartialThreshold</a> (&quot;unroll-partial-threshold&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The cost threshold for partial loop unrolling&quot;))</td></tr>
+<tr class="separator:a7e49d89441ec06d7187568cb0adcf1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae467abf6e23fad8a3238fcadcd8d36d0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#ae467abf6e23fad8a3238fcadcd8d36d0">UnrollMaxPercentThresholdBoost</a> (&quot;unroll-max-percent-threshold-boost&quot;, cl::init(400), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The maximum 'boost' (represented as a percentage &gt;= 100) applied &quot; &quot;to the threshold when aggressively unrolling a loop due to the &quot; &quot;dynamic cost savings. If completely unrolling a loop will <a class="el" href="LoopStrengthReduce_8cpp.html#a6d827fc34f1b4371a0b7183d3ca5bcac">reduce</a> &quot; &quot;the total runtime from <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a> to <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y</a>, we boost the loop unroll &quot; &quot;threshold to DefaultThreshold*std::min(MaxPercentThresholdBoost, &quot; &quot;<a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>/<a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y</a>). This limit avoids excessive code bloat.&quot;))</td></tr>
+<tr class="separator:ae467abf6e23fad8a3238fcadcd8d36d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29817c06c04a3406b65b627b160988f5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a29817c06c04a3406b65b627b160988f5">UnrollMaxIterationsCountToAnalyze</a> (&quot;unroll-max-iteration-count-to-analyze&quot;, cl::init(10), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Don't allow loop unrolling to simulate more than this number of&quot; &quot;iterations when <a class="el" href="BoundsChecking_8cpp.html#aa3457fd2a1e7ae19c2a53d231b99517b">checking</a> full unroll profitability&quot;))</td></tr>
+<tr class="separator:a29817c06c04a3406b65b627b160988f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0623a79f9be44774a206d71ccced388e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a0623a79f9be44774a206d71ccced388e">UnrollCount</a> (&quot;unroll-count&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Use this unroll count for all <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> including those with &quot; &quot;unroll_count pragma <a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">values</a>, for testing purposes&quot;))</td></tr>
+<tr class="separator:a0623a79f9be44774a206d71ccced388e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03384de1aaf68851bc758d5f93e70717"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a03384de1aaf68851bc758d5f93e70717">UnrollMaxCount</a> (&quot;unroll-max-count&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Set the max unroll count for partial and runtime unrolling, for&quot; &quot;testing purposes&quot;))</td></tr>
+<tr class="separator:a03384de1aaf68851bc758d5f93e70717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dfbe5cfe55145abbfba19021cb34771"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a5dfbe5cfe55145abbfba19021cb34771">UnrollFullMaxCount</a> (&quot;unroll-full-max-count&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Set the max unroll count for full unrolling, for testing purposes&quot;))</td></tr>
+<tr class="separator:a5dfbe5cfe55145abbfba19021cb34771"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9badf8f59af8beee7f66a5252019f70"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#aa9badf8f59af8beee7f66a5252019f70">UnrollPeelCount</a> (&quot;unroll-peel-count&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Set the unroll peeling count, for testing purposes&quot;))</td></tr>
+<tr class="separator:aa9badf8f59af8beee7f66a5252019f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeef786995f3e797e000d856135b36b21"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#aeef786995f3e797e000d856135b36b21">UnrollAllowPartial</a> (&quot;unroll-allow-partial&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allows <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> to be partially unrolled until &quot; &quot;-unroll-threshold loop size is reached.&quot;))</td></tr>
+<tr class="separator:aeef786995f3e797e000d856135b36b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea895a3cf11f08534d53045318df8f8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a7ea895a3cf11f08534d53045318df8f8">UnrollAllowRemainder</a> (&quot;unroll-allow-remainder&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allow generation of a loop <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> (extra iterations) &quot; &quot;when unrolling a loop.&quot;))</td></tr>
+<tr class="separator:a7ea895a3cf11f08534d53045318df8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b72f3e985a58fe47cb648561126d13f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a1b72f3e985a58fe47cb648561126d13f">UnrollRuntime</a> (&quot;unroll-runtime&quot;, cl::ZeroOrMore, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Unroll <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> with run-time trip counts&quot;))</td></tr>
+<tr class="separator:a1b72f3e985a58fe47cb648561126d13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64e96407611c9592708be5bebff9b529"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a64e96407611c9592708be5bebff9b529">UnrollMaxUpperBound</a> (&quot;unroll-max-upperbound&quot;, cl::init(8), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The max of trip count upper bound that is considered in unrolling&quot;))</td></tr>
+<tr class="separator:a64e96407611c9592708be5bebff9b529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed926bb2602046eac2597c1a527e2872"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#aed926bb2602046eac2597c1a527e2872">PragmaUnrollThreshold</a> (&quot;pragma-unroll-threshold&quot;, cl::init(16 *1024), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Unrolled size limit for <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> with an unroll(full) or &quot; &quot;unroll_count pragma.&quot;))</td></tr>
+<tr class="separator:aed926bb2602046eac2597c1a527e2872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a154caa5c4e4265d0af53c109c7a36922"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a154caa5c4e4265d0af53c109c7a36922">FlatLoopTripCountThreshold</a> (&quot;flat-loop-tripcount-threshold&quot;, cl::init(5), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;If the runtime tripcount for the loop is lower than the &quot; &quot;threshold, the loop is considered as flat and will be less &quot; &quot;aggressively unrolled.&quot;))</td></tr>
+<tr class="separator:a154caa5c4e4265d0af53c109c7a36922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a626a61b9d8aa04db77aaff8e96059f93"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a626a61b9d8aa04db77aaff8e96059f93">UnrollAllowPeeling</a> (&quot;unroll-allow-peeling&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allows <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> to be peeled when the dynamic &quot; &quot;trip count is known to be low.&quot;))</td></tr>
+<tr class="separator:a626a61b9d8aa04db77aaff8e96059f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ec8c2b4db0e83cb3937fdd1abdf5ae8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#a4ec8c2b4db0e83cb3937fdd1abdf5ae8">UnrollUnrollRemainder</a> (&quot;unroll-remainder&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allow the loop <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> to be unrolled.&quot;))</td></tr>
+<tr class="separator:a4ec8c2b4db0e83cb3937fdd1abdf5ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab03face15c6ea88b8f87cd795f20b482"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#ab03face15c6ea88b8f87cd795f20b482">UnrollRevisitChildLoops</a> (&quot;unroll-revisit-child-loops&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enqueue and re-visit child <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> in the loop PM after unrolling. &quot; &quot;This shouldn't typically be needed as child <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> (or their &quot; &quot;clones) were already visited.&quot;))</td></tr>
+<tr class="separator:ab03face15c6ea88b8f87cd795f20b482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2e7d58f32215958839220d8ffbde13b"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopUnrollPass_8cpp.html#aa2e7d58f32215958839220d8ffbde13b">NoThreshold</a> = std::numeric_limits&lt;<a class="el" href="classunsigned.html">unsigned</a>&gt;::max()</td></tr>
 <tr class="memdesc:aa2e7d58f32215958839220d8ffbde13b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A magic value for use with the Threshold parameter to indicate that the loop unroll should be performed regardless of how much code expansion would result.  <a href="LoopUnrollPass_8cpp.html#aa2e7d58f32215958839220d8ffbde13b">More...</a><br /></td></tr>
 <tr class="separator:aa2e7d58f32215958839220d8ffbde13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -213,45 +213,45 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Optional&lt; EstimatedUnrollCost &gt; analyzeLoopUnrollCost </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; EstimatedUnrollCost &gt; analyzeLoopUnrollCost </td>
           <td>(</td>
-          <td class="paramtype">const Loop *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>TripCount</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
           <td class="paramname"><em>SE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SmallPtrSetImpl&lt; const Value * &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>EphValues</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const TargetTransformInfo &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>TTI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>MaxUnrolledLoopSize</em>&#160;</td>
         </tr>
         <tr>
@@ -272,7 +272,9 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopUnrollPass_8cpp_source.html#l00326">326</a> of file <a class="el" href="LoopUnrollPass_8cpp_source.html">LoopUnrollPass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>, <a class="el" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a>, and <a class="el" href="LoopUnrollPass_8cpp.html#a75e238daf0704930ac5297dd970743c1">UnrollMaxIterationsCountToAnalyze()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="LoopInfo_8h_source.html#l00112">llvm::LoopBase&lt; BlockT, LoopT &gt;::contains()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="LoopInfo_8h_source.html#l00148">llvm::LoopBase&lt; BlockT, LoopT &gt;::empty()</a>, <a class="el" href="LoopInfo_8h_source.html#l00102">llvm::LoopBase&lt; BlockT, LoopT &gt;::getHeader()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00211">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopLatch()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00160">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopPreheader()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00207">llvm::TargetTransformInfo::getUserCost()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>, <a class="el" href="LoopInfo_8cpp_source.html#l00409">llvm::Loop::isLCSSAForm()</a>, <a class="el" href="LoopInfo_8cpp_source.html#l00425">llvm::Loop::isLoopSimplifyForm()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00230">llvm::TargetTransformInfo::isLoweredToCall()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870a6adf97f83acf6453d4a6a4b1070f3754">llvm::None</a>, <a class="el" href="IR_2CFG_8h_source.html#l00259">llvm::successors()</a>, and <a class="el" href="LoopUnrollPass_8cpp.html#a29817c06c04a3406b65b627b160988f5">UnrollMaxIterationsCountToAnalyze</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00729">llvm::computeUnrollCount()</a>.</p>
 
 </div>
 </div>
@@ -288,7 +290,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classSmallVector.html">SmallVector</a>&lt; Loop *, 8 &gt; appendLoopsToWorklist </td>
+          <td class="memname">static <a class="el" href="classSmallVector.html">SmallVector</a>&lt; <a class="el" href="classllvm_1_1Loop.html">Loop</a> *, 8 &gt; appendLoopsToWorklist </td>
           <td>(</td>
           <td class="paramtype">RangeT &amp;&amp;&#160;</td>
           <td class="paramname"><em>Loops</em></td><td>)</td>
@@ -304,55 +306,9 @@ template&lt;typename RangeT &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="LoopUnrollPass_8cpp_source.html#l01351">1351</a> of file <a class="el" href="LoopUnrollPass_8cpp_source.html">LoopUnrollPass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="LoopRotation_8cpp_source.html#l00121">Loops</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="LoopInfo_8h_source.html#l00144">llvm::LoopBase&lt; BlockT, LoopT &gt;::begin()</a>, <a class="el" href="LoopInfo_8h_source.html#l00145">llvm::LoopBase&lt; BlockT, LoopT &gt;::end()</a>, and <a class="el" href="LoopRotation_8cpp_source.html#l00121">Loops</a>.</p>
 
-</div>
-</div>
-<a id="aace4b8362216f8afd249a92388f4cbaa" name="aace4b8362216f8afd249a92388f4cbaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aace4b8362216f8afd249a92388f4cbaa">&#9670;&nbsp;</a></span>FlatLoopTripCountThreshold()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; FlatLoopTripCountThreshold </td>
-          <td>(</td>
-          <td class="paramtype">&quot;flat-loop-tripcount-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(5)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;If the runtime tripcount for the loop is lower than the &quot; &quot;threshold, the loop is considered as flat and will be less &quot; &quot;aggressively unrolled.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l01374">llvm::LoopUnrollPass::run()</a>.</p>
 
 </div>
 </div>
@@ -366,7 +322,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static unsigned getFullUnrollBoostingFactor </td>
+          <td class="memname">static <a class="el" href="classunsigned.html">unsigned</a> getFullUnrollBoostingFactor </td>
           <td>(</td>
           <td class="paramtype">const EstimatedUnrollCost &amp;&#160;</td>
           <td class="paramname"><em>Cost</em>, </td>
@@ -374,7 +330,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>MaxPercentThresholdBoost</em>&#160;</td>
         </tr>
         <tr>
@@ -392,6 +348,8 @@ template&lt;typename RangeT &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="LoopUnrollPass_8cpp_source.html#l00701">701</a> of file <a class="el" href="LoopUnrollPass_8cpp_source.html">LoopUnrollPass.cpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00729">llvm::computeUnrollCount()</a>.</p>
+
 </div>
 </div>
 <a id="a752c37268f55822c7c73f1428ace4dd7" name="a752c37268f55822c7c73f1428ace4dd7"></a>
@@ -406,13 +364,13 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="memname">static uint64_t getUnrolledLoopSize </td>
           <td>(</td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>LoopSize</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">TargetTransformInfo::UnrollingPreferences &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1TargetTransformInfo_1_1UnrollingPreferences.html">TargetTransformInfo::UnrollingPreferences</a> &amp;&#160;</td>
           <td class="paramname"><em>UP</em>&#160;</td>
         </tr>
         <tr>
@@ -430,7 +388,9 @@ template&lt;typename RangeT &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="LoopUnrollPass_8cpp_source.html#l00714">714</a> of file <a class="el" href="LoopUnrollPass_8cpp_source.html">LoopUnrollPass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00454">llvm::TargetTransformInfo::UnrollingPreferences::BEInsns</a>, and <a class="el" href="TargetTransformInfo_8h_source.html#l00433">llvm::TargetTransformInfo::UnrollingPreferences::Count</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00729">llvm::computeUnrollCount()</a>.</p>
 
 </div>
 </div>
@@ -444,9 +404,9 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static MDNode * GetUnrollMetadataForLoop </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1MDNode.html">MDNode</a> * GetUnrollMetadataForLoop </td>
           <td>(</td>
-          <td class="paramtype">const Loop *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
@@ -470,6 +430,8 @@ template&lt;typename RangeT &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="LoopUnrollPass_8cpp_source.html#l00659">659</a> of file <a class="el" href="LoopUnrollPass_8cpp_source.html">LoopUnrollPass.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="LoopInfo_8cpp_source.html#l00450">llvm::Loop::getLoopID()</a>, and <a class="el" href="LoopUnroll_8cpp_source.html#l00960">llvm::GetUnrollMetadata()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00677">HasRuntimeUnrollDisablePragma()</a>, <a class="el" href="LoopUnrollPass_8cpp_source.html#l00672">HasUnrollEnablePragma()</a>, <a class="el" href="LoopUnrollPass_8cpp_source.html#l00666">HasUnrollFullPragma()</a>, and <a class="el" href="LoopUnrollPass_8cpp_source.html#l00683">UnrollCountPragmaValue()</a>.</p>
 
 </div>
@@ -484,9 +446,9 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool HasRuntimeUnrollDisablePragma </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> HasRuntimeUnrollDisablePragma </td>
           <td>(</td>
-          <td class="paramtype">const Loop *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>L</em></td><td>)</td>
           <td></td>
         </tr>
@@ -502,6 +464,8 @@ template&lt;typename RangeT &gt; </div>
 
 <p class="reference">References <a class="el" href="LoopUnrollPass_8cpp_source.html#l00659">GetUnrollMetadataForLoop()</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00729">llvm::computeUnrollCount()</a>.</p>
+
 </div>
 </div>
 <a id="a370e937ef22e6fd1d724dc224deb3c90" name="a370e937ef22e6fd1d724dc224deb3c90"></a>
@@ -514,9 +478,9 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool HasUnrollEnablePragma </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> HasUnrollEnablePragma </td>
           <td>(</td>
-          <td class="paramtype">const Loop *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>L</em></td><td>)</td>
           <td></td>
         </tr>
@@ -532,6 +496,8 @@ template&lt;typename RangeT &gt; </div>
 
 <p class="reference">References <a class="el" href="LoopUnrollPass_8cpp_source.html#l00659">GetUnrollMetadataForLoop()</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00729">llvm::computeUnrollCount()</a>.</p>
+
 </div>
 </div>
 <a id="accd8f7df275ca8d78c3a51540539e529" name="accd8f7df275ca8d78c3a51540539e529"></a>
@@ -544,9 +510,9 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool HasUnrollFullPragma </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> HasUnrollFullPragma </td>
           <td>(</td>
-          <td class="paramtype">const Loop *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>L</em></td><td>)</td>
           <td></td>
         </tr>
@@ -562,10 +528,12 @@ template&lt;typename RangeT &gt; </div>
 
 <p class="reference">References <a class="el" href="LoopUnrollPass_8cpp_source.html#l00659">GetUnrollMetadataForLoop()</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00729">llvm::computeUnrollCount()</a>.</p>
+
 </div>
 </div>
-<a id="af880627859d2df0f9170d84ebecb7727" name="af880627859d2df0f9170d84ebecb7727"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af880627859d2df0f9170d84ebecb7727">&#9670;&nbsp;</a></span>PragmaUnrollThreshold()</h2>
+<a id="a6e7f72de79991d23957e3b3aac4789a5" name="a6e7f72de79991d23957e3b3aac4789a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e7f72de79991d23957e3b3aac4789a5">&#9670;&nbsp;</a></span>tryToUnrollLoop()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -574,7 +542,262 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; PragmaUnrollThreshold </td>
+          <td class="memname">static <a class="el" href="namespacellvm.html#a8c861ddf753ab3690437dceaadf5c7e1">LoopUnrollResult</a> tryToUnrollLoop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramname"><em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
+          <td class="paramname"><em>DT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1LoopInfo.html">LoopInfo</a> *&#160;</td>
+          <td class="paramname"><em>LI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
+          <td class="paramname"><em>SE</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>TTI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1AssumptionCache.html">AssumptionCache</a> &amp;&#160;</td>
+          <td class="paramname"><em>AC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1OptimizationRemarkEmitter.html">OptimizationRemarkEmitter</a> &amp;&#160;</td>
+          <td class="paramname"><em>ORE</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BlockFrequencyInfo.html">BlockFrequencyInfo</a> *&#160;</td>
+          <td class="paramname"><em>BFI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ProfileSummaryInfo.html">ProfileSummaryInfo</a> *&#160;</td>
+          <td class="paramname"><em>PSI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramname"><em>PreserveLCSSA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>OptLevel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramname"><em>OnlyWhenForced</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramname"><em>ForgetAllSCEV</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td>
+          <td class="paramname"><em>ProvidedCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td>
+          <td class="paramname"><em>ProvidedThreshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td>
+          <td class="paramname"><em>ProvidedAllowPartial</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td>
+          <td class="paramname"><em>ProvidedRuntime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td>
+          <td class="paramname"><em>ProvidedUpperBound</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td>
+          <td class="paramname"><em>ProvidedAllowPeeling</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="LoopUnrollPass_8cpp_source.html#l00976">976</a> of file <a class="el" href="LoopUnrollPass_8cpp_source.html">LoopUnrollPass.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="TargetTransformInfo_8h_source.html#l00466">llvm::TargetTransformInfo::UnrollingPreferences::AllowExpensiveTripCount</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00463">llvm::TargetTransformInfo::UnrollingPreferences::AllowRemainder</a>, <a class="el" href="LoopUnrollPass_8cpp_source.html#l00632">llvm::ApproximateLoopSize()</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00454">llvm::TargetTransformInfo::UnrollingPreferences::BEInsns</a>, <a class="el" href="CodeMetrics_8cpp_source.html#l00070">llvm::CodeMetrics::collectEphemeralValues()</a>, <a class="el" href="LoopUnrollPass_8cpp_source.html#l00729">llvm::computeUnrollCount()</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00433">llvm::TargetTransformInfo::UnrollingPreferences::Count</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00469">llvm::TargetTransformInfo::UnrollingPreferences::Force</a>, <a class="el" href="LoopUnrollPass_8cpp_source.html#l00176">llvm::gatherUnrollingPreferences()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00049">llvm::LoopBase&lt; BlockT, LoopT &gt;::getExitingBlock()</a>, <a class="el" href="LoopInfo_8h_source.html#l00102">llvm::LoopBase&lt; BlockT, LoopT &gt;::getHeader()</a>, <a class="el" href="LoopInfo_8cpp_source.html#l00450">llvm::Loop::getLoopID()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00211">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopLatch()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l06524">llvm::ScalarEvolution::getSmallConstantMaxTripCount()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l06506">llvm::ScalarEvolution::getSmallConstantTripCount()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l06530">llvm::ScalarEvolution::getSmallConstantTripMultiple()</a>, <a class="el" href="Function_8h_source.html#l00622">llvm::Function::hasOptSize()</a>, <a class="el" href="LoopUtils_8cpp_source.html#l00335">llvm::hasUnrollTransformation()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l06606">llvm::ScalarEvolution::isBackedgeTakenCountMaxOrZero()</a>, <a class="el" href="LoopInfo_8h_source.html#l00205">llvm::LoopBase&lt; BlockT, LoopT &gt;::isLoopExiting()</a>, <a class="el" href="LoopInfo_8cpp_source.html#l00425">llvm::Loop::isLoopSimplifyForm()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="UnrollLoop_8h_source.html#l00041">llvm::LLVMLoopUnrollFollowupAll</a>, <a class="el" href="UnrollLoop_8h_source.html#l00044">llvm::LLVMLoopUnrollFollowupRemainder</a>, <a class="el" href="UnrollLoop_8h_source.html#l00042">llvm::LLVMLoopUnrollFollowupUnrolled</a>, <a class="el" href="LoopUtils_8cpp_source.html#l00250">llvm::makeFollowupLoopID()</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00457">llvm::TargetTransformInfo::UnrollingPreferences::Partial</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00424">llvm::TargetTransformInfo::UnrollingPreferences::PartialThreshold</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00438">llvm::TargetTransformInfo::UnrollingPreferences::PeelCount</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00461">llvm::TargetTransformInfo::UnrollingPreferences::Runtime</a>, <a class="el" href="LoopInfo_8cpp_source.html#l00486">llvm::Loop::setLoopAlreadyUnrolled()</a>, <a class="el" href="LoopInfo_8cpp_source.html#l00474">llvm::Loop::setLoopID()</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00407">llvm::TargetTransformInfo::UnrollingPreferences::Threshold</a>, <a class="el" href="LoopUtils_8h_source.html#l00228">llvm::TM_Disable</a>, <a class="el" href="LoopUtils_8h_source.html#l00225">llvm::TM_Enable</a>, <a class="el" href="LoopUnroll_8cpp_source.html#l00276">llvm::UnrollLoop()</a>, <a class="el" href="LoopUnrollPass_8cpp.html#a64e96407611c9592708be5bebff9b529">UnrollMaxUpperBound</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00475">llvm::TargetTransformInfo::UnrollingPreferences::UnrollRemainder</a>, and <a class="el" href="TargetTransformInfo_8h_source.html#l00471">llvm::TargetTransformInfo::UnrollingPreferences::UpperBound</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l01374">llvm::LoopUnrollPass::run()</a>, and <a class="el" href="LoopUnrollPass_8cpp_source.html#l01261">llvm::LoopFullUnrollPass::run()</a>.</p>
+
+</div>
+</div>
+<a id="a219387ddfb67c9743065fed1986fa802" name="a219387ddfb67c9743065fed1986fa802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a219387ddfb67c9743065fed1986fa802">&#9670;&nbsp;</a></span>UnrollCountPragmaValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classunsigned.html">unsigned</a> UnrollCountPragmaValue </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramname"><em>L</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="LoopUnrollPass_8cpp_source.html#l00683">683</a> of file <a class="el" href="LoopUnrollPass_8cpp_source.html">LoopUnrollPass.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Metadata_8h_source.html#l01074">llvm::MDNode::getNumOperands()</a>, <a class="el" href="Metadata_8h_source.html#l01068">llvm::MDNode::getOperand()</a>, and <a class="el" href="LoopUnrollPass_8cpp_source.html#l00659">GetUnrollMetadataForLoop()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00729">llvm::computeUnrollCount()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a154caa5c4e4265d0af53c109c7a36922" name="a154caa5c4e4265d0af53c109c7a36922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a154caa5c4e4265d0af53c109c7a36922">&#9670;&nbsp;</a></span>FlatLoopTripCountThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; FlatLoopTripCountThreshold(&quot;flat-loop-tripcount-threshold&quot;, cl::init(5), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;If the runtime tripcount for the loop is lower than the &quot; &quot;threshold, the loop is considered as flat and will be less &quot; &quot;aggressively unrolled.&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;flat-loop-tripcount-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(5)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;If the runtime tripcount for the loop is lower than the &quot; &quot;threshold, the loop is considered as flat and will be less &quot; &quot;aggressively unrolled.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00729">llvm::computeUnrollCount()</a>.</p>
+
+</div>
+</div>
+<a id="aa2e7d58f32215958839220d8ffbde13b" name="aa2e7d58f32215958839220d8ffbde13b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2e7d58f32215958839220d8ffbde13b">&#9670;&nbsp;</a></span>NoThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classunsigned.html">unsigned</a> NoThreshold = std::numeric_limits&lt;<a class="el" href="classunsigned.html">unsigned</a>&gt;::max()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A magic value for use with the Threshold parameter to indicate that the loop unroll should be performed regardless of how much code expansion would result. </p>
+
+<p class="definition">Definition at line <a class="el" href="LoopUnrollPass_8cpp_source.html#l00172">172</a> of file <a class="el" href="LoopUnrollPass_8cpp_source.html">LoopUnrollPass.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00729">llvm::computeUnrollCount()</a>.</p>
+
+</div>
+</div>
+<a id="aed926bb2602046eac2597c1a527e2872" name="aed926bb2602046eac2597c1a527e2872"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed926bb2602046eac2597c1a527e2872">&#9670;&nbsp;</a></span>PragmaUnrollThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; PragmaUnrollThreshold(&quot;pragma-unroll-threshold&quot;, cl::init(16 *1024), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Unrolled size limit for <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> with an unroll(full) or &quot; &quot;unroll_count pragma.&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;pragma-unroll-threshold&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -594,7 +817,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Unrolled size limit for <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> with an unroll(full) or &quot; &quot;unroll_count pragma.&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Unrolled size limit for <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> with an unroll(full) or &quot; &quot;unroll_count pragma.&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -610,10 +833,12 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00729">llvm::computeUnrollCount()</a>.</p>
+
 </div>
 </div>
-<a id="a6e7f72de79991d23957e3b3aac4789a5" name="a6e7f72de79991d23957e3b3aac4789a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e7f72de79991d23957e3b3aac4789a5">&#9670;&nbsp;</a></span>tryToUnrollLoop()</h2>
+<a id="aeef786995f3e797e000d856135b36b21" name="aeef786995f3e797e000d856135b36b21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeef786995f3e797e000d856135b36b21">&#9670;&nbsp;</a></span>UnrollAllowPartial</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -622,149 +847,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static LoopUnrollResult tryToUnrollLoop </td>
-          <td>(</td>
-          <td class="paramtype">Loop *&#160;</td>
-          <td class="paramname"><em>L</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
-          <td class="paramname"><em>DT</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">LoopInfo *&#160;</td>
-          <td class="paramname"><em>LI</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
-          <td class="paramname"><em>SE</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const TargetTransformInfo &amp;&#160;</td>
-          <td class="paramname"><em>TTI</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">AssumptionCache &amp;&#160;</td>
-          <td class="paramname"><em>AC</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">OptimizationRemarkEmitter &amp;&#160;</td>
-          <td class="paramname"><em>ORE</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">BlockFrequencyInfo *&#160;</td>
-          <td class="paramname"><em>BFI</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ProfileSummaryInfo *&#160;</td>
-          <td class="paramname"><em>PSI</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>PreserveLCSSA</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>OptLevel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>OnlyWhenForced</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ForgetAllSCEV</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Optional&lt; unsigned &gt;&#160;</td>
-          <td class="paramname"><em>ProvidedCount</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Optional&lt; unsigned &gt;&#160;</td>
-          <td class="paramname"><em>ProvidedThreshold</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Optional&lt; bool &gt;&#160;</td>
-          <td class="paramname"><em>ProvidedAllowPartial</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Optional&lt; bool &gt;&#160;</td>
-          <td class="paramname"><em>ProvidedRuntime</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Optional&lt; bool &gt;&#160;</td>
-          <td class="paramname"><em>ProvidedUpperBound</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Optional&lt; bool &gt;&#160;</td>
-          <td class="paramname"><em>ProvidedAllowPeeling</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="LoopUnrollPass_8cpp_source.html#l00976">976</a> of file <a class="el" href="LoopUnrollPass_8cpp_source.html">LoopUnrollPass.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="LoopUnrollPass_8cpp.html#ad98398cfa89bce8a6031b158aff7d02c">UnrollMaxUpperBound()</a>.</p>
-
-</div>
-</div>
-<a id="a07bb1f4f004388d85af7bb4980de0f95" name="a07bb1f4f004388d85af7bb4980de0f95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07bb1f4f004388d85af7bb4980de0f95">&#9670;&nbsp;</a></span>UnrollAllowPartial()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; UnrollAllowPartial </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; UnrollAllowPartial(&quot;unroll-allow-partial&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allows <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> to be partially unrolled until &quot; &quot;-unroll-threshold loop size is reached.&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-allow-partial&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -778,7 +861,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Allows <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> to be partially unrolled until &quot; &quot;-unroll-threshold loop size is reached.&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allows <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> to be partially unrolled until &quot; &quot;-unroll-threshold loop size is reached.&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -794,10 +877,12 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00176">llvm::gatherUnrollingPreferences()</a>.</p>
+
 </div>
 </div>
-<a id="aa60f561fb6c55bfcdbde427cb9c3d992" name="aa60f561fb6c55bfcdbde427cb9c3d992"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa60f561fb6c55bfcdbde427cb9c3d992">&#9670;&nbsp;</a></span>UnrollAllowPeeling()</h2>
+<a id="a626a61b9d8aa04db77aaff8e96059f93" name="a626a61b9d8aa04db77aaff8e96059f93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a626a61b9d8aa04db77aaff8e96059f93">&#9670;&nbsp;</a></span>UnrollAllowPeeling</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -806,7 +891,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; UnrollAllowPeeling </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; UnrollAllowPeeling(&quot;unroll-allow-peeling&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allows <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> to be peeled when the dynamic &quot; &quot;trip count is known to be low.&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-allow-peeling&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -826,7 +911,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Allows <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> to be peeled when the dynamic &quot; &quot;trip count is known to be low.&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allows <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> to be peeled when the dynamic &quot; &quot;trip count is known to be low.&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -842,10 +927,12 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00176">llvm::gatherUnrollingPreferences()</a>.</p>
+
 </div>
 </div>
-<a id="acf3224d83546f79de3e44823f73f92dd" name="acf3224d83546f79de3e44823f73f92dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf3224d83546f79de3e44823f73f92dd">&#9670;&nbsp;</a></span>UnrollAllowRemainder()</h2>
+<a id="a7ea895a3cf11f08534d53045318df8f8" name="a7ea895a3cf11f08534d53045318df8f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea895a3cf11f08534d53045318df8f8">&#9670;&nbsp;</a></span>UnrollAllowRemainder</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -854,7 +941,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; UnrollAllowRemainder </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; UnrollAllowRemainder(&quot;unroll-allow-remainder&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allow generation of a loop <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> (extra iterations) &quot; &quot;when unrolling a loop.&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-allow-remainder&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -868,7 +955,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Allow generation of a loop <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> (extra iterations) &quot; &quot;when unrolling a loop.&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allow generation of a loop <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> (extra iterations) &quot; &quot;when unrolling a loop.&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -884,10 +971,12 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00176">llvm::gatherUnrollingPreferences()</a>.</p>
+
 </div>
 </div>
-<a id="adb7f30404c9f6ed541a5182d929835da" name="adb7f30404c9f6ed541a5182d929835da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb7f30404c9f6ed541a5182d929835da">&#9670;&nbsp;</a></span>UnrollCount()</h2>
+<a id="a0623a79f9be44774a206d71ccced388e" name="a0623a79f9be44774a206d71ccced388e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0623a79f9be44774a206d71ccced388e">&#9670;&nbsp;</a></span>UnrollCount</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -896,7 +985,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; UnrollCount </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; UnrollCount(&quot;unroll-count&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Use this unroll count for all <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> including those with &quot; &quot;unroll_count pragma <a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">values</a>, for testing purposes&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-count&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -910,7 +999,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Use this unroll count for all <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> including those with &quot; &quot;unroll_count pragma <a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">values</a>, for testing purposes&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Use this unroll count for all <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> including those with &quot; &quot;unroll_count pragma <a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">values</a>, for testing purposes&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -926,10 +1015,12 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00729">llvm::computeUnrollCount()</a>.</p>
+
 </div>
 </div>
-<a id="a219387ddfb67c9743065fed1986fa802" name="a219387ddfb67c9743065fed1986fa802"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a219387ddfb67c9743065fed1986fa802">&#9670;&nbsp;</a></span>UnrollCountPragmaValue()</h2>
+<a id="a5dfbe5cfe55145abbfba19021cb34771" name="a5dfbe5cfe55145abbfba19021cb34771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dfbe5cfe55145abbfba19021cb34771">&#9670;&nbsp;</a></span>UnrollFullMaxCount</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -938,37 +1029,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static unsigned UnrollCountPragmaValue </td>
-          <td>(</td>
-          <td class="paramtype">const Loop *&#160;</td>
-          <td class="paramname"><em>L</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="LoopUnrollPass_8cpp_source.html#l00683">683</a> of file <a class="el" href="LoopUnrollPass_8cpp_source.html">LoopUnrollPass.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="LoopUnrollPass_8cpp_source.html#l00659">GetUnrollMetadataForLoop()</a>.</p>
-
-</div>
-</div>
-<a id="aaf1cfe91b7a7c78528050e46cb1b2c64" name="aaf1cfe91b7a7c78528050e46cb1b2c64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf1cfe91b7a7c78528050e46cb1b2c64">&#9670;&nbsp;</a></span>UnrollFullMaxCount()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; UnrollFullMaxCount </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; UnrollFullMaxCount(&quot;unroll-full-max-count&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>( &quot;Set the max unroll count for full unrolling, for testing purposes&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-full-max-count&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -982,7 +1043,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Set the max unroll count for full unrolling, for testing purposes&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>( &quot;Set the max unroll count for full unrolling, for testing purposes&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -998,10 +1059,12 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00176">llvm::gatherUnrollingPreferences()</a>.</p>
+
 </div>
 </div>
-<a id="a16fac99af1572e7817422bebaa3c4482" name="a16fac99af1572e7817422bebaa3c4482"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16fac99af1572e7817422bebaa3c4482">&#9670;&nbsp;</a></span>UnrollMaxCount()</h2>
+<a id="a03384de1aaf68851bc758d5f93e70717" name="a03384de1aaf68851bc758d5f93e70717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03384de1aaf68851bc758d5f93e70717">&#9670;&nbsp;</a></span>UnrollMaxCount</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1010,7 +1073,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; UnrollMaxCount </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; UnrollMaxCount(&quot;unroll-max-count&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Set the max unroll count for partial and runtime unrolling, for&quot; &quot;testing purposes&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-max-count&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -1024,7 +1087,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Set the max unroll count for partial and runtime unrolling, for&quot; &quot;testing purposes&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Set the max unroll count for partial and runtime unrolling, for&quot; &quot;testing purposes&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1040,10 +1103,12 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00176">llvm::gatherUnrollingPreferences()</a>.</p>
+
 </div>
 </div>
-<a id="a75e238daf0704930ac5297dd970743c1" name="a75e238daf0704930ac5297dd970743c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75e238daf0704930ac5297dd970743c1">&#9670;&nbsp;</a></span>UnrollMaxIterationsCountToAnalyze()</h2>
+<a id="a29817c06c04a3406b65b627b160988f5" name="a29817c06c04a3406b65b627b160988f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29817c06c04a3406b65b627b160988f5">&#9670;&nbsp;</a></span>UnrollMaxIterationsCountToAnalyze</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1052,7 +1117,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; UnrollMaxIterationsCountToAnalyze </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; UnrollMaxIterationsCountToAnalyze(&quot;unroll-max-iteration-count-to-analyze&quot;, cl::init(10), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Don't allow loop unrolling to simulate more than this number of&quot; &quot;iterations when <a class="el" href="BoundsChecking_8cpp.html#aa3457fd2a1e7ae19c2a53d231b99517b">checking</a> full unroll profitability&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-max-iteration-count-to-analyze&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -1072,7 +1137,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Don't allow loop unrolling to simulate more than this number of&quot; &quot;iterations when <a class="el" href="BoundsChecking_8cpp.html#aa3457fd2a1e7ae19c2a53d231b99517b">checking</a> full unroll profitability&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Don't allow loop unrolling to simulate more than this number of&quot; &quot;iterations when <a class="el" href="BoundsChecking_8cpp.html#aa3457fd2a1e7ae19c2a53d231b99517b">checking</a> full unroll profitability&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1092,8 +1157,8 @@ template&lt;typename RangeT &gt; </div>
 
 </div>
 </div>
-<a id="a1b65ecd62d61f0ebbd703b2b968c4d7e" name="a1b65ecd62d61f0ebbd703b2b968c4d7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b65ecd62d61f0ebbd703b2b968c4d7e">&#9670;&nbsp;</a></span>UnrollMaxPercentThresholdBoost()</h2>
+<a id="ae467abf6e23fad8a3238fcadcd8d36d0" name="ae467abf6e23fad8a3238fcadcd8d36d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae467abf6e23fad8a3238fcadcd8d36d0">&#9670;&nbsp;</a></span>UnrollMaxPercentThresholdBoost</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1102,7 +1167,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; UnrollMaxPercentThresholdBoost </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; UnrollMaxPercentThresholdBoost(&quot;unroll-max-percent-threshold-boost&quot;, cl::init(400), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The maximum 'boost' (represented as a percentage &gt;= 100) applied &quot; &quot;to the threshold when aggressively unrolling a loop due to the &quot; &quot;dynamic cost savings. If completely unrolling a loop will <a class="el" href="LoopStrengthReduce_8cpp.html#a6d827fc34f1b4371a0b7183d3ca5bcac">reduce</a> &quot; &quot;the total runtime from <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a> to <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y</a>, we boost the loop unroll &quot; &quot;threshold to DefaultThreshold*std::min(MaxPercentThresholdBoost, &quot; &quot;<a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>/<a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y</a>). This limit avoids excessive code bloat.&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-max-percent-threshold-boost&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -1122,7 +1187,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;The maximum 'boost' (represented as a percentage &gt;= 100) applied &quot; &quot;to the threshold when aggressively unrolling a loop due to the &quot; &quot;dynamic cost savings. If completely unrolling a loop will <a class="el" href="LoopStrengthReduce_8cpp.html#a6d827fc34f1b4371a0b7183d3ca5bcac">reduce</a> &quot; &quot;the total runtime from <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a> to <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y</a>, we boost the loop unroll &quot; &quot;threshold to DefaultThreshold*std::min(MaxPercentThresholdBoost, &quot; &quot;<a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>/<a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y</a>). This limit avoids excessive code bloat.&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The maximum 'boost' (represented as a percentage &gt;= 100) applied &quot; &quot;to the threshold when aggressively unrolling a loop due to the &quot; &quot;dynamic cost savings. If completely unrolling a loop will <a class="el" href="LoopStrengthReduce_8cpp.html#a6d827fc34f1b4371a0b7183d3ca5bcac">reduce</a> &quot; &quot;the total runtime from <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a> to <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y</a>, we boost the loop unroll &quot; &quot;threshold to DefaultThreshold*std::min(MaxPercentThresholdBoost, &quot; &quot;<a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>/<a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y</a>). This limit avoids excessive code bloat.&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1138,10 +1203,12 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00176">llvm::gatherUnrollingPreferences()</a>.</p>
+
 </div>
 </div>
-<a id="ad98398cfa89bce8a6031b158aff7d02c" name="ad98398cfa89bce8a6031b158aff7d02c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad98398cfa89bce8a6031b158aff7d02c">&#9670;&nbsp;</a></span>UnrollMaxUpperBound()</h2>
+<a id="a64e96407611c9592708be5bebff9b529" name="a64e96407611c9592708be5bebff9b529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64e96407611c9592708be5bebff9b529">&#9670;&nbsp;</a></span>UnrollMaxUpperBound</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1150,7 +1217,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; UnrollMaxUpperBound </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; UnrollMaxUpperBound(&quot;unroll-max-upperbound&quot;, cl::init(8), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>( &quot;The max of trip count upper bound that is considered in unrolling&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-max-upperbound&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -1170,7 +1237,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;The max of trip count upper bound that is considered in unrolling&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>( &quot;The max of trip count upper bound that is considered in unrolling&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1186,12 +1253,12 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00976">tryToUnrollLoop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00176">llvm::gatherUnrollingPreferences()</a>, and <a class="el" href="LoopUnrollPass_8cpp_source.html#l00976">tryToUnrollLoop()</a>.</p>
 
 </div>
 </div>
-<a id="a7975437a12c2beb830b9b0561f652089" name="a7975437a12c2beb830b9b0561f652089"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7975437a12c2beb830b9b0561f652089">&#9670;&nbsp;</a></span>UnrollPartialThreshold()</h2>
+<a id="a7e49d89441ec06d7187568cb0adcf1c2" name="a7e49d89441ec06d7187568cb0adcf1c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e49d89441ec06d7187568cb0adcf1c2">&#9670;&nbsp;</a></span>UnrollPartialThreshold</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1200,7 +1267,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; UnrollPartialThreshold </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; UnrollPartialThreshold(&quot;unroll-partial-threshold&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The cost threshold for partial loop unrolling&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-partial-threshold&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -1214,7 +1281,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;The cost threshold for partial loop unrolling&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The cost threshold for partial loop unrolling&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1230,10 +1297,12 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00176">llvm::gatherUnrollingPreferences()</a>.</p>
+
 </div>
 </div>
-<a id="a19a16349d3bd414d860d7230b1161bcd" name="a19a16349d3bd414d860d7230b1161bcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19a16349d3bd414d860d7230b1161bcd">&#9670;&nbsp;</a></span>UnrollPeelCount()</h2>
+<a id="aa9badf8f59af8beee7f66a5252019f70" name="aa9badf8f59af8beee7f66a5252019f70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9badf8f59af8beee7f66a5252019f70">&#9670;&nbsp;</a></span>UnrollPeelCount</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1242,7 +1311,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; UnrollPeelCount </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; UnrollPeelCount(&quot;unroll-peel-count&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Set the unroll peeling count, for testing purposes&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-peel-count&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -1256,7 +1325,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Set the unroll peeling count, for testing purposes&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Set the unroll peeling count, for testing purposes&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1272,10 +1341,12 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00176">llvm::gatherUnrollingPreferences()</a>.</p>
+
 </div>
 </div>
-<a id="a4504337b36054f800f53a5677e53cd4b" name="a4504337b36054f800f53a5677e53cd4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4504337b36054f800f53a5677e53cd4b">&#9670;&nbsp;</a></span>UnrollRevisitChildLoops()</h2>
+<a id="ab03face15c6ea88b8f87cd795f20b482" name="ab03face15c6ea88b8f87cd795f20b482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab03face15c6ea88b8f87cd795f20b482">&#9670;&nbsp;</a></span>UnrollRevisitChildLoops</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1284,7 +1355,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; UnrollRevisitChildLoops </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; UnrollRevisitChildLoops(&quot;unroll-revisit-child-loops&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enqueue and re-visit child <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> in the loop PM after unrolling. &quot; &quot;This shouldn't typically be needed as child <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> (or their &quot; &quot;clones) were already visited.&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-revisit-child-loops&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -1298,7 +1369,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Enqueue and re-visit child <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> in the loop PM after unrolling. &quot; &quot;This shouldn't typically be needed as child <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> (or their &quot; &quot;clones) were already visited.&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enqueue and re-visit child <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> in the loop PM after unrolling. &quot; &quot;This shouldn't typically be needed as child <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> (or their &quot; &quot;clones) were already visited.&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1314,10 +1385,12 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l01261">llvm::LoopFullUnrollPass::run()</a>.</p>
+
 </div>
 </div>
-<a id="ac95478f11dc74306a4d520f8a894757a" name="ac95478f11dc74306a4d520f8a894757a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac95478f11dc74306a4d520f8a894757a">&#9670;&nbsp;</a></span>UnrollRuntime()</h2>
+<a id="a1b72f3e985a58fe47cb648561126d13f" name="a1b72f3e985a58fe47cb648561126d13f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b72f3e985a58fe47cb648561126d13f">&#9670;&nbsp;</a></span>UnrollRuntime</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1326,7 +1399,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; UnrollRuntime </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; UnrollRuntime(&quot;unroll-runtime&quot;, cl::ZeroOrMore, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Unroll <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> with run-time trip counts&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-runtime&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -1346,7 +1419,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Unroll <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> with run-time trip counts&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Unroll <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> with run-time trip counts&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1362,10 +1435,12 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00176">llvm::gatherUnrollingPreferences()</a>.</p>
+
 </div>
 </div>
-<a id="a7f84e3cc8680d29865f80d5bf5c12969" name="a7f84e3cc8680d29865f80d5bf5c12969"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f84e3cc8680d29865f80d5bf5c12969">&#9670;&nbsp;</a></span>UnrollThreshold()</h2>
+<a id="ab5709dc220a64908090b46d1d1f6309b" name="ab5709dc220a64908090b46d1d1f6309b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5709dc220a64908090b46d1d1f6309b">&#9670;&nbsp;</a></span>UnrollThreshold</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1374,7 +1449,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; UnrollThreshold </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; UnrollThreshold(&quot;unroll-threshold&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The cost threshold for loop unrolling&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-threshold&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -1388,7 +1463,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;The cost threshold for loop unrolling&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The cost threshold for loop unrolling&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1404,10 +1479,12 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00176">llvm::gatherUnrollingPreferences()</a>.</p>
+
 </div>
 </div>
-<a id="a7bb0b325ce5cf173d95ef44752ad7087" name="a7bb0b325ce5cf173d95ef44752ad7087"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bb0b325ce5cf173d95ef44752ad7087">&#9670;&nbsp;</a></span>UnrollUnrollRemainder()</h2>
+<a id="a4ec8c2b4db0e83cb3937fdd1abdf5ae8" name="a4ec8c2b4db0e83cb3937fdd1abdf5ae8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ec8c2b4db0e83cb3937fdd1abdf5ae8">&#9670;&nbsp;</a></span>UnrollUnrollRemainder</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1416,7 +1493,7 @@ template&lt;typename RangeT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; UnrollUnrollRemainder </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; UnrollUnrollRemainder(&quot;unroll-remainder&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allow the loop <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> to be unrolled.&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;unroll-remainder&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -1430,7 +1507,7 @@ template&lt;typename RangeT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Allow the loop <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> to be unrolled.&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allow the loop <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> to be unrolled.&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1446,39 +1523,14 @@ template&lt;typename RangeT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="aa2e7d58f32215958839220d8ffbde13b" name="aa2e7d58f32215958839220d8ffbde13b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2e7d58f32215958839220d8ffbde13b">&#9670;&nbsp;</a></span>NoThreshold</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const unsigned NoThreshold = std::numeric_limits&lt;unsigned&gt;::max()</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A magic value for use with the Threshold parameter to indicate that the loop unroll should be performed regardless of how much code expansion would result. </p>
-
-<p class="definition">Definition at line <a class="el" href="LoopUnrollPass_8cpp_source.html#l00172">172</a> of file <a class="el" href="LoopUnrollPass_8cpp_source.html">LoopUnrollPass.cpp</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LoopUnrollPass_8cpp_source.html#l00176">llvm::gatherUnrollingPreferences()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

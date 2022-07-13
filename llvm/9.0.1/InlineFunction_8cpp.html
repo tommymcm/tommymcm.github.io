@@ -52,7 +52,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">InlineFunction.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -65,48 +66,48 @@ $(function() {
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringExtras.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/iterator_range.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/BlockFrequencyInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/CallGraph.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/CaptureTracking.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/EHPersonalities.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/InstructionSimplify.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/VectorUtils.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DIBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DebugInfoMetadata.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DebugLoc.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
-<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
-<code>#include &quot;llvm/IR/MDBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/User.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/Cloning.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/ValueMapper.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BlockFrequencyInfo_8h_source.html">llvm/Analysis/BlockFrequencyInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CallGraph_8h_source.html">llvm/Analysis/CallGraph.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CaptureTracking_8h_source.html">llvm/Analysis/CaptureTracking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="EHPersonalities_8h_source.html">llvm/Analysis/EHPersonalities.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstructionSimplify_8h_source.html">llvm/Analysis/InstructionSimplify.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="VectorUtils_8h_source.html">llvm/Analysis/VectorUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DIBuilder_8h_source.html">llvm/IR/DIBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DebugInfoMetadata_8h_source.html">llvm/IR/DebugInfoMetadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DebugLoc_8h_source.html">llvm/IR/DebugLoc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MDBuilder_8h_source.html">llvm/IR/MDBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Cloning_8h_source.html">llvm/Transforms/Utils/Cloning.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueMapper_8h_source.html">llvm/Transforms/Utils/ValueMapper.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
@@ -120,77 +121,80 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ac57dae906fe8ac64efe52571121b0fe1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> = Function::ProfileCount</td></tr>
+<tr class="memitem:ac57dae906fe8ac64efe52571121b0fe1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> = <a class="el" href="classllvm_1_1Function_1_1ProfileCount.html">Function::ProfileCount</a></td></tr>
 <tr class="separator:ac57dae906fe8ac64efe52571121b0fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2af37358cf937d4298f5c5198bf91d34"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a2af37358cf937d4298f5c5198bf91d34">UnwindDestMemoTy</a> = DenseMap&lt; Instruction *, Value * &gt;</td></tr>
+<tr class="memitem:a2af37358cf937d4298f5c5198bf91d34"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a2af37358cf937d4298f5c5198bf91d34">UnwindDestMemoTy</a> = DenseMap&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;</td></tr>
 <tr class="separator:a2af37358cf937d4298f5c5198bf91d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6569a1deb77e8696421357af3dff2c5f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a6569a1deb77e8696421357af3dff2c5f">EnableNoAliasConversion</a> (&quot;enable-noalias-to-md-conversion&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, cl::desc(&quot;Convert noalias <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> to metadata during inlining.&quot;))</td></tr>
-<tr class="separator:a6569a1deb77e8696421357af3dff2c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaef339dd6477b77cd79503e9bbf0b46a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#aaef339dd6477b77cd79503e9bbf0b46a">PreserveAlignmentAssumptions</a> (&quot;preserve-alignment-assumptions-during-inlining&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, cl::desc(&quot;Convert align <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> to assumptions during inlining.&quot;))</td></tr>
-<tr class="separator:aaef339dd6477b77cd79503e9bbf0b46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac12dacafa8a30b2f9bfed5f3a022a612"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#ac12dacafa8a30b2f9bfed5f3a022a612">getParentPad</a> (Value *EHPad)</td></tr>
+<tr class="memitem:ac12dacafa8a30b2f9bfed5f3a022a612"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#ac12dacafa8a30b2f9bfed5f3a022a612">getParentPad</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *EHPad)</td></tr>
 <tr class="memdesc:ac12dacafa8a30b2f9bfed5f3a022a612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for getUnwindDestToken/getUnwindDestTokenHelper.  <a href="InlineFunction_8cpp.html#ac12dacafa8a30b2f9bfed5f3a022a612">More...</a><br /></td></tr>
 <tr class="separator:ac12dacafa8a30b2f9bfed5f3a022a612"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e19285f051b80099ed8b36c5c94eaf2"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a4e19285f051b80099ed8b36c5c94eaf2">getUnwindDestTokenHelper</a> (Instruction *EHPad, <a class="el" href="InlineFunction_8cpp.html#a2af37358cf937d4298f5c5198bf91d34">UnwindDestMemoTy</a> &amp;MemoMap)</td></tr>
+<tr class="memitem:a4e19285f051b80099ed8b36c5c94eaf2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a4e19285f051b80099ed8b36c5c94eaf2">getUnwindDestTokenHelper</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *EHPad, <a class="el" href="InlineFunction_8cpp.html#a2af37358cf937d4298f5c5198bf91d34">UnwindDestMemoTy</a> &amp;MemoMap)</td></tr>
 <tr class="memdesc:a4e19285f051b80099ed8b36c5c94eaf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for getUnwindDestToken that does the descendant-ward part of the search.  <a href="InlineFunction_8cpp.html#a4e19285f051b80099ed8b36c5c94eaf2">More...</a><br /></td></tr>
 <tr class="separator:a4e19285f051b80099ed8b36c5c94eaf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cc72cfbc837c8e89491b6357c358778"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a3cc72cfbc837c8e89491b6357c358778">getUnwindDestToken</a> (Instruction *EHPad, <a class="el" href="InlineFunction_8cpp.html#a2af37358cf937d4298f5c5198bf91d34">UnwindDestMemoTy</a> &amp;MemoMap)</td></tr>
+<tr class="memitem:a3cc72cfbc837c8e89491b6357c358778"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a3cc72cfbc837c8e89491b6357c358778">getUnwindDestToken</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *EHPad, <a class="el" href="InlineFunction_8cpp.html#a2af37358cf937d4298f5c5198bf91d34">UnwindDestMemoTy</a> &amp;MemoMap)</td></tr>
 <tr class="memdesc:a3cc72cfbc837c8e89491b6357c358778"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an EH pad, find where it unwinds.  <a href="InlineFunction_8cpp.html#a3cc72cfbc837c8e89491b6357c358778">More...</a><br /></td></tr>
 <tr class="separator:a3cc72cfbc837c8e89491b6357c358778"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ea5b2388bd9dc7e7fc902b5bd1e35e4"><td class="memItemLeft" align="right" valign="top">static BasicBlock *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a4ea5b2388bd9dc7e7fc902b5bd1e35e4">HandleCallsInBlockInlinedThroughInvoke</a> (BasicBlock *BB, BasicBlock *UnwindEdge, <a class="el" href="InlineFunction_8cpp.html#a2af37358cf937d4298f5c5198bf91d34">UnwindDestMemoTy</a> *FuncletUnwindMap=nullptr)</td></tr>
+<tr class="memitem:a4ea5b2388bd9dc7e7fc902b5bd1e35e4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a4ea5b2388bd9dc7e7fc902b5bd1e35e4">HandleCallsInBlockInlinedThroughInvoke</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *UnwindEdge, <a class="el" href="InlineFunction_8cpp.html#a2af37358cf937d4298f5c5198bf91d34">UnwindDestMemoTy</a> *FuncletUnwindMap=nullptr)</td></tr>
 <tr class="memdesc:a4ea5b2388bd9dc7e7fc902b5bd1e35e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">When we inline a basic block into an invoke, we have to turn all of the calls that can throw into invokes.  <a href="InlineFunction_8cpp.html#a4ea5b2388bd9dc7e7fc902b5bd1e35e4">More...</a><br /></td></tr>
 <tr class="separator:a4ea5b2388bd9dc7e7fc902b5bd1e35e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cbd6aad6f6b93f79dc435feab77550e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a4cbd6aad6f6b93f79dc435feab77550e">HandleInlinedLandingPad</a> (InvokeInst *II, BasicBlock *FirstNewBlock, ClonedCodeInfo &amp;InlinedCodeInfo)</td></tr>
+<tr class="memitem:a4cbd6aad6f6b93f79dc435feab77550e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a4cbd6aad6f6b93f79dc435feab77550e">HandleInlinedLandingPad</a> (<a class="el" href="classllvm_1_1InvokeInst.html">InvokeInst</a> *II, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *FirstNewBlock, <a class="el" href="structllvm_1_1ClonedCodeInfo.html">ClonedCodeInfo</a> &amp;InlinedCodeInfo)</td></tr>
 <tr class="memdesc:a4cbd6aad6f6b93f79dc435feab77550e"><td class="mdescLeft">&#160;</td><td class="mdescRight">If we inlined an invoke site, we need to convert calls in the body of the inlined function into invokes.  <a href="InlineFunction_8cpp.html#a4cbd6aad6f6b93f79dc435feab77550e">More...</a><br /></td></tr>
 <tr class="separator:a4cbd6aad6f6b93f79dc435feab77550e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac69c9cf4e552a52d5065e94dc023f82"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#aac69c9cf4e552a52d5065e94dc023f82">HandleInlinedEHPad</a> (InvokeInst *II, BasicBlock *FirstNewBlock, ClonedCodeInfo &amp;InlinedCodeInfo)</td></tr>
+<tr class="memitem:aac69c9cf4e552a52d5065e94dc023f82"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#aac69c9cf4e552a52d5065e94dc023f82">HandleInlinedEHPad</a> (<a class="el" href="classllvm_1_1InvokeInst.html">InvokeInst</a> *II, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *FirstNewBlock, <a class="el" href="structllvm_1_1ClonedCodeInfo.html">ClonedCodeInfo</a> &amp;InlinedCodeInfo)</td></tr>
 <tr class="memdesc:aac69c9cf4e552a52d5065e94dc023f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">If we inlined an invoke site, we need to convert calls in the body of the inlined function into invokes.  <a href="InlineFunction_8cpp.html#aac69c9cf4e552a52d5065e94dc023f82">More...</a><br /></td></tr>
 <tr class="separator:aac69c9cf4e552a52d5065e94dc023f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3faa7edd99cde25e2d08a0f12d2142d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a3faa7edd99cde25e2d08a0f12d2142d5">PropagateParallelLoopAccessMetadata</a> (CallSite CS, ValueToValueMapTy &amp;VMap)</td></tr>
+<tr class="memitem:a3faa7edd99cde25e2d08a0f12d2142d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a3faa7edd99cde25e2d08a0f12d2142d5">PropagateParallelLoopAccessMetadata</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS, <a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;VMap)</td></tr>
 <tr class="memdesc:a3faa7edd99cde25e2d08a0f12d2142d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">When inlining a call site that has !llvm.mem.parallel_loop_access or llvm.access.group metadata, that metadata should be propagated to all memory-accessing cloned instructions.  <a href="InlineFunction_8cpp.html#a3faa7edd99cde25e2d08a0f12d2142d5">More...</a><br /></td></tr>
 <tr class="separator:a3faa7edd99cde25e2d08a0f12d2142d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ba6df3e5b46d5c05a781a9828e9c41a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a9ba6df3e5b46d5c05a781a9828e9c41a">CloneAliasScopeMetadata</a> (CallSite CS, ValueToValueMapTy &amp;VMap)</td></tr>
+<tr class="memitem:a9ba6df3e5b46d5c05a781a9828e9c41a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a9ba6df3e5b46d5c05a781a9828e9c41a">CloneAliasScopeMetadata</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS, <a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;VMap)</td></tr>
 <tr class="memdesc:a9ba6df3e5b46d5c05a781a9828e9c41a"><td class="mdescLeft">&#160;</td><td class="mdescRight">When inlining a function that contains noalias scope metadata, this metadata needs to be cloned so that the inlined blocks have different "unique scopes" at every call site.  <a href="InlineFunction_8cpp.html#a9ba6df3e5b46d5c05a781a9828e9c41a">More...</a><br /></td></tr>
 <tr class="separator:a9ba6df3e5b46d5c05a781a9828e9c41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe99fcce391ce18d555daf51560765f1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#afe99fcce391ce18d555daf51560765f1">AddAliasScopeMetadata</a> (CallSite CS, ValueToValueMapTy &amp;VMap, const DataLayout &amp;DL, AAResults *CalleeAAR)</td></tr>
+<tr class="memitem:afe99fcce391ce18d555daf51560765f1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#afe99fcce391ce18d555daf51560765f1">AddAliasScopeMetadata</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS, <a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;VMap, const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL, <a class="el" href="classllvm_1_1AAResults.html">AAResults</a> *CalleeAAR)</td></tr>
 <tr class="memdesc:afe99fcce391ce18d555daf51560765f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the inlined function has noalias arguments, then add new alias scopes for each noalias argument, tag the mapped noalias parameters with noalias metadata specifying the new scope, and tag all non-derived loads, stores and memory intrinsics with the new alias scopes.  <a href="InlineFunction_8cpp.html#afe99fcce391ce18d555daf51560765f1">More...</a><br /></td></tr>
 <tr class="separator:afe99fcce391ce18d555daf51560765f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19e7873bcb0f5e6d9dbe671a23d0deaa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a19e7873bcb0f5e6d9dbe671a23d0deaa">AddAlignmentAssumptions</a> (CallSite CS, InlineFunctionInfo &amp;IFI)</td></tr>
+<tr class="memitem:a19e7873bcb0f5e6d9dbe671a23d0deaa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a19e7873bcb0f5e6d9dbe671a23d0deaa">AddAlignmentAssumptions</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS, <a class="el" href="classllvm_1_1InlineFunctionInfo.html">InlineFunctionInfo</a> &amp;IFI)</td></tr>
 <tr class="memdesc:a19e7873bcb0f5e6d9dbe671a23d0deaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the inlined function has non-byval align arguments, then add @llvm.assume-based alignment assumptions to preserve this information.  <a href="InlineFunction_8cpp.html#a19e7873bcb0f5e6d9dbe671a23d0deaa">More...</a><br /></td></tr>
 <tr class="separator:a19e7873bcb0f5e6d9dbe671a23d0deaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d19879a40bcc9f91d922869cc5938f1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a1d19879a40bcc9f91d922869cc5938f1">UpdateCallGraphAfterInlining</a> (CallSite CS, Function::iterator FirstNewBlock, ValueToValueMapTy &amp;VMap, InlineFunctionInfo &amp;IFI)</td></tr>
+<tr class="memitem:a1d19879a40bcc9f91d922869cc5938f1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a1d19879a40bcc9f91d922869cc5938f1">UpdateCallGraphAfterInlining</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS, <a class="el" href="classllvm_1_1Function.html#a19595c245bd2e3eefa93ce22db5ad15f">Function::iterator</a> FirstNewBlock, <a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;VMap, <a class="el" href="classllvm_1_1InlineFunctionInfo.html">InlineFunctionInfo</a> &amp;IFI)</td></tr>
 <tr class="memdesc:a1d19879a40bcc9f91d922869cc5938f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Once we have cloned code over from a callee into the caller, update the specified callgraph to reflect the changes we made.  <a href="InlineFunction_8cpp.html#a1d19879a40bcc9f91d922869cc5938f1">More...</a><br /></td></tr>
 <tr class="separator:a1d19879a40bcc9f91d922869cc5938f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf1d36b215eb2ed9f310afbcbe5e16a9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#acf1d36b215eb2ed9f310afbcbe5e16a9">HandleByValArgumentInit</a> (Value *Dst, Value *Src, Module *M, BasicBlock *InsertBlock, InlineFunctionInfo &amp;IFI)</td></tr>
+<tr class="memitem:acf1d36b215eb2ed9f310afbcbe5e16a9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#acf1d36b215eb2ed9f310afbcbe5e16a9">HandleByValArgumentInit</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *Dst, <a class="el" href="classllvm_1_1Value.html">Value</a> *Src, <a class="el" href="classllvm_1_1Module.html">Module</a> *M, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *InsertBlock, <a class="el" href="classllvm_1_1InlineFunctionInfo.html">InlineFunctionInfo</a> &amp;IFI)</td></tr>
 <tr class="separator:acf1d36b215eb2ed9f310afbcbe5e16a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d26307a0f26f4f9dec6b2ca28264f4d"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a2d26307a0f26f4f9dec6b2ca28264f4d">HandleByValArgument</a> (Value *Arg, Instruction *TheCall, const Function *CalledFunc, InlineFunctionInfo &amp;IFI, unsigned ByValAlignment)</td></tr>
+<tr class="memitem:a2d26307a0f26f4f9dec6b2ca28264f4d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a2d26307a0f26f4f9dec6b2ca28264f4d">HandleByValArgument</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *Arg, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *TheCall, const <a class="el" href="classllvm_1_1Function.html">Function</a> *CalledFunc, <a class="el" href="classllvm_1_1InlineFunctionInfo.html">InlineFunctionInfo</a> &amp;IFI, <a class="el" href="classunsigned.html">unsigned</a> ByValAlignment)</td></tr>
 <tr class="memdesc:a2d26307a0f26f4f9dec6b2ca28264f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">When inlining a call site that has a byval argument, we have to make the implicit memcpy explicit by adding it.  <a href="InlineFunction_8cpp.html#a2d26307a0f26f4f9dec6b2ca28264f4d">More...</a><br /></td></tr>
 <tr class="separator:a2d26307a0f26f4f9dec6b2ca28264f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae21f217cd2f8044e639f13111a0b37db"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#ae21f217cd2f8044e639f13111a0b37db">isUsedByLifetimeMarker</a> (Value *V)</td></tr>
+<tr class="memitem:ae21f217cd2f8044e639f13111a0b37db"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#ae21f217cd2f8044e639f13111a0b37db">isUsedByLifetimeMarker</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
 <tr class="separator:ae21f217cd2f8044e639f13111a0b37db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaa78d0b3224d3175937f997dc2bc688"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#afaa78d0b3224d3175937f997dc2bc688">hasLifetimeMarkers</a> (AllocaInst *AI)</td></tr>
+<tr class="memitem:afaa78d0b3224d3175937f997dc2bc688"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#afaa78d0b3224d3175937f997dc2bc688">hasLifetimeMarkers</a> (<a class="el" href="classllvm_1_1AllocaInst.html">AllocaInst</a> *AI)</td></tr>
 <tr class="separator:afaa78d0b3224d3175937f997dc2bc688"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad19c97a069133d179234826fc95c3bde"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#ad19c97a069133d179234826fc95c3bde">allocaWouldBeStaticInEntry</a> (const AllocaInst *AI)</td></tr>
+<tr class="memitem:ad19c97a069133d179234826fc95c3bde"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#ad19c97a069133d179234826fc95c3bde">allocaWouldBeStaticInEntry</a> (const <a class="el" href="classllvm_1_1AllocaInst.html">AllocaInst</a> *AI)</td></tr>
 <tr class="memdesc:ad19c97a069133d179234826fc95c3bde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the result of AI-&gt;isStaticAlloca() if AI were moved to the entry block.  <a href="InlineFunction_8cpp.html#ad19c97a069133d179234826fc95c3bde">More...</a><br /></td></tr>
 <tr class="separator:ad19c97a069133d179234826fc95c3bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5217abbfbac8873d22a2dd6cdbb0bcc1"><td class="memItemLeft" align="right" valign="top">static DebugLoc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a5217abbfbac8873d22a2dd6cdbb0bcc1">inlineDebugLoc</a> (DebugLoc OrigDL, DILocation *InlinedAt, LLVMContext &amp;Ctx, DenseMap&lt; const MDNode *, MDNode * &gt; &amp;IANodes)</td></tr>
+<tr class="memitem:a5217abbfbac8873d22a2dd6cdbb0bcc1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1DebugLoc.html">DebugLoc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a5217abbfbac8873d22a2dd6cdbb0bcc1">inlineDebugLoc</a> (<a class="el" href="classllvm_1_1DebugLoc.html">DebugLoc</a> OrigDL, <a class="el" href="classllvm_1_1DILocation.html">DILocation</a> *InlinedAt, <a class="el" href="classllvm_1_1LLVMContext.html">LLVMContext</a> &amp;Ctx, DenseMap&lt; const <a class="el" href="classllvm_1_1MDNode.html">MDNode</a> *, <a class="el" href="classllvm_1_1MDNode.html">MDNode</a> * &gt; &amp;IANodes)</td></tr>
 <tr class="memdesc:a5217abbfbac8873d22a2dd6cdbb0bcc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a DebugLoc for a new DILocation which is a clone of <code>OrigDL</code> inlined at <code>InlinedAt</code>.  <a href="InlineFunction_8cpp.html#a5217abbfbac8873d22a2dd6cdbb0bcc1">More...</a><br /></td></tr>
 <tr class="separator:a5217abbfbac8873d22a2dd6cdbb0bcc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7718232bb7c0467cb727ea5d15c1f7b0"><td class="memItemLeft" align="right" valign="top">static MDNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a7718232bb7c0467cb727ea5d15c1f7b0">inlineLoopID</a> (const MDNode *OrigLoopId, DILocation *InlinedAt, LLVMContext &amp;Ctx, DenseMap&lt; const MDNode *, MDNode * &gt; &amp;IANodes)</td></tr>
+<tr class="memitem:a7718232bb7c0467cb727ea5d15c1f7b0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1MDNode.html">MDNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a7718232bb7c0467cb727ea5d15c1f7b0">inlineLoopID</a> (const <a class="el" href="classllvm_1_1MDNode.html">MDNode</a> *OrigLoopId, <a class="el" href="classllvm_1_1DILocation.html">DILocation</a> *InlinedAt, <a class="el" href="classllvm_1_1LLVMContext.html">LLVMContext</a> &amp;Ctx, DenseMap&lt; const <a class="el" href="classllvm_1_1MDNode.html">MDNode</a> *, <a class="el" href="classllvm_1_1MDNode.html">MDNode</a> * &gt; &amp;IANodes)</td></tr>
 <tr class="memdesc:a7718232bb7c0467cb727ea5d15c1f7b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the LoopID for a loop which has has been cloned from another function for inlining with the new inlined-at start and end locs.  <a href="InlineFunction_8cpp.html#a7718232bb7c0467cb727ea5d15c1f7b0">More...</a><br /></td></tr>
 <tr class="separator:a7718232bb7c0467cb727ea5d15c1f7b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ed4f37fbda15a9c05f333fde59e9fbb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a2ed4f37fbda15a9c05f333fde59e9fbb">fixupLineNumbers</a> (Function *Fn, Function::iterator FI, Instruction *TheCall, bool CalleeHasDebugInfo)</td></tr>
+<tr class="memitem:a2ed4f37fbda15a9c05f333fde59e9fbb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a2ed4f37fbda15a9c05f333fde59e9fbb">fixupLineNumbers</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> *Fn, <a class="el" href="classllvm_1_1Function.html#a19595c245bd2e3eefa93ce22db5ad15f">Function::iterator</a> FI, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *TheCall, <a class="el" href="classbool.html">bool</a> CalleeHasDebugInfo)</td></tr>
 <tr class="memdesc:a2ed4f37fbda15a9c05f333fde59e9fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update inlined instructions' line numbers to to encode location where these instructions are inlined.  <a href="InlineFunction_8cpp.html#a2ed4f37fbda15a9c05f333fde59e9fbb">More...</a><br /></td></tr>
 <tr class="separator:a2ed4f37fbda15a9c05f333fde59e9fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83a2e4a8c4f5b3b8dee5407d55e8872d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a83a2e4a8c4f5b3b8dee5407d55e8872d">updateCallerBFI</a> (BasicBlock *CallSiteBlock, const ValueToValueMapTy &amp;VMap, BlockFrequencyInfo *CallerBFI, BlockFrequencyInfo *CalleeBFI, const BasicBlock &amp;CalleeEntryBlock)</td></tr>
+<tr class="memitem:a83a2e4a8c4f5b3b8dee5407d55e8872d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a83a2e4a8c4f5b3b8dee5407d55e8872d">updateCallerBFI</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *CallSiteBlock, const <a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;VMap, <a class="el" href="classllvm_1_1BlockFrequencyInfo.html">BlockFrequencyInfo</a> *CallerBFI, <a class="el" href="classllvm_1_1BlockFrequencyInfo.html">BlockFrequencyInfo</a> *CalleeBFI, const <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> &amp;CalleeEntryBlock)</td></tr>
 <tr class="memdesc:a83a2e4a8c4f5b3b8dee5407d55e8872d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the block frequencies of the caller after a callee has been inlined.  <a href="InlineFunction_8cpp.html#a83a2e4a8c4f5b3b8dee5407d55e8872d">More...</a><br /></td></tr>
 <tr class="separator:a83a2e4a8c4f5b3b8dee5407d55e8872d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77ae07b5c8f3ce4e725bd2ee09caff7b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a77ae07b5c8f3ce4e725bd2ee09caff7b">updateCallProfile</a> (Function *Callee, const ValueToValueMapTy &amp;VMap, const <a class="el" href="Function_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> &amp;CalleeEntryCount, const Instruction *TheCall, ProfileSummaryInfo *PSI, BlockFrequencyInfo *CallerBFI)</td></tr>
+<tr class="memitem:a77ae07b5c8f3ce4e725bd2ee09caff7b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a77ae07b5c8f3ce4e725bd2ee09caff7b">updateCallProfile</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> *Callee, const <a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;VMap, const <a class="el" href="Function_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> &amp;CalleeEntryCount, const <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *TheCall, <a class="el" href="classllvm_1_1ProfileSummaryInfo.html">ProfileSummaryInfo</a> *PSI, <a class="el" href="classllvm_1_1BlockFrequencyInfo.html">BlockFrequencyInfo</a> *CallerBFI)</td></tr>
 <tr class="memdesc:a77ae07b5c8f3ce4e725bd2ee09caff7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the branch metadata for cloned call instructions.  <a href="InlineFunction_8cpp.html#a77ae07b5c8f3ce4e725bd2ee09caff7b">More...</a><br /></td></tr>
 <tr class="separator:a77ae07b5c8f3ce4e725bd2ee09caff7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a9925d445b976109ecb491c6faa297dc3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a9925d445b976109ecb491c6faa297dc3">EnableNoAliasConversion</a> (&quot;enable-noalias-to-md-conversion&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Convert noalias <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> to metadata during inlining.&quot;))</td></tr>
+<tr class="separator:a9925d445b976109ecb491c6faa297dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12898ba2786fc8fc2d580ea915ec5c98"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineFunction_8cpp.html#a12898ba2786fc8fc2d580ea915ec5c98">PreserveAlignmentAssumptions</a> (&quot;preserve-alignment-assumptions-during-inlining&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Convert align <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> to assumptions during inlining.&quot;))</td></tr>
+<tr class="separator:a12898ba2786fc8fc2d580ea915ec5c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ac57dae906fe8ac64efe52571121b0fe1" name="ac57dae906fe8ac64efe52571121b0fe1"></a>
@@ -200,7 +204,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="Function_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> =  Function::ProfileCount</td>
+          <td class="memname">using <a class="el" href="Function_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> =  <a class="el" href="classllvm_1_1Function_1_1ProfileCount.html">Function::ProfileCount</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -216,7 +220,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="InlineFunction_8cpp.html#a2af37358cf937d4298f5c5198bf91d34">UnwindDestMemoTy</a> =  DenseMap&lt;Instruction *, Value *&gt;</td>
+          <td class="memname">using <a class="el" href="InlineFunction_8cpp.html#a2af37358cf937d4298f5c5198bf91d34">UnwindDestMemoTy</a> =  DenseMap&lt;<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, <a class="el" href="classllvm_1_1Value.html">Value</a> *&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -238,25 +242,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void AddAliasScopeMetadata </td>
           <td>(</td>
-          <td class="paramtype">CallSite&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
           <td class="paramname"><em>CS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ValueToValueMapTy &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;&#160;</td>
           <td class="paramname"><em>VMap</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DataLayout &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
           <td class="paramname"><em>DL</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">AAResults *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1AAResults.html">AAResults</a> *&#160;</td>
           <td class="paramname"><em>CalleeAAR</em>&#160;</td>
         </tr>
         <tr>
@@ -276,7 +280,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l00919">919</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InlineFunction_8cpp.html#a6569a1deb77e8696421357af3dff2c5f">EnableNoAliasConversion()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="Function_8h_source.html#l00713">llvm::Function::args()</a>, <a class="el" href="ValueMap_8h_source.html#l00140">llvm::ValueMap&lt; KeyT, ValueT, Config &gt;::begin()</a>, <a class="el" href="Metadata_8cpp_source.html#l00895">llvm::MDNode::concatenate()</a>, <a class="el" href="MDBuilder_8h_source.html#l00136">llvm::MDBuilder::createAnonymousAliasScope()</a>, <a class="el" href="MDBuilder_8h_source.html#l00129">llvm::MDBuilder::createAnonymousAliasScopeDomain()</a>, <a class="el" href="InlineFunction_8cpp.html#a9925d445b976109ecb491c6faa297dc3">EnableNoAliasConversion</a>, <a class="el" href="ValueMap_8h_source.html#l00141">llvm::ValueMap&lt; KeyT, ValueT, Config &gt;::end()</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00238">llvm::FMRB_OnlyAccessesArgumentPointees</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00230">llvm::FMRB_OnlyReadsArgumentPointees</a>, <a class="el" href="Metadata_8h_source.html#l01165">llvm::MDNode::get()</a>, <a class="el" href="CallSite_8h_source.html#l00111">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getCalledFunction()</a>, <a class="el" href="Function_8cpp_source.html#l00205">llvm::Function::getContext()</a>, <a class="el" href="Instruction_8h_source.html#l00234">llvm::Instruction::getMetadata()</a>, <a class="el" href="AliasAnalysis_8cpp_source.html#l00382">llvm::AAResults::getModRefBehavior()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l03749">llvm::GetUnderlyingObjects()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="AliasAnalysis_8cpp_source.html#l00892">llvm::isIdentifiedFunctionLocal()</a>, <a class="el" href="LLVMContext_8h_source.html#l00082">llvm::LLVMContext::MD_alias_scope</a>, <a class="el" href="LLVMContext_8h_source.html#l00083">llvm::LLVMContext::MD_noalias</a>, <a class="el" href="CaptureTracking_8cpp_source.html#l00185">llvm::PointerMayBeCapturedBefore()</a>, <a class="el" href="GenericDomTree_8h_source.html#l00729">llvm::DominatorTreeBase&lt; NodeT, IsPostDom &gt;::recalculate()</a>, and <a class="el" href="Metadata_8cpp_source.html#l01222">llvm::Instruction::setMetadata()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
 
 </div>
 </div>
@@ -292,13 +298,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void AddAlignmentAssumptions </td>
           <td>(</td>
-          <td class="paramtype">CallSite&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
           <td class="paramname"><em>CS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">InlineFunctionInfo &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1InlineFunctionInfo.html">InlineFunctionInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>IFI</em>&#160;</td>
         </tr>
         <tr>
@@ -318,7 +324,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l01141">1141</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InlineFunction_8cpp.html#aaef339dd6477b77cd79503e9bbf0b46a">PreserveAlignmentAssumptions()</a>.</p>
+<p class="reference">References <a class="el" href="Function_8h_source.html#l00713">llvm::Function::args()</a>, <a class="el" href="IRBuilder_8h_source.html#l02567">llvm::IRBuilder&lt; T, Inserter &gt;::CreateAlignmentAssumption()</a>, <a class="el" href="CallSite_8h_source.html#l00193">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getArgument()</a>, <a class="el" href="Cloning_8h_source.html#l00187">llvm::InlineFunctionInfo::GetAssumptionCache</a>, <a class="el" href="CallSite_8h_source.html#l00111">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getCalledFunction()</a>, <a class="el" href="CallSite_8h_source.html#l00275">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getCaller()</a>, <a class="el" href="Module_8cpp_source.html#l00369">llvm::Module::getDataLayout()</a>, <a class="el" href="CallSite_8h_source.html#l00096">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getInstruction()</a>, <a class="el" href="Transforms_2Utils_2Local_8h_source.html#l00267">llvm::getKnownAlignment()</a>, <a class="el" href="GlobalValue_8h_source.html#l00575">llvm::GlobalValue::getParent()</a>, <a class="el" href="InlineFunction_8cpp.html#a12898ba2786fc8fc2d580ea915ec5c98">PreserveAlignmentAssumptions</a>, <a class="el" href="GenericDomTree_8h_source.html#l00729">llvm::DominatorTreeBase&lt; NodeT, IsPostDom &gt;::recalculate()</a>, and <a class="el" href="AssumptionCache_8cpp_source.html#l00185">llvm::AssumptionCache::registerAssumption()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
 
 </div>
 </div>
@@ -332,9 +340,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool allocaWouldBeStaticInEntry </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> allocaWouldBeStaticInEntry </td>
           <td>(</td>
-          <td class="paramtype">const AllocaInst *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1AllocaInst.html">AllocaInst</a> *&#160;</td>
           <td class="paramname"><em>AI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -351,7 +359,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l01344">1344</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01388">fixupLineNumbers()</a>.</p>
+<p class="reference">References <a class="el" href="Instructions_8h_source.html#l00092">llvm::AllocaInst::getArraySize()</a>, and <a class="el" href="Instructions_8h_source.html#l00124">llvm::AllocaInst::isUsedWithInAlloca()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01388">fixupLineNumbers()</a>, and <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
 
 </div>
 </div>
@@ -367,13 +377,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void CloneAliasScopeMetadata </td>
           <td>(</td>
-          <td class="paramtype">CallSite&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
           <td class="paramname"><em>CS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ValueToValueMapTy &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;&#160;</td>
           <td class="paramname"><em>VMap</em>&#160;</td>
         </tr>
         <tr>
@@ -394,57 +404,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l00813">813</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="ValueMap_8h_source.html#l00140">llvm::ValueMap&lt; KeyT, ValueT, Config &gt;::begin()</a>, <a class="el" href="Metadata_8cpp_source.html#l00895">llvm::MDNode::concatenate()</a>, <a class="el" href="ValueMap_8h_source.html#l00141">llvm::ValueMap&lt; KeyT, ValueT, Config &gt;::end()</a>, <a class="el" href="Metadata_8h_source.html#l01165">llvm::MDNode::get()</a>, <a class="el" href="CallSite_8h_source.html#l00111">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getCalledFunction()</a>, <a class="el" href="Function_8cpp_source.html#l00205">llvm::Function::getContext()</a>, <a class="el" href="CallSite_8h_source.html#l00096">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getInstruction()</a>, <a class="el" href="Instruction_8h_source.html#l00234">llvm::Instruction::getMetadata()</a>, <a class="el" href="Metadata_8h_source.html#l01152">llvm::MDTuple::getTemporary()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Metadata_8h_source.html#l00943">llvm::MDNode::isTemporary()</a>, <a class="el" href="Instruction_8h_source.html#l00532">llvm::Instruction::mayReadOrWriteMemory()</a>, <a class="el" href="LLVMContext_8h_source.html#l00082">llvm::LLVMContext::MD_alias_scope</a>, <a class="el" href="LLVMContext_8h_source.html#l00083">llvm::LLVMContext::MD_noalias</a>, <a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870a6adf97f83acf6453d4a6a4b1070f3754">llvm::None</a>, <a class="el" href="Metadata_8h_source.html#l00948">llvm::MDNode::replaceAllUsesWith()</a>, and <a class="el" href="Metadata_8cpp_source.html#l01222">llvm::Instruction::setMetadata()</a>.</p>
 
-</div>
-</div>
-<a id="a6569a1deb77e8696421357af3dff2c5f" name="a6569a1deb77e8696421357af3dff2c5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6569a1deb77e8696421357af3dff2c5f">&#9670;&nbsp;</a></span>EnableNoAliasConversion()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; EnableNoAliasConversion </td>
-          <td>(</td>
-          <td class="paramtype">&quot;enable-noalias-to-md-conversion&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Convert noalias <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> to metadata during inlining.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l00919">AddAliasScopeMetadata()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
 
 </div>
 </div>
@@ -460,25 +422,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void fixupLineNumbers </td>
           <td>(</td>
-          <td class="paramtype">Function *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
           <td class="paramname"><em>Fn</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Function::iterator&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html#a19595c245bd2e3eefa93ce22db5ad15f">Function::iterator</a>&#160;</td>
           <td class="paramname"><em>FI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>TheCall</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>CalleeHasDebugInfo</em>&#160;</td>
         </tr>
         <tr>
@@ -498,7 +460,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l01388">1388</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InlineFunction_8cpp_source.html#l01344">allocaWouldBeStaticInEntry()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l01350">inlineDebugLoc()</a>, and <a class="el" href="InlineFunction_8cpp_source.html#l01360">inlineLoopID()</a>.</p>
+<p class="reference">References <a class="el" href="InlineFunction_8cpp_source.html#l01344">allocaWouldBeStaticInEntry()</a>, <a class="el" href="Function_8h_source.html#l00682">llvm::Function::end()</a>, <a class="el" href="Function_8cpp_source.html#l00205">llvm::Function::getContext()</a>, <a class="el" href="Metadata_8h_source.html#l00923">llvm::MDNode::getContext()</a>, <a class="el" href="Instruction_8h_source.html#l00321">llvm::Instruction::getDebugLoc()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l01350">inlineDebugLoc()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l01360">inlineLoopID()</a>, and <a class="el" href="LLVMContext_8h_source.html#l00093">llvm::LLVMContext::MD_loop</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
 
 </div>
 </div>
@@ -512,9 +476,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * getParentPad </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * getParentPad </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>EHPad</em></td><td>)</td>
           <td></td>
         </tr>
@@ -544,9 +508,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * getUnwindDestToken </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * getUnwindDestToken </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>EHPad</em>, </td>
         </tr>
         <tr>
@@ -574,9 +538,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l00379">379</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l00218">getParentPad()</a>, and <a class="el" href="InlineFunction_8cpp_source.html#l00228">getUnwindDestTokenHelper()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l00218">getParentPad()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l00228">getUnwindDestTokenHelper()</a>, and <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l00523">HandleCallsInBlockInlinedThroughInvoke()</a>, and <a class="el" href="InlineFunction_8cpp_source.html#l00641">HandleInlinedEHPad()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l00523">HandleCallsInBlockInlinedThroughInvoke()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l00641">HandleInlinedEHPad()</a>, and <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
 
 </div>
 </div>
@@ -590,9 +554,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * getUnwindDestTokenHelper </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * getUnwindDestTokenHelper </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>EHPad</em>, </td>
         </tr>
         <tr>
@@ -618,7 +582,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l00228">228</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="InlineFunction_8cpp_source.html#l00218">getParentPad()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Constants_8cpp_source.html#l01139">llvm::ConstantTokenNone::get()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00189">llvm::BasicBlock::getFirstNonPHI()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l00218">getParentPad()</a>, and <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l00379">getUnwindDestToken()</a>.</p>
 
@@ -634,33 +598,33 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * HandleByValArgument </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * HandleByValArgument </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>Arg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>TheCall</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Function *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
           <td class="paramname"><em>CalledFunc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">InlineFunctionInfo &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1InlineFunctionInfo.html">InlineFunctionInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>IFI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>ByValAlignment</em>&#160;</td>
         </tr>
         <tr>
@@ -680,6 +644,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l01262">1262</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="DataLayout_8h_source.html#l00269">llvm::DataLayout::getAllocaAddrSpace()</a>, <a class="el" href="Cloning_8h_source.html#l00187">llvm::InlineFunctionInfo::GetAssumptionCache</a>, <a class="el" href="DerivedTypes_8h_source.html#l00563">llvm::PointerType::getElementType()</a>, <a class="el" href="Instruction_8cpp_source.html#l00059">llvm::Instruction::getFunction()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="Local_8cpp_source.html#l01200">llvm::getOrEnforceKnownAlignment()</a>, <a class="el" href="DataLayout_8cpp_source.html#l00756">llvm::DataLayout::getPrefTypeAlignment()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Function_8h_source.html#l00481">llvm::Function::onlyReadsMemory()</a>, and <a class="el" href="Cloning_8h_source.html#l00193">llvm::InlineFunctionInfo::StaticAllocas</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
+
 </div>
 </div>
 <a id="acf1d36b215eb2ed9f310afbcbe5e16a9" name="acf1d36b215eb2ed9f310afbcbe5e16a9"></a>
@@ -694,31 +662,31 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void HandleByValArgumentInit </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>Dst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>Src</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Module *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> *&#160;</td>
           <td class="paramname"><em>M</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>InsertBlock</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">InlineFunctionInfo &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1InlineFunctionInfo.html">InlineFunctionInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>IFI</em>&#160;</td>
         </tr>
         <tr>
@@ -736,6 +704,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l01246">1246</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="IRBuilder_8h_source.html#l00482">llvm::IRBuilderBase::CreateMemCpy()</a>, <a class="el" href="IRBuilder_8h_source.html#l00348">llvm::IRBuilderBase::getInt64()</a>, and <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
+
 </div>
 </div>
 <a id="a4ea5b2388bd9dc7e7fc902b5bd1e35e4" name="a4ea5b2388bd9dc7e7fc902b5bd1e35e4"></a>
@@ -748,15 +720,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static BasicBlock * HandleCallsInBlockInlinedThroughInvoke </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * HandleCallsInBlockInlinedThroughInvoke </td>
           <td>(</td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>UnwindEdge</em>, </td>
         </tr>
         <tr>
@@ -783,7 +755,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l00523">523</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="InlineFunction_8cpp_source.html#l00379">getUnwindDestToken()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="Local_8cpp_source.html#l01987">llvm::changeToInvokeAndSplitBasicBlock()</a>, <a class="el" href="InstrTypes_8h_source.html#l01683">llvm::CallBase::doesNotThrow()</a>, <a class="el" href="BasicBlock_8h_source.html#l00270">llvm::BasicBlock::end()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="InstrTypes_8h_source.html#l01287">llvm::CallBase::getCalledFunction()</a>, <a class="el" href="InstrTypes_8h_source.html#l01280">llvm::CallBase::getCalledValue()</a>, <a class="el" href="InstrTypes_8h_source.html#l01808">llvm::CallBase::getOperandBundle()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l00379">getUnwindDestToken()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="LLVMContext_8h_source.html#l00111">llvm::LLVMContext::OB_funclet</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l00641">HandleInlinedEHPad()</a>, and <a class="el" href="InlineFunction_8cpp_source.html#l00584">HandleInlinedLandingPad()</a>.</p>
 
@@ -801,19 +773,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void HandleInlinedEHPad </td>
           <td>(</td>
-          <td class="paramtype">InvokeInst *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1InvokeInst.html">InvokeInst</a> *&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>FirstNewBlock</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ClonedCodeInfo &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1ClonedCodeInfo.html">ClonedCodeInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>InlinedCodeInfo</em>&#160;</td>
         </tr>
         <tr>
@@ -834,7 +806,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l00641">641</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l00379">getUnwindDestToken()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l00523">HandleCallsInBlockInlinedThroughInvoke()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="BasicBlockUtils_8cpp_source.html#l00490">UpdatePHINodes()</a>.</p>
+<p class="reference">References <a class="el" href="Instructions_8h_source.html#l02688">llvm::PHINode::addIncoming()</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="Cloning_8h_source.html#l00067">llvm::ClonedCodeInfo::ContainsCalls</a>, <a class="el" href="Instructions_8h_source.html#l04582">llvm::CleanupReturnInst::Create()</a>, <a class="el" href="Instructions_8h_source.html#l04257">llvm::CatchSwitchInst::Create()</a>, <a class="el" href="Constants_8cpp_source.html#l01139">llvm::ConstantTokenNone::get()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00189">llvm::BasicBlock::getFirstNonPHI()</a>, <a class="el" href="Instructions_8h_source.html#l02723">llvm::PHINode::getIncomingValueForBlock()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="Instructions_8h_source.html#l03842">llvm::InvokeInst::getUnwindDest()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l00379">getUnwindDestToken()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l00523">HandleCallsInBlockInlinedThroughInvoke()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Instruction_8h_source.html#l00583">llvm::Instruction::isEHPad()</a>, <a class="el" href="ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00301">llvm::BasicBlock::removePredecessor()</a>, <a class="el" href="Value_8cpp_source.html#l00291">llvm::Value::takeName()</a>, and <a class="el" href="BasicBlockUtils_8cpp_source.html#l00490">UpdatePHINodes()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
 
 </div>
 </div>
@@ -850,19 +824,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void HandleInlinedLandingPad </td>
           <td>(</td>
-          <td class="paramtype">InvokeInst *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1InvokeInst.html">InvokeInst</a> *&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>FirstNewBlock</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ClonedCodeInfo &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1ClonedCodeInfo.html">ClonedCodeInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>InlinedCodeInfo</em>&#160;</td>
         </tr>
         <tr>
@@ -883,7 +857,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l00584">584</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InlineFunction_8cpp_source.html#l00523">HandleCallsInBlockInlinedThroughInvoke()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="Cloning_8h_source.html#l00067">llvm::ClonedCodeInfo::ContainsCalls</a>, <a class="el" href="Instructions_8h_source.html#l02839">llvm::LandingPadInst::getClause()</a>, <a class="el" href="Instructions_8cpp_source.html#l00780">llvm::InvokeInst::getLandingPadInst()</a>, <a class="el" href="Instructions_8h_source.html#l02854">llvm::LandingPadInst::getNumClauses()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="Instructions_8h_source.html#l03842">llvm::InvokeInst::getUnwindDest()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l00523">HandleCallsInBlockInlinedThroughInvoke()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Instructions_8h_source.html#l02826">llvm::LandingPadInst::isCleanup()</a>, and <a class="el" href="BasicBlock_8cpp_source.html#l00301">llvm::BasicBlock::removePredecessor()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
 
 </div>
 </div>
@@ -897,9 +873,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool hasLifetimeMarkers </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> hasLifetimeMarkers </td>
           <td>(</td>
-          <td class="paramtype">AllocaInst *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1AllocaInst.html">AllocaInst</a> *&#160;</td>
           <td class="paramname"><em>AI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -913,7 +889,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l01324">1324</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InlineFunction_8cpp_source.html#l01314">isUsedByLifetimeMarker()</a>.</p>
+<p class="reference">References <a class="el" href="Type_8h_source.html#l00129">llvm::Type::getContext()</a>, <a class="el" href="IRBuilder_8h_source.html#l00421">llvm::IRBuilderBase::getInt8PtrTy()</a>, <a class="el" href="DerivedTypes_8h_source.html#l00580">llvm::Type::getPointerAddressSpace()</a>, <a class="el" href="Instructions_8h_source.html#l00096">llvm::AllocaInst::getType()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l01314">isUsedByLifetimeMarker()</a>, and <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
 
 </div>
 </div>
@@ -927,27 +905,27 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static DebugLoc inlineDebugLoc </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1DebugLoc.html">DebugLoc</a> inlineDebugLoc </td>
           <td>(</td>
-          <td class="paramtype">DebugLoc&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DebugLoc.html">DebugLoc</a>&#160;</td>
           <td class="paramname"><em>OrigDL</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DILocation *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DILocation.html">DILocation</a> *&#160;</td>
           <td class="paramname"><em>InlinedAt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">LLVMContext &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1LLVMContext.html">LLVMContext</a> &amp;&#160;</td>
           <td class="paramname"><em>Ctx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DenseMap&lt; const MDNode *, MDNode * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseMap&lt; const <a class="el" href="classllvm_1_1MDNode.html">MDNode</a> *, <a class="el" href="classllvm_1_1MDNode.html">MDNode</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>IANodes</em>&#160;</td>
         </tr>
         <tr>
@@ -968,6 +946,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l01350">1350</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="DebugLoc_8cpp_source.html#l00082">llvm::DebugLoc::appendInlinedAt()</a>, <a class="el" href="DebugLoc_8cpp_source.html#l00021">llvm::DebugLoc::get()</a>, <a class="el" href="DebugLoc_8cpp_source.html#l00030">llvm::DebugLoc::getCol()</a>, <a class="el" href="DebugLoc_8cpp_source.html#l00025">llvm::DebugLoc::getLine()</a>, and <a class="el" href="DebugLoc_8cpp_source.html#l00035">llvm::DebugLoc::getScope()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01388">fixupLineNumbers()</a>, and <a class="el" href="InlineFunction_8cpp_source.html#l01360">inlineLoopID()</a>.</p>
 
 </div>
@@ -982,27 +962,27 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static MDNode * inlineLoopID </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1MDNode.html">MDNode</a> * inlineLoopID </td>
           <td>(</td>
-          <td class="paramtype">const MDNode *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1MDNode.html">MDNode</a> *&#160;</td>
           <td class="paramname"><em>OrigLoopId</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DILocation *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DILocation.html">DILocation</a> *&#160;</td>
           <td class="paramname"><em>InlinedAt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">LLVMContext &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1LLVMContext.html">LLVMContext</a> &amp;&#160;</td>
           <td class="paramname"><em>Ctx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DenseMap&lt; const MDNode *, MDNode * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseMap&lt; const <a class="el" href="classllvm_1_1MDNode.html">MDNode</a> *, <a class="el" href="classllvm_1_1MDNode.html">MDNode</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>IANodes</em>&#160;</td>
         </tr>
         <tr>
@@ -1022,7 +1002,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l01360">1360</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="InlineFunction_8cpp_source.html#l01350">inlineDebugLoc()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Metadata_8h_source.html#l00721">llvm::MDOperand::get()</a>, <a class="el" href="Metadata_8h_source.html#l01173">llvm::MDNode::getDistinct()</a>, <a class="el" href="Metadata_8h_source.html#l01074">llvm::MDNode::getNumOperands()</a>, <a class="el" href="Metadata_8h_source.html#l01068">llvm::MDNode::getOperand()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l01350">inlineDebugLoc()</a>, and <a class="el" href="Metadata_8cpp_source.html#l00858">llvm::MDNode::replaceOperandWith()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01388">fixupLineNumbers()</a>.</p>
 
@@ -1038,9 +1018,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isUsedByLifetimeMarker </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isUsedByLifetimeMarker </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1054,57 +1034,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l01314">1314</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Instruction_8cpp_source.html#l00607">llvm::Instruction::isLifetimeStartOrEnd()</a>, and <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01324">hasLifetimeMarkers()</a>.</p>
-
-</div>
-</div>
-<a id="aaef339dd6477b77cd79503e9bbf0b46a" name="aaef339dd6477b77cd79503e9bbf0b46a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaef339dd6477b77cd79503e9bbf0b46a">&#9670;&nbsp;</a></span>PreserveAlignmentAssumptions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PreserveAlignmentAssumptions </td>
-          <td>(</td>
-          <td class="paramtype">&quot;preserve-alignment-assumptions-during-inlining&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Convert align <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> to assumptions during inlining.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01141">AddAlignmentAssumptions()</a>.</p>
 
 </div>
 </div>
@@ -1120,13 +1052,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void PropagateParallelLoopAccessMetadata </td>
           <td>(</td>
-          <td class="paramtype">CallSite&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
           <td class="paramname"><em>CS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ValueToValueMapTy &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;&#160;</td>
           <td class="paramname"><em>VMap</em>&#160;</td>
         </tr>
         <tr>
@@ -1146,6 +1078,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l00770">770</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="ValueMap_8h_source.html#l00140">llvm::ValueMap&lt; KeyT, ValueT, Config &gt;::begin()</a>, <a class="el" href="Metadata_8cpp_source.html#l00895">llvm::MDNode::concatenate()</a>, <a class="el" href="ValueMap_8h_source.html#l00141">llvm::ValueMap&lt; KeyT, ValueT, Config &gt;::end()</a>, <a class="el" href="CallSite_8h_source.html#l00096">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getInstruction()</a>, <a class="el" href="Instruction_8h_source.html#l00234">llvm::Instruction::getMetadata()</a>, <a class="el" href="Instruction_8h_source.html#l00532">llvm::Instruction::mayReadOrWriteMemory()</a>, <a class="el" href="LLVMContext_8h_source.html#l00100">llvm::LLVMContext::MD_access_group</a>, <a class="el" href="LLVMContext_8h_source.html#l00085">llvm::LLVMContext::MD_mem_parallel_loop_access</a>, <a class="el" href="Metadata_8cpp_source.html#l01222">llvm::Instruction::setMetadata()</a>, and <a class="el" href="VectorUtils_8cpp_source.html#l00524">llvm::uniteAccessGroups()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
+
 </div>
 </div>
 <a id="a83a2e4a8c4f5b3b8dee5407d55e8872d" name="a83a2e4a8c4f5b3b8dee5407d55e8872d"></a>
@@ -1160,31 +1096,31 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void updateCallerBFI </td>
           <td>(</td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>CallSiteBlock</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const ValueToValueMapTy &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;&#160;</td>
           <td class="paramname"><em>VMap</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BlockFrequencyInfo *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BlockFrequencyInfo.html">BlockFrequencyInfo</a> *&#160;</td>
           <td class="paramname"><em>CallerBFI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BlockFrequencyInfo *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BlockFrequencyInfo.html">BlockFrequencyInfo</a> *&#160;</td>
           <td class="paramname"><em>CalleeBFI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const BasicBlock &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> &amp;&#160;</td>
           <td class="paramname"><em>CalleeEntryBlock</em>&#160;</td>
         </tr>
         <tr>
@@ -1205,6 +1141,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l01450">1450</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="BlockFrequencyInfo_8cpp_source.html#l00201">llvm::BlockFrequencyInfo::getBlockFreq()</a>, <a class="el" href="BlockFrequency_8h_source.html#l00035">llvm::BlockFrequency::getFrequency()</a>, <a class="el" href="ValueMap_8h_source.html#l00170">llvm::ValueMap&lt; KeyT, ValueT, Config &gt;::lookup()</a>, <a class="el" href="BlockFrequencyInfo_8cpp_source.html#l00226">llvm::BlockFrequencyInfo::setBlockFreq()</a>, and <a class="el" href="BlockFrequencyInfo_8cpp_source.html#l00231">llvm::BlockFrequencyInfo::setBlockFreqAndScale()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
+
 </div>
 </div>
 <a id="a1d19879a40bcc9f91d922869cc5938f1" name="a1d19879a40bcc9f91d922869cc5938f1"></a>
@@ -1219,25 +1159,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void UpdateCallGraphAfterInlining </td>
           <td>(</td>
-          <td class="paramtype">CallSite&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
           <td class="paramname"><em>CS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Function::iterator&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html#a19595c245bd2e3eefa93ce22db5ad15f">Function::iterator</a>&#160;</td>
           <td class="paramname"><em>FirstNewBlock</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ValueToValueMapTy &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;&#160;</td>
           <td class="paramname"><em>VMap</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">InlineFunctionInfo &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1InlineFunctionInfo.html">InlineFunctionInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>IFI</em>&#160;</td>
         </tr>
         <tr>
@@ -1258,7 +1198,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l01179">1179</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="CallGraph_8h_source.html#l00232">llvm::CallGraphNode::addCalledFunction()</a>, <a class="el" href="CallGraph_8h_source.html#l00189">llvm::CallGraphNode::begin()</a>, <a class="el" href="Cloning_8h_source.html#l00186">llvm::InlineFunctionInfo::CG</a>, <a class="el" href="CallGraph_8h_source.html#l00190">llvm::CallGraphNode::end()</a>, <a class="el" href="ValueMap_8h_source.html#l00141">llvm::ValueMap&lt; KeyT, ValueT, Config &gt;::end()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="ValueMap_8h_source.html#l00161">llvm::ValueMap&lt; KeyT, ValueT, Config &gt;::find()</a>, <a class="el" href="CallSite_8h_source.html#l00111">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getCalledFunction()</a>, <a class="el" href="CallSite_8h_source.html#l00275">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getCaller()</a>, <a class="el" href="CallSite_8h_source.html#l00096">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getInstruction()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Cloning_8h_source.html#l00197">llvm::InlineFunctionInfo::InlinedCalls</a>, <a class="el" href="CallGraph_8cpp_source.html#l00186">llvm::CallGraphNode::removeCallEdgeFor()</a>, and <a class="el" href="ValueMap_8h_source.html#l00349">llvm::ValueMapIterator&lt; DenseMapT, KeyT &gt;::ValueTypeProxy::second</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
 
 </div>
 </div>
@@ -1274,13 +1216,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void updateCallProfile </td>
           <td>(</td>
-          <td class="paramtype">Function *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
           <td class="paramname"><em>Callee</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const ValueToValueMapTy &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;&#160;</td>
           <td class="paramname"><em>VMap</em>, </td>
         </tr>
         <tr>
@@ -1292,19 +1234,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Instruction *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>TheCall</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ProfileSummaryInfo *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ProfileSummaryInfo.html">ProfileSummaryInfo</a> *&#160;</td>
           <td class="paramname"><em>PSI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BlockFrequencyInfo *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BlockFrequencyInfo.html">BlockFrequencyInfo</a> *&#160;</td>
           <td class="paramname"><em>CallerBFI</em>&#160;</td>
         </tr>
         <tr>
@@ -1324,14 +1266,117 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineFunction_8cpp_source.html#l01479">1479</a> of file <a class="el" href="InlineFunction_8cpp_source.html">InlineFunction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a>.</p>
+<p class="reference">References <a class="el" href="Function_8h_source.html#l00271">llvm::Function::ProfileCount::getCount()</a>, <a class="el" href="ProfileSummaryInfo_8cpp_source.html#l00096">llvm::ProfileSummaryInfo::getProfileCount()</a>, <a class="el" href="Function_8h_source.html#l00270">llvm::Function::ProfileCount::hasValue()</a>, <a class="el" href="Function_8h_source.html#l00273">llvm::Function::ProfileCount::isSynthetic()</a>, <a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870a6adf97f83acf6453d4a6a4b1070f3754">llvm::None</a>, and <a class="el" href="InlineFunction_8cpp_source.html#l01494">llvm::updateProfileCallee()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01537">llvm::InlineFunction()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a9925d445b976109ecb491c6faa297dc3" name="a9925d445b976109ecb491c6faa297dc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9925d445b976109ecb491c6faa297dc3">&#9670;&nbsp;</a></span>EnableNoAliasConversion</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; EnableNoAliasConversion(&quot;enable-noalias-to-md-conversion&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Convert noalias <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> to metadata during inlining.&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;enable-noalias-to-md-conversion&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Convert noalias <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> to metadata during inlining.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l00919">AddAliasScopeMetadata()</a>.</p>
+
+</div>
+</div>
+<a id="a12898ba2786fc8fc2d580ea915ec5c98" name="a12898ba2786fc8fc2d580ea915ec5c98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12898ba2786fc8fc2d580ea915ec5c98">&#9670;&nbsp;</a></span>PreserveAlignmentAssumptions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PreserveAlignmentAssumptions(&quot;preserve-alignment-assumptions-during-inlining&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Convert align <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> to assumptions during inlining.&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;preserve-alignment-assumptions-during-inlining&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Convert align <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> to assumptions during inlining.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="InlineFunction_8cpp_source.html#l01141">AddAlignmentAssumptions()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

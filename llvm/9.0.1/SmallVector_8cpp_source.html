@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                               <span class="keywordtype">size_t</span> TSize) {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="comment">// Ensure we can fit the new capacity in 32 bits.</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordflow">if</span> (MinCapacity &gt; UINT32_MAX)</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    report_bad_alloc_error(<span class="stringliteral">&quot;SmallVector capacity overflow during allocation&quot;</span>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="namespacellvm.html#afcd76d92f6ad67759238ccef6ec883af">report_bad_alloc_error</a>(<span class="stringliteral">&quot;SmallVector capacity overflow during allocation&quot;</span>);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">size_t</span> NewCapacity = 2 * capacity() + 1; <span class="comment">// Always grow.</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  NewCapacity =</div>
@@ -106,24 +106,27 @@ $(function() {
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordtype">void</span> *NewElts;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordflow">if</span> (BeginX == FirstEl) {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    NewElts = safe_malloc(NewCapacity * TSize);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    NewElts = <a class="code hl_function" href="namespacellvm.html#a8bb931812d78f470d4ca775ac8b88e61">safe_malloc</a>(NewCapacity * TSize);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="comment">// Copy the elements over.  No need to run dtors on PODs.</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    memcpy(NewElts, this-&gt;BeginX, size() * TSize);</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// If this wasn&#39;t grown from the inline copy, grow the allocated space.</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    NewElts = safe_realloc(this-&gt;BeginX, NewCapacity * TSize);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    NewElts = <a class="code hl_function" href="namespacellvm.html#a9edff61a0e003a8bb37f5a12a8755cf2">safe_realloc</a>(this-&gt;BeginX, NewCapacity * TSize);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  }</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  this-&gt;BeginX = NewElts;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  this-&gt;Capacity = NewCapacity;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
 <div class="ttc" id="aclassSmallVector_html"><div class="ttname"><a href="classSmallVector.html">SmallVector</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysis_8h_source.html#l00056">AliasAnalysis.h:56</a></div></div>
+<div class="ttc" id="anamespacellvm_html_a8bb931812d78f470d4ca775ac8b88e61"><div class="ttname"><a href="namespacellvm.html#a8bb931812d78f470d4ca775ac8b88e61">llvm::safe_malloc</a></div><div class="ttdeci">LLVM_ATTRIBUTE_RETURNS_NONNULL void * safe_malloc(size_t Sz)</div><div class="ttdef"><b>Definition:</b> <a href="MemAlloc_8h_source.html#l00025">MemAlloc.h:25</a></div></div>
+<div class="ttc" id="anamespacellvm_html_a9edff61a0e003a8bb37f5a12a8755cf2"><div class="ttname"><a href="namespacellvm.html#a9edff61a0e003a8bb37f5a12a8755cf2">llvm::safe_realloc</a></div><div class="ttdeci">LLVM_ATTRIBUTE_RETURNS_NONNULL void * safe_realloc(void *Ptr, size_t Sz)</div><div class="ttdef"><b>Definition:</b> <a href="MemAlloc_8h_source.html#l00052">MemAlloc.h:52</a></div></div>
+<div class="ttc" id="anamespacellvm_html_afcd76d92f6ad67759238ccef6ec883af"><div class="ttname"><a href="namespacellvm.html#afcd76d92f6ad67759238ccef6ec883af">llvm::report_bad_alloc_error</a></div><div class="ttdeci">void report_bad_alloc_error(const char *Reason, bool GenCrashDiag=true)</div><div class="ttdoc">Reports a bad alloc error, calling any user defined bad alloc error handler.</div><div class="ttdef"><b>Definition:</b> <a href="ErrorHandling_8cpp_source.html#l00146">ErrorHandling.cpp:146</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:26 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

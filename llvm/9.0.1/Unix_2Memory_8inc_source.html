@@ -67,9 +67,9 @@ $(function() {
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="Unix_8h.html">Unix.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;llvm/Config/config.h&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;llvm/Support/DataTypes.h&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;llvm/Support/ErrorHandling.h&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;llvm/Support/Process.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="DataTypes_8h.html">llvm/Support/DataTypes.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="ErrorHandling_8h.html">llvm/Support/ErrorHandling.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="Process_8h.html">llvm/Support/Process.h</a>&quot;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifdef HAVE_SYS_MMAN_H</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;sys/mman.h&gt;</span></div>
@@ -100,19 +100,19 @@ $(function() {
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">namespace </span>{</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">int</span> getPosixProtectionFlags(<span class="keywordtype">unsigned</span> Flags) {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordflow">switch</span> (Flags &amp; llvm::sys::Memory::MF_RWE_MASK) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordflow">case</span> llvm::sys::Memory::MF_READ:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordflow">switch</span> (Flags &amp; <a class="code hl_enumvalue" href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a04baa4ca0e4ca865eba075daf1e551f3">llvm::sys::Memory::MF_RWE_MASK</a>) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a02cae455b05abf1bfb1de69095e66417">llvm::sys::Memory::MF_READ</a>:</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">return</span> PROT_READ;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">case</span> llvm::sys::Memory::MF_WRITE:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a83e34a8267f7acd88563e9d5a3ee7c25">llvm::sys::Memory::MF_WRITE</a>:</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> PROT_WRITE;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordflow">case</span> llvm::sys::Memory::MF_READ|llvm::sys::Memory::MF_WRITE:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a02cae455b05abf1bfb1de69095e66417">llvm::sys::Memory::MF_READ</a>|<a class="code hl_enumvalue" href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a83e34a8267f7acd88563e9d5a3ee7c25">llvm::sys::Memory::MF_WRITE</a>:</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> PROT_READ | PROT_WRITE;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">case</span> llvm::sys::Memory::MF_READ|llvm::sys::Memory::MF_EXEC:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a02cae455b05abf1bfb1de69095e66417">llvm::sys::Memory::MF_READ</a>|<a class="code hl_enumvalue" href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a72200d7026f0978efe86fc34f4cba76e">llvm::sys::Memory::MF_EXEC</a>:</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">return</span> PROT_READ | PROT_EXEC;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordflow">case</span> llvm::sys::Memory::MF_READ | llvm::sys::Memory::MF_WRITE |</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      llvm::sys::Memory::MF_EXEC:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a02cae455b05abf1bfb1de69095e66417">llvm::sys::Memory::MF_READ</a> | <a class="code hl_enumvalue" href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a83e34a8267f7acd88563e9d5a3ee7c25">llvm::sys::Memory::MF_WRITE</a> |</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      <a class="code hl_enumvalue" href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a72200d7026f0978efe86fc34f4cba76e">llvm::sys::Memory::MF_EXEC</a>:</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">return</span> PROT_READ | PROT_WRITE | PROT_EXEC;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keywordflow">case</span> llvm::sys::Memory::MF_EXEC:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a72200d7026f0978efe86fc34f4cba76e">llvm::sys::Memory::MF_EXEC</a>:</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#if (defined(__FreeBSD__) || defined(__POWERPC__) || defined (__ppc__) || \</span></div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">     defined(_POWER) || defined(_ARCH_PPC))</span></div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// On PowerPC, having an executable page that has no read permission</span></div>
@@ -125,7 +125,7 @@ $(function() {
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">return</span> PROT_EXEC;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    llvm_unreachable(<span class="stringliteral">&quot;Illegal memory protection flag specified!&quot;</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;Illegal memory protection flag specified!&quot;</span>);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  }</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="comment">// Provide a default return value as required by some compilers.</span></div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordflow">return</span> PROT_NONE;</div>
@@ -137,11 +137,11 @@ $(function() {
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">namespace </span>sys {</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>MemoryBlock</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>Memory::allocateMappedMemory(<span class="keywordtype">size_t</span> NumBytes,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><a class="code hl_function" href="classllvm_1_1sys_1_1Memory.html#a1326dd13b23711e68ade413fbc57b9f6">Memory::allocateMappedMemory</a>(<span class="keywordtype">size_t</span> NumBytes,</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                             <span class="keyword">const</span> MemoryBlock *<span class="keyword">const</span> NearBlock,</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                             <span class="keywordtype">unsigned</span> PFlags,</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                             std::error_code &amp;EC) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  EC = std::error_code();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a> = std::error_code();</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordflow">if</span> (NumBytes == 0)</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">return</span> MemoryBlock();</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
@@ -154,7 +154,7 @@ $(function() {
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  fd = open(<span class="stringliteral">&quot;/dev/zero&quot;</span>, O_RDWR);</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordflow">if</span> (fd == -1) {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    EC = std::error_code(errno, std::generic_category());</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a> = std::error_code(errno, std::generic_category());</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">return</span> MemoryBlock();</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  }</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#endif</span></div>
@@ -172,7 +172,7 @@ $(function() {
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="comment">// Use any near hint and the page size to set a page-aligned starting address</span></div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  uintptr_t Start = NearBlock ? <span class="keyword">reinterpret_cast&lt;</span>uintptr_t<span class="keyword">&gt;</span>(NearBlock-&gt;base()) +</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                                      NearBlock-&gt;allocatedSize() : 0;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> PageSize = Process::getPageSizeEstimate();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> PageSize = <a class="code hl_function" href="classllvm_1_1sys_1_1Process.html#a774becf3d10728695b270703bca011ec">Process::getPageSizeEstimate</a>();</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> NumPages = (NumBytes+PageSize-1)/PageSize;</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordflow">if</span> (Start &amp;&amp; Start % PageSize)</div>
@@ -186,10 +186,10 @@ $(function() {
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">#if !defined(MAP_ANON)</span></div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      close(fd);</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keywordflow">return</span> allocateMappedMemory(NumBytes, <span class="keyword">nullptr</span>, PFlags, EC);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="classllvm_1_1sys_1_1Memory.html#a1326dd13b23711e68ade413fbc57b9f6">allocateMappedMemory</a>(NumBytes, <span class="keyword">nullptr</span>, PFlags, EC);</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    EC = std::error_code(errno, std::generic_category());</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a> = std::error_code(errno, std::generic_category());</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#if !defined(MAP_ANON)</span></div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    close(fd);</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">#endif</span></div>
@@ -206,8 +206,8 @@ $(function() {
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  Result.Flags = PFlags;</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="comment">// Rely on protectMappedMemory to invalidate instruction cache.</span></div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keywordflow">if</span> (PFlags &amp; MF_EXEC) {</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    EC = Memory::protectMappedMemory (Result, PFlags);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keywordflow">if</span> (PFlags &amp; <a class="code hl_enumvalue" href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a72200d7026f0978efe86fc34f4cba76e">MF_EXEC</a>) {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a> = <a class="code hl_function" href="classllvm_1_1sys_1_1Memory.html#ae27409ddee7e191f33392283ca826703">Memory::protectMappedMemory</a> (Result, PFlags);</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">if</span> (EC != std::error_code())</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      <span class="keywordflow">return</span> MemoryBlock();</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  }</div>
@@ -216,33 +216,33 @@ $(function() {
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>std::error_code</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>Memory::releaseMappedMemory(MemoryBlock &amp;M) {</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keywordflow">if</span> (M.Address == <span class="keyword">nullptr</span> || M.AllocatedSize == 0)</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><a class="code hl_function" href="classllvm_1_1sys_1_1Memory.html#a042d24349a4b6a5ce475309cce529ae0">Memory::releaseMappedMemory</a>(MemoryBlock &amp;M) {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.Address == <span class="keyword">nullptr</span> || <a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.AllocatedSize == 0)</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordflow">return</span> std::error_code();</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keywordflow">if</span> (0 != ::munmap(M.Address, M.AllocatedSize))</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keywordflow">if</span> (0 != ::munmap(<a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.Address, <a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.AllocatedSize))</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordflow">return</span> std::error_code(errno, std::generic_category());</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  M.Address = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  M.AllocatedSize = 0;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.Address = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  <a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.AllocatedSize = 0;</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="keywordflow">return</span> std::error_code();</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>}</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>std::error_code</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>Memory::protectMappedMemory(<span class="keyword">const</span> MemoryBlock &amp;M, <span class="keywordtype">unsigned</span> Flags) {</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> PageSize = Process::getPageSizeEstimate();</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  <span class="keywordflow">if</span> (M.Address == <span class="keyword">nullptr</span> || M.AllocatedSize == 0)</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><a class="code hl_function" href="classllvm_1_1sys_1_1Memory.html#ae27409ddee7e191f33392283ca826703">Memory::protectMappedMemory</a>(<span class="keyword">const</span> MemoryBlock &amp;M, <span class="keywordtype">unsigned</span> Flags) {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> PageSize = <a class="code hl_function" href="classllvm_1_1sys_1_1Process.html#a774becf3d10728695b270703bca011ec">Process::getPageSizeEstimate</a>();</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.Address == <span class="keyword">nullptr</span> || <a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.AllocatedSize == 0)</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordflow">return</span> std::error_code();</div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  <span class="keywordflow">if</span> (!Flags)</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordflow">return</span> std::error_code(EINVAL, std::generic_category());</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  <span class="keywordtype">int</span> Protect = getPosixProtectionFlags(Flags);</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  uintptr_t Start = alignAddr((uint8_t *)M.Address - PageSize + 1, PageSize);</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  uintptr_t End = alignAddr((uint8_t *)M.Address + M.AllocatedSize, PageSize);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  uintptr_t Start = <a class="code hl_function" href="namespacellvm.html#ae004b14c171a1217d2804ab9e791aa5a">alignAddr</a>((uint8_t *)<a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.Address - PageSize + 1, PageSize);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  uintptr_t End = <a class="code hl_function" href="namespacellvm.html#ae004b14c171a1217d2804ab9e791aa5a">alignAddr</a>((uint8_t *)<a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.Address + <a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.AllocatedSize, PageSize);</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <span class="keywordtype">bool</span> InvalidateCache = (Flags &amp; MF_EXEC);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <span class="keywordtype">bool</span> InvalidateCache = (Flags &amp; <a class="code hl_enumvalue" href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a72200d7026f0978efe86fc34f4cba76e">MF_EXEC</a>);</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="preprocessor">#if defined(__arm__) || defined(__aarch64__)</span></div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="comment">// Certain ARM implementations treat icache clear instruction as a memory read,</span></div>
@@ -253,7 +253,7 @@ $(function() {
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordflow">if</span> (Result != 0)</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>      <span class="keywordflow">return</span> std::error_code(errno, std::generic_category());</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    Memory::InvalidateInstructionCache(M.Address, M.AllocatedSize);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <a class="code hl_function" href="classllvm_1_1sys_1_1Memory.html#a5cfd4d2a8227a3f9ca0667f42f05f20b">Memory::InvalidateInstructionCache</a>(<a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.Address, <a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.AllocatedSize);</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    InvalidateCache = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  }</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="preprocessor">#endif</span></div>
@@ -264,7 +264,7 @@ $(function() {
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordflow">return</span> std::error_code(errno, std::generic_category());</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keywordflow">if</span> (InvalidateCache)</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    Memory::InvalidateInstructionCache(M.Address, M.AllocatedSize);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <a class="code hl_function" href="classllvm_1_1sys_1_1Memory.html#a5cfd4d2a8227a3f9ca0667f42f05f20b">Memory::InvalidateInstructionCache</a>(<a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.Address, <a class="code hl_enumvalue" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>.AllocatedSize);</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  <span class="keywordflow">return</span> std::error_code();</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>}</div>
@@ -272,7 +272,7 @@ $(function() {
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">/// InvalidateInstructionCache - Before the JIT can run a block of code</span></div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">/// that has been emitted it must invalidate the instruction cache on some</span></div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment">/// platforms.</span></div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment"></span><span class="keywordtype">void</span> Memory::InvalidateInstructionCache(<span class="keyword">const</span> <span class="keywordtype">void</span> *Addr,</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="classllvm_1_1sys_1_1Memory.html#a5cfd4d2a8227a3f9ca0667f42f05f20b">Memory::InvalidateInstructionCache</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *Addr,</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                                        <span class="keywordtype">size_t</span> Len) {</div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="comment">// icache invalidation for PPC and ARM.</span></div>
@@ -316,18 +316,35 @@ $(function() {
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="preprocessor">#endif  </span><span class="comment">// end apple</span></div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  ValgrindDiscardTranslations(Addr, Len);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  <a class="code hl_function" href="namespacellvm_1_1sys.html#afa3960ac5c365a344036b4c068477468">ValgrindDiscardTranslations</a>(Addr, Len);</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>}</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>} <span class="comment">// namespace sys</span></div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>} <span class="comment">// namespace llvm</span></div>
+<div class="ttc" id="aDataTypes_8h_html"><div class="ttname"><a href="DataTypes_8h.html">DataTypes.h</a></div></div>
 <div class="ttc" id="aDeadArgumentElimination_8cpp_html_aa5bfc84fa71b9e3477e24efecb60fae5"><div class="ttname"><a href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a></div><div class="ttdeci">assert(!RetTy-&gt;isVoidTy() &amp;&amp;&quot;void type has no subtype&quot;)</div></div>
+<div class="ttc" id="aErrorHandling_8h_html"><div class="ttname"><a href="ErrorHandling_8h.html">ErrorHandling.h</a></div></div>
+<div class="ttc" id="aErrorHandling_8h_html_ace243f5c25697a1107cce46626b3dc94"><div class="ttname"><a href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a></div><div class="ttdeci">#define llvm_unreachable(msg)</div><div class="ttdoc">Marks that the current location is not supposed to be reachable.</div><div class="ttdef"><b>Definition:</b> <a href="ErrorHandling_8h_source.html#l00135">ErrorHandling.h:135</a></div></div>
+<div class="ttc" id="aProcess_8h_html"><div class="ttname"><a href="Process_8h.html">Process.h</a></div><div class="ttdoc">Provides a library for accessing information about this process and other processes on the operating ...</div></div>
 <div class="ttc" id="aUnix_8h_html"><div class="ttname"><a href="Unix_8h.html">Unix.h</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
+<div class="ttc" id="aclassllvm_1_1sys_1_1Memory_html_a042d24349a4b6a5ce475309cce529ae0"><div class="ttname"><a href="classllvm_1_1sys_1_1Memory.html#a042d24349a4b6a5ce475309cce529ae0">llvm::sys::Memory::releaseMappedMemory</a></div><div class="ttdeci">static std::error_code releaseMappedMemory(MemoryBlock &amp;Block)</div><div class="ttdoc">This method releases a block of memory that was allocated with the allocateMappedMemory method.</div></div>
+<div class="ttc" id="aclassllvm_1_1sys_1_1Memory_html_a1326dd13b23711e68ade413fbc57b9f6"><div class="ttname"><a href="classllvm_1_1sys_1_1Memory.html#a1326dd13b23711e68ade413fbc57b9f6">llvm::sys::Memory::allocateMappedMemory</a></div><div class="ttdeci">static MemoryBlock allocateMappedMemory(size_t NumBytes, const MemoryBlock *const NearBlock, unsigned Flags, std::error_code &amp;EC)</div><div class="ttdoc">This method allocates a block of memory that is suitable for loading dynamically generated code (e....</div></div>
+<div class="ttc" id="aclassllvm_1_1sys_1_1Memory_html_a548f317b89dc0bba738b89e5ce791395a02cae455b05abf1bfb1de69095e66417"><div class="ttname"><a href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a02cae455b05abf1bfb1de69095e66417">llvm::sys::Memory::MF_READ</a></div><div class="ttdeci">@ MF_READ</div><div class="ttdef"><b>Definition:</b> <a href="Memory_8h_source.html#l00056">Memory.h:56</a></div></div>
+<div class="ttc" id="aclassllvm_1_1sys_1_1Memory_html_a548f317b89dc0bba738b89e5ce791395a04baa4ca0e4ca865eba075daf1e551f3"><div class="ttname"><a href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a04baa4ca0e4ca865eba075daf1e551f3">llvm::sys::Memory::MF_RWE_MASK</a></div><div class="ttdeci">@ MF_RWE_MASK</div><div class="ttdef"><b>Definition:</b> <a href="Memory_8h_source.html#l00059">Memory.h:59</a></div></div>
+<div class="ttc" id="aclassllvm_1_1sys_1_1Memory_html_a548f317b89dc0bba738b89e5ce791395a72200d7026f0978efe86fc34f4cba76e"><div class="ttname"><a href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a72200d7026f0978efe86fc34f4cba76e">llvm::sys::Memory::MF_EXEC</a></div><div class="ttdeci">@ MF_EXEC</div><div class="ttdef"><b>Definition:</b> <a href="Memory_8h_source.html#l00058">Memory.h:58</a></div></div>
+<div class="ttc" id="aclassllvm_1_1sys_1_1Memory_html_a548f317b89dc0bba738b89e5ce791395a83e34a8267f7acd88563e9d5a3ee7c25"><div class="ttname"><a href="classllvm_1_1sys_1_1Memory.html#a548f317b89dc0bba738b89e5ce791395a83e34a8267f7acd88563e9d5a3ee7c25">llvm::sys::Memory::MF_WRITE</a></div><div class="ttdeci">@ MF_WRITE</div><div class="ttdef"><b>Definition:</b> <a href="Memory_8h_source.html#l00057">Memory.h:57</a></div></div>
+<div class="ttc" id="aclassllvm_1_1sys_1_1Memory_html_a5cfd4d2a8227a3f9ca0667f42f05f20b"><div class="ttname"><a href="classllvm_1_1sys_1_1Memory.html#a5cfd4d2a8227a3f9ca0667f42f05f20b">llvm::sys::Memory::InvalidateInstructionCache</a></div><div class="ttdeci">static void InvalidateInstructionCache(const void *Addr, size_t Len)</div><div class="ttdoc">InvalidateInstructionCache - Before the JIT can run a block of code that has been emitted it must inv...</div></div>
+<div class="ttc" id="aclassllvm_1_1sys_1_1Memory_html_ae27409ddee7e191f33392283ca826703"><div class="ttname"><a href="classllvm_1_1sys_1_1Memory.html#ae27409ddee7e191f33392283ca826703">llvm::sys::Memory::protectMappedMemory</a></div><div class="ttdeci">static std::error_code protectMappedMemory(const MemoryBlock &amp;Block, unsigned Flags)</div><div class="ttdoc">This method sets the protection flags for a block of memory to the state specified by /p Flags.</div></div>
+<div class="ttc" id="aclassllvm_1_1sys_1_1Process_html_a774becf3d10728695b270703bca011ec"><div class="ttname"><a href="classllvm_1_1sys_1_1Process.html#a774becf3d10728695b270703bca011ec">llvm::sys::Process::getPageSizeEstimate</a></div><div class="ttdeci">static unsigned getPageSizeEstimate()</div><div class="ttdoc">Get the process's estimated page size.</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00056">Process.h:56</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1ARM_html_ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac"><div class="ttname"><a href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">llvm::ARM::ProfileKind::M</a></div><div class="ttdeci">@ M</div></div>
+<div class="ttc" id="anamespacellvm_1_1codeview_html_a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">llvm::codeview::CompileSym2Flags::EC</a></div><div class="ttdeci">@ EC</div></div>
+<div class="ttc" id="anamespacellvm_1_1sys_html_afa3960ac5c365a344036b4c068477468"><div class="ttname"><a href="namespacellvm_1_1sys.html#afa3960ac5c365a344036b4c068477468">llvm::sys::ValgrindDiscardTranslations</a></div><div class="ttdeci">void ValgrindDiscardTranslations(const void *Addr, size_t Len)</div><div class="ttdef"><b>Definition:</b> <a href="Valgrind_8cpp_source.html#l00051">Valgrind.cpp:51</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysis_8h_source.html#l00056">AliasAnalysis.h:56</a></div></div>
+<div class="ttc" id="anamespacellvm_html_ae004b14c171a1217d2804ab9e791aa5a"><div class="ttname"><a href="namespacellvm.html#ae004b14c171a1217d2804ab9e791aa5a">llvm::alignAddr</a></div><div class="ttdeci">uintptr_t alignAddr(const void *Addr, size_t Alignment)</div><div class="ttdoc">Aligns Addr to Alignment bytes, rounding up.</div><div class="ttdef"><b>Definition:</b> <a href="MathExtras_8h_source.html#l00627">MathExtras.h:627</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:26 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

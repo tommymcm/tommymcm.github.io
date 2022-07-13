@@ -60,9 +60,10 @@ Inheritance diagram for AAReturnedValuesImpl:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAAReturnedValuesImpl__inherit__graph.png" border="0" usemap="#aAAReturnedValuesImpl_inherit__map" alt="Inheritance graph"/></div>
 <map name="aAAReturnedValuesImpl_inherit__map" id="aAAReturnedValuesImpl_inherit__map">
-<area shape="rect" title="&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;— Function Return Values &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="66,79,237,104"/>
-<area shape="rect" href="classAAReturnedValues.html" title=" " alt="" coords="5,5,148,31"/>
-<area shape="rect" href="classAbstractState.html" title=" " alt="" coords="172,5,283,31"/>
+<area shape="rect" title="&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;— Function Return Values &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="103,152,273,177"/>
+<area shape="rect" href="structllvm_1_1AAReturnedValues.html" title="An abstract attribute for the returned values of a function." alt="" coords="5,79,184,104"/>
+<area shape="rect" href="structllvm_1_1AbstractAttribute.html" title="Base struct for all &quot;concrete attribute&quot; deductions." alt="" coords="9,5,180,31"/>
+<area shape="rect" href="structllvm_1_1AbstractState.html" title="An interface to query the internal state of an abstract attribute." alt="" coords="208,79,355,104"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -70,58 +71,160 @@ Collaboration diagram for AAReturnedValuesImpl:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAAReturnedValuesImpl__coll__graph.png" border="0" usemap="#aAAReturnedValuesImpl_coll__map" alt="Collaboration graph"/></div>
 <map name="aAAReturnedValuesImpl_coll__map" id="aAAReturnedValuesImpl_coll__map">
-<area shape="rect" title="&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;— Function Return Values &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="66,79,237,104"/>
-<area shape="rect" href="classAAReturnedValues.html" title=" " alt="" coords="5,5,148,31"/>
-<area shape="rect" href="classAbstractState.html" title=" " alt="" coords="172,5,283,31"/>
+<area shape="rect" title="&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;— Function Return Values &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="261,461,431,487"/>
+<area shape="rect" href="structllvm_1_1AAReturnedValues.html" title="An abstract attribute for the returned values of a function." alt="" coords="117,387,295,412"/>
+<area shape="rect" href="structllvm_1_1AbstractAttribute.html" title="Base struct for all &quot;concrete attribute&quot; deductions." alt="" coords="47,299,218,324"/>
+<area shape="rect" href="classllvm_1_1Value.html" title="LLVM Value Representation." alt="" coords="5,196,100,221"/>
+<area shape="rect" href="classunsigned.html" title=" " alt="" coords="12,5,93,31"/>
+<area shape="rect" href="structllvm_1_1InformationCache.html" title="Data structure to hold cached (LLVM&#45;IR) information." alt="" coords="124,196,299,221"/>
+<area shape="rect" title=" " alt="" coords="242,299,317,324"/>
+<area shape="rect" href="structllvm_1_1AbstractState.html" title="An interface to query the internal state of an abstract attribute." alt="" coords="319,387,466,412"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1e200960c4a6571980b9c6cb9ce8977e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a1e200960c4a6571980b9c6cb9ce8977e">AAReturnedValuesImpl</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, InformationCache &amp;InfoCache)</td></tr>
+<tr class="memitem:a1e200960c4a6571980b9c6cb9ce8977e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a1e200960c4a6571980b9c6cb9ce8977e">AAReturnedValuesImpl</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="structllvm_1_1InformationCache.html">InformationCache</a> &amp;<a class="el" href="structllvm_1_1AbstractAttribute.html#a5f9ce91cafb2f0f5590f41598e01082b">InfoCache</a>)</td></tr>
 <tr class="memdesc:a1e200960c4a6571980b9c6cb9ce8977e"><td class="mdescLeft">&#160;</td><td class="mdescRight">See AbstractAttribute::AbstractAttribute(...).  <a href="classAAReturnedValuesImpl.html#a1e200960c4a6571980b9c6cb9ce8977e">More...</a><br /></td></tr>
 <tr class="separator:a1e200960c4a6571980b9c6cb9ce8977e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a453236d3e51f668a139489c23fb11243"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a453236d3e51f668a139489c23fb11243">initialize</a> (Attributor &amp;A) override</td></tr>
+<tr class="memitem:a453236d3e51f668a139489c23fb11243"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a453236d3e51f668a139489c23fb11243">initialize</a> (<a class="el" href="structllvm_1_1Attributor.html">Attributor</a> &amp;A) override</td></tr>
 <tr class="memdesc:a453236d3e51f668a139489c23fb11243"><td class="mdescLeft">&#160;</td><td class="mdescRight">See AbstractAttribute::initialize(...).  <a href="classAAReturnedValuesImpl.html#a453236d3e51f668a139489c23fb11243">More...</a><br /></td></tr>
 <tr class="separator:a453236d3e51f668a139489c23fb11243"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46838b11532eb2009861fd036578b773"><td class="memItemLeft" align="right" valign="top">ChangeStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a46838b11532eb2009861fd036578b773">manifest</a> (Attributor &amp;A) override</td></tr>
+<tr class="memitem:a46838b11532eb2009861fd036578b773"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacellvm.html#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a46838b11532eb2009861fd036578b773">manifest</a> (<a class="el" href="structllvm_1_1Attributor.html">Attributor</a> &amp;A) override</td></tr>
 <tr class="memdesc:a46838b11532eb2009861fd036578b773"><td class="mdescLeft">&#160;</td><td class="mdescRight">See AbstractAttribute::manifest(...).  <a href="classAAReturnedValuesImpl.html#a46838b11532eb2009861fd036578b773">More...</a><br /></td></tr>
 <tr class="separator:a46838b11532eb2009861fd036578b773"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e52a100d064cb2329b87d6198b52dae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAbstractState.html">AbstractState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a3e52a100d064cb2329b87d6198b52dae">getState</a> () override</td></tr>
+<tr class="memitem:a3e52a100d064cb2329b87d6198b52dae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structllvm_1_1AbstractState.html">AbstractState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a3e52a100d064cb2329b87d6198b52dae">getState</a> () override</td></tr>
 <tr class="memdesc:a3e52a100d064cb2329b87d6198b52dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">See AbstractAttribute::getState(...).  <a href="classAAReturnedValuesImpl.html#a3e52a100d064cb2329b87d6198b52dae">More...</a><br /></td></tr>
 <tr class="separator:a3e52a100d064cb2329b87d6198b52dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c314d82a7e609523bbadf5aa48d7ca6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classAbstractState.html">AbstractState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a6c314d82a7e609523bbadf5aa48d7ca6">getState</a> () const override</td></tr>
+<tr class="memitem:a6c314d82a7e609523bbadf5aa48d7ca6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structllvm_1_1AbstractState.html">AbstractState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a6c314d82a7e609523bbadf5aa48d7ca6">getState</a> () const override</td></tr>
 <tr class="memdesc:a6c314d82a7e609523bbadf5aa48d7ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">See AbstractAttribute::getState(...).  <a href="classAAReturnedValuesImpl.html#a6c314d82a7e609523bbadf5aa48d7ca6">More...</a><br /></td></tr>
 <tr class="separator:a6c314d82a7e609523bbadf5aa48d7ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f5efca801c7a8d01f4d33a5e9e5685b"><td class="memItemLeft" align="right" valign="top">ManifestPosition&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a7f5efca801c7a8d01f4d33a5e9e5685b">getManifestPosition</a> () const override</td></tr>
-<tr class="memdesc:a7f5efca801c7a8d01f4d33a5e9e5685b"><td class="mdescLeft">&#160;</td><td class="mdescRight">See AbstractAttribute::getManifestPosition().  <a href="classAAReturnedValuesImpl.html#a7f5efca801c7a8d01f4d33a5e9e5685b">More...</a><br /></td></tr>
+<tr class="memitem:a7f5efca801c7a8d01f4d33a5e9e5685b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1">ManifestPosition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a7f5efca801c7a8d01f4d33a5e9e5685b">getManifestPosition</a> () const override</td></tr>
+<tr class="memdesc:a7f5efca801c7a8d01f4d33a5e9e5685b"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <a class="el" href="structllvm_1_1AbstractAttribute.html#ac288f03ae183bddef5864f64783683cc" title="}">AbstractAttribute::getManifestPosition()</a>.  <a href="classAAReturnedValuesImpl.html#a7f5efca801c7a8d01f4d33a5e9e5685b">More...</a><br /></td></tr>
 <tr class="separator:a7f5efca801c7a8d01f4d33a5e9e5685b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a356844fbecd1179c46efcb427f32f728"><td class="memItemLeft" align="right" valign="top">ChangeStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a356844fbecd1179c46efcb427f32f728">updateImpl</a> (Attributor &amp;A) override</td></tr>
+<tr class="memitem:a356844fbecd1179c46efcb427f32f728"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacellvm.html#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a356844fbecd1179c46efcb427f32f728">updateImpl</a> (<a class="el" href="structllvm_1_1Attributor.html">Attributor</a> &amp;A) override</td></tr>
 <tr class="memdesc:a356844fbecd1179c46efcb427f32f728"><td class="mdescLeft">&#160;</td><td class="mdescRight">See AbstractAttribute::updateImpl(Attributor &amp;A).  <a href="classAAReturnedValuesImpl.html#a356844fbecd1179c46efcb427f32f728">More...</a><br /></td></tr>
 <tr class="separator:a356844fbecd1179c46efcb427f32f728"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8c5ace6c48d89f8953e1e6c60ee32a0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#af8c5ace6c48d89f8953e1e6c60ee32a0">getNumReturnValues</a> () const</td></tr>
 <tr class="memdesc:af8c5ace6c48d89f8953e1e6c60ee32a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of potential return values, -1 if unknown.  <a href="classAAReturnedValuesImpl.html#af8c5ace6c48d89f8953e1e6c60ee32a0">More...</a><br /></td></tr>
 <tr class="separator:af8c5ace6c48d89f8953e1e6c60ee32a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb1e9ea226d84a781d0dc1a1d8ae846f"><td class="memItemLeft" align="right" valign="top">Optional&lt; Value * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#afb1e9ea226d84a781d0dc1a1d8ae846f">getAssumedUniqueReturnValue</a> () const</td></tr>
+<tr class="memitem:afb1e9ea226d84a781d0dc1a1d8ae846f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#afb1e9ea226d84a781d0dc1a1d8ae846f">getAssumedUniqueReturnValue</a> () const</td></tr>
 <tr class="memdesc:afb1e9ea226d84a781d0dc1a1d8ae846f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an assumed unique return value if a single candidate is found.  <a href="classAAReturnedValuesImpl.html#afb1e9ea226d84a781d0dc1a1d8ae846f">More...</a><br /></td></tr>
 <tr class="separator:afb1e9ea226d84a781d0dc1a1d8ae846f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e42ce1c20e0edc6b42ce491e9c2d2bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a3e42ce1c20e0edc6b42ce491e9c2d2bc">checkForallReturnedValues</a> (std::function&lt; bool(Value &amp;)&gt; &amp;Pred) const override</td></tr>
+<tr class="memitem:a3e42ce1c20e0edc6b42ce491e9c2d2bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a3e42ce1c20e0edc6b42ce491e9c2d2bc">checkForallReturnedValues</a> (std::function&lt; <a class="el" href="classbool.html">bool</a>(<a class="el" href="classllvm_1_1Value.html">Value</a> &amp;)&gt; &amp;Pred) const override</td></tr>
 <tr class="memdesc:a3e42ce1c20e0edc6b42ce491e9c2d2bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">See AbstractState::checkForallReturnedValues(...).  <a href="classAAReturnedValuesImpl.html#a3e42ce1c20e0edc6b42ce491e9c2d2bc">More...</a><br /></td></tr>
 <tr class="separator:a3e42ce1c20e0edc6b42ce491e9c2d2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a895a3932a3dff91a0fc07dff2171656e"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a895a3932a3dff91a0fc07dff2171656e">getAsStr</a> () const override</td></tr>
 <tr class="memdesc:a895a3932a3dff91a0fc07dff2171656e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pretty print the attribute similar to the IR representation.  <a href="classAAReturnedValuesImpl.html#a895a3932a3dff91a0fc07dff2171656e">More...</a><br /></td></tr>
 <tr class="separator:a895a3932a3dff91a0fc07dff2171656e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84318dd031f6ee0d8afa9b7acc9d91f7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a84318dd031f6ee0d8afa9b7acc9d91f7">isAtFixpoint</a> () const override</td></tr>
-<tr class="memdesc:a84318dd031f6ee0d8afa9b7acc9d91f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">See AbstractState::isAtFixpoint().  <a href="classAAReturnedValuesImpl.html#a84318dd031f6ee0d8afa9b7acc9d91f7">More...</a><br /></td></tr>
+<tr class="memitem:a84318dd031f6ee0d8afa9b7acc9d91f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a84318dd031f6ee0d8afa9b7acc9d91f7">isAtFixpoint</a> () const override</td></tr>
+<tr class="memdesc:a84318dd031f6ee0d8afa9b7acc9d91f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <a class="el" href="structllvm_1_1AbstractState.html#adab11027e1a9fdc4c600bb8dba1df413" title="Return if this abstract state is fixed, thus does not need to be updated if information changes as it...">AbstractState::isAtFixpoint()</a>.  <a href="classAAReturnedValuesImpl.html#a84318dd031f6ee0d8afa9b7acc9d91f7">More...</a><br /></td></tr>
 <tr class="separator:a84318dd031f6ee0d8afa9b7acc9d91f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20c03670add0695312b403331909c2c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a20c03670add0695312b403331909c2c9">isValidState</a> () const override</td></tr>
-<tr class="memdesc:a20c03670add0695312b403331909c2c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">See AbstractState::isValidState().  <a href="classAAReturnedValuesImpl.html#a20c03670add0695312b403331909c2c9">More...</a><br /></td></tr>
+<tr class="memitem:a20c03670add0695312b403331909c2c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a20c03670add0695312b403331909c2c9">isValidState</a> () const override</td></tr>
+<tr class="memdesc:a20c03670add0695312b403331909c2c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <a class="el" href="structllvm_1_1AbstractState.html#ae2b42216b30b52bbb803df6884ef34d2" title="Return if this abstract state is in a valid state.">AbstractState::isValidState()</a>.  <a href="classAAReturnedValuesImpl.html#a20c03670add0695312b403331909c2c9">More...</a><br /></td></tr>
 <tr class="separator:a20c03670add0695312b403331909c2c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fb4322eed1b2cc0556aed6c20470d35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a4fb4322eed1b2cc0556aed6c20470d35">indicateOptimisticFixpoint</a> () override</td></tr>
 <tr class="memdesc:a4fb4322eed1b2cc0556aed6c20470d35"><td class="mdescLeft">&#160;</td><td class="mdescRight">See AbstractState::indicateOptimisticFixpoint(...).  <a href="classAAReturnedValuesImpl.html#a4fb4322eed1b2cc0556aed6c20470d35">More...</a><br /></td></tr>
 <tr class="separator:a4fb4322eed1b2cc0556aed6c20470d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46cdba1ea2a7ae675e2bcb98ceec09c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAAReturnedValuesImpl.html#a46cdba1ea2a7ae675e2bcb98ceec09c0">indicatePessimisticFixpoint</a> () override</td></tr>
+<tr class="memdesc:a46cdba1ea2a7ae675e2bcb98ceec09c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate that the abstract state should converge to the pessimistic state.  <a href="classAAReturnedValuesImpl.html#a46cdba1ea2a7ae675e2bcb98ceec09c0">More...</a><br /></td></tr>
 <tr class="separator:a46cdba1ea2a7ae675e2bcb98ceec09c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_structllvm_1_1AAReturnedValues"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structllvm_1_1AAReturnedValues')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structllvm_1_1AAReturnedValues.html">llvm::AAReturnedValues</a></td></tr>
+<tr class="memitem:a7afe4ce25269ab43799e8a536e8a3725 inherit pub_methods_structllvm_1_1AAReturnedValues"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AAReturnedValues.html#a7afe4ce25269ab43799e8a536e8a3725">AAReturnedValues</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="structllvm_1_1InformationCache.html">InformationCache</a> &amp;<a class="el" href="structllvm_1_1AbstractAttribute.html#a5f9ce91cafb2f0f5590f41598e01082b">InfoCache</a>)</td></tr>
+<tr class="memdesc:a7afe4ce25269ab43799e8a536e8a3725 inherit pub_methods_structllvm_1_1AAReturnedValues"><td class="mdescLeft">&#160;</td><td class="mdescRight">See AbstractAttribute::AbstractAttribute(...).  <a href="structllvm_1_1AAReturnedValues.html#a7afe4ce25269ab43799e8a536e8a3725">More...</a><br /></td></tr>
+<tr class="separator:a7afe4ce25269ab43799e8a536e8a3725 inherit pub_methods_structllvm_1_1AAReturnedValues"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad77f5c99056daad8ec25207448a56cbd inherit pub_methods_structllvm_1_1AAReturnedValues"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AAReturnedValues.html#ad77f5c99056daad8ec25207448a56cbd">checkForallReturnedValues</a> (std::function&lt; <a class="el" href="classbool.html">bool</a>(<a class="el" href="classllvm_1_1Value.html">Value</a> &amp;)&gt; &amp;Pred) const =0</td></tr>
+<tr class="memdesc:ad77f5c99056daad8ec25207448a56cbd inherit pub_methods_structllvm_1_1AAReturnedValues"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespacellvm_1_1Check.html">Check</a> <code>Pred</code> on all returned values.  <a href="structllvm_1_1AAReturnedValues.html#ad77f5c99056daad8ec25207448a56cbd">More...</a><br /></td></tr>
+<tr class="separator:ad77f5c99056daad8ec25207448a56cbd inherit pub_methods_structllvm_1_1AAReturnedValues"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeebeeab9c68f80cc6970318bcfc10262 inherit pub_methods_structllvm_1_1AAReturnedValues"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Attribute.html#aab7ee4b8fd1d3e7e4cea87868855e60e">Attribute::AttrKind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AAReturnedValues.html#aeebeeab9c68f80cc6970318bcfc10262">getAttrKind</a> () const override</td></tr>
+<tr class="memdesc:aeebeeab9c68f80cc6970318bcfc10262 inherit pub_methods_structllvm_1_1AAReturnedValues"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <a class="el" href="structllvm_1_1AbstractAttribute.html#a04e49eedee3059eac169273626fab8e2" title="Return the kind that identifies the abstract attribute implementation.">AbstractAttribute::getAttrKind()</a>  <a href="structllvm_1_1AAReturnedValues.html#aeebeeab9c68f80cc6970318bcfc10262">More...</a><br /></td></tr>
+<tr class="separator:aeebeeab9c68f80cc6970318bcfc10262 inherit pub_methods_structllvm_1_1AAReturnedValues"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_structllvm_1_1AbstractAttribute"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structllvm_1_1AbstractAttribute')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structllvm_1_1AbstractAttribute.html">llvm::AbstractAttribute</a></td></tr>
+<tr class="memitem:a048e0cb3b724af4a72184c3b3bfc7a14 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#a048e0cb3b724af4a72184c3b3bfc7a14">AbstractAttribute</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *<a class="el" href="structllvm_1_1AbstractAttribute.html#a9d71ca576cc56a900ea91a8161e11b01">AssociatedVal</a>, <a class="el" href="classllvm_1_1Value.html">Value</a> &amp;<a class="el" href="structllvm_1_1AbstractAttribute.html#a807ff70556aced42442899755e12eedc">AnchoredVal</a>, <a class="el" href="structllvm_1_1InformationCache.html">InformationCache</a> &amp;<a class="el" href="structllvm_1_1AbstractAttribute.html#a5f9ce91cafb2f0f5590f41598e01082b">InfoCache</a>)</td></tr>
+<tr class="memdesc:a048e0cb3b724af4a72184c3b3bfc7a14 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">An abstract attribute associated with <code>AssociatedVal</code> and anchored at <code>AnchoredVal</code>.  <a href="structllvm_1_1AbstractAttribute.html#a048e0cb3b724af4a72184c3b3bfc7a14">More...</a><br /></td></tr>
+<tr class="separator:a048e0cb3b724af4a72184c3b3bfc7a14 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba456c75ce059639cb9320571763abef inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#aba456c75ce059639cb9320571763abef">AbstractAttribute</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> &amp;V, <a class="el" href="structllvm_1_1InformationCache.html">InformationCache</a> &amp;<a class="el" href="structllvm_1_1AbstractAttribute.html#a5f9ce91cafb2f0f5590f41598e01082b">InfoCache</a>)</td></tr>
+<tr class="memdesc:aba456c75ce059639cb9320571763abef inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">An abstract attribute associated with and anchored at <code>V</code>.  <a href="structllvm_1_1AbstractAttribute.html#aba456c75ce059639cb9320571763abef">More...</a><br /></td></tr>
+<tr class="separator:aba456c75ce059639cb9320571763abef inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae12a7ceb0f2eacfd1865d04ff16f0f46 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#ae12a7ceb0f2eacfd1865d04ff16f0f46">~AbstractAttribute</a> ()</td></tr>
+<tr class="memdesc:ae12a7ceb0f2eacfd1865d04ff16f0f46 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <a href="structllvm_1_1AbstractAttribute.html#ae12a7ceb0f2eacfd1865d04ff16f0f46">More...</a><br /></td></tr>
+<tr class="separator:ae12a7ceb0f2eacfd1865d04ff16f0f46 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63f1f9078e9f43f6ac08ac9e1e9b4a41 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#a63f1f9078e9f43f6ac08ac9e1e9b4a41">initialize</a> (<a class="el" href="structllvm_1_1Attributor.html">Attributor</a> &amp;A)</td></tr>
+<tr class="memdesc:a63f1f9078e9f43f6ac08ac9e1e9b4a41 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the state with the information in the <a class="el" href="structllvm_1_1Attributor.html" title="}">Attributor</a> <code>A</code>.  <a href="structllvm_1_1AbstractAttribute.html#a63f1f9078e9f43f6ac08ac9e1e9b4a41">More...</a><br /></td></tr>
+<tr class="separator:a63f1f9078e9f43f6ac08ac9e1e9b4a41 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a351334eaac25d62303653847fa199468 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="structllvm_1_1AbstractState.html">AbstractState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#a351334eaac25d62303653847fa199468">getState</a> () const =0</td></tr>
+<tr class="memdesc:a351334eaac25d62303653847fa199468 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the internal abstract state for inspection.  <a href="structllvm_1_1AbstractAttribute.html#a351334eaac25d62303653847fa199468">More...</a><br /></td></tr>
+<tr class="separator:a351334eaac25d62303653847fa199468 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80b8a840e76d937f77397b01a4070fed inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Value.html">Value</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#a80b8a840e76d937f77397b01a4070fed">getAnchoredValue</a> ()</td></tr>
+<tr class="memdesc:a80b8a840e76d937f77397b01a4070fed inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the value this abstract attribute is anchored with.  <a href="structllvm_1_1AbstractAttribute.html#a80b8a840e76d937f77397b01a4070fed">More...</a><br /></td></tr>
+<tr class="separator:a80b8a840e76d937f77397b01a4070fed inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee3ecb01ad07f279f7fe73c97afb8af2 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classllvm_1_1Value.html">Value</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#aee3ecb01ad07f279f7fe73c97afb8af2">getAnchoredValue</a> () const</td></tr>
+<tr class="separator:aee3ecb01ad07f279f7fe73c97afb8af2 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2f1f9612d4336ec9e0593bf26427a1f inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#ad2f1f9612d4336ec9e0593bf26427a1f">getAnchorScope</a> ()</td></tr>
+<tr class="memdesc:ad2f1f9612d4336ec9e0593bf26427a1f inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">}  <a href="structllvm_1_1AbstractAttribute.html#ad2f1f9612d4336ec9e0593bf26427a1f">More...</a><br /></td></tr>
+<tr class="separator:ad2f1f9612d4336ec9e0593bf26427a1f inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9968ba283afd44fcd1070bd2a440184 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#aa9968ba283afd44fcd1070bd2a440184">getAnchorScope</a> () const</td></tr>
+<tr class="separator:aa9968ba283afd44fcd1070bd2a440184 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45ebf1ecd16f9a12ff327875d32f16ef inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#a45ebf1ecd16f9a12ff327875d32f16ef">getAssociatedValue</a> ()</td></tr>
+<tr class="memdesc:a45ebf1ecd16f9a12ff327875d32f16ef inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">}  <a href="structllvm_1_1AbstractAttribute.html#a45ebf1ecd16f9a12ff327875d32f16ef">More...</a><br /></td></tr>
+<tr class="separator:a45ebf1ecd16f9a12ff327875d32f16ef inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4bec63e0c5c2704c5f78f2f6a8f86e7 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#af4bec63e0c5c2704c5f78f2f6a8f86e7">getAssociatedValue</a> () const</td></tr>
+<tr class="separator:af4bec63e0c5c2704c5f78f2f6a8f86e7 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac288f03ae183bddef5864f64783683cc inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1">ManifestPosition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#ac288f03ae183bddef5864f64783683cc">getManifestPosition</a> () const =0</td></tr>
+<tr class="memdesc:ac288f03ae183bddef5864f64783683cc inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">}  <a href="structllvm_1_1AbstractAttribute.html#ac288f03ae183bddef5864f64783683cc">More...</a><br /></td></tr>
+<tr class="separator:ac288f03ae183bddef5864f64783683cc inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04e49eedee3059eac169273626fab8e2 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classllvm_1_1Attribute.html#aab7ee4b8fd1d3e7e4cea87868855e60e">Attribute::AttrKind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#a04e49eedee3059eac169273626fab8e2">getAttrKind</a> () const =0</td></tr>
+<tr class="memdesc:a04e49eedee3059eac169273626fab8e2 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the kind that identifies the abstract attribute implementation.  <a href="structllvm_1_1AbstractAttribute.html#a04e49eedee3059eac169273626fab8e2">More...</a><br /></td></tr>
+<tr class="separator:a04e49eedee3059eac169273626fab8e2 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28e04a3fd9b384e05d60e1827feae6bd inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#a28e04a3fd9b384e05d60e1827feae6bd">getDeducedAttributes</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Attribute.html">Attribute</a> &gt; &amp;Attrs) const</td></tr>
+<tr class="memdesc:a28e04a3fd9b384e05d60e1827feae6bd inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the deduced attributes in <code>Attrs</code>.  <a href="structllvm_1_1AbstractAttribute.html#a28e04a3fd9b384e05d60e1827feae6bd">More...</a><br /></td></tr>
+<tr class="separator:a28e04a3fd9b384e05d60e1827feae6bd inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeb8fceb7b4c78c75f8ce4bdf47adf66 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#afeb8fceb7b4c78c75f8ce4bdf47adf66">print</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS) const</td></tr>
+<tr class="memdesc:afeb8fceb7b4c78c75f8ce4bdf47adf66 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper functions, for debug purposes only.  <a href="structllvm_1_1AbstractAttribute.html#afeb8fceb7b4c78c75f8ce4bdf47adf66">More...</a><br /></td></tr>
+<tr class="separator:afeb8fceb7b4c78c75f8ce4bdf47adf66 inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83fca1e3e6efc80c2b8fcc9f372e05fe inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#a83fca1e3e6efc80c2b8fcc9f372e05fe">dump</a> () const</td></tr>
+<tr class="separator:a83fca1e3e6efc80c2b8fcc9f372e05fe inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8756565885f329f942b6c1a5d3ae81dc inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#a8756565885f329f942b6c1a5d3ae81dc">getAsStr</a> () const =0</td></tr>
+<tr class="memdesc:a8756565885f329f942b6c1a5d3ae81dc inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function should return the "summarized" assumed state as string.  <a href="structllvm_1_1AbstractAttribute.html#a8756565885f329f942b6c1a5d3ae81dc">More...</a><br /></td></tr>
+<tr class="separator:a8756565885f329f942b6c1a5d3ae81dc inherit pub_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_structllvm_1_1AbstractAttribute"><td colspan="2" onclick="javascript:toggleInherit('pub_types_structllvm_1_1AbstractAttribute')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="structllvm_1_1AbstractAttribute.html">llvm::AbstractAttribute</a></td></tr>
+<tr class="memitem:af2cb78e8e0702c73aff2ae4ed01889a1 inherit pub_types_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1">ManifestPosition</a> { <a class="el" href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1a5436f140cfd1c64831492501585203e0">MP_ARGUMENT</a>
+, <a class="el" href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1ad2e7dcd98272b2d0c1140b9c0c3143ca">MP_CALL_SITE_ARGUMENT</a>
+, <a class="el" href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1a1d9a8db606542fdababa2df4c035e266">MP_FUNCTION</a>
+, <a class="el" href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1a30f91344eda3ddbdab257d3a3b20d88e">MP_RETURNED</a>
+ }</td></tr>
+<tr class="memdesc:af2cb78e8e0702c73aff2ae4ed01889a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The positions attributes can be manifested in.  <a href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1">More...</a><br /></td></tr>
+<tr class="separator:af2cb78e8e0702c73aff2ae4ed01889a1 inherit pub_types_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_attribs_structllvm_1_1AAReturnedValues"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_structllvm_1_1AAReturnedValues')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="structllvm_1_1AAReturnedValues.html">llvm::AAReturnedValues</a></td></tr>
+<tr class="memitem:aeddbd95047e695e2564202d65c09e840 inherit pub_static_attribs_structllvm_1_1AAReturnedValues"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classllvm_1_1Attribute.html#aab7ee4b8fd1d3e7e4cea87868855e60e">Attribute::AttrKind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AAReturnedValues.html#aeddbd95047e695e2564202d65c09e840">ID</a> = Attribute::Returned</td></tr>
+<tr class="memdesc:aeddbd95047e695e2564202d65c09e840 inherit pub_static_attribs_structllvm_1_1AAReturnedValues"><td class="mdescLeft">&#160;</td><td class="mdescRight">The identifier used by the <a class="el" href="structllvm_1_1Attributor.html" title="}">Attributor</a> for this class of attributes.  <a href="structllvm_1_1AAReturnedValues.html#aeddbd95047e695e2564202d65c09e840">More...</a><br /></td></tr>
+<tr class="separator:aeddbd95047e695e2564202d65c09e840 inherit pub_static_attribs_structllvm_1_1AAReturnedValues"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_structllvm_1_1AbstractAttribute"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_structllvm_1_1AbstractAttribute')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="structllvm_1_1AbstractAttribute.html">llvm::AbstractAttribute</a></td></tr>
+<tr class="memitem:a03972b18e36635ccda4c5a26891f0d25 inherit pro_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacellvm.html#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#a03972b18e36635ccda4c5a26891f0d25">update</a> (<a class="el" href="structllvm_1_1Attributor.html">Attributor</a> &amp;A)</td></tr>
+<tr class="memdesc:a03972b18e36635ccda4c5a26891f0d25 inherit pro_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hook for the <a class="el" href="structllvm_1_1Attributor.html" title="}">Attributor</a> to trigger an update of the internal state.  <a href="structllvm_1_1AbstractAttribute.html#a03972b18e36635ccda4c5a26891f0d25">More...</a><br /></td></tr>
+<tr class="separator:a03972b18e36635ccda4c5a26891f0d25 inherit pro_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf1f6a1958e025b1b78f5ce2abb6b0ad inherit pro_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacellvm.html#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#aaf1f6a1958e025b1b78f5ce2abb6b0ad">manifest</a> (<a class="el" href="structllvm_1_1Attributor.html">Attributor</a> &amp;A)</td></tr>
+<tr class="memdesc:aaf1f6a1958e025b1b78f5ce2abb6b0ad inherit pro_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hook for the <a class="el" href="structllvm_1_1Attributor.html" title="}">Attributor</a> to trigger the manifestation of the information represented by the abstract attribute in the LLVM-IR.  <a href="structllvm_1_1AbstractAttribute.html#aaf1f6a1958e025b1b78f5ce2abb6b0ad">More...</a><br /></td></tr>
+<tr class="separator:aaf1f6a1958e025b1b78f5ce2abb6b0ad inherit pro_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a872431a1d9c85c90ea3d542628ef451b inherit pro_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structllvm_1_1AbstractState.html">AbstractState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#a872431a1d9c85c90ea3d542628ef451b">getState</a> ()=0</td></tr>
+<tr class="memdesc:a872431a1d9c85c90ea3d542628ef451b inherit pro_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the internal abstract state for careful modification.  <a href="structllvm_1_1AbstractAttribute.html#a872431a1d9c85c90ea3d542628ef451b">More...</a><br /></td></tr>
+<tr class="separator:a872431a1d9c85c90ea3d542628ef451b inherit pro_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae4d3d2e4be96b506c572fcc4a8738a inherit pro_methods_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacellvm.html#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#adae4d3d2e4be96b506c572fcc4a8738a">updateImpl</a> (<a class="el" href="structllvm_1_1Attributor.html">Attributor</a> &amp;A)=0</td></tr>
+<tr class="memdesc:adae4d3d2e4be96b506c572fcc4a8738a inherit pro_methods_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">The actual update/transfer function which has to be implemented by the derived classes.  <a href="structllvm_1_1AbstractAttribute.html#adae4d3d2e4be96b506c572fcc4a8738a">More...</a><br /></td></tr>
+<tr class="separator:adae4d3d2e4be96b506c572fcc4a8738a inherit pro_methods_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_structllvm_1_1AbstractAttribute"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_structllvm_1_1AbstractAttribute')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="structllvm_1_1AbstractAttribute.html">llvm::AbstractAttribute</a></td></tr>
+<tr class="memitem:a9d71ca576cc56a900ea91a8161e11b01 inherit pro_attribs_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#a9d71ca576cc56a900ea91a8161e11b01">AssociatedVal</a></td></tr>
+<tr class="memdesc:a9d71ca576cc56a900ea91a8161e11b01 inherit pro_attribs_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value this abstract attribute is associated with.  <a href="structllvm_1_1AbstractAttribute.html#a9d71ca576cc56a900ea91a8161e11b01">More...</a><br /></td></tr>
+<tr class="separator:a9d71ca576cc56a900ea91a8161e11b01 inherit pro_attribs_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a807ff70556aced42442899755e12eedc inherit pro_attribs_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Value.html">Value</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#a807ff70556aced42442899755e12eedc">AnchoredVal</a></td></tr>
+<tr class="memdesc:a807ff70556aced42442899755e12eedc inherit pro_attribs_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value this abstract attribute is anchored at.  <a href="structllvm_1_1AbstractAttribute.html#a807ff70556aced42442899755e12eedc">More...</a><br /></td></tr>
+<tr class="separator:a807ff70556aced42442899755e12eedc inherit pro_attribs_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f9ce91cafb2f0f5590f41598e01082b inherit pro_attribs_structllvm_1_1AbstractAttribute"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structllvm_1_1InformationCache.html">InformationCache</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1AbstractAttribute.html#a5f9ce91cafb2f0f5590f41598e01082b">InfoCache</a></td></tr>
+<tr class="memdesc:a5f9ce91cafb2f0f5590f41598e01082b inherit pro_attribs_structllvm_1_1AbstractAttribute"><td class="mdescLeft">&#160;</td><td class="mdescRight">The information cache accessible to this abstract attribute.  <a href="structllvm_1_1AbstractAttribute.html#a5f9ce91cafb2f0f5590f41598e01082b">More...</a><br /></td></tr>
+<tr class="separator:a5f9ce91cafb2f0f5590f41598e01082b inherit pro_attribs_structllvm_1_1AbstractAttribute"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >------------------&mdash; Function Return Values ----------------------------&mdash; </p>
@@ -144,13 +247,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classAAReturnedValuesImpl.html">AAReturnedValuesImpl::AAReturnedValuesImpl</a> </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">InformationCache &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1InformationCache.html">InformationCache</a> &amp;&#160;</td>
           <td class="paramname"><em>InfoCache</em>&#160;</td>
         </tr>
         <tr>
@@ -183,27 +286,25 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool AAReturnedValuesImpl::checkForallReturnedValues </td>
+          <td class="memname"><a class="el" href="classbool.html">bool</a> AAReturnedValuesImpl::checkForallReturnedValues </td>
           <td>(</td>
-          <td class="paramtype">std::function&lt; bool(Value &amp;)&gt; &amp;&#160;</td>
+          <td class="paramtype">std::function&lt; <a class="el" href="classbool.html">bool</a>(<a class="el" href="classllvm_1_1Value.html">Value</a> &amp;)&gt; &amp;&#160;</td>
           <td class="paramname"><em>Pred</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>See AbstractState::checkForallReturnedValues(...). </p>
 
+<p>Implements <a class="el" href="structllvm_1_1AAReturnedValues.html#ad77f5c99056daad8ec25207448a56cbd">llvm::AAReturnedValues</a>.</p>
+
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00627">627</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Attributor_8cpp_source.html#l00553">isValidState()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l00596">getAssumedUniqueReturnValue()</a>.</p>
 
 </div>
 </div>
@@ -225,16 +326,16 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Pretty print the attribute similar to the IR representation. </p>
 
-<p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00591">591</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
+<p>Implements <a class="el" href="structllvm_1_1AbstractAttribute.html#a8756565885f329f942b6c1a5d3ae81dc">llvm::AbstractAttribute</a>.</p>
 
-<p class="reference">References <a class="el" href="Attributor_8cpp_source.html#l00533">getNumReturnValues()</a>, <a class="el" href="Attributor_8cpp_source.html#l00550">isAtFixpoint()</a>, and <a class="el" href="Attributor_8cpp_source.html#l00553">isValidState()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00591">591</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
 </div>
 </div>
@@ -245,7 +346,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Optional&lt; Value * &gt; AAReturnedValuesImpl::getAssumedUniqueReturnValue </td>
+          <td class="memname"><a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; AAReturnedValuesImpl::getAssumedUniqueReturnValue </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -257,10 +358,6 @@ Public Member Functions</h2></td></tr>
 <p >If there cannot be one, return a nullptr. If it is not clear yet, return the Optional::NoneType. </p>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00596">596</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Attributor_8cpp_source.html#l00627">checkForallReturnedValues()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l00566">manifest()</a>.</p>
 
 </div>
 </div>
@@ -274,7 +371,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ManifestPosition AAReturnedValuesImpl::getManifestPosition </td>
+          <td class="memname"><a class="el" href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1">ManifestPosition</a> AAReturnedValuesImpl::getManifestPosition </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -282,12 +379,14 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>See AbstractAttribute::getManifestPosition(). </p>
+<p>See <a class="el" href="structllvm_1_1AbstractAttribute.html#ac288f03ae183bddef5864f64783683cc" title="}">AbstractAttribute::getManifestPosition()</a>. </p>
+
+<p>Implements <a class="el" href="structllvm_1_1AbstractAttribute.html#ac288f03ae183bddef5864f64783683cc">llvm::AbstractAttribute</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00527">527</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
@@ -320,10 +419,6 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00533">533</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Attributor_8cpp_source.html#l00553">isValidState()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l00591">getAsStr()</a>, and <a class="el" href="Attributor_8cpp_source.html#l00648">updateImpl()</a>.</p>
-
 </div>
 </div>
 <a id="a6c314d82a7e609523bbadf5aa48d7ca6" name="a6c314d82a7e609523bbadf5aa48d7ca6"></a>
@@ -336,7 +431,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classAbstractState.html">AbstractState</a> &amp; AAReturnedValuesImpl::getState </td>
+          <td class="memname">const <a class="el" href="structllvm_1_1AbstractState.html">AbstractState</a> &amp; AAReturnedValuesImpl::getState </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -344,12 +439,14 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>See AbstractAttribute::getState(...). </p>
+
+<p>Implements <a class="el" href="structllvm_1_1AbstractAttribute.html#a351334eaac25d62303653847fa199468">llvm::AbstractAttribute</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00524">524</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
@@ -365,7 +462,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classAbstractState.html">AbstractState</a> &amp; AAReturnedValuesImpl::getState </td>
+          <td class="memname"><a class="el" href="structllvm_1_1AbstractState.html">AbstractState</a> &amp; AAReturnedValuesImpl::getState </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -373,12 +470,14 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>See AbstractAttribute::getState(...). </p>
+
+<p>Implements <a class="el" href="structllvm_1_1AbstractAttribute.html#a872431a1d9c85c90ea3d542628ef451b">llvm::AbstractAttribute</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00521">521</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
@@ -402,16 +501,16 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>See AbstractState::indicateOptimisticFixpoint(...). </p>
 
-<p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00556">556</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
+<p>Implements <a class="el" href="structllvm_1_1AbstractState.html#acfe79ea038e2c57e498d84de4b73d251">llvm::AbstractState</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l00482">initialize()</a>, and <a class="el" href="Attributor_8cpp_source.html#l00648">updateImpl()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00556">556</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
 </div>
 </div>
@@ -433,10 +532,15 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Indicate that the abstract state should converge to the pessimistic state. </p>
+<p >This will usually revert the optimistically assumed state to the known to be true state. </p>
+
+<p>Implements <a class="el" href="structllvm_1_1AbstractState.html#a0b1e7022fa9ea41f343735d6451877c9">llvm::AbstractState</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00560">560</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
@@ -454,23 +558,25 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void AAReturnedValuesImpl::initialize </td>
           <td>(</td>
-          <td class="paramtype">Attributor &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1Attributor.html">Attributor</a> &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>See AbstractAttribute::initialize(...). </p>
 
+<p>Reimplemented from <a class="el" href="structllvm_1_1AbstractAttribute.html#a63f1f9078e9f43f6ac08ac9e1e9b4a41">llvm::AbstractAttribute</a>.</p>
+
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00482">482</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="Attributor_8cpp_source.html#l00556">indicateOptimisticFixpoint()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
 
 </div>
 </div>
@@ -484,7 +590,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool AAReturnedValuesImpl::isAtFixpoint </td>
+          <td class="memname"><a class="el" href="classbool.html">bool</a> AAReturnedValuesImpl::isAtFixpoint </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -492,16 +598,16 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>See AbstractState::isAtFixpoint(). </p>
+<p>See <a class="el" href="structllvm_1_1AbstractState.html#adab11027e1a9fdc4c600bb8dba1df413" title="Return if this abstract state is fixed, thus does not need to be updated if information changes as it...">AbstractState::isAtFixpoint()</a>. </p>
+
+<p>Implements <a class="el" href="structllvm_1_1AbstractState.html#adab11027e1a9fdc4c600bb8dba1df413">llvm::AbstractState</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00550">550</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l00591">getAsStr()</a>.</p>
 
 </div>
 </div>
@@ -515,7 +621,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool AAReturnedValuesImpl::isValidState </td>
+          <td class="memname"><a class="el" href="classbool.html">bool</a> AAReturnedValuesImpl::isValidState </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -523,16 +629,16 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>See AbstractState::isValidState(). </p>
+<p>See <a class="el" href="structllvm_1_1AbstractState.html#ae2b42216b30b52bbb803df6884ef34d2" title="Return if this abstract state is in a valid state.">AbstractState::isValidState()</a>. </p>
+
+<p>Implements <a class="el" href="structllvm_1_1AbstractState.html#ae2b42216b30b52bbb803df6884ef34d2">llvm::AbstractState</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00553">553</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l00627">checkForallReturnedValues()</a>, <a class="el" href="Attributor_8cpp_source.html#l00591">getAsStr()</a>, <a class="el" href="Attributor_8cpp_source.html#l00533">getNumReturnValues()</a>, and <a class="el" href="Attributor_8cpp_source.html#l00566">manifest()</a>.</p>
 
 </div>
 </div>
@@ -546,25 +652,27 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ChangeStatus AAReturnedValuesImpl::manifest </td>
+          <td class="memname"><a class="el" href="namespacellvm.html#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a> AAReturnedValuesImpl::manifest </td>
           <td>(</td>
-          <td class="paramtype">Attributor &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1Attributor.html">Attributor</a> &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>See AbstractAttribute::manifest(...). </p>
 
+<p>Reimplemented from <a class="el" href="structllvm_1_1AbstractAttribute.html#aaf1f6a1958e025b1b78f5ce2abb6b0ad">llvm::AbstractAttribute</a>.</p>
+
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00566">566</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Attributor_8cpp_source.html#l00596">getAssumedUniqueReturnValue()</a>, and <a class="el" href="Attributor_8cpp_source.html#l00553">isValidState()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Attributor_8cpp_source.html#l00292">llvm::AbstractAttribute::manifest()</a>, and <a class="el" href="namespacellvm.html#acd850975ae5042cacb64a9d0ea4715f3a46335765005ff44b1fe1e38e5d2ddfcc">llvm::UNCHANGED</a>.</p>
 
 </div>
 </div>
@@ -578,25 +686,27 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ChangeStatus AAReturnedValuesImpl::updateImpl </td>
+          <td class="memname"><a class="el" href="namespacellvm.html#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a> AAReturnedValuesImpl::updateImpl </td>
           <td>(</td>
-          <td class="paramtype">Attributor &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1Attributor.html">Attributor</a> &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>See AbstractAttribute::updateImpl(Attributor &amp;A). </p>
 
+<p>Implements <a class="el" href="structllvm_1_1AbstractAttribute.html#adae4d3d2e4be96b506c572fcc4a8738a">llvm::AbstractAttribute</a>.</p>
+
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00648">648</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Attributor_8cpp_source.html#l00533">getNumReturnValues()</a>, and <a class="el" href="Attributor_8cpp_source.html#l00556">indicateOptimisticFixpoint()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="namespacellvm.html#acd850975ae5042cacb64a9d0ea4715f3ae6b94e58bfd13b21bc786578d9f8ba4a">llvm::CHANGED</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="CallSite_8h_source.html#l00307">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getArgOperand()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, and <a class="el" href="namespacellvm.html#acd850975ae5042cacb64a9d0ea4715f3a46335765005ff44b1fe1e38e5d2ddfcc">llvm::UNCHANGED</a>.</p>
 
 </div>
 </div>
@@ -606,7 +716,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

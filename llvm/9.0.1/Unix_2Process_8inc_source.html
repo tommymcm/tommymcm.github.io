@@ -69,9 +69,9 @@ $(function() {
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;llvm/ADT/Hashing.h&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;llvm/ADT/StringRef.h&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;llvm/Config/config.h&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;llvm/Support/ManagedStatic.h&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;llvm/Support/Mutex.h&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;llvm/Support/MutexGuard.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="ManagedStatic_8h.html">llvm/Support/ManagedStatic.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="Mutex_8h.html">llvm/Support/Mutex.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="MutexGuard_8h.html">llvm/Support/MutexGuard.h</a>&quot;</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#if HAVE_FCNTL_H</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;fcntl.h&gt;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif</span></div>
@@ -124,7 +124,7 @@ $(function() {
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">// On Cygwin, getpagesize() returns 64k(AllocationGranularity) and</span></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">// offset in mmap(3) should be aligned to the AllocationGranularity.</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>Expected&lt;unsigned&gt; Process::getPageSize() {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><a class="code hl_class" href="classllvm_1_1Expected.html">Expected&lt;unsigned&gt;</a> Process::getPageSize() {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#if defined(HAVE_GETPAGESIZE)</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> page_size = ::getpagesize();</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#elif defined(HAVE_SYSCONF)</span></div>
@@ -144,9 +144,9 @@ $(function() {
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  mi = ::mallinfo();</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordflow">return</span> mi.uordblks;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#elif defined(HAVE_MALLOC_ZONE_STATISTICS) &amp;&amp; defined(HAVE_MALLOC_MALLOC_H)</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  malloc_statistics_t <a class="code hl_function" href="Statistic_8cpp.html#a6508e2501ecaee67af29d564448b43bb">Stats</a>;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  malloc_zone_statistics(malloc_default_zone(), &amp;<a class="code hl_function" href="Statistic_8cpp.html#a6508e2501ecaee67af29d564448b43bb">Stats</a>);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="Statistic_8cpp.html#a6508e2501ecaee67af29d564448b43bb">Stats</a>.size_in_use;   <span class="comment">// darwin</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  malloc_statistics_t <a class="code hl_variable" href="Statistic_8cpp.html#a85939e1359db7b40b81919914386954c">Stats</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  malloc_zone_statistics(malloc_default_zone(), &amp;<a class="code hl_variable" href="Statistic_8cpp.html#a85939e1359db7b40b81919914386954c">Stats</a>);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="Statistic_8cpp.html#a85939e1359db7b40b81919914386954c">Stats</a>.size_in_use;   <span class="comment">// darwin</span></div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#elif defined(HAVE_MALLCTL)</span></div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordtype">size_t</span> alloc, sz;</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  sz = <span class="keyword">sizeof</span>(size_t);</div>
@@ -167,7 +167,7 @@ $(function() {
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keywordtype">void</span> Process::GetTimeUsage(TimePoint&lt;&gt; &amp;elapsed, std::chrono::nanoseconds &amp;user_time,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keywordtype">void</span> Process::GetTimeUsage(<a class="code hl_typedef" href="namespacellvm_1_1sys.html#a54c339022277c7ea5975fa8f087a5b04">TimePoint&lt;&gt;</a> &amp;elapsed, std::chrono::nanoseconds &amp;user_time,</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                           std::chrono::nanoseconds &amp;sys_time) {</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  elapsed = std::chrono::system_clock::now();</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  std::tie(user_time, sys_time) = getRUsageTimes();</div>
@@ -219,8 +219,8 @@ $(function() {
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <a class="code hl_variable" href="Process_8cpp.html#a3e1976a70072c9f199a4b9ab049faf4b">coreFilesPrevented</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>}</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>Optional&lt;std::string&gt; Process::GetEnv(StringRef Name) {</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  std::string NameStr = Name.str();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><a class="code hl_class" href="classllvm_1_1Optional.html">Optional&lt;std::string&gt;</a> Process::GetEnv(StringRef Name) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  std::string NameStr = <a class="code hl_enumeration" href="namespacellvm_1_1GraphProgram.html#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.str();</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *Val = ::getenv(NameStr.c_str());</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <span class="keywordflow">if</span> (!Val)</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a>;</div>
@@ -253,7 +253,7 @@ $(function() {
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> StandardFD : StandardFDs) {</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keyword">struct </span>stat st;</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    errno = 0;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordflow">if</span> (RetryAfterSignal(-1, ::fstat, StandardFD, &amp;st) &lt; 0) {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacellvm_1_1sys.html#aea8b04d954b2cebd8a26d5d712634312">RetryAfterSignal</a>(-1, ::fstat, StandardFD, &amp;st) &lt; 0) {</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(errno &amp;&amp; <span class="stringliteral">&quot;expected errno to be set if fstat failed!&quot;</span>);</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      <span class="comment">// fstat should return EBADF if the file descriptor is closed.</span></div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      <span class="keywordflow">if</span> (errno != EBADF)</div>
@@ -268,7 +268,7 @@ $(function() {
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>      <span class="comment">// Call ::open in a lambda to avoid overload resolution in</span></div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>      <span class="comment">// RetryAfterSignal when open is overloaded, such as in Bionic.</span></div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>      <span class="keyword">auto</span> Open = [&amp;]() { return ::open(<span class="stringliteral">&quot;/dev/null&quot;</span>, O_RDWR); };</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>      <span class="keywordflow">if</span> ((NullFD = RetryAfterSignal(-1, Open)) &lt; 0)</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>      <span class="keywordflow">if</span> ((NullFD = <a class="code hl_function" href="namespacellvm_1_1sys.html#aea8b04d954b2cebd8a26d5d712634312">RetryAfterSignal</a>(-1, Open)) &lt; 0)</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <span class="keywordflow">return</span> std::error_code(errno, std::generic_category());</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    }</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
@@ -301,12 +301,12 @@ $(function() {
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  <span class="keywordflow">if</span> (::close(FD) &lt; 0)</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    ErrnoFromClose = errno;</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  <span class="comment">// Restore the signal mask back to what we saved earlier.</span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  <span class="keywordtype">int</span> EC = 0;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  <span class="keywordtype">int</span> <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a> = 0;</div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="preprocessor">#if LLVM_ENABLE_THREADS</span></div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  EC = pthread_sigmask(SIG_SETMASK, &amp;SavedSet, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a> = pthread_sigmask(SIG_SETMASK, &amp;SavedSet, <span class="keyword">nullptr</span>);</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  <span class="keywordflow">if</span> (sigprocmask(SIG_SETMASK, &amp;SavedSet, <span class="keyword">nullptr</span>) &lt; 0)</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    EC = errno;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a> = errno;</div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  <span class="comment">// The error code from close takes precedence over the one from</span></div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  <span class="comment">// pthread_sigmask.</span></div>
@@ -382,13 +382,13 @@ $(function() {
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="preprocessor">#ifdef HAVE_TERMINFO</span></div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="keyword">static</span> ManagedStatic&lt;sys::Mutex&gt; TermColorMutex;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="keyword">static</span> <a class="code hl_class" href="classllvm_1_1ManagedStatic.html">ManagedStatic&lt;sys::Mutex&gt;</a> TermColorMutex;</div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span><span class="keyword">static</span> <span class="keywordtype">bool</span> terminalHasColors(<span class="keywordtype">int</span> fd) {</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="preprocessor">#ifdef HAVE_TERMINFO</span></div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  <span class="comment">// First, acquire a global lock because these C routines are thread hostile.</span></div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  MutexGuard <a class="code hl_define" href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>(*TermColorMutex);</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  <a class="code hl_class" href="classllvm_1_1MutexGuard.html">MutexGuard</a> <a class="code hl_define" href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>(*TermColorMutex);</div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  <span class="keywordtype">int</span> errret = 0;</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>  <span class="keywordflow">if</span> (setupterm(<span class="keyword">nullptr</span>, fd, &amp;errret) != 0)</div>
@@ -488,7 +488,7 @@ $(function() {
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>    <span class="keywordtype">unsigned</span> seed;</div>
 <div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>    <span class="comment">// Don&#39;t use a buffered read to avoid reading more data</span></div>
 <div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>    <span class="comment">// from /dev/urandom than we need.</span></div>
-<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>    <span class="keywordtype">int</span> count = read(urandomFD, (<span class="keywordtype">void</span> *)&amp;seed, <span class="keyword">sizeof</span>(seed));</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>    <span class="keywordtype">int</span> count = <a class="code hl_function" href="namespacellvm_1_1support_1_1endian.html#acfdf941f45bc58470ed8423b98862486">read</a>(urandomFD, (<span class="keywordtype">void</span> *)&amp;seed, <span class="keyword">sizeof</span>(seed));</div>
 <div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span> </div>
 <div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>    close(urandomFD);</div>
 <div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span> </div>
@@ -504,7 +504,7 @@ $(function() {
 <div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>}</div>
 <div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span> </div>
-<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span><span class="keywordtype">unsigned</span> llvm::sys::Process::GetRandomNumber() {</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span><span class="keywordtype">unsigned</span> <a class="code hl_function" href="classllvm_1_1sys_1_1Process.html#a92b058c34d04f6d0adf6eac3060343c6">llvm::sys::Process::GetRandomNumber</a>() {</div>
 <div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span><span class="preprocessor">#if HAVE_DECL_ARC4RANDOM</span></div>
 <div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>  <span class="keywordflow">return</span> arc4random();</div>
 <div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span><span class="preprocessor">#else</span></div>
@@ -515,19 +515,32 @@ $(function() {
 <div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>}</div>
 <div class="ttc" id="aDeadArgumentElimination_8cpp_html_aa5bfc84fa71b9e3477e24efecb60fae5"><div class="ttname"><a href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a></div><div class="ttdeci">assert(!RetTy-&gt;isVoidTy() &amp;&amp;&quot;void type has no subtype&quot;)</div></div>
 <div class="ttc" id="aMD5_8cpp_html_ad96b7cf3182ce2ba85e5a7a93b12c441"><div class="ttname"><a href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a></div><div class="ttdeci">#define G(x, y, z)</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00056">MD5.cpp:56</a></div></div>
+<div class="ttc" id="aManagedStatic_8h_html"><div class="ttname"><a href="ManagedStatic_8h.html">ManagedStatic.h</a></div></div>
+<div class="ttc" id="aMutexGuard_8h_html"><div class="ttname"><a href="MutexGuard_8h.html">MutexGuard.h</a></div></div>
+<div class="ttc" id="aMutex_8h_html"><div class="ttname"><a href="Mutex_8h.html">Mutex.h</a></div></div>
 <div class="ttc" id="aPassManagerBuilder_8cpp_html_a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">CFLAAType::None</a></div><div class="ttdeci">@ None</div></div>
 <div class="ttc" id="aProcess_8cpp_html_a2059a2c76858f8a2381733bd08fff2d8"><div class="ttname"><a href="Process_8cpp.html#a2059a2c76858f8a2381733bd08fff2d8">colorcodes</a></div><div class="ttdeci">static const char colorcodes[2][2][8][10]</div><div class="ttdef"><b>Definition:</b> <a href="Process_8cpp_source.html#l00080">Process.cpp:80</a></div></div>
 <div class="ttc" id="aProcess_8cpp_html_a3e1976a70072c9f199a4b9ab049faf4b"><div class="ttname"><a href="Process_8cpp.html#a3e1976a70072c9f199a4b9ab049faf4b">coreFilesPrevented</a></div><div class="ttdeci">static bool coreFilesPrevented</div><div class="ttdef"><b>Definition:</b> <a href="Process_8cpp_source.html#l00087">Process.cpp:87</a></div></div>
-<div class="ttc" id="aStatistic_8cpp_html_a6508e2501ecaee67af29d564448b43bb"><div class="ttname"><a href="Statistic_8cpp.html#a6508e2501ecaee67af29d564448b43bb">Stats</a></div><div class="ttdeci">static cl::opt&lt; bool &gt; Stats(&quot;stats&quot;, cl::desc(&quot;Enable statistics output from program (available with Asserts)&quot;), cl::Hidden)</div><div class="ttdoc">-stats - Command line option to cause transformations to emit stats about what they did.</div></div>
+<div class="ttc" id="aStatistic_8cpp_html_a85939e1359db7b40b81919914386954c"><div class="ttname"><a href="Statistic_8cpp.html#a85939e1359db7b40b81919914386954c">Stats</a></div><div class="ttdeci">static cl::opt&lt; bool &gt; Stats(&quot;stats&quot;, cl::desc(&quot;Enable statistics output from program (available with Asserts)&quot;), cl::Hidden)</div><div class="ttdoc">-stats - Command line option to cause transformations to emit stats about what they did.</div></div>
 <div class="ttc" id="aUnix_8h_html"><div class="ttname"><a href="Unix_8h.html">Unix.h</a></div></div>
+<div class="ttc" id="aclassllvm_1_1Expected_html"><div class="ttname"><a href="classllvm_1_1Expected.html">llvm::Expected</a></div><div class="ttdoc">Tagged union holding either a T or a Error.</div><div class="ttdef"><b>Definition:</b> <a href="Error_8h_source.html#l00433">Error.h:433</a></div></div>
+<div class="ttc" id="aclassllvm_1_1ManagedStatic_html"><div class="ttname"><a href="classllvm_1_1ManagedStatic.html">llvm::ManagedStatic</a></div><div class="ttdoc">ManagedStatic - This transparently changes the behavior of global statics to be lazily constructed on...</div><div class="ttdef"><b>Definition:</b> <a href="ManagedStatic_8h_source.html#l00083">ManagedStatic.h:83</a></div></div>
+<div class="ttc" id="aclassllvm_1_1MutexGuard_html"><div class="ttname"><a href="classllvm_1_1MutexGuard.html">llvm::MutexGuard</a></div><div class="ttdoc">Instances of this class acquire a given Mutex Lock when constructed and hold that lock until destruct...</div><div class="ttdef"><b>Definition:</b> <a href="MutexGuard_8h_source.html#l00026">MutexGuard.h:26</a></div></div>
+<div class="ttc" id="aclassllvm_1_1Optional_html"><div class="ttname"><a href="classllvm_1_1Optional.html">llvm::Optional</a></div><div class="ttdef"><b>Definition:</b> <a href="Function_8h_source.html#l00054">Function.h:54</a></div></div>
+<div class="ttc" id="aclassllvm_1_1sys_1_1Process_html_a92b058c34d04f6d0adf6eac3060343c6"><div class="ttname"><a href="classllvm_1_1sys_1_1Process.html#a92b058c34d04f6d0adf6eac3060343c6">llvm::sys::Process::GetRandomNumber</a></div><div class="ttdeci">static unsigned GetRandomNumber()</div><div class="ttdoc">Get the result of a process wide random number generator.</div></div>
 <div class="ttc" id="anamespacefalse_html"><div class="ttname"><a href="namespacefalse.html">false</a></div><div class="ttdef"><b>Definition:</b> <a href="LoopExtractor_8cpp_source.html#l00068">LoopExtractor.cpp:68</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1GraphProgram_html_a0ad4685976f8c4d4a697a53fbe05d10b"><div class="ttname"><a href="namespacellvm_1_1GraphProgram.html#a0ad4685976f8c4d4a697a53fbe05d10b">llvm::GraphProgram::Name</a></div><div class="ttdeci">Name</div><div class="ttdef"><b>Definition:</b> <a href="GraphWriter_8h_source.html#l00052">GraphWriter.h:52</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1codeview_html_a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">llvm::codeview::CompileSym2Flags::EC</a></div><div class="ttdeci">@ EC</div></div>
+<div class="ttc" id="anamespacellvm_1_1support_1_1endian_html_acfdf941f45bc58470ed8423b98862486"><div class="ttname"><a href="namespacellvm_1_1support_1_1endian.html#acfdf941f45bc58470ed8423b98862486">llvm::support::endian::read</a></div><div class="ttdeci">value_type read(const void *memory, endianness endian)</div><div class="ttdoc">Read a value of a particular endianness from memory.</div><div class="ttdef"><b>Definition:</b> <a href="Endian_8h_source.html#l00065">Endian.h:65</a></div></div>
 <div class="ttc" id="anamespacellvm_1_1sys_html_a3189ab08fa255659486dc6924a6d62d6"><div class="ttname"><a href="namespacellvm_1_1sys.html#a3189ab08fa255659486dc6924a6d62d6">llvm::sys::toDuration</a></div><div class="ttdeci">std::chrono::microseconds toDuration(const struct timeval &amp;TV)</div><div class="ttdoc">Convert a struct timeval to a duration.</div><div class="ttdef"><b>Definition:</b> <a href="Unix_8h_source.html#l00077">Unix.h:77</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
-<div class="ttc" id="anamespacellvm_html_ad10875fd499e8e285aaeef615e9b11aa"><div class="ttname"><a href="namespacellvm.html#ad10875fd499e8e285aaeef615e9b11aa">llvm::errorCodeToError</a></div><div class="ttdeci">Error errorCodeToError(std::error_code EC)</div><div class="ttdef"><b>Definition:</b> <a href="Error_8cpp_source.html#l00087">Error.cpp:87</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1sys_html_a54c339022277c7ea5975fa8f087a5b04"><div class="ttname"><a href="namespacellvm_1_1sys.html#a54c339022277c7ea5975fa8f087a5b04">llvm::sys::TimePoint</a></div><div class="ttdeci">std::chrono::time_point&lt; std::chrono::system_clock, D &gt; TimePoint</div><div class="ttdoc">A time point on the system clock.</div><div class="ttdef"><b>Definition:</b> <a href="Chrono_8h_source.html#l00033">Chrono.h:33</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1sys_html_aea8b04d954b2cebd8a26d5d712634312"><div class="ttname"><a href="namespacellvm_1_1sys.html#aea8b04d954b2cebd8a26d5d712634312">llvm::sys::RetryAfterSignal</a></div><div class="ttdeci">auto RetryAfterSignal(const FailT &amp;Fail, const Fun &amp;F, const Args &amp;... As) -&gt; decltype(F(As...))</div><div class="ttdef"><b>Definition:</b> <a href="Errno_8h_source.html#l00033">Errno.h:33</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysis_8h_source.html#l00056">AliasAnalysis.h:56</a></div></div>
+<div class="ttc" id="anamespacellvm_html_ad10875fd499e8e285aaeef615e9b11aa"><div class="ttname"><a href="namespacellvm.html#ad10875fd499e8e285aaeef615e9b11aa">llvm::errorCodeToError</a></div><div class="ttdeci">Error errorCodeToError(std::error_code EC)</div><div class="ttdoc">Helper for converting an std::error_code to a Error.</div><div class="ttdef"><b>Definition:</b> <a href="Error_8cpp_source.html#l00087">Error.cpp:87</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:26 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -64,41 +64,41 @@ $(function() {
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Twine.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/CallGraph.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/CallGraphSCCPass.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CallingConv.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalValue.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalVariable.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstIterator.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
-<code>#include &quot;llvm/IR/LegacyPassManager.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Verifier.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="CallGraph_8h_source.html">llvm/Analysis/CallGraph.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CallGraphSCCPass_8h_source.html">llvm/Analysis/CallGraphSCCPass.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CallingConv_8h_source.html">llvm/IR/CallingConv.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalValue_8h_source.html">llvm/IR/GlobalValue.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalVariable_8h_source.html">llvm/IR/GlobalVariable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstIterator_8h_source.html">llvm/IR/InstIterator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LegacyPassManager_8h_source.html">llvm/IR/LegacyPassManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Verifier_8h_source.html">llvm/IR/Verifier.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/Cloning.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/ValueMapper.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Cloning_8h_source.html">llvm/Transforms/Utils/Cloning.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueMapper_8h_source.html">llvm/Transforms/Utils/ValueMapper.h</a>&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
@@ -109,55 +109,56 @@ Include dependency graph for CoroSplit.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="CoroSplit_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Coroutines_2CoroSplit_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Coroutines_2CoroSplit_8cpp" id="alib_2Transforms_2Coroutines_2CoroSplit_8cpp">
-<area shape="rect" title=" " alt="" coords="3981,5,4169,45"/>
-<area shape="rect" href="CoroInstr_8h.html" title=" " alt="" coords="91,181,183,207"/>
-<area shape="rect" title=" " alt="" coords="5,255,184,280"/>
-<area shape="rect" title=" " alt="" coords="293,255,453,280"/>
-<area shape="rect" href="CoroInternal_8h.html" title=" " alt="" coords="257,101,372,126"/>
-<area shape="rect" title=" " alt="" coords="497,101,663,126"/>
-<area shape="rect" title=" " alt="" coords="687,101,862,126"/>
-<area shape="rect" title=" " alt="" coords="886,101,1061,126"/>
-<area shape="rect" title=" " alt="" coords="1085,101,1243,126"/>
-<area shape="rect" title=" " alt="" coords="1267,101,1402,126"/>
-<area shape="rect" title=" " alt="" coords="1426,101,1617,126"/>
-<area shape="rect" title=" " alt="" coords="1641,101,1887,126"/>
-<area shape="rect" title=" " alt="" coords="1911,93,2073,133"/>
-<area shape="rect" title=" " alt="" coords="2097,101,2245,126"/>
-<area shape="rect" title=" " alt="" coords="2269,101,2417,126"/>
-<area shape="rect" title=" " alt="" coords="2441,101,2596,126"/>
-<area shape="rect" title=" " alt="" coords="2621,101,2731,126"/>
-<area shape="rect" title=" " alt="" coords="2755,101,2890,126"/>
-<area shape="rect" title=" " alt="" coords="2914,101,3075,126"/>
-<area shape="rect" title=" " alt="" coords="3100,101,3249,126"/>
-<area shape="rect" title=" " alt="" coords="3274,101,3433,126"/>
-<area shape="rect" title=" " alt="" coords="3457,101,3629,126"/>
-<area shape="rect" title=" " alt="" coords="3653,101,3792,126"/>
-<area shape="rect" title=" " alt="" coords="3816,101,3979,126"/>
-<area shape="rect" title=" " alt="" coords="4003,101,4146,126"/>
-<area shape="rect" title=" " alt="" coords="4171,101,4325,126"/>
-<area shape="rect" title=" " alt="" coords="4350,101,4501,126"/>
-<area shape="rect" title=" " alt="" coords="4525,101,4678,126"/>
-<area shape="rect" title=" " alt="" coords="4703,101,4863,126"/>
-<area shape="rect" title=" " alt="" coords="4887,101,5057,126"/>
-<area shape="rect" title=" " alt="" coords="5081,101,5295,126"/>
-<area shape="rect" title=" " alt="" coords="5319,101,5451,126"/>
-<area shape="rect" title=" " alt="" coords="5476,101,5591,126"/>
-<area shape="rect" title=" " alt="" coords="5615,101,5735,126"/>
-<area shape="rect" title=" " alt="" coords="5759,101,5889,126"/>
-<area shape="rect" title=" " alt="" coords="5913,101,6009,126"/>
-<area shape="rect" title=" " alt="" coords="6033,101,6204,126"/>
-<area shape="rect" title=" " alt="" coords="6228,101,6391,126"/>
-<area shape="rect" title=" " alt="" coords="6415,101,6622,126"/>
-<area shape="rect" title=" " alt="" coords="6646,101,6829,126"/>
-<area shape="rect" title=" " alt="" coords="6853,93,7014,133"/>
-<area shape="rect" title=" " alt="" coords="7038,93,7199,133"/>
-<area shape="rect" title=" " alt="" coords="7223,93,7385,133"/>
-<area shape="rect" title=" " alt="" coords="7409,101,7479,126"/>
-<area shape="rect" title=" " alt="" coords="7503,101,7574,126"/>
-<area shape="rect" title=" " alt="" coords="7599,101,7665,126"/>
-<area shape="rect" title=" " alt="" coords="7690,101,7801,126"/>
-<area shape="rect" title=" " alt="" coords="7825,101,7895,126"/>
-<area shape="rect" title=" " alt="" coords="208,181,421,207"/>
+<area shape="rect" title=" " alt="" coords="4309,5,4497,45"/>
+<area shape="rect" href="CoroInstr_8h.html" title=" " alt="" coords="778,174,870,199"/>
+<area shape="rect" href="GlobalVariable_8h.html" title=" " alt="" coords="701,497,880,522"/>
+<area shape="rect" title=" " alt="" coords="901,651,1035,676"/>
+<area shape="rect" href="Attributes_8h.html" title="This file contains the simple types necessary to represent the attributes associated with functions a..." alt="" coords="3374,651,3522,676"/>
+<area shape="rect" title=" " alt="" coords="3485,724,3643,749"/>
+<area shape="rect" title=" " alt="" coords="2633,871,2703,896"/>
+<area shape="rect" title=" " alt="" coords="4392,797,4459,823"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="1512,724,1632,749"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="2304,797,2475,823"/>
+<area shape="rect" title=" " alt="" coords="2987,797,3058,823"/>
+<area shape="rect" title=" " alt="" coords="2153,651,2223,676"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="1896,262,2056,287"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="2557,577,2707,603"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="2966,651,3138,676"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="4741,724,4856,749"/>
+<area shape="rect" title=" " alt="" coords="5515,797,5690,823"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="1909,497,2048,522"/>
+<area shape="rect" href="Argument_8h.html" title=" " alt="" coords="1294,577,1442,603"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="1568,577,1723,603"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="3803,651,3957,676"/>
+<area shape="rect" href="CallingConv_8h.html" title=" " alt="" coords="3897,577,4058,603"/>
+<area shape="rect" href="GlobalValue_8h.html" title=" " alt="" coords="1056,577,1219,603"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="3603,343,3763,368"/>
+<area shape="rect" title=" " alt="" coords="5617,651,5791,676"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="2969,416,3119,441"/>
+<area shape="rect" href="LLVMContext_8h.html" title=" " alt="" coords="4691,497,4861,522"/>
+<area shape="rect" href="CoroInternal_8h.html" title=" " alt="" coords="944,93,1059,119"/>
+<area shape="rect" title=" " alt="" coords="6467,174,6634,199"/>
+<area shape="rect" href="CallGraph_8h.html" title="This file provides interfaces used to build and manipulate a call graph, which is a very useful tool ..." alt="" coords="3007,343,3198,368"/>
+<area shape="rect" title=" " alt="" coords="6272,651,6368,676"/>
+<area shape="rect" href="CallGraphSCCPass_8h.html" title=" " alt="" coords="6323,343,6568,368"/>
+<area shape="rect" href="Transforms_2Utils_2Local_8h.html" title=" " alt="" coords="5241,489,5402,529"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="5097,577,5255,603"/>
+<area shape="rect" href="IR_2CFG_8h.html" title="This file provides various utilities for inspecting and working with the control flow graph in LLVM I..." alt="" coords="1561,343,1671,368"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="4335,262,4470,287"/>
+<area shape="rect" href="IRBuilder_8h.html" title=" " alt="" coords="2847,174,2990,199"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="3345,416,3477,441"/>
+<area shape="rect" href="InstIterator_8h.html" title=" " alt="" coords="1781,416,1936,441"/>
+<area shape="rect" href="LegacyPassManager_8h.html" title=" " alt="" coords="6435,262,6650,287"/>
+<area shape="rect" href="Verifier_8h.html" title=" " alt="" coords="6425,93,6554,119"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="6629,93,6792,119"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="5382,577,5589,603"/>
+<area shape="rect" href="Scalar_8h.html" title=" " alt="" coords="6817,93,6999,119"/>
+<area shape="rect" href="BasicBlockUtils_8h.html" title=" " alt="" coords="1535,255,1697,295"/>
+<area shape="rect" href="Cloning_8h.html" title=" " alt="" coords="5342,167,5503,207"/>
+<area shape="rect" href="ValueMapper_8h.html" title=" " alt="" coords="5457,255,5618,295"/>
+<area shape="rect" title=" " alt="" coords="7023,93,7134,119"/>
+<area shape="rect" href="Coroutines_8h.html" title=" " alt="" coords="895,174,1108,199"/>
+<area shape="rect" title=" " alt="" coords="2366,416,2538,441"/>
 </map>
 </div>
 </div>
@@ -170,63 +171,63 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3075bf37a596d26c82bfa40610685993"><td class="memItemLeft" align="right" valign="top">static BasicBlock *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a3075bf37a596d26c82bfa40610685993">createResumeEntryBlock</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="structllvm_1_1coro_1_1Shape.html">coro::Shape</a> &amp;Shape)</td></tr>
+<tr class="memitem:a3075bf37a596d26c82bfa40610685993"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a3075bf37a596d26c82bfa40610685993">createResumeEntryBlock</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="structllvm_1_1coro_1_1Shape.html">coro::Shape</a> &amp;Shape)</td></tr>
 <tr class="separator:a3075bf37a596d26c82bfa40610685993"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accff1c3177c08e98e4c34de96e2f90bb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#accff1c3177c08e98e4c34de96e2f90bb">replaceFallthroughCoroEnd</a> (<a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> *End, ValueToValueMapTy &amp;VMap)</td></tr>
+<tr class="memitem:accff1c3177c08e98e4c34de96e2f90bb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#accff1c3177c08e98e4c34de96e2f90bb">replaceFallthroughCoroEnd</a> (<a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> *End, <a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;VMap)</td></tr>
 <tr class="separator:accff1c3177c08e98e4c34de96e2f90bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada1391aa32c1768d33bba3e7f2baff77"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#ada1391aa32c1768d33bba3e7f2baff77">replaceUnwindCoroEnds</a> (<a class="el" href="structllvm_1_1coro_1_1Shape.html">coro::Shape</a> &amp;Shape, ValueToValueMapTy &amp;VMap)</td></tr>
+<tr class="memitem:ada1391aa32c1768d33bba3e7f2baff77"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#ada1391aa32c1768d33bba3e7f2baff77">replaceUnwindCoroEnds</a> (<a class="el" href="structllvm_1_1coro_1_1Shape.html">coro::Shape</a> &amp;Shape, <a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;VMap)</td></tr>
 <tr class="separator:ada1391aa32c1768d33bba3e7f2baff77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a557b665eb62a72c784d00a28e0b9c84d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a557b665eb62a72c784d00a28e0b9c84d">handleFinalSuspend</a> (IRBuilder&lt;&gt; &amp;Builder, Value *FramePtr, <a class="el" href="structllvm_1_1coro_1_1Shape.html">coro::Shape</a> &amp;Shape, SwitchInst *Switch, bool IsDestroy)</td></tr>
+<tr class="memitem:a557b665eb62a72c784d00a28e0b9c84d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a557b665eb62a72c784d00a28e0b9c84d">handleFinalSuspend</a> (<a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;Builder, <a class="el" href="classllvm_1_1Value.html">Value</a> *FramePtr, <a class="el" href="structllvm_1_1coro_1_1Shape.html">coro::Shape</a> &amp;Shape, <a class="el" href="classllvm_1_1SwitchInst.html">SwitchInst</a> *Switch, <a class="el" href="classbool.html">bool</a> IsDestroy)</td></tr>
 <tr class="separator:a557b665eb62a72c784d00a28e0b9c84d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2227408feaf67fd72b6556cb5173559"><td class="memItemLeft" align="right" valign="top">static Function *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#af2227408feaf67fd72b6556cb5173559">createClone</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, Twine Suffix, <a class="el" href="structllvm_1_1coro_1_1Shape.html">coro::Shape</a> &amp;Shape, BasicBlock *ResumeEntry, int8_t FnIndex)</td></tr>
+<tr class="memitem:af2227408feaf67fd72b6556cb5173559"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#af2227408feaf67fd72b6556cb5173559">createClone</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, Twine Suffix, <a class="el" href="structllvm_1_1coro_1_1Shape.html">coro::Shape</a> &amp;Shape, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *ResumeEntry, int8_t FnIndex)</td></tr>
 <tr class="separator:af2227408feaf67fd72b6556cb5173559"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac3fa2ef0408aa47dc5e6cd8aa3d92a6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#aac3fa2ef0408aa47dc5e6cd8aa3d92a6">removeCoroEnds</a> (<a class="el" href="structllvm_1_1coro_1_1Shape.html">coro::Shape</a> &amp;Shape)</td></tr>
 <tr class="separator:aac3fa2ef0408aa47dc5e6cd8aa3d92a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cbc874ec5612ccb47cad7f07ff51f94"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a2cbc874ec5612ccb47cad7f07ff51f94">replaceFrameSize</a> (<a class="el" href="structllvm_1_1coro_1_1Shape.html">coro::Shape</a> &amp;Shape)</td></tr>
 <tr class="separator:a2cbc874ec5612ccb47cad7f07ff51f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a572233e9adce72519423a14c5080af6f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a572233e9adce72519423a14c5080af6f">setCoroInfo</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classllvm_1_1CoroBeginInst.html">CoroBeginInst</a> *CoroBegin, std::initializer_list&lt; Function * &gt; Fns)</td></tr>
+<tr class="memitem:a572233e9adce72519423a14c5080af6f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a572233e9adce72519423a14c5080af6f">setCoroInfo</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classllvm_1_1CoroBeginInst.html">CoroBeginInst</a> *CoroBegin, std::initializer_list&lt; <a class="el" href="classllvm_1_1Function.html">Function</a> * &gt; Fns)</td></tr>
 <tr class="separator:a572233e9adce72519423a14c5080af6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8367d5021c982f2e56503edd6abde83"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#ab8367d5021c982f2e56503edd6abde83">updateCoroFrame</a> (<a class="el" href="structllvm_1_1coro_1_1Shape.html">coro::Shape</a> &amp;Shape, Function *ResumeFn, Function *DestroyFn, Function *CleanupFn)</td></tr>
+<tr class="memitem:ab8367d5021c982f2e56503edd6abde83"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#ab8367d5021c982f2e56503edd6abde83">updateCoroFrame</a> (<a class="el" href="structllvm_1_1coro_1_1Shape.html">coro::Shape</a> &amp;Shape, <a class="el" href="classllvm_1_1Function.html">Function</a> *ResumeFn, <a class="el" href="classllvm_1_1Function.html">Function</a> *DestroyFn, <a class="el" href="classllvm_1_1Function.html">Function</a> *CleanupFn)</td></tr>
 <tr class="separator:ab8367d5021c982f2e56503edd6abde83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2458e50c1358135964844abe8d8979d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#ac2458e50c1358135964844abe8d8979d">postSplitCleanup</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:ac2458e50c1358135964844abe8d8979d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#ac2458e50c1358135964844abe8d8979d">postSplitCleanup</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:ac2458e50c1358135964844abe8d8979d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebee292426fd0bf7072b2beed8e95387"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#aebee292426fd0bf7072b2beed8e95387">scanPHIsAndUpdateValueMap</a> (Instruction *Prev, BasicBlock *NewBlock, DenseMap&lt; Value *, Value * &gt; &amp;ResolvedValues)</td></tr>
+<tr class="memitem:aebee292426fd0bf7072b2beed8e95387"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#aebee292426fd0bf7072b2beed8e95387">scanPHIsAndUpdateValueMap</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Prev, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *NewBlock, DenseMap&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;ResolvedValues)</td></tr>
 <tr class="separator:aebee292426fd0bf7072b2beed8e95387"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7eb86fb2d6210e104805e7d7e1c4307"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#ad7eb86fb2d6210e104805e7d7e1c4307">simplifyTerminatorLeadingToRet</a> (Instruction *InitialInst)</td></tr>
+<tr class="memitem:ad7eb86fb2d6210e104805e7d7e1c4307"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#ad7eb86fb2d6210e104805e7d7e1c4307">simplifyTerminatorLeadingToRet</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *InitialInst)</td></tr>
 <tr class="separator:ad7eb86fb2d6210e104805e7d7e1c4307"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61bb4a52ef184d616270d2440ae550d4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a61bb4a52ef184d616270d2440ae550d4">addMustTailToCoroResumes</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a61bb4a52ef184d616270d2440ae550d4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a61bb4a52ef184d616270d2440ae550d4">addMustTailToCoroResumes</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a61bb4a52ef184d616270d2440ae550d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf6bf315ab9a85c017fcac4e9169e987"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#acf6bf315ab9a85c017fcac4e9169e987">handleNoSuspendCoroutine</a> (<a class="el" href="classllvm_1_1CoroBeginInst.html">CoroBeginInst</a> *CoroBegin, Type *FrameTy)</td></tr>
+<tr class="memitem:acf6bf315ab9a85c017fcac4e9169e987"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#acf6bf315ab9a85c017fcac4e9169e987">handleNoSuspendCoroutine</a> (<a class="el" href="classllvm_1_1CoroBeginInst.html">CoroBeginInst</a> *CoroBegin, <a class="el" href="classllvm_1_1Type.html">Type</a> *FrameTy)</td></tr>
 <tr class="separator:acf6bf315ab9a85c017fcac4e9169e987"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa48f79e7f4c043c7e362c2ea8a7d5c74"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#aa48f79e7f4c043c7e362c2ea8a7d5c74">hasCallsInBlockBetween</a> (Instruction *From, Instruction *To)</td></tr>
+<tr class="memitem:aa48f79e7f4c043c7e362c2ea8a7d5c74"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#aa48f79e7f4c043c7e362c2ea8a7d5c74">hasCallsInBlockBetween</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *From, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *To)</td></tr>
 <tr class="separator:aa48f79e7f4c043c7e362c2ea8a7d5c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44c557dcf96034410cdb25dd01c12dde"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a44c557dcf96034410cdb25dd01c12dde">hasCallsInBlocksBetween</a> (BasicBlock *SaveBB, BasicBlock *ResDesBB)</td></tr>
+<tr class="memitem:a44c557dcf96034410cdb25dd01c12dde"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a44c557dcf96034410cdb25dd01c12dde">hasCallsInBlocksBetween</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *SaveBB, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *ResDesBB)</td></tr>
 <tr class="separator:a44c557dcf96034410cdb25dd01c12dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a116742dc8bd808e796becf1166383f63"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a116742dc8bd808e796becf1166383f63">hasCallsBetween</a> (Instruction *Save, Instruction *ResumeOrDestroy)</td></tr>
+<tr class="memitem:a116742dc8bd808e796becf1166383f63"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a116742dc8bd808e796becf1166383f63">hasCallsBetween</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Save, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *ResumeOrDestroy)</td></tr>
 <tr class="separator:a116742dc8bd808e796becf1166383f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f3928b341e4412b8b66b794896014f0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a9f3928b341e4412b8b66b794896014f0">simplifySuspendPoint</a> (<a class="el" href="classllvm_1_1CoroSuspendInst.html">CoroSuspendInst</a> *Suspend, <a class="el" href="classllvm_1_1CoroBeginInst.html">CoroBeginInst</a> *CoroBegin)</td></tr>
+<tr class="memitem:a9f3928b341e4412b8b66b794896014f0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a9f3928b341e4412b8b66b794896014f0">simplifySuspendPoint</a> (<a class="el" href="classllvm_1_1CoroSuspendInst.html">CoroSuspendInst</a> *Suspend, <a class="el" href="classllvm_1_1CoroBeginInst.html">CoroBeginInst</a> *CoroBegin)</td></tr>
 <tr class="separator:a9f3928b341e4412b8b66b794896014f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76d02f8354cb0d3c8b30eb7812ae01b2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a76d02f8354cb0d3c8b30eb7812ae01b2">simplifySuspendPoints</a> (<a class="el" href="structllvm_1_1coro_1_1Shape.html">coro::Shape</a> &amp;Shape)</td></tr>
 <tr class="separator:a76d02f8354cb0d3c8b30eb7812ae01b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0137ce29db040633e53ac2a81df04510"><td class="memItemLeft" align="right" valign="top">static SmallPtrSet&lt; BasicBlock *, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a0137ce29db040633e53ac2a81df04510">getCoroBeginPredBlocks</a> (<a class="el" href="classllvm_1_1CoroBeginInst.html">CoroBeginInst</a> *CB)</td></tr>
+<tr class="memitem:a0137ce29db040633e53ac2a81df04510"><td class="memItemLeft" align="right" valign="top">static SmallPtrSet&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a0137ce29db040633e53ac2a81df04510">getCoroBeginPredBlocks</a> (<a class="el" href="classllvm_1_1CoroBeginInst.html">CoroBeginInst</a> *CB)</td></tr>
 <tr class="separator:a0137ce29db040633e53ac2a81df04510"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a063edb5369cedeb8903fdc6ab687fb37"><td class="memItemLeft" align="right" valign="top">static SmallPtrSet&lt; Instruction *, 8 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a063edb5369cedeb8903fdc6ab687fb37">getNotRelocatableInstructions</a> (<a class="el" href="classllvm_1_1CoroBeginInst.html">CoroBeginInst</a> *CoroBegin, SmallPtrSetImpl&lt; BasicBlock * &gt; &amp;RelocBlocks)</td></tr>
+<tr class="memitem:a063edb5369cedeb8903fdc6ab687fb37"><td class="memItemLeft" align="right" valign="top">static SmallPtrSet&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, 8 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a063edb5369cedeb8903fdc6ab687fb37">getNotRelocatableInstructions</a> (<a class="el" href="classllvm_1_1CoroBeginInst.html">CoroBeginInst</a> *CoroBegin, <a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;RelocBlocks)</td></tr>
 <tr class="separator:a063edb5369cedeb8903fdc6ab687fb37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66a949eb36258baedf72e1876659d267"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a66a949eb36258baedf72e1876659d267">relocateInstructionBefore</a> (<a class="el" href="classllvm_1_1CoroBeginInst.html">CoroBeginInst</a> *CoroBegin, Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a66a949eb36258baedf72e1876659d267"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a66a949eb36258baedf72e1876659d267">relocateInstructionBefore</a> (<a class="el" href="classllvm_1_1CoroBeginInst.html">CoroBeginInst</a> *CoroBegin, <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a66a949eb36258baedf72e1876659d267"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bb780f592caaae0f3ba59ae6a293e95"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a3bb780f592caaae0f3ba59ae6a293e95">splitCoroutine</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, CallGraph &amp;CG, CallGraphSCC &amp;SCC)</td></tr>
+<tr class="memitem:a3bb780f592caaae0f3ba59ae6a293e95"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a3bb780f592caaae0f3ba59ae6a293e95">splitCoroutine</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;CG, <a class="el" href="classllvm_1_1CallGraphSCC.html">CallGraphSCC</a> &amp;SCC)</td></tr>
 <tr class="separator:a3bb780f592caaae0f3ba59ae6a293e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2a5070972b7da6066e2f1d49360c983"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#aa2a5070972b7da6066e2f1d49360c983">prepareForSplit</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, CallGraph &amp;CG)</td></tr>
+<tr class="memitem:aa2a5070972b7da6066e2f1d49360c983"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#aa2a5070972b7da6066e2f1d49360c983">prepareForSplit</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;CG)</td></tr>
 <tr class="separator:aa2a5070972b7da6066e2f1d49360c983"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41861a50c3f91a35e7f25434d07ccd58"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a41861a50c3f91a35e7f25434d07ccd58">createDevirtTriggerFunc</a> (CallGraph &amp;CG, CallGraphSCC &amp;SCC)</td></tr>
+<tr class="memitem:a41861a50c3f91a35e7f25434d07ccd58"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a41861a50c3f91a35e7f25434d07ccd58">createDevirtTriggerFunc</a> (<a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;CG, <a class="el" href="classllvm_1_1CallGraphSCC.html">CallGraphSCC</a> &amp;SCC)</td></tr>
 <tr class="separator:a41861a50c3f91a35e7f25434d07ccd58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bb13d17bfd43c7870e1c5352a142be3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a0bb13d17bfd43c7870e1c5352a142be3">INITIALIZE_PASS_BEGIN</a> (CoroSplit, &quot;coro-split&quot;, &quot;Split coroutine into a set of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> driving its state machine&quot;, false, false) INITIALIZE_PASS_END(CoroSplit</td></tr>
 <tr class="separator:a0bb13d17bfd43c7870e1c5352a142be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a5b2c0184be868c2d4c37d5e56961c5e7"><td class="memItemLeft" align="right" valign="top">coro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a5b2c0184be868c2d4c37d5e56961c5e7">split</a></td></tr>
-<tr class="separator:a5b2c0184be868c2d4c37d5e56961c5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a5f2cd728870f22736c763bbca4c366"><td class="memItemLeft" align="right" valign="top">coro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#a6a5f2cd728870f22736c763bbca4c366">split</a></td></tr>
+<tr class="separator:a6a5f2cd728870f22736c763bbca4c366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae6ba3400a4a2f4de9f2f3091fc6bbe9"><td class="memItemLeft" align="right" valign="top">coro Split coroutine into a set of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> driving its state&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#aae6ba3400a4a2f4de9f2f3091fc6bbe9">machine</a></td></tr>
 <tr class="separator:aae6ba3400a4a2f4de9f2f3091fc6bbe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1453b849971964d98281a94307d1e05"><td class="memItemLeft" align="right" valign="top">coro Split coroutine into a set of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> driving its state&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CoroSplit_8cpp.html#ae1453b849971964d98281a94307d1e05">false</a></td></tr>
@@ -262,7 +263,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void addMustTailToCoroResumes </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -276,7 +277,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00497">497</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="InstructionCombining_8cpp_source.html#l03614">instructions</a>, and <a class="el" href="CoroSplit_8cpp_source.html#l00458">simplifyTerminatorLeadingToRet()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="InstructionCombining_8cpp_source.html#l03614">instructions</a>, <a class="el" href="Local_8cpp_source.html#l02228">llvm::removeUnreachableBlocks()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00458">simplifyTerminatorLeadingToRet()</a>, and <a class="el" href="Instructions_8h_source.html#l01626">llvm::CallInst::TCK_MustTail</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00779">splitCoroutine()</a>.</p>
 
@@ -292,9 +293,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Function * createClone </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Function.html">Function</a> * createClone </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
@@ -312,7 +313,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>ResumeEntry</em>, </td>
         </tr>
         <tr>
@@ -336,7 +337,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00245">245</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CoroInternal_8h_source.html#l00082">llvm::coro::Shape::AllocaSpillBlock</a>, <a class="el" href="CoroInternal_8h_source.html#l00067">llvm::coro::Shape::CoroBegin</a>, <a class="el" href="CoroInternal_8h_source.html#l00068">llvm::coro::Shape::CoroEnds</a>, <a class="el" href="CoroInternal_8h_source.html#l00070">llvm::coro::Shape::CoroSuspends</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CoroInternal_8h_source.html#l00081">llvm::coro::Shape::FramePtr</a>, <a class="el" href="CoroInternal_8h_source.html#l00080">llvm::coro::Shape::FrameTy</a>, <a class="el" href="CoroInstr_8h_source.html#l00218">llvm::CoroBeginInst::getId()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00219">handleFinalSuspend()</a>, <a class="el" href="CoroInternal_8h_source.html#l00085">llvm::coro::Shape::HasFinalSuspend</a>, <a class="el" href="Coroutines_8cpp_source.html#l00152">llvm::coro::replaceCoroFree()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00172">replaceFallthroughCoroEnd()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00185">replaceUnwindCoroEnds()</a>, and <a class="el" href="CoroInternal_8h_source.html#l00083">llvm::coro::Shape::ResumeSwitch</a>.</p>
+<p class="reference">References <a class="el" href="Function_8cpp_source.html#l00398">llvm::Function::addParamAttr()</a>, <a class="el" href="CoroInternal_8h_source.html#l00082">llvm::coro::Shape::AllocaSpillBlock</a>, <a class="el" href="Function_8h_source.html#l00695">llvm::Function::arg_begin()</a>, <a class="el" href="Local_8cpp_source.html#l01917">llvm::changeToUnreachable()</a>, <a class="el" href="CloneFunction_8cpp_source.html#l00084">llvm::CloneFunctionInto()</a>, <a class="el" href="CoroInternal_8h_source.html#l00067">llvm::coro::Shape::CoroBegin</a>, <a class="el" href="CoroInternal_8h_source.html#l00068">llvm::coro::Shape::CoroEnds</a>, <a class="el" href="CoroInternal_8h_source.html#l00070">llvm::coro::Shape::CoroSuspends</a>, <a class="el" href="Instructions_8h_source.html#l03021">llvm::BranchInst::Create()</a>, <a class="el" href="Function_8h_source.html#l00135">llvm::Function::Create()</a>, <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CallingConv_8h_source.html#l00042">llvm::CallingConv::Fast</a>, <a class="el" href="CoroInternal_8h_source.html#l00081">llvm::coro::Shape::FramePtr</a>, <a class="el" href="CoroInternal_8h_source.html#l00080">llvm::coro::Shape::FrameTy</a>, <a class="el" href="BasicBlock_8h_source.html#l00280">llvm::BasicBlock::front()</a>, <a class="el" href="Constants_8cpp_source.html#l01424">llvm::UndefValue::get()</a>, <a class="el" href="IRBuilder_8h_source.html#l00128">llvm::IRBuilderBase::getContext()</a>, <a class="el" href="Function_8h_source.html#l00664">llvm::Function::getEntryBlock()</a>, <a class="el" href="CoroInstr_8h_source.html#l00218">llvm::CoroBeginInst::getId()</a>, <a class="el" href="IRBuilder_8h_source.html#l00333">llvm::IRBuilderBase::getInt8()</a>, <a class="el" href="IRBuilder_8h_source.html#l00421">llvm::IRBuilderBase::getInt8PtrTy()</a>, <a class="el" href="Function_8h_source.html#l00168">llvm::Function::getReturnType()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00219">handleFinalSuspend()</a>, <a class="el" href="CoroInternal_8h_source.html#l00085">llvm::coro::Shape::HasFinalSuspend</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00084">llvm::NoAlias</a>, <a class="el" href="Function_8cpp_source.html#l00428">llvm::Function::removeAttributes()</a>, <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>, <a class="el" href="Coroutines_8cpp_source.html#l00152">llvm::coro::replaceCoroFree()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00172">replaceFallthroughCoroEnd()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00185">replaceUnwindCoroEnds()</a>, <a class="el" href="CoroInternal_8h_source.html#l00083">llvm::coro::Shape::ResumeSwitch</a>, <a class="el" href="Attributes_8h_source.html#l00339">llvm::AttributeList::ReturnIndex</a>, <a class="el" href="Function_8h_source.html#l00216">llvm::Function::setCallingConv()</a>, <a class="el" href="GlobalValue_8h_source.html#l00454">llvm::GlobalValue::setLinkage()</a>, <a class="el" href="Value_8cpp_source.html#l00291">llvm::Value::takeName()</a>, and <a class="el" href="Attributes_8cpp_source.html#l01697">llvm::AttributeFuncs::typeIncompatible()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00779">splitCoroutine()</a>.</p>
 
@@ -354,13 +355,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void createDevirtTriggerFunc </td>
           <td>(</td>
-          <td class="paramtype">CallGraph &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;&#160;</td>
           <td class="paramname"><em>CG</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">CallGraphSCC &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallGraphSCC.html">CallGraphSCC</a> &amp;&#160;</td>
           <td class="paramname"><em>SCC</em>&#160;</td>
         </tr>
         <tr>
@@ -378,7 +379,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00862">862</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CoroInternal_8h_source.html#l00041">CORO_DEVIRT_TRIGGER_FN</a>.</p>
+<p class="reference">References <a class="el" href="Function_8h_source.html#l00229">llvm::Function::addFnAttr()</a>, <a class="el" href="CallGraphSCCPass_8h_source.html#l00108">llvm::CallGraphSCC::begin()</a>, <a class="el" href="CoroInternal_8h_source.html#l00041">CORO_DEVIRT_TRIGGER_FN</a>, <a class="el" href="Function_8h_source.html#l00135">llvm::Function::Create()</a>, <a class="el" href="Instructions_8h_source.html#l02910">llvm::ReturnInst::Create()</a>, <a class="el" href="BasicBlock_8h_source.html#l00099">llvm::BasicBlock::Create()</a>, <a class="el" href="CallGraphSCCPass_8h_source.html#l00109">llvm::CallGraphSCC::end()</a>, <a class="el" href="Type_8cpp_source.html#l00296">llvm::FunctionType::get()</a>, <a class="el" href="IRBuilder_8h_source.html#l00421">llvm::IRBuilderBase::getInt8PtrTy()</a>, <a class="el" href="CallGraph_8h_source.html#l00113">llvm::CallGraph::getModule()</a>, <a class="el" href="CallGraph_8cpp_source.html#l00147">llvm::CallGraph::getOrInsertFunction()</a>, <a class="el" href="IRBuilder_8h_source.html#l00416">llvm::IRBuilderBase::getVoidTy()</a>, and <a class="el" href="CallGraphSCCPass_8h_source.html#l00095">llvm::CallGraphSCC::initialize()</a>.</p>
 
 </div>
 </div>
@@ -392,9 +393,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static BasicBlock * createResumeEntryBlock </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * createResumeEntryBlock </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
@@ -418,7 +419,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00075">75</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CoroInternal_8h_source.html#l00070">llvm::coro::Shape::CoroSuspends</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CoroInternal_8h_source.html#l00081">llvm::coro::Shape::FramePtr</a>, <a class="el" href="CoroInternal_8h_source.html#l00080">llvm::coro::Shape::FrameTy</a>, <a class="el" href="CoroInstr_8h_source.html#l00269">llvm::CoroSuspendInst::getCoroSave()</a>, <a class="el" href="CoroInternal_8h_source.html#l00091">llvm::coro::Shape::getIndex()</a>, <a class="el" href="CoroInternal_8h_source.html#l00087">llvm::coro::Shape::getIndexType()</a>, <a class="el" href="CoroInternal_8h_source.html#l00077">llvm::coro::Shape::IndexField</a>, <a class="el" href="CoroInstr_8h_source.html#l00276">llvm::CoroSuspendInst::isFinal()</a>, and <a class="el" href="CoroInternal_8h_source.html#l00083">llvm::coro::Shape::ResumeSwitch</a>.</p>
+<p class="reference">References <a class="el" href="CoroInternal_8h_source.html#l00070">llvm::coro::Shape::CoroSuspends</a>, <a class="el" href="BasicBlock_8h_source.html#l00099">llvm::BasicBlock::Create()</a>, <a class="el" href="Instructions_8h_source.html#l02576">llvm::PHINode::Create()</a>, <a class="el" href="IRBuilder_8h_source.html#l01772">llvm::IRBuilder&lt; T, Inserter &gt;::CreateConstInBoundsGEP2_32()</a>, <a class="el" href="IRBuilder_8h_source.html#l01576">llvm::IRBuilder&lt; T, Inserter &gt;::CreateLoad()</a>, <a class="el" href="IRBuilder_8h_source.html#l01605">llvm::IRBuilder&lt; T, Inserter &gt;::CreateStore()</a>, <a class="el" href="IRBuilder_8h_source.html#l00913">llvm::IRBuilder&lt; T, Inserter &gt;::CreateSwitch()</a>, <a class="el" href="IRBuilder_8h_source.html#l01050">llvm::IRBuilder&lt; T, Inserter &gt;::CreateUnreachable()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CoroInternal_8h_source.html#l00081">llvm::coro::Shape::FramePtr</a>, <a class="el" href="CoroInternal_8h_source.html#l00080">llvm::coro::Shape::FrameTy</a>, <a class="el" href="Constants_8cpp_source.html#l01139">llvm::ConstantTokenNone::get()</a>, <a class="el" href="Constants_8cpp_source.html#l01410">llvm::ConstantPointerNull::get()</a>, <a class="el" href="CoroInstr_8h_source.html#l00269">llvm::CoroSuspendInst::getCoroSave()</a>, <a class="el" href="CoroInternal_8h_source.html#l00091">llvm::coro::Shape::getIndex()</a>, <a class="el" href="CoroInternal_8h_source.html#l00087">llvm::coro::Shape::getIndexType()</a>, <a class="el" href="IRBuilder_8h_source.html#l00333">llvm::IRBuilderBase::getInt8()</a>, <a class="el" href="IRBuilder_8h_source.html#l00373">llvm::IRBuilderBase::getInt8Ty()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="CoroInternal_8h_source.html#l00077">llvm::coro::Shape::IndexField</a>, <a class="el" href="CoroInstr_8h_source.html#l00276">llvm::CoroSuspendInst::isFinal()</a>, <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>, <a class="el" href="CoroInternal_8h_source.html#l00083">llvm::coro::Shape::ResumeSwitch</a>, <a class="el" href="IRBuilder_8h_source.html#l00132">llvm::IRBuilderBase::SetInsertPoint()</a>, and <a class="el" href="BasicBlock_8cpp_source.html#l00407">llvm::BasicBlock::splitBasicBlock()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00779">splitCoroutine()</a>.</p>
 
@@ -434,7 +435,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static SmallPtrSet&lt; BasicBlock *, 4 &gt; getCoroBeginPredBlocks </td>
+          <td class="memname">static SmallPtrSet&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, 4 &gt; getCoroBeginPredBlocks </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classllvm_1_1CoroBeginInst.html">CoroBeginInst</a> *&#160;</td>
           <td class="paramname"><em>CB</em></td><td>)</td>
@@ -450,6 +451,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00690">690</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, and <a class="el" href="IR_2CFG_8h_source.html#l00124">llvm::predecessors()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00756">relocateInstructionBefore()</a>.</p>
 
 </div>
@@ -464,7 +467,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static SmallPtrSet&lt; Instruction *, 8 &gt; getNotRelocatableInstructions </td>
+          <td class="memname">static SmallPtrSet&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, 8 &gt; getNotRelocatableInstructions </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classllvm_1_1CoroBeginInst.html">CoroBeginInst</a> *&#160;</td>
           <td class="paramname"><em>CoroBegin</em>, </td>
@@ -472,7 +475,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SmallPtrSetImpl&lt; BasicBlock * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>RelocBlocks</em>&#160;</td>
         </tr>
         <tr>
@@ -490,7 +493,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00708">708</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, and <a class="el" href="User_8h_source.html#l00237">llvm::User::operands()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00756">relocateInstructionBefore()</a>.</p>
 
@@ -508,13 +511,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void handleFinalSuspend </td>
           <td>(</td>
-          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>Builder</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>FramePtr</em>, </td>
         </tr>
         <tr>
@@ -526,13 +529,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SwitchInst *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SwitchInst.html">SwitchInst</a> *&#160;</td>
           <td class="paramname"><em>Switch</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>IsDestroy</em>&#160;</td>
         </tr>
         <tr>
@@ -550,7 +553,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00219">219</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="CoroInternal_8h_source.html#l00080">llvm::coro::Shape::FrameTy</a>, <a class="el" href="CoroInternal_8h_source.html#l00085">llvm::coro::Shape::HasFinalSuspend</a>, and <a class="el" href="CoroInternal_8h_source.html#l00074">llvm::coro::Shape::ResumeField</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Instructions_8h_source.html#l03345">llvm::SwitchInst::case_end()</a>, <a class="el" href="IRBuilder_8h_source.html#l00890">llvm::IRBuilder&lt; T, Inserter &gt;::CreateCondBr()</a>, <a class="el" href="IRBuilder_8h_source.html#l01772">llvm::IRBuilder&lt; T, Inserter &gt;::CreateConstInBoundsGEP2_32()</a>, <a class="el" href="IRBuilder_8h_source.html#l02058">llvm::IRBuilder&lt; T, Inserter &gt;::CreateICmpEQ()</a>, <a class="el" href="IRBuilder_8h_source.html#l01576">llvm::IRBuilder&lt; T, Inserter &gt;::CreateLoad()</a>, <a class="el" href="Instruction_8cpp_source.html#l00067">llvm::Instruction::eraseFromParent()</a>, <a class="el" href="CoroInternal_8h_source.html#l00080">llvm::coro::Shape::FrameTy</a>, <a class="el" href="Constants_8cpp_source.html#l01410">llvm::ConstantPointerNull::get()</a>, <a class="el" href="DerivedTypes_8h_source.html#l00346">llvm::StructType::getElementType()</a>, <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="CoroInternal_8h_source.html#l00085">llvm::coro::Shape::HasFinalSuspend</a>, <a class="el" href="Instructions_8cpp_source.html#l03857">llvm::SwitchInst::removeCase()</a>, <a class="el" href="CoroInternal_8h_source.html#l00074">llvm::coro::Shape::ResumeField</a>, <a class="el" href="IRBuilder_8h_source.html#l00132">llvm::IRBuilderBase::SetInsertPoint()</a>, and <a class="el" href="BasicBlock_8cpp_source.html#l00407">llvm::BasicBlock::splitBasicBlock()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00245">createClone()</a>.</p>
 
@@ -574,7 +577,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Type *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
           <td class="paramname"><em>FrameTy</em>&#160;</td>
         </tr>
         <tr>
@@ -592,7 +595,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00523">523</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CoroInstr_8h_source.html#l00085">llvm::CoroIdInst::getCoroAlloc()</a>, <a class="el" href="CoroInstr_8h_source.html#l00218">llvm::CoroBeginInst::getId()</a>, <a class="el" href="CoroInstr_8h_source.html#l00220">llvm::CoroBeginInst::getMem()</a>, and <a class="el" href="Coroutines_8cpp_source.html#l00152">llvm::coro::replaceCoroFree()</a>.</p>
+<p class="reference">References <a class="el" href="IRBuilder_8h_source.html#l01563">llvm::IRBuilder&lt; T, Inserter &gt;::CreateAlloca()</a>, <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="Instruction_8cpp_source.html#l00067">llvm::Instruction::eraseFromParent()</a>, <a class="el" href="CoroInstr_8h_source.html#l00085">llvm::CoroIdInst::getCoroAlloc()</a>, <a class="el" href="IRBuilder_8h_source.html#l00328">llvm::IRBuilderBase::getFalse()</a>, <a class="el" href="CoroInstr_8h_source.html#l00218">llvm::CoroBeginInst::getId()</a>, <a class="el" href="IRBuilder_8h_source.html#l00421">llvm::IRBuilderBase::getInt8PtrTy()</a>, <a class="el" href="CoroInstr_8h_source.html#l00220">llvm::CoroBeginInst::getMem()</a>, <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>, and <a class="el" href="Coroutines_8cpp_source.html#l00152">llvm::coro::replaceCoroFree()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00779">splitCoroutine()</a>.</p>
 
@@ -608,15 +611,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool hasCallsBetween </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> hasCallsBetween </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>Save</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>ResumeOrDestroy</em>&#160;</td>
         </tr>
         <tr>
@@ -634,7 +637,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00585">585</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CoroSplit_8cpp_source.html#l00544">hasCallsInBlockBetween()</a>, and <a class="el" href="CoroSplit_8cpp_source.html#l00556">hasCallsInBlocksBetween()</a>.</p>
+<p class="reference">References <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00544">hasCallsInBlockBetween()</a>, and <a class="el" href="CoroSplit_8cpp_source.html#l00556">hasCallsInBlocksBetween()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00610">simplifySuspendPoint()</a>.</p>
 
@@ -650,15 +653,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool hasCallsInBlockBetween </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> hasCallsInBlockBetween </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>From</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>To</em>&#160;</td>
         </tr>
         <tr>
@@ -692,15 +695,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool hasCallsInBlocksBetween </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> hasCallsInBlocksBetween </td>
           <td>(</td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>SaveBB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>ResDesBB</em>&#160;</td>
         </tr>
         <tr>
@@ -718,7 +721,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00556">556</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CoroSplit_8cpp_source.html#l00544">hasCallsInBlockBetween()</a>.</p>
+<p class="reference">References <a class="el" href="CoroSplit_8cpp_source.html#l00544">hasCallsInBlockBetween()</a>, and <a class="el" href="IR_2CFG_8h_source.html#l00124">llvm::predecessors()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00585">hasCallsBetween()</a>.</p>
 
@@ -782,7 +785,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void postSplitCleanup </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -796,7 +799,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00423">423</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
+<p class="reference">References <a class="el" href="LegacyPassManager_8cpp_source.html#l01498">llvm::legacy::FunctionPassManager::add()</a>, <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00289">llvm::createCFGSimplificationPass()</a>, <a class="el" href="EarlyCSE_8cpp_source.html#l01409">llvm::createEarlyCSEPass()</a>, <a class="el" href="Scalar_2SCCP_8cpp_source.html#l01910">llvm::createSCCPPass()</a>, <a class="el" href="Verifier_8cpp_source.html#l05405">llvm::createVerifierPass()</a>, <a class="el" href="LegacyPassManager_8cpp_source.html#l01522">llvm::legacy::FunctionPassManager::doFinalization()</a>, <a class="el" href="LegacyPassManager_8cpp_source.html#l01516">llvm::legacy::FunctionPassManager::doInitialization()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Local_8cpp_source.html#l02228">llvm::removeUnreachableBlocks()</a>, and <a class="el" href="LegacyPassManager_8cpp_source.html#l01506">llvm::legacy::FunctionPassManager::run()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00779">splitCoroutine()</a>.</p>
 
@@ -814,13 +817,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void prepareForSplit </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">CallGraph &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;&#160;</td>
           <td class="paramname"><em>CG</em>&#160;</td>
         </tr>
         <tr>
@@ -838,7 +841,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00831">831</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="CoroInternal_8h_source.html#l00041">CORO_DEVIRT_TRIGGER_FN</a>, <a class="el" href="CoroInternal_8h_source.html#l00037">CORO_PRESPLIT_ATTR</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Coroutines_8cpp_source.html#l00107">llvm::coro::LowererBase::makeSubFnCall()</a>, <a class="el" href="CoroInternal_8h_source.html#l00039">PREPARED_FOR_SPLIT</a>, and <a class="el" href="CoroInstr_8h_source.html#l00039">llvm::CoroSubFnInst::RestartTrigger</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="CoroInternal_8h_source.html#l00041">CORO_DEVIRT_TRIGGER_FN</a>, <a class="el" href="CoroInternal_8h_source.html#l00037">CORO_PRESPLIT_ATTR</a>, <a class="el" href="Instructions_8h_source.html#l01437">llvm::CallInst::Create()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Constants_8cpp_source.html#l01410">llvm::ConstantPointerNull::get()</a>, <a class="el" href="Type_8cpp_source.html#l00296">llvm::FunctionType::get()</a>, <a class="el" href="CallGraph_8h_source.html#l00138">llvm::CallGraph::getCallsExternalNode()</a>, <a class="el" href="IRBuilder_8h_source.html#l00421">llvm::IRBuilderBase::getInt8PtrTy()</a>, <a class="el" href="IRBuilder_8h_source.html#l00416">llvm::IRBuilderBase::getVoidTy()</a>, <a class="el" href="Coroutines_8cpp_source.html#l00107">llvm::coro::LowererBase::makeSubFnCall()</a>, <a class="el" href="CoroInternal_8h_source.html#l00039">PREPARED_FOR_SPLIT</a>, and <a class="el" href="CoroInstr_8h_source.html#l00039">llvm::CoroSubFnInst::RestartTrigger</a>.</p>
 
 </div>
 </div>
@@ -860,7 +863,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>&#160;</td>
         </tr>
         <tr>
@@ -878,7 +881,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00756">756</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00690">getCoroBeginPredBlocks()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00708">getNotRelocatableInstructions()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="BasicBlock_8h_source.html#l00270">llvm::BasicBlock::end()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00690">getCoroBeginPredBlocks()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00708">getNotRelocatableInstructions()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00779">splitCoroutine()</a>.</p>
 
@@ -910,7 +913,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00339">339</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CoroInternal_8h_source.html#l00068">llvm::coro::Shape::CoroEnds</a>.</p>
+<p class="reference">References <a class="el" href="CoroInternal_8h_source.html#l00068">llvm::coro::Shape::CoroEnds</a>, <a class="el" href="Instruction_8cpp_source.html#l00067">llvm::Instruction::eraseFromParent()</a>, <a class="el" href="Constants_8cpp_source.html#l00594">llvm::ConstantInt::getFalse()</a>, and <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00779">splitCoroutine()</a>.</p>
 
@@ -928,13 +931,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void replaceFallthroughCoroEnd </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> *&#160;</td>
           <td class="paramname"><em>End</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ValueToValueMapTy &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;&#160;</td>
           <td class="paramname"><em>VMap</em>&#160;</td>
         </tr>
         <tr>
@@ -951,6 +954,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00172">172</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Instructions_8h_source.html#l02910">llvm::ReturnInst::Create()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00245">createClone()</a>.</p>
 
@@ -982,7 +987,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00352">352</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CoroInternal_8h_source.html#l00069">llvm::coro::Shape::CoroSizes</a>, and <a class="el" href="CoroInternal_8h_source.html#l00080">llvm::coro::Shape::FrameTy</a>.</p>
+<p class="reference">References <a class="el" href="CoroInternal_8h_source.html#l00069">llvm::coro::Shape::CoroSizes</a>, <a class="el" href="Instruction_8cpp_source.html#l00067">llvm::Instruction::eraseFromParent()</a>, <a class="el" href="CoroInternal_8h_source.html#l00080">llvm::coro::Shape::FrameTy</a>, <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="DataLayout_8h_source.html#l00469">llvm::DataLayout::getTypeAllocSize()</a>, and <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00779">splitCoroutine()</a>.</p>
 
@@ -1006,7 +1011,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ValueToValueMapTy &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacellvm.html#ac085d05c4167c44293064de287ceae55">ValueToValueMapTy</a> &amp;&#160;</td>
           <td class="paramname"><em>VMap</em>&#160;</td>
         </tr>
         <tr>
@@ -1024,7 +1029,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00185">185</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CoroInternal_8h_source.html#l00068">llvm::coro::Shape::CoroEnds</a>, and <a class="el" href="CoroInstr_8h_source.html#l00307">llvm::CoroEndInst::isUnwind()</a>.</p>
+<p class="reference">References <a class="el" href="CoroInternal_8h_source.html#l00068">llvm::coro::Shape::CoroEnds</a>, <a class="el" href="Instructions_8h_source.html#l04582">llvm::CleanupReturnInst::Create()</a>, <a class="el" href="Constants_8cpp_source.html#l00587">llvm::ConstantInt::getTrue()</a>, <a class="el" href="CoroInstr_8h_source.html#l00307">llvm::CoroEndInst::isUnwind()</a>, and <a class="el" href="LLVMContext_8h_source.html#l00111">llvm::LLVMContext::OB_funclet</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00245">createClone()</a>.</p>
 
@@ -1042,19 +1047,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void scanPHIsAndUpdateValueMap </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>Prev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>NewBlock</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DenseMap&lt; Value *, Value * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseMap&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>ResolvedValues</em>&#160;</td>
         </tr>
         <tr>
@@ -1072,6 +1077,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00441">441</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, and <a class="el" href="BasicBlock_8h_source.html#l00324">llvm::BasicBlock::phis()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00458">simplifyTerminatorLeadingToRet()</a>.</p>
 
 </div>
@@ -1088,7 +1095,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void setCoroInfo </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
@@ -1100,7 +1107,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::initializer_list&lt; Function * &gt;&#160;</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classllvm_1_1Function.html">Function</a> * &gt;&#160;</td>
           <td class="paramname"><em>Fns</em>&#160;</td>
         </tr>
         <tr>
@@ -1118,7 +1125,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00380">380</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CoroInstr_8h_source.html#l00218">llvm::CoroBeginInst::getId()</a>, and <a class="el" href="CoroInstr_8h_source.html#l00163">llvm::CoroIdInst::setInfo()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Function_8h_source.html#l00680">llvm::Function::begin()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Constants_8cpp_source.html#l00992">llvm::ConstantArray::get()</a>, <a class="el" href="Type_8cpp_source.html#l00582">llvm::ArrayType::get()</a>, <a class="el" href="CoroInstr_8h_source.html#l00218">llvm::CoroBeginInst::getId()</a>, <a class="el" href="IRBuilder_8h_source.html#l00421">llvm::IRBuilderBase::getInt8PtrTy()</a>, <a class="el" href="GlobalValue_8h_source.html#l00575">llvm::GlobalValue::getParent()</a>, <a class="el" href="Constants_8cpp_source.html#l01596">llvm::ConstantExpr::getPointerCast()</a>, <a class="el" href="GlobalValue_8h_source.html#l00277">llvm::GlobalValue::getType()</a>, and <a class="el" href="CoroInstr_8h_source.html#l00163">llvm::CoroIdInst::setInfo()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00779">splitCoroutine()</a>.</p>
 
@@ -1134,7 +1141,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool simplifySuspendPoint </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> simplifySuspendPoint </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classllvm_1_1CoroSuspendInst.html">CoroSuspendInst</a> *&#160;</td>
           <td class="paramname"><em>Suspend</em>, </td>
@@ -1160,7 +1167,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00610">610</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CoroInstr_8h_source.html#l00269">llvm::CoroSuspendInst::getCoroSave()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00585">hasCallsBetween()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="Instructions_8h_source.html#l03021">llvm::BranchInst::Create()</a>, <a class="el" href="Instruction_8cpp_source.html#l00067">llvm::Instruction::eraseFromParent()</a>, <a class="el" href="CoroInstr_8h_source.html#l00269">llvm::CoroSuspendInst::getCoroSave()</a>, <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00233">llvm::BasicBlock::getSinglePredecessor()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00585">hasCallsBetween()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00672">simplifySuspendPoints()</a>.</p>
 
@@ -1208,9 +1215,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool simplifyTerminatorLeadingToRet </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> simplifyTerminatorLeadingToRet </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>InitialInst</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1224,7 +1231,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00458">458</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="CoroSplit_8cpp_source.html#l00441">scanPHIsAndUpdateValueMap()</a>.</p>
+<p class="reference">References <a class="el" href="BasicBlock_8cpp_source.html#l00203">llvm::BasicBlock::getFirstNonPHIOrDbgOrLifetime()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="BasicBlockUtils_8cpp_source.html#l00299">llvm::ReplaceInstWithInst()</a>, and <a class="el" href="CoroSplit_8cpp_source.html#l00441">scanPHIsAndUpdateValueMap()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00497">addMustTailToCoroResumes()</a>.</p>
 
@@ -1242,19 +1249,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void splitCoroutine </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">CallGraph &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;&#160;</td>
           <td class="paramname"><em>CG</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">CallGraphSCC &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallGraphSCC.html">CallGraphSCC</a> &amp;&#160;</td>
           <td class="paramname"><em>SCC</em>&#160;</td>
         </tr>
         <tr>
@@ -1272,7 +1279,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00779">779</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CoroSplit_8cpp_source.html#l00497">addMustTailToCoroResumes()</a>, <a class="el" href="CoroInternal_8h_source.html#l00067">llvm::coro::Shape::CoroBegin</a>, <a class="el" href="CoroInternal_8h_source.html#l00070">llvm::coro::Shape::CoroSuspends</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00245">createClone()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00075">createResumeEntryBlock()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CoroInternal_8h_source.html#l00080">llvm::coro::Shape::FrameTy</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00523">handleNoSuspendCoroutine()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00423">postSplitCleanup()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00756">relocateInstructionBefore()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00339">removeCoroEnds()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00352">replaceFrameSize()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00380">setCoroInfo()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00672">simplifySuspendPoints()</a>, <a class="el" href="Coroutines_8cpp_source.html#l00193">llvm::coro::updateCallGraph()</a>, and <a class="el" href="CoroSplit_8cpp_source.html#l00400">updateCoroFrame()</a>.</p>
+<p class="reference">References <a class="el" href="CoroSplit_8cpp_source.html#l00497">addMustTailToCoroResumes()</a>, <a class="el" href="CoroInternal_8h_source.html#l00067">llvm::coro::Shape::CoroBegin</a>, <a class="el" href="CoroInternal_8h_source.html#l00070">llvm::coro::Shape::CoroSuspends</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00245">createClone()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00075">createResumeEntryBlock()</a>, <a class="el" href="BasicBlockUtils_8cpp_source.html#l00117">llvm::EliminateUnreachableBlocks()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CoroInternal_8h_source.html#l00080">llvm::coro::Shape::FrameTy</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00523">handleNoSuspendCoroutine()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00423">postSplitCleanup()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00756">relocateInstructionBefore()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00339">removeCoroEnds()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00352">replaceFrameSize()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00380">setCoroInfo()</a>, <a class="el" href="CoroSplit_8cpp_source.html#l00672">simplifySuspendPoints()</a>, <a class="el" href="Coroutines_8cpp_source.html#l00193">llvm::coro::updateCallGraph()</a>, and <a class="el" href="CoroSplit_8cpp_source.html#l00400">updateCoroFrame()</a>.</p>
 
 </div>
 </div>
@@ -1294,19 +1301,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Function *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
           <td class="paramname"><em>ResumeFn</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Function *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
           <td class="paramname"><em>DestroyFn</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Function *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
           <td class="paramname"><em>CleanupFn</em>&#160;</td>
         </tr>
         <tr>
@@ -1324,7 +1331,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CoroSplit_8cpp_source.html#l00400">400</a> of file <a class="el" href="CoroSplit_8cpp_source.html">CoroSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CoroInternal_8h_source.html#l00067">llvm::coro::Shape::CoroBegin</a>, <a class="el" href="CoroInternal_8h_source.html#l00075">llvm::coro::Shape::DestroyField</a>, <a class="el" href="CoroInternal_8h_source.html#l00081">llvm::coro::Shape::FramePtr</a>, <a class="el" href="CoroInternal_8h_source.html#l00080">llvm::coro::Shape::FrameTy</a>, <a class="el" href="CoroInstr_8h_source.html#l00085">llvm::CoroIdInst::getCoroAlloc()</a>, <a class="el" href="CoroInstr_8h_source.html#l00218">llvm::CoroBeginInst::getId()</a>, and <a class="el" href="CoroInternal_8h_source.html#l00074">llvm::coro::Shape::ResumeField</a>.</p>
+<p class="reference">References <a class="el" href="CoroInternal_8h_source.html#l00067">llvm::coro::Shape::CoroBegin</a>, <a class="el" href="IRBuilder_8h_source.html#l01772">llvm::IRBuilder&lt; T, Inserter &gt;::CreateConstInBoundsGEP2_32()</a>, <a class="el" href="IRBuilder_8h_source.html#l02241">llvm::IRBuilder&lt; T, Inserter &gt;::CreateSelect()</a>, <a class="el" href="IRBuilder_8h_source.html#l01605">llvm::IRBuilder&lt; T, Inserter &gt;::CreateStore()</a>, <a class="el" href="CoroInternal_8h_source.html#l00075">llvm::coro::Shape::DestroyField</a>, <a class="el" href="CoroInternal_8h_source.html#l00081">llvm::coro::Shape::FramePtr</a>, <a class="el" href="CoroInternal_8h_source.html#l00080">llvm::coro::Shape::FrameTy</a>, <a class="el" href="CoroInstr_8h_source.html#l00085">llvm::CoroIdInst::getCoroAlloc()</a>, <a class="el" href="CoroInstr_8h_source.html#l00218">llvm::CoroBeginInst::getId()</a>, and <a class="el" href="CoroInternal_8h_source.html#l00074">llvm::coro::Shape::ResumeField</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CoroSplit_8cpp_source.html#l00779">splitCoroutine()</a>.</p>
 
@@ -1363,14 +1370,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a5b2c0184be868c2d4c37d5e56961c5e7" name="a5b2c0184be868c2d4c37d5e56961c5e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b2c0184be868c2d4c37d5e56961c5e7">&#9670;&nbsp;</a></span>split</h2>
+<a id="a6a5f2cd728870f22736c763bbca4c366" name="a6a5f2cd728870f22736c763bbca4c366"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a5f2cd728870f22736c763bbca4c366">&#9670;&nbsp;</a></span>split</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void StringRef::split</td>
+          <td class="memname">coro split</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1382,7 +1389,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

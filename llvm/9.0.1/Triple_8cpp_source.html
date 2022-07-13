@@ -65,9 +65,9 @@ $(function() {
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;llvm/ADT/STLExtras.h&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;llvm/ADT/SmallString.h&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;llvm/ADT/StringSwitch.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;llvm/Support/ErrorHandling.h&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;llvm/Support/Host.h&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;llvm/Support/TargetParser.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="ErrorHandling_8h.html">llvm/Support/ErrorHandling.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="Host_8h.html">llvm/Support/Host.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="TargetParser_8h.html">llvm/Support/TargetParser.h</a>&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm.html">llvm</a>;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
@@ -105,7 +105,7 @@ $(function() {
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordflow">case</span> tcele:          <span class="keywordflow">return</span> <span class="stringliteral">&quot;tcele&quot;</span>;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">case</span> thumb:          <span class="keywordflow">return</span> <span class="stringliteral">&quot;thumb&quot;</span>;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">case</span> thumbeb:        <span class="keywordflow">return</span> <span class="stringliteral">&quot;thumbeb&quot;</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordflow">case</span> x86:            <span class="keywordflow">return</span> <span class="stringliteral">&quot;i386&quot;</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacellvm_1_1pdb.html#a1928545fad40360ae644901d7308cbeba8a9da7865483c5fd359f3acef178d26d">x86</a>:            <span class="keywordflow">return</span> <span class="stringliteral">&quot;i386&quot;</span>;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordflow">case</span> x86_64:         <span class="keywordflow">return</span> <span class="stringliteral">&quot;x86_64&quot;</span>;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">case</span> xcore:          <span class="keywordflow">return</span> <span class="stringliteral">&quot;xcore&quot;</span>;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordflow">case</span> nvptx:          <span class="keywordflow">return</span> <span class="stringliteral">&quot;nvptx&quot;</span>;</div>
@@ -127,7 +127,7 @@ $(function() {
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordflow">case</span> renderscript64: <span class="keywordflow">return</span> <span class="stringliteral">&quot;renderscript64&quot;</span>;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  }</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  llvm_unreachable(<span class="stringliteral">&quot;Invalid ArchType!&quot;</span>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;Invalid ArchType!&quot;</span>);</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>StringRef Triple::getArchTypePrefix(ArchType Kind) {</div>
@@ -171,7 +171,7 @@ $(function() {
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordflow">case</span> systemz:     <span class="keywordflow">return</span> <span class="stringliteral">&quot;s390&quot;</span>;</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordflow">case</span> x86:</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacellvm_1_1pdb.html#a1928545fad40360ae644901d7308cbeba8a9da7865483c5fd359f3acef178d26d">x86</a>:</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keywordflow">case</span> x86_64:      <span class="keywordflow">return</span> <span class="stringliteral">&quot;x86&quot;</span>;</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordflow">case</span> xcore:       <span class="keywordflow">return</span> <span class="stringliteral">&quot;xcore&quot;</span>;</div>
@@ -224,7 +224,7 @@ $(function() {
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="keywordflow">case</span> OpenEmbedded: <span class="keywordflow">return</span> <span class="stringliteral">&quot;oe&quot;</span>;</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  }</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  llvm_unreachable(<span class="stringliteral">&quot;Invalid VendorType!&quot;</span>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;Invalid VendorType!&quot;</span>);</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>}</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>StringRef Triple::getOSTypeName(OSType Kind) {</div>
@@ -268,7 +268,7 @@ $(function() {
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  <span class="keywordflow">case</span> Emscripten: <span class="keywordflow">return</span> <span class="stringliteral">&quot;emscripten&quot;</span>;</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  }</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  llvm_unreachable(<span class="stringliteral">&quot;Invalid OSType&quot;</span>);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;Invalid OSType&quot;</span>);</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>}</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>StringRef Triple::getEnvironmentTypeName(EnvironmentType Kind) {</div>
@@ -292,17 +292,17 @@ $(function() {
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  <span class="keywordflow">case</span> MSVC: <span class="keywordflow">return</span> <span class="stringliteral">&quot;msvc&quot;</span>;</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  <span class="keywordflow">case</span> Itanium: <span class="keywordflow">return</span> <span class="stringliteral">&quot;itanium&quot;</span>;</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  <span class="keywordflow">case</span> Cygnus: <span class="keywordflow">return</span> <span class="stringliteral">&quot;cygnus&quot;</span>;</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  <span class="keywordflow">case</span> CoreCLR: <span class="keywordflow">return</span> <span class="stringliteral">&quot;coreclr&quot;</span>;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacellvm.html#a5d56157a385f8cd7d3e54ed87da1ba6aa05b0e25c98ba4300ca28989a35dab72a">CoreCLR</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;coreclr&quot;</span>;</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  <span class="keywordflow">case</span> Simulator: <span class="keywordflow">return</span> <span class="stringliteral">&quot;simulator&quot;</span>;</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="keywordflow">case</span> MacABI: <span class="keywordflow">return</span> <span class="stringliteral">&quot;macabi&quot;</span>;</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  }</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  llvm_unreachable(<span class="stringliteral">&quot;Invalid EnvironmentType!&quot;</span>);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;Invalid EnvironmentType!&quot;</span>);</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>}</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="Triple_8cpp.html#aabf4024742648721f7840ae35fe7ffd8">  248</a></span><span class="keyword">static</span> Triple::ArchType <a class="code hl_function" href="Triple_8cpp.html#aabf4024742648721f7840ae35fe7ffd8">parseBPFArch</a>(StringRef ArchName) {</div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  <span class="keywordflow">if</span> (ArchName.equals(<span class="stringliteral">&quot;bpf&quot;</span>)) {</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keywordflow">if</span> (sys::IsLittleEndianHost)</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacellvm_1_1sys.html#a4ee2015697caec796e59972aadc2f9e2">sys::IsLittleEndianHost</a>)</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>      <span class="keywordflow">return</span> Triple::bpfel;</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>      <span class="keywordflow">return</span> Triple::bpfeb;</div>
@@ -374,8 +374,8 @@ $(function() {
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>}</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="Triple_8cpp.html#a721eb5bffb57cea96d7a9b45cbe302cf">  321</a></span><span class="keyword">static</span> Triple::ArchType <a class="code hl_function" href="Triple_8cpp.html#a721eb5bffb57cea96d7a9b45cbe302cf">parseARMArch</a>(StringRef ArchName) {</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>  ARM::ISAKind ISA = ARM::parseArchISA(ArchName);</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>  ARM::EndianKind ENDIAN = ARM::parseArchEndian(ArchName);</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>  <a class="code hl_enumeration" href="namespacellvm_1_1ARM.html#aa7c564eb9f55772c4e2f4d3c19974191">ARM::ISAKind</a> ISA = <a class="code hl_function" href="namespacellvm_1_1ARM.html#a1d5ed0bfc1c21767207fbd9c06aa68e9">ARM::parseArchISA</a>(ArchName);</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>  <a class="code hl_enumeration" href="namespacellvm_1_1ARM.html#a744a4278ab4117a12d8d7bd90fa009d0">ARM::EndianKind</a> ENDIAN = <a class="code hl_function" href="namespacellvm_1_1ARM.html#ac9eb980260cef7839596d3ca4d742905">ARM::parseArchEndian</a>(ArchName);</div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>  Triple::ArchType arch = Triple::UnknownArch;</div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  <span class="keywordflow">switch</span> (ENDIAN) {</div>
@@ -416,7 +416,7 @@ $(function() {
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  }</div>
 <div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  }</div>
 <div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span> </div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>  ArchName = ARM::getCanonicalArchName(ArchName);</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>  ArchName = <a class="code hl_function" href="namespacellvm_1_1ARM.html#a115dd532d6538ed40f42a625343126cc">ARM::getCanonicalArchName</a>(ArchName);</div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>  <span class="keywordflow">if</span> (ArchName.empty())</div>
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    <span class="keywordflow">return</span> Triple::UnknownArch;</div>
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
@@ -426,8 +426,8 @@ $(function() {
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>    <span class="keywordflow">return</span> Triple::UnknownArch;</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span> </div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>  <span class="comment">// Thumb only for v6m</span></div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>  ARM::ProfileKind Profile = ARM::parseArchProfile(ArchName);</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  <span class="keywordtype">unsigned</span> Version = ARM::parseArchVersion(ArchName);</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>  <a class="code hl_enumeration" href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbde">ARM::ProfileKind</a> Profile = <a class="code hl_function" href="namespacellvm_1_1ARM.html#a96deed10d8fd592dce3db1b8d8df6011">ARM::parseArchProfile</a>(ArchName);</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  <span class="keywordtype">unsigned</span> Version = <a class="code hl_function" href="namespacellvm_1_1ARM.html#aad4536fc71bd7d65d3c704ca2f9073f1">ARM::parseArchVersion</a>(ArchName);</div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  <span class="keywordflow">if</span> (Profile == ARM::ProfileKind::M &amp;&amp; Version == 6) {</div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>    <span class="keywordflow">if</span> (ENDIAN == ARM::EndianKind::BIG)</div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>      <span class="keywordflow">return</span> Triple::thumbeb;</div>
@@ -438,11 +438,11 @@ $(function() {
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>  <span class="keywordflow">return</span> arch;</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>}</div>
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span> </div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno"><a class="line" href="Triple_8cpp.html#a534eaf4cbda57348f2248a1cea5ed22f">  386</a></span><span class="keyword">static</span> Triple::ArchType <a class="code hl_function" href="Triple_8cpp.html#a534eaf4cbda57348f2248a1cea5ed22f">parseArch</a>(StringRef ArchName) {</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno"><a class="line" href="Triple_8cpp.html#ad3a9a5aa955e9b62ec11e4d3566d4594">  386</a></span><span class="keyword">static</span> Triple::ArchType <a class="code hl_function" href="Triple_8cpp.html#ad3a9a5aa955e9b62ec11e4d3566d4594">parseArch</a>(StringRef ArchName) {</div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>  <span class="keyword">auto</span> AT = StringSwitch&lt;Triple::ArchType&gt;(ArchName)</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    .Cases(<span class="stringliteral">&quot;i386&quot;</span>, <span class="stringliteral">&quot;i486&quot;</span>, <span class="stringliteral">&quot;i586&quot;</span>, <span class="stringliteral">&quot;i686&quot;</span>, Triple::x86)</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    .Cases(<span class="stringliteral">&quot;i386&quot;</span>, <span class="stringliteral">&quot;i486&quot;</span>, <span class="stringliteral">&quot;i586&quot;</span>, <span class="stringliteral">&quot;i686&quot;</span>, <a class="code hl_enumvalue" href="namespacellvm_1_1pdb.html#a1928545fad40360ae644901d7308cbeba8a9da7865483c5fd359f3acef178d26d">Triple::x86</a>)</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>    <span class="comment">// FIXME: Do we need to support these?</span></div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>    .Cases(<span class="stringliteral">&quot;i786&quot;</span>, <span class="stringliteral">&quot;i886&quot;</span>, <span class="stringliteral">&quot;i986&quot;</span>, Triple::x86)</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>    .Cases(<span class="stringliteral">&quot;i786&quot;</span>, <span class="stringliteral">&quot;i886&quot;</span>, <span class="stringliteral">&quot;i986&quot;</span>, <a class="code hl_enumvalue" href="namespacellvm_1_1pdb.html#a1928545fad40360ae644901d7308cbeba8a9da7865483c5fd359f3acef178d26d">Triple::x86</a>)</div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>    .Cases(<span class="stringliteral">&quot;amd64&quot;</span>, <span class="stringliteral">&quot;x86_64&quot;</span>, <span class="stringliteral">&quot;x86_64h&quot;</span>, Triple::x86_64)</div>
 <div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>    .Cases(<span class="stringliteral">&quot;powerpc&quot;</span>, <span class="stringliteral">&quot;ppc&quot;</span>, <span class="stringliteral">&quot;ppc32&quot;</span>, Triple::ppc)</div>
 <div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>    .Cases(<span class="stringliteral">&quot;powerpc64&quot;</span>, <span class="stringliteral">&quot;ppu&quot;</span>, <span class="stringliteral">&quot;ppc64&quot;</span>, Triple::ppc64)</div>
@@ -452,7 +452,7 @@ $(function() {
 <div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>    .Case(<span class="stringliteral">&quot;aarch64&quot;</span>, Triple::aarch64)</div>
 <div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>    .Case(<span class="stringliteral">&quot;aarch64_be&quot;</span>, Triple::aarch64_be)</div>
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>    .Case(<span class="stringliteral">&quot;aarch64_32&quot;</span>, Triple::aarch64_32)</div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>    .Case(<span class="stringliteral">&quot;arc&quot;</span>, Triple::arc)</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>    .Case(<span class="stringliteral">&quot;arc&quot;</span>, <a class="code hl_variable" href="group__ARCOpt.html#ga04fff031c5876f97f73173e756d8085e">Triple::arc</a>)</div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>    .Case(<span class="stringliteral">&quot;arm64&quot;</span>, Triple::aarch64)</div>
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>    .Case(<span class="stringliteral">&quot;arm64_32&quot;</span>, Triple::aarch64_32)</div>
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>    .Case(<span class="stringliteral">&quot;arm&quot;</span>, Triple::arm)</div>
@@ -587,7 +587,7 @@ $(function() {
 <div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>    .StartsWith(<span class="stringliteral">&quot;gnueabi&quot;</span>, Triple::GNUEABI)</div>
 <div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>    .StartsWith(<span class="stringliteral">&quot;gnux32&quot;</span>, Triple::GNUX32)</div>
 <div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>    .StartsWith(<span class="stringliteral">&quot;code16&quot;</span>, Triple::CODE16)</div>
-<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>    .StartsWith(<span class="stringliteral">&quot;gnu&quot;</span>, Triple::GNU)</div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>    .StartsWith(<span class="stringliteral">&quot;gnu&quot;</span>, <a class="code hl_enumvalue" href="classllvm_1_1symbolize_1_1DIPrinter.html#a5ef0400f7258b78c053a7832aa864dd2ab7e89d55aa08a289aa48277386e6ff1d">Triple::GNU</a>)</div>
 <div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>    .StartsWith(<span class="stringliteral">&quot;android&quot;</span>, Triple::Android)</div>
 <div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>    .StartsWith(<span class="stringliteral">&quot;musleabihf&quot;</span>, Triple::MuslEABIHF)</div>
 <div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>    .StartsWith(<span class="stringliteral">&quot;musleabi&quot;</span>, Triple::MuslEABI)</div>
@@ -595,7 +595,7 @@ $(function() {
 <div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>    .StartsWith(<span class="stringliteral">&quot;msvc&quot;</span>, Triple::MSVC)</div>
 <div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>    .StartsWith(<span class="stringliteral">&quot;itanium&quot;</span>, Triple::Itanium)</div>
 <div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>    .StartsWith(<span class="stringliteral">&quot;cygnus&quot;</span>, Triple::Cygnus)</div>
-<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>    .StartsWith(<span class="stringliteral">&quot;coreclr&quot;</span>, Triple::CoreCLR)</div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>    .StartsWith(<span class="stringliteral">&quot;coreclr&quot;</span>, <a class="code hl_enumvalue" href="namespacellvm.html#a5d56157a385f8cd7d3e54ed87da1ba6aa05b0e25c98ba4300ca28989a35dab72a">Triple::CoreCLR</a>)</div>
 <div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>    .StartsWith(<span class="stringliteral">&quot;simulator&quot;</span>, Triple::Simulator)</div>
 <div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>    .StartsWith(<span class="stringliteral">&quot;macabi&quot;</span>, Triple::MacABI)</div>
 <div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>    .Default(Triple::UnknownEnvironment);</div>
@@ -618,7 +618,7 @@ $(function() {
 <div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>      (SubArchName.endswith(<span class="stringliteral">&quot;r6el&quot;</span>) || SubArchName.endswith(<span class="stringliteral">&quot;r6&quot;</span>)))</div>
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>    <span class="keywordflow">return</span> Triple::MipsSubArch_r6;</div>
 <div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span> </div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>  StringRef ARMSubArch = ARM::getCanonicalArchName(SubArchName);</div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>  StringRef ARMSubArch = <a class="code hl_function" href="namespacellvm_1_1ARM.html#a115dd532d6538ed40f42a625343126cc">ARM::getCanonicalArchName</a>(SubArchName);</div>
 <div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span> </div>
 <div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>  <span class="comment">// For now, this is the small part. Early return.</span></div>
 <div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>  <span class="keywordflow">if</span> (ARMSubArch.empty())</div>
@@ -629,7 +629,7 @@ $(function() {
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>      .Default(Triple::NoSubArch);</div>
 <div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span> </div>
 <div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>  <span class="comment">// ARM sub arch.</span></div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>  <span class="keywordflow">switch</span>(ARM::parseArch(ARMSubArch)) {</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>  <span class="keywordflow">switch</span>(<a class="code hl_function" href="namespacellvm_1_1ARM.html#a75e18d4bc8fef7e89c1222c6b6cf8638">ARM::parseArch</a>(ARMSubArch)) {</div>
 <div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>  <span class="keywordflow">case</span> ARM::ArchKind::ARMV4:</div>
 <div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>    <span class="keywordflow">return</span> Triple::NoSubArch;</div>
 <div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>  <span class="keywordflow">case</span> ARM::ArchKind::ARMV4T:</div>
@@ -698,7 +698,7 @@ $(function() {
 <div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>  <span class="keywordflow">case</span> Triple::Wasm: <span class="keywordflow">return</span> <span class="stringliteral">&quot;wasm&quot;</span>;</div>
 <div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>  <span class="keywordflow">case</span> Triple::XCOFF: <span class="keywordflow">return</span> <span class="stringliteral">&quot;xcoff&quot;</span>;</div>
 <div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>  }</div>
-<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>  llvm_unreachable(<span class="stringliteral">&quot;unknown object format type&quot;</span>);</div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>  <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;unknown object format type&quot;</span>);</div>
 <div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>}</div>
 <div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span> </div>
 <div class="line"><a id="l00649" name="l00649"></a><span class="lineno"><a class="line" href="Triple_8cpp.html#a593094f6c13df699bd2cde1a1f40fec4">  649</a></span><span class="keyword">static</span> Triple::ObjectFormatType <a class="code hl_function" href="Triple_8cpp.html#a593094f6c13df699bd2cde1a1f40fec4">getDefaultFormat</a>(<span class="keyword">const</span> Triple &amp;T) {</div>
@@ -708,7 +708,7 @@ $(function() {
 <div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>  <span class="keywordflow">case</span> Triple::aarch64_32:</div>
 <div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>  <span class="keywordflow">case</span> Triple::arm:</div>
 <div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>  <span class="keywordflow">case</span> Triple::thumb:</div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>  <span class="keywordflow">case</span> Triple::x86:</div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacellvm_1_1pdb.html#a1928545fad40360ae644901d7308cbeba8a9da7865483c5fd359f3acef178d26d">Triple::x86</a>:</div>
 <div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>  <span class="keywordflow">case</span> Triple::x86_64:</div>
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>    <span class="keywordflow">if</span> (T.isOSDarwin())</div>
 <div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>      <span class="keywordflow">return</span> Triple::MachO;</div>
@@ -717,7 +717,7 @@ $(function() {
 <div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>    <span class="keywordflow">return</span> Triple::ELF;</div>
 <div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span> </div>
 <div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>  <span class="keywordflow">case</span> Triple::aarch64_be:</div>
-<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>  <span class="keywordflow">case</span> Triple::arc:</div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>  <span class="keywordflow">case</span> <a class="code hl_variable" href="group__ARCOpt.html#ga04fff031c5876f97f73173e756d8085e">Triple::arc</a>:</div>
 <div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>  <span class="keywordflow">case</span> Triple::amdgcn:</div>
 <div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>  <span class="keywordflow">case</span> Triple::amdil:</div>
 <div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>  <span class="keywordflow">case</span> Triple::amdil64:</div>
@@ -770,7 +770,7 @@ $(function() {
 <div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>  <span class="keywordflow">case</span> Triple::wasm64:</div>
 <div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>    <span class="keywordflow">return</span> Triple::Wasm;</div>
 <div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>  }</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>  llvm_unreachable(<span class="stringliteral">&quot;unknown architecture&quot;</span>);</div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>  <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;unknown architecture&quot;</span>);</div>
 <div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>}</div>
 <div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span><span class="comment"></span> </div>
 <div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span><span class="comment">/// Construct a triple from the string representation provided.</span></div>
@@ -778,14 +778,14 @@ $(function() {
 <div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span><span class="comment">/// This stores the string representation and parses the various pieces into</span></div>
 <div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span><span class="comment">/// enum members.</span></div>
 <div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span><span class="comment"></span>Triple::Triple(<span class="keyword">const</span> Twine &amp;Str)</div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>    : Data(Str.str()), Arch(UnknownArch), SubArch(NoSubArch),</div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>    : <a class="code hl_enumvalue" href="namespacellvm_1_1pdb.html#a33e853ec74d48b1340d1d4bae772d30baf6068daa29dbb05a7ead1e3b5a48bbee">Data</a>(Str.str()), Arch(UnknownArch), SubArch(NoSubArch),</div>
 <div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>      Vendor(UnknownVendor), OS(UnknownOS), Environment(UnknownEnvironment),</div>
 <div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>      ObjectFormat(UnknownObjectFormat) {</div>
 <div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>  <span class="comment">// Do minimal parsing by hand here.</span></div>
 <div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>  <a class="code hl_class" href="classSmallVector.html">SmallVector&lt;StringRef, 4&gt;</a> Components;</div>
 <div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>  StringRef(Data).split(Components, <span class="charliteral">&#39;-&#39;</span>, <span class="comment">/*MaxSplit*/</span> 3);</div>
 <div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>  <span class="keywordflow">if</span> (Components.size() &gt; 0) {</div>
-<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>    Arch = <a class="code hl_function" href="Triple_8cpp.html#a534eaf4cbda57348f2248a1cea5ed22f">parseArch</a>(Components[0]);</div>
+<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>    Arch = <a class="code hl_function" href="Triple_8cpp.html#ad3a9a5aa955e9b62ec11e4d3566d4594">parseArch</a>(Components[0]);</div>
 <div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>    SubArch = <a class="code hl_function" href="Triple_8cpp.html#ac784253baaaa3c7ac2760f3d9b71f1c1">parseSubArch</a>(Components[0]);</div>
 <div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>    <span class="keywordflow">if</span> (Components.size() &gt; 1) {</div>
 <div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>      Vendor = <a class="code hl_function" href="Triple_8cpp.html#af928c309977e80665cdc60d0b9c46d89">parseVendor</a>(Components[1]);</div>
@@ -802,8 +802,8 @@ $(function() {
 <div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>              .StartsWith(<span class="stringliteral">&quot;mipsn32&quot;</span>, Triple::GNUABIN32)</div>
 <div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>              .StartsWith(<span class="stringliteral">&quot;mips64&quot;</span>, Triple::GNUABI64)</div>
 <div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>              .StartsWith(<span class="stringliteral">&quot;mipsisa64&quot;</span>, Triple::GNUABI64)</div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>              .StartsWith(<span class="stringliteral">&quot;mipsisa32&quot;</span>, Triple::GNU)</div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>              .Cases(<span class="stringliteral">&quot;mips&quot;</span>, <span class="stringliteral">&quot;mipsel&quot;</span>, <span class="stringliteral">&quot;mipsr6&quot;</span>, <span class="stringliteral">&quot;mipsr6el&quot;</span>, Triple::GNU)</div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>              .StartsWith(<span class="stringliteral">&quot;mipsisa32&quot;</span>, <a class="code hl_enumvalue" href="classllvm_1_1symbolize_1_1DIPrinter.html#a5ef0400f7258b78c053a7832aa864dd2ab7e89d55aa08a289aa48277386e6ff1d">Triple::GNU</a>)</div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>              .Cases(<span class="stringliteral">&quot;mips&quot;</span>, <span class="stringliteral">&quot;mipsel&quot;</span>, <span class="stringliteral">&quot;mipsr6&quot;</span>, <span class="stringliteral">&quot;mipsr6el&quot;</span>, <a class="code hl_enumvalue" href="classllvm_1_1symbolize_1_1DIPrinter.html#a5ef0400f7258b78c053a7832aa864dd2ab7e89d55aa08a289aa48277386e6ff1d">Triple::GNU</a>)</div>
 <div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>              .Default(UnknownEnvironment);</div>
 <div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>    }</div>
 <div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>  }</div>
@@ -818,8 +818,8 @@ $(function() {
 <div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span><span class="comment">/// them into enum members. It leaves the environment unknown and omits it from</span></div>
 <div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span><span class="comment">/// the string representation.</span></div>
 <div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span><span class="comment"></span>Triple::Triple(<span class="keyword">const</span> Twine &amp;ArchStr, <span class="keyword">const</span> Twine &amp;VendorStr, <span class="keyword">const</span> Twine &amp;OSStr)</div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>    : Data((ArchStr + Twine(<span class="stringliteral">&#39;-&#39;</span>) + VendorStr + Twine(<span class="stringliteral">&#39;-&#39;</span>) + OSStr).str()),</div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>      Arch(<a class="code hl_function" href="Triple_8cpp.html#a534eaf4cbda57348f2248a1cea5ed22f">parseArch</a>(ArchStr.str())),</div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>    : <a class="code hl_enumvalue" href="namespacellvm_1_1pdb.html#a33e853ec74d48b1340d1d4bae772d30baf6068daa29dbb05a7ead1e3b5a48bbee">Data</a>((ArchStr + Twine(<span class="stringliteral">&#39;-&#39;</span>) + VendorStr + Twine(<span class="stringliteral">&#39;-&#39;</span>) + OSStr).str()),</div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>      Arch(<a class="code hl_function" href="Triple_8cpp.html#ad3a9a5aa955e9b62ec11e4d3566d4594">parseArch</a>(ArchStr.str())),</div>
 <div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>      SubArch(<a class="code hl_function" href="Triple_8cpp.html#ac784253baaaa3c7ac2760f3d9b71f1c1">parseSubArch</a>(ArchStr.str())),</div>
 <div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>      Vendor(<a class="code hl_function" href="Triple_8cpp.html#af928c309977e80665cdc60d0b9c46d89">parseVendor</a>(VendorStr.str())),</div>
 <div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>      OS(<a class="code hl_function" href="Triple_8cpp.html#a96f0a5c666b924f50da56dede8092ae7">parseOS</a>(OSStr.str())),</div>
@@ -834,9 +834,9 @@ $(function() {
 <div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span><span class="comment">/// them into enum members.</span></div>
 <div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span><span class="comment"></span>Triple::Triple(<span class="keyword">const</span> Twine &amp;ArchStr, <span class="keyword">const</span> Twine &amp;VendorStr, <span class="keyword">const</span> Twine &amp;OSStr,</div>
 <div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>               <span class="keyword">const</span> Twine &amp;EnvironmentStr)</div>
-<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>    : Data((ArchStr + Twine(<span class="stringliteral">&#39;-&#39;</span>) + VendorStr + Twine(<span class="stringliteral">&#39;-&#39;</span>) + OSStr + Twine(<span class="stringliteral">&#39;-&#39;</span>) +</div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>    : <a class="code hl_enumvalue" href="namespacellvm_1_1pdb.html#a33e853ec74d48b1340d1d4bae772d30baf6068daa29dbb05a7ead1e3b5a48bbee">Data</a>((ArchStr + Twine(<span class="stringliteral">&#39;-&#39;</span>) + VendorStr + Twine(<span class="stringliteral">&#39;-&#39;</span>) + OSStr + Twine(<span class="stringliteral">&#39;-&#39;</span>) +</div>
 <div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>            EnvironmentStr).str()),</div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>      Arch(<a class="code hl_function" href="Triple_8cpp.html#a534eaf4cbda57348f2248a1cea5ed22f">parseArch</a>(ArchStr.str())),</div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>      Arch(<a class="code hl_function" href="Triple_8cpp.html#ad3a9a5aa955e9b62ec11e4d3566d4594">parseArch</a>(ArchStr.str())),</div>
 <div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>      SubArch(<a class="code hl_function" href="Triple_8cpp.html#ac784253baaaa3c7ac2760f3d9b71f1c1">parseSubArch</a>(ArchStr.str())),</div>
 <div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>      Vendor(<a class="code hl_function" href="Triple_8cpp.html#af928c309977e80665cdc60d0b9c46d89">parseVendor</a>(VendorStr.str())),</div>
 <div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>      OS(<a class="code hl_function" href="Triple_8cpp.html#a96f0a5c666b924f50da56dede8092ae7">parseOS</a>(OSStr.str())),</div>
@@ -846,7 +846,7 @@ $(function() {
 <div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>    ObjectFormat = <a class="code hl_function" href="Triple_8cpp.html#a593094f6c13df699bd2cde1a1f40fec4">getDefaultFormat</a>(*<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>}</div>
 <div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span> </div>
-<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>std::string Triple::normalize(StringRef Str) {</div>
+<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>std::string <a class="code hl_function" href="structllvm_1_1BlockFrequencyInfoImplBase_1_1Distribution.html#ac24f62f9ac4bff8273ed15798ea650e8">Triple::normalize</a>(StringRef Str) {</div>
 <div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>  <span class="keywordtype">bool</span> IsMinGW32 = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>  <span class="keywordtype">bool</span> IsCygwin = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span> </div>
@@ -861,7 +861,7 @@ $(function() {
 <div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>  <span class="comment">// valid os.</span></div>
 <div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>  ArchType Arch = UnknownArch;</div>
 <div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>  <span class="keywordflow">if</span> (Components.size() &gt; 0)</div>
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>    Arch = <a class="code hl_function" href="Triple_8cpp.html#a534eaf4cbda57348f2248a1cea5ed22f">parseArch</a>(Components[0]);</div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>    Arch = <a class="code hl_function" href="Triple_8cpp.html#ad3a9a5aa955e9b62ec11e4d3566d4594">parseArch</a>(Components[0]);</div>
 <div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>  VendorType Vendor = UnknownVendor;</div>
 <div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>  <span class="keywordflow">if</span> (Components.size() &gt; 1)</div>
 <div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>    Vendor = <a class="code hl_function" href="Triple_8cpp.html#af928c309977e80665cdc60d0b9c46d89">parseVendor</a>(Components[1]);</div>
@@ -902,9 +902,9 @@ $(function() {
 <div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>      <span class="keywordtype">bool</span> Valid = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>      StringRef Comp = Components[<a class="code hl_variable" href="DeadArgumentElimination_8cpp.html#a39a491a969849f634027f20be70a5c57">Idx</a>];</div>
 <div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>      <span class="keywordflow">switch</span> (Pos) {</div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>      <span class="keywordflow">default</span>: llvm_unreachable(<span class="stringliteral">&quot;unexpected component type!&quot;</span>);</div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>      <span class="keywordflow">default</span>: <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;unexpected component type!&quot;</span>);</div>
 <div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>      <span class="keywordflow">case</span> 0:</div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>        Arch = <a class="code hl_function" href="Triple_8cpp.html#a534eaf4cbda57348f2248a1cea5ed22f">parseArch</a>(Comp);</div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>        Arch = <a class="code hl_function" href="Triple_8cpp.html#ad3a9a5aa955e9b62ec11e4d3566d4594">parseArch</a>(Comp);</div>
 <div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>        Valid = Arch != UnknownArch;</div>
 <div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>        <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>      <span class="keywordflow">case</span> 1:</div>
@@ -1041,7 +1041,7 @@ $(function() {
 <div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span>  <span class="keywordflow">return</span> Normalized;</div>
 <div class="line"><a id="l00987" name="l00987"></a><span class="lineno">  987</span>}</div>
 <div class="line"><a id="l00988" name="l00988"></a><span class="lineno">  988</span> </div>
-<div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>StringRef Triple::getArchName()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>StringRef <a class="code hl_function" href="namespacellvm_1_1AArch64.html#afdb76c04b32ad583493461a29db29e3a">Triple::getArchName</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span>  <span class="keywordflow">return</span> StringRef(Data).split(<span class="charliteral">&#39;-&#39;</span>).first;           <span class="comment">// Isolate first component</span></div>
 <div class="line"><a id="l00991" name="l00991"></a><span class="lineno">  991</span>}</div>
 <div class="line"><a id="l00992" name="l00992"></a><span class="lineno">  992</span> </div>
@@ -1130,7 +1130,7 @@ $(function() {
 <div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>  getOSVersion(Major, Minor, Micro);</div>
 <div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span> </div>
 <div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>  <span class="keywordflow">switch</span> (getOS()) {</div>
-<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>  <span class="keywordflow">default</span>: llvm_unreachable(<span class="stringliteral">&quot;unexpected OS for Darwin triple&quot;</span>);</div>
+<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>  <span class="keywordflow">default</span>: <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;unexpected OS for Darwin triple&quot;</span>);</div>
 <div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>  <span class="keywordflow">case</span> Darwin:</div>
 <div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span>    <span class="comment">// Default to darwin8, i.e., MacOSX 10.4.</span></div>
 <div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span>    <span class="keywordflow">if</span> (Major == 0)</div>
@@ -1169,7 +1169,7 @@ $(function() {
 <div class="line"><a id="l01114" name="l01114"></a><span class="lineno"> 1114</span><span class="keywordtype">void</span> Triple::getiOSVersion(<span class="keywordtype">unsigned</span> &amp;Major, <span class="keywordtype">unsigned</span> &amp;Minor,</div>
 <div class="line"><a id="l01115" name="l01115"></a><span class="lineno"> 1115</span>                           <span class="keywordtype">unsigned</span> &amp;Micro)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span>  <span class="keywordflow">switch</span> (getOS()) {</div>
-<div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span>  <span class="keywordflow">default</span>: llvm_unreachable(<span class="stringliteral">&quot;unexpected OS for Darwin triple&quot;</span>);</div>
+<div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span>  <span class="keywordflow">default</span>: <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;unexpected OS for Darwin triple&quot;</span>);</div>
 <div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span>  <span class="keywordflow">case</span> Darwin:</div>
 <div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span>  <span class="keywordflow">case</span> MacOSX:</div>
 <div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span>    <span class="comment">// Ignore the version from the triple.  This is only handled because the</span></div>
@@ -1188,14 +1188,14 @@ $(function() {
 <div class="line"><a id="l01133" name="l01133"></a><span class="lineno"> 1133</span>      Major = (getArch() == aarch64) ? 7 : 5;</div>
 <div class="line"><a id="l01134" name="l01134"></a><span class="lineno"> 1134</span>    <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span>  <span class="keywordflow">case</span> WatchOS:</div>
-<div class="line"><a id="l01136" name="l01136"></a><span class="lineno"> 1136</span>    llvm_unreachable(<span class="stringliteral">&quot;conflicting triple info&quot;</span>);</div>
+<div class="line"><a id="l01136" name="l01136"></a><span class="lineno"> 1136</span>    <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;conflicting triple info&quot;</span>);</div>
 <div class="line"><a id="l01137" name="l01137"></a><span class="lineno"> 1137</span>  }</div>
 <div class="line"><a id="l01138" name="l01138"></a><span class="lineno"> 1138</span>}</div>
 <div class="line"><a id="l01139" name="l01139"></a><span class="lineno"> 1139</span> </div>
 <div class="line"><a id="l01140" name="l01140"></a><span class="lineno"> 1140</span><span class="keywordtype">void</span> Triple::getWatchOSVersion(<span class="keywordtype">unsigned</span> &amp;Major, <span class="keywordtype">unsigned</span> &amp;Minor,</div>
 <div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span>                               <span class="keywordtype">unsigned</span> &amp;Micro)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span>  <span class="keywordflow">switch</span> (getOS()) {</div>
-<div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span>  <span class="keywordflow">default</span>: llvm_unreachable(<span class="stringliteral">&quot;unexpected OS for Darwin triple&quot;</span>);</div>
+<div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span>  <span class="keywordflow">default</span>: <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;unexpected OS for Darwin triple&quot;</span>);</div>
 <div class="line"><a id="l01144" name="l01144"></a><span class="lineno"> 1144</span>  <span class="keywordflow">case</span> Darwin:</div>
 <div class="line"><a id="l01145" name="l01145"></a><span class="lineno"> 1145</span>  <span class="keywordflow">case</span> MacOSX:</div>
 <div class="line"><a id="l01146" name="l01146"></a><span class="lineno"> 1146</span>    <span class="comment">// Ignore the version from the triple.  This is only handled because the</span></div>
@@ -1212,7 +1212,7 @@ $(function() {
 <div class="line"><a id="l01157" name="l01157"></a><span class="lineno"> 1157</span>      Major = 2;</div>
 <div class="line"><a id="l01158" name="l01158"></a><span class="lineno"> 1158</span>    <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01159" name="l01159"></a><span class="lineno"> 1159</span>  <span class="keywordflow">case</span> IOS:</div>
-<div class="line"><a id="l01160" name="l01160"></a><span class="lineno"> 1160</span>    llvm_unreachable(<span class="stringliteral">&quot;conflicting triple info&quot;</span>);</div>
+<div class="line"><a id="l01160" name="l01160"></a><span class="lineno"> 1160</span>    <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;conflicting triple info&quot;</span>);</div>
 <div class="line"><a id="l01161" name="l01161"></a><span class="lineno"> 1161</span>  }</div>
 <div class="line"><a id="l01162" name="l01162"></a><span class="lineno"> 1162</span>}</div>
 <div class="line"><a id="l01163" name="l01163"></a><span class="lineno"> 1163</span> </div>
@@ -1250,7 +1250,7 @@ $(function() {
 <div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span> </div>
 <div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span><span class="keywordtype">void</span> Triple::setArchName(StringRef Str) {</div>
 <div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>  <span class="comment">// Work around a miscompilation bug for Twines in gcc 4.0.3.</span></div>
-<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>  SmallString&lt;64&gt; Triple;</div>
+<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>  <a class="code hl_class" href="classllvm_1_1SmallString.html">SmallString&lt;64&gt;</a> Triple;</div>
 <div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span>  Triple += Str;</div>
 <div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>  Triple += <span class="stringliteral">&quot;-&quot;</span>;</div>
 <div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>  Triple += getVendorName();</div>
@@ -1260,24 +1260,24 @@ $(function() {
 <div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>}</div>
 <div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span> </div>
 <div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span><span class="keywordtype">void</span> Triple::setVendorName(StringRef Str) {</div>
-<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>  setTriple(getArchName() + <span class="stringliteral">&quot;-&quot;</span> + Str + <span class="stringliteral">&quot;-&quot;</span> + getOSAndEnvironmentName());</div>
+<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>  setTriple(<a class="code hl_function" href="namespacellvm_1_1AArch64.html#afdb76c04b32ad583493461a29db29e3a">getArchName</a>() + <span class="stringliteral">&quot;-&quot;</span> + Str + <span class="stringliteral">&quot;-&quot;</span> + getOSAndEnvironmentName());</div>
 <div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>}</div>
 <div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span> </div>
 <div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span><span class="keywordtype">void</span> Triple::setOSName(StringRef Str) {</div>
 <div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>  <span class="keywordflow">if</span> (hasEnvironment())</div>
-<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span>    setTriple(getArchName() + <span class="stringliteral">&quot;-&quot;</span> + getVendorName() + <span class="stringliteral">&quot;-&quot;</span> + Str +</div>
+<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span>    setTriple(<a class="code hl_function" href="namespacellvm_1_1AArch64.html#afdb76c04b32ad583493461a29db29e3a">getArchName</a>() + <span class="stringliteral">&quot;-&quot;</span> + getVendorName() + <span class="stringliteral">&quot;-&quot;</span> + Str +</div>
 <div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>              <span class="stringliteral">&quot;-&quot;</span> + getEnvironmentName());</div>
 <div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span>  <span class="keywordflow">else</span></div>
-<div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span>    setTriple(getArchName() + <span class="stringliteral">&quot;-&quot;</span> + getVendorName() + <span class="stringliteral">&quot;-&quot;</span> + Str);</div>
+<div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span>    setTriple(<a class="code hl_function" href="namespacellvm_1_1AArch64.html#afdb76c04b32ad583493461a29db29e3a">getArchName</a>() + <span class="stringliteral">&quot;-&quot;</span> + getVendorName() + <span class="stringliteral">&quot;-&quot;</span> + Str);</div>
 <div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span>}</div>
 <div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span> </div>
 <div class="line"><a id="l01219" name="l01219"></a><span class="lineno"> 1219</span><span class="keywordtype">void</span> Triple::setEnvironmentName(StringRef Str) {</div>
-<div class="line"><a id="l01220" name="l01220"></a><span class="lineno"> 1220</span>  setTriple(getArchName() + <span class="stringliteral">&quot;-&quot;</span> + getVendorName() + <span class="stringliteral">&quot;-&quot;</span> + getOSName() +</div>
+<div class="line"><a id="l01220" name="l01220"></a><span class="lineno"> 1220</span>  setTriple(<a class="code hl_function" href="namespacellvm_1_1AArch64.html#afdb76c04b32ad583493461a29db29e3a">getArchName</a>() + <span class="stringliteral">&quot;-&quot;</span> + getVendorName() + <span class="stringliteral">&quot;-&quot;</span> + getOSName() +</div>
 <div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span>            <span class="stringliteral">&quot;-&quot;</span> + Str);</div>
 <div class="line"><a id="l01222" name="l01222"></a><span class="lineno"> 1222</span>}</div>
 <div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span> </div>
 <div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span><span class="keywordtype">void</span> Triple::setOSAndEnvironmentName(StringRef Str) {</div>
-<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>  setTriple(getArchName() + <span class="stringliteral">&quot;-&quot;</span> + getVendorName() + <span class="stringliteral">&quot;-&quot;</span> + Str);</div>
+<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>  setTriple(<a class="code hl_function" href="namespacellvm_1_1AArch64.html#afdb76c04b32ad583493461a29db29e3a">getArchName</a>() + <span class="stringliteral">&quot;-&quot;</span> + getVendorName() + <span class="stringliteral">&quot;-&quot;</span> + Str);</div>
 <div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span>}</div>
 <div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span> </div>
 <div class="line"><a id="l01228" name="l01228"></a><span class="lineno"><a class="line" href="Triple_8cpp.html#a8c187e526f7526310636ec775f4e0b65"> 1228</a></span><span class="keyword">static</span> <span class="keywordtype">unsigned</span> <a class="code hl_function" href="Triple_8cpp.html#a8c187e526f7526310636ec775f4e0b65">getArchPointerBitWidth</a>(llvm::Triple::ArchType Arch) {</div>
@@ -1341,7 +1341,7 @@ $(function() {
 <div class="line"><a id="l01286" name="l01286"></a><span class="lineno"> 1286</span>  <span class="keywordflow">case</span> llvm::Triple::renderscript64:</div>
 <div class="line"><a id="l01287" name="l01287"></a><span class="lineno"> 1287</span>    <span class="keywordflow">return</span> 64;</div>
 <div class="line"><a id="l01288" name="l01288"></a><span class="lineno"> 1288</span>  }</div>
-<div class="line"><a id="l01289" name="l01289"></a><span class="lineno"> 1289</span>  llvm_unreachable(<span class="stringliteral">&quot;Invalid architecture value&quot;</span>);</div>
+<div class="line"><a id="l01289" name="l01289"></a><span class="lineno"> 1289</span>  <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;Invalid architecture value&quot;</span>);</div>
 <div class="line"><a id="l01290" name="l01290"></a><span class="lineno"> 1290</span>}</div>
 <div class="line"><a id="l01291" name="l01291"></a><span class="lineno"> 1291</span> </div>
 <div class="line"><a id="l01292" name="l01292"></a><span class="lineno"> 1292</span><span class="keywordtype">bool</span> Triple::isArch64Bit()<span class="keyword"> const </span>{</div>
@@ -1374,7 +1374,7 @@ $(function() {
 <div class="line"><a id="l01319" name="l01319"></a><span class="lineno"> 1319</span>  <span class="keywordflow">case</span> Triple::amdil:</div>
 <div class="line"><a id="l01320" name="l01320"></a><span class="lineno"> 1320</span>  <span class="keywordflow">case</span> Triple::hsail:</div>
 <div class="line"><a id="l01321" name="l01321"></a><span class="lineno"> 1321</span>  <span class="keywordflow">case</span> Triple::spir:</div>
-<div class="line"><a id="l01322" name="l01322"></a><span class="lineno"> 1322</span>  <span class="keywordflow">case</span> Triple::arc:</div>
+<div class="line"><a id="l01322" name="l01322"></a><span class="lineno"> 1322</span>  <span class="keywordflow">case</span> <a class="code hl_variable" href="group__ARCOpt.html#ga04fff031c5876f97f73173e756d8085e">Triple::arc</a>:</div>
 <div class="line"><a id="l01323" name="l01323"></a><span class="lineno"> 1323</span>  <span class="keywordflow">case</span> Triple::arm:</div>
 <div class="line"><a id="l01324" name="l01324"></a><span class="lineno"> 1324</span>  <span class="keywordflow">case</span> Triple::armeb:</div>
 <div class="line"><a id="l01325" name="l01325"></a><span class="lineno"> 1325</span>  <span class="keywordflow">case</span> Triple::hexagon:</div>
@@ -1392,7 +1392,7 @@ $(function() {
 <div class="line"><a id="l01337" name="l01337"></a><span class="lineno"> 1337</span>  <span class="keywordflow">case</span> Triple::tcele:</div>
 <div class="line"><a id="l01338" name="l01338"></a><span class="lineno"> 1338</span>  <span class="keywordflow">case</span> Triple::thumb:</div>
 <div class="line"><a id="l01339" name="l01339"></a><span class="lineno"> 1339</span>  <span class="keywordflow">case</span> Triple::thumbeb:</div>
-<div class="line"><a id="l01340" name="l01340"></a><span class="lineno"> 1340</span>  <span class="keywordflow">case</span> Triple::x86:</div>
+<div class="line"><a id="l01340" name="l01340"></a><span class="lineno"> 1340</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacellvm_1_1pdb.html#a1928545fad40360ae644901d7308cbeba8a9da7865483c5fd359f3acef178d26d">Triple::x86</a>:</div>
 <div class="line"><a id="l01341" name="l01341"></a><span class="lineno"> 1341</span>  <span class="keywordflow">case</span> Triple::xcore:</div>
 <div class="line"><a id="l01342" name="l01342"></a><span class="lineno"> 1342</span>  <span class="keywordflow">case</span> Triple::lanai:</div>
 <div class="line"><a id="l01343" name="l01343"></a><span class="lineno"> 1343</span>  <span class="keywordflow">case</span> Triple::shave:</div>
@@ -1410,7 +1410,7 @@ $(function() {
 <div class="line"><a id="l01355" name="l01355"></a><span class="lineno"> 1355</span>  <span class="keywordflow">case</span> Triple::ppc64:          T.setArch(Triple::ppc);     <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01356" name="l01356"></a><span class="lineno"> 1356</span>  <span class="keywordflow">case</span> Triple::sparcv9:        T.setArch(Triple::sparc);   <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01357" name="l01357"></a><span class="lineno"> 1357</span>  <span class="keywordflow">case</span> Triple::riscv64:        T.setArch(Triple::riscv32); <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l01358" name="l01358"></a><span class="lineno"> 1358</span>  <span class="keywordflow">case</span> Triple::x86_64:         T.setArch(Triple::x86);     <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l01358" name="l01358"></a><span class="lineno"> 1358</span>  <span class="keywordflow">case</span> Triple::x86_64:         T.setArch(<a class="code hl_enumvalue" href="namespacellvm_1_1pdb.html#a1928545fad40360ae644901d7308cbeba8a9da7865483c5fd359f3acef178d26d">Triple::x86</a>);     <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01359" name="l01359"></a><span class="lineno"> 1359</span>  <span class="keywordflow">case</span> Triple::amdil64:        T.setArch(Triple::amdil);   <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01360" name="l01360"></a><span class="lineno"> 1360</span>  <span class="keywordflow">case</span> Triple::hsail64:        T.setArch(Triple::hsail);   <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01361" name="l01361"></a><span class="lineno"> 1361</span>  <span class="keywordflow">case</span> Triple::spir64:         T.setArch(Triple::spir);    <span class="keywordflow">break</span>;</div>
@@ -1424,7 +1424,7 @@ $(function() {
 <div class="line"><a id="l01369" name="l01369"></a><span class="lineno"> 1369</span>  Triple T(*<span class="keyword">this</span>);</div>
 <div class="line"><a id="l01370" name="l01370"></a><span class="lineno"> 1370</span>  <span class="keywordflow">switch</span> (getArch()) {</div>
 <div class="line"><a id="l01371" name="l01371"></a><span class="lineno"> 1371</span>  <span class="keywordflow">case</span> Triple::UnknownArch:</div>
-<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"> 1372</span>  <span class="keywordflow">case</span> Triple::arc:</div>
+<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"> 1372</span>  <span class="keywordflow">case</span> <a class="code hl_variable" href="group__ARCOpt.html#ga04fff031c5876f97f73173e756d8085e">Triple::arc</a>:</div>
 <div class="line"><a id="l01373" name="l01373"></a><span class="lineno"> 1373</span>  <span class="keywordflow">case</span> Triple::avr:</div>
 <div class="line"><a id="l01374" name="l01374"></a><span class="lineno"> 1374</span>  <span class="keywordflow">case</span> Triple::hexagon:</div>
 <div class="line"><a id="l01375" name="l01375"></a><span class="lineno"> 1375</span>  <span class="keywordflow">case</span> Triple::kalimba:</div>
@@ -1472,7 +1472,7 @@ $(function() {
 <div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span>  <span class="keywordflow">case</span> Triple::ppc:             T.setArch(Triple::ppc64);      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span>  <span class="keywordflow">case</span> Triple::sparc:           T.setArch(Triple::sparcv9);    <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span>  <span class="keywordflow">case</span> Triple::riscv32:         T.setArch(Triple::riscv64);    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span>  <span class="keywordflow">case</span> Triple::x86:             T.setArch(Triple::x86_64);     <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacellvm_1_1pdb.html#a1928545fad40360ae644901d7308cbeba8a9da7865483c5fd359f3acef178d26d">Triple::x86</a>:             T.setArch(Triple::x86_64);     <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span>  <span class="keywordflow">case</span> Triple::amdil:           T.setArch(Triple::amdil64);    <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span>  <span class="keywordflow">case</span> Triple::hsail:           T.setArch(Triple::hsail64);    <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span>  <span class="keywordflow">case</span> Triple::spir:            T.setArch(Triple::spir64);     <span class="keywordflow">break</span>;</div>
@@ -1512,7 +1512,7 @@ $(function() {
 <div class="line"><a id="l01457" name="l01457"></a><span class="lineno"> 1457</span>  <span class="keywordflow">case</span> Triple::spir:</div>
 <div class="line"><a id="l01458" name="l01458"></a><span class="lineno"> 1458</span>  <span class="keywordflow">case</span> Triple::wasm32:</div>
 <div class="line"><a id="l01459" name="l01459"></a><span class="lineno"> 1459</span>  <span class="keywordflow">case</span> Triple::wasm64:</div>
-<div class="line"><a id="l01460" name="l01460"></a><span class="lineno"> 1460</span>  <span class="keywordflow">case</span> Triple::x86:</div>
+<div class="line"><a id="l01460" name="l01460"></a><span class="lineno"> 1460</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacellvm_1_1pdb.html#a1928545fad40360ae644901d7308cbeba8a9da7865483c5fd359f3acef178d26d">Triple::x86</a>:</div>
 <div class="line"><a id="l01461" name="l01461"></a><span class="lineno"> 1461</span>  <span class="keywordflow">case</span> Triple::x86_64:</div>
 <div class="line"><a id="l01462" name="l01462"></a><span class="lineno"> 1462</span>  <span class="keywordflow">case</span> Triple::xcore:</div>
 <div class="line"><a id="l01463" name="l01463"></a><span class="lineno"> 1463</span>  <span class="keywordflow">case</span> Triple::renderscript32:</div>
@@ -1533,7 +1533,7 @@ $(function() {
 <div class="line"><a id="l01478" name="l01478"></a><span class="lineno"> 1478</span>  <span class="keywordflow">case</span> Triple::ppc64le: T.setArch(Triple::ppc64);      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01479" name="l01479"></a><span class="lineno"> 1479</span>  <span class="keywordflow">case</span> Triple::sparcel: T.setArch(Triple::sparc);      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01480" name="l01480"></a><span class="lineno"> 1480</span>  <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l01481" name="l01481"></a><span class="lineno"> 1481</span>    llvm_unreachable(<span class="stringliteral">&quot;getBigEndianArchVariant: unknown triple.&quot;</span>);</div>
+<div class="line"><a id="l01481" name="l01481"></a><span class="lineno"> 1481</span>    <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;getBigEndianArchVariant: unknown triple.&quot;</span>);</div>
 <div class="line"><a id="l01482" name="l01482"></a><span class="lineno"> 1482</span>  }</div>
 <div class="line"><a id="l01483" name="l01483"></a><span class="lineno"> 1483</span>  <span class="keywordflow">return</span> T;</div>
 <div class="line"><a id="l01484" name="l01484"></a><span class="lineno"> 1484</span>}</div>
@@ -1565,7 +1565,7 @@ $(function() {
 <div class="line"><a id="l01510" name="l01510"></a><span class="lineno"> 1510</span>  <span class="keywordflow">case</span> Triple::ppc64:      T.setArch(Triple::ppc64le);  <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01511" name="l01511"></a><span class="lineno"> 1511</span>  <span class="keywordflow">case</span> Triple::sparc:      T.setArch(Triple::sparcel);  <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01512" name="l01512"></a><span class="lineno"> 1512</span>  <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l01513" name="l01513"></a><span class="lineno"> 1513</span>    llvm_unreachable(<span class="stringliteral">&quot;getLittleEndianArchVariant: unknown triple.&quot;</span>);</div>
+<div class="line"><a id="l01513" name="l01513"></a><span class="lineno"> 1513</span>    <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;getLittleEndianArchVariant: unknown triple.&quot;</span>);</div>
 <div class="line"><a id="l01514" name="l01514"></a><span class="lineno"> 1514</span>  }</div>
 <div class="line"><a id="l01515" name="l01515"></a><span class="lineno"> 1515</span>  <span class="keywordflow">return</span> T;</div>
 <div class="line"><a id="l01516" name="l01516"></a><span class="lineno"> 1516</span>}</div>
@@ -1602,7 +1602,7 @@ $(function() {
 <div class="line"><a id="l01547" name="l01547"></a><span class="lineno"> 1547</span>  <span class="keywordflow">case</span> Triple::thumb:</div>
 <div class="line"><a id="l01548" name="l01548"></a><span class="lineno"> 1548</span>  <span class="keywordflow">case</span> Triple::wasm32:</div>
 <div class="line"><a id="l01549" name="l01549"></a><span class="lineno"> 1549</span>  <span class="keywordflow">case</span> Triple::wasm64:</div>
-<div class="line"><a id="l01550" name="l01550"></a><span class="lineno"> 1550</span>  <span class="keywordflow">case</span> Triple::x86:</div>
+<div class="line"><a id="l01550" name="l01550"></a><span class="lineno"> 1550</span>  <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacellvm_1_1pdb.html#a1928545fad40360ae644901d7308cbeba8a9da7865483c5fd359f3acef178d26d">Triple::x86</a>:</div>
 <div class="line"><a id="l01551" name="l01551"></a><span class="lineno"> 1551</span>  <span class="keywordflow">case</span> Triple::x86_64:</div>
 <div class="line"><a id="l01552" name="l01552"></a><span class="lineno"> 1552</span>  <span class="keywordflow">case</span> Triple::xcore:</div>
 <div class="line"><a id="l01553" name="l01553"></a><span class="lineno"> 1553</span>  <span class="keywordflow">case</span> Triple::tcele:</div>
@@ -1616,41 +1616,41 @@ $(function() {
 <div class="line"><a id="l01561" name="l01561"></a><span class="lineno"> 1561</span> </div>
 <div class="line"><a id="l01562" name="l01562"></a><span class="lineno"> 1562</span><span class="keywordtype">bool</span> Triple::isCompatibleWith(<span class="keyword">const</span> Triple &amp;Other)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l01563" name="l01563"></a><span class="lineno"> 1563</span>  <span class="comment">// ARM and Thumb triples are compatible, if subarch, vendor and OS match.</span></div>
-<div class="line"><a id="l01564" name="l01564"></a><span class="lineno"> 1564</span>  <span class="keywordflow">if</span> ((getArch() == Triple::thumb &amp;&amp; Other.getArch() == Triple::arm) ||</div>
-<div class="line"><a id="l01565" name="l01565"></a><span class="lineno"> 1565</span>      (getArch() == Triple::arm &amp;&amp; Other.getArch() == Triple::thumb) ||</div>
-<div class="line"><a id="l01566" name="l01566"></a><span class="lineno"> 1566</span>      (getArch() == Triple::thumbeb &amp;&amp; Other.getArch() == Triple::armeb) ||</div>
-<div class="line"><a id="l01567" name="l01567"></a><span class="lineno"> 1567</span>      (getArch() == Triple::armeb &amp;&amp; Other.getArch() == Triple::thumbeb)) {</div>
+<div class="line"><a id="l01564" name="l01564"></a><span class="lineno"> 1564</span>  <span class="keywordflow">if</span> ((getArch() == Triple::thumb &amp;&amp; <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getArch() == Triple::arm) ||</div>
+<div class="line"><a id="l01565" name="l01565"></a><span class="lineno"> 1565</span>      (getArch() == Triple::arm &amp;&amp; <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getArch() == Triple::thumb) ||</div>
+<div class="line"><a id="l01566" name="l01566"></a><span class="lineno"> 1566</span>      (getArch() == Triple::thumbeb &amp;&amp; <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getArch() == Triple::armeb) ||</div>
+<div class="line"><a id="l01567" name="l01567"></a><span class="lineno"> 1567</span>      (getArch() == Triple::armeb &amp;&amp; <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getArch() == Triple::thumbeb)) {</div>
 <div class="line"><a id="l01568" name="l01568"></a><span class="lineno"> 1568</span>    <span class="keywordflow">if</span> (getVendor() == Triple::Apple)</div>
-<div class="line"><a id="l01569" name="l01569"></a><span class="lineno"> 1569</span>      <span class="keywordflow">return</span> getSubArch() == Other.getSubArch() &amp;&amp;</div>
-<div class="line"><a id="l01570" name="l01570"></a><span class="lineno"> 1570</span>             getVendor() == Other.getVendor() &amp;&amp; getOS() == Other.getOS();</div>
+<div class="line"><a id="l01569" name="l01569"></a><span class="lineno"> 1569</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacellvm_1_1AArch64.html#a67ccd181d5ee5daaa22611f1584a63de">getSubArch</a>() == <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getSubArch() &amp;&amp;</div>
+<div class="line"><a id="l01570" name="l01570"></a><span class="lineno"> 1570</span>             getVendor() == <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getVendor() &amp;&amp; getOS() == <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getOS();</div>
 <div class="line"><a id="l01571" name="l01571"></a><span class="lineno"> 1571</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l01572" name="l01572"></a><span class="lineno"> 1572</span>      <span class="keywordflow">return</span> getSubArch() == Other.getSubArch() &amp;&amp;</div>
-<div class="line"><a id="l01573" name="l01573"></a><span class="lineno"> 1573</span>             getVendor() == Other.getVendor() &amp;&amp; getOS() == Other.getOS() &amp;&amp;</div>
-<div class="line"><a id="l01574" name="l01574"></a><span class="lineno"> 1574</span>             getEnvironment() == Other.getEnvironment() &amp;&amp;</div>
-<div class="line"><a id="l01575" name="l01575"></a><span class="lineno"> 1575</span>             getObjectFormat() == Other.getObjectFormat();</div>
+<div class="line"><a id="l01572" name="l01572"></a><span class="lineno"> 1572</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacellvm_1_1AArch64.html#a67ccd181d5ee5daaa22611f1584a63de">getSubArch</a>() == <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getSubArch() &amp;&amp;</div>
+<div class="line"><a id="l01573" name="l01573"></a><span class="lineno"> 1573</span>             getVendor() == <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getVendor() &amp;&amp; getOS() == <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getOS() &amp;&amp;</div>
+<div class="line"><a id="l01574" name="l01574"></a><span class="lineno"> 1574</span>             getEnvironment() == <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getEnvironment() &amp;&amp;</div>
+<div class="line"><a id="l01575" name="l01575"></a><span class="lineno"> 1575</span>             getObjectFormat() == <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getObjectFormat();</div>
 <div class="line"><a id="l01576" name="l01576"></a><span class="lineno"> 1576</span>  }</div>
 <div class="line"><a id="l01577" name="l01577"></a><span class="lineno"> 1577</span> </div>
 <div class="line"><a id="l01578" name="l01578"></a><span class="lineno"> 1578</span>  <span class="comment">// If vendor is apple, ignore the version number.</span></div>
 <div class="line"><a id="l01579" name="l01579"></a><span class="lineno"> 1579</span>  <span class="keywordflow">if</span> (getVendor() == Triple::Apple)</div>
-<div class="line"><a id="l01580" name="l01580"></a><span class="lineno"> 1580</span>    <span class="keywordflow">return</span> getArch() == Other.getArch() &amp;&amp; getSubArch() == Other.getSubArch() &amp;&amp;</div>
-<div class="line"><a id="l01581" name="l01581"></a><span class="lineno"> 1581</span>           getVendor() == Other.getVendor() &amp;&amp; getOS() == Other.getOS();</div>
+<div class="line"><a id="l01580" name="l01580"></a><span class="lineno"> 1580</span>    <span class="keywordflow">return</span> getArch() == <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getArch() &amp;&amp; <a class="code hl_function" href="namespacellvm_1_1AArch64.html#a67ccd181d5ee5daaa22611f1584a63de">getSubArch</a>() == <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getSubArch() &amp;&amp;</div>
+<div class="line"><a id="l01581" name="l01581"></a><span class="lineno"> 1581</span>           getVendor() == <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getVendor() &amp;&amp; getOS() == <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.getOS();</div>
 <div class="line"><a id="l01582" name="l01582"></a><span class="lineno"> 1582</span> </div>
-<div class="line"><a id="l01583" name="l01583"></a><span class="lineno"> 1583</span>  <span class="keywordflow">return</span> *<span class="keyword">this</span> == Other;</div>
+<div class="line"><a id="l01583" name="l01583"></a><span class="lineno"> 1583</span>  <span class="keywordflow">return</span> *<span class="keyword">this</span> == <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>;</div>
 <div class="line"><a id="l01584" name="l01584"></a><span class="lineno"> 1584</span>}</div>
 <div class="line"><a id="l01585" name="l01585"></a><span class="lineno"> 1585</span> </div>
-<div class="line"><a id="l01586" name="l01586"></a><span class="lineno"> 1586</span>std::string Triple::merge(<span class="keyword">const</span> Triple &amp;Other)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l01586" name="l01586"></a><span class="lineno"> 1586</span>std::string <a class="code hl_function" href="classllvm_1_1AttrBuilder.html#a3f05fda2b6c78a87f8d6e608b55693f7">Triple::merge</a>(<span class="keyword">const</span> Triple &amp;Other)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l01587" name="l01587"></a><span class="lineno"> 1587</span>  <span class="comment">// If vendor is apple, pick the triple with the larger version number.</span></div>
 <div class="line"><a id="l01588" name="l01588"></a><span class="lineno"> 1588</span>  <span class="keywordflow">if</span> (getVendor() == Triple::Apple)</div>
-<div class="line"><a id="l01589" name="l01589"></a><span class="lineno"> 1589</span>    <span class="keywordflow">if</span> (Other.isOSVersionLT(*<span class="keyword">this</span>))</div>
+<div class="line"><a id="l01589" name="l01589"></a><span class="lineno"> 1589</span>    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.isOSVersionLT(*<span class="keyword">this</span>))</div>
 <div class="line"><a id="l01590" name="l01590"></a><span class="lineno"> 1590</span>      <span class="keywordflow">return</span> str();</div>
 <div class="line"><a id="l01591" name="l01591"></a><span class="lineno"> 1591</span> </div>
-<div class="line"><a id="l01592" name="l01592"></a><span class="lineno"> 1592</span>  <span class="keywordflow">return</span> Other.str();</div>
+<div class="line"><a id="l01592" name="l01592"></a><span class="lineno"> 1592</span>  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a>.str();</div>
 <div class="line"><a id="l01593" name="l01593"></a><span class="lineno"> 1593</span>}</div>
 <div class="line"><a id="l01594" name="l01594"></a><span class="lineno"> 1594</span> </div>
 <div class="line"><a id="l01595" name="l01595"></a><span class="lineno"> 1595</span>StringRef Triple::getARMCPUForArch(StringRef MArch)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l01596" name="l01596"></a><span class="lineno"> 1596</span>  <span class="keywordflow">if</span> (MArch.empty())</div>
-<div class="line"><a id="l01597" name="l01597"></a><span class="lineno"> 1597</span>    MArch = getArchName();</div>
-<div class="line"><a id="l01598" name="l01598"></a><span class="lineno"> 1598</span>  MArch = ARM::getCanonicalArchName(MArch);</div>
+<div class="line"><a id="l01597" name="l01597"></a><span class="lineno"> 1597</span>    MArch = <a class="code hl_function" href="namespacellvm_1_1AArch64.html#afdb76c04b32ad583493461a29db29e3a">getArchName</a>();</div>
+<div class="line"><a id="l01598" name="l01598"></a><span class="lineno"> 1598</span>  MArch = <a class="code hl_function" href="namespacellvm_1_1ARM.html#a115dd532d6538ed40f42a625343126cc">ARM::getCanonicalArchName</a>(MArch);</div>
 <div class="line"><a id="l01599" name="l01599"></a><span class="lineno"> 1599</span> </div>
 <div class="line"><a id="l01600" name="l01600"></a><span class="lineno"> 1600</span>  <span class="comment">// Some defaults are forced.</span></div>
 <div class="line"><a id="l01601" name="l01601"></a><span class="lineno"> 1601</span>  <span class="keywordflow">switch</span> (getOS()) {</div>
@@ -1676,7 +1676,7 @@ $(function() {
 <div class="line"><a id="l01621" name="l01621"></a><span class="lineno"> 1621</span>  <span class="keywordflow">if</span> (MArch.empty())</div>
 <div class="line"><a id="l01622" name="l01622"></a><span class="lineno"> 1622</span>    <span class="keywordflow">return</span> StringRef();</div>
 <div class="line"><a id="l01623" name="l01623"></a><span class="lineno"> 1623</span> </div>
-<div class="line"><a id="l01624" name="l01624"></a><span class="lineno"> 1624</span>  StringRef CPU = ARM::getDefaultCPU(MArch);</div>
+<div class="line"><a id="l01624" name="l01624"></a><span class="lineno"> 1624</span>  StringRef CPU = <a class="code hl_function" href="namespacellvm_1_1ARM.html#a8baeb4d23f981eda5c951371da480b99">ARM::getDefaultCPU</a>(MArch);</div>
 <div class="line"><a id="l01625" name="l01625"></a><span class="lineno"> 1625</span>  <span class="keywordflow">if</span> (!CPU.empty() &amp;&amp; !CPU.equals(<span class="stringliteral">&quot;invalid&quot;</span>))</div>
 <div class="line"><a id="l01626" name="l01626"></a><span class="lineno"> 1626</span>    <span class="keywordflow">return</span> CPU;</div>
 <div class="line"><a id="l01627" name="l01627"></a><span class="lineno"> 1627</span> </div>
@@ -1707,12 +1707,15 @@ $(function() {
 <div class="line"><a id="l01652" name="l01652"></a><span class="lineno"> 1652</span>    }</div>
 <div class="line"><a id="l01653" name="l01653"></a><span class="lineno"> 1653</span>  }</div>
 <div class="line"><a id="l01654" name="l01654"></a><span class="lineno"> 1654</span> </div>
-<div class="line"><a id="l01655" name="l01655"></a><span class="lineno"> 1655</span>  llvm_unreachable(<span class="stringliteral">&quot;invalid arch name&quot;</span>);</div>
+<div class="line"><a id="l01655" name="l01655"></a><span class="lineno"> 1655</span>  <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;invalid arch name&quot;</span>);</div>
 <div class="line"><a id="l01656" name="l01656"></a><span class="lineno"> 1656</span>}</div>
 <div class="ttc" id="aDeadArgumentElimination_8cpp_html_a39a491a969849f634027f20be70a5c57"><div class="ttname"><a href="DeadArgumentElimination_8cpp.html#a39a491a969849f634027f20be70a5c57">Idx</a></div><div class="ttdeci">Returns the sub type a function will return at a given Idx Should correspond to the result type of an ExtractValue instruction executed with just that one unsigned Idx</div><div class="ttdef"><b>Definition:</b> <a href="DeadArgumentElimination_8cpp_source.html#l00342">DeadArgumentElimination.cpp:342</a></div></div>
 <div class="ttc" id="aDeadArgumentElimination_8cpp_html_aa5bfc84fa71b9e3477e24efecb60fae5"><div class="ttname"><a href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a></div><div class="ttdeci">assert(!RetTy-&gt;isVoidTy() &amp;&amp;&quot;void type has no subtype&quot;)</div></div>
+<div class="ttc" id="aErrorHandling_8h_html"><div class="ttname"><a href="ErrorHandling_8h.html">ErrorHandling.h</a></div></div>
+<div class="ttc" id="aErrorHandling_8h_html_ace243f5c25697a1107cce46626b3dc94"><div class="ttname"><a href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a></div><div class="ttdeci">#define llvm_unreachable(msg)</div><div class="ttdoc">Marks that the current location is not supposed to be reachable.</div><div class="ttdef"><b>Definition:</b> <a href="ErrorHandling_8h_source.html#l00135">ErrorHandling.h:135</a></div></div>
+<div class="ttc" id="aHost_8h_html"><div class="ttname"><a href="Host_8h.html">Host.h</a></div></div>
+<div class="ttc" id="aTargetParser_8h_html"><div class="ttname"><a href="TargetParser_8h.html">TargetParser.h</a></div></div>
 <div class="ttc" id="aTriple_8cpp_html_a1d2990073fc241c3de22309696bf3314"><div class="ttname"><a href="Triple_8cpp.html#a1d2990073fc241c3de22309696bf3314">parseEnvironment</a></div><div class="ttdeci">static Triple::EnvironmentType parseEnvironment(StringRef EnvironmentName)</div><div class="ttdef"><b>Definition:</b> <a href="Triple_8cpp_source.html#l00523">Triple.cpp:523</a></div></div>
-<div class="ttc" id="aTriple_8cpp_html_a534eaf4cbda57348f2248a1cea5ed22f"><div class="ttname"><a href="Triple_8cpp.html#a534eaf4cbda57348f2248a1cea5ed22f">parseArch</a></div><div class="ttdeci">static Triple::ArchType parseArch(StringRef ArchName)</div><div class="ttdef"><b>Definition:</b> <a href="Triple_8cpp_source.html#l00386">Triple.cpp:386</a></div></div>
 <div class="ttc" id="aTriple_8cpp_html_a57e7ad303c73e6b9494e84e9d0d1c1ff"><div class="ttname"><a href="Triple_8cpp.html#a57e7ad303c73e6b9494e84e9d0d1c1ff">parseVersionFromName</a></div><div class="ttdeci">static void parseVersionFromName(StringRef Name, unsigned &amp;Major, unsigned &amp;Minor, unsigned &amp;Micro)</div><div class="ttdef"><b>Definition:</b> <a href="Triple_8cpp_source.html#l01030">Triple.cpp:1030</a></div></div>
 <div class="ttc" id="aTriple_8cpp_html_a593094f6c13df699bd2cde1a1f40fec4"><div class="ttname"><a href="Triple_8cpp.html#a593094f6c13df699bd2cde1a1f40fec4">getDefaultFormat</a></div><div class="ttdeci">static Triple::ObjectFormatType getDefaultFormat(const Triple &amp;T)</div><div class="ttdef"><b>Definition:</b> <a href="Triple_8cpp_source.html#l00649">Triple.cpp:649</a></div></div>
 <div class="ttc" id="aTriple_8cpp_html_a721eb5bffb57cea96d7a9b45cbe302cf"><div class="ttname"><a href="Triple_8cpp.html#a721eb5bffb57cea96d7a9b45cbe302cf">parseARMArch</a></div><div class="ttdeci">static Triple::ArchType parseARMArch(StringRef ArchName)</div><div class="ttdef"><b>Definition:</b> <a href="Triple_8cpp_source.html#l00321">Triple.cpp:321</a></div></div>
@@ -1722,15 +1725,37 @@ $(function() {
 <div class="ttc" id="aTriple_8cpp_html_ab5fab0f82454015540a54fbc623d9a00"><div class="ttname"><a href="Triple_8cpp.html#ab5fab0f82454015540a54fbc623d9a00">getObjectFormatTypeName</a></div><div class="ttdeci">static StringRef getObjectFormatTypeName(Triple::ObjectFormatType Kind)</div><div class="ttdef"><b>Definition:</b> <a href="Triple_8cpp_source.html#l00637">Triple.cpp:637</a></div></div>
 <div class="ttc" id="aTriple_8cpp_html_ac784253baaaa3c7ac2760f3d9b71f1c1"><div class="ttname"><a href="Triple_8cpp.html#ac784253baaaa3c7ac2760f3d9b71f1c1">parseSubArch</a></div><div class="ttdeci">static Triple::SubArchType parseSubArch(StringRef SubArchName)</div><div class="ttdef"><b>Definition:</b> <a href="Triple_8cpp_source.html#l00561">Triple.cpp:561</a></div></div>
 <div class="ttc" id="aTriple_8cpp_html_acd920d1fcd9dc528687e8ab0df027fdd"><div class="ttname"><a href="Triple_8cpp.html#acd920d1fcd9dc528687e8ab0df027fdd">parseFormat</a></div><div class="ttdeci">static Triple::ObjectFormatType parseFormat(StringRef EnvironmentName)</div><div class="ttdef"><b>Definition:</b> <a href="Triple_8cpp_source.html#l00549">Triple.cpp:549</a></div></div>
+<div class="ttc" id="aTriple_8cpp_html_ad3a9a5aa955e9b62ec11e4d3566d4594"><div class="ttname"><a href="Triple_8cpp.html#ad3a9a5aa955e9b62ec11e4d3566d4594">parseArch</a></div><div class="ttdeci">static Triple::ArchType parseArch(StringRef ArchName)</div><div class="ttdef"><b>Definition:</b> <a href="Triple_8cpp_source.html#l00386">Triple.cpp:386</a></div></div>
 <div class="ttc" id="aTriple_8cpp_html_af928c309977e80665cdc60d0b9c46d89"><div class="ttname"><a href="Triple_8cpp.html#af928c309977e80665cdc60d0b9c46d89">parseVendor</a></div><div class="ttdeci">static Triple::VendorType parseVendor(StringRef VendorName)</div><div class="ttdef"><b>Definition:</b> <a href="Triple_8cpp_source.html#l00461">Triple.cpp:461</a></div></div>
 <div class="ttc" id="aTriple_8cpp_html_afecf21e189bcd6762d9e05c1a3739958"><div class="ttname"><a href="Triple_8cpp.html#afecf21e189bcd6762d9e05c1a3739958">EatNumber</a></div><div class="ttdeci">static unsigned EatNumber(StringRef &amp;Str)</div><div class="ttdef"><b>Definition:</b> <a href="Triple_8cpp_source.html#l01015">Triple.cpp:1015</a></div></div>
 <div class="ttc" id="aclassSmallVector_html"><div class="ttname"><a href="classSmallVector.html">SmallVector</a></div></div>
+<div class="ttc" id="aclassllvm_1_1AttrBuilder_html_a3f05fda2b6c78a87f8d6e608b55693f7"><div class="ttname"><a href="classllvm_1_1AttrBuilder.html#a3f05fda2b6c78a87f8d6e608b55693f7">llvm::AttrBuilder::merge</a></div><div class="ttdeci">AttrBuilder &amp; merge(const AttrBuilder &amp;B)</div><div class="ttdoc">Add the attributes from the builder.</div><div class="ttdef"><b>Definition:</b> <a href="Attributes_8cpp_source.html#l01582">Attributes.cpp:1582</a></div></div>
+<div class="ttc" id="aclassllvm_1_1SmallString_html"><div class="ttname"><a href="classllvm_1_1SmallString.html">llvm::SmallString</a></div><div class="ttdef"><b>Definition:</b> <a href="ValueSymbolTable_8h_source.html#l00030">ValueSymbolTable.h:30</a></div></div>
+<div class="ttc" id="aclassllvm_1_1symbolize_1_1DIPrinter_html_a5ef0400f7258b78c053a7832aa864dd2ab7e89d55aa08a289aa48277386e6ff1d"><div class="ttname"><a href="classllvm_1_1symbolize_1_1DIPrinter.html#a5ef0400f7258b78c053a7832aa864dd2ab7e89d55aa08a289aa48277386e6ff1d">llvm::symbolize::DIPrinter::OutputStyle::GNU</a></div><div class="ttdeci">@ GNU</div></div>
 <div class="ttc" id="agroup__ARCOpt_html_ga04fff031c5876f97f73173e756d8085e"><div class="ttname"><a href="group__ARCOpt.html#ga04fff031c5876f97f73173e756d8085e">arc</a></div><div class="ttdeci">objc arc</div><div class="ttdef"><b>Definition:</b> <a href="ObjCARCOpts_8cpp_source.html#l00578">ObjCARCOpts.cpp:578</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1AArch64_html_a67ccd181d5ee5daaa22611f1584a63de"><div class="ttname"><a href="namespacellvm_1_1AArch64.html#a67ccd181d5ee5daaa22611f1584a63de">llvm::AArch64::getSubArch</a></div><div class="ttdeci">StringRef getSubArch(ArchKind AK)</div><div class="ttdef"><b>Definition:</b> <a href="AArch64TargetParser_8cpp_source.html#l00131">AArch64TargetParser.cpp:131</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1AArch64_html_afdb76c04b32ad583493461a29db29e3a"><div class="ttname"><a href="namespacellvm_1_1AArch64.html#afdb76c04b32ad583493461a29db29e3a">llvm::AArch64::getArchName</a></div><div class="ttdeci">StringRef getArchName(ArchKind AK)</div><div class="ttdef"><b>Definition:</b> <a href="AArch64TargetParser_8cpp_source.html#l00123">AArch64TargetParser.cpp:123</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1ARM_html_a115dd532d6538ed40f42a625343126cc"><div class="ttname"><a href="namespacellvm_1_1ARM.html#a115dd532d6538ed40f42a625343126cc">llvm::ARM::getCanonicalArchName</a></div><div class="ttdeci">StringRef getCanonicalArchName(StringRef Arch)</div><div class="ttdef"><b>Definition:</b> <a href="ARMTargetParser_8cpp_source.html#l00275">ARMTargetParser.cpp:275</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1ARM_html_a1d5ed0bfc1c21767207fbd9c06aa68e9"><div class="ttname"><a href="namespacellvm_1_1ARM.html#a1d5ed0bfc1c21767207fbd9c06aa68e9">llvm::ARM::parseArchISA</a></div><div class="ttdeci">ISAKind parseArchISA(StringRef Arch)</div><div class="ttdef"><b>Definition:</b> <a href="ARMTargetParser_8cpp_source.html#l00247">ARMTargetParser.cpp:247</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1ARM_html_a744a4278ab4117a12d8d7bd90fa009d0"><div class="ttname"><a href="namespacellvm_1_1ARM.html#a744a4278ab4117a12d8d7bd90fa009d0">llvm::ARM::EndianKind</a></div><div class="ttdeci">EndianKind</div><div class="ttdef"><b>Definition:</b> <a href="ARMTargetParser_8h_source.html#l00153">ARMTargetParser.h:153</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1ARM_html_a75e18d4bc8fef7e89c1222c6b6cf8638"><div class="ttname"><a href="namespacellvm_1_1ARM.html#a75e18d4bc8fef7e89c1222c6b6cf8638">llvm::ARM::parseArch</a></div><div class="ttdeci">ArchKind parseArch(StringRef Arch)</div><div class="ttdef"><b>Definition:</b> <a href="ARMTargetParser_8cpp_source.html#l00027">ARMTargetParser.cpp:27</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1ARM_html_a8baeb4d23f981eda5c951371da480b99"><div class="ttname"><a href="namespacellvm_1_1ARM.html#a8baeb4d23f981eda5c951371da480b99">llvm::ARM::getDefaultCPU</a></div><div class="ttdeci">StringRef getDefaultCPU(StringRef Arch)</div><div class="ttdef"><b>Definition:</b> <a href="ARMTargetParser_8cpp_source.html#l00547">ARMTargetParser.cpp:547</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1ARM_html_a96deed10d8fd592dce3db1b8d8df6011"><div class="ttname"><a href="namespacellvm_1_1ARM.html#a96deed10d8fd592dce3db1b8d8df6011">llvm::ARM::parseArchProfile</a></div><div class="ttdeci">ProfileKind parseArchProfile(StringRef Arch)</div><div class="ttdef"><b>Definition:</b> <a href="ARMTargetParser_8cpp_source.html#l00089">ARMTargetParser.cpp:89</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1ARM_html_aa7c564eb9f55772c4e2f4d3c19974191"><div class="ttname"><a href="namespacellvm_1_1ARM.html#aa7c564eb9f55772c4e2f4d3c19974191">llvm::ARM::ISAKind</a></div><div class="ttdeci">ISAKind</div><div class="ttdef"><b>Definition:</b> <a href="ARMTargetParser_8h_source.html#l00149">ARMTargetParser.h:149</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1ARM_html_aad4536fc71bd7d65d3c704ca2f9073f1"><div class="ttname"><a href="namespacellvm_1_1ARM.html#aad4536fc71bd7d65d3c704ca2f9073f1">llvm::ARM::parseArchVersion</a></div><div class="ttdeci">unsigned parseArchVersion(StringRef Arch)</div><div class="ttdef"><b>Definition:</b> <a href="ARMTargetParser_8cpp_source.html#l00038">ARMTargetParser.cpp:38</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1ARM_html_ac2456158e5acb44477d8ecfa2d04dbde"><div class="ttname"><a href="namespacellvm_1_1ARM.html#ac2456158e5acb44477d8ecfa2d04dbde">llvm::ARM::ProfileKind</a></div><div class="ttdeci">ProfileKind</div><div class="ttdef"><b>Definition:</b> <a href="ARMTargetParser_8h_source.html#l00156">ARMTargetParser.h:156</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1ARM_html_ac9eb980260cef7839596d3ca4d742905"><div class="ttname"><a href="namespacellvm_1_1ARM.html#ac9eb980260cef7839596d3ca4d742905">llvm::ARM::parseArchEndian</a></div><div class="ttdeci">EndianKind parseArchEndian(StringRef Arch)</div><div class="ttdef"><b>Definition:</b> <a href="ARMTargetParser_8cpp_source.html#l00228">ARMTargetParser.cpp:228</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1codeview_html_a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">llvm::codeview::HfaKind::Other</a></div><div class="ttdeci">@ Other</div></div>
+<div class="ttc" id="anamespacellvm_1_1pdb_html_a1928545fad40360ae644901d7308cbeba8a9da7865483c5fd359f3acef178d26d"><div class="ttname"><a href="namespacellvm_1_1pdb.html#a1928545fad40360ae644901d7308cbeba8a9da7865483c5fd359f3acef178d26d">llvm::pdb::PDB_Machine::x86</a></div><div class="ttdeci">@ x86</div></div>
+<div class="ttc" id="anamespacellvm_1_1pdb_html_a33e853ec74d48b1340d1d4bae772d30baf6068daa29dbb05a7ead1e3b5a48bbee"><div class="ttname"><a href="namespacellvm_1_1pdb.html#a33e853ec74d48b1340d1d4bae772d30baf6068daa29dbb05a7ead1e3b5a48bbee">llvm::pdb::PDB_SymType::Data</a></div><div class="ttdeci">@ Data</div></div>
+<div class="ttc" id="anamespacellvm_1_1sys_html_a4ee2015697caec796e59972aadc2f9e2"><div class="ttname"><a href="namespacellvm_1_1sys.html#a4ee2015697caec796e59972aadc2f9e2">llvm::sys::IsLittleEndianHost</a></div><div class="ttdeci">static const bool IsLittleEndianHost</div><div class="ttdef"><b>Definition:</b> <a href="Host_8h_source.html#l00049">Host.h:49</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysis_8h_source.html#l00056">AliasAnalysis.h:56</a></div></div>
+<div class="ttc" id="anamespacellvm_html_a5d56157a385f8cd7d3e54ed87da1ba6aa05b0e25c98ba4300ca28989a35dab72a"><div class="ttname"><a href="namespacellvm.html#a5d56157a385f8cd7d3e54ed87da1ba6aa05b0e25c98ba4300ca28989a35dab72a">llvm::EHPersonality::CoreCLR</a></div><div class="ttdeci">@ CoreCLR</div></div>
+<div class="ttc" id="astructllvm_1_1BlockFrequencyInfoImplBase_1_1Distribution_html_ac24f62f9ac4bff8273ed15798ea650e8"><div class="ttname"><a href="structllvm_1_1BlockFrequencyInfoImplBase_1_1Distribution.html#ac24f62f9ac4bff8273ed15798ea650e8">llvm::BlockFrequencyInfoImplBase::Distribution::normalize</a></div><div class="ttdeci">void normalize()</div><div class="ttdoc">Normalize the distribution.</div><div class="ttdef"><b>Definition:</b> <a href="BlockFrequencyInfoImpl_8cpp_source.html#l00214">BlockFrequencyInfoImpl.cpp:214</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:26 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

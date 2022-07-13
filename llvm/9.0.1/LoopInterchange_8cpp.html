@@ -61,33 +61,33 @@ $(function() {
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/DependenceAnalysis.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopPass.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/OptimizationRemarkEmitter.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ScalarEvolution.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ScalarEvolutionExpressions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DiagnosticInfo.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/User.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="DependenceAnalysis_8h_source.html">llvm/Analysis/DependenceAnalysis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopPass_8h_source.html">llvm/Analysis/LoopPass.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="OptimizationRemarkEmitter_8h_source.html">llvm/Analysis/OptimizationRemarkEmitter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScalarEvolution_8h_source.html">llvm/Analysis/ScalarEvolution.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScalarEvolutionExpressions_8h_source.html">llvm/Analysis/ScalarEvolutionExpressions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DiagnosticInfo_8h_source.html">llvm/IR/DiagnosticInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/LoopUtils.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Utils_8h_source.html">llvm/Transforms/Utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopUtils_8h_source.html">llvm/Transforms/Utils/LoopUtils.h</a>&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -96,41 +96,56 @@ Include dependency graph for LoopInterchange.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="LoopInterchange_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2LoopInterchange_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Scalar_2LoopInterchange_8cpp" id="alib_2Transforms_2Scalar_2LoopInterchange_8cpp">
-<area shape="rect" title=" " alt="" coords="3263,5,3425,45"/>
-<area shape="rect" title=" " alt="" coords="5,101,168,126"/>
-<area shape="rect" title=" " alt="" coords="193,101,367,126"/>
-<area shape="rect" title=" " alt="" coords="391,101,542,126"/>
-<area shape="rect" title=" " alt="" coords="567,101,724,126"/>
-<area shape="rect" title=" " alt="" coords="748,93,943,133"/>
-<area shape="rect" title=" " alt="" coords="967,101,1150,126"/>
-<area shape="rect" title=" " alt="" coords="1175,101,1361,126"/>
-<area shape="rect" title=" " alt="" coords="1386,93,1585,133"/>
-<area shape="rect" title=" " alt="" coords="1609,101,1836,126"/>
-<area shape="rect" title=" " alt="" coords="1861,93,2075,133"/>
-<area shape="rect" title=" " alt="" coords="2100,101,2255,126"/>
-<area shape="rect" title=" " alt="" coords="2279,101,2428,126"/>
-<area shape="rect" title=" " alt="" coords="2452,101,2631,126"/>
-<area shape="rect" title=" " alt="" coords="2655,101,2815,126"/>
-<area shape="rect" title=" " alt="" coords="2839,101,2977,126"/>
-<area shape="rect" title=" " alt="" coords="3002,101,3153,126"/>
-<area shape="rect" title=" " alt="" coords="3177,101,3330,126"/>
-<area shape="rect" title=" " alt="" coords="3355,101,3515,126"/>
-<area shape="rect" title=" " alt="" coords="3539,101,3653,126"/>
-<area shape="rect" title=" " alt="" coords="3678,101,3791,126"/>
-<area shape="rect" title=" " alt="" coords="3816,101,3936,126"/>
-<area shape="rect" title=" " alt="" coords="3960,101,4056,126"/>
-<area shape="rect" title=" " alt="" coords="4080,101,4251,126"/>
-<area shape="rect" title=" " alt="" coords="4275,101,4490,126"/>
-<area shape="rect" title=" " alt="" coords="4515,101,4677,126"/>
-<area shape="rect" title=" " alt="" coords="4701,101,4912,126"/>
-<area shape="rect" title=" " alt="" coords="4937,101,5143,126"/>
-<area shape="rect" title=" " alt="" coords="5167,101,5350,126"/>
-<area shape="rect" title=" " alt="" coords="5375,101,5548,126"/>
-<area shape="rect" title=" " alt="" coords="5573,93,5734,133"/>
-<area shape="rect" title=" " alt="" coords="5758,93,5919,133"/>
-<area shape="rect" title=" " alt="" coords="5944,101,6013,126"/>
-<area shape="rect" title=" " alt="" coords="6038,101,6098,126"/>
-<area shape="rect" title=" " alt="" coords="6122,101,6185,126"/>
+<area shape="rect" title=" " alt="" coords="3038,5,3199,45"/>
+<area shape="rect" title=" " alt="" coords="4572,577,4735,603"/>
+<area shape="rect" title=" " alt="" coords="1065,577,1239,603"/>
+<area shape="rect" title=" " alt="" coords="94,101,245,126"/>
+<area shape="rect" title=" " alt="" coords="3163,724,3320,749"/>
+<area shape="rect" href="DependenceAnalysis_8h.html" title=" " alt="" coords="2067,181,2261,221"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="2812,504,2951,529"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="4393,577,4548,603"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="2826,651,2979,676"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="3786,724,3899,749"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="3661,797,3781,823"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="4239,871,4409,896"/>
+<area shape="rect" title=" " alt="" coords="3808,944,3877,969"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="4076,797,4287,823"/>
+<area shape="rect" title=" " alt="" coords="501,724,561,749"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="3329,357,3489,383"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="3925,431,4075,456"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="4888,504,5037,529"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="4292,504,4407,529"/>
+<area shape="rect" title=" " alt="" coords="2169,504,2231,529"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="1177,431,1340,456"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="1379,504,1586,529"/>
+<area shape="rect" title=" " alt="" coords="1827,357,1923,383"/>
+<area shape="rect" href="LoopInfo_8h.html" title=" " alt="" coords="1286,277,1469,302"/>
+<area shape="rect" href="LoopPass_8h.html" title=" " alt="" coords="1455,189,1641,214"/>
+<area shape="rect" href="OptimizationRemarkEmitter_8h.html" title=" " alt="" coords="1666,181,1865,221"/>
+<area shape="rect" href="DiagnosticInfo_8h.html" title=" " alt="" coords="1611,504,1789,529"/>
+<area shape="rect" href="ScalarEvolution_8h.html" title=" " alt="" coords="2524,189,2751,214"/>
+<area shape="rect" href="ScalarEvolutionExpressions_8h.html" title=" " alt="" coords="3725,93,3939,133"/>
+<area shape="rect" href="Dominators_8h.html" title=" " alt="" coords="3435,277,3595,302"/>
+<area shape="rect" href="CommandLine_8h.html" title=" " alt="" coords="3431,431,3646,456"/>
+<area shape="rect" href="Scalar_8h.html" title=" " alt="" coords="5271,101,5454,126"/>
+<area shape="rect" href="Utils_8h.html" title=" " alt="" coords="5479,101,5652,126"/>
+<area shape="rect" href="BasicBlockUtils_8h.html" title=" " alt="" coords="4730,269,4891,309"/>
+<area shape="rect" href="LoopUtils_8h.html" title=" " alt="" coords="3139,181,3301,221"/>
+<area shape="rect" title=" " alt="" coords="763,277,957,302"/>
+<area shape="rect" href="AliasAnalysis_8h.html" title=" " alt="" coords="2336,277,2549,302"/>
+<area shape="rect" title=" " alt="" coords="2327,431,2494,456"/>
+<area shape="rect" title=" " alt="" coords="2546,577,2699,603"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="1531,357,1701,383"/>
+<area shape="rect" title=" " alt="" coords="2311,577,2471,603"/>
+<area shape="rect" title=" " alt="" coords="1248,724,1333,749"/>
+<area shape="rect" title=" " alt="" coords="5215,577,5347,603"/>
+<area shape="rect" title=" " alt="" coords="2978,577,3153,603"/>
+<area shape="rect" title=" " alt="" coords="4303,431,4475,456"/>
+<area shape="rect" href="IR_2CFG_8h.html" title="This file provides various utilities for inspecting and working with the control flow graph in LLVM I..." alt="" coords="4517,357,4627,383"/>
+<area shape="rect" href="Allocator_8h.html" title="This file defines the MallocAllocator and BumpPtrAllocator interfaces." alt="" coords="821,504,1000,529"/>
+<area shape="rect" href="LegacyPassManagers_8h.html" title=" " alt="" coords="2039,277,2262,302"/>
+<area shape="rect" title=" " alt="" coords="574,277,637,302"/>
+<area shape="rect" href="BlockFrequencyInfo_8h.html" title=" " alt="" coords="1545,269,1762,309"/>
 </map>
 </div>
 </div>
@@ -145,50 +160,50 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:abffcbfc01071b4ba5ec4b6b80a3c9080"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#abffcbfc01071b4ba5ec4b6b80a3c9080">STATISTIC</a> (LoopsInterchanged, &quot;Number of <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> interchanged&quot;)</td></tr>
 <tr class="separator:abffcbfc01071b4ba5ec4b6b80a3c9080"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6fd5985bf15c445e79b205fe5e6e99b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#af6fd5985bf15c445e79b205fe5e6e99b">LoopInterchangeCostThreshold</a> (&quot;loop-<a class="el" href="LoopInterchange_8cpp.html#a3e357cf68069925b5bb2872ca7a1d617">interchange</a>-threshold&quot;, cl::init(0), cl::Hidden, cl::desc(&quot;Interchange <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> you gain more than this number&quot;))</td></tr>
-<tr class="separator:af6fd5985bf15c445e79b205fe5e6e99b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04dd56988e44865e3a231c2f6ebf3e55"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a04dd56988e44865e3a231c2f6ebf3e55">populateDependencyMatrix</a> (CharMatrix &amp;DepMatrix, unsigned Level, Loop *L, DependenceInfo *DI)</td></tr>
+<tr class="memitem:a04dd56988e44865e3a231c2f6ebf3e55"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a04dd56988e44865e3a231c2f6ebf3e55">populateDependencyMatrix</a> (CharMatrix &amp;DepMatrix, <a class="el" href="classunsigned.html">unsigned</a> Level, <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1DependenceInfo.html">DependenceInfo</a> *DI)</td></tr>
 <tr class="separator:a04dd56988e44865e3a231c2f6ebf3e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fdefa5e30cfe78c973990812d4a8900"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a6fdefa5e30cfe78c973990812d4a8900">interChangeDependencies</a> (CharMatrix &amp;DepMatrix, unsigned FromIndx, unsigned ToIndx)</td></tr>
+<tr class="memitem:a6fdefa5e30cfe78c973990812d4a8900"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a6fdefa5e30cfe78c973990812d4a8900">interChangeDependencies</a> (CharMatrix &amp;DepMatrix, <a class="el" href="classunsigned.html">unsigned</a> FromIndx, <a class="el" href="classunsigned.html">unsigned</a> ToIndx)</td></tr>
 <tr class="separator:a6fdefa5e30cfe78c973990812d4a8900"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab61384582fedb1dca0596ab647c27430"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#ab61384582fedb1dca0596ab647c27430">isOuterMostDepPositive</a> (CharMatrix &amp;DepMatrix, unsigned Row, unsigned Column)</td></tr>
+<tr class="memitem:ab61384582fedb1dca0596ab647c27430"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#ab61384582fedb1dca0596ab647c27430">isOuterMostDepPositive</a> (CharMatrix &amp;DepMatrix, <a class="el" href="classunsigned.html">unsigned</a> Row, <a class="el" href="classunsigned.html">unsigned</a> Column)</td></tr>
 <tr class="separator:ab61384582fedb1dca0596ab647c27430"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72535df2f8c7a03e3e4bd3c69fba10c5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a72535df2f8c7a03e3e4bd3c69fba10c5">containsNoDependence</a> (CharMatrix &amp;DepMatrix, unsigned Row, unsigned Column)</td></tr>
+<tr class="memitem:a72535df2f8c7a03e3e4bd3c69fba10c5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a72535df2f8c7a03e3e4bd3c69fba10c5">containsNoDependence</a> (CharMatrix &amp;DepMatrix, <a class="el" href="classunsigned.html">unsigned</a> Row, <a class="el" href="classunsigned.html">unsigned</a> Column)</td></tr>
 <tr class="separator:a72535df2f8c7a03e3e4bd3c69fba10c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade14abdc729e86a409f9f8da91148426"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#ade14abdc729e86a409f9f8da91148426">validDepInterchange</a> (CharMatrix &amp;DepMatrix, unsigned Row, unsigned OuterLoopId, char InnerDep, char OuterDep)</td></tr>
+<tr class="memitem:ade14abdc729e86a409f9f8da91148426"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#ade14abdc729e86a409f9f8da91148426">validDepInterchange</a> (CharMatrix &amp;DepMatrix, <a class="el" href="classunsigned.html">unsigned</a> Row, <a class="el" href="classunsigned.html">unsigned</a> OuterLoopId, <a class="el" href="classchar.html">char</a> InnerDep, <a class="el" href="classchar.html">char</a> OuterDep)</td></tr>
 <tr class="separator:ade14abdc729e86a409f9f8da91148426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad16cef97c234c14b44e54eb45763a8c8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#ad16cef97c234c14b44e54eb45763a8c8">isLegalToInterChangeLoops</a> (CharMatrix &amp;DepMatrix, unsigned InnerLoopId, unsigned OuterLoopId)</td></tr>
+<tr class="memitem:ad16cef97c234c14b44e54eb45763a8c8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#ad16cef97c234c14b44e54eb45763a8c8">isLegalToInterChangeLoops</a> (CharMatrix &amp;DepMatrix, <a class="el" href="classunsigned.html">unsigned</a> InnerLoopId, <a class="el" href="classunsigned.html">unsigned</a> OuterLoopId)</td></tr>
 <tr class="separator:ad16cef97c234c14b44e54eb45763a8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fa443e8992742b94753fc4aa6a560ea"><td class="memItemLeft" align="right" valign="top">static LoopVector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a3fa443e8992742b94753fc4aa6a560ea">populateWorklist</a> (Loop &amp;L)</td></tr>
+<tr class="memitem:a3fa443e8992742b94753fc4aa6a560ea"><td class="memItemLeft" align="right" valign="top">static LoopVector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a3fa443e8992742b94753fc4aa6a560ea">populateWorklist</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> &amp;L)</td></tr>
 <tr class="separator:a3fa443e8992742b94753fc4aa6a560ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8627517425b34895720f2f5096c2b2c"><td class="memItemLeft" align="right" valign="top">static PHINode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#ab8627517425b34895720f2f5096c2b2c">getInductionVariable</a> (Loop *L, ScalarEvolution *SE)</td></tr>
+<tr class="memitem:ab8627517425b34895720f2f5096c2b2c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#ab8627517425b34895720f2f5096c2b2c">getInductionVariable</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *SE)</td></tr>
 <tr class="separator:ab8627517425b34895720f2f5096c2b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad90e75a757d18b106c964a680d010c6c"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#ad90e75a757d18b106c964a680d010c6c">followLCSSA</a> (Value *SV)</td></tr>
+<tr class="memitem:ad90e75a757d18b106c964a680d010c6c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#ad90e75a757d18b106c964a680d010c6c">followLCSSA</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *SV)</td></tr>
 <tr class="separator:ad90e75a757d18b106c964a680d010c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a206a95af7fd1177ef8396cd69b888de2"><td class="memItemLeft" align="right" valign="top">static PHINode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a206a95af7fd1177ef8396cd69b888de2">findInnerReductionPhi</a> (Loop *L, Value *V)</td></tr>
+<tr class="memitem:a206a95af7fd1177ef8396cd69b888de2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a206a95af7fd1177ef8396cd69b888de2">findInnerReductionPhi</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
 <tr class="separator:a206a95af7fd1177ef8396cd69b888de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a39725fe9d7c70d116f8a8d54ca6149"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a2a39725fe9d7c70d116f8a8d54ca6149">containsSafePHI</a> (BasicBlock *Block, bool isOuterLoopExitBlock)</td></tr>
+<tr class="memitem:a2a39725fe9d7c70d116f8a8d54ca6149"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a2a39725fe9d7c70d116f8a8d54ca6149">containsSafePHI</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *Block, <a class="el" href="classbool.html">bool</a> isOuterLoopExitBlock)</td></tr>
 <tr class="separator:a2a39725fe9d7c70d116f8a8d54ca6149"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac93828039142bd1e32127d4e9378023"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#aac93828039142bd1e32127d4e9378023">areLoopExitPHIsSupported</a> (Loop *OuterLoop, Loop *InnerLoop)</td></tr>
+<tr class="memitem:aac93828039142bd1e32127d4e9378023"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#aac93828039142bd1e32127d4e9378023">areLoopExitPHIsSupported</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> *OuterLoop, <a class="el" href="classllvm_1_1Loop.html">Loop</a> *InnerLoop)</td></tr>
 <tr class="separator:aac93828039142bd1e32127d4e9378023"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c96a98f68deda3ea42bd96c07d8e50d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a8c96a98f68deda3ea42bd96c07d8e50d">isProfitableForVectorization</a> (unsigned InnerLoopId, unsigned OuterLoopId, CharMatrix &amp;DepMatrix)</td></tr>
+<tr class="memitem:a8c96a98f68deda3ea42bd96c07d8e50d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a8c96a98f68deda3ea42bd96c07d8e50d">isProfitableForVectorization</a> (<a class="el" href="classunsigned.html">unsigned</a> InnerLoopId, <a class="el" href="classunsigned.html">unsigned</a> OuterLoopId, CharMatrix &amp;DepMatrix)</td></tr>
 <tr class="separator:a8c96a98f68deda3ea42bd96c07d8e50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64307c8cbf811329320f43f90c434c08"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a64307c8cbf811329320f43f90c434c08">moveBBContents</a> (BasicBlock *FromBB, Instruction *InsertBefore)</td></tr>
+<tr class="memitem:a64307c8cbf811329320f43f90c434c08"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a64307c8cbf811329320f43f90c434c08">moveBBContents</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *FromBB, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *InsertBefore)</td></tr>
 <tr class="memdesc:a64307c8cbf811329320f43f90c434c08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move all instructions except the terminator from FromBB right before InsertBefore.  <a href="LoopInterchange_8cpp.html#a64307c8cbf811329320f43f90c434c08">More...</a><br /></td></tr>
 <tr class="separator:a64307c8cbf811329320f43f90c434c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98e746c45baf2e14081abb7ae41d0c2f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a98e746c45baf2e14081abb7ae41d0c2f">updateSuccessor</a> (BranchInst *BI, BasicBlock *OldBB, BasicBlock *NewBB, std::vector&lt; DominatorTree::UpdateType &gt; &amp;DTUpdates)</td></tr>
+<tr class="memitem:a98e746c45baf2e14081abb7ae41d0c2f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a98e746c45baf2e14081abb7ae41d0c2f">updateSuccessor</a> (<a class="el" href="classllvm_1_1BranchInst.html">BranchInst</a> *BI, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *OldBB, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *NewBB, std::vector&lt; DominatorTree::UpdateType &gt; &amp;DTUpdates)</td></tr>
 <tr class="memdesc:a98e746c45baf2e14081abb7ae41d0c2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update BI to jump to NewBB instead of OldBB.  <a href="LoopInterchange_8cpp.html#a98e746c45baf2e14081abb7ae41d0c2f">More...</a><br /></td></tr>
 <tr class="separator:a98e746c45baf2e14081abb7ae41d0c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1af0eaf5a45c58152688eb7162d9ae5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#ac1af0eaf5a45c58152688eb7162d9ae5">moveLCSSAPhis</a> (BasicBlock *InnerExit, BasicBlock *InnerHeader, BasicBlock *InnerLatch, BasicBlock *OuterHeader, BasicBlock *OuterLatch, BasicBlock *OuterExit)</td></tr>
+<tr class="memitem:ac1af0eaf5a45c58152688eb7162d9ae5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#ac1af0eaf5a45c58152688eb7162d9ae5">moveLCSSAPhis</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *InnerExit, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *InnerHeader, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *InnerLatch, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *OuterHeader, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *OuterLatch, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *OuterExit)</td></tr>
 <tr class="separator:ac1af0eaf5a45c58152688eb7162d9ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a741c7d62422f0e92656fe7ef87a5de20"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a741c7d62422f0e92656fe7ef87a5de20">INITIALIZE_PASS_BEGIN</a> (LoopInterchange, &quot;loop-interchange&quot;, &quot;Interchanges <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> for cache reuse&quot;, false, false) INITIALIZE_PASS_END(LoopInterchange</td></tr>
 <tr class="separator:a741c7d62422f0e92656fe7ef87a5de20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ad79065fb9f4aed2ac594495597b9b1c8"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#ad79065fb9f4aed2ac594495597b9b1c8">MaxMemInstrCount</a> = 100</td></tr>
+<tr class="memitem:a11e75b381a55ab270ad045bf59b466f5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a11e75b381a55ab270ad045bf59b466f5">LoopInterchangeCostThreshold</a> (&quot;loop-<a class="el" href="LoopInterchange_8cpp.html#a3e357cf68069925b5bb2872ca7a1d617">interchange</a>-threshold&quot;, cl::init(0), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Interchange <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> you gain more than this number&quot;))</td></tr>
+<tr class="separator:a11e75b381a55ab270ad045bf59b466f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad79065fb9f4aed2ac594495597b9b1c8"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#ad79065fb9f4aed2ac594495597b9b1c8">MaxMemInstrCount</a> = 100</td></tr>
 <tr class="separator:ad79065fb9f4aed2ac594495597b9b1c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d11a8560b7f0dc294b5799593571228"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a7d11a8560b7f0dc294b5799593571228">MaxLoopNestDepth</a> = 10</td></tr>
+<tr class="memitem:a7d11a8560b7f0dc294b5799593571228"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a7d11a8560b7f0dc294b5799593571228">MaxLoopNestDepth</a> = 10</td></tr>
 <tr class="separator:a7d11a8560b7f0dc294b5799593571228"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e357cf68069925b5bb2872ca7a1d617"><td class="memItemLeft" align="right" valign="top">loop&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopInterchange_8cpp.html#a3e357cf68069925b5bb2872ca7a1d617">interchange</a></td></tr>
 <tr class="separator:a3e357cf68069925b5bb2872ca7a1d617"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,15 +240,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool areLoopExitPHIsSupported </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> areLoopExitPHIsSupported </td>
           <td>(</td>
-          <td class="paramtype">Loop *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>OuterLoop</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Loop *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>InnerLoop</em>&#160;</td>
         </tr>
         <tr>
@@ -251,6 +266,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopInterchange_8cpp_source.html#l00932">932</a> of file <a class="el" href="LoopInterchange_8cpp_source.html">LoopInterchange.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="LoopInfoImpl_8h_source.html#l00211">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopLatch()</a>, <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00131">llvm::LoopBase&lt; BlockT, LoopT &gt;::getUniqueExitBlock()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00246">llvm::BasicBlock::getUniquePredecessor()</a>, and <a class="el" href="BasicBlock_8h_source.html#l00324">llvm::BasicBlock::phis()</a>.</p>
+
 </div>
 </div>
 <a id="a72535df2f8c7a03e3e4bd3c69fba10c5" name="a72535df2f8c7a03e3e4bd3c69fba10c5"></a>
@@ -263,7 +280,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool containsNoDependence </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> containsNoDependence </td>
           <td>(</td>
           <td class="paramtype">CharMatrix &amp;&#160;</td>
           <td class="paramname"><em>DepMatrix</em>, </td>
@@ -271,13 +288,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>Row</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>Column</em>&#160;</td>
         </tr>
         <tr>
@@ -309,15 +326,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool containsSafePHI </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> containsSafePHI </td>
           <td>(</td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>Block</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>isOuterLoopExitBlock</em>&#160;</td>
         </tr>
         <tr>
@@ -347,15 +364,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static PHINode * findInnerReductionPhi </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> * findInnerReductionPhi </td>
           <td>(</td>
-          <td class="paramtype">Loop *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>&#160;</td>
         </tr>
         <tr>
@@ -373,6 +390,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopInterchange_8cpp_source.html#l00665">665</a> of file <a class="el" href="LoopInterchange_8cpp_source.html">LoopInterchange.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="IVDescriptors_8cpp_source.html#l00610">llvm::RecurrenceDescriptor::isReductionPHI()</a>, and <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
+
 </div>
 </div>
 <a id="ad90e75a757d18b106c964a680d010c6c" name="ad90e75a757d18b106c964a680d010c6c"></a>
@@ -385,9 +404,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * followLCSSA </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * followLCSSA </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>SV</em></td><td>)</td>
           <td></td>
         </tr>
@@ -401,7 +420,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopInterchange_8cpp_source.html#l00654">654</a> of file <a class="el" href="LoopInterchange_8cpp_source.html">LoopInterchange.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="LoopInterchange_8cpp_source.html#l00654">followLCSSA()</a>.</p>
+<p class="reference">References <a class="el" href="LoopInterchange_8cpp_source.html#l00654">followLCSSA()</a>, <a class="el" href="Instructions_8h_source.html#l02634">llvm::PHINode::getIncomingValue()</a>, and <a class="el" href="Instructions_8h_source.html#l02630">llvm::PHINode::getNumIncomingValues()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LoopInterchange_8cpp_source.html#l00654">followLCSSA()</a>.</p>
 
@@ -417,15 +436,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static PHINode * getInductionVariable </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> * getInductionVariable </td>
           <td>(</td>
-          <td class="paramtype">Loop *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ScalarEvolution *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *&#160;</td>
           <td class="paramname"><em>SE</em>&#160;</td>
         </tr>
         <tr>
@@ -443,7 +462,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopInterchange_8cpp_source.html#l00295">295</a> of file <a class="el" href="LoopInterchange_8cpp_source.html">LoopInterchange.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="LoopInfo_8cpp_source.html#l00146">llvm::Loop::getCanonicalInductionVariable()</a>, <a class="el" href="LoopInfo_8h_source.html#l00102">llvm::LoopBase&lt; BlockT, LoopT &gt;::getHeader()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00211">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopLatch()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00188">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopPredecessor()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03895">llvm::ScalarEvolution::getSCEV()</a>, <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00313">llvm::SCEVAddRecExpr::getStepRecurrence()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00322">llvm::SCEVAddRecExpr::isAffine()</a>, <a class="el" href="Type_8h_source.html#l00161">llvm::Type::isFloatingPointTy()</a>, <a class="el" href="Type_8h_source.html#l00196">llvm::Type::isIntegerTy()</a>, and <a class="el" href="Type_8h_source.html#l00223">llvm::Type::isPointerTy()</a>.</p>
 
 </div>
 </div>
@@ -511,13 +530,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>FromIndx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>ToIndx</em>&#160;</td>
         </tr>
         <tr>
@@ -547,7 +566,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isLegalToInterChangeLoops </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isLegalToInterChangeLoops </td>
           <td>(</td>
           <td class="paramtype">CharMatrix &amp;&#160;</td>
           <td class="paramname"><em>DepMatrix</em>, </td>
@@ -555,13 +574,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>InnerLoopId</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>OuterLoopId</em>&#160;</td>
         </tr>
         <tr>
@@ -593,7 +612,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isOuterMostDepPositive </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isOuterMostDepPositive </td>
           <td>(</td>
           <td class="paramtype">CharMatrix &amp;&#160;</td>
           <td class="paramname"><em>DepMatrix</em>, </td>
@@ -601,13 +620,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>Row</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>Column</em>&#160;</td>
         </tr>
         <tr>
@@ -639,15 +658,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isProfitableForVectorization </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isProfitableForVectorization </td>
           <td>(</td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>InnerLoopId</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>OuterLoopId</em>, </td>
         </tr>
         <tr>
@@ -673,54 +692,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="af6fd5985bf15c445e79b205fe5e6e99b" name="af6fd5985bf15c445e79b205fe5e6e99b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6fd5985bf15c445e79b205fe5e6e99b">&#9670;&nbsp;</a></span>LoopInterchangeCostThreshold()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; LoopInterchangeCostThreshold </td>
-          <td>(</td>
-          <td class="paramtype">&quot;loop-<a class="el" href="LoopInterchange_8cpp.html#a3e357cf68069925b5bb2872ca7a1d617">interchange</a>-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(0)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Interchange <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> you gain more than this number&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a64307c8cbf811329320f43f90c434c08" name="a64307c8cbf811329320f43f90c434c08"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a64307c8cbf811329320f43f90c434c08">&#9670;&nbsp;</a></span>moveBBContents()</h2>
 
@@ -733,13 +704,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void moveBBContents </td>
           <td>(</td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>FromBB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>InsertBefore</em>&#160;</td>
         </tr>
         <tr>
@@ -759,6 +730,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopInterchange_8cpp_source.html#l01272">1272</a> of file <a class="el" href="LoopInterchange_8cpp_source.html">LoopInterchange.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="BasicBlock_8h_source.html#l00333">llvm::BasicBlock::getInstList()</a>, <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, and <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>.</p>
+
 </div>
 </div>
 <a id="ac1af0eaf5a45c58152688eb7162d9ae5" name="ac1af0eaf5a45c58152688eb7162d9ae5"></a>
@@ -773,37 +746,37 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void moveLCSSAPhis </td>
           <td>(</td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>InnerExit</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>InnerHeader</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>InnerLatch</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>OuterHeader</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>OuterLatch</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>OuterExit</em>&#160;</td>
         </tr>
         <tr>
@@ -821,7 +794,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopInterchange_8cpp_source.html#l01302">1302</a> of file <a class="el" href="LoopInterchange_8cpp_source.html">LoopInterchange.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00189">llvm::BasicBlock::getFirstNonPHI()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Instruction_8cpp_source.html#l00073">llvm::Instruction::insertBefore()</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="BasicBlock_8h_source.html#l00324">llvm::BasicBlock::phis()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00434">llvm::BasicBlock::replacePhiUsesWith()</a>, <a class="el" href="Instructions_8h_source.html#l02673">llvm::PHINode::setIncomingBlock()</a>, and <a class="el" href="Instructions_8h_source.html#l02637">llvm::PHINode::setIncomingValue()</a>.</p>
 
 </div>
 </div>
@@ -835,7 +808,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool populateDependencyMatrix </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> populateDependencyMatrix </td>
           <td>(</td>
           <td class="paramtype">CharMatrix &amp;&#160;</td>
           <td class="paramname"><em>DepMatrix</em>, </td>
@@ -843,19 +816,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>Level</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Loop *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DependenceInfo *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DependenceInfo.html">DependenceInfo</a> *&#160;</td>
           <td class="paramname"><em>DI</em>&#160;</td>
         </tr>
         <tr>
@@ -873,7 +846,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopInterchange_8cpp_source.html#l00085">85</a> of file <a class="el" href="LoopInterchange_8cpp_source.html">LoopInterchange.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="LoopInterchange_8cpp_source.html#l00070">MaxMemInstrCount</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="LoopInfo_8h_source.html#l00158">llvm::LoopBase&lt; BlockT, LoopT &gt;::blocks()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="DependenceAnalysis_8cpp_source.html#l03405">llvm::DependenceInfo::depends()</a>, <a class="el" href="DependenceAnalysis_8h_source.html#l00090">llvm::Dependence::DVEntry::EQ</a>, <a class="el" href="DependenceAnalysis_8h_source.html#l00094">llvm::Dependence::DVEntry::GE</a>, <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00056">llvm::SCEVConstant::getValue()</a>, <a class="el" href="DependenceAnalysis_8h_source.html#l00092">llvm::Dependence::DVEntry::GT</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Constants_8h_source.html#l00187">llvm::ConstantInt::isNegative()</a>, <a class="el" href="Constants_8h_source.html#l00192">llvm::ConstantInt::isZero()</a>, <a class="el" href="DependenceAnalysis_8h_source.html#l00091">llvm::Dependence::DVEntry::LE</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="DependenceAnalysis_8h_source.html#l00089">llvm::Dependence::DVEntry::LT</a>, and <a class="el" href="LoopInterchange_8cpp_source.html#l00070">MaxMemInstrCount</a>.</p>
 
 </div>
 </div>
@@ -889,7 +862,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static LoopVector populateWorklist </td>
           <td>(</td>
-          <td class="paramtype">Loop &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> &amp;&#160;</td>
           <td class="paramname"><em>L</em></td><td>)</td>
           <td></td>
         </tr>
@@ -902,6 +875,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="LoopInterchange_8cpp_source.html#l00273">273</a> of file <a class="el" href="LoopInterchange_8cpp_source.html">LoopInterchange.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="LoopInfo_8h_source.html#l00102">llvm::LoopBase&lt; BlockT, LoopT &gt;::getHeader()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="LoopInfo_8h_source.html#l00133">llvm::LoopBase&lt; BlockT, LoopT &gt;::getSubLoops()</a>, and <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>.</p>
 
 </div>
 </div>
@@ -945,19 +920,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void updateSuccessor </td>
           <td>(</td>
-          <td class="paramtype">BranchInst *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BranchInst.html">BranchInst</a> *&#160;</td>
           <td class="paramname"><em>BI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>OldBB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>NewBB</em>, </td>
         </tr>
         <tr>
@@ -984,7 +959,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopInterchange_8cpp_source.html#l01282">1282</a> of file <a class="el" href="LoopInterchange_8cpp_source.html">LoopInterchange.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Instructions_8h_source.html#l03056">llvm::BranchInst::getNumSuccessors()</a>, <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="Instructions_8h_source.html#l03058">llvm::BranchInst::getSuccessor()</a>, <a class="el" href="Instructions_8h_source.html#l03063">llvm::BranchInst::setSuccessor()</a>, and <a class="el" href="IR_2CFG_8h_source.html#l00259">llvm::successors()</a>.</p>
 
 </div>
 </div>
@@ -998,7 +973,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool validDepInterchange </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> validDepInterchange </td>
           <td>(</td>
           <td class="paramtype">CharMatrix &amp;&#160;</td>
           <td class="paramname"><em>DepMatrix</em>, </td>
@@ -1006,25 +981,25 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>Row</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>OuterLoopId</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char&#160;</td>
+          <td class="paramtype"><a class="el" href="classchar.html">char</a>&#160;</td>
           <td class="paramname"><em>InnerDep</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char&#160;</td>
+          <td class="paramtype"><a class="el" href="classchar.html">char</a>&#160;</td>
           <td class="paramname"><em>OuterDep</em>&#160;</td>
         </tr>
         <tr>
@@ -1081,6 +1056,54 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a11e75b381a55ab270ad045bf59b466f5" name="a11e75b381a55ab270ad045bf59b466f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11e75b381a55ab270ad045bf59b466f5">&#9670;&nbsp;</a></span>LoopInterchangeCostThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; LoopInterchangeCostThreshold(&quot;loop-<a class="el" href="LoopInterchange_8cpp.html#a3e357cf68069925b5bb2872ca7a1d617">interchange</a>-threshold&quot;, cl::init(0), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Interchange <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> you gain more than this number&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;loop-<a class="el" href="LoopInterchange_8cpp.html#a3e357cf68069925b5bb2872ca7a1d617">interchange</a>-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(0)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Interchange <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> you gain more than this number&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7d11a8560b7f0dc294b5799593571228" name="a7d11a8560b7f0dc294b5799593571228"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7d11a8560b7f0dc294b5799593571228">&#9670;&nbsp;</a></span>MaxLoopNestDepth</h2>
 
@@ -1091,7 +1114,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const unsigned MaxLoopNestDepth = 10</td>
+          <td class="memname">const <a class="el" href="classunsigned.html">unsigned</a> MaxLoopNestDepth = 10</td>
         </tr>
       </table>
   </td>
@@ -1115,7 +1138,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const unsigned MaxMemInstrCount = 100</td>
+          <td class="memname">const <a class="el" href="classunsigned.html">unsigned</a> MaxMemInstrCount = 100</td>
         </tr>
       </table>
   </td>
@@ -1150,7 +1173,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

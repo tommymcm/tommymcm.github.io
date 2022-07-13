@@ -61,12 +61,12 @@ $(function() {
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;llvm/DebugInfo/MSF/MSFError.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;llvm/Support/ErrorHandling.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;llvm/Support/ManagedStatic.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="MSFError_8h.html">llvm/DebugInfo/MSF/MSFError.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="ErrorHandling_8h.html">llvm/Support/ErrorHandling.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="ManagedStatic_8h.html">llvm/Support/ManagedStatic.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm.html">llvm</a>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">using namespace </span>llvm::msf;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm_1_1msf.html">llvm::msf</a>;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span>{</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// FIXME: This class is only here to support the transition to llvm::Error. It</span></div>
@@ -76,7 +76,7 @@ $(function() {
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *name() const noexcept<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;llvm.msf&quot;</span>; }</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  std::string message(<span class="keywordtype">int</span> Condition)<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">switch</span> (<span class="keyword">static_cast&lt;</span>msf_error_code<span class="keyword">&gt;</span>(Condition)) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">switch</span> (<span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="namespacellvm_1_1msf.html#a6dd094d4d36a053567100db04e6f873f">msf_error_code</a><span class="keyword">&gt;</span>(Condition)) {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">case</span> msf_error_code::unspecified:</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      <span class="keywordflow">return</span> <span class="stringliteral">&quot;An unknown error has occurred.&quot;</span>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">case</span> msf_error_code::insufficient_buffer:</div>
@@ -91,21 +91,30 @@ $(function() {
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">case</span> msf_error_code::block_in_use:</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <span class="keywordflow">return</span> <span class="stringliteral">&quot;The block is already in use.&quot;</span>;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    llvm_unreachable(<span class="stringliteral">&quot;Unrecognized msf_error_code&quot;</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_define" href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a>(<span class="stringliteral">&quot;Unrecognized msf_error_code&quot;</span>);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  }</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>} <span class="comment">// namespace</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="MSFError_8cpp.html#afe826009af5a7524e5386d693b0c5355">   44</a></span><span class="keyword">static</span> llvm::ManagedStatic&lt;MSFErrorCategory&gt; <a class="code hl_variable" href="MSFError_8cpp.html#afe826009af5a7524e5386d693b0c5355">MSFCategory</a>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">const</span> std::error_category &amp;llvm::msf::MSFErrCategory() { <span class="keywordflow">return</span> *<a class="code hl_variable" href="MSFError_8cpp.html#afe826009af5a7524e5386d693b0c5355">MSFCategory</a>; }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="MSFError_8cpp.html#afe826009af5a7524e5386d693b0c5355">   44</a></span><span class="keyword">static</span> <a class="code hl_class" href="classllvm_1_1ManagedStatic.html">llvm::ManagedStatic&lt;MSFErrorCategory&gt;</a> <a class="code hl_variable" href="MSFError_8cpp.html#afe826009af5a7524e5386d693b0c5355">MSFCategory</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="namespacellvm_1_1msf.html#a3cfcd6724bf4bd712f46724ef3ee1f2e">   45</a></span><span class="keyword">const</span> std::error_category &amp;<a class="code hl_function" href="namespacellvm_1_1msf.html#a3cfcd6724bf4bd712f46724ef3ee1f2e">llvm::msf::MSFErrCategory</a>() { <span class="keywordflow">return</span> *<a class="code hl_variable" href="MSFError_8cpp.html#afe826009af5a7524e5386d693b0c5355">MSFCategory</a>; }</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">char</span> MSFError::ID;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">char</span> <a class="code hl_variable" href="classllvm_1_1msf_1_1MSFError.html#a96d0f67532ccb40b7173dcee5ee02fdd">MSFError::ID</a>;</div>
+<div class="ttc" id="aErrorHandling_8h_html"><div class="ttname"><a href="ErrorHandling_8h.html">ErrorHandling.h</a></div></div>
+<div class="ttc" id="aErrorHandling_8h_html_ace243f5c25697a1107cce46626b3dc94"><div class="ttname"><a href="ErrorHandling_8h.html#ace243f5c25697a1107cce46626b3dc94">llvm_unreachable</a></div><div class="ttdeci">#define llvm_unreachable(msg)</div><div class="ttdoc">Marks that the current location is not supposed to be reachable.</div><div class="ttdef"><b>Definition:</b> <a href="ErrorHandling_8h_source.html#l00135">ErrorHandling.h:135</a></div></div>
 <div class="ttc" id="aMSFError_8cpp_html_afe826009af5a7524e5386d693b0c5355"><div class="ttname"><a href="MSFError_8cpp.html#afe826009af5a7524e5386d693b0c5355">MSFCategory</a></div><div class="ttdeci">static llvm::ManagedStatic&lt; MSFErrorCategory &gt; MSFCategory</div><div class="ttdef"><b>Definition:</b> <a href="MSFError_8cpp_source.html#l00044">MSFError.cpp:44</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
+<div class="ttc" id="aMSFError_8h_html"><div class="ttname"><a href="MSFError_8h.html">MSFError.h</a></div></div>
+<div class="ttc" id="aManagedStatic_8h_html"><div class="ttname"><a href="ManagedStatic_8h.html">ManagedStatic.h</a></div></div>
+<div class="ttc" id="aclassllvm_1_1ManagedStatic_html"><div class="ttname"><a href="classllvm_1_1ManagedStatic.html">llvm::ManagedStatic</a></div><div class="ttdoc">ManagedStatic - This transparently changes the behavior of global statics to be lazily constructed on...</div><div class="ttdef"><b>Definition:</b> <a href="ManagedStatic_8h_source.html#l00083">ManagedStatic.h:83</a></div></div>
+<div class="ttc" id="aclassllvm_1_1msf_1_1MSFError_html_a96d0f67532ccb40b7173dcee5ee02fdd"><div class="ttname"><a href="classllvm_1_1msf_1_1MSFError.html#a96d0f67532ccb40b7173dcee5ee02fdd">llvm::msf::MSFError::ID</a></div><div class="ttdeci">static char ID</div><div class="ttdef"><b>Definition:</b> <a href="MSFError_8h_source.html#l00047">MSFError.h:47</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1msf_html"><div class="ttname"><a href="namespacellvm_1_1msf.html">llvm::msf</a></div><div class="ttdef"><b>Definition:</b> <a href="IMSFFile_8h_source.html#l00018">IMSFFile.h:18</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1msf_html_a3cfcd6724bf4bd712f46724ef3ee1f2e"><div class="ttname"><a href="namespacellvm_1_1msf.html#a3cfcd6724bf4bd712f46724ef3ee1f2e">llvm::msf::MSFErrCategory</a></div><div class="ttdeci">const std::error_category &amp; MSFErrCategory()</div><div class="ttdef"><b>Definition:</b> <a href="MSFError_8cpp_source.html#l00045">MSFError.cpp:45</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1msf_html_a6dd094d4d36a053567100db04e6f873f"><div class="ttname"><a href="namespacellvm_1_1msf.html#a6dd094d4d36a053567100db04e6f873f">llvm::msf::msf_error_code</a></div><div class="ttdeci">msf_error_code</div><div class="ttdef"><b>Definition:</b> <a href="MSFError_8h_source.html#l00018">MSFError.h:18</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysis_8h_source.html#l00056">AliasAnalysis.h:56</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:35 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

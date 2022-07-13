@@ -56,50 +56,80 @@ $(function() {
   <div class="headertitle"><div class="title">BreakCriticalEdges.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/Utils/BreakCriticalEdges.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="BreakCriticalEdges_8h_source.html">llvm/Transforms/Utils/BreakCriticalEdges.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/SetVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/BlockFrequencyInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/BranchProbabilityInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/CFG.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/MemorySSAUpdater.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/PostDominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/Cloning.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/ValueMapper.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="BlockFrequencyInfo_8h_source.html">llvm/Analysis/BlockFrequencyInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BranchProbabilityInfo_8h_source.html">llvm/Analysis/BranchProbabilityInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Analysis_2CFG_8h_source.html">llvm/Analysis/CFG.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MemorySSAUpdater_8h_source.html">llvm/Analysis/MemorySSAUpdater.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PostDominators_8h_source.html">llvm/Analysis/PostDominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Utils_8h_source.html">llvm/Transforms/Utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Cloning_8h_source.html">llvm/Transforms/Utils/Cloning.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueMapper_8h_source.html">llvm/Transforms/Utils/ValueMapper.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for BreakCriticalEdges.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="BreakCriticalEdges_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Utils_2BreakCriticalEdges_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Utils_2BreakCriticalEdges_8cpp" id="alib_2Transforms_2Utils_2BreakCriticalEdges_8cpp">
-<area shape="rect" title=" " alt="" coords="1935,5,2111,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,167,133"/>
-<area shape="rect" title=" " alt="" coords="191,101,349,126"/>
-<area shape="rect" title=" " alt="" coords="373,101,548,126"/>
-<area shape="rect" title=" " alt="" coords="572,101,723,126"/>
-<area shape="rect" title=" " alt="" coords="747,93,964,133"/>
-<area shape="rect" title=" " alt="" coords="989,93,1218,133"/>
-<area shape="rect" title=" " alt="" coords="1243,101,1396,126"/>
-<area shape="rect" title=" " alt="" coords="1420,101,1603,126"/>
-<area shape="rect" title=" " alt="" coords="1627,101,1884,126"/>
-<area shape="rect" title=" " alt="" coords="1908,101,2139,126"/>
-<area shape="rect" title=" " alt="" coords="2163,101,2273,126"/>
-<area shape="rect" title=" " alt="" coords="2298,101,2458,126"/>
-<area shape="rect" title=" " alt="" coords="2482,101,2642,126"/>
-<area shape="rect" title=" " alt="" coords="2666,101,2781,126"/>
-<area shape="rect" title=" " alt="" coords="2805,101,3015,126"/>
-<area shape="rect" title=" " alt="" coords="3039,101,3213,126"/>
-<area shape="rect" title=" " alt="" coords="3237,93,3399,133"/>
-<area shape="rect" title=" " alt="" coords="3423,93,3584,133"/>
-<area shape="rect" title=" " alt="" coords="3608,93,3769,133"/>
+<area shape="rect" title=" " alt="" coords="2783,5,2959,45"/>
+<area shape="rect" href="BreakCriticalEdges_8h.html" title=" " alt="" coords="1163,255,1325,295"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="3807,783,4017,808"/>
+<area shape="rect" title=" " alt="" coords="1369,174,1527,199"/>
+<area shape="rect" title=" " alt="" coords="4199,489,4374,515"/>
+<area shape="rect" title=" " alt="" coords="1482,93,1633,119"/>
+<area shape="rect" href="BlockFrequencyInfo_8h.html" title=" " alt="" coords="683,255,901,295"/>
+<area shape="rect" href="BranchProbabilityInfo_8h.html" title=" " alt="" coords="1349,255,1579,295"/>
+<area shape="rect" href="IR_2CFG_8h.html" title="This file provides various utilities for inspecting and working with the control flow graph in LLVM I..." alt="" coords="3137,343,3247,368"/>
+<area shape="rect" href="Analysis_2CFG_8h.html" title=" " alt="" coords="3137,262,3290,287"/>
+<area shape="rect" href="LoopInfo_8h.html" title=" " alt="" coords="2143,262,2326,287"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="3779,416,3939,441"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="2591,489,2705,515"/>
+<area shape="rect" href="MemorySSAUpdater_8h.html" title=" " alt="" coords="2742,93,2999,119"/>
+<area shape="rect" href="Dominators_8h.html" title=" " alt="" coords="2469,262,2629,287"/>
+<area shape="rect" href="PostDominators_8h.html" title=" " alt="" coords="1755,174,1986,199"/>
+<area shape="rect" href="Utils_8h.html" title=" " alt="" coords="4455,93,4628,119"/>
+<area shape="rect" href="BasicBlockUtils_8h.html" title=" " alt="" coords="4181,255,4342,295"/>
+<area shape="rect" href="Cloning_8h.html" title=" " alt="" coords="3830,167,3991,207"/>
+<area shape="rect" href="ValueMapper_8h.html" title=" " alt="" coords="3830,255,3991,295"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="2327,489,2465,515"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="1105,343,1274,368"/>
+<area shape="rect" title=" " alt="" coords="1435,563,1595,588"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="3060,563,3215,588"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="3139,783,3259,808"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="2541,856,2712,881"/>
+<area shape="rect" title=" " alt="" coords="3316,929,3385,955"/>
+<area shape="rect" title=" " alt="" coords="403,929,480,955"/>
+<area shape="rect" title=" " alt="" coords="2361,783,2428,808"/>
+<area shape="rect" href="OperandTraits_8h.html" title=" " alt="" coords="3695,563,3870,588"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="2737,636,2890,661"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="3693,709,3806,735"/>
+<area shape="rect" title=" " alt="" coords="1040,709,1125,735"/>
+<area shape="rect" title=" " alt="" coords="1955,709,2015,735"/>
+<area shape="rect" href="Use_8h.html" title="This defines the Use class." alt="" coords="4005,856,4115,881"/>
+<area shape="rect" title=" " alt="" coords="1654,416,1821,441"/>
+<area shape="rect" title=" " alt="" coords="1670,563,1845,588"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="585,416,717,441"/>
+<area shape="rect" title=" " alt="" coords="739,489,893,515"/>
+<area shape="rect" title=" " alt="" coords="1805,343,1901,368"/>
+<area shape="rect" href="BlockFrequency_8h.html" title=" " alt="" coords="706,343,929,368"/>
+<area shape="rect" href="BranchProbability_8h.html" title=" " alt="" coords="760,636,995,661"/>
+<area shape="rect" title=" " alt="" coords="2453,416,2645,441"/>
+<area shape="rect" href="ValueHandle_8h.html" title=" " alt="" coords="3658,343,3825,368"/>
+<area shape="rect" title=" " alt="" coords="2822,416,2994,441"/>
+<area shape="rect" href="Allocator_8h.html" title="This file defines the MallocAllocator and BumpPtrAllocator interfaces." alt="" coords="2149,416,2328,441"/>
+<area shape="rect" title=" " alt="" coords="3081,174,3237,199"/>
+<area shape="rect" href="LoopIterator_8h.html" title=" " alt="" coords="2265,174,2469,199"/>
+<area shape="rect" href="MemorySSA_8h.html" title="This file exposes an interface to building/using memory SSA to walk memory instructions using a use/d..." alt="" coords="2697,174,2903,199"/>
+<area shape="rect" href="CFGDiff_8h.html" title=" " alt="" coords="3366,262,3501,287"/>
 </map>
 </div>
 </div>
@@ -114,10 +144,10 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ab8be2a421260c25167f0122c94b0b0ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BreakCriticalEdges_8cpp.html#ab8be2a421260c25167f0122c94b0b0ff">STATISTIC</a> (NumBroken, &quot;Number of blocks inserted&quot;)</td></tr>
 <tr class="separator:ab8be2a421260c25167f0122c94b0b0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5e1bd9b7838f2c807931e2fff905acf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BreakCriticalEdges_8cpp.html#af5e1bd9b7838f2c807931e2fff905acf">createPHIsForSplitLoopExit</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; BasicBlock * &gt; Preds, BasicBlock *SplitBB, BasicBlock *DestBB)</td></tr>
+<tr class="memitem:af5e1bd9b7838f2c807931e2fff905acf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BreakCriticalEdges_8cpp.html#af5e1bd9b7838f2c807931e2fff905acf">createPHIsForSplitLoopExit</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; Preds, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *SplitBB, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *DestBB)</td></tr>
 <tr class="memdesc:af5e1bd9b7838f2c807931e2fff905acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">When a loop exit edge is split, LCSSA form may require new PHIs in the new exit block.  <a href="BreakCriticalEdges_8cpp.html#af5e1bd9b7838f2c807931e2fff905acf">More...</a><br /></td></tr>
 <tr class="separator:af5e1bd9b7838f2c807931e2fff905acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8ede4d4de2237a9b4f534d1be96ac75"><td class="memItemLeft" align="right" valign="top">static BasicBlock *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BreakCriticalEdges_8cpp.html#aa8ede4d4de2237a9b4f534d1be96ac75">findIBRPredecessor</a> (BasicBlock *BB, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; BasicBlock * &gt; &amp;OtherPreds)</td></tr>
+<tr class="memitem:aa8ede4d4de2237a9b4f534d1be96ac75"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BreakCriticalEdges_8cpp.html#aa8ede4d4de2237a9b4f534d1be96ac75">findIBRPredecessor</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;OtherPreds)</td></tr>
 <tr class="separator:aa8ede4d4de2237a9b4f534d1be96ac75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -150,19 +180,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void createPHIsForSplitLoopExit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; BasicBlock * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt;&#160;</td>
           <td class="paramname"><em>Preds</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>SplitBB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>DestBB</em>&#160;</td>
         </tr>
         <tr>
@@ -183,7 +213,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BreakCriticalEdges_8cpp_source.html#l00106">106</a> of file <a class="el" href="BreakCriticalEdges_8cpp_source.html">BreakCriticalEdges.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>.</p>
+<p class="reference">References <a class="el" href="Instructions_8h_source.html#l02688">llvm::PHINode::addIncoming()</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Instructions_8h_source.html#l02576">llvm::PHINode::Create()</a>, <a class="el" href="BasicBlock_8h_source.html#l00280">llvm::BasicBlock::front()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00189">llvm::BasicBlock::getFirstNonPHI()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00463">llvm::BasicBlock::isLandingPad()</a>, and <a class="el" href="BasicBlock_8h_source.html#l00324">llvm::BasicBlock::phis()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BreakCriticalEdges_8cpp_source.html#l00137">llvm::SplitCriticalEdge()</a>.</p>
 
 </div>
 </div>
@@ -197,15 +229,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static BasicBlock * findIBRPredecessor </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * findIBRPredecessor </td>
           <td>(</td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; BasicBlock * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>OtherPreds</em>&#160;</td>
         </tr>
         <tr>
@@ -222,6 +254,10 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="BreakCriticalEdges_8cpp_source.html#l00324">324</a> of file <a class="el" href="BreakCriticalEdges_8cpp_source.html">BreakCriticalEdges.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="Instructions_8h_source.html#l02654">llvm::PHINode::getIncomingBlock()</a>, <a class="el" href="Instructions_8h_source.html#l02630">llvm::PHINode::getNumIncomingValues()</a>, <a class="el" href="Instruction_8h_source.html#l00125">llvm::Instruction::getOpcode()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, and <a class="el" href="PredicateInfo_8h_source.html#l00180">llvm::PredicateSwitch::Switch</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BreakCriticalEdges_8cpp_source.html#l00356">llvm::SplitIndirectBrCriticalEdges()</a>.</p>
 
 </div>
 </div>
@@ -256,7 +292,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

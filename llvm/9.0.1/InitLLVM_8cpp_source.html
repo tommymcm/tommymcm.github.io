@@ -61,12 +61,12 @@ $(function() {
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;llvm/Support/InitLLVM.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;llvm/Support/Error.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;llvm/Support/ManagedStatic.h&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;llvm/Support/PrettyStackTrace.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;llvm/Support/Process.h&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;llvm/Support/Signals.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="InitLLVM_8h.html">llvm/Support/InitLLVM.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="Error_8h.html">llvm/Support/Error.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="ManagedStatic_8h.html">llvm/Support/ManagedStatic.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="PrettyStackTrace_8h.html">llvm/Support/PrettyStackTrace.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="Process_8h.html">llvm/Support/Process.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="Signals_8h.html">llvm/Support/Signals.h</a>&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#ifdef _WIN32</span></div>
@@ -76,9 +76,9 @@ $(function() {
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm.html">llvm</a>;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm_1_1sys.html">llvm::sys</a>;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>InitLLVM::InitLLVM(<span class="keywordtype">int</span> &amp;Argc, <span class="keyword">const</span> <span class="keywordtype">char</span> **&amp;Argv) : StackPrinter(Argc, Argv) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  sys::PrintStackTraceOnErrorSignal(Argv[0]);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  install_out_of_memory_new_handler();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classllvm_1_1InitLLVM.html#a63259b1b8224816d0b88272f7b932fa1">   24</a></span><a class="code hl_function" href="classllvm_1_1InitLLVM.html#a63259b1b8224816d0b88272f7b932fa1">InitLLVM::InitLLVM</a>(<span class="keywordtype">int</span> &amp;Argc, <span class="keyword">const</span> <span class="keywordtype">char</span> **&amp;Argv) : StackPrinter(Argc, Argv) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_function" href="namespacellvm_1_1sys.html#ab062fd190912d9ca714311df7cbe51d5">sys::PrintStackTraceOnErrorSignal</a>(Argv[0]);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <a class="code hl_function" href="namespacellvm.html#a80220d8755a4812455d9bdf5ea315a08">install_out_of_memory_new_handler</a>();</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifdef _WIN32</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="comment">// We use UTF-8 as the internal character encoding. On Windows,</span></div>
@@ -91,7 +91,7 @@ $(function() {
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="comment">// wmain() instead of main()), but this way seems less intrusive</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="comment">// than that.</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  std::string Banner = std::string(Argv[0]) + <span class="stringliteral">&quot;: &quot;</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  ExitOnError ExitOnErr(Banner);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_class" href="classllvm_1_1ExitOnError.html">ExitOnError</a> ExitOnErr(Banner);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  ExitOnErr(<a class="code hl_function" href="namespacellvm.html#ad10875fd499e8e285aaeef615e9b11aa">errorCodeToError</a>(<a class="code hl_function" href="namespacellvm_1_1sys_1_1windows.html#a4bf9f1ed9330c6ba76802ed4c06750fd">windows::GetCommandLineArguments</a>(Args, Alloc)));</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
@@ -104,16 +104,28 @@ $(function() {
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>InitLLVM::~InitLLVM() { llvm_shutdown(); }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classllvm_1_1InitLLVM.html#a7d6c2a4b8eaa36939176fc50927fd542">   52</a></span><a class="code hl_function" href="classllvm_1_1InitLLVM.html#a7d6c2a4b8eaa36939176fc50927fd542">InitLLVM::~InitLLVM</a>() { <a class="code hl_function" href="namespacellvm.html#ac27f7fe6f1543ef516aa0998bad20335">llvm_shutdown</a>(); }</div>
+<div class="ttc" id="aError_8h_html"><div class="ttname"><a href="Error_8h.html">Error.h</a></div></div>
+<div class="ttc" id="aInitLLVM_8h_html"><div class="ttname"><a href="InitLLVM_8h.html">InitLLVM.h</a></div></div>
+<div class="ttc" id="aManagedStatic_8h_html"><div class="ttname"><a href="ManagedStatic_8h.html">ManagedStatic.h</a></div></div>
+<div class="ttc" id="aPrettyStackTrace_8h_html"><div class="ttname"><a href="PrettyStackTrace_8h.html">PrettyStackTrace.h</a></div></div>
+<div class="ttc" id="aProcess_8h_html"><div class="ttname"><a href="Process_8h.html">Process.h</a></div><div class="ttdoc">Provides a library for accessing information about this process and other processes on the operating ...</div></div>
+<div class="ttc" id="aSignals_8h_html"><div class="ttname"><a href="Signals_8h.html">Signals.h</a></div></div>
 <div class="ttc" id="aWindowsSupport_8h_html"><div class="ttname"><a href="WindowsSupport_8h.html">WindowsSupport.h</a></div></div>
+<div class="ttc" id="aclassllvm_1_1ExitOnError_html"><div class="ttname"><a href="classllvm_1_1ExitOnError.html">llvm::ExitOnError</a></div><div class="ttdoc">Helper for check-and-exit error handling.</div><div class="ttdef"><b>Definition:</b> <a href="Error_8h_source.html#l01255">Error.h:1255</a></div></div>
+<div class="ttc" id="aclassllvm_1_1InitLLVM_html_a63259b1b8224816d0b88272f7b932fa1"><div class="ttname"><a href="classllvm_1_1InitLLVM.html#a63259b1b8224816d0b88272f7b932fa1">llvm::InitLLVM::InitLLVM</a></div><div class="ttdeci">InitLLVM(int &amp;Argc, const char **&amp;Argv)</div><div class="ttdef"><b>Definition:</b> <a href="InitLLVM_8cpp_source.html#l00024">InitLLVM.cpp:24</a></div></div>
+<div class="ttc" id="aclassllvm_1_1InitLLVM_html_a7d6c2a4b8eaa36939176fc50927fd542"><div class="ttname"><a href="classllvm_1_1InitLLVM.html#a7d6c2a4b8eaa36939176fc50927fd542">llvm::InitLLVM::~InitLLVM</a></div><div class="ttdeci">~InitLLVM()</div><div class="ttdef"><b>Definition:</b> <a href="InitLLVM_8cpp_source.html#l00052">InitLLVM.cpp:52</a></div></div>
 <div class="ttc" id="anamespacellvm_1_1sys_1_1windows_html_a4bf9f1ed9330c6ba76802ed4c06750fd"><div class="ttname"><a href="namespacellvm_1_1sys_1_1windows.html#a4bf9f1ed9330c6ba76802ed4c06750fd">llvm::sys::windows::GetCommandLineArguments</a></div><div class="ttdeci">std::error_code GetCommandLineArguments(SmallVectorImpl&lt; const char * &gt; &amp;Args, BumpPtrAllocator &amp;Alloc)</div></div>
-<div class="ttc" id="anamespacellvm_1_1sys_html"><div class="ttname"><a href="namespacellvm_1_1sys.html">llvm::sys</a></div><div class="ttdef"><b>Definition:</b> <a href="Errno_8cpp_source.html#l00028">Errno.cpp:28</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
-<div class="ttc" id="anamespacellvm_html_ad10875fd499e8e285aaeef615e9b11aa"><div class="ttname"><a href="namespacellvm.html#ad10875fd499e8e285aaeef615e9b11aa">llvm::errorCodeToError</a></div><div class="ttdeci">Error errorCodeToError(std::error_code EC)</div><div class="ttdef"><b>Definition:</b> <a href="Error_8cpp_source.html#l00087">Error.cpp:87</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1sys_html"><div class="ttname"><a href="namespacellvm_1_1sys.html">llvm::sys</a></div><div class="ttdef"><b>Definition:</b> <a href="Atomic_8h_source.html#l00028">Atomic.h:28</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1sys_html_ab062fd190912d9ca714311df7cbe51d5"><div class="ttname"><a href="namespacellvm_1_1sys.html#ab062fd190912d9ca714311df7cbe51d5">llvm::sys::PrintStackTraceOnErrorSignal</a></div><div class="ttdeci">void PrintStackTraceOnErrorSignal(StringRef Argv0, bool DisableCrashReporting=false)</div><div class="ttdoc">When an error signal (such as SIGABRT or SIGSEGV) is delivered to the process, print a stack trace an...</div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysis_8h_source.html#l00056">AliasAnalysis.h:56</a></div></div>
+<div class="ttc" id="anamespacellvm_html_a80220d8755a4812455d9bdf5ea315a08"><div class="ttname"><a href="namespacellvm.html#a80220d8755a4812455d9bdf5ea315a08">llvm::install_out_of_memory_new_handler</a></div><div class="ttdeci">void install_out_of_memory_new_handler()</div><div class="ttdef"><b>Definition:</b> <a href="ErrorHandling_8cpp_source.html#l00191">ErrorHandling.cpp:191</a></div></div>
+<div class="ttc" id="anamespacellvm_html_ac27f7fe6f1543ef516aa0998bad20335"><div class="ttname"><a href="namespacellvm.html#ac27f7fe6f1543ef516aa0998bad20335">llvm::llvm_shutdown</a></div><div class="ttdeci">void llvm_shutdown()</div><div class="ttdoc">llvm_shutdown - Deallocate and destroy all ManagedStatic variables.</div><div class="ttdef"><b>Definition:</b> <a href="ManagedStatic_8cpp_source.html#l00079">ManagedStatic.cpp:79</a></div></div>
+<div class="ttc" id="anamespacellvm_html_ad10875fd499e8e285aaeef615e9b11aa"><div class="ttname"><a href="namespacellvm.html#ad10875fd499e8e285aaeef615e9b11aa">llvm::errorCodeToError</a></div><div class="ttdeci">Error errorCodeToError(std::error_code EC)</div><div class="ttdoc">Helper for converting an std::error_code to a Error.</div><div class="ttdef"><b>Definition:</b> <a href="Error_8cpp_source.html#l00087">Error.cpp:87</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:26 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

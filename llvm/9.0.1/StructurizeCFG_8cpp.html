@@ -63,36 +63,36 @@ $(function() {
 <code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/InstructionSimplify.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LegacyDivergenceAnalysis.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/RegionInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/RegionIterator.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/RegionPass.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
-<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Use.h&quot;</code><br />
-<code>#include &quot;llvm/IR/User.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstructionSimplify_8h_source.html">llvm/Analysis/InstructionSimplify.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LegacyDivergenceAnalysis_8h_source.html">llvm/Analysis/LegacyDivergenceAnalysis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="RegionInfo_8h_source.html">llvm/Analysis/RegionInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="RegionIterator_8h_source.html">llvm/Analysis/RegionIterator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="RegionPass_8h_source.html">llvm/Analysis/RegionPass.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Use_8h_source.html">llvm/IR/Use.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/SSAUpdater.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Utils_8h_source.html">llvm/Transforms/Utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SSAUpdater_8h_source.html">llvm/Transforms/Utils/SSAUpdater.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
@@ -101,46 +101,56 @@ Include dependency graph for StructurizeCFG.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="StructurizeCFG_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2StructurizeCFG_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Scalar_2StructurizeCFG_8cpp" id="alib_2Transforms_2Scalar_2StructurizeCFG_8cpp">
-<area shape="rect" title=" " alt="" coords="3736,5,3895,45"/>
-<area shape="rect" title=" " alt="" coords="5,101,172,126"/>
-<area shape="rect" title=" " alt="" coords="196,101,363,126"/>
-<area shape="rect" title=" " alt="" coords="387,101,596,126"/>
-<area shape="rect" title=" " alt="" coords="621,101,783,126"/>
-<area shape="rect" title=" " alt="" coords="808,101,983,126"/>
-<area shape="rect" title=" " alt="" coords="1007,101,1181,126"/>
-<area shape="rect" title=" " alt="" coords="1205,93,1388,133"/>
-<area shape="rect" title=" " alt="" coords="1413,93,1647,133"/>
-<area shape="rect" title=" " alt="" coords="1672,101,1855,126"/>
-<area shape="rect" title=" " alt="" coords="1879,101,2075,126"/>
-<area shape="rect" title=" " alt="" coords="2099,101,2318,126"/>
-<area shape="rect" title=" " alt="" coords="2342,101,2542,126"/>
-<area shape="rect" title=" " alt="" coords="2565,101,2713,126"/>
-<area shape="rect" title=" " alt="" coords="2738,101,2893,126"/>
-<area shape="rect" title=" " alt="" coords="2917,101,3028,126"/>
-<area shape="rect" title=" " alt="" coords="3052,101,3195,126"/>
-<area shape="rect" title=" " alt="" coords="3219,101,3369,126"/>
-<area shape="rect" title=" " alt="" coords="3393,101,3553,126"/>
-<area shape="rect" title=" " alt="" coords="3577,101,3715,126"/>
-<area shape="rect" title=" " alt="" coords="3740,101,3891,126"/>
-<area shape="rect" title=" " alt="" coords="3915,101,4068,126"/>
-<area shape="rect" title=" " alt="" coords="4093,101,4253,126"/>
-<area shape="rect" title=" " alt="" coords="4277,101,4423,126"/>
-<area shape="rect" title=" " alt="" coords="4447,101,4618,126"/>
-<area shape="rect" title=" " alt="" coords="4642,101,4757,126"/>
-<area shape="rect" title=" " alt="" coords="4781,101,4890,126"/>
-<area shape="rect" title=" " alt="" coords="4915,101,5028,126"/>
-<area shape="rect" title=" " alt="" coords="5053,101,5173,126"/>
-<area shape="rect" title=" " alt="" coords="5197,101,5293,126"/>
-<area shape="rect" title=" " alt="" coords="5317,101,5487,126"/>
-<area shape="rect" title=" " alt="" coords="5511,101,5674,126"/>
-<area shape="rect" title=" " alt="" coords="5698,101,5909,126"/>
-<area shape="rect" title=" " alt="" coords="5933,101,6140,126"/>
-<area shape="rect" title=" " alt="" coords="6164,101,6347,126"/>
-<area shape="rect" title=" " alt="" coords="6371,101,6545,126"/>
-<area shape="rect" title=" " alt="" coords="6569,93,6731,133"/>
-<area shape="rect" title=" " alt="" coords="6755,101,6841,126"/>
-<area shape="rect" title=" " alt="" coords="6865,101,6934,126"/>
-<area shape="rect" title=" " alt="" coords="6959,101,7019,126"/>
+<area shape="rect" title=" " alt="" coords="3117,5,3275,45"/>
+<area shape="rect" title=" " alt="" coords="2321,592,2487,617"/>
+<area shape="rect" title=" " alt="" coords="5359,101,5526,126"/>
+<area shape="rect" title=" " alt="" coords="5550,101,5759,126"/>
+<area shape="rect" title=" " alt="" coords="1323,592,1485,617"/>
+<area shape="rect" title=" " alt="" coords="2511,592,2686,617"/>
+<area shape="rect" title=" " alt="" coords="2762,592,2937,617"/>
+<area shape="rect" href="InstructionSimplify_8h.html" title=" " alt="" coords="438,357,621,397"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="2054,665,2207,691"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="1171,739,1285,764"/>
+<area shape="rect" href="Use_8h.html" title="This defines the Use class." alt="" coords="4719,885,4828,911"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="2211,812,2331,837"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="893,885,1064,911"/>
+<area shape="rect" title=" " alt="" coords="3756,959,3825,984"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="871,812,1081,837"/>
+<area shape="rect" title=" " alt="" coords="3388,739,3473,764"/>
+<area shape="rect" title=" " alt="" coords="3046,739,3106,764"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="635,519,784,544"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="750,592,893,617"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="291,519,405,544"/>
+<area shape="rect" href="LegacyDivergenceAnalysis_8h.html" title=" " alt="" coords="4588,181,4823,221"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="4249,519,4388,544"/>
+<area shape="rect" href="Argument_8h.html" title=" " alt="" coords="3722,592,3870,617"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="3996,592,4151,617"/>
+<area shape="rect" title=" " alt="" coords="4537,365,4633,390"/>
+<area shape="rect" href="LoopInfo_8h.html" title=" " alt="" coords="2925,277,3107,302"/>
+<area shape="rect" href="IR_2CFG_8h.html" title="This file provides various utilities for inspecting and working with the control flow graph in LLVM I..." alt="" coords="4098,365,4209,390"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="1406,445,1557,471"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="2181,365,2341,390"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="4513,519,4676,544"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="3461,519,3667,544"/>
+<area shape="rect" href="RegionInfo_8h.html" title=" " alt="" coords="3919,189,4115,214"/>
+<area shape="rect" href="Dominators_8h.html" title=" " alt="" coords="3761,277,3921,302"/>
+<area shape="rect" href="RegionIterator_8h.html" title=" " alt="" coords="3908,101,4127,126"/>
+<area shape="rect" href="RegionPass_8h.html" title=" " alt="" coords="4313,101,4513,126"/>
+<area shape="rect" href="Metadata_8h.html" title="This file contains the declarations for metadata subclasses." alt="" coords="1617,519,1764,544"/>
+<area shape="rect" href="PatternMatch_8h.html" title=" " alt="" coords="907,277,1077,302"/>
+<area shape="rect" href="Scalar_8h.html" title=" " alt="" coords="5783,101,5966,126"/>
+<area shape="rect" href="Utils_8h.html" title=" " alt="" coords="5991,101,6164,126"/>
+<area shape="rect" href="SSAUpdater_8h.html" title=" " alt="" coords="6189,93,6350,133"/>
+<area shape="rect" title=" " alt="" coords="246,445,405,471"/>
+<area shape="rect" href="Operator_8h.html" title=" " alt="" coords="481,445,621,471"/>
+<area shape="rect" title=" " alt="" coords="4077,885,4267,911"/>
+<area shape="rect" title=" " alt="" coords="5169,959,5353,984"/>
+<area shape="rect" title=" " alt="" coords="4903,592,5063,617"/>
+<area shape="rect" href="DivergenceAnalysis_8h.html" title=" " alt="" coords="4690,269,4878,309"/>
+<area shape="rect" title=" " alt="" coords="3834,445,4006,471"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="3437,445,3606,471"/>
+<area shape="rect" href="Allocator_8h.html" title="This file defines the MallocAllocator and BumpPtrAllocator interfaces." alt="" coords="2903,519,3081,544"/>
+<area shape="rect" title=" " alt="" coords="3558,365,3770,390"/>
 </map>
 </div>
 </div>
@@ -155,12 +165,12 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a41893cd1bf0fdef119b8ff832b7a1678"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StructurizeCFG_8cpp.html#a41893cd1bf0fdef119b8ff832b7a1678">INITIALIZE_PASS_BEGIN</a> (StructurizeCFG, &quot;structurizecfg&quot;, &quot;Structurize the CFG&quot;, false, false) INITIALIZE_PASS_END(StructurizeCFG</td></tr>
 <tr class="separator:a41893cd1bf0fdef119b8ff832b7a1678"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fbd91860c82b5edf2c179f4449e49e7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StructurizeCFG_8cpp.html#a6fbd91860c82b5edf2c179f4449e49e7">hasOnlyUniformBranches</a> (Region *R, unsigned UniformMDKindID, const LegacyDivergenceAnalysis &amp;DA)</td></tr>
+<tr class="memitem:a6fbd91860c82b5edf2c179f4449e49e7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StructurizeCFG_8cpp.html#a6fbd91860c82b5edf2c179f4449e49e7">hasOnlyUniformBranches</a> (<a class="el" href="classllvm_1_1Region.html">Region</a> *R, <a class="el" href="classunsigned.html">unsigned</a> UniformMDKindID, const <a class="el" href="classllvm_1_1LegacyDivergenceAnalysis.html">LegacyDivergenceAnalysis</a> &amp;DA)</td></tr>
 <tr class="separator:a6fbd91860c82b5edf2c179f4449e49e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a097cf3553129c91102c84faba0a525db"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StructurizeCFG_8cpp.html#a097cf3553129c91102c84faba0a525db">FlowBlockName</a> = &quot;Flow&quot;</td></tr>
+<tr class="memitem:a097cf3553129c91102c84faba0a525db"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StructurizeCFG_8cpp.html#a097cf3553129c91102c84faba0a525db">FlowBlockName</a> = &quot;Flow&quot;</td></tr>
 <tr class="separator:a097cf3553129c91102c84faba0a525db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53b11141046597311361c18a5b718d1b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StructurizeCFG_8cpp.html#a53b11141046597311361c18a5b718d1b">structurizecfg</a></td></tr>
 <tr class="separator:a53b11141046597311361c18a5b718d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,21 +207,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool hasOnlyUniformBranches </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> hasOnlyUniformBranches </td>
           <td>(</td>
-          <td class="paramtype">Region *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Region.html">Region</a> *&#160;</td>
           <td class="paramname"><em>R</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>UniformMDKindID</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const LegacyDivergenceAnalysis &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1LegacyDivergenceAnalysis.html">LegacyDivergenceAnalysis</a> &amp;&#160;</td>
           <td class="paramname"><em>DA</em>&#160;</td>
         </tr>
         <tr>
@@ -228,6 +238,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="StructurizeCFG_8cpp_source.html#l00939">939</a> of file <a class="el" href="StructurizeCFG_8cpp_source.html">StructurizeCFG.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="RegionInfo_8h_source.html#l00624">llvm::RegionBase&lt; Tr &gt;::blocks()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="LegacyDivergenceAnalysis_8h_source.html#l00051">llvm::LegacyDivergenceAnalysis::isUniform()</a>, and <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>.</p>
 
 </div>
 </div>
@@ -320,7 +332,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const FlowBlockName = &quot;Flow&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const FlowBlockName = &quot;Flow&quot;</td>
         </tr>
       </table>
   </td>
@@ -353,7 +365,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

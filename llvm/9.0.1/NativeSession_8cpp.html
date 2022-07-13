@@ -55,29 +55,29 @@ $(function() {
   <div class="headertitle"><div class="title">NativeSession.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/DebugInfo/PDB/Native/NativeSession.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="NativeSession_8h_source.html">llvm/DebugInfo/PDB/Native/NativeSession.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/CodeView/TypeIndex.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/IPDBEnumChildren.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/IPDBSourceFile.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/Native/NativeCompilandSymbol.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/Native/NativeEnumInjectedSources.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/Native/NativeEnumTypes.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/Native/NativeExeSymbol.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/Native/NativeTypeBuiltin.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/Native/NativeTypeEnum.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/Native/PDBFile.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/Native/RawError.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/Native/SymbolCache.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/Native/TpiStream.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbolCompiland.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbolExe.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbolTypeEnum.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Allocator.h&quot;</code><br />
-<code>#include &quot;llvm/Support/BinaryByteStream.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Error.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ErrorOr.h&quot;</code><br />
-<code>#include &quot;llvm/Support/MemoryBuffer.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="TypeIndex_8h_source.html">llvm/DebugInfo/CodeView/TypeIndex.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IPDBEnumChildren_8h_source.html">llvm/DebugInfo/PDB/IPDBEnumChildren.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IPDBSourceFile_8h_source.html">llvm/DebugInfo/PDB/IPDBSourceFile.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NativeCompilandSymbol_8h_source.html">llvm/DebugInfo/PDB/Native/NativeCompilandSymbol.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NativeEnumInjectedSources_8h_source.html">llvm/DebugInfo/PDB/Native/NativeEnumInjectedSources.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NativeEnumTypes_8h_source.html">llvm/DebugInfo/PDB/Native/NativeEnumTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NativeExeSymbol_8h_source.html">llvm/DebugInfo/PDB/Native/NativeExeSymbol.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NativeTypeBuiltin_8h_source.html">llvm/DebugInfo/PDB/Native/NativeTypeBuiltin.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NativeTypeEnum_8h_source.html">llvm/DebugInfo/PDB/Native/NativeTypeEnum.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBFile_8h_source.html">llvm/DebugInfo/PDB/Native/PDBFile.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="RawError_8h_source.html">llvm/DebugInfo/PDB/Native/RawError.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SymbolCache_8h_source.html">llvm/DebugInfo/PDB/Native/SymbolCache.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TpiStream_8h_source.html">llvm/DebugInfo/PDB/Native/TpiStream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbolCompiland_8h_source.html">llvm/DebugInfo/PDB/PDBSymbolCompiland.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbolExe_8h_source.html">llvm/DebugInfo/PDB/PDBSymbolExe.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbolTypeEnum_8h_source.html">llvm/DebugInfo/PDB/PDBSymbolTypeEnum.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Allocator_8h_source.html">llvm/Support/Allocator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BinaryByteStream_8h_source.html">llvm/Support/BinaryByteStream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Error_8h_source.html">llvm/Support/Error.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ErrorOr_8h_source.html">llvm/Support/ErrorOr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MemoryBuffer_8h_source.html">llvm/Support/MemoryBuffer.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
@@ -87,34 +87,56 @@ Include dependency graph for NativeSession.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="NativeSession_8cpp__incl.png" border="0" usemap="#alib_2DebugInfo_2PDB_2Native_2NativeSession_8cpp" alt=""/></div>
 <map name="alib_2DebugInfo_2PDB_2Native_2NativeSession_8cpp" id="alib_2DebugInfo_2PDB_2Native_2NativeSession_8cpp">
-<area shape="rect" title=" " alt="" coords="2716,5,2903,45"/>
-<area shape="rect" title=" " alt="" coords="5,101,184,141"/>
-<area shape="rect" title=" " alt="" coords="208,108,371,133"/>
-<area shape="rect" title=" " alt="" coords="395,101,586,141"/>
-<area shape="rect" title=" " alt="" coords="611,101,771,141"/>
-<area shape="rect" title=" " alt="" coords="795,101,949,141"/>
-<area shape="rect" title=" " alt="" coords="973,101,1219,141"/>
-<area shape="rect" title=" " alt="" coords="1244,93,1449,148"/>
-<area shape="rect" title=" " alt="" coords="1473,101,1676,141"/>
-<area shape="rect" title=" " alt="" coords="1700,101,1900,141"/>
-<area shape="rect" title=" " alt="" coords="1924,101,2124,141"/>
-<area shape="rect" title=" " alt="" coords="2148,101,2343,141"/>
-<area shape="rect" title=" " alt="" coords="2367,101,2521,141"/>
-<area shape="rect" title=" " alt="" coords="2545,101,2698,141"/>
-<area shape="rect" title=" " alt="" coords="2722,101,2897,141"/>
-<area shape="rect" title=" " alt="" coords="2921,101,3074,141"/>
-<area shape="rect" title=" " alt="" coords="3099,101,3283,141"/>
-<area shape="rect" title=" " alt="" coords="3307,101,3461,141"/>
-<area shape="rect" title=" " alt="" coords="3485,101,3667,141"/>
-<area shape="rect" title=" " alt="" coords="3691,108,3869,133"/>
-<area shape="rect" title=" " alt="" coords="3893,108,4133,133"/>
-<area shape="rect" title=" " alt="" coords="4158,108,4309,133"/>
-<area shape="rect" title=" " alt="" coords="4333,108,4499,133"/>
-<area shape="rect" title=" " alt="" coords="4524,108,4737,133"/>
-<area shape="rect" title=" " alt="" coords="4761,108,4847,133"/>
-<area shape="rect" title=" " alt="" coords="4871,108,4940,133"/>
-<area shape="rect" title=" " alt="" coords="4964,108,5041,133"/>
-<area shape="rect" title=" " alt="" coords="5066,108,5126,133"/>
+<area shape="rect" title=" " alt="" coords="1928,5,2115,45"/>
+<area shape="rect" href="NativeSession_8h.html" title=" " alt="" coords="2003,181,2181,221"/>
+<area shape="rect" href="TypeIndex_8h.html" title=" " alt="" coords="307,548,498,588"/>
+<area shape="rect" title=" " alt="" coords="621,797,691,823"/>
+<area shape="rect" href="IPDBEnumChildren_8h.html" title=" " alt="" coords="1147,636,1307,676"/>
+<area shape="rect" title=" " alt="" coords="3000,724,3077,749"/>
+<area shape="rect" title=" " alt="" coords="2788,555,2951,581"/>
+<area shape="rect" href="SymbolCache_8h.html" title=" " alt="" coords="1150,277,1325,317"/>
+<area shape="rect" title=" " alt="" coords="803,555,888,581"/>
+<area shape="rect" href="Allocator_8h.html" title="This file defines the MallocAllocator and BumpPtrAllocator interfaces." alt="" coords="499,467,677,493"/>
+<area shape="rect" title=" " alt="" coords="2550,643,2610,669"/>
+<area shape="rect" href="Error_8h.html" title=" " alt="" coords="2577,467,2727,493"/>
+<area shape="rect" href="ErrorOr_8h.html" title="Provides ErrorOr&lt;T&gt; smart pointer." alt="" coords="2445,555,2611,581"/>
+<area shape="rect" href="IPDBSourceFile_8h.html" title=" " alt="" coords="3470,460,3623,500"/>
+<area shape="rect" href="NativeCompilandSymbol_8h.html" title=" " alt="" coords="2895,277,3142,317"/>
+<area shape="rect" href="NativeEnumInjectedSources_8h.html" title=" " alt="" coords="3267,269,3472,324"/>
+<area shape="rect" href="NativeEnumTypes_8h.html" title=" " alt="" coords="805,277,1008,317"/>
+<area shape="rect" href="NativeExeSymbol_8h.html" title=" " alt="" coords="2059,93,2259,133"/>
+<area shape="rect" href="NativeTypeBuiltin_8h.html" title=" " alt="" coords="2363,277,2563,317"/>
+<area shape="rect" href="NativeTypeEnum_8h.html" title=" " alt="" coords="1585,93,1780,133"/>
+<area shape="rect" href="PDBFile_8h.html" title=" " alt="" coords="1046,372,1199,412"/>
+<area shape="rect" href="RawError_8h.html" title=" " alt="" coords="3710,372,3863,412"/>
+<area shape="rect" href="TpiStream_8h.html" title=" " alt="" coords="1326,372,1479,412"/>
+<area shape="rect" href="PDBSymbolCompiland_8h.html" title=" " alt="" coords="2587,277,2771,317"/>
+<area shape="rect" href="PDBSymbolExe_8h.html" title=" " alt="" coords="1649,277,1802,317"/>
+<area shape="rect" href="PDBSymbolTypeEnum_8h.html" title=" " alt="" coords="1827,277,2008,317"/>
+<area shape="rect" href="BinaryByteStream_8h.html" title=" " alt="" coords="3293,379,3533,405"/>
+<area shape="rect" href="MemoryBuffer_8h.html" title=" " alt="" coords="3029,467,3243,493"/>
+<area shape="rect" title=" " alt="" coords="1323,467,1490,493"/>
+<area shape="rect" title=" " alt="" coords="2111,555,2268,581"/>
+<area shape="rect" href="IPDBRawSymbol_8h.html" title=" " alt="" coords="2145,460,2298,500"/>
+<area shape="rect" href="IPDBSession_8h.html" title=" " alt="" coords="2033,277,2186,317"/>
+<area shape="rect" href="NativeRawSymbol_8h.html" title=" " alt="" coords="2709,372,2915,412"/>
+<area shape="rect" title=" " alt="" coords="440,643,632,669"/>
+<area shape="rect" href="Endian_8h.html" title=" " alt="" coords="573,724,739,749"/>
+<area shape="rect" title=" " alt="" coords="856,724,939,749"/>
+<area shape="rect" title=" " alt="" coords="1827,643,1914,669"/>
+<area shape="rect" title=" " alt="" coords="2020,797,2087,823"/>
+<area shape="rect" href="PDBTypes_8h.html" title=" " alt="" coords="1855,555,1953,581"/>
+<area shape="rect" href="CodeView_8h.html" title=" " alt="" coords="881,636,1071,676"/>
+<area shape="rect" href="PDBSymbol_8h.html" title=" " alt="" coords="1923,379,2034,405"/>
+<area shape="rect" href="TypeRecord_8h.html" title=" " alt="" coords="803,460,994,500"/>
+<area shape="rect" title=" " alt="" coords="1194,555,1257,581"/>
+<area shape="rect" title=" " alt="" coords="574,555,727,581"/>
+<area shape="rect" title=" " alt="" coords="3632,555,3691,581"/>
+<area shape="rect" href="DbiModuleDescriptor_8h.html" title=" " alt="" coords="2363,372,2584,412"/>
+<area shape="rect" href="IPDBInjectedSource_8h.html" title=" " alt="" coords="3749,460,3915,500"/>
+<area shape="rect" href="InjectedSourceStream_8h.html" title=" " alt="" coords="3041,372,3269,412"/>
+<area shape="rect" href="LazyRandomTypeCollection_8h.html" title=" " alt="" coords="550,372,767,412"/>
+<area shape="rect" href="TypeVisitorCallbacks_8h.html" title=" " alt="" coords="1606,372,1797,412"/>
 </map>
 </div>
 </div>
@@ -122,7 +144,7 @@ Include dependency graph for NativeSession.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5ea8b61c9f761f9468bdc64078b62785"><td class="memItemLeft" align="right" valign="top">static DbiStream *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NativeSession_8cpp.html#a5ea8b61c9f761f9468bdc64078b62785">getDbiStreamPtr</a> (PDBFile &amp;File)</td></tr>
+<tr class="memitem:a5ea8b61c9f761f9468bdc64078b62785"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1pdb_1_1DbiStream.html">DbiStream</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NativeSession_8cpp.html#a5ea8b61c9f761f9468bdc64078b62785">getDbiStreamPtr</a> (<a class="el" href="classllvm_1_1pdb_1_1PDBFile.html">PDBFile</a> &amp;File)</td></tr>
 <tr class="separator:a5ea8b61c9f761f9468bdc64078b62785"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -136,9 +158,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static DbiStream * getDbiStreamPtr </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1pdb_1_1DbiStream.html">DbiStream</a> * getDbiStreamPtr </td>
           <td>(</td>
-          <td class="paramtype">PDBFile &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1pdb_1_1PDBFile.html">PDBFile</a> &amp;&#160;</td>
           <td class="paramname"><em>File</em></td><td>)</td>
           <td></td>
         </tr>
@@ -152,12 +174,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="NativeSession_8cpp_source.html#l00043">43</a> of file <a class="el" href="NativeSession_8cpp_source.html">NativeSession.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Error_8h_source.html#l00981">llvm::consumeError()</a>, <a class="el" href="Error_8h_source.html#l00532">llvm::Expected&lt; T &gt;::get()</a>, and <a class="el" href="Error_8h_source.html#l00552">llvm::Expected&lt; T &gt;::takeError()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:37 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

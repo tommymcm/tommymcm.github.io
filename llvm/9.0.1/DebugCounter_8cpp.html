@@ -56,22 +56,55 @@ $(function() {
   <div class="headertitle"><div class="title">DebugCounter.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Support/DebugCounter.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Format.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ManagedStatic.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Options.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="DebugCounter_8h_source.html">llvm/Support/DebugCounter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Format_8h_source.html">llvm/Support/Format.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ManagedStatic_8h_source.html">llvm/Support/ManagedStatic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Options_8h_source.html">llvm/Support/Options.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for DebugCounter.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="DebugCounter_8cpp__incl.png" border="0" usemap="#alib_2Support_2DebugCounter_8cpp" alt=""/></div>
 <map name="alib_2Support_2DebugCounter_8cpp" id="alib_2Support_2DebugCounter_8cpp">
-<area shape="rect" title=" " alt="" coords="458,5,673,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,219,104"/>
-<area shape="rect" title=" " alt="" coords="243,79,458,104"/>
-<area shape="rect" title=" " alt="" coords="482,79,649,104"/>
-<area shape="rect" title=" " alt="" coords="673,79,892,104"/>
-<area shape="rect" title=" " alt="" coords="916,79,1087,104"/>
+<area shape="rect" title=" " alt="" coords="1947,5,2161,31"/>
+<area shape="rect" href="DebugCounter_8h.html" title="This file provides an implementation of debug counters." alt="" coords="2183,79,2397,104"/>
+<area shape="rect" href="CommandLine_8h.html" title=" " alt="" coords="1768,152,1983,177"/>
+<area shape="rect" href="ManagedStatic_8h.html" title=" " alt="" coords="2926,225,3145,251"/>
+<area shape="rect" href="Format_8h.html" title=" " alt="" coords="339,152,505,177"/>
+<area shape="rect" href="Options_8h.html" title="This file declares helper objects for defining debug options that can be configured via the command l..." alt="" coords="1969,79,2139,104"/>
+<area shape="rect" title=" " alt="" coords="2007,152,2173,177"/>
+<area shape="rect" title=" " alt="" coords="2198,152,2382,177"/>
+<area shape="rect" title=" " alt="" coords="2106,299,2165,324"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="2644,225,2851,251"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="2406,152,2569,177"/>
+<area shape="rect" title=" " alt="" coords="485,225,639,251"/>
+<area shape="rect" title=" " alt="" coords="663,225,826,251"/>
+<area shape="rect" title=" " alt="" coords="1291,225,1465,251"/>
+<area shape="rect" title=" " alt="" coords="2261,299,2436,324"/>
+<area shape="rect" title=" " alt="" coords="1725,225,1889,251"/>
+<area shape="rect" title=" " alt="" coords="785,299,942,324"/>
+<area shape="rect" title=" " alt="" coords="1913,225,2048,251"/>
+<area shape="rect" title=" " alt="" coords="2175,225,2365,251"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="1490,225,1701,251"/>
+<area shape="rect" title=" " alt="" coords="2875,299,2945,324"/>
+<area shape="rect" title=" " alt="" coords="1218,299,1287,324"/>
+<area shape="rect" title=" " alt="" coords="2390,225,2457,251"/>
+<area shape="rect" title=" " alt="" coords="2481,225,2568,251"/>
+<area shape="rect" title=" " alt="" coords="901,225,1012,251"/>
+<area shape="rect" title=" " alt="" coords="1036,225,1128,251"/>
+<area shape="rect" title=" " alt="" coords="1152,225,1215,251"/>
+<area shape="rect" href="Compiler_8h.html" title=" " alt="" coords="1506,299,1685,324"/>
+<area shape="rect" title=" " alt="" coords="1361,372,1547,397"/>
+<area shape="rect" title=" " alt="" coords="1571,372,1620,397"/>
+<area shape="rect" title=" " alt="" coords="1645,372,1719,397"/>
+<area shape="rect" title=" " alt="" coords="3002,299,3069,324"/>
+<area shape="rect" title=" " alt="" coords="2693,299,2759,324"/>
+<area shape="rect" title=" " alt="" coords="2783,299,2850,324"/>
+<area shape="rect" title=" " alt="" coords="2560,299,2668,324"/>
+<area shape="rect" href="DataTypes_8h.html" title=" " alt="" coords="85,225,274,251"/>
+<area shape="rect" title=" " alt="" coords="298,225,359,251"/>
+<area shape="rect" title=" " alt="" coords="5,225,60,251"/>
+<area shape="rect" title=" " alt="" coords="106,299,253,324"/>
 </map>
 </div>
 </div>
@@ -79,14 +112,14 @@ Include dependency graph for DebugCounter.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9db7cb40e6039879423619650f35f5f3"><td class="memItemLeft" align="right" valign="top">static DebugCounterList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DebugCounter_8cpp.html#a9db7cb40e6039879423619650f35f5f3">DebugCounterOption</a> (&quot;debug-counter&quot;, cl::Hidden, cl::desc(&quot;Comma separated list of debug counter skip and count&quot;), cl::CommaSeparated, cl::ZeroOrMore, cl::location(DebugCounter::instance()))</td></tr>
+<tr class="memitem:a9db7cb40e6039879423619650f35f5f3"><td class="memItemLeft" align="right" valign="top">static DebugCounterList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DebugCounter_8cpp.html#a9db7cb40e6039879423619650f35f5f3">DebugCounterOption</a> (&quot;debug-counter&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Comma separated list of debug counter skip and count&quot;), cl::CommaSeparated, cl::ZeroOrMore, cl::location(DebugCounter::instance()))</td></tr>
 <tr class="separator:a9db7cb40e6039879423619650f35f5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf0666dfb894ff8befab292c8158713f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DebugCounter_8cpp.html#abf0666dfb894ff8befab292c8158713f">PrintDebugCounter</a> (&quot;print-debug-counter&quot;, cl::Hidden, cl::init(false), cl::Optional, cl::desc(&quot;Print out debug counter <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> after all counters accumulated&quot;))</td></tr>
-<tr class="separator:abf0666dfb894ff8befab292c8158713f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ab6811a1f21ef227464d77330c8a5a2f9"><td class="memItemLeft" align="right" valign="top">static ManagedStatic&lt; DebugCounter &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DebugCounter_8cpp.html#ab6811a1f21ef227464d77330c8a5a2f9">DC</a></td></tr>
+<tr class="memitem:a545117a4bbb9cb97662c972328b30ce3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DebugCounter_8cpp.html#a545117a4bbb9cb97662c972328b30ce3">PrintDebugCounter</a> (&quot;print-debug-counter&quot;, cl::Hidden, cl::init(false), cl::Optional, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Print out debug counter <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> after all counters accumulated&quot;))</td></tr>
+<tr class="separator:a545117a4bbb9cb97662c972328b30ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6811a1f21ef227464d77330c8a5a2f9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1ManagedStatic.html">ManagedStatic</a>&lt; <a class="el" href="classllvm_1_1DebugCounter.html">DebugCounter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DebugCounter_8cpp.html#ab6811a1f21ef227464d77330c8a5a2f9">DC</a></td></tr>
 <tr class="separator:ab6811a1f21ef227464d77330c8a5a2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -114,7 +147,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Comma separated list of debug counter skip and count&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Comma separated list of debug counter skip and count&quot;)&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -150,8 +183,9 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="abf0666dfb894ff8befab292c8158713f" name="abf0666dfb894ff8befab292c8158713f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf0666dfb894ff8befab292c8158713f">&#9670;&nbsp;</a></span>PrintDebugCounter()</h2>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ab6811a1f21ef227464d77330c8a5a2f9" name="ab6811a1f21ef227464d77330c8a5a2f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6811a1f21ef227464d77330c8a5a2f9">&#9670;&nbsp;</a></span>DC</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +194,33 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintDebugCounter </td>
+          <td class="memname"><a class="el" href="classllvm_1_1ManagedStatic.html">ManagedStatic</a>&lt;<a class="el" href="classllvm_1_1DebugCounter.html">DebugCounter</a>&gt; DC</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DebugCounter_8cpp_source.html#l00056">56</a> of file <a class="el" href="DebugCounter_8cpp_source.html">DebugCounter.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="CloneModule_8cpp_source.html#l00021">copyComdat()</a>, <a class="el" href="GenericDomTreeConstruction_8h_source.html#l00550">llvm::DomTreeBuilder::SemiNCAInfo&lt; DomTreeT &gt;::doFullDFSWalk()</a>, and <a class="el" href="DebugCounter_8cpp_source.html#l00064">llvm::DebugCounter::instance()</a>.</p>
+
+</div>
+</div>
+<a id="a545117a4bbb9cb97662c972328b30ce3" name="a545117a4bbb9cb97662c972328b30ce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a545117a4bbb9cb97662c972328b30ce3">&#9670;&nbsp;</a></span>PrintDebugCounter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintDebugCounter(&quot;print-debug-counter&quot;, cl::Hidden, cl::init(false), cl::Optional, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Print out debug counter <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> after all counters accumulated&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;print-debug-counter&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -186,7 +246,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Print out debug counter <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> after all counters accumulated&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Print out debug counter <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> after all counters accumulated&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -202,39 +262,14 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ab6811a1f21ef227464d77330c8a5a2f9" name="ab6811a1f21ef227464d77330c8a5a2f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6811a1f21ef227464d77330c8a5a2f9">&#9670;&nbsp;</a></span>DC</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ManagedStatic&lt;DebugCounter&gt; DC</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="DebugCounter_8cpp_source.html#l00056">56</a> of file <a class="el" href="DebugCounter_8cpp_source.html">DebugCounter.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="CloneModule_8cpp_source.html#l00021">copyComdat()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DebugCounter_8cpp_source.html#l00059">llvm::DebugCounter::~DebugCounter()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:37 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

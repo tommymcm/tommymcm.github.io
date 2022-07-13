@@ -53,7 +53,7 @@ $(function() {
   <div class="headertitle"><div class="title">ConstantFolding.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Analysis/ConstantFolding.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="ConstantFolding_8h_source.html">llvm/Analysis/ConstantFolding.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/APFloat.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/APInt.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
@@ -61,27 +61,27 @@ $(function() {
 <code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/VectorUtils.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="VectorUtils_8h_source.html">llvm/Analysis/VectorUtils.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Config/config.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalValue.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalVariable.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Operator.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
-<code>#include &quot;llvm/Support/KnownBits.h&quot;</code><br />
-<code>#include &quot;llvm/Support/MathExtras.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalValue_8h_source.html">llvm/IR/GlobalValue.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalVariable_8h_source.html">llvm/IR/GlobalVariable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Operator_8h_source.html">llvm/IR/Operator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="KnownBits_8h_source.html">llvm/Support/KnownBits.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MathExtras_8h_source.html">llvm/Support/MathExtras.h</a>&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cerrno&gt;</code><br />
 <code>#include &lt;cfenv&gt;</code><br />
@@ -93,42 +93,56 @@ Include dependency graph for ConstantFolding.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ConstantFolding_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2ConstantFolding_8cpp" alt=""/></div>
 <map name="alib_2Analysis_2ConstantFolding_8cpp" id="alib_2Analysis_2ConstantFolding_8cpp">
-<area shape="rect" title=" " alt="" coords="3236,5,3469,31"/>
-<area shape="rect" title=" " alt="" coords="5,86,236,111"/>
-<area shape="rect" title=" " alt="" coords="260,86,408,111"/>
-<area shape="rect" title=" " alt="" coords="432,86,564,111"/>
-<area shape="rect" title=" " alt="" coords="589,86,743,111"/>
-<area shape="rect" title=" " alt="" coords="768,86,935,111"/>
-<area shape="rect" title=" " alt="" coords="959,86,1122,111"/>
-<area shape="rect" title=" " alt="" coords="1147,86,1321,111"/>
-<area shape="rect" title=" " alt="" coords="1346,86,1503,111"/>
-<area shape="rect" title=" " alt="" coords="1528,79,1727,119"/>
-<area shape="rect" title=" " alt="" coords="1751,86,1967,111"/>
-<area shape="rect" title=" " alt="" coords="1991,86,2189,111"/>
-<area shape="rect" title=" " alt="" coords="2213,86,2364,111"/>
-<area shape="rect" title=" " alt="" coords="2388,86,2531,111"/>
-<area shape="rect" title=" " alt="" coords="2555,86,2705,111"/>
-<area shape="rect" title=" " alt="" coords="2729,86,2888,111"/>
-<area shape="rect" title=" " alt="" coords="2912,86,3084,111"/>
-<area shape="rect" title=" " alt="" coords="3109,86,3247,111"/>
-<area shape="rect" title=" " alt="" coords="3271,86,3434,111"/>
-<area shape="rect" title=" " alt="" coords="3458,86,3637,111"/>
-<area shape="rect" title=" " alt="" coords="3661,86,3812,111"/>
-<area shape="rect" title=" " alt="" coords="3836,86,3989,111"/>
-<area shape="rect" title=" " alt="" coords="4014,86,4174,111"/>
-<area shape="rect" title=" " alt="" coords="4199,86,4339,111"/>
-<area shape="rect" title=" " alt="" coords="4363,86,4478,111"/>
-<area shape="rect" title=" " alt="" coords="4502,86,4622,111"/>
-<area shape="rect" title=" " alt="" coords="4646,86,4817,111"/>
-<area shape="rect" title=" " alt="" coords="4841,86,5051,111"/>
-<area shape="rect" title=" " alt="" coords="5076,86,5267,111"/>
-<area shape="rect" title=" " alt="" coords="5291,86,5486,111"/>
-<area shape="rect" title=" " alt="" coords="5510,86,5579,111"/>
-<area shape="rect" title=" " alt="" coords="5604,86,5667,111"/>
-<area shape="rect" title=" " alt="" coords="5691,86,5750,111"/>
-<area shape="rect" title=" " alt="" coords="5775,86,5837,111"/>
-<area shape="rect" title=" " alt="" coords="5861,86,5932,111"/>
-<area shape="rect" title=" " alt="" coords="5957,86,6023,111"/>
+<area shape="rect" title=" " alt="" coords="2969,5,3203,31"/>
+<area shape="rect" href="ConstantFolding_8h.html" title=" " alt="" coords="5,79,236,104"/>
+<area shape="rect" title=" " alt="" coords="1965,783,2113,808"/>
+<area shape="rect" title=" " alt="" coords="6419,636,6551,661"/>
+<area shape="rect" title=" " alt="" coords="5313,783,5467,808"/>
+<area shape="rect" title=" " alt="" coords="1464,401,1631,427"/>
+<area shape="rect" title=" " alt="" coords="2922,709,3085,735"/>
+<area shape="rect" title=" " alt="" coords="1189,636,1364,661"/>
+<area shape="rect" title=" " alt="" coords="2515,709,2673,735"/>
+<area shape="rect" href="TargetLibraryInfo_8h.html" title=" " alt="" coords="2219,152,2417,192"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="2207,475,2346,500"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="2675,636,2847,661"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="1965,709,2079,735"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="3509,856,3679,881"/>
+<area shape="rect" title=" " alt="" coords="2647,929,2717,955"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="1645,783,1855,808"/>
+<area shape="rect" title=" " alt="" coords="3105,783,3171,808"/>
+<area shape="rect" href="GlobalValue_8h.html" title=" " alt="" coords="2031,555,2194,581"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="4139,636,4281,661"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="5654,783,5774,808"/>
+<area shape="rect" title=" " alt="" coords="4740,783,4811,808"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="3504,401,3655,427"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="4559,555,4709,581"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="4275,555,4428,581"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="3006,328,3166,353"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="1704,555,1863,581"/>
+<area shape="rect" href="MathExtras_8h.html" title=" " alt="" coords="362,636,557,661"/>
+<area shape="rect" href="GlobalVariable_8h.html" title=" " alt="" coords="5910,475,6089,500"/>
+<area shape="rect" href="ValueTracking_8h.html" title=" " alt="" coords="5330,159,5546,185"/>
+<area shape="rect" href="VectorUtils_8h.html" title=" " alt="" coords="3291,79,3489,104"/>
+<area shape="rect" href="Operator_8h.html" title=" " alt="" coords="4861,475,5001,500"/>
+<area shape="rect" title=" " alt="" coords="6605,79,6756,104"/>
+<area shape="rect" href="KnownBits_8h.html" title=" " alt="" coords="6511,328,6701,353"/>
+<area shape="rect" title=" " alt="" coords="6832,79,6895,104"/>
+<area shape="rect" title=" " alt="" coords="6919,79,6978,104"/>
+<area shape="rect" title=" " alt="" coords="7003,79,7065,104"/>
+<area shape="rect" title=" " alt="" coords="5371,636,5524,661"/>
+<area shape="rect" title=" " alt="" coords="2283,247,2417,273"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="4252,247,4387,273"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="2517,401,2649,427"/>
+<area shape="rect" title=" " alt="" coords="1541,636,1637,661"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="1664,328,1833,353"/>
+<area shape="rect" title=" " alt="" coords="2060,240,2259,280"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="4059,709,4172,735"/>
+<area shape="rect" title=" " alt="" coords="5381,247,5537,273"/>
+<area shape="rect" href="Intrinsics_8h.html" title=" " alt="" coords="5533,555,5676,581"/>
+<area shape="rect" title=" " alt="" coords="3307,159,3473,185"/>
+<area shape="rect" href="LoopAccessAnalysis_8h.html" title=" " alt="" coords="3103,548,3293,588"/>
+<area shape="rect" href="IRBuilder_8h.html" title=" " alt="" coords="3748,247,3891,273"/>
+<area shape="rect" href="CheckedArithmetic_8h.html" title=" " alt="" coords="6309,555,6553,581"/>
 </map>
 </div>
 </div>
@@ -136,7 +150,7 @@ Include dependency graph for ConstantFolding.cpp:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:36 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

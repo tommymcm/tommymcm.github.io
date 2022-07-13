@@ -64,26 +64,26 @@ $(function() {
 <code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringExtras.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringMap.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/EHPersonalities.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DebugInfo.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DebugLoc.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstIterator.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="EHPersonalities_8h_source.html">llvm/Analysis/EHPersonalities.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DebugInfo_8h_source.html">llvm/IR/DebugInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DebugLoc_8h_source.html">llvm/IR/DebugLoc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstIterator_8h_source.html">llvm/IR/InstIterator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/FileSystem.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Path.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Regex.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Instrumentation.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Instrumentation/GCOVProfiler.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/ModuleUtils.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="FileSystem_8h_source.html">llvm/Support/FileSystem.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Path_8h_source.html">llvm/Support/Path.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Regex_8h_source.html">llvm/Support/Regex.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instrumentation_8h_source.html">llvm/Transforms/Instrumentation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GCOVProfiler_8h_source.html">llvm/Transforms/Instrumentation/GCOVProfiler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ModuleUtils_8h_source.html">llvm/Transforms/Utils/ModuleUtils.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
@@ -93,38 +93,56 @@ Include dependency graph for GCOVProfiling.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="GCOVProfiling_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Instrumentation_2GCOVProfiling_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Instrumentation_2GCOVProfiling_8cpp" id="alib_2Transforms_2Instrumentation_2GCOVProfiling_8cpp">
-<area shape="rect" title=" " alt="" coords="2763,5,2985,45"/>
-<area shape="rect" title=" " alt="" coords="5,101,172,126"/>
-<area shape="rect" title=" " alt="" coords="196,101,347,126"/>
-<area shape="rect" title=" " alt="" coords="371,101,534,126"/>
-<area shape="rect" title=" " alt="" coords="559,101,720,126"/>
-<area shape="rect" title=" " alt="" coords="744,101,895,126"/>
-<area shape="rect" title=" " alt="" coords="919,101,1096,126"/>
-<area shape="rect" title=" " alt="" coords="1120,101,1284,126"/>
-<area shape="rect" title=" " alt="" coords="1308,101,1536,126"/>
-<area shape="rect" title=" " alt="" coords="1560,93,1759,133"/>
-<area shape="rect" title=" " alt="" coords="1783,101,1893,126"/>
-<area shape="rect" title=" " alt="" coords="1917,101,2068,126"/>
-<area shape="rect" title=" " alt="" coords="2092,101,2240,126"/>
-<area shape="rect" title=" " alt="" coords="2264,101,2407,126"/>
-<area shape="rect" title=" " alt="" coords="2431,101,2586,126"/>
-<area shape="rect" title=" " alt="" coords="2610,101,2770,126"/>
-<area shape="rect" title=" " alt="" coords="2794,101,2954,126"/>
-<area shape="rect" title=" " alt="" coords="2979,101,3111,126"/>
-<area shape="rect" title=" " alt="" coords="3135,101,3231,126"/>
-<area shape="rect" title=" " alt="" coords="3256,101,3471,126"/>
-<area shape="rect" title=" " alt="" coords="3495,101,3658,126"/>
-<area shape="rect" title=" " alt="" coords="3683,101,3876,126"/>
-<area shape="rect" title=" " alt="" coords="3901,101,4050,126"/>
-<area shape="rect" title=" " alt="" coords="4074,101,4237,126"/>
-<area shape="rect" title=" " alt="" coords="4261,101,4468,126"/>
-<area shape="rect" title=" " alt="" coords="4492,101,4739,126"/>
-<area shape="rect" title=" " alt="" coords="4762,93,4997,133"/>
-<area shape="rect" title=" " alt="" coords="5020,93,5181,133"/>
-<area shape="rect" title=" " alt="" coords="5206,101,5291,126"/>
-<area shape="rect" title=" " alt="" coords="5315,101,5393,126"/>
-<area shape="rect" title=" " alt="" coords="5417,101,5475,126"/>
-<area shape="rect" title=" " alt="" coords="5500,101,5560,126"/>
+<area shape="rect" title=" " alt="" coords="2865,5,3087,45"/>
+<area shape="rect" title=" " alt="" coords="515,343,682,368"/>
+<area shape="rect" title=" " alt="" coords="4843,101,4994,126"/>
+<area shape="rect" title=" " alt="" coords="1853,416,2016,441"/>
+<area shape="rect" title=" " alt="" coords="5018,101,5179,126"/>
+<area shape="rect" title=" " alt="" coords="5203,101,5354,126"/>
+<area shape="rect" title=" " alt="" coords="5378,101,5555,126"/>
+<area shape="rect" title=" " alt="" coords="1462,416,1626,441"/>
+<area shape="rect" href="EHPersonalities_8h.html" title=" " alt="" coords="710,269,938,295"/>
+<area shape="rect" title=" " alt="" coords="1125,497,1184,522"/>
+<area shape="rect" href="TargetLibraryInfo_8h.html" title=" " alt="" coords="1755,93,1954,133"/>
+<area shape="rect" title=" " alt="" coords="4097,797,4157,823"/>
+<area shape="rect" title=" " alt="" coords="897,724,975,749"/>
+<area shape="rect" title=" " alt="" coords="2573,416,2659,441"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="2896,269,3056,295"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="1854,343,1986,368"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="1565,343,1728,368"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="691,416,898,441"/>
+<area shape="rect" title=" " alt="" coords="1935,189,2031,214"/>
+<area shape="rect" href="IR_2CFG_8h.html" title="This file provides various utilities for inspecting and working with the control flow graph in LLVM I..." alt="" coords="4021,269,4131,295"/>
+<area shape="rect" href="DebugInfo_8h.html" title=" " alt="" coords="3079,577,3230,603"/>
+<area shape="rect" href="DebugLoc_8h.html" title=" " alt="" coords="3371,189,3519,214"/>
+<area shape="rect" href="IRBuilder_8h.html" title=" " alt="" coords="3014,101,3157,126"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="3840,189,4000,214"/>
+<area shape="rect" href="InstIterator_8h.html" title=" " alt="" coords="3200,343,3355,368"/>
+<area shape="rect" href="CommandLine_8h.html" title=" " alt="" coords="1275,343,1490,368"/>
+<area shape="rect" href="FileSystem_8h.html" title=" " alt="" coords="195,343,389,368"/>
+<area shape="rect" href="Path_8h.html" title=" " alt="" coords="4365,497,4515,522"/>
+<area shape="rect" href="Regex_8h.html" title=" " alt="" coords="97,269,260,295"/>
+<area shape="rect" href="Instrumentation_8h.html" title=" " alt="" coords="3807,416,4054,441"/>
+<area shape="rect" href="GCOVProfiler_8h.html" title="This file provides the interface for the GCOV style profiler pass." alt="" coords="2704,181,2939,221"/>
+<area shape="rect" href="ModuleUtils_8h.html" title=" " alt="" coords="4691,489,4853,529"/>
+<area shape="rect" title=" " alt="" coords="915,343,1099,368"/>
+<area shape="rect" title=" " alt="" coords="757,343,891,368"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="923,416,1133,441"/>
+<area shape="rect" title=" " alt="" coords="2041,416,2194,441"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="2487,189,2622,214"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="2784,416,2923,441"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="1562,269,1731,295"/>
+<area shape="rect" title=" " alt="" coords="1611,181,1810,221"/>
+<area shape="rect" title=" " alt="" coords="2845,651,3035,676"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="3305,577,3425,603"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="3535,651,3705,676"/>
+<area shape="rect" title=" " alt="" coords="2469,724,2539,749"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="2265,343,2415,368"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="3605,497,3760,522"/>
+<area shape="rect" title=" " alt="" coords="2795,577,2866,603"/>
+<area shape="rect" title=" " alt="" coords="4047,577,4193,603"/>
+<area shape="rect" href="type__traits_8h.html" title=" " alt="" coords="4031,724,4222,749"/>
+<area shape="rect" title=" " alt="" coords="4190,343,4362,368"/>
 </map>
 </div>
 </div>
@@ -137,26 +155,26 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad740945203fff064938e0962b2784cd4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#ad740945203fff064938e0962b2784cd4">DefaultGCOVVersion</a> (&quot;default-gcov-version&quot;, cl::init(&quot;402*&quot;), cl::Hidden, cl::ValueRequired)</td></tr>
-<tr class="separator:ad740945203fff064938e0962b2784cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62d0580be613f8c8213f5369e0b4e664"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#a62d0580be613f8c8213f5369e0b4e664">DefaultExitBlockBeforeBody</a> (&quot;gcov-exit-block-before-body&quot;, cl::init(false), cl::Hidden)</td></tr>
-<tr class="separator:a62d0580be613f8c8213f5369e0b4e664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad44e7eb93e1ba38461bd745edb55898f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#ad44e7eb93e1ba38461bd745edb55898f">INITIALIZE_PASS_BEGIN</a> (GCOVProfilerLegacyPass, &quot;insert-gcov-profiling&quot;, &quot;Insert <a class="el" href="PGOInstrumentation_8cpp.html#adac8189ad0ec3e77037d43c983e85fff">instrumentation</a> for GCOV profiling&quot;, false, false) INITIALIZE_PASS_END(GCOVProfilerLegacyPass</td></tr>
 <tr class="separator:ad44e7eb93e1ba38461bd745edb55898f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad161260264efb4fb92ab56f92f7dcd1f"><td class="memItemLeft" align="right" valign="top">static StringRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#ad161260264efb4fb92ab56f92f7dcd1f">getFunctionName</a> (const DISubprogram *SP)</td></tr>
+<tr class="memitem:ad161260264efb4fb92ab56f92f7dcd1f"><td class="memItemLeft" align="right" valign="top">static StringRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#ad161260264efb4fb92ab56f92f7dcd1f">getFunctionName</a> (const <a class="el" href="classllvm_1_1DISubprogram.html">DISubprogram</a> *SP)</td></tr>
 <tr class="separator:ad161260264efb4fb92ab56f92f7dcd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5eafaf67b9a450116b00366916c375b"><td class="memItemLeft" align="right" valign="top">static SmallString&lt; 128 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#ab5eafaf67b9a450116b00366916c375b">getFilename</a> (const DISubprogram *SP)</td></tr>
+<tr class="memitem:ab5eafaf67b9a450116b00366916c375b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1SmallString.html">SmallString</a>&lt; 128 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#ab5eafaf67b9a450116b00366916c375b">getFilename</a> (const <a class="el" href="classllvm_1_1DISubprogram.html">DISubprogram</a> *SP)</td></tr>
 <tr class="memdesc:ab5eafaf67b9a450116b00366916c375b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract a filename for a DISubprogram.  <a href="GCOVProfiling_8cpp.html#ab5eafaf67b9a450116b00366916c375b">More...</a><br /></td></tr>
 <tr class="separator:ab5eafaf67b9a450116b00366916c375b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74cc24e2afecbb6c3be391be6ab1c953"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#a74cc24e2afecbb6c3be391be6ab1c953">functionHasLines</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a74cc24e2afecbb6c3be391be6ab1c953"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#a74cc24e2afecbb6c3be391be6ab1c953">functionHasLines</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a74cc24e2afecbb6c3be391be6ab1c953"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7375c611a4c2177f56bac45f6f65650d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#a7375c611a4c2177f56bac45f6f65650d">isUsingScopeBasedEH</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a7375c611a4c2177f56bac45f6f65650d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#a7375c611a4c2177f56bac45f6f65650d">isUsingScopeBasedEH</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a7375c611a4c2177f56bac45f6f65650d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d9c6d38863affa2ba99a479c3243da1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#a1d9c6d38863affa2ba99a479c3243da1">shouldKeepInEntry</a> (BasicBlock::iterator It)</td></tr>
+<tr class="memitem:a1d9c6d38863affa2ba99a479c3243da1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#a1d9c6d38863affa2ba99a479c3243da1">shouldKeepInEntry</a> (<a class="el" href="classllvm_1_1BasicBlock.html#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> It)</td></tr>
 <tr class="separator:a1d9c6d38863affa2ba99a479c3243da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a9387bb165fa09c8f9943472d930fb842"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#a9387bb165fa09c8f9943472d930fb842">DefaultGCOVVersion</a> (&quot;default-gcov-version&quot;, cl::init(&quot;402*&quot;), cl::Hidden, cl::ValueRequired)</td></tr>
+<tr class="separator:a9387bb165fa09c8f9943472d930fb842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f9d691e2f89b263e6cc7a88e854ed6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#ad4f9d691e2f89b263e6cc7a88e854ed6">DefaultExitBlockBeforeBody</a> (&quot;gcov-exit-block-before-body&quot;, cl::init(false), cl::Hidden)</td></tr>
+<tr class="separator:ad4f9d691e2f89b263e6cc7a88e854ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1370d79a1db8cdf5e933a272a82284ee"><td class="memItemLeft" align="right" valign="top">insert gcov&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#a1370d79a1db8cdf5e933a272a82284ee">profiling</a></td></tr>
 <tr class="separator:a1370d79a1db8cdf5e933a272a82284ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5258673ae8fe8154613bd559f7416ad"><td class="memItemLeft" align="right" valign="top">insert gcov Insert <a class="el" href="PGOInstrumentation_8cpp.html#adac8189ad0ec3e77037d43c983e85fff">instrumentation</a> for GCOV&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GCOVProfiling_8cpp.html#aa5258673ae8fe8154613bd559f7416ad">false</a></td></tr>
@@ -180,96 +198,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a62d0580be613f8c8213f5369e0b4e664" name="a62d0580be613f8c8213f5369e0b4e664"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62d0580be613f8c8213f5369e0b4e664">&#9670;&nbsp;</a></span>DefaultExitBlockBeforeBody()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; DefaultExitBlockBeforeBody </td>
-          <td>(</td>
-          <td class="paramtype">&quot;gcov-exit-block-before-body&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad740945203fff064938e0962b2784cd4" name="ad740945203fff064938e0962b2784cd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad740945203fff064938e0962b2784cd4">&#9670;&nbsp;</a></span>DefaultGCOVVersion()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt; DefaultGCOVVersion </td>
-          <td>(</td>
-          <td class="paramtype">&quot;default-gcov-version&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(&quot;402*&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ValueRequired&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a74cc24e2afecbb6c3be391be6ab1c953" name="a74cc24e2afecbb6c3be391be6ab1c953"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a74cc24e2afecbb6c3be391be6ab1c953">&#9670;&nbsp;</a></span>functionHasLines()</h2>
 
@@ -280,9 +208,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool functionHasLines </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> functionHasLines </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -296,7 +224,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GCOVProfiling_8cpp_source.html#l00585">585</a> of file <a class="el" href="GCOVProfiling_8cpp_source.html">GCOVProfiling.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="DebugLoc_8cpp_source.html#l00025">llvm::DebugLoc::getLine()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -310,9 +238,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static SmallString&lt; 128 &gt; getFilename </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1SmallString.html">SmallString</a>&lt; 128 &gt; getFilename </td>
           <td>(</td>
-          <td class="paramtype">const DISubprogram *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DISubprogram.html">DISubprogram</a> *&#160;</td>
           <td class="paramname"><em>SP</em></td><td>)</td>
           <td></td>
         </tr>
@@ -329,7 +257,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GCOVProfiling_8cpp_source.html#l00187">187</a> of file <a class="el" href="GCOVProfiling_8cpp_source.html">GCOVProfiling.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Path_8cpp_source.html#l00417">llvm::sys::path::append()</a>, and <a class="el" href="Path_8cpp_source.html#l01025">llvm::sys::fs::exists()</a>.</p>
+<p class="reference">References <a class="el" href="Path_8cpp_source.html#l00455">llvm::sys::path::append()</a>, <a class="el" href="Path_8cpp_source.html#l01025">llvm::sys::fs::exists()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00566">llvm::DIScope::getDirectory()</a>, and <a class="el" href="DebugInfoMetadata_8h_source.html#l00560">llvm::DIScope::getFilename()</a>.</p>
 
 </div>
 </div>
@@ -345,7 +273,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static StringRef getFunctionName </td>
           <td>(</td>
-          <td class="paramtype">const DISubprogram *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DISubprogram.html">DISubprogram</a> *&#160;</td>
           <td class="paramname"><em>SP</em></td><td>)</td>
           <td></td>
         </tr>
@@ -358,6 +286,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="GCOVProfiling_8cpp_source.html#l00176">176</a> of file <a class="el" href="GCOVProfiling_8cpp_source.html">GCOVProfiling.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DebugInfoMetadata_8cpp_source.html#l00236">llvm::DIScope::getName()</a>.</p>
 
 </div>
 </div>
@@ -417,9 +347,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isUsingScopeBasedEH </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isUsingScopeBasedEH </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -433,7 +363,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GCOVProfiling_8cpp_source.html#l00607">607</a> of file <a class="el" href="GCOVProfiling_8cpp_source.html">GCOVProfiling.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
+<p class="reference">References <a class="el" href="EHPersonalities_8cpp_source.html#l00021">llvm::classifyEHPersonality()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="EHPersonalities_8h_source.html#l00079">llvm::isScopedEHPersonality()</a>.</p>
 
 </div>
 </div>
@@ -447,9 +377,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool shouldKeepInEntry </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> shouldKeepInEntry </td>
           <td>(</td>
-          <td class="paramtype">BasicBlock::iterator&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a>&#160;</td>
           <td class="paramname"><em>It</em></td><td>)</td>
           <td></td>
         </tr>
@@ -466,6 +396,100 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="ad4f9d691e2f89b263e6cc7a88e854ed6" name="ad4f9d691e2f89b263e6cc7a88e854ed6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4f9d691e2f89b263e6cc7a88e854ed6">&#9670;&nbsp;</a></span>DefaultExitBlockBeforeBody</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; DefaultExitBlockBeforeBody(&quot;gcov-exit-block-before-body&quot;, cl::init(false), cl::Hidden) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;gcov-exit-block-before-body&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="GCOVProfiling_8cpp_source.html#l00057">llvm::GCOVOptions::getDefault()</a>.</p>
+
+</div>
+</div>
+<a id="a9387bb165fa09c8f9943472d930fb842" name="a9387bb165fa09c8f9943472d930fb842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9387bb165fa09c8f9943472d930fb842">&#9670;&nbsp;</a></span>DefaultGCOVVersion</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt; DefaultGCOVVersion(&quot;default-gcov-version&quot;, cl::init(&quot;402*&quot;), cl::Hidden, cl::ValueRequired) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;default-gcov-version&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(&quot;402*&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ValueRequired&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="GCOVProfiling_8cpp_source.html#l00057">llvm::GCOVOptions::getDefault()</a>.</p>
+
+</div>
+</div>
 <a id="aa5258673ae8fe8154613bd559f7416ad" name="aa5258673ae8fe8154613bd559f7416ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa5258673ae8fe8154613bd559f7416ad">&#9670;&nbsp;</a></span>false</h2>
 
@@ -501,7 +525,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

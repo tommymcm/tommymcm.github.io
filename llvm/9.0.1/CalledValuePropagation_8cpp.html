@@ -54,28 +54,72 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">CalledValuePropagation.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/IPO/CalledValuePropagation.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/SparsePropagation.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ValueLatticeUtils.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstVisitor.h&quot;</code><br />
-<code>#include &quot;llvm/IR/MDBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/IPO.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="CalledValuePropagation_8h_source.html">llvm/Transforms/IPO/CalledValuePropagation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SparsePropagation_8h_source.html">llvm/Analysis/SparsePropagation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueLatticeUtils_8h_source.html">llvm/Analysis/ValueLatticeUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstVisitor_8h_source.html">llvm/IR/InstVisitor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MDBuilder_8h_source.html">llvm/IR/MDBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IPO_8h_source.html">llvm/Transforms/IPO.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for CalledValuePropagation.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="CalledValuePropagation_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2IPO_2CalledValuePropagation_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2IPO_2CalledValuePropagation_8cpp" id="alib_2Transforms_2IPO_2CalledValuePropagation_8cpp">
-<area shape="rect" title=" " alt="" coords="586,5,794,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,199,133"/>
-<area shape="rect" title=" " alt="" coords="223,101,471,126"/>
-<area shape="rect" title=" " alt="" coords="495,93,690,133"/>
-<area shape="rect" title=" " alt="" coords="714,101,863,126"/>
-<area shape="rect" title=" " alt="" coords="888,101,1039,126"/>
-<area shape="rect" title=" " alt="" coords="1063,101,1229,126"/>
+<area shape="rect" title=" " alt="" coords="2657,5,2865,45"/>
+<area shape="rect" href="CalledValuePropagation_8h.html" title=" " alt="" coords="2276,93,2469,133"/>
+<area shape="rect" href="SparsePropagation_8h.html" title=" " alt="" coords="2531,181,2779,207"/>
+<area shape="rect" href="ValueLatticeUtils_8h.html" title=" " alt="" coords="2597,93,2791,133"/>
+<area shape="rect" href="InstVisitor_8h.html" title=" " alt="" coords="3181,101,3330,126"/>
+<area shape="rect" href="MDBuilder_8h.html" title=" " alt="" coords="3953,328,4104,353"/>
+<area shape="rect" href="IPO_8h.html" title=" " alt="" coords="1567,328,1733,353"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="1744,255,1876,280"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="2288,181,2457,207"/>
+<area shape="rect" title=" " alt="" coords="167,475,283,500"/>
+<area shape="rect" title=" " alt="" coords="4491,475,4644,500"/>
+<area shape="rect" title=" " alt="" coords="1555,401,1718,427"/>
+<area shape="rect" title=" " alt="" coords="341,328,505,353"/>
+<area shape="rect" title=" " alt="" coords="3523,475,3681,500"/>
+<area shape="rect" title=" " alt="" coords="3993,475,4184,500"/>
+<area shape="rect" href="Attributes_8h.html" title="This file contains the simple types necessary to represent the attributes associated with functions a..." alt="" coords="3143,401,3291,427"/>
+<area shape="rect" title=" " alt="" coords="2730,475,2797,500"/>
+<area shape="rect" title=" " alt="" coords="3054,548,3113,573"/>
+<area shape="rect" href="Comdat_8h.html" title="This file contains the declaration of the Comdat class, which represents a single COMDAT in LLVM." alt="" coords="29,328,164,353"/>
+<area shape="rect" href="CBindingWrapping_8h.html" title=" " alt="" coords="24,401,265,427"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="1909,328,2068,353"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="3327,328,3466,353"/>
+<area shape="rect" href="SymbolTableListTraits_8h.html" title=" " alt="" coords="1144,401,1369,427"/>
+<area shape="rect" title=" " alt="" coords="1793,475,1864,500"/>
+<area shape="rect" title=" " alt="" coords="2094,401,2171,427"/>
+<area shape="rect" href="GlobalAlias_8h.html" title=" " alt="" coords="944,328,1103,353"/>
+<area shape="rect" href="GlobalIFunc_8h.html" title=" " alt="" coords="1178,328,1338,353"/>
+<area shape="rect" href="GlobalVariable_8h.html" title=" " alt="" coords="2669,328,2847,353"/>
+<area shape="rect" href="Metadata_8h.html" title="This file contains the declarations for metadata subclasses." alt="" coords="2295,328,2442,353"/>
+<area shape="rect" title=" " alt="" coords="2591,401,2661,427"/>
+<area shape="rect" href="ProfileSummary_8h.html" title=" " alt="" coords="682,328,869,353"/>
+<area shape="rect" title=" " alt="" coords="699,401,761,427"/>
+<area shape="rect" href="CodeGen_8h.html" title=" " alt="" coords="1363,328,1543,353"/>
+<area shape="rect" title=" " alt="" coords="3085,475,3145,500"/>
+<area shape="rect" title=" " alt="" coords="1895,401,2069,427"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="2837,475,3047,500"/>
+<area shape="rect" title=" " alt="" coords="3806,401,3966,427"/>
+<area shape="rect" href="GlobalValue_8h.html" title=" " alt="" coords="3315,401,3478,427"/>
+<area shape="rect" title=" " alt="" coords="2196,401,2363,427"/>
+<area shape="rect" title=" " alt="" coords="1952,255,2127,280"/>
+<area shape="rect" title=" " alt="" coords="2151,255,2335,280"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="2562,255,2725,280"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="3018,255,3178,280"/>
+<area shape="rect" title=" " alt="" coords="2749,255,2791,280"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="3456,181,3591,207"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="2866,181,3026,207"/>
+<area shape="rect" href="Intrinsics_8h.html" title=" " alt="" coords="4683,255,4825,280"/>
+<area shape="rect" title=" " alt="" coords="3051,181,3217,207"/>
+<area shape="rect" href="DataTypes_8h.html" title=" " alt="" coords="4091,401,4281,427"/>
+<area shape="rect" title=" " alt="" coords="1444,401,1531,427"/>
 </map>
 </div>
 </div>
@@ -84,12 +128,13 @@ Include dependency graph for CalledValuePropagation.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1LatticeKeyInfo_3_01CVPLatticeKey_01_4.html">llvm::LatticeKeyInfo&lt; CVPLatticeKey &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A specialization of LatticeKeyInfo for CVPLatticeKeys.  <a href="structllvm_1_1LatticeKeyInfo_3_01CVPLatticeKey_01_4.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A specialization of <a class="el" href="structllvm_1_1LatticeKeyInfo.html" title="A template for translating between LLVM Values and LatticeKeys.">LatticeKeyInfo</a> for CVPLatticeKeys.  <a href="structllvm_1_1LatticeKeyInfo_3_01CVPLatticeKey_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
+<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -99,13 +144,16 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a578a6a338dfc08e41fb688a20ace1b4c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CalledValuePropagation_8cpp.html#a578a6a338dfc08e41fb688a20ace1b4c">MaxFunctionsPerValue</a> (&quot;cvp-max-<a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a>-per-value&quot;, cl::Hidden, cl::init(4), cl::desc(&quot;The maximum number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> to track per lattice value&quot;))</td></tr>
-<tr class="memdesc:a578a6a338dfc08e41fb688a20ace1b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of functions to track per lattice value.  <a href="CalledValuePropagation_8cpp.html#a578a6a338dfc08e41fb688a20ace1b4c">More...</a><br /></td></tr>
-<tr class="separator:a578a6a338dfc08e41fb688a20ace1b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d2bce545ae26cccf351c2c0d35d64e4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CalledValuePropagation_8cpp.html#a1d2bce545ae26cccf351c2c0d35d64e4">runCVP</a> (Module &amp;M)</td></tr>
+<tr class="memitem:a1d2bce545ae26cccf351c2c0d35d64e4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CalledValuePropagation_8cpp.html#a1d2bce545ae26cccf351c2c0d35d64e4">runCVP</a> (<a class="el" href="classllvm_1_1Module.html">Module</a> &amp;M)</td></tr>
 <tr class="separator:a1d2bce545ae26cccf351c2c0d35d64e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c843a928a78de6b5712c4f0a7b10155"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CalledValuePropagation_8cpp.html#a4c843a928a78de6b5712c4f0a7b10155">INITIALIZE_PASS</a> (CalledValuePropagationLegacyPass, &quot;called-value-propagation&quot;, &quot;Called Value Propagation&quot;, false, false) ModulePass *llvm</td></tr>
+<tr class="memitem:a4c843a928a78de6b5712c4f0a7b10155"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CalledValuePropagation_8cpp.html#a4c843a928a78de6b5712c4f0a7b10155">INITIALIZE_PASS</a> (CalledValuePropagationLegacyPass, &quot;called-value-propagation&quot;, &quot;Called <a class="el" href="classllvm_1_1Value.html">Value</a> Propagation&quot;, false, false) <a class="el" href="classModulePass.html">ModulePass</a> *llvm</td></tr>
 <tr class="separator:a4c843a928a78de6b5712c4f0a7b10155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a0c244e5ff5a1fb8c12ec6d8fe73d0ba0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CalledValuePropagation_8cpp.html#a0c244e5ff5a1fb8c12ec6d8fe73d0ba0">MaxFunctionsPerValue</a> (&quot;cvp-max-<a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a>-per-value&quot;, cl::Hidden, cl::init(4), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The maximum number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> to track per lattice value&quot;))</td></tr>
+<tr class="memdesc:a0c244e5ff5a1fb8c12ec6d8fe73d0ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of functions to track per lattice value.  <a href="CalledValuePropagation_8cpp.html#a0c244e5ff5a1fb8c12ec6d8fe73d0ba0">More...</a><br /></td></tr>
+<tr class="separator:a0c244e5ff5a1fb8c12ec6d8fe73d0ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad78e062f62e0d6e453941fb4ca843e4d" name="ad78e062f62e0d6e453941fb4ca843e4d"></a>
@@ -146,7 +194,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Called Value Propagation&quot;&#160;</td>
+          <td class="paramtype">&quot;Called <a class="el" href="classllvm_1_1Value.html">Value</a> Propagation&quot;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -173,8 +221,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a578a6a338dfc08e41fb688a20ace1b4c" name="a578a6a338dfc08e41fb688a20ace1b4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a578a6a338dfc08e41fb688a20ace1b4c">&#9670;&nbsp;</a></span>MaxFunctionsPerValue()</h2>
+<a id="a1d2bce545ae26cccf351c2c0d35d64e4" name="a1d2bce545ae26cccf351c2c0d35d64e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d2bce545ae26cccf351c2c0d35d64e4">&#9670;&nbsp;</a></span>runCVP()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,7 +231,40 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; MaxFunctionsPerValue </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> runCVP </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> &amp;&#160;</td>
+          <td class="paramname"><em>M</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="CalledValuePropagation_8cpp_source.html#l00370">370</a> of file <a class="el" href="CalledValuePropagation_8cpp_source.html">CalledValuePropagation.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="ValueLatticeUtils_8cpp_source.html#l00019">llvm::canTrackArgumentsInterprocedurally()</a>, <a class="el" href="MDBuilder_8cpp_source.html#l00100">llvm::MDBuilder::createCallees()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CallSite_8h_source.html#l00104">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getCalledValue()</a>, <a class="el" href="SparsePropagation_8h_source.html#l00150">llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::getExistingValueState()</a>, <a class="el" href="SparsePropagation_8h_source.html#l00258">llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::MarkBlockExecutable()</a>, <a class="el" href="LLVMContext_8h_source.html#l00098">llvm::LLVMContext::MD_callees</a>, and <a class="el" href="SparsePropagation_8h_source.html#l00468">llvm::SparseSolver&lt; LatticeKey, LatticeVal, KeyInfo &gt;::Solve()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="CalledValuePropagation_8cpp_source.html#l00403">llvm::CalledValuePropagationPass::run()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a0c244e5ff5a1fb8c12ec6d8fe73d0ba0" name="a0c244e5ff5a1fb8c12ec6d8fe73d0ba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c244e5ff5a1fb8c12ec6d8fe73d0ba0">&#9670;&nbsp;</a></span>MaxFunctionsPerValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; MaxFunctionsPerValue(&quot;cvp-max-<a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a>-per-value&quot;, cl::Hidden, cl::init(4), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The maximum number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> to track per lattice value&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;cvp-max-<a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a>-per-value&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -203,7 +284,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;The maximum number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> to track per lattice value&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The maximum number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> to track per lattice value&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -224,40 +305,10 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1d2bce545ae26cccf351c2c0d35d64e4" name="a1d2bce545ae26cccf351c2c0d35d64e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d2bce545ae26cccf351c2c0d35d64e4">&#9670;&nbsp;</a></span>runCVP()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static bool runCVP </td>
-          <td>(</td>
-          <td class="paramtype">Module &amp;&#160;</td>
-          <td class="paramname"><em>M</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="CalledValuePropagation_8cpp_source.html#l00370">370</a> of file <a class="el" href="CalledValuePropagation_8cpp_source.html">CalledValuePropagation.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

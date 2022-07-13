@@ -56,20 +56,20 @@ $(function() {
   <div class="headertitle"><div class="title">GSIStreamBuilder.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/DebugInfo/PDB/Native/GSIStreamBuilder.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="GSIStreamBuilder_8h_source.html">llvm/DebugInfo/PDB/Native/GSIStreamBuilder.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/DenseSet.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/CodeView/RecordName.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/CodeView/SymbolDeserializer.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/CodeView/SymbolRecord.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/CodeView/SymbolSerializer.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/MSF/MSFBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/MSF/MSFCommon.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/MSF/MappedBlockStream.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/Native/GlobalsStream.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/Native/Hash.h&quot;</code><br />
-<code>#include &quot;llvm/Support/BinaryItemStream.h&quot;</code><br />
-<code>#include &quot;llvm/Support/BinaryStreamWriter.h&quot;</code><br />
-<code>#include &quot;llvm/Support/xxhash.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="RecordName_8h_source.html">llvm/DebugInfo/CodeView/RecordName.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SymbolDeserializer_8h_source.html">llvm/DebugInfo/CodeView/SymbolDeserializer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SymbolRecord_8h_source.html">llvm/DebugInfo/CodeView/SymbolRecord.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SymbolSerializer_8h_source.html">llvm/DebugInfo/CodeView/SymbolSerializer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MSFBuilder_8h_source.html">llvm/DebugInfo/MSF/MSFBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MSFCommon_8h_source.html">llvm/DebugInfo/MSF/MSFCommon.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MappedBlockStream_8h_source.html">llvm/DebugInfo/MSF/MappedBlockStream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalsStream_8h_source.html">llvm/DebugInfo/PDB/Native/GlobalsStream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Hash_8h_source.html">llvm/DebugInfo/PDB/Native/Hash.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BinaryItemStream_8h_source.html">llvm/Support/BinaryItemStream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BinaryStreamWriter_8h_source.html">llvm/Support/BinaryStreamWriter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="xxhash_8h_source.html">llvm/Support/xxhash.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -77,23 +77,56 @@ Include dependency graph for GSIStreamBuilder.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="GSIStreamBuilder_8cpp__incl.png" border="0" usemap="#alib_2DebugInfo_2PDB_2Native_2GSIStreamBuilder_8cpp" alt=""/></div>
 <map name="alib_2DebugInfo_2PDB_2Native_2GSIStreamBuilder_8cpp" id="alib_2DebugInfo_2PDB_2Native_2GSIStreamBuilder_8cpp">
-<area shape="rect" title=" " alt="" coords="1527,5,1714,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,204,133"/>
-<area shape="rect" title=" " alt="" coords="227,101,387,126"/>
-<area shape="rect" title=" " alt="" coords="412,93,603,133"/>
-<area shape="rect" title=" " alt="" coords="627,93,817,133"/>
-<area shape="rect" title=" " alt="" coords="841,93,1032,133"/>
-<area shape="rect" title=" " alt="" coords="1056,93,1247,133"/>
-<area shape="rect" title=" " alt="" coords="1271,93,1426,133"/>
-<area shape="rect" title=" " alt="" coords="1450,93,1605,133"/>
-<area shape="rect" title=" " alt="" coords="1629,93,1802,133"/>
-<area shape="rect" title=" " alt="" coords="1826,93,2007,133"/>
-<area shape="rect" title=" " alt="" coords="2032,93,2185,133"/>
-<area shape="rect" title=" " alt="" coords="2210,101,2450,126"/>
-<area shape="rect" title=" " alt="" coords="2475,93,2673,133"/>
-<area shape="rect" title=" " alt="" coords="2698,101,2866,126"/>
-<area shape="rect" title=" " alt="" coords="2890,101,2975,126"/>
-<area shape="rect" title=" " alt="" coords="3000,101,3063,126"/>
+<area shape="rect" title=" " alt="" coords="2615,5,2801,45"/>
+<area shape="rect" href="GSIStreamBuilder_8h.html" title=" " alt="" coords="2213,181,2411,221"/>
+<area shape="rect" href="SymbolRecord_8h.html" title=" " alt="" coords="1310,357,1501,397"/>
+<area shape="rect" title=" " alt="" coords="3832,1135,3917,1160"/>
+<area shape="rect" title=" " alt="" coords="4931,1135,4994,1160"/>
+<area shape="rect" href="GlobalsStream_8h.html" title=" " alt="" coords="1936,269,2117,309"/>
+<area shape="rect" href="MappedBlockStream_8h.html" title=" " alt="" coords="2824,709,2997,749"/>
+<area shape="rect" href="MSFCommon_8h.html" title=" " alt="" coords="3992,885,4147,925"/>
+<area shape="rect" href="BinaryItemStream_8h.html" title=" " alt="" coords="1987,805,2227,830"/>
+<area shape="rect" href="BinaryStreamWriter_8h.html" title=" " alt="" coords="2399,621,2598,661"/>
+<area shape="rect" title=" " alt="" coords="5152,101,5312,126"/>
+<area shape="rect" href="RecordName_8h.html" title=" " alt="" coords="526,269,717,309"/>
+<area shape="rect" href="SymbolDeserializer_8h.html" title=" " alt="" coords="2781,93,2971,133"/>
+<area shape="rect" href="SymbolSerializer_8h.html" title=" " alt="" coords="3215,93,3406,133"/>
+<area shape="rect" href="MSFBuilder_8h.html" title=" " alt="" coords="4277,797,4432,837"/>
+<area shape="rect" href="Hash_8h.html" title=" " alt="" coords="803,885,957,925"/>
+<area shape="rect" href="xxhash_8h.html" title=" " alt="" coords="1184,893,1352,918"/>
+<area shape="rect" href="Endian_8h.html" title=" " alt="" coords="461,981,627,1006"/>
+<area shape="rect" href="BinaryStreamRef_8h.html" title=" " alt="" coords="2351,797,2550,837"/>
+<area shape="rect" href="Error_8h.html" title=" " alt="" coords="3525,1061,3675,1087"/>
+<area shape="rect" href="RawConstants_8h.html" title=" " alt="" coords="43,533,221,573"/>
+<area shape="rect" href="RawTypes_8h.html" title=" " alt="" coords="145,445,298,485"/>
+<area shape="rect" href="BinaryByteStream_8h.html" title=" " alt="" coords="3019,805,3259,830"/>
+<area shape="rect" title=" " alt="" coords="1310,629,1450,654"/>
+<area shape="rect" title=" " alt="" coords="1743,981,1897,1006"/>
+<area shape="rect" title=" " alt="" coords="2086,981,2239,1006"/>
+<area shape="rect" title=" " alt="" coords="1133,1061,1291,1087"/>
+<area shape="rect" title=" " alt="" coords="1411,805,1557,830"/>
+<area shape="rect" title=" " alt="" coords="1577,453,1767,478"/>
+<area shape="rect" href="CVRecord_8h.html" title=" " alt="" coords="1310,445,1501,485"/>
+<area shape="rect" href="RecordSerialization_8h.html" title=" " alt="" coords="1259,533,1450,573"/>
+<area shape="rect" href="CodeView_8h.html" title=" " alt="" coords="587,621,778,661"/>
+<area shape="rect" title=" " alt="" coords="2015,1135,2081,1160"/>
+<area shape="rect" href="BinaryStreamArray_8h.html" title=" " alt="" coords="1829,709,2027,749"/>
+<area shape="rect" href="TypeIndex_8h.html" title=" " alt="" coords="526,533,717,573"/>
+<area shape="rect" href="BinaryStreamReader_8h.html" title=" " alt="" coords="1727,621,1926,661"/>
+<area shape="rect" href="BinaryStream_8h.html" title=" " alt="" coords="2187,893,2397,918"/>
+<area shape="rect" href="BinaryStreamError_8h.html" title=" " alt="" coords="2453,973,2651,1013"/>
+<area shape="rect" title=" " alt="" coords="3105,1135,3183,1160"/>
+<area shape="rect" title=" " alt="" coords="4679,1135,4739,1160"/>
+<area shape="rect" href="PDBTypes_8h.html" title=" " alt="" coords="259,357,413,397"/>
+<area shape="rect" title=" " alt="" coords="2827,805,2994,830"/>
+<area shape="rect" href="Allocator_8h.html" title="This file defines the MallocAllocator and BumpPtrAllocator interfaces." alt="" coords="4223,893,4401,918"/>
+<area shape="rect" title=" " alt="" coords="4363,981,4519,1006"/>
+<area shape="rect" href="MathExtras_8h.html" title=" " alt="" coords="4093,981,4288,1006"/>
+<area shape="rect" href="TypeCollection_8h.html" title=" " alt="" coords="526,445,717,485"/>
+<area shape="rect" href="SymbolRecordMapping_8h.html" title=" " alt="" coords="3098,181,3289,221"/>
+<area shape="rect" href="SymbolVisitorCallbacks_8h.html" title=" " alt="" coords="3097,269,3289,309"/>
+<area shape="rect" title=" " alt="" coords="3231,357,3422,397"/>
+<area shape="rect" href="SymbolVisitorDelegate_8h.html" title=" " alt="" coords="1294,973,1485,1013"/>
 </map>
 </div>
 </div>
@@ -108,16 +141,16 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab8666e8e8003a11106288b7bd933969e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GSIStreamBuilder_8cpp.html#ab8666e8e8003a11106288b7bd933969e">isAsciiString</a> (StringRef S)</td></tr>
+<tr class="memitem:ab8666e8e8003a11106288b7bd933969e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GSIStreamBuilder_8cpp.html#ab8666e8e8003a11106288b7bd933969e">isAsciiString</a> (StringRef S)</td></tr>
 <tr class="separator:ab8666e8e8003a11106288b7bd933969e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab14c828d49e27c44669d8d4fb29ad7a3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GSIStreamBuilder_8cpp.html#ab14c828d49e27c44669d8d4fb29ad7a3">gsiRecordLess</a> (StringRef S1, StringRef S2)</td></tr>
+<tr class="memitem:ab14c828d49e27c44669d8d4fb29ad7a3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GSIStreamBuilder_8cpp.html#ab14c828d49e27c44669d8d4fb29ad7a3">gsiRecordLess</a> (StringRef S1, StringRef S2)</td></tr>
 <tr class="separator:ab14c828d49e27c44669d8d4fb29ad7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee9ec911d2d91e2b2d666464a0ae07a2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GSIStreamBuilder_8cpp.html#aee9ec911d2d91e2b2d666464a0ae07a2">comparePubSymByAddrAndName</a> (const std::pair&lt; const CVSymbol *, const PublicSym32 * &gt; &amp;LS, const std::pair&lt; const CVSymbol *, const PublicSym32 * &gt; &amp;RS)</td></tr>
+<tr class="memitem:aee9ec911d2d91e2b2d666464a0ae07a2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GSIStreamBuilder_8cpp.html#aee9ec911d2d91e2b2d666464a0ae07a2">comparePubSymByAddrAndName</a> (const std::pair&lt; const <a class="el" href="namespacellvm_1_1codeview.html#ac9ec40377c0de0d9cd25ad8270d6f8f2">CVSymbol</a> *, const <a class="el" href="classllvm_1_1codeview_1_1PublicSym32.html">PublicSym32</a> * &gt; &amp;LS, const std::pair&lt; const <a class="el" href="namespacellvm_1_1codeview.html#ac9ec40377c0de0d9cd25ad8270d6f8f2">CVSymbol</a> *, const <a class="el" href="classllvm_1_1codeview_1_1PublicSym32.html">PublicSym32</a> * &gt; &amp;RS)</td></tr>
 <tr class="separator:aee9ec911d2d91e2b2d666464a0ae07a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b42c4283655ee8c7ee1ce1ff0a2d696"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; ulittle32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GSIStreamBuilder_8cpp.html#a5b42c4283655ee8c7ee1ce1ff0a2d696">computeAddrMap</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; CVSymbol &gt; Records)</td></tr>
+<tr class="memitem:a5b42c4283655ee8c7ee1ce1ff0a2d696"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; ulittle32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GSIStreamBuilder_8cpp.html#a5b42c4283655ee8c7ee1ce1ff0a2d696">computeAddrMap</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="namespacellvm_1_1codeview.html#ac9ec40377c0de0d9cd25ad8270d6f8f2">CVSymbol</a> &gt; Records)</td></tr>
 <tr class="memdesc:a5b42c4283655ee8c7ee1ce1ff0a2d696"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the address map.  <a href="GSIStreamBuilder_8cpp.html#a5b42c4283655ee8c7ee1ce1ff0a2d696">More...</a><br /></td></tr>
 <tr class="separator:a5b42c4283655ee8c7ee1ce1ff0a2d696"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad280d8eb3c4e746fc3468c75755ac905"><td class="memItemLeft" align="right" valign="top">static Error&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GSIStreamBuilder_8cpp.html#ad280d8eb3c4e746fc3468c75755ac905">writeRecords</a> (BinaryStreamWriter &amp;Writer, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; CVSymbol &gt; Records)</td></tr>
+<tr class="memitem:ad280d8eb3c4e746fc3468c75755ac905"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Error.html">Error</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GSIStreamBuilder_8cpp.html#ad280d8eb3c4e746fc3468c75755ac905">writeRecords</a> (<a class="el" href="classllvm_1_1BinaryStreamWriter.html">BinaryStreamWriter</a> &amp;Writer, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="namespacellvm_1_1codeview.html#ac9ec40377c0de0d9cd25ad8270d6f8f2">CVSymbol</a> &gt; Records)</td></tr>
 <tr class="separator:ad280d8eb3c4e746fc3468c75755ac905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -131,15 +164,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool comparePubSymByAddrAndName </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> comparePubSymByAddrAndName </td>
           <td>(</td>
-          <td class="paramtype">const std::pair&lt; const CVSymbol *, const PublicSym32 * &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::pair&lt; const <a class="el" href="namespacellvm_1_1codeview.html#ac9ec40377c0de0d9cd25ad8270d6f8f2">CVSymbol</a> *, const <a class="el" href="classllvm_1_1codeview_1_1PublicSym32.html">PublicSym32</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>LS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::pair&lt; const CVSymbol *, const PublicSym32 * &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::pair&lt; const <a class="el" href="namespacellvm_1_1codeview.html#ac9ec40377c0de0d9cd25ad8270d6f8f2">CVSymbol</a> *, const <a class="el" href="classllvm_1_1codeview_1_1PublicSym32.html">PublicSym32</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>RS</em>&#160;</td>
         </tr>
         <tr>
@@ -173,7 +206,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static std::vector&lt; ulittle32_t &gt; computeAddrMap </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; CVSymbol &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="namespacellvm_1_1codeview.html#ac9ec40377c0de0d9cd25ad8270d6f8f2">CVSymbol</a> &gt;&#160;</td>
           <td class="paramname"><em>Records</em></td><td>)</td>
           <td></td>
         </tr>
@@ -190,7 +223,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GSIStreamBuilder_8cpp_source.html#l00245">245</a> of file <a class="el" href="GSIStreamBuilder_8cpp_source.html">GSIStreamBuilder.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="GSIStreamBuilder_8cpp_source.html#l00232">comparePubSymByAddrAndName()</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Error_8h_source.html#l00703">llvm::cantFail()</a>, <a class="el" href="GSIStreamBuilder_8cpp_source.html#l00232">comparePubSymByAddrAndName()</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>.</p>
 
 </div>
 </div>
@@ -204,7 +237,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool gsiRecordLess </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> gsiRecordLess </td>
           <td>(</td>
           <td class="paramtype">StringRef&#160;</td>
           <td class="paramname"><em>S1</em>, </td>
@@ -230,7 +263,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GSIStreamBuilder_8cpp_source.html#l00118">118</a> of file <a class="el" href="GSIStreamBuilder_8cpp_source.html">GSIStreamBuilder.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="GSIStreamBuilder_8cpp_source.html#l00113">isAsciiString()</a>, and <a class="el" href="MergeICmps_8cpp_source.html#l00928">memcmp</a>.</p>
+<p class="reference">References <a class="el" href="GSIStreamBuilder_8cpp_source.html#l00113">isAsciiString()</a>, <a class="el" href="Compiler_8h_source.html#l00191">LLVM_UNLIKELY</a>, and <a class="el" href="MergeICmps_8cpp_source.html#l00928">memcmp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="GSIStreamBuilder_8cpp_source.html#l00133">llvm::pdb::GSIHashStreamBuilder::finalizeBuckets()</a>.</p>
 
@@ -246,7 +279,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isAsciiString </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isAsciiString </td>
           <td>(</td>
           <td class="paramtype">StringRef&#160;</td>
           <td class="paramname"><em>S</em></td><td>)</td>
@@ -262,6 +295,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GSIStreamBuilder_8cpp_source.html#l00113">113</a> of file <a class="el" href="GSIStreamBuilder_8cpp_source.html">GSIStreamBuilder.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="CodeView_8h_source.html#l00144">llvm::codeview::C</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="GSIStreamBuilder_8cpp_source.html#l00118">gsiRecordLess()</a>.</p>
 
 </div>
@@ -276,15 +311,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Error writeRecords </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Error.html">Error</a> writeRecords </td>
           <td>(</td>
-          <td class="paramtype">BinaryStreamWriter &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BinaryStreamWriter.html">BinaryStreamWriter</a> &amp;&#160;</td>
           <td class="paramname"><em>Writer</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; CVSymbol &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="namespacellvm_1_1codeview.html#ac9ec40377c0de0d9cd25ad8270d6f8f2">CVSymbol</a> &gt;&#160;</td>
           <td class="paramname"><em>Records</em>&#160;</td>
         </tr>
         <tr>
@@ -302,12 +337,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GSIStreamBuilder_8cpp_source.html#l00306">306</a> of file <a class="el" href="GSIStreamBuilder_8cpp_source.html">GSIStreamBuilder.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="BinaryItemStream_8h_source.html#l00064">llvm::BinaryItemStream&lt; T, Traits &gt;::setItems()</a>, and <a class="el" href="BinaryStreamWriter_8cpp_source.html#l00061">llvm::BinaryStreamWriter::writeStreamRef()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:37 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

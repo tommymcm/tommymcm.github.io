@@ -73,7 +73,7 @@ $(function() {
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;llvm/Pass.h&quot;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;llvm/Transforms/IPO.h&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="IPO_8h.html">llvm/Transforms/IPO.h</a>&quot;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm.html">llvm</a>;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span>{<span class="comment"></span></div>
@@ -82,29 +82,34 @@ $(function() {
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/// There is no mechanism for ending a CGSCC pass manager once one is started.</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">/// This prevents extension points from having clear deterministic ordering</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/// when they are phrased as non-module passes.</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"></span><span class="keyword">class </span>BarrierNoop : <span class="keyword">public</span> ModulePass {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"></span><span class="keyword">class </span>BarrierNoop : <span class="keyword">public</span> <a class="code hl_class" href="classModulePass.html">ModulePass</a> {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keyword">static</span> <span class="keywordtype">char</span> ID; <span class="comment">// Pass identification.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keyword">static</span> <span class="keywordtype">char</span> <a class="code hl_enumeration" href="namespacellvm_1_1Intrinsic.html#a2bbee8c5fe6b399c136d84248090178b">ID</a>; <span class="comment">// Pass identification.</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  BarrierNoop() : ModulePass(ID) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  BarrierNoop() : <a class="code hl_class" href="classModulePass.html">ModulePass</a>(<a class="code hl_enumeration" href="namespacellvm_1_1Intrinsic.html#a2bbee8c5fe6b399c136d84248090178b">ID</a>) {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    initializeBarrierNoopPass(*PassRegistry::getPassRegistry());</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  }</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">bool</span> runOnModule(Module &amp;M)<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">bool</span> runOnModule(<a class="code hl_class" href="classllvm_1_1Module.html">Module</a> &amp;M)<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>ModulePass *llvm::createBarrierNoopPass() { <span class="keywordflow">return</span> <span class="keyword">new</span> BarrierNoop(); }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespacellvm.html#aaa0546121ccb6a6f3638d0d692dbb5f8">   42</a></span><a class="code hl_class" href="classModulePass.html">ModulePass</a> *<a class="code hl_function" href="namespacellvm.html#aaa0546121ccb6a6f3638d0d692dbb5f8">llvm::createBarrierNoopPass</a>() { <span class="keywordflow">return</span> <span class="keyword">new</span> BarrierNoop(); }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">char</span> BarrierNoop::ID = 0;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">char</span> <a class="code hl_enumeration" href="namespacellvm_1_1Intrinsic.html#a2bbee8c5fe6b399c136d84248090178b">BarrierNoop::ID</a> = 0;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><a class="code hl_function" href="AliasAnalysis_8cpp.html#a25a0004a37408852da56ee20c37e5a26">INITIALIZE_PASS</a>(BarrierNoop, <span class="stringliteral">&quot;barrier&quot;</span>, <span class="stringliteral">&quot;A No-Op Barrier Pass&quot;</span>,</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                <span class="keyword">false</span>, <span class="keyword">false</span>)</div>
 <div class="ttc" id="aAliasAnalysis_8cpp_html_a25a0004a37408852da56ee20c37e5a26"><div class="ttname"><a href="AliasAnalysis_8cpp.html#a25a0004a37408852da56ee20c37e5a26">INITIALIZE_PASS</a></div><div class="ttdeci">INITIALIZE_PASS(ExternalAAWrapperPass, &quot;external-aa&quot;, &quot;External Alias Analysis&quot;, false, true) ImmutablePass *llvm</div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysis_8cpp_source.html#l00739">AliasAnalysis.cpp:739</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
+<div class="ttc" id="aIPO_8h_html"><div class="ttname"><a href="IPO_8h.html">IPO.h</a></div></div>
+<div class="ttc" id="aclassModulePass_html"><div class="ttname"><a href="classModulePass.html">ModulePass</a></div></div>
+<div class="ttc" id="aclassllvm_1_1Module_html"><div class="ttname"><a href="classllvm_1_1Module.html">llvm::Module</a></div><div class="ttdoc">A Module instance is used to store all the information related to an LLVM module.</div><div class="ttdef"><b>Definition:</b> <a href="Module_8h_source.html#l00065">Module.h:65</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1Intrinsic_html_a2bbee8c5fe6b399c136d84248090178b"><div class="ttname"><a href="namespacellvm_1_1Intrinsic.html#a2bbee8c5fe6b399c136d84248090178b">llvm::Intrinsic::ID</a></div><div class="ttdeci">ID</div><div class="ttdef"><b>Definition:</b> <a href="Intrinsics_8h_source.html#l00036">Intrinsics.h:36</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysis_8h_source.html#l00056">AliasAnalysis.h:56</a></div></div>
+<div class="ttc" id="anamespacellvm_html_aaa0546121ccb6a6f3638d0d692dbb5f8"><div class="ttname"><a href="namespacellvm.html#aaa0546121ccb6a6f3638d0d692dbb5f8">llvm::createBarrierNoopPass</a></div><div class="ttdeci">ModulePass * createBarrierNoopPass()</div><div class="ttdoc">createBarrierNoopPass - This pass is purely a module pass barrier in a pass manager.</div><div class="ttdef"><b>Definition:</b> <a href="BarrierNoopPass_8cpp_source.html#l00042">BarrierNoopPass.cpp:42</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:40 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:29 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -123,7 +123,7 @@ $(function() {
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">/* another structure passed up and down to avoid zillions of parameters */</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">struct </span>match {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">struct </span><a class="code hl_function" href="namespacellvm_1_1PatternMatch.html#a25d956d9e0beadd47ce4bc255dfa811d">match</a> {</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keyword">struct </span><a class="code hl_struct" href="structre__guts.html">re_guts</a> *g;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keywordtype">int</span> eflags;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <a class="code hl_struct" href="structllvm__regmatch__t.html">llvm_regmatch_t</a> *pmatch;  <span class="comment">/* [nsub+1] (0 element unused) */</span></div>
@@ -189,8 +189,8 @@ $(function() {
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>{</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *endp;</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keywordtype">size_t</span> i;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keyword">struct </span>match mv;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keyword">struct </span>match *m = &amp;mv;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keyword">struct </span><a class="code hl_function" href="namespacellvm_1_1PatternMatch.html#a25d956d9e0beadd47ce4bc255dfa811d">match</a> mv;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keyword">struct </span><a class="code hl_function" href="namespacellvm_1_1PatternMatch.html#a25d956d9e0beadd47ce4bc255dfa811d">match</a> *m = &amp;mv;</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *dp;</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a> gf = g-&gt;<a class="code hl_variable" href="structre__guts.html#a4287da920739960031eaa2be286a299d">firststate</a>+1; <span class="comment">/* +1 for OEND */</span></div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a> gl = g-&gt;<a class="code hl_variable" href="structre__guts.html#a82caab51fe3d54e88b8015312f2a4e38">laststate</a>;</div>
@@ -1068,7 +1068,7 @@ $(function() {
 <div class="line"><a id="l01013" name="l01013"></a><span class="lineno"> 1013</span>{</div>
 <div class="line"><a id="l01014" name="l01014"></a><span class="lineno"> 1014</span>  <span class="keyword">static</span> <span class="keywordtype">char</span> pbuf[10];</div>
 <div class="line"><a id="l01015" name="l01015"></a><span class="lineno"> 1015</span> </div>
-<div class="line"><a id="l01016" name="l01016"></a><span class="lineno"> 1016</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacellvm_1_1sys_1_1locale.html#a5c70b7ac5cc4bb58cd22ad49147c29e5">isPrint</a>(ch) || ch == <span class="charliteral">&#39; &#39;</span>)</div>
+<div class="line"><a id="l01016" name="l01016"></a><span class="lineno"> 1016</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacellvm_1_1sys_1_1locale.html#ad17f6a9a55a75115ee7099f6c615b336">isPrint</a>(ch) || ch == <span class="charliteral">&#39; &#39;</span>)</div>
 <div class="line"><a id="l01017" name="l01017"></a><span class="lineno"> 1017</span>    (void)snprintf(pbuf, <span class="keyword">sizeof</span> pbuf, <span class="stringliteral">&quot;%c&quot;</span>, ch);</div>
 <div class="line"><a id="l01018" name="l01018"></a><span class="lineno"> 1018</span>  <span class="keywordflow">else</span></div>
 <div class="line"><a id="l01019" name="l01019"></a><span class="lineno"> 1019</span>    (<span class="keywordtype">void</span>)snprintf(pbuf, <span class="keyword">sizeof</span> pbuf, <span class="stringliteral">&quot;\\%o&quot;</span>, ch);</div>
@@ -1090,7 +1090,8 @@ $(function() {
 <div class="ttc" id="aDeadArgumentElimination_8cpp_html_aa5bfc84fa71b9e3477e24efecb60fae5"><div class="ttname"><a href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a></div><div class="ttdeci">assert(!RetTy-&gt;isVoidTy() &amp;&amp;&quot;void type has no subtype&quot;)</div></div>
 <div class="ttc" id="aDeadArgumentElimination_8cpp_html_ac09a30d47dd36dfe05dda91e8d67e92f"><div class="ttname"><a href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a></div><div class="ttdeci">if(StructType *STy=dyn_cast&lt; StructType &gt;(RetTy)) return STy -&gt; getElementType(Idx)</div></div>
 <div class="ttc" id="aMergeICmps_8cpp_html_affd23ab4a2fbb796128b383986b7286f"><div class="ttname"><a href="MergeICmps_8cpp.html#affd23ab4a2fbb796128b383986b7286f">memcmp</a></div><div class="ttdeci">Merge contiguous icmps into a memcmp</div><div class="ttdef"><b>Definition:</b> <a href="MergeICmps_8cpp_source.html#l00928">MergeICmps.cpp:928</a></div></div>
-<div class="ttc" id="anamespacellvm_1_1sys_1_1locale_html_a5c70b7ac5cc4bb58cd22ad49147c29e5"><div class="ttname"><a href="namespacellvm_1_1sys_1_1locale.html#a5c70b7ac5cc4bb58cd22ad49147c29e5">llvm::sys::locale::isPrint</a></div><div class="ttdeci">bool isPrint(int UCS)</div><div class="ttdef"><b>Definition:</b> <a href="Locale_8cpp_source.html#l00013">Locale.cpp:13</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1PatternMatch_html_a25d956d9e0beadd47ce4bc255dfa811d"><div class="ttname"><a href="namespacellvm_1_1PatternMatch.html#a25d956d9e0beadd47ce4bc255dfa811d">llvm::PatternMatch::match</a></div><div class="ttdeci">bool match(Val *V, const Pattern &amp;P)</div><div class="ttdef"><b>Definition:</b> <a href="PatternMatch_8h_source.html#l00047">PatternMatch.h:47</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1sys_1_1locale_html_ad17f6a9a55a75115ee7099f6c615b336"><div class="ttname"><a href="namespacellvm_1_1sys_1_1locale.html#ad17f6a9a55a75115ee7099f6c615b336">llvm::sys::locale::isPrint</a></div><div class="ttdeci">bool isPrint(int c)</div><div class="ttdef"><b>Definition:</b> <a href="Locale_8cpp_source.html#l00013">Locale.cpp:13</a></div></div>
 <div class="ttc" id="aregex2_8h_html_a06b705baf08297be667616dcfd9b63a6"><div class="ttname"><a href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a></div><div class="ttdeci">unsigned long sop</div><div class="ttdef"><b>Definition:</b> <a href="regex2_8h_source.html#l00068">regex2.h:68</a></div></div>
 <div class="ttc" id="aregex2_8h_html_a0eaed4c74d1e8101dbe98aa9bb336697"><div class="ttname"><a href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a></div><div class="ttdeci">#define OPND(n)</div><div class="ttdef"><b>Definition:</b> <a href="regex2_8h_source.html#l00074">regex2.h:74</a></div></div>
 <div class="ttc" id="aregex2_8h_html_a1934207945a1bf71e1355e13cebc601a"><div class="ttname"><a href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a></div><div class="ttdeci">long sopno</div><div class="ttdef"><b>Definition:</b> <a href="regex2_8h_source.html#l00069">regex2.h:69</a></div></div>
@@ -1166,7 +1167,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:26 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -58,47 +58,47 @@ $(function() {
   <div class="headertitle"><div class="title">DWARFContext.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/DebugInfo/DWARF/DWARFContext.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="DWARFContext_8h_source.html">llvm/DebugInfo/DWARF/DWARFContext.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallString.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringSwitch.h&quot;</code><br />
 <code>#include &quot;llvm/BinaryFormat/Dwarf.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFAcceleratorTable.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFCompileUnit.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFDebugAbbrev.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFDebugAddr.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFDebugArangeSet.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFDebugAranges.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFDebugFrame.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFDebugLine.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFDebugLoc.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFDebugMacro.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFDebugPubTable.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFDebugRangeList.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFDebugRnglists.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFDie.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFFormValue.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFGdbIndex.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFSection.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFUnitIndex.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/DWARF/DWARFVerifier.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFAcceleratorTable_8h_source.html">llvm/DebugInfo/DWARF/DWARFAcceleratorTable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFCompileUnit_8h_source.html">llvm/DebugInfo/DWARF/DWARFCompileUnit.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFDebugAbbrev_8h_source.html">llvm/DebugInfo/DWARF/DWARFDebugAbbrev.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFDebugAddr_8h_source.html">llvm/DebugInfo/DWARF/DWARFDebugAddr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFDebugArangeSet_8h_source.html">llvm/DebugInfo/DWARF/DWARFDebugArangeSet.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFDebugAranges_8h_source.html">llvm/DebugInfo/DWARF/DWARFDebugAranges.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFDebugFrame_8h_source.html">llvm/DebugInfo/DWARF/DWARFDebugFrame.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFDebugLine_8h_source.html">llvm/DebugInfo/DWARF/DWARFDebugLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFDebugLoc_8h_source.html">llvm/DebugInfo/DWARF/DWARFDebugLoc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFDebugMacro_8h_source.html">llvm/DebugInfo/DWARF/DWARFDebugMacro.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFDebugPubTable_8h_source.html">llvm/DebugInfo/DWARF/DWARFDebugPubTable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFDebugRangeList_8h_source.html">llvm/DebugInfo/DWARF/DWARFDebugRangeList.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFDebugRnglists_8h_source.html">llvm/DebugInfo/DWARF/DWARFDebugRnglists.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFDie_8h_source.html">llvm/DebugInfo/DWARF/DWARFDie.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFFormValue_8h_source.html">llvm/DebugInfo/DWARF/DWARFFormValue.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFGdbIndex_8h_source.html">llvm/DebugInfo/DWARF/DWARFGdbIndex.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFSection_8h_source.html">llvm/DebugInfo/DWARF/DWARFSection.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFUnitIndex_8h_source.html">llvm/DebugInfo/DWARF/DWARFUnitIndex.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DWARFVerifier_8h_source.html">llvm/DebugInfo/DWARF/DWARFVerifier.h</a>&quot;</code><br />
 <code>#include &quot;llvm/MC/MCRegisterInfo.h&quot;</code><br />
 <code>#include &quot;llvm/Object/Decompressor.h&quot;</code><br />
 <code>#include &quot;llvm/Object/MachO.h&quot;</code><br />
 <code>#include &quot;llvm/Object/ObjectFile.h&quot;</code><br />
 <code>#include &quot;llvm/Object/RelocationResolver.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/DataExtractor.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Error.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Format.h&quot;</code><br />
-<code>#include &quot;llvm/Support/LEB128.h&quot;</code><br />
-<code>#include &quot;llvm/Support/MemoryBuffer.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Path.h&quot;</code><br />
-<code>#include &quot;llvm/Support/TargetRegistry.h&quot;</code><br />
-<code>#include &quot;llvm/Support/WithColor.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataExtractor_8h_source.html">llvm/Support/DataExtractor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Error_8h_source.html">llvm/Support/Error.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Format_8h_source.html">llvm/Support/Format.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LEB128_8h_source.html">llvm/Support/LEB128.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MemoryBuffer_8h_source.html">llvm/Support/MemoryBuffer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Path_8h_source.html">llvm/Support/Path.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetRegistry_8h_source.html">llvm/Support/TargetRegistry.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="WithColor_8h_source.html">llvm/Support/WithColor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;deque&gt;</code><br />
@@ -111,55 +111,56 @@ Include dependency graph for DWARFContext.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="DWARFContext_8cpp__incl.png" border="0" usemap="#alib_2DebugInfo_2DWARF_2DWARFContext_8cpp" alt=""/></div>
 <map name="alib_2DebugInfo_2DWARF_2DWARFContext_8cpp" id="alib_2DebugInfo_2DWARF_2DWARFContext_8cpp">
-<area shape="rect" title=" " alt="" coords="4760,5,4921,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,180,133"/>
-<area shape="rect" title=" " alt="" coords="205,101,367,126"/>
-<area shape="rect" title=" " alt="" coords="391,101,565,126"/>
-<area shape="rect" title=" " alt="" coords="589,101,764,126"/>
-<area shape="rect" title=" " alt="" coords="789,101,946,126"/>
-<area shape="rect" title=" " alt="" coords="970,101,1149,126"/>
-<area shape="rect" title=" " alt="" coords="1173,101,1370,126"/>
-<area shape="rect" title=" " alt="" coords="1394,93,1586,133"/>
-<area shape="rect" title=" " alt="" coords="1611,93,1785,133"/>
-<area shape="rect" title=" " alt="" coords="1809,93,1984,133"/>
-<area shape="rect" title=" " alt="" coords="2008,93,2183,133"/>
-<area shape="rect" title=" " alt="" coords="2207,93,2402,133"/>
-<area shape="rect" title=" " alt="" coords="2426,93,2607,133"/>
-<area shape="rect" title=" " alt="" coords="2632,93,2807,133"/>
-<area shape="rect" title=" " alt="" coords="2831,93,3005,133"/>
-<area shape="rect" title=" " alt="" coords="3029,93,3204,133"/>
-<area shape="rect" title=" " alt="" coords="3228,93,3403,133"/>
-<area shape="rect" title=" " alt="" coords="3427,93,3614,133"/>
-<area shape="rect" title=" " alt="" coords="3638,93,3830,133"/>
-<area shape="rect" title=" " alt="" coords="3855,93,4035,133"/>
-<area shape="rect" title=" " alt="" coords="4059,93,4233,133"/>
-<area shape="rect" title=" " alt="" coords="4257,93,4432,133"/>
-<area shape="rect" title=" " alt="" coords="4456,93,4631,133"/>
-<area shape="rect" title=" " alt="" coords="4655,93,4829,133"/>
-<area shape="rect" title=" " alt="" coords="4853,93,5028,133"/>
-<area shape="rect" title=" " alt="" coords="5052,93,5227,133"/>
-<area shape="rect" title=" " alt="" coords="5251,101,5443,126"/>
-<area shape="rect" title=" " alt="" coords="5468,101,5675,126"/>
-<area shape="rect" title=" " alt="" coords="5699,101,5857,126"/>
-<area shape="rect" title=" " alt="" coords="5882,101,6061,126"/>
-<area shape="rect" title=" " alt="" coords="6085,101,6324,126"/>
-<area shape="rect" title=" " alt="" coords="6349,101,6519,126"/>
-<area shape="rect" title=" " alt="" coords="6543,101,6754,126"/>
-<area shape="rect" title=" " alt="" coords="6779,101,6929,126"/>
-<area shape="rect" title=" " alt="" coords="6953,101,7120,126"/>
-<area shape="rect" title=" " alt="" coords="7144,101,7313,126"/>
-<area shape="rect" title=" " alt="" coords="7338,101,7551,126"/>
-<area shape="rect" title=" " alt="" coords="7575,101,7725,126"/>
-<area shape="rect" title=" " alt="" coords="7749,101,7962,126"/>
-<area shape="rect" title=" " alt="" coords="7986,101,8170,126"/>
-<area shape="rect" title=" " alt="" coords="8195,101,8401,126"/>
-<area shape="rect" title=" " alt="" coords="8426,101,8511,126"/>
-<area shape="rect" title=" " alt="" coords="8535,101,8602,126"/>
-<area shape="rect" title=" " alt="" coords="8627,101,8689,126"/>
-<area shape="rect" title=" " alt="" coords="8714,101,8765,126"/>
-<area shape="rect" title=" " alt="" coords="8789,101,8847,126"/>
-<area shape="rect" title=" " alt="" coords="8872,101,8932,126"/>
-<area shape="rect" title=" " alt="" coords="8956,101,9019,126"/>
+<area shape="rect" title=" " alt="" coords="3476,5,3637,45"/>
+<area shape="rect" href="DWARFContext_8h.html" title=" " alt="" coords="2646,93,2821,133"/>
+<area shape="rect" title=" " alt="" coords="3078,277,3251,302"/>
+<area shape="rect" title=" " alt="" coords="3078,445,3253,471"/>
+<area shape="rect" title=" " alt="" coords="3455,519,3612,544"/>
+<area shape="rect" href="DWARFAcceleratorTable_8h.html" title=" " alt="" coords="998,181,1190,221"/>
+<area shape="rect" title=" " alt="" coords="398,365,595,390"/>
+<area shape="rect" href="DWARFFormValue_8h.html" title=" " alt="" coords="868,269,1042,309"/>
+<area shape="rect" title=" " alt="" coords="1503,445,1570,471"/>
+<area shape="rect" title=" " alt="" coords="3292,365,3352,390"/>
+<area shape="rect" href="DWARFCompileUnit_8h.html" title=" " alt="" coords="2276,269,2450,309"/>
+<area shape="rect" href="DWARFUnitIndex_8h.html" title=" " alt="" coords="2174,357,2349,397"/>
+<area shape="rect" href="DataExtractor_8h.html" title=" " alt="" coords="2583,445,2794,471"/>
+<area shape="rect" href="DWARFDebugAbbrev_8h.html" title=" " alt="" coords="1316,181,1490,221"/>
+<area shape="rect" title=" " alt="" coords="1168,277,1219,302"/>
+<area shape="rect" title=" " alt="" coords="1308,365,1370,390"/>
+<area shape="rect" href="DWARFDebugAranges_8h.html" title=" " alt="" coords="1446,269,1627,309"/>
+<area shape="rect" href="DWARFDebugFrame_8h.html" title=" " alt="" coords="3076,181,3250,221"/>
+<area shape="rect" href="Error_8h.html" title=" " alt="" coords="3745,277,3896,302"/>
+<area shape="rect" title=" " alt="" coords="3748,445,3911,471"/>
+<area shape="rect" href="Format_8h.html" title=" " alt="" coords="3868,365,4034,390"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="4110,365,4317,390"/>
+<area shape="rect" title=" " alt="" coords="4376,445,4435,471"/>
+<area shape="rect" title=" " alt="" coords="4595,365,4680,390"/>
+<area shape="rect" href="DWARFDebugLine_8h.html" title=" " alt="" coords="1924,181,2098,221"/>
+<area shape="rect" href="DWARFDebugLoc_8h.html" title=" " alt="" coords="2476,357,2650,397"/>
+<area shape="rect" href="DWARFDebugMacro_8h.html" title=" " alt="" coords="2726,357,2901,397"/>
+<area shape="rect" href="DWARFDie_8h.html" title=" " alt="" coords="170,181,345,221"/>
+<area shape="rect" href="DWARFGdbIndex_8h.html" title=" " alt="" coords="3276,269,3450,309"/>
+<area shape="rect" href="DWARFSection_8h.html" title=" " alt="" coords="4294,181,4469,221"/>
+<area shape="rect" title=" " alt="" coords="3376,189,3555,214"/>
+<area shape="rect" title=" " alt="" coords="3580,189,3642,214"/>
+<area shape="rect" title=" " alt="" coords="4696,101,4875,126"/>
+<area shape="rect" href="DWARFDebugAddr_8h.html" title=" " alt="" coords="748,181,922,221"/>
+<area shape="rect" href="DWARFDebugArangeSet_8h.html" title=" " alt="" coords="1752,269,1947,309"/>
+<area shape="rect" href="DWARFDebugPubTable_8h.html" title=" " alt="" coords="35,269,222,309"/>
+<area shape="rect" href="DWARFDebugRangeList_8h.html" title=" " alt="" coords="550,269,742,309"/>
+<area shape="rect" href="DWARFDebugRnglists_8h.html" title=" " alt="" coords="430,181,610,221"/>
+<area shape="rect" href="DWARFVerifier_8h.html" title=" " alt="" coords="921,93,1096,133"/>
+<area shape="rect" title=" " alt="" coords="4899,101,5091,126"/>
+<area shape="rect" title=" " alt="" coords="5116,101,5322,126"/>
+<area shape="rect" title=" " alt="" coords="5346,101,5505,126"/>
+<area shape="rect" title=" " alt="" coords="5529,101,5768,126"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="5792,101,5963,126"/>
+<area shape="rect" href="LEB128_8h.html" title=" " alt="" coords="4124,101,4293,126"/>
+<area shape="rect" href="MemoryBuffer_8h.html" title=" " alt="" coords="3427,365,3640,390"/>
+<area shape="rect" href="Path_8h.html" title=" " alt="" coords="5987,101,6136,126"/>
+<area shape="rect" href="TargetRegistry_8h.html" title=" " alt="" coords="4646,277,4859,302"/>
+<area shape="rect" href="WithColor_8h.html" title=" " alt="" coords="4544,445,4728,471"/>
+<area shape="rect" title=" " alt="" coords="2529,189,2696,214"/>
 </map>
 </div>
 </div>
@@ -178,46 +179,46 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ad4aca75bdf1788325390ebf0ea144651"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#ad4aca75bdf1788325390ebf0ea144651">DWARFLineTable</a> = DWARFDebugLine::LineTable</td></tr>
+<tr class="memitem:ad4aca75bdf1788325390ebf0ea144651"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#ad4aca75bdf1788325390ebf0ea144651">DWARFLineTable</a> = <a class="el" href="structllvm_1_1DWARFDebugLine_1_1LineTable.html">DWARFDebugLine::LineTable</a></td></tr>
 <tr class="separator:ad4aca75bdf1788325390ebf0ea144651"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a997a929fee1b458afea2d37df8d3530a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a997a929fee1b458afea2d37df8d3530a">FileLineInfoKind</a> = DILineInfoSpecifier::FileLineInfoKind</td></tr>
+<tr class="memitem:a997a929fee1b458afea2d37df8d3530a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a997a929fee1b458afea2d37df8d3530a">FileLineInfoKind</a> = <a class="el" href="structllvm_1_1DILineInfoSpecifier.html#a4d01b170267924ab4225e3c93ad666c3">DILineInfoSpecifier::FileLineInfoKind</a></td></tr>
 <tr class="separator:a997a929fee1b458afea2d37df8d3530a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a851d8dd3228578898dd57e2907e6cbeb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a851d8dd3228578898dd57e2907e6cbeb">FunctionNameKind</a> = DILineInfoSpecifier::FunctionNameKind</td></tr>
+<tr class="memitem:a851d8dd3228578898dd57e2907e6cbeb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a851d8dd3228578898dd57e2907e6cbeb">FunctionNameKind</a> = <a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870">DILineInfoSpecifier::FunctionNameKind</a></td></tr>
 <tr class="separator:a851d8dd3228578898dd57e2907e6cbeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a327e7533f645b73ffff89eb349349be4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a327e7533f645b73ffff89eb349349be4">ContributionCollection</a> = std::vector&lt; Optional&lt; StrOffsetsContributionDescriptor &gt; &gt;</td></tr>
+<tr class="memitem:a327e7533f645b73ffff89eb349349be4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a327e7533f645b73ffff89eb349349be4">ContributionCollection</a> = std::vector&lt; <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="structllvm_1_1StrOffsetsContributionDescriptor.html">StrOffsetsContributionDescriptor</a> &gt; &gt;</td></tr>
 <tr class="separator:a327e7533f645b73ffff89eb349349be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2aab28bc62e4c45e2fee753cdeb035dc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a2aab28bc62e4c45e2fee753cdeb035dc">dumpUUID</a> (raw_ostream &amp;OS, const ObjectFile &amp;Obj)</td></tr>
+<tr class="memitem:a2aab28bc62e4c45e2fee753cdeb035dc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a2aab28bc62e4c45e2fee753cdeb035dc">dumpUUID</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS, const ObjectFile &amp;Obj)</td></tr>
 <tr class="memdesc:a2aab28bc62e4c45e2fee753cdeb035dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump the UUID load command.  <a href="DWARFContext_8cpp.html#a2aab28bc62e4c45e2fee753cdeb035dc">More...</a><br /></td></tr>
 <tr class="separator:a2aab28bc62e4c45e2fee753cdeb035dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0e4d3e8a5083b344861968f9d20c93a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="DWARFContext_8cpp.html#a327e7533f645b73ffff89eb349349be4">ContributionCollection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#ac0e4d3e8a5083b344861968f9d20c93a">collectContributionData</a> (DWARFContext::unit_iterator_range Units)</td></tr>
+<tr class="memitem:ac0e4d3e8a5083b344861968f9d20c93a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="DWARFContext_8cpp.html#a327e7533f645b73ffff89eb349349be4">ContributionCollection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#ac0e4d3e8a5083b344861968f9d20c93a">collectContributionData</a> (<a class="el" href="classllvm_1_1DWARFContext.html#a283632a1efaee08b12853486fe1dda07">DWARFContext::unit_iterator_range</a> Units)</td></tr>
 <tr class="separator:ac0e4d3e8a5083b344861968f9d20c93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9c7448d8dcac9baf7922d51f6595232"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#aa9c7448d8dcac9baf7922d51f6595232">dumpDWARFv5StringOffsetsSection</a> (raw_ostream &amp;OS, StringRef SectionName, const DWARFObject &amp;Obj, const DWARFSection &amp;StringOffsetsSection, StringRef StringSection, DWARFContext::unit_iterator_range Units, bool LittleEndian)</td></tr>
+<tr class="memitem:aa9c7448d8dcac9baf7922d51f6595232"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#aa9c7448d8dcac9baf7922d51f6595232">dumpDWARFv5StringOffsetsSection</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS, StringRef <a class="el" href="structllvm_1_1SectionName.html">SectionName</a>, const <a class="el" href="classllvm_1_1DWARFObject.html">DWARFObject</a> &amp;Obj, const <a class="el" href="structllvm_1_1DWARFSection.html">DWARFSection</a> &amp;StringOffsetsSection, StringRef StringSection, <a class="el" href="classllvm_1_1DWARFContext.html#a283632a1efaee08b12853486fe1dda07">DWARFContext::unit_iterator_range</a> Units, <a class="el" href="classbool.html">bool</a> LittleEndian)</td></tr>
 <tr class="separator:aa9c7448d8dcac9baf7922d51f6595232"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ce2e0de53b8989b4696c939bbab3605"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a7ce2e0de53b8989b4696c939bbab3605">dumpStringOffsetsSection</a> (raw_ostream &amp;OS, StringRef SectionName, const DWARFObject &amp;Obj, const DWARFSection &amp;StringOffsetsSection, StringRef StringSection, DWARFContext::unit_iterator_range Units, bool LittleEndian, unsigned MaxVersion)</td></tr>
+<tr class="memitem:a7ce2e0de53b8989b4696c939bbab3605"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a7ce2e0de53b8989b4696c939bbab3605">dumpStringOffsetsSection</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS, StringRef <a class="el" href="structllvm_1_1SectionName.html">SectionName</a>, const <a class="el" href="classllvm_1_1DWARFObject.html">DWARFObject</a> &amp;Obj, const <a class="el" href="structllvm_1_1DWARFSection.html">DWARFSection</a> &amp;StringOffsetsSection, StringRef StringSection, <a class="el" href="classllvm_1_1DWARFContext.html#a283632a1efaee08b12853486fe1dda07">DWARFContext::unit_iterator_range</a> Units, <a class="el" href="classbool.html">bool</a> LittleEndian, <a class="el" href="classunsigned.html">unsigned</a> MaxVersion)</td></tr>
 <tr class="separator:a7ce2e0de53b8989b4696c939bbab3605"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad9651c88d362ae11ea69508451b3ae6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#aad9651c88d362ae11ea69508451b3ae6">dumpAddrSection</a> (raw_ostream &amp;OS, DWARFDataExtractor &amp;AddrData, DIDumpOptions DumpOpts, uint16_t Version, uint8_t AddrSize)</td></tr>
+<tr class="memitem:aad9651c88d362ae11ea69508451b3ae6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#aad9651c88d362ae11ea69508451b3ae6">dumpAddrSection</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS, <a class="el" href="classllvm_1_1DWARFDataExtractor.html">DWARFDataExtractor</a> &amp;AddrData, <a class="el" href="structllvm_1_1DIDumpOptions.html">DIDumpOptions</a> DumpOpts, uint16_t Version, uint8_t AddrSize)</td></tr>
 <tr class="separator:aad9651c88d362ae11ea69508451b3ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf7747e7643164d3ee36547b04974925"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#aaf7747e7643164d3ee36547b04974925">dumpRnglistsSection</a> (raw_ostream &amp;OS, DWARFDataExtractor &amp;rnglistData, llvm::function_ref&lt; Optional&lt; object::SectionedAddress &gt;(uint32_t)&gt; LookupPooledAddress, DIDumpOptions DumpOpts)</td></tr>
+<tr class="memitem:aaf7747e7643164d3ee36547b04974925"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#aaf7747e7643164d3ee36547b04974925">dumpRnglistsSection</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS, <a class="el" href="classllvm_1_1DWARFDataExtractor.html">DWARFDataExtractor</a> &amp;rnglistData, llvm::function_ref&lt; <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; object::SectionedAddress &gt;(<a class="el" href="classuint32__t.html">uint32_t</a>)&gt; LookupPooledAddress, <a class="el" href="structllvm_1_1DIDumpOptions.html">DIDumpOptions</a> DumpOpts)</td></tr>
 <tr class="separator:aaf7747e7643164d3ee36547b04974925"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99e76623c40508790b59c633688212ae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a99e76623c40508790b59c633688212ae">dumpLoclistsSection</a> (raw_ostream &amp;OS, DIDumpOptions DumpOpts, DWARFDataExtractor Data, const MCRegisterInfo *MRI, Optional&lt; uint64_t &gt; DumpOffset)</td></tr>
+<tr class="memitem:a99e76623c40508790b59c633688212ae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a99e76623c40508790b59c633688212ae">dumpLoclistsSection</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS, <a class="el" href="structllvm_1_1DIDumpOptions.html">DIDumpOptions</a> DumpOpts, <a class="el" href="classllvm_1_1DWARFDataExtractor.html">DWARFDataExtractor</a> Data, const MCRegisterInfo *MRI, <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; uint64_t &gt; DumpOffset)</td></tr>
 <tr class="separator:a99e76623c40508790b59c633688212ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab030efd905f06c216a1ab39286079498"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab030efd905f06c216a1ab39286079498"><td class="memTemplItemLeft" align="right" valign="top">static T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#ab030efd905f06c216a1ab39286079498">getAccelTable</a> (std::unique_ptr&lt; T &gt; &amp;Cache, const DWARFObject &amp;Obj, const DWARFSection &amp;Section, StringRef StringSection, bool IsLittleEndian)</td></tr>
+<tr class="memitem:ab030efd905f06c216a1ab39286079498"><td class="memTemplItemLeft" align="right" valign="top">static T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#ab030efd905f06c216a1ab39286079498">getAccelTable</a> (std::unique_ptr&lt; T &gt; &amp;Cache, const <a class="el" href="classllvm_1_1DWARFObject.html">DWARFObject</a> &amp;Obj, const <a class="el" href="structllvm_1_1DWARFSection.html">DWARFSection</a> &amp;Section, StringRef StringSection, <a class="el" href="classbool.html">bool</a> IsLittleEndian)</td></tr>
 <tr class="separator:ab030efd905f06c216a1ab39286079498"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47c2105aa144e31be5aaa90925246495"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a47c2105aa144e31be5aaa90925246495">getFunctionNameAndStartLineForAddress</a> (DWARFCompileUnit *CU, uint64_t Address, <a class="el" href="DWARFContext_8cpp.html#a851d8dd3228578898dd57e2907e6cbeb">FunctionNameKind</a> Kind, std::string &amp;FunctionName, uint32_t &amp;StartLine)</td></tr>
+<tr class="memitem:a47c2105aa144e31be5aaa90925246495"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a47c2105aa144e31be5aaa90925246495">getFunctionNameAndStartLineForAddress</a> (<a class="el" href="classllvm_1_1DWARFCompileUnit.html">DWARFCompileUnit</a> *CU, uint64_t Address, <a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870">FunctionNameKind</a> Kind, std::string &amp;FunctionName, <a class="el" href="classuint32__t.html">uint32_t</a> &amp;StartLine)</td></tr>
 <tr class="memdesc:a47c2105aa144e31be5aaa90925246495"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO: change input parameter from "uint64_t Address" into "SectionedAddress Address".  <a href="DWARFContext_8cpp.html#a47c2105aa144e31be5aaa90925246495">More...</a><br /></td></tr>
 <tr class="separator:a47c2105aa144e31be5aaa90925246495"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1abb56196dcc9369531614fe93e2f407"><td class="memItemLeft" align="right" valign="top">static Optional&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a1abb56196dcc9369531614fe93e2f407">getTypeSize</a> (DWARFDie Type, uint64_t PointerSize)</td></tr>
+<tr class="memitem:a1abb56196dcc9369531614fe93e2f407"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#a1abb56196dcc9369531614fe93e2f407">getTypeSize</a> (<a class="el" href="classllvm_1_1DWARFDie.html">DWARFDie</a> <a class="el" href="classllvm_1_1Type.html">Type</a>, uint64_t PointerSize)</td></tr>
 <tr class="separator:a1abb56196dcc9369531614fe93e2f407"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afad290ef98433590fd6e1ee48924d8e7"><td class="memItemLeft" align="right" valign="top">static Error&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#afad290ef98433590fd6e1ee48924d8e7">createError</a> (const Twine &amp;Reason, llvm::Error E)</td></tr>
+<tr class="memitem:afad290ef98433590fd6e1ee48924d8e7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Error.html">Error</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#afad290ef98433590fd6e1ee48924d8e7">createError</a> (const Twine &amp;Reason, <a class="el" href="classllvm_1_1Error.html">llvm::Error</a> E)</td></tr>
 <tr class="separator:afad290ef98433590fd6e1ee48924d8e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaca2a6196a0b153d686419f0fd252e91"><td class="memItemLeft" align="right" valign="top">static Expected&lt; <a class="el" href="structSymInfo.html">SymInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#aaca2a6196a0b153d686419f0fd252e91">getSymbolInfo</a> (const object::ObjectFile &amp;Obj, const RelocationRef &amp;Reloc, const LoadedObjectInfo *L, std::map&lt; SymbolRef, <a class="el" href="structSymInfo.html">SymInfo</a> &gt; &amp;Cache)</td></tr>
+<tr class="memitem:aaca2a6196a0b153d686419f0fd252e91"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Expected.html">Expected</a>&lt; <a class="el" href="structSymInfo.html">SymInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#aaca2a6196a0b153d686419f0fd252e91">getSymbolInfo</a> (const object::ObjectFile &amp;Obj, const RelocationRef &amp;Reloc, const <a class="el" href="classllvm_1_1LoadedObjectInfo.html">LoadedObjectInfo</a> *L, std::map&lt; SymbolRef, <a class="el" href="structSymInfo.html">SymInfo</a> &gt; &amp;Cache)</td></tr>
 <tr class="memdesc:aaca2a6196a0b153d686419f0fd252e91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the address of symbol relocation used against and a section index.  <a href="DWARFContext_8cpp.html#aaca2a6196a0b153d686419f0fd252e91">More...</a><br /></td></tr>
 <tr class="separator:aaca2a6196a0b153d686419f0fd252e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae415bc5251a1c0a2bd01a1e7efaa6828"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#ae415bc5251a1c0a2bd01a1e7efaa6828">isRelocScattered</a> (const object::ObjectFile &amp;Obj, const RelocationRef &amp;Reloc)</td></tr>
+<tr class="memitem:ae415bc5251a1c0a2bd01a1e7efaa6828"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DWARFContext_8cpp.html#ae415bc5251a1c0a2bd01a1e7efaa6828">isRelocScattered</a> (const object::ObjectFile &amp;Obj, const RelocationRef &amp;Reloc)</td></tr>
 <tr class="separator:ae415bc5251a1c0a2bd01a1e7efaa6828"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -245,7 +246,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="DWARFContext_8cpp.html#a327e7533f645b73ffff89eb349349be4">ContributionCollection</a> =  std::vector&lt;Optional&lt;StrOffsetsContributionDescriptor&gt; &gt;</td>
+          <td class="memname">using <a class="el" href="DWARFContext_8cpp.html#a327e7533f645b73ffff89eb349349be4">ContributionCollection</a> =  std::vector&lt;<a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt;<a class="el" href="structllvm_1_1StrOffsetsContributionDescriptor.html">StrOffsetsContributionDescriptor</a>&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -261,7 +262,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="DWARFContext_8cpp.html#ad4aca75bdf1788325390ebf0ea144651">DWARFLineTable</a> =  DWARFDebugLine::LineTable</td>
+          <td class="memname">using <a class="el" href="DWARFContext_8cpp.html#ad4aca75bdf1788325390ebf0ea144651">DWARFLineTable</a> =  <a class="el" href="structllvm_1_1DWARFDebugLine_1_1LineTable.html">DWARFDebugLine::LineTable</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -277,7 +278,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="DWARFContext_8cpp.html#a997a929fee1b458afea2d37df8d3530a">FileLineInfoKind</a> =  DILineInfoSpecifier::FileLineInfoKind</td>
+          <td class="memname">using <a class="el" href="structllvm_1_1DILineInfoSpecifier.html#a4d01b170267924ab4225e3c93ad666c3">FileLineInfoKind</a> =  <a class="el" href="structllvm_1_1DILineInfoSpecifier.html#a4d01b170267924ab4225e3c93ad666c3">DILineInfoSpecifier::FileLineInfoKind</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -293,7 +294,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="DWARFContext_8cpp.html#a851d8dd3228578898dd57e2907e6cbeb">FunctionNameKind</a> =  DILineInfoSpecifier::FunctionNameKind</td>
+          <td class="memname">using <a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870">FunctionNameKind</a> =  <a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870">DILineInfoSpecifier::FunctionNameKind</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -315,7 +316,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="DWARFContext_8cpp.html#a327e7533f645b73ffff89eb349349be4">ContributionCollection</a> collectContributionData </td>
           <td>(</td>
-          <td class="paramtype">DWARFContext::unit_iterator_range&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DWARFContext.html#a283632a1efaee08b12853486fe1dda07">DWARFContext::unit_iterator_range</a>&#160;</td>
           <td class="paramname"><em>Units</em></td><td>)</td>
           <td></td>
         </tr>
@@ -343,7 +344,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Error createError </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Error.html">Error</a> createError </td>
           <td>(</td>
           <td class="paramtype">const Twine &amp;&#160;</td>
           <td class="paramname"><em>Reason</em>, </td>
@@ -351,7 +352,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">llvm::Error&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Error.html">llvm::Error</a>&#160;</td>
           <td class="paramname"><em>E</em>&#160;</td>
         </tr>
         <tr>
@@ -369,7 +370,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DWARFContext_8cpp_source.html#l01276">1276</a> of file <a class="el" href="DWARFContext_8cpp_source.html">DWARFContext.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Error_8cpp_source.html#l00077">llvm::inconvertibleErrorCode()</a>.</p>
+<p class="reference">References <a class="el" href="Error_8cpp_source.html#l00077">llvm::inconvertibleErrorCode()</a>, and <a class="el" href="Error_8h_source.html#l00966">llvm::toString()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DWARFContext_8cpp_source.html#l01290">getSymbolInfo()</a>.</p>
 
@@ -387,19 +388,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void dumpAddrSection </td>
           <td>(</td>
-          <td class="paramtype">raw_ostream &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
           <td class="paramname"><em>OS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DWARFDataExtractor &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DWARFDataExtractor.html">DWARFDataExtractor</a> &amp;&#160;</td>
           <td class="paramname"><em>AddrData</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DIDumpOptions&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1DIDumpOptions.html">DIDumpOptions</a>&#160;</td>
           <td class="paramname"><em>DumpOpts</em>, </td>
         </tr>
         <tr>
@@ -429,6 +430,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DWARFContext_8cpp_source.html#l00250">250</a> of file <a class="el" href="DWARFContext_8cpp_source.html">DWARFContext.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="DWARFDebugAddr_8cpp_source.html#l00141">llvm::DWARFDebugAddrTable::dump()</a>, <a class="el" href="DWARFContext_8cpp_source.html#l01845">llvm::DWARFContext::dumpWarning()</a>, <a class="el" href="WithColor_8cpp_source.html#l00060">llvm::WithColor::error()</a>, <a class="el" href="DWARFDebugAddr_8cpp_source.html#l00021">llvm::DWARFDebugAddrTable::extract()</a>, <a class="el" href="DWARFDebugAddr_8cpp_source.html#l00169">llvm::DWARFDebugAddrTable::getLength()</a>, <a class="el" href="DWARFDebugAddr_8h_source.html#l00086">llvm::DWARFDebugAddrTable::hasValidLength()</a>, <a class="el" href="DataExtractor_8h_source.html#l00402">llvm::DataExtractor::isValidOffset()</a>, and <a class="el" href="Error_8h_source.html#l00966">llvm::toString()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DWARFContext_8cpp_source.html#l00317">llvm::DWARFContext::dump()</a>.</p>
+
 </div>
 </div>
 <a id="aa9c7448d8dcac9baf7922d51f6595232" name="aa9c7448d8dcac9baf7922d51f6595232"></a>
@@ -443,7 +448,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void dumpDWARFv5StringOffsetsSection </td>
           <td>(</td>
-          <td class="paramtype">raw_ostream &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
           <td class="paramname"><em>OS</em>, </td>
         </tr>
         <tr>
@@ -455,13 +460,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DWARFObject &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DWARFObject.html">DWARFObject</a> &amp;&#160;</td>
           <td class="paramname"><em>Obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DWARFSection &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structllvm_1_1DWARFSection.html">DWARFSection</a> &amp;&#160;</td>
           <td class="paramname"><em>StringOffsetsSection</em>, </td>
         </tr>
         <tr>
@@ -473,13 +478,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DWARFContext::unit_iterator_range&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DWARFContext.html#a283632a1efaee08b12853486fe1dda07">DWARFContext::unit_iterator_range</a>&#160;</td>
           <td class="paramname"><em>Units</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>LittleEndian</em>&#160;</td>
         </tr>
         <tr>
@@ -497,7 +502,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DWARFContext_8cpp_source.html#l00133">133</a> of file <a class="el" href="DWARFContext_8cpp_source.html">DWARFContext.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DWARFContext_8cpp_source.html#l00102">collectContributionData()</a>.</p>
+<p class="reference">References <a class="el" href="DWARFContext_8cpp_source.html#l00102">collectContributionData()</a>, <a class="el" href="DWARFSection_8h_source.html#l00017">llvm::DWARFSection::Data</a>, <a class="el" href="WithColor_8cpp_source.html#l00060">llvm::WithColor::error()</a>, <a class="el" href="Format_8h_source.html#l00123">llvm::format()</a>, <a class="el" href="namespacellvm.html#ab7530cd22b8952cb41774507dd40c6f3a520d0db389f362bf79ef56ca0af3dcab">llvm::Format</a>, <a class="el" href="DataExtractor_8cpp_source.html#l00128">llvm::DataExtractor::getCStr()</a>, and <a class="el" href="DWARFDataExtractor_8cpp_source.html#l00015">llvm::DWARFDataExtractor::getRelocatedValue()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DWARFContext_8cpp_source.html#l00214">dumpStringOffsetsSection()</a>.</p>
 
@@ -515,19 +520,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void dumpLoclistsSection </td>
           <td>(</td>
-          <td class="paramtype">raw_ostream &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
           <td class="paramname"><em>OS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DIDumpOptions&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1DIDumpOptions.html">DIDumpOptions</a>&#160;</td>
           <td class="paramname"><em>DumpOpts</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DWARFDataExtractor&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DWARFDataExtractor.html">DWARFDataExtractor</a>&#160;</td>
           <td class="paramname"><em>Data</em>, </td>
         </tr>
         <tr>
@@ -539,7 +544,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Optional&lt; uint64_t &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; uint64_t &gt;&#160;</td>
           <td class="paramname"><em>DumpOffset</em>&#160;</td>
         </tr>
         <tr>
@@ -557,6 +562,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DWARFContext_8cpp_source.html#l00296">296</a> of file <a class="el" href="DWARFContext_8cpp_source.html">DWARFContext.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="DWARFListTable_8cpp_source.html#l00080">llvm::DWARFListTableHeader::dump()</a>, <a class="el" href="DWARFDebugLoc_8cpp_source.html#l00260">llvm::DWARFDebugLoclists::dump()</a>, <a class="el" href="WithColor_8cpp_source.html#l00060">llvm::WithColor::error()</a>, <a class="el" href="DWARFListTable_8cpp_source.html#l00018">llvm::DWARFListTableHeader::extract()</a>, <a class="el" href="DWARFListTable_8h_source.html#l00099">llvm::DWARFListTableHeader::getAddrSize()</a>, <a class="el" href="DWARFListTable_8h_source.html#l00101">llvm::DWARFListTableHeader::getVersion()</a>, <a class="el" href="DWARFDebugLoc_8cpp_source.html#l00200">llvm::DWARFDebugLoclists::parse()</a>, and <a class="el" href="Error_8h_source.html#l00966">llvm::toString()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DWARFContext_8cpp_source.html#l00317">llvm::DWARFContext::dump()</a>.</p>
+
 </div>
 </div>
 <a id="aaf7747e7643164d3ee36547b04974925" name="aaf7747e7643164d3ee36547b04974925"></a>
@@ -571,25 +580,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void dumpRnglistsSection </td>
           <td>(</td>
-          <td class="paramtype">raw_ostream &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
           <td class="paramname"><em>OS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DWARFDataExtractor &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DWARFDataExtractor.html">DWARFDataExtractor</a> &amp;&#160;</td>
           <td class="paramname"><em>rnglistData</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">llvm::function_ref&lt; Optional&lt; object::SectionedAddress &gt;(uint32_t)&gt;&#160;</td>
+          <td class="paramtype">llvm::function_ref&lt; <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; object::SectionedAddress &gt;(<a class="el" href="classuint32__t.html">uint32_t</a>)&gt;&#160;</td>
           <td class="paramname"><em>LookupPooledAddress</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DIDumpOptions&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1DIDumpOptions.html">DIDumpOptions</a>&#160;</td>
           <td class="paramname"><em>DumpOpts</em>&#160;</td>
         </tr>
         <tr>
@@ -607,6 +616,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DWARFContext_8cpp_source.html#l00273">273</a> of file <a class="el" href="DWARFContext_8cpp_source.html">DWARFContext.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="DWARFListTable_8h_source.html#l00235">llvm::DWARFListTableBase&lt; DWARFListType &gt;::dump()</a>, <a class="el" href="WithColor_8cpp_source.html#l00060">llvm::WithColor::error()</a>, <a class="el" href="DWARFListTable_8h_source.html#l00185">llvm::DWARFListTableBase&lt; DWARFListType &gt;::extract()</a>, <a class="el" href="DataExtractor_8h_source.html#l00402">llvm::DataExtractor::isValidOffset()</a>, <a class="el" href="DWARFListTable_8h_source.html#l00181">llvm::DWARFListTableBase&lt; DWARFListType &gt;::length()</a>, and <a class="el" href="Error_8h_source.html#l00966">llvm::toString()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DWARFContext_8cpp_source.html#l00317">llvm::DWARFContext::dump()</a>.</p>
+
 </div>
 </div>
 <a id="a7ce2e0de53b8989b4696c939bbab3605" name="a7ce2e0de53b8989b4696c939bbab3605"></a>
@@ -621,7 +634,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void dumpStringOffsetsSection </td>
           <td>(</td>
-          <td class="paramtype">raw_ostream &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
           <td class="paramname"><em>OS</em>, </td>
         </tr>
         <tr>
@@ -633,13 +646,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DWARFObject &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DWARFObject.html">DWARFObject</a> &amp;&#160;</td>
           <td class="paramname"><em>Obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DWARFSection &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structllvm_1_1DWARFSection.html">DWARFSection</a> &amp;&#160;</td>
           <td class="paramname"><em>StringOffsetsSection</em>, </td>
         </tr>
         <tr>
@@ -651,19 +664,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DWARFContext::unit_iterator_range&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DWARFContext.html#a283632a1efaee08b12853486fe1dda07">DWARFContext::unit_iterator_range</a>&#160;</td>
           <td class="paramname"><em>Units</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>LittleEndian</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>MaxVersion</em>&#160;</td>
         </tr>
         <tr>
@@ -681,7 +694,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DWARFContext_8cpp_source.html#l00214">214</a> of file <a class="el" href="DWARFContext_8cpp_source.html">DWARFContext.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DWARFContext_8cpp_source.html#l00133">dumpDWARFv5StringOffsetsSection()</a>.</p>
+<p class="reference">References <a class="el" href="DWARFSection_8h_source.html#l00017">llvm::DWARFSection::Data</a>, <a class="el" href="DWARFContext_8cpp_source.html#l00133">dumpDWARFv5StringOffsetsSection()</a>, <a class="el" href="Format_8h_source.html#l00123">llvm::format()</a>, <a class="el" href="DataExtractor_8cpp_source.html#l00128">llvm::DataExtractor::getCStr()</a>, and <a class="el" href="DataExtractor_8cpp_source.html#l00078">llvm::DataExtractor::getU32()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DWARFContext_8cpp_source.html#l00317">llvm::DWARFContext::dump()</a>.</p>
 
 </div>
 </div>
@@ -697,7 +712,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void dumpUUID </td>
           <td>(</td>
-          <td class="paramtype">raw_ostream &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
           <td class="paramname"><em>OS</em>, </td>
         </tr>
         <tr>
@@ -723,6 +738,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DWARFContext_8cpp_source.html#l00075">75</a> of file <a class="el" href="DWARFContext_8cpp_source.html">DWARFContext.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="raw__ostream_8cpp_source.html#l00136">llvm::raw_ostream::write_uuid()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DWARFContext_8cpp_source.html#l00317">llvm::DWARFContext::dump()</a>.</p>
+
 </div>
 </div>
 <a id="ab030efd905f06c216a1ab39286079498" name="ab030efd905f06c216a1ab39286079498"></a>
@@ -745,13 +764,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DWARFObject &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DWARFObject.html">DWARFObject</a> &amp;&#160;</td>
           <td class="paramname"><em>Obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DWARFSection &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structllvm_1_1DWARFSection.html">DWARFSection</a> &amp;&#160;</td>
           <td class="paramname"><em>Section</em>, </td>
         </tr>
         <tr>
@@ -763,7 +782,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>IsLittleEndian</em>&#160;</td>
         </tr>
         <tr>
@@ -781,6 +800,10 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="DWARFContext_8cpp_source.html#l00798">798</a> of file <a class="el" href="DWARFContext_8cpp_source.html">DWARFContext.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Error_8h_source.html#l00981">llvm::consumeError()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DWARFContext_8cpp_source.html#l00816">llvm::DWARFContext::getAppleNames()</a>, <a class="el" href="DWARFContext_8cpp_source.html#l00826">llvm::DWARFContext::getAppleNamespaces()</a>, <a class="el" href="DWARFContext_8cpp_source.html#l00832">llvm::DWARFContext::getAppleObjC()</a>, <a class="el" href="DWARFContext_8cpp_source.html#l00821">llvm::DWARFContext::getAppleTypes()</a>, and <a class="el" href="DWARFContext_8cpp_source.html#l00811">llvm::DWARFContext::getDebugNames()</a>.</p>
+
 </div>
 </div>
 <a id="a47c2105aa144e31be5aaa90925246495" name="a47c2105aa144e31be5aaa90925246495"></a>
@@ -793,9 +816,9 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool getFunctionNameAndStartLineForAddress </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> getFunctionNameAndStartLineForAddress </td>
           <td>(</td>
-          <td class="paramtype">DWARFCompileUnit *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DWARFCompileUnit.html">DWARFCompileUnit</a> *&#160;</td>
           <td class="paramname"><em>CU</em>, </td>
         </tr>
         <tr>
@@ -807,7 +830,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="DWARFContext_8cpp.html#a851d8dd3228578898dd57e2907e6cbeb">FunctionNameKind</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870">FunctionNameKind</a>&#160;</td>
           <td class="paramname"><em>Kind</em>, </td>
         </tr>
         <tr>
@@ -819,7 +842,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classuint32__t.html">uint32_t</a> &amp;&#160;</td>
           <td class="paramname"><em>StartLine</em>&#160;</td>
         </tr>
         <tr>
@@ -839,6 +862,10 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="DWARFContext_8cpp_source.html#l00948">948</a> of file <a class="el" href="DWARFContext_8cpp_source.html">DWARFContext.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="namespacellvm.html#ac226f3d2b9ca090171a8e0a8cb92c343add7bf230fde8d4836917806aff6a6b27">llvm::Address</a>, <a class="el" href="DWARFDie_8cpp_source.html#l00541">llvm::DWARFDie::getDeclLine()</a>, <a class="el" href="DWARFUnit_8cpp_source.html#l00637">llvm::DWARFUnit::getInlinedChainForAddress()</a>, and <a class="el" href="DWARFDie_8cpp_source.html#l00520">llvm::DWARFDie::getSubroutineName()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DWARFContext_8cpp_source.html#l01094">llvm::DWARFContext::getLineInfoForAddress()</a>, and <a class="el" href="DWARFContext_8cpp_source.html#l01114">llvm::DWARFContext::getLineInfoForAddressRange()</a>.</p>
+
 </div>
 </div>
 <a id="aaca2a6196a0b153d686419f0fd252e91" name="aaca2a6196a0b153d686419f0fd252e91"></a>
@@ -851,7 +878,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Expected&lt; <a class="el" href="structSymInfo.html">SymInfo</a> &gt; getSymbolInfo </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Expected.html">Expected</a>&lt; <a class="el" href="structSymInfo.html">SymInfo</a> &gt; getSymbolInfo </td>
           <td>(</td>
           <td class="paramtype">const object::ObjectFile &amp;&#160;</td>
           <td class="paramname"><em>Obj</em>, </td>
@@ -865,7 +892,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const LoadedObjectInfo *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1LoadedObjectInfo.html">LoadedObjectInfo</a> *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
@@ -892,7 +919,7 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="DWARFContext_8cpp_source.html#l01290">1290</a> of file <a class="el" href="DWARFContext_8cpp_source.html">DWARFContext.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DWARFContext_8cpp_source.html#l01284">SymInfo::Address</a>, <a class="el" href="DWARFContext_8cpp_source.html#l01276">createError()</a>, and <a class="el" href="DWARFContext_8cpp_source.html#l01285">SymInfo::SectionIndex</a>.</p>
+<p class="reference">References <a class="el" href="DWARFContext_8cpp_source.html#l01284">SymInfo::Address</a>, <a class="el" href="DWARFContext_8cpp_source.html#l01276">createError()</a>, <a class="el" href="DIContext_8h_source.html#l00254">llvm::LoadedObjectInfo::getSectionLoadAddress()</a>, <a class="el" href="DWARFContext_8cpp_source.html#l01285">SymInfo::SectionIndex</a>, and <a class="el" href="Error_8h_source.html#l00552">llvm::Expected&lt; T &gt;::takeError()</a>.</p>
 
 </div>
 </div>
@@ -906,9 +933,9 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Optional&lt; uint64_t &gt; getTypeSize </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; uint64_t &gt; getTypeSize </td>
           <td>(</td>
-          <td class="paramtype">DWARFDie&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DWARFDie.html">DWARFDie</a>&#160;</td>
           <td class="paramname"><em>Type</em>, </td>
         </tr>
         <tr>
@@ -948,7 +975,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isRelocScattered </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isRelocScattered </td>
           <td>(</td>
           <td class="paramtype">const object::ObjectFile &amp;&#160;</td>
           <td class="paramname"><em>Obj</em>, </td>
@@ -979,7 +1006,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:37 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

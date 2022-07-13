@@ -57,42 +57,76 @@ $(function() {
   <div class="headertitle"><div class="title">InstSimplifyPass.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/InstSimplifyPass.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="InstSimplifyPass_8h_source.html">llvm/Transforms/Scalar/InstSimplifyPass.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/DepthFirstIterator.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/InstructionSimplify.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/OptimizationRemarkEmitter.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstructionSimplify_8h_source.html">llvm/Analysis/InstructionSimplify.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="OptimizationRemarkEmitter_8h_source.html">llvm/Analysis/OptimizationRemarkEmitter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Utils_8h_source.html">llvm/Transforms/Utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for InstSimplifyPass.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="InstSimplifyPass_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2InstSimplifyPass_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Scalar_2InstSimplifyPass_8cpp" id="alib_2Transforms_2Scalar_2InstSimplifyPass_8cpp">
-<area shape="rect" title=" " alt="" coords="1474,5,1633,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,176,133"/>
-<area shape="rect" title=" " alt="" coords="201,101,413,126"/>
-<area shape="rect" title=" " alt="" coords="437,101,611,126"/>
-<area shape="rect" title=" " alt="" coords="635,101,786,126"/>
-<area shape="rect" title=" " alt="" coords="810,93,1001,133"/>
-<area shape="rect" title=" " alt="" coords="1025,93,1207,133"/>
-<area shape="rect" title=" " alt="" coords="1231,93,1430,133"/>
-<area shape="rect" title=" " alt="" coords="1454,93,1653,133"/>
-<area shape="rect" title=" " alt="" coords="1677,101,1835,126"/>
-<area shape="rect" title=" " alt="" coords="1860,101,2020,126"/>
-<area shape="rect" title=" " alt="" coords="2044,101,2183,126"/>
-<area shape="rect" title=" " alt="" coords="2207,101,2321,126"/>
-<area shape="rect" title=" " alt="" coords="2345,101,2441,126"/>
-<area shape="rect" title=" " alt="" coords="2465,101,2639,126"/>
-<area shape="rect" title=" " alt="" coords="2663,93,2825,133"/>
+<area shape="rect" title=" " alt="" coords="2546,5,2705,45"/>
+<area shape="rect" href="InstSimplifyPass_8h.html" title="Defines passes for running instruction simplification across chunks of IR." alt="" coords="1599,181,1769,221"/>
+<area shape="rect" title=" " alt="" coords="4066,665,4241,691"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="800,445,939,471"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="2237,592,2352,617"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="2123,445,2282,471"/>
+<area shape="rect" title=" " alt="" coords="2832,519,2928,544"/>
+<area shape="rect" title=" " alt="" coords="3929,277,4141,302"/>
+<area shape="rect" title=" " alt="" coords="4266,101,4417,126"/>
+<area shape="rect" href="AssumptionCache_8h.html" title=" " alt="" coords="2663,181,2854,221"/>
+<area shape="rect" href="InstructionSimplify_8h.html" title=" " alt="" coords="1611,357,1794,397"/>
+<area shape="rect" href="OptimizationRemarkEmitter_8h.html" title=" " alt="" coords="1181,93,1379,133"/>
+<area shape="rect" href="TargetLibraryInfo_8h.html" title=" " alt="" coords="842,181,1041,221"/>
+<area shape="rect" href="Dominators_8h.html" title=" " alt="" coords="3597,189,3757,214"/>
+<area shape="rect" href="Utils_8h.html" title=" " alt="" coords="4441,101,4615,126"/>
+<area shape="rect" href="Transforms_2Utils_2Local_8h.html" title=" " alt="" coords="2545,93,2706,133"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="1574,277,1743,302"/>
+<area shape="rect" title=" " alt="" coords="2561,445,2727,471"/>
+<area shape="rect" title=" " alt="" coords="921,665,1079,691"/>
+<area shape="rect" title=" " alt="" coords="2895,812,2964,837"/>
+<area shape="rect" title=" " alt="" coords="291,812,368,837"/>
+<area shape="rect" title=" " alt="" coords="3178,665,3238,691"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="381,365,513,390"/>
+<area shape="rect" title=" " alt="" coords="701,519,861,544"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="3557,519,3712,544"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="1999,739,2169,764"/>
+<area shape="rect" title=" " alt="" coords="208,812,267,837"/>
+<area shape="rect" title=" " alt="" coords="1119,739,1185,764"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="1977,519,2149,544"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="1646,592,1799,617"/>
+<area shape="rect" title=" " alt="" coords="2299,665,2453,691"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="1498,665,1611,691"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="1553,739,1764,764"/>
+<area shape="rect" title=" " alt="" coords="2747,592,2909,617"/>
+<area shape="rect" title=" " alt="" coords="987,519,1141,544"/>
+<area shape="rect" title=" " alt="" coords="3054,519,3229,544"/>
+<area shape="rect" href="MathExtras_8h.html" title=" " alt="" coords="2528,592,2723,617"/>
+<area shape="rect" title=" " alt="" coords="3031,365,3223,390"/>
+<area shape="rect" href="ValueHandle_8h.html" title=" " alt="" coords="3258,277,3425,302"/>
+<area shape="rect" title=" " alt="" coords="1521,445,1679,471"/>
+<area shape="rect" href="Operator_8h.html" title=" " alt="" coords="1806,445,1946,471"/>
+<area shape="rect" href="BlockFrequencyInfo_8h.html" title=" " alt="" coords="1171,181,1389,221"/>
+<area shape="rect" href="DiagnosticInfo_8h.html" title=" " alt="" coords="384,445,563,471"/>
+<area shape="rect" title=" " alt="" coords="532,277,665,302"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="1217,365,1351,390"/>
+<area shape="rect" title=" " alt="" coords="690,269,889,309"/>
+<area shape="rect" title=" " alt="" coords="3761,445,3933,471"/>
+<area shape="rect" title=" " alt="" coords="3602,277,3753,302"/>
+<area shape="rect" href="IR_2CFG_8h.html" title="This file provides various utilities for inspecting and working with the control flow graph in LLVM I..." alt="" coords="3789,365,3899,390"/>
+<area shape="rect" href="GenericDomTree_8h.html" title="This file defines a set of templates that efficiently compute a dominator tree over a generic graph." alt="" coords="3348,365,3577,390"/>
 </map>
 </div>
 </div>
@@ -107,7 +141,7 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ad9bbd31d82abd1a7bba0515ac4372712"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstSimplifyPass_8cpp.html#ad9bbd31d82abd1a7bba0515ac4372712">STATISTIC</a> (NumSimplified, &quot;Number of redundant <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> removed&quot;)</td></tr>
 <tr class="separator:ad9bbd31d82abd1a7bba0515ac4372712"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a120c6f39343c487bbe1fe8dfd60591db"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstSimplifyPass_8cpp.html#a120c6f39343c487bbe1fe8dfd60591db">runImpl</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, const SimplifyQuery &amp;SQ, OptimizationRemarkEmitter *ORE)</td></tr>
+<tr class="memitem:a120c6f39343c487bbe1fe8dfd60591db"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstSimplifyPass_8cpp.html#a120c6f39343c487bbe1fe8dfd60591db">runImpl</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, const <a class="el" href="structllvm_1_1SimplifyQuery.html">SimplifyQuery</a> &amp;SQ, <a class="el" href="classllvm_1_1OptimizationRemarkEmitter.html">OptimizationRemarkEmitter</a> *ORE)</td></tr>
 <tr class="separator:a120c6f39343c487bbe1fe8dfd60591db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9cd2449bd89ad2d38e5717ff6c0f7b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstSimplifyPass_8cpp.html#ad9cd2449bd89ad2d38e5717ff6c0f7b9">INITIALIZE_PASS_BEGIN</a> (InstSimplifyLegacyPass, &quot;instsimplify&quot;, &quot;Remove redundant instructions&quot;, false, false) INITIALIZE_PASS_END(InstSimplifyLegacyPass</td></tr>
 <tr class="separator:ad9cd2449bd89ad2d38e5717ff6c0f7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,21 +229,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool runImpl </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> runImpl </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SimplifyQuery &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structllvm_1_1SimplifyQuery.html">SimplifyQuery</a> &amp;&#160;</td>
           <td class="paramname"><em>SQ</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">OptimizationRemarkEmitter *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1OptimizationRemarkEmitter.html">OptimizationRemarkEmitter</a> *&#160;</td>
           <td class="paramname"><em>ORE</em>&#160;</td>
         </tr>
         <tr>
@@ -227,7 +261,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstSimplifyPass_8cpp_source.html#l00030">30</a> of file <a class="el" href="InstSimplifyPass_8cpp_source.html">InstSimplifyPass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Local_8cpp_source.html#l00434">llvm::RecursivelyDeleteTriviallyDeadInstructions()</a>, <a class="el" href="InstructionSimplify_8cpp_source.html#l05052">llvm::SimplifyInstruction()</a>, and <a class="el" href="InstructionSimplify_8h_source.html#l00092">llvm::SimplifyQuery::TLI</a>.</p>
 
 </div>
 </div>
@@ -311,7 +345,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

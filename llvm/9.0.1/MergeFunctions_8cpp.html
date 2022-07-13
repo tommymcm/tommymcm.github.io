@@ -52,7 +52,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">MergeFunctions.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -60,36 +61,36 @@ $(function() {
 <code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DebugInfoMetadata.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DebugLoc.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalValue.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Use.h&quot;</code><br />
-<code>#include &quot;llvm/IR/User.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
-<code>#include &quot;llvm/IR/ValueHandle.h&quot;</code><br />
-<code>#include &quot;llvm/IR/ValueMap.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DebugInfoMetadata_8h_source.html">llvm/IR/DebugInfoMetadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DebugLoc_8h_source.html">llvm/IR/DebugLoc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalValue_8h_source.html">llvm/IR/GlobalValue.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Use_8h_source.html">llvm/IR/Use.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueHandle_8h_source.html">llvm/IR/ValueHandle.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueMap_8h_source.html">llvm/IR/ValueMap.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/IPO.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/FunctionComparator.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IPO_8h_source.html">llvm/Transforms/IPO.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="FunctionComparator_8h_source.html">llvm/Transforms/Utils/FunctionComparator.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;iterator&gt;</code><br />
@@ -101,47 +102,56 @@ Include dependency graph for MergeFunctions.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="MergeFunctions_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2IPO_2MergeFunctions_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2IPO_2MergeFunctions_8cpp" id="alib_2Transforms_2IPO_2MergeFunctions_8cpp">
-<area shape="rect" title=" " alt="" coords="3527,5,3683,45"/>
-<area shape="rect" title=" " alt="" coords="5,101,160,126"/>
-<area shape="rect" title=" " alt="" coords="185,101,359,126"/>
-<area shape="rect" title=" " alt="" coords="383,101,558,126"/>
-<area shape="rect" title=" " alt="" coords="582,101,733,126"/>
-<area shape="rect" title=" " alt="" coords="757,101,905,126"/>
-<area shape="rect" title=" " alt="" coords="929,101,1077,126"/>
-<area shape="rect" title=" " alt="" coords="1101,101,1256,126"/>
-<area shape="rect" title=" " alt="" coords="1281,101,1415,126"/>
-<area shape="rect" title=" " alt="" coords="1439,101,1582,126"/>
-<area shape="rect" title=" " alt="" coords="1607,101,1756,126"/>
-<area shape="rect" title=" " alt="" coords="1780,101,1993,126"/>
-<area shape="rect" title=" " alt="" coords="2018,101,2166,126"/>
-<area shape="rect" title=" " alt="" coords="2190,101,2362,126"/>
-<area shape="rect" title=" " alt="" coords="2387,101,2525,126"/>
-<area shape="rect" title=" " alt="" coords="2549,101,2712,126"/>
-<area shape="rect" title=" " alt="" coords="2737,101,2879,126"/>
-<area shape="rect" title=" " alt="" coords="2903,101,3054,126"/>
-<area shape="rect" title=" " alt="" coords="3078,101,3231,126"/>
-<area shape="rect" title=" " alt="" coords="3256,101,3416,126"/>
-<area shape="rect" title=" " alt="" coords="3440,101,3600,126"/>
-<area shape="rect" title=" " alt="" coords="3625,101,3757,126"/>
-<area shape="rect" title=" " alt="" coords="3781,101,3896,126"/>
-<area shape="rect" title=" " alt="" coords="3920,101,4029,126"/>
-<area shape="rect" title=" " alt="" coords="4054,101,4167,126"/>
-<area shape="rect" title=" " alt="" coords="4192,101,4312,126"/>
-<area shape="rect" title=" " alt="" coords="4337,101,4503,126"/>
-<area shape="rect" title=" " alt="" coords="4527,101,4675,126"/>
-<area shape="rect" title=" " alt="" coords="4700,101,4796,126"/>
-<area shape="rect" title=" " alt="" coords="4820,101,4991,126"/>
-<area shape="rect" title=" " alt="" coords="5015,101,5230,126"/>
-<area shape="rect" title=" " alt="" coords="5255,101,5417,126"/>
-<area shape="rect" title=" " alt="" coords="5442,101,5649,126"/>
-<area shape="rect" title=" " alt="" coords="5673,101,5839,126"/>
-<area shape="rect" title=" " alt="" coords="5863,93,6033,133"/>
-<area shape="rect" title=" " alt="" coords="6057,101,6143,126"/>
-<area shape="rect" title=" " alt="" coords="6167,101,6236,126"/>
-<area shape="rect" title=" " alt="" coords="6261,101,6331,126"/>
-<area shape="rect" title=" " alt="" coords="6356,101,6399,126"/>
-<area shape="rect" title=" " alt="" coords="6423,101,6483,126"/>
-<area shape="rect" title=" " alt="" coords="6507,101,6570,126"/>
+<area shape="rect" title=" " alt="" coords="3493,5,3649,45"/>
+<area shape="rect" title=" " alt="" coords="2487,709,2641,735"/>
+<area shape="rect" title=" " alt="" coords="758,709,933,735"/>
+<area shape="rect" title=" " alt="" coords="367,548,542,573"/>
+<area shape="rect" title=" " alt="" coords="274,93,425,119"/>
+<area shape="rect" href="Argument_8h.html" title=" " alt="" coords="4850,475,4998,500"/>
+<area shape="rect" href="Attributes_8h.html" title="This file contains the simple types necessary to represent the attributes associated with functions a..." alt="" coords="3469,548,3617,573"/>
+<area shape="rect" title=" " alt="" coords="4151,856,4220,881"/>
+<area shape="rect" title=" " alt="" coords="3999,629,4059,654"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="5200,709,5320,735"/>
+<area shape="rect" href="Use_8h.html" title="This defines the Use class." alt="" coords="6199,783,6308,808"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="4353,783,4524,808"/>
+<area shape="rect" title=" " alt="" coords="1051,783,1122,808"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="5260,475,5415,500"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="4013,548,4166,573"/>
+<area shape="rect" href="DebugLoc_8h.html" title=" " alt="" coords="6503,629,6651,654"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="4237,629,4350,654"/>
+<area shape="rect" title=" " alt="" coords="1671,629,1756,654"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="4162,174,4297,199"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="4680,401,4819,427"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="3221,548,3393,573"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="1029,629,1144,654"/>
+<area shape="rect" href="GlobalValue_8h.html" title=" " alt="" coords="5073,475,5236,500"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="5162,548,5305,573"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="2758,328,2909,353"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="2751,475,2900,500"/>
+<area shape="rect" title=" " alt="" coords="1187,475,1250,500"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="3625,255,3785,280"/>
+<area shape="rect" href="DebugInfoMetadata_8h.html" title=" " alt="" coords="1389,401,1603,427"/>
+<area shape="rect" href="IRBuilder_8h.html" title=" " alt="" coords="4787,93,4930,119"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="5329,174,5489,199"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="2081,328,2213,353"/>
+<area shape="rect" href="ValueHandle_8h.html" title=" " alt="" coords="5703,629,5870,654"/>
+<area shape="rect" href="ValueMap_8h.html" title=" " alt="" coords="1831,548,1979,573"/>
+<area shape="rect" title=" " alt="" coords="6351,93,6447,119"/>
+<area shape="rect" href="CommandLine_8h.html" title=" " alt="" coords="745,401,959,427"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="550,475,757,500"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="6572,93,6735,119"/>
+<area shape="rect" href="IPO_8h.html" title=" " alt="" coords="448,401,613,427"/>
+<area shape="rect" href="FunctionComparator_8h.html" title=" " alt="" coords="2857,167,3026,207"/>
+<area shape="rect" title=" " alt="" coords="6860,93,6903,119"/>
+<area shape="rect" title=" " alt="" coords="4647,548,4782,573"/>
+<area shape="rect" title=" " alt="" coords="4757,629,4918,654"/>
+<area shape="rect" title=" " alt="" coords="6078,856,6194,881"/>
+<area shape="rect" title=" " alt="" coords="3757,629,3923,654"/>
+<area shape="rect" title=" " alt="" coords="1993,629,2146,654"/>
+<area shape="rect" title=" " alt="" coords="2804,629,2961,654"/>
+<area shape="rect" title=" " alt="" coords="2621,783,2811,808"/>
+<area shape="rect" title=" " alt="" coords="3341,629,3526,654"/>
+<area shape="rect" href="PointerLikeTypeTraits_8h.html" title=" " alt="" coords="3551,621,3732,661"/>
 </map>
 </div>
 </div>
@@ -162,24 +172,27 @@ Functions</h2></td></tr>
 <tr class="separator:a068c5b7c2769483d3c18a2f6d8133982"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf733ab889ddff67930ccb9808179b38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#adf733ab889ddff67930ccb9808179b38">STATISTIC</a> (NumDoubleWeak, &quot;Number of new <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> created&quot;)</td></tr>
 <tr class="separator:adf733ab889ddff67930ccb9808179b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b993634224a5e124099e4a8ac27e729"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#a7b993634224a5e124099e4a8ac27e729">NumFunctionsForSanityCheck</a> (&quot;mergefunc-sanity&quot;, cl::desc(&quot;How many <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> in module could be used for &quot; &quot;MergeFunctions pass sanity check. &quot; &quot;'0' disables this check. Works <a class="el" href="RegionPrinter_8cpp.html#a5782a8740ff1e91516b41b3726a3168c">only</a> with '-debug' key.&quot;), cl::init(0), cl::Hidden)</td></tr>
-<tr class="separator:a7b993634224a5e124099e4a8ac27e729"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a498032433e412687f9e533eeb6d33660"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#a498032433e412687f9e533eeb6d33660">MergeFunctionsPDI</a> (&quot;mergefunc-preserve-debug-info&quot;, cl::Hidden, cl::init(false), cl::desc(&quot;Preserve debug <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> in thunk when mergefunc &quot; &quot;<a class="el" href="WarnMissedTransforms_8cpp.html#a118c69dcb143e00e7d63d23ebc83d8d1">transformations</a> are made.&quot;))</td></tr>
-<tr class="separator:a498032433e412687f9e533eeb6d33660"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b196a5ec689f2599da2315e1d36f5f1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#a0b196a5ec689f2599da2315e1d36f5f1">MergeFunctionsAliases</a> (&quot;mergefunc-<a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a>-aliases&quot;, cl::Hidden, cl::init(false), cl::desc(&quot;Allow mergefunc to create aliases&quot;))</td></tr>
-<tr class="separator:a0b196a5ec689f2599da2315e1d36f5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36058dde352777cb9bacab2ec7bd8dd9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#a36058dde352777cb9bacab2ec7bd8dd9">isEligibleForMerging</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a36058dde352777cb9bacab2ec7bd8dd9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#a36058dde352777cb9bacab2ec7bd8dd9">isEligibleForMerging</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="memdesc:a36058dde352777cb9bacab2ec7bd8dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether <code>F</code> is eligible for function merging.  <a href="MergeFunctions_8cpp.html#a36058dde352777cb9bacab2ec7bd8dd9">More...</a><br /></td></tr>
 <tr class="separator:a36058dde352777cb9bacab2ec7bd8dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4a9c9cd80e2c3ac08362429976322cf"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#ab4a9c9cd80e2c3ac08362429976322cf">createCast</a> (IRBuilder&lt;&gt; &amp;Builder, Value *V, Type *DestTy)</td></tr>
+<tr class="memitem:ab4a9c9cd80e2c3ac08362429976322cf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#ab4a9c9cd80e2c3ac08362429976322cf">createCast</a> (<a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;Builder, <a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1Type.html">Type</a> *DestTy)</td></tr>
 <tr class="separator:ab4a9c9cd80e2c3ac08362429976322cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a706991b9b11313461e40ee9650c9d36e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#a706991b9b11313461e40ee9650c9d36e">canCreateThunkFor</a> (Function *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a706991b9b11313461e40ee9650c9d36e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#a706991b9b11313461e40ee9650c9d36e">canCreateThunkFor</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="memdesc:a706991b9b11313461e40ee9650c9d36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this function may be replaced by a forwarding thunk.  <a href="MergeFunctions_8cpp.html#a706991b9b11313461e40ee9650c9d36e">More...</a><br /></td></tr>
 <tr class="separator:a706991b9b11313461e40ee9650c9d36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3175aaa1008d158881484f5c8be5bce5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#a3175aaa1008d158881484f5c8be5bce5">canCreateAliasFor</a> (Function *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a3175aaa1008d158881484f5c8be5bce5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#a3175aaa1008d158881484f5c8be5bce5">canCreateAliasFor</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a3175aaa1008d158881484f5c8be5bce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af82ad926e8835a16d12da44d98a70490"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#af82ad926e8835a16d12da44d98a70490">isFuncOrderCorrect</a> (const Function *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, const Function *<a class="el" href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>)</td></tr>
+<tr class="memitem:af82ad926e8835a16d12da44d98a70490"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#af82ad926e8835a16d12da44d98a70490">isFuncOrderCorrect</a> (const <a class="el" href="classllvm_1_1Function.html">Function</a> *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, const <a class="el" href="classllvm_1_1Function.html">Function</a> *<a class="el" href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>)</td></tr>
 <tr class="separator:af82ad926e8835a16d12da44d98a70490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a97a507cbf3013f678cf7c30c0f6fb6b3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#a97a507cbf3013f678cf7c30c0f6fb6b3">NumFunctionsForSanityCheck</a> (&quot;mergefunc-sanity&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;How many <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> in module could be used for &quot; &quot;MergeFunctions pass sanity check. &quot; &quot;'0' disables this check. Works <a class="el" href="RegionPrinter_8cpp.html#a5782a8740ff1e91516b41b3726a3168c">only</a> with '-debug' key.&quot;), cl::init(0), cl::Hidden)</td></tr>
+<tr class="separator:a97a507cbf3013f678cf7c30c0f6fb6b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fabdcd96db5d30230cac856fcc0f890"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#a7fabdcd96db5d30230cac856fcc0f890">MergeFunctionsPDI</a> (&quot;mergefunc-preserve-debug-info&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Preserve debug <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> in thunk when mergefunc &quot; &quot;<a class="el" href="WarnMissedTransforms_8cpp.html#a118c69dcb143e00e7d63d23ebc83d8d1">transformations</a> are made.&quot;))</td></tr>
+<tr class="separator:a7fabdcd96db5d30230cac856fcc0f890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1c770f03e1953077e620b246f6c36ec"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MergeFunctions_8cpp.html#ad1c770f03e1953077e620b246f6c36ec">MergeFunctionsAliases</a> (&quot;mergefunc-<a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a>-aliases&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allow mergefunc to create aliases&quot;))</td></tr>
+<tr class="separator:ad1c770f03e1953077e620b246f6c36ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad78e062f62e0d6e453941fb4ca843e4d" name="ad78e062f62e0d6e453941fb4ca843e4d"></a>
@@ -209,9 +222,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool canCreateAliasFor </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> canCreateAliasFor </td>
           <td>(</td>
-          <td class="paramtype">Function *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -225,7 +238,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MergeFunctions_8cpp_source.html#l00754">754</a> of file <a class="el" href="MergeFunctions_8cpp_source.html">MergeFunctions.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MergeFunctions_8cpp.html#a0b196a5ec689f2599da2315e1d36f5f1">MergeFunctionsAliases()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MergeFunctions_8cpp.html#ad1c770f03e1953077e620b246f6c36ec">MergeFunctionsAliases</a>.</p>
 
 </div>
 </div>
@@ -239,9 +252,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool canCreateThunkFor </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> canCreateThunkFor </td>
           <td>(</td>
-          <td class="paramtype">Function *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -257,7 +270,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MergeFunctions_8cpp_source.html#l00655">655</a> of file <a class="el" href="MergeFunctions_8cpp_source.html">MergeFunctions.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
+<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>.</p>
 
 </div>
 </div>
@@ -271,21 +284,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * createCast </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * createCast </td>
           <td>(</td>
-          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>Builder</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Type *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
           <td class="paramname"><em>DestTy</em>&#160;</td>
         </tr>
         <tr>
@@ -303,7 +316,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MergeFunctions_8cpp_source.html#l00483">483</a> of file <a class="el" href="MergeFunctions_8cpp_source.html">MergeFunctions.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MergeFunctions_8cpp_source.html#l00483">createCast()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="MergeFunctions_8cpp_source.html#l00483">createCast()</a>, <a class="el" href="IRBuilder_8h_source.html#l02305">llvm::IRBuilder&lt; T, Inserter &gt;::CreateExtractValue()</a>, <a class="el" href="IRBuilder_8h_source.html#l02313">llvm::IRBuilder&lt; T, Inserter &gt;::CreateInsertValue()</a>, <a class="el" href="IRBuilder_8h_source.html#l01946">llvm::IRBuilder&lt; T, Inserter &gt;::CreateIntToPtr()</a>, <a class="el" href="IRBuilder_8h_source.html#l01941">llvm::IRBuilder&lt; T, Inserter &gt;::CreatePtrToInt()</a>, <a class="el" href="Constants_8cpp_source.html#l01424">llvm::UndefValue::get()</a>, <a class="el" href="DerivedTypes_8h_source.html#l00365">llvm::Type::getStructElementType()</a>, <a class="el" href="DerivedTypes_8h_source.html#l00361">llvm::Type::getStructNumElements()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Type_8h_source.html#l00196">llvm::Type::isIntegerTy()</a>, <a class="el" href="Type_8h_source.html#l00223">llvm::Type::isPointerTy()</a>, and <a class="el" href="Type_8h_source.html#l00217">llvm::Type::isStructTy()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="MergeFunctions_8cpp_source.html#l00483">createCast()</a>.</p>
 
@@ -319,9 +332,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isEligibleForMerging </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isEligibleForMerging </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -351,15 +364,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isFuncOrderCorrect </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isFuncOrderCorrect </td>
           <td>(</td>
-          <td class="paramtype">const Function *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Function *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
           <td class="paramname"><em>G</em>&#160;</td>
         </tr>
         <tr>
@@ -378,154 +391,6 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="MergeFunctions_8cpp_source.html#l00883">883</a> of file <a class="el" href="MergeFunctions_8cpp_source.html">MergeFunctions.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00056">G</a>.</p>
-
-</div>
-</div>
-<a id="a0b196a5ec689f2599da2315e1d36f5f1" name="a0b196a5ec689f2599da2315e1d36f5f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b196a5ec689f2599da2315e1d36f5f1">&#9670;&nbsp;</a></span>MergeFunctionsAliases()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; MergeFunctionsAliases </td>
-          <td>(</td>
-          <td class="paramtype">&quot;mergefunc-<a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a>-aliases&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Allow mergefunc to create aliases&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="MergeFunctions_8cpp_source.html#l00754">canCreateAliasFor()</a>.</p>
-
-</div>
-</div>
-<a id="a498032433e412687f9e533eeb6d33660" name="a498032433e412687f9e533eeb6d33660"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a498032433e412687f9e533eeb6d33660">&#9670;&nbsp;</a></span>MergeFunctionsPDI()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; MergeFunctionsPDI </td>
-          <td>(</td>
-          <td class="paramtype">&quot;mergefunc-preserve-debug-info&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Preserve debug <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> in thunk when mergefunc &quot; &quot;<a class="el" href="WarnMissedTransforms_8cpp.html#a118c69dcb143e00e7d63d23ebc83d8d1">transformations</a> are made.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7b993634224a5e124099e4a8ac27e729" name="a7b993634224a5e124099e4a8ac27e729"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b993634224a5e124099e4a8ac27e729">&#9670;&nbsp;</a></span>NumFunctionsForSanityCheck()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; NumFunctionsForSanityCheck </td>
-          <td>(</td>
-          <td class="paramtype">&quot;mergefunc-sanity&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;How many <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> in module could be used for &quot; &quot;MergeFunctions pass sanity check. &quot; &quot;'0' disables this check. Works <a class="el" href="RegionPrinter_8cpp.html#a5782a8740ff1e91516b41b3726a3168c">only</a> with '-debug' key.&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(0)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -641,10 +506,157 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ad1c770f03e1953077e620b246f6c36ec" name="ad1c770f03e1953077e620b246f6c36ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1c770f03e1953077e620b246f6c36ec">&#9670;&nbsp;</a></span>MergeFunctionsAliases</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; MergeFunctionsAliases(&quot;mergefunc-<a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a>-aliases&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allow mergefunc to create aliases&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;mergefunc-<a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a>-aliases&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Allow mergefunc to create aliases&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="MergeFunctions_8cpp_source.html#l00754">canCreateAliasFor()</a>.</p>
+
+</div>
+</div>
+<a id="a7fabdcd96db5d30230cac856fcc0f890" name="a7fabdcd96db5d30230cac856fcc0f890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fabdcd96db5d30230cac856fcc0f890">&#9670;&nbsp;</a></span>MergeFunctionsPDI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; MergeFunctionsPDI(&quot;mergefunc-preserve-debug-info&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Preserve debug <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> in thunk when mergefunc &quot; &quot;<a class="el" href="WarnMissedTransforms_8cpp.html#a118c69dcb143e00e7d63d23ebc83d8d1">transformations</a> are made.&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;mergefunc-preserve-debug-info&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Preserve debug <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> in thunk when mergefunc &quot; &quot;<a class="el" href="WarnMissedTransforms_8cpp.html#a118c69dcb143e00e7d63d23ebc83d8d1">transformations</a> are made.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a97a507cbf3013f678cf7c30c0f6fb6b3" name="a97a507cbf3013f678cf7c30c0f6fb6b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97a507cbf3013f678cf7c30c0f6fb6b3">&#9670;&nbsp;</a></span>NumFunctionsForSanityCheck</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; NumFunctionsForSanityCheck(&quot;mergefunc-sanity&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;How many <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> in module could be used for &quot; &quot;MergeFunctions pass sanity check. &quot; &quot;'0' disables this check. Works <a class="el" href="RegionPrinter_8cpp.html#a5782a8740ff1e91516b41b3726a3168c">only</a> with '-debug' key.&quot;), cl::init(0), cl::Hidden) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;mergefunc-sanity&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;How many <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> in module could be used for &quot; &quot;MergeFunctions pass sanity check. &quot; &quot;'0' disables this check. Works <a class="el" href="RegionPrinter_8cpp.html#a5782a8740ff1e91516b41b3726a3168c">only</a> with '-debug' key.&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(0)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

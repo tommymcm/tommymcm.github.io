@@ -52,7 +52,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">InstCombineCalls.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -67,45 +68,45 @@ $(function() {
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Twine.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/InstructionSimplify.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/Loads.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/MemoryBuiltins.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/VectorUtils.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalVariable.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
-<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
-<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Statepoint.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/User.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
-<code>#include &quot;llvm/IR/ValueHandle.h&quot;</code><br />
-<code>#include &quot;llvm/Support/AtomicOrdering.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Compiler.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
-<code>#include &quot;llvm/Support/KnownBits.h&quot;</code><br />
-<code>#include &quot;llvm/Support/MathExtras.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/InstCombine/InstCombineWorklist.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/SimplifyLibCalls.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstructionSimplify_8h_source.html">llvm/Analysis/InstructionSimplify.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Loads_8h_source.html">llvm/Analysis/Loads.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MemoryBuiltins_8h_source.html">llvm/Analysis/MemoryBuiltins.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="VectorUtils_8h_source.html">llvm/Analysis/VectorUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalVariable_8h_source.html">llvm/IR/GlobalVariable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Statepoint_8h_source.html">llvm/IR/Statepoint.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueHandle_8h_source.html">llvm/IR/ValueHandle.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AtomicOrdering_8h_source.html">llvm/Support/AtomicOrdering.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Compiler_8h_source.html">llvm/Support/Compiler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="KnownBits_8h_source.html">llvm/Support/KnownBits.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MathExtras_8h_source.html">llvm/Support/MathExtras.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstCombineWorklist_8h_source.html">llvm/Transforms/InstCombine/InstCombineWorklist.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SimplifyLibCalls_8h_source.html">llvm/Transforms/Utils/SimplifyLibCalls.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
@@ -124,77 +125,80 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:abe4715266eafc2045a45c1aacc9de4d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#abe4715266eafc2045a45c1aacc9de4d2">STATISTIC</a> (NumSimplified, &quot;Number of library <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> simplified&quot;)</td></tr>
 <tr class="separator:abe4715266eafc2045a45c1aacc9de4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf2585364f01f45879ed8a4df00ffbb5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#abf2585364f01f45879ed8a4df00ffbb5">GuardWideningWindow</a> (&quot;instcombine-guard-<a class="el" href="GuardWidening_8cpp.html#a489b6ce5381e4b24804590fbcc7cdff8">widening</a>-window&quot;, cl::init(3), cl::desc(&quot;How wide an instruction window to bypass looking for &quot; &quot;another guard&quot;))</td></tr>
-<tr class="separator:abf2585364f01f45879ed8a4df00ffbb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a093be232e1de543da63b9f41e7d18f2f"><td class="memItemLeft" align="right" valign="top">static Type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a093be232e1de543da63b9f41e7d18f2f">getPromotedType</a> (Type *Ty)</td></tr>
+<tr class="memitem:a093be232e1de543da63b9f41e7d18f2f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a093be232e1de543da63b9f41e7d18f2f">getPromotedType</a> (<a class="el" href="classllvm_1_1Type.html">Type</a> *Ty)</td></tr>
 <tr class="memdesc:a093be232e1de543da63b9f41e7d18f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the specified type promoted as it would be to pass though a va_arg area.  <a href="InstCombineCalls_8cpp.html#a093be232e1de543da63b9f41e7d18f2f">More...</a><br /></td></tr>
 <tr class="separator:a093be232e1de543da63b9f41e7d18f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e95a2be1502ea3b9e7dc61529021cde"><td class="memItemLeft" align="right" valign="top">static Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a6e95a2be1502ea3b9e7dc61529021cde">getNegativeIsTrueBoolVec</a> (ConstantDataVector *V)</td></tr>
+<tr class="memitem:a6e95a2be1502ea3b9e7dc61529021cde"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a6e95a2be1502ea3b9e7dc61529021cde">getNegativeIsTrueBoolVec</a> (<a class="el" href="classllvm_1_1ConstantDataVector.html">ConstantDataVector</a> *V)</td></tr>
 <tr class="memdesc:a6e95a2be1502ea3b9e7dc61529021cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a constant boolean vector that has true elements in all positions where the input constant data vector has an element with the sign bit set.  <a href="InstCombineCalls_8cpp.html#a6e95a2be1502ea3b9e7dc61529021cde">More...</a><br /></td></tr>
 <tr class="separator:a6e95a2be1502ea3b9e7dc61529021cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a093d9c63af2a86ce11aab9d16508faa5"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a093d9c63af2a86ce11aab9d16508faa5">simplifyX86immShift</a> (const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a093d9c63af2a86ce11aab9d16508faa5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a093d9c63af2a86ce11aab9d16508faa5">simplifyX86immShift</a> (const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="separator:a093d9c63af2a86ce11aab9d16508faa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbcb72ff3dcc4f5818f711ca564b9dc1"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#afbcb72ff3dcc4f5818f711ca564b9dc1">simplifyX86varShift</a> (const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:afbcb72ff3dcc4f5818f711ca564b9dc1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#afbcb72ff3dcc4f5818f711ca564b9dc1">simplifyX86varShift</a> (const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="separator:afbcb72ff3dcc4f5818f711ca564b9dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2784f2480fde374684ff993c8ae92991"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a2784f2480fde374684ff993c8ae92991">simplifyX86pack</a> (<a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder, bool IsSigned)</td></tr>
+<tr class="memitem:a2784f2480fde374684ff993c8ae92991"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a2784f2480fde374684ff993c8ae92991">simplifyX86pack</a> (<a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder, <a class="el" href="classbool.html">bool</a> IsSigned)</td></tr>
 <tr class="separator:a2784f2480fde374684ff993c8ae92991"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f3b97594fe4e833960ffddc2a778a53"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a8f3b97594fe4e833960ffddc2a778a53">simplifyX86movmsk</a> (const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a8f3b97594fe4e833960ffddc2a778a53"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a8f3b97594fe4e833960ffddc2a778a53">simplifyX86movmsk</a> (const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="separator:a8f3b97594fe4e833960ffddc2a778a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ecff7a038229dccedd3fb1aba929059"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a1ecff7a038229dccedd3fb1aba929059">simplifyX86addcarry</a> (const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a1ecff7a038229dccedd3fb1aba929059"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a1ecff7a038229dccedd3fb1aba929059">simplifyX86addcarry</a> (const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="separator:a1ecff7a038229dccedd3fb1aba929059"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9b860e591f79a6fb767cb04b3135f7f"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#ac9b860e591f79a6fb767cb04b3135f7f">simplifyX86insertps</a> (const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:ac9b860e591f79a6fb767cb04b3135f7f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#ac9b860e591f79a6fb767cb04b3135f7f">simplifyX86insertps</a> (const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="separator:ac9b860e591f79a6fb767cb04b3135f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbe56869c99b539068e8a442d8738dae"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#adbe56869c99b539068e8a442d8738dae">simplifyX86extrq</a> (<a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, Value *Op0, ConstantInt *CILength, ConstantInt *CIIndex, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:adbe56869c99b539068e8a442d8738dae"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#adbe56869c99b539068e8a442d8738dae">simplifyX86extrq</a> (<a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1Value.html">Value</a> *Op0, <a class="el" href="classllvm_1_1ConstantInt.html">ConstantInt</a> *CILength, <a class="el" href="classllvm_1_1ConstantInt.html">ConstantInt</a> *CIIndex, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="memdesc:adbe56869c99b539068e8a442d8738dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to simplify SSE4A EXTRQ/EXTRQI instructions using constant folding or conversion to a shuffle vector.  <a href="InstCombineCalls_8cpp.html#adbe56869c99b539068e8a442d8738dae">More...</a><br /></td></tr>
 <tr class="separator:adbe56869c99b539068e8a442d8738dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a158032a7de947df4dc475c236414f0a2"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a158032a7de947df4dc475c236414f0a2">simplifyX86insertq</a> (<a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, Value *Op0, Value *Op1, APInt APLength, APInt APIndex, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a158032a7de947df4dc475c236414f0a2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a158032a7de947df4dc475c236414f0a2">simplifyX86insertq</a> (<a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1Value.html">Value</a> *Op0, <a class="el" href="classllvm_1_1Value.html">Value</a> *Op1, APInt APLength, APInt APIndex, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="memdesc:a158032a7de947df4dc475c236414f0a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to simplify SSE4A INSERTQ/INSERTQI instructions using constant folding or conversion to a shuffle vector.  <a href="InstCombineCalls_8cpp.html#a158032a7de947df4dc475c236414f0a2">More...</a><br /></td></tr>
 <tr class="separator:a158032a7de947df4dc475c236414f0a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59d9bf36e2a220a3e85d4dcd9b67c183"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a59d9bf36e2a220a3e85d4dcd9b67c183">simplifyX86pshufb</a> (const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a59d9bf36e2a220a3e85d4dcd9b67c183"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a59d9bf36e2a220a3e85d4dcd9b67c183">simplifyX86pshufb</a> (const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="memdesc:a59d9bf36e2a220a3e85d4dcd9b67c183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to convert pshufb* to shufflevector if the mask is constant.  <a href="InstCombineCalls_8cpp.html#a59d9bf36e2a220a3e85d4dcd9b67c183">More...</a><br /></td></tr>
 <tr class="separator:a59d9bf36e2a220a3e85d4dcd9b67c183"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76616979b7159a14d6afcb13c0106326"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a76616979b7159a14d6afcb13c0106326">simplifyX86vpermilvar</a> (const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a76616979b7159a14d6afcb13c0106326"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a76616979b7159a14d6afcb13c0106326">simplifyX86vpermilvar</a> (const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="memdesc:a76616979b7159a14d6afcb13c0106326"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to convert vpermilvar* to shufflevector if the mask is constant.  <a href="InstCombineCalls_8cpp.html#a76616979b7159a14d6afcb13c0106326">More...</a><br /></td></tr>
 <tr class="separator:a76616979b7159a14d6afcb13c0106326"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f8c0aa52f6980f7905a255864a1672e"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a9f8c0aa52f6980f7905a255864a1672e">simplifyX86vpermv</a> (const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a9f8c0aa52f6980f7905a255864a1672e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a9f8c0aa52f6980f7905a255864a1672e">simplifyX86vpermv</a> (const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="memdesc:a9f8c0aa52f6980f7905a255864a1672e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to convert vpermd/vpermps to shufflevector if the mask is constant.  <a href="InstCombineCalls_8cpp.html#a9f8c0aa52f6980f7905a255864a1672e">More...</a><br /></td></tr>
 <tr class="separator:a9f8c0aa52f6980f7905a255864a1672e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd0b6ccf8180c3c41b60c4b60a24ab23"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#afd0b6ccf8180c3c41b60c4b60a24ab23">simplifyInvariantGroupIntrinsic</a> (<a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
+<tr class="memitem:afd0b6ccf8180c3c41b60c4b60a24ab23"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#afd0b6ccf8180c3c41b60c4b60a24ab23">simplifyInvariantGroupIntrinsic</a> (<a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
 <tr class="memdesc:afd0b6ccf8180c3c41b60c4b60a24ab23"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function transforms launder.invariant.group and strip.invariant.group like: launder(launder(x)) -&gt; launder(x) (the result is not the argument) launder(strip(x)) -&gt; launder(x) strip(strip(x)) -&gt; strip(x) (the result is not the argument) strip(launder(x)) -&gt; strip(x) This is legal because it preserves the most recent information about the presence or absence of invariant.group.  <a href="InstCombineCalls_8cpp.html#afd0b6ccf8180c3c41b60c4b60a24ab23">More...</a><br /></td></tr>
 <tr class="separator:afd0b6ccf8180c3c41b60c4b60a24ab23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cdb7a6fe9cfc1eda509faf6ba8efd58"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a2cdb7a6fe9cfc1eda509faf6ba8efd58">foldCttzCtlz</a> (<a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
+<tr class="memitem:a2cdb7a6fe9cfc1eda509faf6ba8efd58"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a2cdb7a6fe9cfc1eda509faf6ba8efd58">foldCttzCtlz</a> (<a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
 <tr class="separator:a2cdb7a6fe9cfc1eda509faf6ba8efd58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2b61e5d176e2ce32103efe9f66f8656"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#ae2b61e5d176e2ce32103efe9f66f8656">foldCtpop</a> (<a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
+<tr class="memitem:ae2b61e5d176e2ce32103efe9f66f8656"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#ae2b61e5d176e2ce32103efe9f66f8656">foldCtpop</a> (<a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
 <tr class="separator:ae2b61e5d176e2ce32103efe9f66f8656"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06d646994f54f30c64dcb09a8c6d91f3"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a06d646994f54f30c64dcb09a8c6d91f3">simplifyX86MaskedLoad</a> (<a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
+<tr class="memitem:a06d646994f54f30c64dcb09a8c6d91f3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a06d646994f54f30c64dcb09a8c6d91f3">simplifyX86MaskedLoad</a> (<a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
 <tr class="separator:a06d646994f54f30c64dcb09a8c6d91f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a708996b12b1b5e6ac2555880bdaeda64"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a708996b12b1b5e6ac2555880bdaeda64">simplifyX86MaskedStore</a> (<a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
+<tr class="memitem:a708996b12b1b5e6ac2555880bdaeda64"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a708996b12b1b5e6ac2555880bdaeda64">simplifyX86MaskedStore</a> (<a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
 <tr class="separator:a708996b12b1b5e6ac2555880bdaeda64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadf903de6f82a588de4eed4d082b5b8c"><td class="memItemLeft" align="right" valign="top">static APFloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#aadf903de6f82a588de4eed4d082b5b8c">fmed3AMDGCN</a> (const APFloat &amp;Src0, const APFloat &amp;Src1, const APFloat &amp;Src2)</td></tr>
 <tr class="separator:aadf903de6f82a588de4eed4d082b5b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a797843f28a2e7df40385c514530778ca"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a797843f28a2e7df40385c514530778ca">simplifyNeonTbl1</a> (const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a797843f28a2e7df40385c514530778ca"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a797843f28a2e7df40385c514530778ca">simplifyNeonTbl1</a> (const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="memdesc:a797843f28a2e7df40385c514530778ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a table lookup to shufflevector if the mask is constant.  <a href="InstCombineCalls_8cpp.html#a797843f28a2e7df40385c514530778ca">More...</a><br /></td></tr>
 <tr class="separator:a797843f28a2e7df40385c514530778ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2516d0ee3e1032608dd3c3ab86cd0b14"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a2516d0ee3e1032608dd3c3ab86cd0b14">simplifyNeonVld1</a> (const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;II, unsigned MemAlign, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a2516d0ee3e1032608dd3c3ab86cd0b14"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a2516d0ee3e1032608dd3c3ab86cd0b14">simplifyNeonVld1</a> (const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;II, <a class="el" href="classunsigned.html">unsigned</a> MemAlign, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="memdesc:a2516d0ee3e1032608dd3c3ab86cd0b14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a vector load intrinsic into a simple llvm load instruction.  <a href="InstCombineCalls_8cpp.html#a2516d0ee3e1032608dd3c3ab86cd0b14">More...</a><br /></td></tr>
 <tr class="separator:a2516d0ee3e1032608dd3c3ab86cd0b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f1a7bcc8458a7dd284f38f1b748f048"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a5f1a7bcc8458a7dd284f38f1b748f048">haveSameOperands</a> (const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;E, unsigned NumOperands)</td></tr>
+<tr class="memitem:a5f1a7bcc8458a7dd284f38f1b748f048"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a5f1a7bcc8458a7dd284f38f1b748f048">haveSameOperands</a> (const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;E, <a class="el" href="classunsigned.html">unsigned</a> NumOperands)</td></tr>
 <tr class="separator:a5f1a7bcc8458a7dd284f38f1b748f048"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a563d9c923d1a53cee996d897c60155dc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a563d9c923d1a53cee996d897c60155dc">removeTriviallyEmptyRange</a> (<a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, unsigned StartID, unsigned EndID, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
+<tr class="memitem:a563d9c923d1a53cee996d897c60155dc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a563d9c923d1a53cee996d897c60155dc">removeTriviallyEmptyRange</a> (<a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classunsigned.html">unsigned</a> StartID, <a class="el" href="classunsigned.html">unsigned</a> EndID, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
 <tr class="separator:a563d9c923d1a53cee996d897c60155dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab358d967b13c72679afee6a5b06b2645"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#ab358d967b13c72679afee6a5b06b2645">SimplifyNVVMIntrinsic</a> (<a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> *II, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
+<tr class="memitem:ab358d967b13c72679afee6a5b06b2645"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#ab358d967b13c72679afee6a5b06b2645">SimplifyNVVMIntrinsic</a> (<a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> *II, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
 <tr class="separator:ab358d967b13c72679afee6a5b06b2645"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6748fd55bbf2e1775ddbc15fe86e4fd2"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a6748fd55bbf2e1775ddbc15fe86e4fd2">canonicalizeConstantArg0ToArg1</a> (CallInst &amp;Call)</td></tr>
+<tr class="memitem:a6748fd55bbf2e1775ddbc15fe86e4fd2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a6748fd55bbf2e1775ddbc15fe86e4fd2">canonicalizeConstantArg0ToArg1</a> (<a class="el" href="classllvm_1_1CallInst.html">CallInst</a> &amp;Call)</td></tr>
 <tr class="separator:a6748fd55bbf2e1775ddbc15fe86e4fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1815c1f6416dda240bb696822bbc6bff"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a1815c1f6416dda240bb696822bbc6bff">isSafeToEliminateVarargsCast</a> (const CallBase &amp;Call, const DataLayout &amp;DL, const CastInst *const CI, const int ix)</td></tr>
+<tr class="memitem:a1815c1f6416dda240bb696822bbc6bff"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a1815c1f6416dda240bb696822bbc6bff">isSafeToEliminateVarargsCast</a> (const <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> &amp;Call, const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL, const <a class="el" href="classllvm_1_1CastInst.html">CastInst</a> *const CI, const int ix)</td></tr>
 <tr class="memdesc:a1815c1f6416dda240bb696822bbc6bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">If this cast does not affect the value passed through the varargs area, we can eliminate the use of the cast.  <a href="InstCombineCalls_8cpp.html#a1815c1f6416dda240bb696822bbc6bff">More...</a><br /></td></tr>
 <tr class="separator:a1815c1f6416dda240bb696822bbc6bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1eea4a3473408dad3e81030a130a51ca"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a1eea4a3473408dad3e81030a130a51ca">findInitTrampolineFromAlloca</a> (Value *TrampMem)</td></tr>
+<tr class="memitem:a1eea4a3473408dad3e81030a130a51ca"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a1eea4a3473408dad3e81030a130a51ca">findInitTrampolineFromAlloca</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *TrampMem)</td></tr>
 <tr class="separator:a1eea4a3473408dad3e81030a130a51ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d0e45d07c65ef73adf90a69ca3ebedf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a9d0e45d07c65ef73adf90a69ca3ebedf">findInitTrampolineFromBB</a> (<a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> *AdjustTramp, Value *TrampMem)</td></tr>
+<tr class="memitem:a9d0e45d07c65ef73adf90a69ca3ebedf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a9d0e45d07c65ef73adf90a69ca3ebedf">findInitTrampolineFromBB</a> (<a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> *AdjustTramp, <a class="el" href="classllvm_1_1Value.html">Value</a> *TrampMem)</td></tr>
 <tr class="separator:a9d0e45d07c65ef73adf90a69ca3ebedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6d7cb2af5197dfb40fa54302fbe06d1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#ac6d7cb2af5197dfb40fa54302fbe06d1">findInitTrampoline</a> (Value *Callee)</td></tr>
+<tr class="memitem:ac6d7cb2af5197dfb40fa54302fbe06d1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#ac6d7cb2af5197dfb40fa54302fbe06d1">findInitTrampoline</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *Callee)</td></tr>
 <tr class="separator:ac6d7cb2af5197dfb40fa54302fbe06d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a6c849629d0213f736b2218648f950758"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCalls_8cpp.html#a6c849629d0213f736b2218648f950758">GuardWideningWindow</a> (&quot;instcombine-guard-<a class="el" href="GuardWidening_8cpp.html#a489b6ce5381e4b24804590fbcc7cdff8">widening</a>-window&quot;, cl::init(3), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;How wide an instruction window to bypass looking for &quot; &quot;another guard&quot;))</td></tr>
+<tr class="separator:a6c849629d0213f736b2218648f950758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad78e062f62e0d6e453941fb4ca843e4d" name="ad78e062f62e0d6e453941fb4ca843e4d"></a>
@@ -224,9 +228,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Instruction * canonicalizeConstantArg0ToArg1 </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * canonicalizeConstantArg0ToArg1 </td>
           <td>(</td>
-          <td class="paramtype">CallInst &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> &amp;&#160;</td>
           <td class="paramname"><em>Call</em></td><td>)</td>
           <td></td>
         </tr>
@@ -256,9 +260,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> * findInitTrampoline </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> * findInitTrampoline </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>Callee</em></td><td>)</td>
           <td></td>
         </tr>
@@ -272,7 +276,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l04164">4164</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InstCombineCalls_8cpp_source.html#l04104">findInitTrampolineFromAlloca()</a>, and <a class="el" href="InstCombineCalls_8cpp_source.html#l04143">findInitTrampolineFromBB()</a>.</p>
+<p class="reference">References <a class="el" href="InstCombineCalls_8cpp_source.html#l04104">findInitTrampolineFromAlloca()</a>, <a class="el" href="InstCombineCalls_8cpp_source.html#l04143">findInitTrampolineFromBB()</a>, <a class="el" href="IntrinsicInst_8h_source.html#l00050">llvm::IntrinsicInst::getIntrinsicID()</a>, and <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>.</p>
 
 </div>
 </div>
@@ -286,9 +290,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> * findInitTrampolineFromAlloca </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> * findInitTrampolineFromAlloca </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>TrampMem</em></td><td>)</td>
           <td></td>
         </tr>
@@ -301,6 +305,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l04104">4104</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="IntrinsicInst_8h_source.html#l00050">llvm::IntrinsicInst::getIntrinsicID()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Value_8h_source.html#l00412">llvm::Value::hasOneUse()</a>, <a class="el" href="Value_8cpp_source.html#l00535">llvm::Value::stripPointerCasts()</a>, <a class="el" href="Value_8h_source.html#l00385">llvm::Value::user_back()</a>, and <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l04164">findInitTrampoline()</a>.</p>
 
@@ -316,15 +322,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> * findInitTrampolineFromBB </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> * findInitTrampolineFromBB </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> *&#160;</td>
           <td class="paramname"><em>AdjustTramp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>TrampMem</em>&#160;</td>
         </tr>
         <tr>
@@ -342,7 +348,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l04143">4143</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="IntrinsicInst_8h_source.html#l00050">llvm::IntrinsicInst::getIntrinsicID()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="Instruction_8cpp_source.html#l00533">llvm::Instruction::mayWriteToMemory()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l04164">findInitTrampoline()</a>.</p>
 
@@ -406,9 +412,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Instruction * foldCtpop </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * foldCtpop </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -432,7 +438,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l01258">1258</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00662">llvm::InstCombiner::computeKnownBits()</a>, and <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00662">llvm::InstCombiner::computeKnownBits()</a>, <a class="el" href="KnownBits_8h_source.html#l00201">llvm::KnownBits::countMaxPopulation()</a>, <a class="el" href="KnownBits_8h_source.html#l00196">llvm::KnownBits::countMinPopulation()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="IntrinsicInst_8h_source.html#l00050">llvm::IntrinsicInst::getIntrinsicID()</a>, <a class="el" href="Instruction_8h_source.html#l00234">llvm::Instruction::getMetadata()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="PatternMatch_8h_source.html#l01637">llvm::PatternMatch::m_BitReverse()</a>, <a class="el" href="PatternMatch_8h_source.html#l01642">llvm::PatternMatch::m_BSwap()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, <a class="el" href="LLVMContext_8h_source.html#l00079">llvm::LLVMContext::MD_range</a>, <a class="el" href="Metadata_8cpp_source.html#l01222">llvm::Instruction::setMetadata()</a>, <a class="el" href="User_8h_source.html#l00174">llvm::User::setOperand()</a>, and <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -448,9 +454,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Instruction * foldCttzCtlz </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * foldCttzCtlz </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -474,7 +480,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l01182">1182</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00662">llvm::InstCombiner::computeKnownBits()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00299">llvm::InstCombiner::getAssumptionCache()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00301">llvm::InstCombiner::getDataLayout()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00303">llvm::InstCombiner::getDominatorTree()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l01993">isKnownNonZero()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l04756">matchSelectPattern()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00600">llvm::InstCombiner::replaceInstUsesWith()</a>, <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>, and <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00662">llvm::InstCombiner::computeKnownBits()</a>, <a class="el" href="KnownBits_8h_source.html#l00186">llvm::KnownBits::countMaxLeadingZeros()</a>, <a class="el" href="KnownBits_8h_source.html#l00176">llvm::KnownBits::countMaxTrailingZeros()</a>, <a class="el" href="KnownBits_8h_source.html#l00156">llvm::KnownBits::countMinLeadingZeros()</a>, <a class="el" href="KnownBits_8h_source.html#l00146">llvm::KnownBits::countMinTrailingZeros()</a>, <a class="el" href="Instructions_8h_source.html#l01437">llvm::CallInst::Create()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="ValueTracking_8h_source.html#l00574">llvm::SelectPatternResult::Flavor</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00299">llvm::InstCombiner::getAssumptionCache()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00301">llvm::InstCombiner::getDataLayout()</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00303">llvm::InstCombiner::getDominatorTree()</a>, <a class="el" href="IntrinsicInst_8h_source.html#l00050">llvm::IntrinsicInst::getIntrinsicID()</a>, <a class="el" href="Instruction_8h_source.html#l00234">llvm::Instruction::getMetadata()</a>, <a class="el" href="Instruction_8cpp_source.html#l00055">llvm::Instruction::getModule()</a>, <a class="el" href="IRBuilder_8h_source.html#l00323">llvm::IRBuilderBase::getTrue()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l00238">llvm::isKnownNonZero()</a>, <a class="el" href="PatternMatch_8h_source.html#l01637">llvm::PatternMatch::m_BitReverse()</a>, <a class="el" href="PatternMatch_8h_source.html#l01725">llvm::PatternMatch::m_Neg()</a>, <a class="el" href="PatternMatch_8h_source.html#l00354">llvm::PatternMatch::m_One()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l05046">llvm::matchSelectPattern()</a>, <a class="el" href="LLVMContext_8h_source.html#l00079">llvm::LLVMContext::MD_range</a>, <a class="el" href="KnownBits_8h_source.html#l00024">llvm::KnownBits::One</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00600">llvm::InstCombiner::replaceInstUsesWith()</a>, <a class="el" href="Metadata_8cpp_source.html#l01222">llvm::Instruction::setMetadata()</a>, <a class="el" href="User_8h_source.html#l00174">llvm::User::setOperand()</a>, <a class="el" href="ValueTracking_8h_source.html#l00558">llvm::SPF_ABS</a>, <a class="el" href="ValueTracking_8h_source.html#l00559">llvm::SPF_NABS</a>, <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>, and <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -490,9 +496,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Constant * getNegativeIsTrueBoolVec </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Constant.html">Constant</a> * getNegativeIsTrueBoolVec </td>
           <td>(</td>
-          <td class="paramtype">ConstantDataVector *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ConstantDataVector.html">ConstantDataVector</a> *&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
           <td></td>
         </tr>
@@ -508,7 +514,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l00095">95</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Constants_8cpp_source.html#l01088">llvm::ConstantVector::get()</a>, <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="Constants_8cpp_source.html#l02751">llvm::ConstantDataSequential::getElementAsConstant()</a>, <a class="el" href="Constants_8cpp_source.html#l02411">llvm::ConstantDataSequential::getElementType()</a>, <a class="el" href="IRBuilder_8h_source.html#l00368">llvm::IRBuilderBase::getInt1Ty()</a>, <a class="el" href="Constants_8cpp_source.html#l02434">llvm::ConstantDataSequential::getNumElements()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="Type_8h_source.html#l00196">llvm::Type::isIntegerTy()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01298">simplifyX86MaskedLoad()</a>, <a class="el" href="InstCombineCalls_8cpp_source.html#l01334">simplifyX86MaskedStore()</a>, and <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -524,9 +530,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Type * getPromotedType </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Type.html">Type</a> * getPromotedType </td>
           <td>(</td>
-          <td class="paramtype">Type *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
           <td class="paramname"><em>Ty</em></td><td>)</td>
           <td></td>
         </tr>
@@ -542,49 +548,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l00085">85</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-</div>
-</div>
-<a id="abf2585364f01f45879ed8a4df00ffbb5" name="abf2585364f01f45879ed8a4df00ffbb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf2585364f01f45879ed8a4df00ffbb5">&#9670;&nbsp;</a></span>GuardWideningWindow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; GuardWideningWindow </td>
-          <td>(</td>
-          <td class="paramtype">&quot;instcombine-guard-<a class="el" href="GuardWidening_8cpp.html#a489b6ce5381e4b24804590fbcc7cdff8">widening</a>-window&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(3)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;How wide an instruction window to bypass looking for &quot; &quot;another guard&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
+<p class="reference">References <a class="el" href="Type_8h_source.html#l00129">llvm::Type::getContext()</a>, and <a class="el" href="IRBuilder_8h_source.html#l00383">llvm::IRBuilderBase::getInt32Ty()</a>.</p>
 
 </div>
 </div>
@@ -598,21 +562,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool haveSameOperands </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> haveSameOperands </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>E</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>NumOperands</em>&#160;</td>
         </tr>
         <tr>
@@ -646,21 +610,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isSafeToEliminateVarargsCast </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isSafeToEliminateVarargsCast </td>
           <td>(</td>
-          <td class="paramtype">const CallBase &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> &amp;&#160;</td>
           <td class="paramname"><em>Call</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DataLayout &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
           <td class="paramname"><em>DL</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const CastInst *const&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1CastInst.html">CastInst</a> *const&#160;</td>
           <td class="paramname"><em>CI</em>, </td>
         </tr>
         <tr>
@@ -686,6 +650,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l04052">4052</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="DataLayout_8h_source.html#l00469">llvm::DataLayout::getTypeAllocSize()</a>, <a class="el" href="Statepoint_8cpp_source.html#l00036">llvm::isGCRelocate()</a>, <a class="el" href="Statepoint_8cpp_source.html#l00046">llvm::isGCResult()</a>, <a class="el" href="Instructions_8cpp_source.html#l02463">llvm::CastInst::isLosslessCast()</a>, <a class="el" href="Type_8h_source.html#l00264">llvm::Type::isSized()</a>, and <a class="el" href="Statepoint_8cpp_source.html#l00020">llvm::isStatepoint()</a>.</p>
+
 </div>
 </div>
 <a id="a563d9c923d1a53cee996d897c60155dc" name="a563d9c923d1a53cee996d897c60155dc"></a>
@@ -698,21 +664,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool removeTriviallyEmptyRange </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> removeTriviallyEmptyRange </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>StartID</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>EndID</em>, </td>
         </tr>
         <tr>
@@ -752,9 +718,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Instruction * simplifyInvariantGroupIntrinsic </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * simplifyInvariantGroupIntrinsic </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -780,7 +746,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l01156">1156</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>.</p>
+<p class="reference">References <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>, <a class="el" href="IRBuilder_8h_source.html#l01956">llvm::IRBuilder&lt; T, Inserter &gt;::CreateAddrSpaceCast()</a>, <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="IRBuilder_8h_source.html#l02364">llvm::IRBuilder&lt; T, Inserter &gt;::CreateLaunderInvariantGroup()</a>, <a class="el" href="IRBuilder_8h_source.html#l02391">llvm::IRBuilder&lt; T, Inserter &gt;::CreateStripInvariantGroup()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="IntrinsicInst_8h_source.html#l00050">llvm::IntrinsicInst::getIntrinsicID()</a>, <a class="el" href="DerivedTypes_8h_source.html#l00580">llvm::Type::getPointerAddressSpace()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>, <a class="el" href="Value_8cpp_source.html#l00535">llvm::Value::stripPointerCasts()</a>, and <a class="el" href="Value_8cpp_source.html#l00552">llvm::Value::stripPointerCastsAndInvariantGroups()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -796,9 +762,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * simplifyNeonTbl1 </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * simplifyNeonTbl1 </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -825,7 +791,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l01400">1400</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="IRBuilder_8h_source.html#l02290">llvm::IRBuilder&lt; T, Inserter &gt;::CreateShuffleVector()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="Constants_8cpp_source.html#l00274">llvm::Constant::getNullValue()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -841,15 +807,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * simplifyNeonVld1 </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * simplifyNeonVld1 </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>MemAlign</em>, </td>
         </tr>
         <tr>
@@ -876,6 +842,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l01439">1439</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="IRBuilder_8h_source.html#l01612">llvm::IRBuilder&lt; T, Inserter &gt;::CreateAlignedLoad()</a>, <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="MathExtras_8h_source.html#l00428">llvm::isPowerOf2_32()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
 </div>
@@ -890,9 +858,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Instruction * SimplifyNVVMIntrinsic </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * SimplifyNVVMIntrinsic </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> *&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -916,6 +884,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l01502">1502</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="InstrTypes_8h_source.html#l01233">llvm::CallBase::arg_operands()</a>, <a class="el" href="Instructions_8cpp_source.html#l02337">llvm::BinaryOperator::Create()</a>, <a class="el" href="Instructions_8h_source.html#l01437">llvm::CallInst::Create()</a>, <a class="el" href="Instructions_8cpp_source.html#l02746">llvm::CastInst::Create()</a>, <a class="el" href="Instructions_8h_source.html#l00730">llvm::AtomicRMWInst::FAdd</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, <a class="el" href="Function_8h_source.html#l00333">llvm::Function::getFnAttribute()</a>, <a class="el" href="Instruction_8cpp_source.html#l00059">llvm::Instruction::getFunction()</a>, <a class="el" href="IntrinsicInst_8h_source.html#l00050">llvm::IntrinsicInst::getIntrinsicID()</a>, <a class="el" href="Instruction_8cpp_source.html#l00055">llvm::Instruction::getModule()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Attributes_8cpp_source.html#l00223">llvm::Attribute::getValueAsString()</a>, and <a class="el" href="ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
 </div>
@@ -930,9 +900,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * simplifyX86addcarry </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * simplifyX86addcarry </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -956,7 +926,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l00641">641</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00351">RetTy</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="IRBuilder_8h_source.html#l02305">llvm::IRBuilder&lt; T, Inserter &gt;::CreateExtractValue()</a>, <a class="el" href="IRBuilder_8h_source.html#l02313">llvm::IRBuilder&lt; T, Inserter &gt;::CreateInsertValue()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00748">llvm::IRBuilderBase::CreateIntrinsic()</a>, <a class="el" href="IRBuilder_8h_source.html#l01878">llvm::IRBuilder&lt; T, Inserter &gt;::CreateZExt()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="IRBuilder_8h_source.html#l00373">llvm::IRBuilderBase::getInt8Ty()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="PatternMatch_8h_source.html#l00363">llvm::PatternMatch::m_ZeroInt()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00351">RetTy</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -972,27 +942,27 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * simplifyX86extrq </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * simplifyX86extrq </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>Op0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ConstantInt *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ConstantInt.html">ConstantInt</a> *&#160;</td>
           <td class="paramname"><em>CILength</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ConstantInt *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ConstantInt.html">ConstantInt</a> *&#160;</td>
           <td class="paramname"><em>CIIndex</em>, </td>
         </tr>
         <tr>
@@ -1018,7 +988,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l00727">727</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
+<p class="reference">References <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="IRBuilder_8h_source.html#l02193">llvm::IRBuilder&lt; T, Inserter &gt;::CreateCall()</a>, <a class="el" href="IRBuilder_8h_source.html#l02290">llvm::IRBuilder&lt; T, Inserter &gt;::CreateShuffleVector()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="Constants_8cpp_source.html#l00344">llvm::Constant::getAggregateElement()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, <a class="el" href="IRBuilder_8h_source.html#l00383">llvm::IRBuilderBase::getInt32Ty()</a>, <a class="el" href="IRBuilder_8h_source.html#l00388">llvm::IRBuilderBase::getInt64Ty()</a>, <a class="el" href="IRBuilder_8h_source.html#l00373">llvm::IRBuilderBase::getInt8Ty()</a>, <a class="el" href="Constants_8cpp_source.html#l00311">llvm::Constant::getIntegerValue()</a>, <a class="el" href="IntrinsicInst_8h_source.html#l00050">llvm::IntrinsicInst::getIntrinsicID()</a>, <a class="el" href="Instruction_8cpp_source.html#l00055">llvm::Instruction::getModule()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Constants_8h_source.html#l00137">llvm::ConstantInt::getValue()</a>, and <a class="el" href="Constants_8h_source.html#l00192">llvm::ConstantInt::isZero()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -1034,9 +1004,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * simplifyX86immShift </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * simplifyX86immShift </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -1060,7 +1030,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l00287">287</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="IRBuilder_8h_source.html#l01248">llvm::IRBuilder&lt; T, Inserter &gt;::CreateAShr()</a>, <a class="el" href="IRBuilder_8h_source.html#l01228">llvm::IRBuilder&lt; T, Inserter &gt;::CreateLShr()</a>, <a class="el" href="IRBuilder_8h_source.html#l01207">llvm::IRBuilder&lt; T, Inserter &gt;::CreateShl()</a>, <a class="el" href="IRBuilder_8h_source.html#l02418">llvm::IRBuilder&lt; T, Inserter &gt;::CreateVectorSplat()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="IntrinsicInst_8h_source.html#l00050">llvm::IntrinsicInst::getIntrinsicID()</a>, and <a class="el" href="ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -1076,9 +1046,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * simplifyX86insertps </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * simplifyX86insertps </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -1102,7 +1072,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l00668">668</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="IRBuilder_8h_source.html#l02290">llvm::IRBuilder&lt; T, Inserter &gt;::CreateShuffleVector()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="DerivedTypes_8h_source.html#l00393">llvm::SequentialType::getNumElements()</a>, and <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -1118,21 +1088,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * simplifyX86insertq </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * simplifyX86insertq </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>Op0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>Op1</em>, </td>
         </tr>
         <tr>
@@ -1170,7 +1140,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l00821">821</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
+<p class="reference">References <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="IRBuilder_8h_source.html#l02193">llvm::IRBuilder&lt; T, Inserter &gt;::CreateCall()</a>, <a class="el" href="IRBuilder_8h_source.html#l02290">llvm::IRBuilder&lt; T, Inserter &gt;::CreateShuffleVector()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="Constants_8cpp_source.html#l00344">llvm::Constant::getAggregateElement()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, <a class="el" href="IRBuilder_8h_source.html#l00383">llvm::IRBuilderBase::getInt32Ty()</a>, <a class="el" href="IRBuilder_8h_source.html#l00388">llvm::IRBuilderBase::getInt64Ty()</a>, <a class="el" href="IRBuilder_8h_source.html#l00373">llvm::IRBuilderBase::getInt8Ty()</a>, <a class="el" href="Constants_8cpp_source.html#l00311">llvm::Constant::getIntegerValue()</a>, <a class="el" href="IntrinsicInst_8h_source.html#l00050">llvm::IntrinsicInst::getIntrinsicID()</a>, <a class="el" href="Instruction_8cpp_source.html#l00055">llvm::Instruction::getModule()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="Constants_8h_source.html#l00137">llvm::ConstantInt::getValue()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -1186,9 +1156,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Instruction * simplifyX86MaskedLoad </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * simplifyX86MaskedLoad </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -1212,7 +1182,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l01298">1298</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>, <a class="el" href="InstCombineCalls_8cpp_source.html#l00095">getNegativeIsTrueBoolVec()</a>, and <a class="el" href="InstCombineInternal_8h_source.html#l00600">llvm::InstCombiner::replaceInstUsesWith()</a>.</p>
+<p class="reference">References <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>, <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00468">llvm::IRBuilderBase::CreateMaskedLoad()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="InstCombineCalls_8cpp_source.html#l00095">getNegativeIsTrueBoolVec()</a>, <a class="el" href="Constants_8cpp_source.html#l00274">llvm::Constant::getNullValue()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="InstCombineInternal_8h_source.html#l00600">llvm::InstCombiner::replaceInstUsesWith()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -1228,9 +1198,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool simplifyX86MaskedStore </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> simplifyX86MaskedStore </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -1254,7 +1224,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l01334">1334</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00644">llvm::InstCombiner::eraseInstFromFunction()</a>, and <a class="el" href="InstCombineCalls_8cpp_source.html#l00095">getNegativeIsTrueBoolVec()</a>.</p>
+<p class="reference">References <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>, <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00489">llvm::IRBuilderBase::CreateMaskedStore()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00644">llvm::InstCombiner::eraseInstFromFunction()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="IntrinsicInst_8h_source.html#l00050">llvm::IntrinsicInst::getIntrinsicID()</a>, <a class="el" href="InstCombineCalls_8cpp_source.html#l00095">getNegativeIsTrueBoolVec()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, and <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -1270,9 +1240,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * simplifyX86movmsk </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * simplifyX86movmsk </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -1296,6 +1266,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l00611">611</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="IRBuilder_8h_source.html#l02090">llvm::IRBuilder&lt; T, Inserter &gt;::CreateICmpSLT()</a>, <a class="el" href="IRBuilder_8h_source.html#l01888">llvm::IRBuilder&lt; T, Inserter &gt;::CreateZExtOrTrunc()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="DerivedTypes_8h_source.html#l00463">llvm::VectorType::getInteger()</a>, <a class="el" href="IRBuilder_8h_source.html#l00396">llvm::IRBuilderBase::getIntNTy()</a>, <a class="el" href="Constants_8cpp_source.html#l00274">llvm::Constant::getNullValue()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="DerivedTypes_8h_source.html#l00535">llvm::Type::getVectorNumElements()</a>, and <a class="el" href="Type_8h_source.html#l00229">llvm::Type::isVectorTy()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
 </div>
@@ -1310,9 +1282,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * simplifyX86pack </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * simplifyX86pack </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -1324,7 +1296,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>IsSigned</em>&#160;</td>
         </tr>
         <tr>
@@ -1342,7 +1314,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l00545">545</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="IRBuilder_8h_source.html#l02082">llvm::IRBuilder&lt; T, Inserter &gt;::CreateICmpSGT()</a>, <a class="el" href="IRBuilder_8h_source.html#l02090">llvm::IRBuilder&lt; T, Inserter &gt;::CreateICmpSLT()</a>, <a class="el" href="IRBuilder_8h_source.html#l02241">llvm::IRBuilder&lt; T, Inserter &gt;::CreateSelect()</a>, <a class="el" href="IRBuilder_8h_source.html#l02290">llvm::IRBuilder&lt; T, Inserter &gt;::CreateShuffleVector()</a>, <a class="el" href="IRBuilder_8h_source.html#l01874">llvm::IRBuilder&lt; T, Inserter &gt;::CreateTrunc()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="Constants_8cpp_source.html#l00311">llvm::Constant::getIntegerValue()</a>, <a class="el" href="Type_8cpp_source.html#l00114">llvm::Type::getPrimitiveSizeInBits()</a>, <a class="el" href="Type_8cpp_source.html#l00129">llvm::Type::getScalarSizeInBits()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="DerivedTypes_8h_source.html#l00535">llvm::Type::getVectorNumElements()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -1358,9 +1330,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * simplifyX86pshufb </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * simplifyX86pshufb </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -1386,7 +1358,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l00916">916</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="IRBuilder_8h_source.html#l02290">llvm::IRBuilder&lt; T, Inserter &gt;::CreateShuffleVector()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="Constants_8cpp_source.html#l00344">llvm::Constant::getAggregateElement()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="IRBuilder_8h_source.html#l00383">llvm::IRBuilderBase::getInt32Ty()</a>, <a class="el" href="Constants_8cpp_source.html#l00274">llvm::Constant::getNullValue()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -1402,9 +1374,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * simplifyX86varShift </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * simplifyX86varShift </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -1428,7 +1400,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l00421">421</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="IRBuilder_8h_source.html#l01248">llvm::IRBuilder&lt; T, Inserter &gt;::CreateAShr()</a>, <a class="el" href="IRBuilder_8h_source.html#l01228">llvm::IRBuilder&lt; T, Inserter &gt;::CreateLShr()</a>, <a class="el" href="IRBuilder_8h_source.html#l01207">llvm::IRBuilder&lt; T, Inserter &gt;::CreateShl()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="IntrinsicInst_8h_source.html#l00050">llvm::IntrinsicInst::getIntrinsicID()</a>, <a class="el" href="Constants_8cpp_source.html#l00274">llvm::Constant::getNullValue()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>, and <a class="el" href="ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -1444,9 +1416,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * simplifyX86vpermilvar </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * simplifyX86vpermilvar </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -1472,7 +1444,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l00963">963</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="IRBuilder_8h_source.html#l02290">llvm::IRBuilder&lt; T, Inserter &gt;::CreateShuffleVector()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="Constants_8cpp_source.html#l00344">llvm::Constant::getAggregateElement()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="IRBuilder_8h_source.html#l00383">llvm::IRBuilderBase::getInt32Ty()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -1488,9 +1460,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * simplifyX86vpermv </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * simplifyX86vpermv </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classIntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1IntrinsicInst.html">IntrinsicInst</a> &amp;&#160;</td>
           <td class="paramname"><em>II</em>, </td>
         </tr>
         <tr>
@@ -1516,7 +1488,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCalls_8cpp_source.html#l01013">1013</a> of file <a class="el" href="InstCombineCalls_8cpp_source.html">InstCombineCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="IRBuilder_8h_source.html#l02290">llvm::IRBuilder&lt; T, Inserter &gt;::CreateShuffleVector()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="Constants_8cpp_source.html#l00344">llvm::Constant::getAggregateElement()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="IRBuilder_8h_source.html#l00383">llvm::IRBuilderBase::getInt32Ty()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
 
@@ -1550,10 +1522,55 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a6c849629d0213f736b2218648f950758" name="a6c849629d0213f736b2218648f950758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c849629d0213f736b2218648f950758">&#9670;&nbsp;</a></span>GuardWideningWindow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; GuardWideningWindow(&quot;instcombine-guard-<a class="el" href="GuardWidening_8cpp.html#a489b6ce5381e4b24804590fbcc7cdff8">widening</a>-window&quot;, cl::init(3), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;How wide an instruction window to bypass looking for &quot; &quot;another guard&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;instcombine-guard-<a class="el" href="GuardWidening_8cpp.html#a489b6ce5381e4b24804590fbcc7cdff8">widening</a>-window&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(3)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;How wide an instruction window to bypass looking for &quot; &quot;another guard&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="InstCombineCalls_8cpp_source.html#l01782">llvm::InstCombiner::visitCallInst()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

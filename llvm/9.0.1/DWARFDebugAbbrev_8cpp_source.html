@@ -61,17 +61,17 @@ $(function() {
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;llvm/DebugInfo/DWARF/DWARFDebugAbbrev.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;llvm/Support/Format.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;llvm/Support/raw_ostream.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="DWARFDebugAbbrev_8h.html">llvm/DebugInfo/DWARF/DWARFDebugAbbrev.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="Format_8h.html">llvm/Support/Format.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="raw__ostream_8h.html">llvm/Support/raw_ostream.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;cinttypes&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm.html">llvm</a>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>DWARFAbbreviationDeclarationSet::DWARFAbbreviationDeclarationSet() {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <a class="code hl_function" href="Coroutines_8cpp.html#ac781ce96aa25ba7f6fd38f72de665450">clear</a>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classllvm_1_1DWARFAbbreviationDeclarationSet.html#a3de9d7d61d02bede53aafc985fac5167">   18</a></span><a class="code hl_function" href="classllvm_1_1DWARFAbbreviationDeclarationSet.html#a3de9d7d61d02bede53aafc985fac5167">DWARFAbbreviationDeclarationSet::DWARFAbbreviationDeclarationSet</a>() {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  clear();</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> DWARFAbbreviationDeclarationSet::clear() {</div>
@@ -80,36 +80,36 @@ $(function() {
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  Decls.clear();</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">bool</span> DWARFAbbreviationDeclarationSet::extract(DataExtractor Data,</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                                              uint32_t *OffsetPtr) {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <a class="code hl_function" href="Coroutines_8cpp.html#ac781ce96aa25ba7f6fd38f72de665450">clear</a>();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">const</span> uint32_t BeginOffset = *OffsetPtr;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classllvm_1_1DWARFAbbreviationDeclarationSet.html#abf6d34e7dad4445c72fed3af1aebff20">   28</a></span><span class="keywordtype">bool</span> <a class="code hl_variable" href="LoopExtractor_8cpp.html#a84dff14934298a71113ab11312c243f6">DWARFAbbreviationDeclarationSet::extract</a>(<a class="code hl_class" href="classllvm_1_1DataExtractor.html">DataExtractor</a> Data,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                                              <a class="code hl_class" href="classuint32__t.html">uint32_t</a> *OffsetPtr) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  clear();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">const</span> <a class="code hl_class" href="classuint32__t.html">uint32_t</a> BeginOffset = *OffsetPtr;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  Offset = BeginOffset;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  DWARFAbbreviationDeclaration AbbrDecl;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  uint32_t PrevAbbrCode = 0;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordflow">while</span> (AbbrDecl.extract(Data, OffsetPtr)) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_class" href="classllvm_1_1DWARFAbbreviationDeclaration.html">DWARFAbbreviationDeclaration</a> AbbrDecl;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_class" href="classuint32__t.html">uint32_t</a> PrevAbbrCode = 0;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordflow">while</span> (AbbrDecl.<a class="code hl_function" href="classllvm_1_1DWARFAbbreviationDeclaration.html#a9a5d444982103e5f3728f295bff5c4fb">extract</a>(Data, OffsetPtr)) {</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (FirstAbbrCode == 0) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      FirstAbbrCode = AbbrDecl.getCode();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      FirstAbbrCode = AbbrDecl.<a class="code hl_function" href="classllvm_1_1DWARFAbbreviationDeclaration.html#ac1c89d249411e93a83f15dbef8a16ca4">getCode</a>();</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      <span class="keywordflow">if</span> (PrevAbbrCode + 1 != AbbrDecl.getCode()) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      <span class="keywordflow">if</span> (PrevAbbrCode + 1 != AbbrDecl.<a class="code hl_function" href="classllvm_1_1DWARFAbbreviationDeclaration.html#ac1c89d249411e93a83f15dbef8a16ca4">getCode</a>()) {</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="comment">// Codes are not consecutive, can&#39;t do O(1) lookups.</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        FirstAbbrCode = UINT32_MAX;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    PrevAbbrCode = AbbrDecl.getCode();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    PrevAbbrCode = AbbrDecl.<a class="code hl_function" href="classllvm_1_1DWARFAbbreviationDeclaration.html#ac1c89d249411e93a83f15dbef8a16ca4">getCode</a>();</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    Decls.push_back(std::move(AbbrDecl));</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  }</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordflow">return</span> BeginOffset != *OffsetPtr;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">void</span> DWARFAbbreviationDeclarationSet::dump(raw_ostream &amp;OS)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classllvm_1_1DWARFAbbreviationDeclarationSet.html#a076d559e0ce7b39b56f8afb59f1ae1a6">   50</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classllvm_1_1AliasSet.html#af940c8979b258033f9a1fbd65f6c073a">DWARFAbbreviationDeclarationSet::dump</a>(<a class="code hl_class" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;Decl : Decls)</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    Decl.dump(OS);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">const</span> DWARFAbbreviationDeclaration *</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>DWARFAbbreviationDeclarationSet::getAbbreviationDeclaration(</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    uint32_t AbbrCode)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">const</span> <a class="code hl_class" href="classllvm_1_1DWARFAbbreviationDeclaration.html">DWARFAbbreviationDeclaration</a> *</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classllvm_1_1DWARFAbbreviationDeclarationSet.html#a45765f7f594731ef9232592efa4a5dca">   56</a></span><a class="code hl_function" href="classllvm_1_1DWARFAbbreviationDeclarationSet.html#a45765f7f594731ef9232592efa4a5dca">DWARFAbbreviationDeclarationSet::getAbbreviationDeclaration</a>(</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_class" href="classuint32__t.html">uint32_t</a> AbbrCode)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordflow">if</span> (FirstAbbrCode == UINT32_MAX) {</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;Decl : Decls) {</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <span class="keywordflow">if</span> (Decl.getCode() == AbbrCode)</div>
@@ -122,37 +122,37 @@ $(function() {
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordflow">return</span> &amp;Decls[AbbrCode - FirstAbbrCode];</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>DWARFDebugAbbrev::DWARFDebugAbbrev() { <a class="code hl_function" href="Coroutines_8cpp.html#ac781ce96aa25ba7f6fd38f72de665450">clear</a>(); }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classllvm_1_1DWARFDebugAbbrev.html#a94192b595979fc6ebc4a3d6f2dfc8f15">   70</a></span><a class="code hl_function" href="classllvm_1_1DWARFDebugAbbrev.html#a94192b595979fc6ebc4a3d6f2dfc8f15">DWARFDebugAbbrev::DWARFDebugAbbrev</a>() { clear(); }</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> DWARFDebugAbbrev::clear() {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  AbbrDeclSets.clear();</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  PrevAbbrOffsetPos = AbbrDeclSets.end();</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keywordtype">void</span> DWARFDebugAbbrev::extract(DataExtractor Data) {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <a class="code hl_function" href="Coroutines_8cpp.html#ac781ce96aa25ba7f6fd38f72de665450">clear</a>();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classllvm_1_1DWARFDebugAbbrev.html#a5e8ff909a89e340d71f43d51d14a35d5">   77</a></span><span class="keywordtype">void</span> <a class="code hl_variable" href="LoopExtractor_8cpp.html#a84dff14934298a71113ab11312c243f6">DWARFDebugAbbrev::extract</a>(<a class="code hl_class" href="classllvm_1_1DataExtractor.html">DataExtractor</a> Data) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  clear();</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  this-&gt;Data = Data;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keywordtype">void</span> DWARFDebugAbbrev::parse()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classllvm_1_1DWARFDebugAbbrev.html#aa5da5512de9a040dccf9f5189a45c7cf">   82</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classllvm_1_1DWARFDebugAbbrev.html#aa5da5512de9a040dccf9f5189a45c7cf">DWARFDebugAbbrev::parse</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordflow">if</span> (!Data)</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  uint32_t Offset = 0;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <a class="code hl_class" href="classuint32__t.html">uint32_t</a> Offset = 0;</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keyword">auto</span> <a class="code hl_define" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a> = AbbrDeclSets.begin();</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">while</span> (Data-&gt;isValidOffset(Offset)) {</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">while</span> (<a class="code hl_define" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a> != AbbrDeclSets.end() &amp;&amp; <a class="code hl_define" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>-&gt;first &lt; Offset)</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      ++<a class="code hl_define" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    uint32_t CUAbbrOffset = Offset;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    DWARFAbbreviationDeclarationSet AbbrDecls;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">if</span> (!AbbrDecls.extract(*Data, &amp;Offset))</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_class" href="classuint32__t.html">uint32_t</a> CUAbbrOffset = Offset;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_class" href="classllvm_1_1DWARFAbbreviationDeclarationSet.html">DWARFAbbreviationDeclarationSet</a> AbbrDecls;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">if</span> (!AbbrDecls.<a class="code hl_function" href="classllvm_1_1DWARFAbbreviationDeclarationSet.html#abf6d34e7dad4445c72fed3af1aebff20">extract</a>(*Data, &amp;Offset))</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    AbbrDeclSets.insert(<a class="code hl_define" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, std::make_pair(CUAbbrOffset, std::move(AbbrDecls)));</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  Data = <a class="code hl_enumvalue" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  Data = <a class="code hl_enumvalue" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870a6adf97f83acf6453d4a6a4b1070f3754">None</a>;</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keywordtype">void</span> DWARFDebugAbbrev::dump(raw_ostream &amp;OS)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <a class="code hl_struct" href="structparse.html">parse</a>();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classllvm_1_1DWARFDebugAbbrev.html#a771ab53db331733048f7e421a2022154">   99</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classllvm_1_1AliasSet.html#af940c8979b258033f9a1fbd65f6c073a">DWARFDebugAbbrev::dump</a>(<a class="code hl_class" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <a class="code hl_function" href="classllvm_1_1DWARFDebugAbbrev.html#aa5da5512de9a040dccf9f5189a45c7cf">parse</a>();</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordflow">if</span> (AbbrDeclSets.empty()) {</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    OS &lt;&lt; <span class="stringliteral">&quot;&lt; EMPTY &gt;\n&quot;</span>;</div>
@@ -160,13 +160,13 @@ $(function() {
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code hl_define" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a> : AbbrDeclSets) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    OS &lt;&lt; format(<span class="stringliteral">&quot;Abbrev table for offset: 0x%8.8&quot;</span> PRIx64 <span class="stringliteral">&quot;\n&quot;</span>, <a class="code hl_define" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>.first);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    OS &lt;&lt; <a class="code hl_function" href="namespacellvm.html#a939bc2108d47080767f0c06ba56caec7">format</a>(<span class="stringliteral">&quot;Abbrev table for offset: 0x%8.8&quot;</span> PRIx64 <span class="stringliteral">&quot;\n&quot;</span>, <a class="code hl_define" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>.first);</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_define" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>.second.dump(OS);</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  }</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keyword">const</span> DWARFAbbreviationDeclarationSet*</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>DWARFDebugAbbrev::getAbbreviationDeclarationSet(uint64_t CUAbbrOffset)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keyword">const</span> <a class="code hl_class" href="classllvm_1_1DWARFAbbreviationDeclarationSet.html">DWARFAbbreviationDeclarationSet</a>*</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classllvm_1_1DWARFDebugAbbrev.html#aeccafd9924a18b45f0d8fa89edf5f281">  114</a></span><a class="code hl_function" href="classllvm_1_1DWARFDebugAbbrev.html#aeccafd9924a18b45f0d8fa89edf5f281">DWARFDebugAbbrev::getAbbreviationDeclarationSet</a>(uint64_t CUAbbrOffset)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keyword">const</span> <span class="keyword">auto</span> End = AbbrDeclSets.end();</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keywordflow">if</span> (PrevAbbrOffsetPos != End &amp;&amp; PrevAbbrOffsetPos-&gt;first == CUAbbrOffset) {</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span> &amp;(PrevAbbrOffsetPos-&gt;second);</div>
@@ -179,9 +179,9 @@ $(function() {
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  }</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="keywordflow">if</span> (Data &amp;&amp; CUAbbrOffset &lt; Data-&gt;getData().size()) {</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    uint32_t Offset = CUAbbrOffset;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    DWARFAbbreviationDeclarationSet AbbrDecls;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">if</span> (!AbbrDecls.extract(*Data, &amp;Offset))</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_class" href="classuint32__t.html">uint32_t</a> Offset = CUAbbrOffset;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_class" href="classllvm_1_1DWARFAbbreviationDeclarationSet.html">DWARFAbbreviationDeclarationSet</a> AbbrDecls;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">if</span> (!AbbrDecls.<a class="code hl_function" href="classllvm_1_1DWARFAbbreviationDeclarationSet.html#abf6d34e7dad4445c72fed3af1aebff20">extract</a>(*Data, &amp;Offset))</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>      <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    PrevAbbrOffsetPos =</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        AbbrDeclSets.insert(std::make_pair(CUAbbrOffset, std::move(AbbrDecls)))</div>
@@ -191,15 +191,32 @@ $(function() {
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}</div>
-<div class="ttc" id="aCoroutines_8cpp_html_ac781ce96aa25ba7f6fd38f72de665450"><div class="ttname"><a href="Coroutines_8cpp.html#ac781ce96aa25ba7f6fd38f72de665450">clear</a></div><div class="ttdeci">static void clear(coro::Shape &amp;Shape)</div><div class="ttdef"><b>Definition:</b> <a href="Coroutines_8cpp_source.html#l00211">Coroutines.cpp:211</a></div></div>
+<div class="ttc" id="aDWARFDebugAbbrev_8h_html"><div class="ttname"><a href="DWARFDebugAbbrev_8h.html">DWARFDebugAbbrev.h</a></div></div>
+<div class="ttc" id="aFormat_8h_html"><div class="ttname"><a href="Format_8h.html">Format.h</a></div></div>
+<div class="ttc" id="aLoopExtractor_8cpp_html_a84dff14934298a71113ab11312c243f6"><div class="ttname"><a href="LoopExtractor_8cpp.html#a84dff14934298a71113ab11312c243f6">extract</a></div><div class="ttdeci">loop extract</div><div class="ttdef"><b>Definition:</b> <a href="LoopExtractor_8cpp_source.html#l00065">LoopExtractor.cpp:65</a></div></div>
 <div class="ttc" id="aMD5_8cpp_html_ac0eafdc9ee161b71e7af98af736952fd"><div class="ttname"><a href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a></div><div class="ttdeci">#define I(x, y, z)</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00058">MD5.cpp:58</a></div></div>
-<div class="ttc" id="aPassManagerBuilder_8cpp_html_a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">CFLAAType::None</a></div><div class="ttdeci">@ None</div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
-<div class="ttc" id="astructparse_html"><div class="ttname"><a href="structparse.html">parse</a></div><div class="ttdef"><b>Definition:</b> <a href="regcomp_8c_source.html#l00191">regcomp.c:191</a></div></div>
+<div class="ttc" id="aclassllvm_1_1AliasSet_html_af940c8979b258033f9a1fbd65f6c073a"><div class="ttname"><a href="classllvm_1_1AliasSet.html#af940c8979b258033f9a1fbd65f6c073a">llvm::AliasSet::dump</a></div><div class="ttdeci">void dump() const</div><div class="ttdef"><b>Definition:</b> <a href="AliasSetTracker_8cpp_source.html#l00701">AliasSetTracker.cpp:701</a></div></div>
+<div class="ttc" id="aclassllvm_1_1DWARFAbbreviationDeclarationSet_html"><div class="ttname"><a href="classllvm_1_1DWARFAbbreviationDeclarationSet.html">llvm::DWARFAbbreviationDeclarationSet</a></div><div class="ttdef"><b>Definition:</b> <a href="DWARFDebugAbbrev_8h_source.html#l00022">DWARFDebugAbbrev.h:22</a></div></div>
+<div class="ttc" id="aclassllvm_1_1DWARFAbbreviationDeclarationSet_html_a3de9d7d61d02bede53aafc985fac5167"><div class="ttname"><a href="classllvm_1_1DWARFAbbreviationDeclarationSet.html#a3de9d7d61d02bede53aafc985fac5167">llvm::DWARFAbbreviationDeclarationSet::DWARFAbbreviationDeclarationSet</a></div><div class="ttdeci">DWARFAbbreviationDeclarationSet()</div><div class="ttdef"><b>Definition:</b> <a href="DWARFDebugAbbrev_8cpp_source.html#l00018">DWARFDebugAbbrev.cpp:18</a></div></div>
+<div class="ttc" id="aclassllvm_1_1DWARFAbbreviationDeclarationSet_html_a45765f7f594731ef9232592efa4a5dca"><div class="ttname"><a href="classllvm_1_1DWARFAbbreviationDeclarationSet.html#a45765f7f594731ef9232592efa4a5dca">llvm::DWARFAbbreviationDeclarationSet::getAbbreviationDeclaration</a></div><div class="ttdeci">const DWARFAbbreviationDeclaration * getAbbreviationDeclaration(uint32_t AbbrCode) const</div><div class="ttdef"><b>Definition:</b> <a href="DWARFDebugAbbrev_8cpp_source.html#l00056">DWARFDebugAbbrev.cpp:56</a></div></div>
+<div class="ttc" id="aclassllvm_1_1DWARFAbbreviationDeclarationSet_html_abf6d34e7dad4445c72fed3af1aebff20"><div class="ttname"><a href="classllvm_1_1DWARFAbbreviationDeclarationSet.html#abf6d34e7dad4445c72fed3af1aebff20">llvm::DWARFAbbreviationDeclarationSet::extract</a></div><div class="ttdeci">bool extract(DataExtractor Data, uint32_t *OffsetPtr)</div><div class="ttdef"><b>Definition:</b> <a href="DWARFDebugAbbrev_8cpp_source.html#l00028">DWARFDebugAbbrev.cpp:28</a></div></div>
+<div class="ttc" id="aclassllvm_1_1DWARFAbbreviationDeclaration_html"><div class="ttname"><a href="classllvm_1_1DWARFAbbreviationDeclaration.html">llvm::DWARFAbbreviationDeclaration</a></div><div class="ttdef"><b>Definition:</b> <a href="DWARFAbbreviationDeclaration_8h_source.html#l00027">DWARFAbbreviationDeclaration.h:27</a></div></div>
+<div class="ttc" id="aclassllvm_1_1DWARFAbbreviationDeclaration_html_a9a5d444982103e5f3728f295bff5c4fb"><div class="ttname"><a href="classllvm_1_1DWARFAbbreviationDeclaration.html#a9a5d444982103e5f3728f295bff5c4fb">llvm::DWARFAbbreviationDeclaration::extract</a></div><div class="ttdeci">bool extract(DataExtractor Data, uint32_t *OffsetPtr)</div><div class="ttdef"><b>Definition:</b> <a href="DWARFAbbreviationDeclaration_8cpp_source.html#l00040">DWARFAbbreviationDeclaration.cpp:40</a></div></div>
+<div class="ttc" id="aclassllvm_1_1DWARFAbbreviationDeclaration_html_ac1c89d249411e93a83f15dbef8a16ca4"><div class="ttname"><a href="classllvm_1_1DWARFAbbreviationDeclaration.html#ac1c89d249411e93a83f15dbef8a16ca4">llvm::DWARFAbbreviationDeclaration::getCode</a></div><div class="ttdeci">uint32_t getCode() const</div><div class="ttdef"><b>Definition:</b> <a href="DWARFAbbreviationDeclaration_8h_source.html#l00088">DWARFAbbreviationDeclaration.h:88</a></div></div>
+<div class="ttc" id="aclassllvm_1_1DWARFDebugAbbrev_html_a94192b595979fc6ebc4a3d6f2dfc8f15"><div class="ttname"><a href="classllvm_1_1DWARFDebugAbbrev.html#a94192b595979fc6ebc4a3d6f2dfc8f15">llvm::DWARFDebugAbbrev::DWARFDebugAbbrev</a></div><div class="ttdeci">DWARFDebugAbbrev()</div><div class="ttdef"><b>Definition:</b> <a href="DWARFDebugAbbrev_8cpp_source.html#l00070">DWARFDebugAbbrev.cpp:70</a></div></div>
+<div class="ttc" id="aclassllvm_1_1DWARFDebugAbbrev_html_aa5da5512de9a040dccf9f5189a45c7cf"><div class="ttname"><a href="classllvm_1_1DWARFDebugAbbrev.html#aa5da5512de9a040dccf9f5189a45c7cf">llvm::DWARFDebugAbbrev::parse</a></div><div class="ttdeci">void parse() const</div><div class="ttdef"><b>Definition:</b> <a href="DWARFDebugAbbrev_8cpp_source.html#l00082">DWARFDebugAbbrev.cpp:82</a></div></div>
+<div class="ttc" id="aclassllvm_1_1DWARFDebugAbbrev_html_aeccafd9924a18b45f0d8fa89edf5f281"><div class="ttname"><a href="classllvm_1_1DWARFDebugAbbrev.html#aeccafd9924a18b45f0d8fa89edf5f281">llvm::DWARFDebugAbbrev::getAbbreviationDeclarationSet</a></div><div class="ttdeci">const DWARFAbbreviationDeclarationSet * getAbbreviationDeclarationSet(uint64_t CUAbbrOffset) const</div><div class="ttdef"><b>Definition:</b> <a href="DWARFDebugAbbrev_8cpp_source.html#l00114">DWARFDebugAbbrev.cpp:114</a></div></div>
+<div class="ttc" id="aclassllvm_1_1DataExtractor_html"><div class="ttname"><a href="classllvm_1_1DataExtractor.html">llvm::DataExtractor</a></div><div class="ttdef"><b>Definition:</b> <a href="DataExtractor_8h_source.html#l00040">DataExtractor.h:40</a></div></div>
+<div class="ttc" id="aclassllvm_1_1raw__ostream_html"><div class="ttname"><a href="classllvm_1_1raw__ostream.html">llvm::raw_ostream</a></div><div class="ttdoc">This class implements an extremely fast bulk output stream that can only output to a stream.</div><div class="ttdef"><b>Definition:</b> <a href="raw__ostream_8h_source.html#l00045">raw_ostream.h:45</a></div></div>
+<div class="ttc" id="aclassuint32__t_html"><div class="ttname"><a href="classuint32__t.html">uint32_t</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysis_8h_source.html#l00056">AliasAnalysis.h:56</a></div></div>
+<div class="ttc" id="anamespacellvm_html_a939bc2108d47080767f0c06ba56caec7"><div class="ttname"><a href="namespacellvm.html#a939bc2108d47080767f0c06ba56caec7">llvm::format</a></div><div class="ttdeci">format_object&lt; Ts... &gt; format(const char *Fmt, const Ts &amp;... Vals)</div><div class="ttdoc">These are helper functions used to produce formatted output.</div><div class="ttdef"><b>Definition:</b> <a href="Format_8h_source.html#l00123">Format.h:123</a></div></div>
+<div class="ttc" id="anamespacellvm_html_aad87d874f7944b5838f7881938d18870a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="namespacellvm.html#aad87d874f7944b5838f7881938d18870a6adf97f83acf6453d4a6a4b1070f3754">llvm::DINameKind::None</a></div><div class="ttdeci">@ None</div></div>
+<div class="ttc" id="araw__ostream_8h_html"><div class="ttname"><a href="raw__ostream_8h.html">raw_ostream.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:35 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

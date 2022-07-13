@@ -57,7 +57,7 @@ $(function() {
   <div class="headertitle"><div class="title">InductiveRangeCheckElimination.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/InductiveRangeCheckElimination.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="InductiveRangeCheckElimination_8h_source.html">llvm/Transforms/Scalar/InductiveRangeCheckElimination.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/APInt.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/None.h&quot;</code><br />
@@ -66,42 +66,42 @@ $(function() {
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Twine.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/BranchProbabilityInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopAnalysisManager.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopPass.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ScalarEvolution.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ScalarEvolutionExpander.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ScalarEvolutionExpressions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Use.h&quot;</code><br />
-<code>#include &quot;llvm/IR/User.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="BranchProbabilityInfo_8h_source.html">llvm/Analysis/BranchProbabilityInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopAnalysisManager_8h_source.html">llvm/Analysis/LoopAnalysisManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopPass_8h_source.html">llvm/Analysis/LoopPass.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScalarEvolution_8h_source.html">llvm/Analysis/ScalarEvolution.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScalarEvolutionExpander_8h_source.html">llvm/Analysis/ScalarEvolutionExpander.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScalarEvolutionExpressions_8h_source.html">llvm/Analysis/ScalarEvolutionExpressions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Use_8h_source.html">llvm/IR/Use.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/BranchProbability.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Compiler.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/Cloning.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/LoopSimplify.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/LoopUtils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/ValueMapper.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="BranchProbability_8h_source.html">llvm/Support/BranchProbability.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Compiler_8h_source.html">llvm/Support/Compiler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Cloning_8h_source.html">llvm/Transforms/Utils/Cloning.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopSimplify_8h_source.html">llvm/Transforms/Utils/LoopSimplify.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopUtils_8h_source.html">llvm/Transforms/Utils/LoopUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueMapper_8h_source.html">llvm/Transforms/Utils/ValueMapper.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;iterator&gt;</code><br />
@@ -118,41 +118,41 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa99484b8d8ca59d44caca7b97453cd92"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#aa99484b8d8ca59d44caca7b97453cd92">LoopSizeCutoff</a> (&quot;irce-loop-size-cutoff&quot;, cl::Hidden, cl::init(64))</td></tr>
-<tr class="separator:aa99484b8d8ca59d44caca7b97453cd92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b521fdaa7492d601f94f4e4795d97fd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a9b521fdaa7492d601f94f4e4795d97fd">PrintChangedLoops</a> (&quot;irce-print-changed-loops&quot;, cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a9b521fdaa7492d601f94f4e4795d97fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b4859a6fc92fa3bd1f7cfb54ea61601"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a8b4859a6fc92fa3bd1f7cfb54ea61601">PrintRangeChecks</a> (&quot;irce-print-range-checks&quot;, cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a8b4859a6fc92fa3bd1f7cfb54ea61601"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42b2f7e33360921e12b16f5d0096c417"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a42b2f7e33360921e12b16f5d0096c417">MaxExitProbReciprocal</a> (&quot;irce-max-exit-<a class="el" href="BranchProbabilityInfo_8cpp.html#a2bd4799263bb66b1eaf06927f08e7b64">prob</a>-reciprocal&quot;, cl::Hidden, cl::init(10))</td></tr>
-<tr class="separator:a42b2f7e33360921e12b16f5d0096c417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a889a4346c6c4fad7092db1197fdab3bb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a889a4346c6c4fad7092db1197fdab3bb">SkipProfitabilityChecks</a> (&quot;irce-skip-profitability-checks&quot;, cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a889a4346c6c4fad7092db1197fdab3bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6802482e5d934910d16a549a3262feeb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a6802482e5d934910d16a549a3262feeb">AllowUnsignedLatchCondition</a> (&quot;irce-allow-unsigned-latch&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:a6802482e5d934910d16a549a3262feeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e218f3ba40040d0bda1959f65e5789f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a3e218f3ba40040d0bda1959f65e5789f">AllowNarrowLatchCondition</a> (&quot;irce-allow-narrow-latch&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::desc(&quot;If set to <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, IRCE may eliminate wide range checks in <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> &quot; &quot;with narrow latch condition.&quot;))</td></tr>
-<tr class="separator:a3e218f3ba40040d0bda1959f65e5789f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab87fabf28c883bad7e1bc821d70fae63"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#ab87fabf28c883bad7e1bc821d70fae63">INITIALIZE_PASS_BEGIN</a> (IRCELegacyPass, &quot;irce&quot;, &quot;Inductive range check elimination&quot;, false, false) INITIALIZE_PASS_END(IRCELegacyPass</td></tr>
 <tr class="separator:ab87fabf28c883bad7e1bc821d70fae63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd2295e6d5f183d1cad636c7a564660e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#acd2295e6d5f183d1cad636c7a564660e">DisableAllLoopOptsOnLoop</a> (Loop &amp;L)</td></tr>
+<tr class="memitem:acd2295e6d5f183d1cad636c7a564660e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#acd2295e6d5f183d1cad636c7a564660e">DisableAllLoopOptsOnLoop</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> &amp;L)</td></tr>
 <tr class="separator:acd2295e6d5f183d1cad636c7a564660e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8cf3aa27282d640f5acbc3a676e03c5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#ac8cf3aa27282d640f5acbc3a676e03c5">isSafeDecreasingBound</a> (const SCEV *Start, const SCEV *BoundSCEV, const SCEV *Step, ICmpInst::Predicate Pred, unsigned LatchBrExitIdx, Loop *L, ScalarEvolution &amp;SE)</td></tr>
+<tr class="memitem:ac8cf3aa27282d640f5acbc3a676e03c5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#ac8cf3aa27282d640f5acbc3a676e03c5">isSafeDecreasingBound</a> (const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *Start, const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *BoundSCEV, const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *Step, ICmpInst::Predicate Pred, <a class="el" href="classunsigned.html">unsigned</a> LatchBrExitIdx, <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE)</td></tr>
 <tr class="memdesc:ac8cf3aa27282d640f5acbc3a676e03c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a loop with an deccreasing induction variable, is it possible to safely calculate the bounds of a new loop using the given Predicate.  <a href="InductiveRangeCheckElimination_8cpp.html#ac8cf3aa27282d640f5acbc3a676e03c5">More...</a><br /></td></tr>
 <tr class="separator:ac8cf3aa27282d640f5acbc3a676e03c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbc17f3ace73f701522eefe28104c06c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#adbc17f3ace73f701522eefe28104c06c">isSafeIncreasingBound</a> (const SCEV *Start, const SCEV *BoundSCEV, const SCEV *Step, ICmpInst::Predicate Pred, unsigned LatchBrExitIdx, Loop *L, ScalarEvolution &amp;SE)</td></tr>
+<tr class="memitem:adbc17f3ace73f701522eefe28104c06c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#adbc17f3ace73f701522eefe28104c06c">isSafeIncreasingBound</a> (const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *Start, const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *BoundSCEV, const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *Step, ICmpInst::Predicate Pred, <a class="el" href="classunsigned.html">unsigned</a> LatchBrExitIdx, <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE)</td></tr>
 <tr class="memdesc:adbc17f3ace73f701522eefe28104c06c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a loop with an increasing induction variable, is it possible to safely calculate the bounds of a new loop using the given Predicate.  <a href="InductiveRangeCheckElimination_8cpp.html#adbc17f3ace73f701522eefe28104c06c">More...</a><br /></td></tr>
 <tr class="separator:adbc17f3ace73f701522eefe28104c06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07d028b54d5d81f7eb266f852632d86b"><td class="memItemLeft" align="right" valign="top">static const SCEV *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a07d028b54d5d81f7eb266f852632d86b">NoopOrExtend</a> (const SCEV *S, Type *Ty, ScalarEvolution &amp;SE, bool Signed)</td></tr>
+<tr class="memitem:a07d028b54d5d81f7eb266f852632d86b"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a07d028b54d5d81f7eb266f852632d86b">NoopOrExtend</a> (const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *S, <a class="el" href="classllvm_1_1Type.html">Type</a> *Ty, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE, <a class="el" href="classbool.html">bool</a> Signed)</td></tr>
 <tr class="memdesc:a07d028b54d5d81f7eb266f852632d86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the type of <code>S</code> matches with <code>Ty</code>, return <code>S</code>.  <a href="InductiveRangeCheckElimination_8cpp.html#a07d028b54d5d81f7eb266f852632d86b">More...</a><br /></td></tr>
 <tr class="separator:a07d028b54d5d81f7eb266f852632d86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b5c5e10113c0b97dac4ae59251ccbc3"><td class="memItemLeft" align="right" valign="top">static Optional&lt; InductiveRangeCheck::Range &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a2b5c5e10113c0b97dac4ae59251ccbc3">IntersectSignedRange</a> (ScalarEvolution &amp;SE, const Optional&lt; InductiveRangeCheck::Range &gt; &amp;R1, const InductiveRangeCheck::Range &amp;R2)</td></tr>
+<tr class="memitem:a2b5c5e10113c0b97dac4ae59251ccbc3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; InductiveRangeCheck::Range &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a2b5c5e10113c0b97dac4ae59251ccbc3">IntersectSignedRange</a> (<a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE, const <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; InductiveRangeCheck::Range &gt; &amp;R1, const InductiveRangeCheck::Range &amp;<a class="el" href="MathExtras_8h.html#a9211f62d8e1e6de999eaa63ec0f6ae02">R2</a>)</td></tr>
 <tr class="separator:a2b5c5e10113c0b97dac4ae59251ccbc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa400cc26fc82bfba35333e2afc1b7bf"><td class="memItemLeft" align="right" valign="top">static Optional&lt; InductiveRangeCheck::Range &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#aaa400cc26fc82bfba35333e2afc1b7bf">IntersectUnsignedRange</a> (ScalarEvolution &amp;SE, const Optional&lt; InductiveRangeCheck::Range &gt; &amp;R1, const InductiveRangeCheck::Range &amp;R2)</td></tr>
+<tr class="memitem:aaa400cc26fc82bfba35333e2afc1b7bf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; InductiveRangeCheck::Range &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#aaa400cc26fc82bfba35333e2afc1b7bf">IntersectUnsignedRange</a> (<a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE, const <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; InductiveRangeCheck::Range &gt; &amp;R1, const InductiveRangeCheck::Range &amp;<a class="el" href="MathExtras_8h.html#a9211f62d8e1e6de999eaa63ec0f6ae02">R2</a>)</td></tr>
 <tr class="separator:aaa400cc26fc82bfba35333e2afc1b7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a16b1ba199831617ff03665a0c152d019"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a16b1ba199831617ff03665a0c152d019">ClonedLoopTag</a> = &quot;irce.loop.clone&quot;</td></tr>
+<tr class="memitem:a2bec6d7cd41654d71a6d9fa597376d82"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a2bec6d7cd41654d71a6d9fa597376d82">LoopSizeCutoff</a> (&quot;irce-loop-size-cutoff&quot;, cl::Hidden, cl::init(64))</td></tr>
+<tr class="separator:a2bec6d7cd41654d71a6d9fa597376d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa39a9321e2213895b5c2a7b8e495a0f8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#aa39a9321e2213895b5c2a7b8e495a0f8">PrintChangedLoops</a> (&quot;irce-print-changed-loops&quot;, cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:aa39a9321e2213895b5c2a7b8e495a0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d1c86bd19eb2f052d30afc7a9285f92"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a0d1c86bd19eb2f052d30afc7a9285f92">PrintRangeChecks</a> (&quot;irce-print-range-checks&quot;, cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a0d1c86bd19eb2f052d30afc7a9285f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb11b4f8bd222086f482f5349009624"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a5bb11b4f8bd222086f482f5349009624">MaxExitProbReciprocal</a> (&quot;irce-max-exit-<a class="el" href="BranchProbabilityInfo_8cpp.html#a2bd4799263bb66b1eaf06927f08e7b64">prob</a>-reciprocal&quot;, cl::Hidden, cl::init(10))</td></tr>
+<tr class="separator:a5bb11b4f8bd222086f482f5349009624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2f89054e1154b0ed16bd7574a78c264"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#ab2f89054e1154b0ed16bd7574a78c264">SkipProfitabilityChecks</a> (&quot;irce-skip-profitability-checks&quot;, cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:ab2f89054e1154b0ed16bd7574a78c264"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e0bc3ef0820cacee5dcac4ba57226c9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a0e0bc3ef0820cacee5dcac4ba57226c9">AllowUnsignedLatchCondition</a> (&quot;irce-allow-<a class="el" href="classunsigned.html">unsigned</a>-latch&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:a0e0bc3ef0820cacee5dcac4ba57226c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c89cc6d47ee4e5f5fcd78c344604495"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a4c89cc6d47ee4e5f5fcd78c344604495">AllowNarrowLatchCondition</a> (&quot;irce-allow-narrow-latch&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;If set to <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, IRCE may eliminate wide range checks in <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> &quot; &quot;with narrow latch condition.&quot;))</td></tr>
+<tr class="separator:a4c89cc6d47ee4e5f5fcd78c344604495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16b1ba199831617ff03665a0c152d019"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a16b1ba199831617ff03665a0c152d019">ClonedLoopTag</a> = &quot;irce.loop.clone&quot;</td></tr>
 <tr class="separator:a16b1ba199831617ff03665a0c152d019"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c543e12caa9587de713f1621aeb01cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InductiveRangeCheckElimination_8cpp.html#a1c543e12caa9587de713f1621aeb01cb">irce</a></td></tr>
 <tr class="separator:a1c543e12caa9587de713f1621aeb01cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,96 +179,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a3e218f3ba40040d0bda1959f65e5789f" name="a3e218f3ba40040d0bda1959f65e5789f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e218f3ba40040d0bda1959f65e5789f">&#9670;&nbsp;</a></span>AllowNarrowLatchCondition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; AllowNarrowLatchCondition </td>
-          <td>(</td>
-          <td class="paramtype">&quot;irce-allow-narrow-latch&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;If set to <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, IRCE may eliminate wide range checks in <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> &quot; &quot;with narrow latch condition.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6802482e5d934910d16a549a3262feeb" name="a6802482e5d934910d16a549a3262feeb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6802482e5d934910d16a549a3262feeb">&#9670;&nbsp;</a></span>AllowUnsignedLatchCondition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; AllowUnsignedLatchCondition </td>
-          <td>(</td>
-          <td class="paramtype">&quot;irce-allow-unsigned-latch&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="acd2295e6d5f183d1cad636c7a564660e" name="acd2295e6d5f183d1cad636c7a564660e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acd2295e6d5f183d1cad636c7a564660e">&#9670;&nbsp;</a></span>DisableAllLoopOptsOnLoop()</h2>
 
@@ -281,7 +191,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void DisableAllLoopOptsOnLoop </td>
           <td>(</td>
-          <td class="paramtype">Loop &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> &amp;&#160;</td>
           <td class="paramname"><em>L</em></td><td>)</td>
           <td></td>
         </tr>
@@ -294,6 +204,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="InductiveRangeCheckElimination_8cpp_source.html#l00410">410</a> of file <a class="el" href="InductiveRangeCheckElimination_8cpp_source.html">InductiveRangeCheckElimination.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Metadata_8h_source.html#l00409">llvm::ConstantAsMetadata::get()</a>, <a class="el" href="Metadata_8h_source.html#l01165">llvm::MDNode::get()</a>, <a class="el" href="Metadata_8cpp_source.html#l00453">llvm::MDString::get()</a>, <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00032">llvm::BasicBlock::getContext()</a>, <a class="el" href="LoopInfo_8h_source.html#l00102">llvm::LoopBase&lt; BlockT, LoopT &gt;::getHeader()</a>, <a class="el" href="IRBuilder_8h_source.html#l00368">llvm::IRBuilderBase::getInt1Ty()</a>, <a class="el" href="Metadata_8cpp_source.html#l00858">llvm::MDNode::replaceOperandWith()</a>, and <a class="el" href="LoopInfo_8cpp_source.html#l00474">llvm::Loop::setLoopID()</a>.</p>
 
 </div>
 </div>
@@ -353,15 +265,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Optional&lt; InductiveRangeCheck::Range &gt; IntersectSignedRange </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; InductiveRangeCheck::Range &gt; IntersectSignedRange </td>
           <td>(</td>
-          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
           <td class="paramname"><em>SE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Optional&lt; InductiveRangeCheck::Range &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; InductiveRangeCheck::Range &gt; &amp;&#160;</td>
           <td class="paramname"><em>R1</em>, </td>
         </tr>
         <tr>
@@ -385,7 +297,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InductiveRangeCheckElimination_8cpp_source.html#l01692">1692</a> of file <a class="el" href="InductiveRangeCheckElimination_8cpp_source.html">InductiveRangeCheckElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03677">llvm::ScalarEvolution::getSMaxExpr()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03695">llvm::ScalarEvolution::getSMinExpr()</a>, <a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870a6adf97f83acf6453d4a6a4b1070f3754">llvm::None</a>, and <a class="el" href="MathExtras_8h.html#a9211f62d8e1e6de999eaa63ec0f6ae02">R2</a>.</p>
 
 </div>
 </div>
@@ -399,15 +311,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Optional&lt; InductiveRangeCheck::Range &gt; IntersectUnsignedRange </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; InductiveRangeCheck::Range &gt; IntersectUnsignedRange </td>
           <td>(</td>
-          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
           <td class="paramname"><em>SE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Optional&lt; InductiveRangeCheck::Range &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; InductiveRangeCheck::Range &gt; &amp;&#160;</td>
           <td class="paramname"><em>R1</em>, </td>
         </tr>
         <tr>
@@ -431,7 +343,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InductiveRangeCheckElimination_8cpp_source.html#l01721">1721</a> of file <a class="el" href="InductiveRangeCheckElimination_8cpp_source.html">InductiveRangeCheckElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03686">llvm::ScalarEvolution::getUMaxExpr()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03705">llvm::ScalarEvolution::getUMinExpr()</a>, <a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870a6adf97f83acf6453d4a6a4b1070f3754">llvm::None</a>, and <a class="el" href="MathExtras_8h.html#a9211f62d8e1e6de999eaa63ec0f6ae02">R2</a>.</p>
 
 </div>
 </div>
@@ -445,21 +357,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isSafeDecreasingBound </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isSafeDecreasingBound </td>
           <td>(</td>
-          <td class="paramtype">const SCEV *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&#160;</td>
           <td class="paramname"><em>Start</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SCEV *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&#160;</td>
           <td class="paramname"><em>BoundSCEV</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SCEV *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&#160;</td>
           <td class="paramname"><em>Step</em>, </td>
         </tr>
         <tr>
@@ -471,19 +383,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>LatchBrExitIdx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Loop *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
           <td class="paramname"><em>SE</em>&#160;</td>
         </tr>
         <tr>
@@ -503,7 +415,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InductiveRangeCheckElimination_8cpp_source.html#l00642">642</a> of file <a class="el" href="InductiveRangeCheckElimination_8cpp_source.html">InductiveRangeCheckElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l02402">llvm::ScalarEvolution::getAddExpr()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00416">llvm::ScalarEvolution::getConstant()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l04000">llvm::ScalarEvolution::getMinusSCEV()</a>, <a class="el" href="ScalarEvolution_8h_source.html#l00618">llvm::ScalarEvolution::getOne()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00352">llvm::SCEV::getType()</a>, <a class="el" href="InstrTypes_8h_source.html#l00759">llvm::CmpInst::ICMP_SGT</a>, <a class="el" href="InstrTypes_8h_source.html#l00755">llvm::CmpInst::ICMP_UGT</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l02397">llvm::ScalarEvolution::isAvailableAtLoopEntry()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l09054">llvm::ScalarEvolution::isKnownNegative()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l09525">llvm::ScalarEvolution::isLoopEntryGuardedByCond()</a>, and <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>.</p>
 
 </div>
 </div>
@@ -517,21 +429,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isSafeIncreasingBound </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isSafeIncreasingBound </td>
           <td>(</td>
-          <td class="paramtype">const SCEV *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&#160;</td>
           <td class="paramname"><em>Start</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SCEV *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&#160;</td>
           <td class="paramname"><em>BoundSCEV</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SCEV *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&#160;</td>
           <td class="paramname"><em>Step</em>, </td>
         </tr>
         <tr>
@@ -543,19 +455,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>LatchBrExitIdx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Loop *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
           <td class="paramname"><em>SE</em>&#160;</td>
         </tr>
         <tr>
@@ -575,91 +487,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InductiveRangeCheckElimination_8cpp_source.html#l00692">692</a> of file <a class="el" href="InductiveRangeCheckElimination_8cpp_source.html">InductiveRangeCheckElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
-
-</div>
-</div>
-<a id="aa99484b8d8ca59d44caca7b97453cd92" name="aa99484b8d8ca59d44caca7b97453cd92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa99484b8d8ca59d44caca7b97453cd92">&#9670;&nbsp;</a></span>LoopSizeCutoff()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; LoopSizeCutoff </td>
-          <td>(</td>
-          <td class="paramtype">&quot;irce-loop-size-cutoff&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(64)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a42b2f7e33360921e12b16f5d0096c417" name="a42b2f7e33360921e12b16f5d0096c417"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42b2f7e33360921e12b16f5d0096c417">&#9670;&nbsp;</a></span>MaxExitProbReciprocal()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; MaxExitProbReciprocal </td>
-          <td>(</td>
-          <td class="paramtype">&quot;irce-max-exit-<a class="el" href="BranchProbabilityInfo_8cpp.html#a2bd4799263bb66b1eaf06927f08e7b64">prob</a>-reciprocal&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(10)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l02402">llvm::ScalarEvolution::getAddExpr()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00416">llvm::ScalarEvolution::getConstant()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l04000">llvm::ScalarEvolution::getMinusSCEV()</a>, <a class="el" href="ScalarEvolution_8h_source.html#l00618">llvm::ScalarEvolution::getOne()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00352">llvm::SCEV::getType()</a>, <a class="el" href="InstrTypes_8h_source.html#l00761">llvm::CmpInst::ICMP_SLT</a>, <a class="el" href="InstrTypes_8h_source.html#l00757">llvm::CmpInst::ICMP_ULT</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l02397">llvm::ScalarEvolution::isAvailableAtLoopEntry()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l09525">llvm::ScalarEvolution::isLoopEntryGuardedByCond()</a>, and <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>.</p>
 
 </div>
 </div>
@@ -673,27 +501,27 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static const SCEV * NoopOrExtend </td>
+          <td class="memname">static const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> * NoopOrExtend </td>
           <td>(</td>
-          <td class="paramtype">const SCEV *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&#160;</td>
           <td class="paramname"><em>S</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Type *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
           <td class="paramname"><em>Ty</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
           <td class="paramname"><em>SE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>Signed</em>&#160;</td>
         </tr>
         <tr>
@@ -714,135 +542,101 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InductiveRangeCheckElimination_8cpp_source.html#l01041">1041</a> of file <a class="el" href="InductiveRangeCheckElimination_8cpp_source.html">InductiveRangeCheckElimination.cpp</a>.</p>
 
-</div>
-</div>
-<a id="a9b521fdaa7492d601f94f4e4795d97fd" name="a9b521fdaa7492d601f94f4e4795d97fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b521fdaa7492d601f94f4e4795d97fd">&#9670;&nbsp;</a></span>PrintChangedLoops()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintChangedLoops </td>
-          <td>(</td>
-          <td class="paramtype">&quot;irce-print-changed-loops&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8b4859a6fc92fa3bd1f7cfb54ea61601" name="a8b4859a6fc92fa3bd1f7cfb54ea61601"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b4859a6fc92fa3bd1f7cfb54ea61601">&#9670;&nbsp;</a></span>PrintRangeChecks()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintRangeChecks </td>
-          <td>(</td>
-          <td class="paramtype">&quot;irce-print-range-checks&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a889a4346c6c4fad7092db1197fdab3bb" name="a889a4346c6c4fad7092db1197fdab3bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a889a4346c6c4fad7092db1197fdab3bb">&#9670;&nbsp;</a></span>SkipProfitabilityChecks()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; SkipProfitabilityChecks </td>
-          <td>(</td>
-          <td class="paramtype">&quot;irce-skip-profitability-checks&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p class="reference">References <a class="el" href="ScalarEvolution_8cpp_source.html#l04076">llvm::ScalarEvolution::getNoopOrSignExtend()</a>, and <a class="el" href="ScalarEvolution_8cpp_source.html#l04064">llvm::ScalarEvolution::getNoopOrZeroExtend()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a4c89cc6d47ee4e5f5fcd78c344604495" name="a4c89cc6d47ee4e5f5fcd78c344604495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c89cc6d47ee4e5f5fcd78c344604495">&#9670;&nbsp;</a></span>AllowNarrowLatchCondition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; AllowNarrowLatchCondition(&quot;irce-allow-narrow-latch&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;If set to <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, IRCE may eliminate wide range checks in <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> &quot; &quot;with narrow latch condition.&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;irce-allow-narrow-latch&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;If set to <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, IRCE may eliminate wide range checks in <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> &quot; &quot;with narrow latch condition.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0e0bc3ef0820cacee5dcac4ba57226c9" name="a0e0bc3ef0820cacee5dcac4ba57226c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e0bc3ef0820cacee5dcac4ba57226c9">&#9670;&nbsp;</a></span>AllowUnsignedLatchCondition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; AllowUnsignedLatchCondition(&quot;irce-allow-<a class="el" href="classunsigned.html">unsigned</a>-latch&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;irce-allow-<a class="el" href="classunsigned.html">unsigned</a>-latch&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a16b1ba199831617ff03665a0c152d019" name="a16b1ba199831617ff03665a0c152d019"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a16b1ba199831617ff03665a0c152d019">&#9670;&nbsp;</a></span>ClonedLoopTag</h2>
 
@@ -853,7 +647,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* ClonedLoopTag = &quot;irce.loop.clone&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* ClonedLoopTag = &quot;irce.loop.clone&quot;</td>
         </tr>
       </table>
   </td>
@@ -915,10 +709,220 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a2bec6d7cd41654d71a6d9fa597376d82" name="a2bec6d7cd41654d71a6d9fa597376d82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bec6d7cd41654d71a6d9fa597376d82">&#9670;&nbsp;</a></span>LoopSizeCutoff</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; LoopSizeCutoff(&quot;irce-loop-size-cutoff&quot;, cl::Hidden, cl::init(64)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;irce-loop-size-cutoff&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(64)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5bb11b4f8bd222086f482f5349009624" name="a5bb11b4f8bd222086f482f5349009624"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bb11b4f8bd222086f482f5349009624">&#9670;&nbsp;</a></span>MaxExitProbReciprocal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; MaxExitProbReciprocal(&quot;irce-max-exit-<a class="el" href="BranchProbabilityInfo_8cpp.html#a2bd4799263bb66b1eaf06927f08e7b64">prob</a>-reciprocal&quot;, cl::Hidden, cl::init(10)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;irce-max-exit-<a class="el" href="BranchProbabilityInfo_8cpp.html#a2bd4799263bb66b1eaf06927f08e7b64">prob</a>-reciprocal&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(10)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa39a9321e2213895b5c2a7b8e495a0f8" name="aa39a9321e2213895b5c2a7b8e495a0f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa39a9321e2213895b5c2a7b8e495a0f8">&#9670;&nbsp;</a></span>PrintChangedLoops</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintChangedLoops(&quot;irce-print-changed-loops&quot;, cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;irce-print-changed-loops&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d1c86bd19eb2f052d30afc7a9285f92" name="a0d1c86bd19eb2f052d30afc7a9285f92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d1c86bd19eb2f052d30afc7a9285f92">&#9670;&nbsp;</a></span>PrintRangeChecks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintRangeChecks(&quot;irce-print-range-checks&quot;, cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;irce-print-range-checks&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2f89054e1154b0ed16bd7574a78c264" name="ab2f89054e1154b0ed16bd7574a78c264"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2f89054e1154b0ed16bd7574a78c264">&#9670;&nbsp;</a></span>SkipProfitabilityChecks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; SkipProfitabilityChecks(&quot;irce-skip-profitability-checks&quot;, cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;irce-skip-profitability-checks&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

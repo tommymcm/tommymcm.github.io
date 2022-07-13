@@ -60,7 +60,7 @@ $(function() {
   <div class="headertitle"><div class="title">RewriteStatepointsForGC.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/RewriteStatepointsForGC.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="RewriteStatepointsForGC_8h_source.html">llvm/Transforms/Scalar/RewriteStatepointsForGC.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/DenseSet.h&quot;</code><br />
@@ -73,46 +73,46 @@ $(function() {
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/iterator_range.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/DomTreeUpdater.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CallingConv.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstIterator.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
-<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
-<code>#include &quot;llvm/IR/MDBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Statepoint.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/User.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
-<code>#include &quot;llvm/IR/ValueHandle.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="DomTreeUpdater_8h_source.html">llvm/Analysis/DomTreeUpdater.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CallingConv_8h_source.html">llvm/IR/CallingConv.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstIterator_8h_source.html">llvm/IR/InstIterator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MDBuilder_8h_source.html">llvm/IR/MDBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Statepoint_8h_source.html">llvm/IR/Statepoint.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueHandle_8h_source.html">llvm/IR/ValueHandle.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Compiler.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/PromoteMemToReg.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Compiler_8h_source.html">llvm/Support/Compiler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PromoteMemToReg_8h_source.html">llvm/Transforms/Utils/PromoteMemToReg.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
@@ -144,157 +144,157 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a00af9f2347076bfb43b7d4e286feb576"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefalse.html#a00af9f2347076bfb43b7d4e286feb576">false::DefiningValueMapTy</a> = MapVector&lt; Value *, Value * &gt;</td></tr>
+<tr class="memitem:a00af9f2347076bfb43b7d4e286feb576"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefalse.html#a00af9f2347076bfb43b7d4e286feb576">false::DefiningValueMapTy</a> = MapVector&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;</td></tr>
 <tr class="separator:a00af9f2347076bfb43b7d4e286feb576"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaa1384eeb44548e3d6b1324ebc65c3c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefalse.html#afaa1384eeb44548e3d6b1324ebc65c3c">false::StatepointLiveSetTy</a> = SetVector&lt; Value * &gt;</td></tr>
+<tr class="memitem:afaa1384eeb44548e3d6b1324ebc65c3c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefalse.html#afaa1384eeb44548e3d6b1324ebc65c3c">false::StatepointLiveSetTy</a> = SetVector&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;</td></tr>
 <tr class="separator:afaa1384eeb44548e3d6b1324ebc65c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6a673a7af50c8b1760115a5dd9c0b04"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefalse.html#ac6a673a7af50c8b1760115a5dd9c0b04">false::RematerializedValueMapTy</a> = MapVector&lt; AssertingVH&lt; Instruction &gt;, AssertingVH&lt; Value &gt; &gt;</td></tr>
+<tr class="memitem:ac6a673a7af50c8b1760115a5dd9c0b04"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefalse.html#ac6a673a7af50c8b1760115a5dd9c0b04">false::RematerializedValueMapTy</a> = MapVector&lt; <a class="el" href="classllvm_1_1AssertingVH.html">AssertingVH</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &gt;, <a class="el" href="classllvm_1_1AssertingVH.html">AssertingVH</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> &gt; &gt;</td></tr>
 <tr class="separator:ac6a673a7af50c8b1760115a5dd9c0b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ace93c40c37d58147987a7e8ea32eeaf0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ace93c40c37d58147987a7e8ea32eeaf0">PrintLiveSet</a> (&quot;spp-print-liveset&quot;, cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:ace93c40c37d58147987a7e8ea32eeaf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f44652b1d875276484b26420a7bb241"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a9f44652b1d875276484b26420a7bb241">PrintLiveSetSize</a> (&quot;spp-print-liveset-size&quot;, cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a9f44652b1d875276484b26420a7bb241"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6687c1ed9dd60f6c3a919647dea000bc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a6687c1ed9dd60f6c3a919647dea000bc">PrintBasePointers</a> (&quot;spp-print-base-pointers&quot;, cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a6687c1ed9dd60f6c3a919647dea000bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0993edd3cdde51d79a4009dc0ee00844"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a0993edd3cdde51d79a4009dc0ee00844">RematerializationThreshold</a> (&quot;spp-rematerialization-threshold&quot;, cl::Hidden, cl::init(6))</td></tr>
-<tr class="separator:a0993edd3cdde51d79a4009dc0ee00844"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfb32eed8a93b0c9a72cf993b61f402f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#abfb32eed8a93b0c9a72cf993b61f402f">ClobberNonLiveOverride</a> (&quot;rs4gc-clobber-non-live&quot;, cl::location(<a class="el" href="RewriteStatepointsForGC_8cpp.html#aae78323e579beb55b2c4820179d7b7e8">ClobberNonLive</a>), cl::Hidden)</td></tr>
-<tr class="separator:abfb32eed8a93b0c9a72cf993b61f402f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfe6d3c9df5cd55984faeb9d176aedfb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#abfe6d3c9df5cd55984faeb9d176aedfb">AllowStatepointWithNoDeoptInfo</a> (&quot;rs4gc-allow-statepoint-with-no-deopt-info&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:abfe6d3c9df5cd55984faeb9d176aedfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa44f7b8f4217ab0c4ae76b62d5d1ddd1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#aa44f7b8f4217ab0c4ae76b62d5d1ddd1">stripNonValidData</a> (Module &amp;M)</td></tr>
+<tr class="memitem:aa44f7b8f4217ab0c4ae76b62d5d1ddd1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#aa44f7b8f4217ab0c4ae76b62d5d1ddd1">stripNonValidData</a> (<a class="el" href="classllvm_1_1Module.html">Module</a> &amp;M)</td></tr>
 <tr class="memdesc:aa44f7b8f4217ab0c4ae76b62d5d1ddd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The IR fed into RewriteStatepointsForGC may have had attributes and metadata implying dereferenceability that are no longer valid/correct after RewriteStatepointsForGC has run.  <a href="RewriteStatepointsForGC_8cpp.html#aa44f7b8f4217ab0c4ae76b62d5d1ddd1">More...</a><br /></td></tr>
 <tr class="separator:aa44f7b8f4217ab0c4ae76b62d5d1ddd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e774e505629c16421ed9b345ddb1f75"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a8e774e505629c16421ed9b345ddb1f75">shouldRewriteStatepointsIn</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a8e774e505629c16421ed9b345ddb1f75"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a8e774e505629c16421ed9b345ddb1f75">shouldRewriteStatepointsIn</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="memdesc:a8e774e505629c16421ed9b345ddb1f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this function should be rewritten by this pass.  <a href="RewriteStatepointsForGC_8cpp.html#a8e774e505629c16421ed9b345ddb1f75">More...</a><br /></td></tr>
 <tr class="separator:a8e774e505629c16421ed9b345ddb1f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a5efaea67813b24d29c0022689a1fe0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a8a5efaea67813b24d29c0022689a1fe0">INITIALIZE_PASS_BEGIN</a> (RewriteStatepointsForGCLegacyPass, &quot;rewrite-<a class="el" href="RewriteStatepointsForGC_8cpp.html#a056b1e140d5170fc706d4adc8cf051be">statepoints</a>-for-gc&quot;, &quot;Make relocations explicit at statepoints&quot;, false, false) INITIALIZE_PASS_END(RewriteStatepointsForGCLegacyPass</td></tr>
 <tr class="separator:a8a5efaea67813b24d29c0022689a1fe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a900f1ee4825e267e32b137abd0aeb14a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Use &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a900f1ee4825e267e32b137abd0aeb14a">GetDeoptBundleOperands</a> (const CallBase *Call)</td></tr>
+<tr class="memitem:a900f1ee4825e267e32b137abd0aeb14a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Use.html">Use</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a900f1ee4825e267e32b137abd0aeb14a">GetDeoptBundleOperands</a> (const <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *Call)</td></tr>
 <tr class="separator:a900f1ee4825e267e32b137abd0aeb14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d2e161e7c91175ac41d70e587a540f6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a6d2e161e7c91175ac41d70e587a540f6">computeLiveInValues</a> (DominatorTree &amp;DT, Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, GCPtrLivenessData &amp;Data)</td></tr>
+<tr class="memitem:a6d2e161e7c91175ac41d70e587a540f6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a6d2e161e7c91175ac41d70e587a540f6">computeLiveInValues</a> (<a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, GCPtrLivenessData &amp;Data)</td></tr>
 <tr class="memdesc:a6d2e161e7c91175ac41d70e587a540f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the live-in set for every basic block in the function.  <a href="RewriteStatepointsForGC_8cpp.html#a6d2e161e7c91175ac41d70e587a540f6">More...</a><br /></td></tr>
 <tr class="separator:a6d2e161e7c91175ac41d70e587a540f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5d73019ff0f51430570793cbb633232"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ab5d73019ff0f51430570793cbb633232">findLiveSetAtInst</a> (Instruction *inst, GCPtrLivenessData &amp;Data, StatepointLiveSetTy &amp;out)</td></tr>
+<tr class="memitem:ab5d73019ff0f51430570793cbb633232"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ab5d73019ff0f51430570793cbb633232">findLiveSetAtInst</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *inst, GCPtrLivenessData &amp;Data, StatepointLiveSetTy &amp;out)</td></tr>
 <tr class="memdesc:ab5d73019ff0f51430570793cbb633232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given results from the dataflow liveness computation, find the set of live Values at a particular instruction.  <a href="RewriteStatepointsForGC_8cpp.html#ab5d73019ff0f51430570793cbb633232">More...</a><br /></td></tr>
 <tr class="separator:ab5d73019ff0f51430570793cbb633232"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae37c453d2e156e834ab890c7b6b29555"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ae37c453d2e156e834ab890c7b6b29555">isGCPointerType</a> (Type *T)</td></tr>
+<tr class="memitem:ae37c453d2e156e834ab890c7b6b29555"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ae37c453d2e156e834ab890c7b6b29555">isGCPointerType</a> (<a class="el" href="classllvm_1_1Type.html">Type</a> *T)</td></tr>
 <tr class="separator:ae37c453d2e156e834ab890c7b6b29555"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa73e6adc1d41196ebfa5d037943cb213"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#aa73e6adc1d41196ebfa5d037943cb213">isHandledGCPointerType</a> (Type *T)</td></tr>
+<tr class="memitem:aa73e6adc1d41196ebfa5d037943cb213"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#aa73e6adc1d41196ebfa5d037943cb213">isHandledGCPointerType</a> (<a class="el" href="classllvm_1_1Type.html">Type</a> *T)</td></tr>
 <tr class="separator:aa73e6adc1d41196ebfa5d037943cb213"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab800ba52a9007ccc8b175c3c6e77f71e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ab800ba52a9007ccc8b175c3c6e77f71e">containsGCPtrType</a> (Type *Ty)</td></tr>
+<tr class="memitem:ab800ba52a9007ccc8b175c3c6e77f71e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ab800ba52a9007ccc8b175c3c6e77f71e">containsGCPtrType</a> (<a class="el" href="classllvm_1_1Type.html">Type</a> *Ty)</td></tr>
 <tr class="memdesc:ab800ba52a9007ccc8b175c3c6e77f71e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this type contains a gc pointer whether we know how to handle that type or not.  <a href="RewriteStatepointsForGC_8cpp.html#ab800ba52a9007ccc8b175c3c6e77f71e">More...</a><br /></td></tr>
 <tr class="separator:ab800ba52a9007ccc8b175c3c6e77f71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01434782a84044a043ef1a24a98bdc86"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a01434782a84044a043ef1a24a98bdc86">isUnhandledGCPointerType</a> (Type *Ty)</td></tr>
+<tr class="memitem:a01434782a84044a043ef1a24a98bdc86"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a01434782a84044a043ef1a24a98bdc86">isUnhandledGCPointerType</a> (<a class="el" href="classllvm_1_1Type.html">Type</a> *Ty)</td></tr>
 <tr class="separator:a01434782a84044a043ef1a24a98bdc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb0214b30fb2b9e1d6e1cf6cc851b3e5"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#acb0214b30fb2b9e1d6e1cf6cc851b3e5">suffixed_name_or</a> (Value *V, StringRef Suffix, StringRef DefaultName)</td></tr>
+<tr class="memitem:acb0214b30fb2b9e1d6e1cf6cc851b3e5"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#acb0214b30fb2b9e1d6e1cf6cc851b3e5">suffixed_name_or</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, StringRef Suffix, StringRef DefaultName)</td></tr>
 <tr class="separator:acb0214b30fb2b9e1d6e1cf6cc851b3e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44cddbe72f77a2f86a5d2a15242803ab"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a44cddbe72f77a2f86a5d2a15242803ab">analyzeParsePointLiveness</a> (DominatorTree &amp;DT, GCPtrLivenessData &amp;OriginalLivenessData, CallBase *Call, PartiallyConstructedSafepointRecord &amp;Result)</td></tr>
+<tr class="memitem:a44cddbe72f77a2f86a5d2a15242803ab"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a44cddbe72f77a2f86a5d2a15242803ab">analyzeParsePointLiveness</a> (<a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, GCPtrLivenessData &amp;OriginalLivenessData, <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *Call, PartiallyConstructedSafepointRecord &amp;Result)</td></tr>
 <tr class="separator:a44cddbe72f77a2f86a5d2a15242803ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62e3fad293853156ffb4a44c44a1fa8c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a62e3fad293853156ffb4a44c44a1fa8c">isKnownBaseResult</a> (Value *V)</td></tr>
+<tr class="memitem:a62e3fad293853156ffb4a44c44a1fa8c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a62e3fad293853156ffb4a44c44a1fa8c">isKnownBaseResult</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
 <tr class="memdesc:a62e3fad293853156ffb4a44c44a1fa8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given the result of a call to findBaseDefiningValue, or findBaseOrBDV, is it known to be a base pointer? Or do we need to continue searching.  <a href="RewriteStatepointsForGC_8cpp.html#a62e3fad293853156ffb4a44c44a1fa8c">More...</a><br /></td></tr>
 <tr class="separator:a62e3fad293853156ffb4a44c44a1fa8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e3ca16f88de1129b81fb8ba734972a4"><td class="memItemLeft" align="right" valign="top">static BaseDefiningValueResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a8e3ca16f88de1129b81fb8ba734972a4">findBaseDefiningValue</a> (Value *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:a8e3ca16f88de1129b81fb8ba734972a4"><td class="memItemLeft" align="right" valign="top">static BaseDefiningValueResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a8e3ca16f88de1129b81fb8ba734972a4">findBaseDefiningValue</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="memdesc:a8e3ca16f88de1129b81fb8ba734972a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for findBasePointer - Will return a value which either a) defines the base pointer for the input, b) blocks the simple search (i.e.  <a href="RewriteStatepointsForGC_8cpp.html#a8e3ca16f88de1129b81fb8ba734972a4">More...</a><br /></td></tr>
 <tr class="separator:a8e3ca16f88de1129b81fb8ba734972a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd54916131882b1dbd5beaa34b4e21d6"><td class="memItemLeft" align="right" valign="top">static BaseDefiningValueResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#afd54916131882b1dbd5beaa34b4e21d6">findBaseDefiningValueOfVector</a> (Value *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:afd54916131882b1dbd5beaa34b4e21d6"><td class="memItemLeft" align="right" valign="top">static BaseDefiningValueResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#afd54916131882b1dbd5beaa34b4e21d6">findBaseDefiningValueOfVector</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="memdesc:afd54916131882b1dbd5beaa34b4e21d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a base defining value for the 'Index' element of the given vector instruction 'I'.  <a href="RewriteStatepointsForGC_8cpp.html#afd54916131882b1dbd5beaa34b4e21d6">More...</a><br /></td></tr>
 <tr class="separator:afd54916131882b1dbd5beaa34b4e21d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33505471e4ac552ebfd67e8a890674d4"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a33505471e4ac552ebfd67e8a890674d4">findBaseDefiningValueCached</a> (Value *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, DefiningValueMapTy &amp;Cache)</td></tr>
+<tr class="memitem:a33505471e4ac552ebfd67e8a890674d4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a33505471e4ac552ebfd67e8a890674d4">findBaseDefiningValueCached</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, DefiningValueMapTy &amp;Cache)</td></tr>
 <tr class="memdesc:a33505471e4ac552ebfd67e8a890674d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the base defining value for this value.  <a href="RewriteStatepointsForGC_8cpp.html#a33505471e4ac552ebfd67e8a890674d4">More...</a><br /></td></tr>
 <tr class="separator:a33505471e4ac552ebfd67e8a890674d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9221940c0ffb789a7120d6478f87ff5f"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a9221940c0ffb789a7120d6478f87ff5f">findBaseOrBDV</a> (Value *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, DefiningValueMapTy &amp;Cache)</td></tr>
+<tr class="memitem:a9221940c0ffb789a7120d6478f87ff5f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a9221940c0ffb789a7120d6478f87ff5f">findBaseOrBDV</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, DefiningValueMapTy &amp;Cache)</td></tr>
 <tr class="memdesc:a9221940c0ffb789a7120d6478f87ff5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a base pointer for this value if known.  <a href="RewriteStatepointsForGC_8cpp.html#a9221940c0ffb789a7120d6478f87ff5f">More...</a><br /></td></tr>
 <tr class="separator:a9221940c0ffb789a7120d6478f87ff5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a564cb4598ee1173e684843ad302d6b0f"><td class="memItemLeft" align="right" valign="top">static raw_ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a564cb4598ee1173e684843ad302d6b0f">operator&lt;&lt;</a> (raw_ostream &amp;OS, const BDVState &amp;State)</td></tr>
+<tr class="memitem:a564cb4598ee1173e684843ad302d6b0f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a564cb4598ee1173e684843ad302d6b0f">operator&lt;&lt;</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS, const BDVState &amp;State)</td></tr>
 <tr class="separator:a564cb4598ee1173e684843ad302d6b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a398050927f310598121aa242bb8cf368"><td class="memItemLeft" align="right" valign="top">static BDVState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a398050927f310598121aa242bb8cf368">meetBDVStateImpl</a> (const BDVState &amp;LHS, const BDVState &amp;RHS)</td></tr>
 <tr class="separator:a398050927f310598121aa242bb8cf368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2d4a1976eac407de38913105b96be2a"><td class="memItemLeft" align="right" valign="top">static BDVState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ad2d4a1976eac407de38913105b96be2a">meetBDVState</a> (const BDVState &amp;LHS, const BDVState &amp;RHS)</td></tr>
 <tr class="separator:ad2d4a1976eac407de38913105b96be2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3b1939444fbf5bc6e0d2ec31524ebea"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#aa3b1939444fbf5bc6e0d2ec31524ebea">findBasePointer</a> (Value *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, DefiningValueMapTy &amp;Cache)</td></tr>
+<tr class="memitem:aa3b1939444fbf5bc6e0d2ec31524ebea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#aa3b1939444fbf5bc6e0d2ec31524ebea">findBasePointer</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, DefiningValueMapTy &amp;Cache)</td></tr>
 <tr class="memdesc:aa3b1939444fbf5bc6e0d2ec31524ebea"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a given value or instruction, figure out what base ptr its derived from.  <a href="RewriteStatepointsForGC_8cpp.html#aa3b1939444fbf5bc6e0d2ec31524ebea">More...</a><br /></td></tr>
 <tr class="separator:aa3b1939444fbf5bc6e0d2ec31524ebea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8c3a0799b2b4af4447f41e6c5eb7766"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#af8c3a0799b2b4af4447f41e6c5eb7766">findBasePointers</a> (const StatepointLiveSetTy &amp;<a class="el" href="DeadArgumentElimination_8cpp.html#a0ecf27c4fbaac843ec70223bf08b0445">live</a>, MapVector&lt; Value *, Value * &gt; &amp;PointerToBase, DominatorTree *DT, DefiningValueMapTy &amp;DVCache)</td></tr>
+<tr class="memitem:af8c3a0799b2b4af4447f41e6c5eb7766"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#af8c3a0799b2b4af4447f41e6c5eb7766">findBasePointers</a> (const StatepointLiveSetTy &amp;<a class="el" href="DeadArgumentElimination_8cpp.html#a0ecf27c4fbaac843ec70223bf08b0445">live</a>, MapVector&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;PointerToBase, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT, DefiningValueMapTy &amp;DVCache)</td></tr>
 <tr class="separator:af8c3a0799b2b4af4447f41e6c5eb7766"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4430e35c7fd731e3889bf815ef44b504"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a4430e35c7fd731e3889bf815ef44b504">findBasePointers</a> (DominatorTree &amp;DT, DefiningValueMapTy &amp;DVCache, CallBase *Call, PartiallyConstructedSafepointRecord &amp;result)</td></tr>
+<tr class="memitem:a4430e35c7fd731e3889bf815ef44b504"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a4430e35c7fd731e3889bf815ef44b504">findBasePointers</a> (<a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, DefiningValueMapTy &amp;DVCache, <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *Call, PartiallyConstructedSafepointRecord &amp;result)</td></tr>
 <tr class="memdesc:a4430e35c7fd731e3889bf815ef44b504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the required based pointers (and adjust the live set) for the given parse point.  <a href="RewriteStatepointsForGC_8cpp.html#a4430e35c7fd731e3889bf815ef44b504">More...</a><br /></td></tr>
 <tr class="separator:a4430e35c7fd731e3889bf815ef44b504"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a016fb8355da43bb21845f12d51c0478c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a016fb8355da43bb21845f12d51c0478c">recomputeLiveInValues</a> (GCPtrLivenessData &amp;RevisedLivenessData, CallBase *Call, PartiallyConstructedSafepointRecord &amp;result)</td></tr>
+<tr class="memitem:a016fb8355da43bb21845f12d51c0478c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a016fb8355da43bb21845f12d51c0478c">recomputeLiveInValues</a> (GCPtrLivenessData &amp;RevisedLivenessData, <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *Call, PartiallyConstructedSafepointRecord &amp;result)</td></tr>
 <tr class="memdesc:a016fb8355da43bb21845f12d51c0478c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an updated version of the dataflow liveness results, update the liveset and base pointer maps for the call site CS.  <a href="RewriteStatepointsForGC_8cpp.html#a016fb8355da43bb21845f12d51c0478c">More...</a><br /></td></tr>
 <tr class="separator:a016fb8355da43bb21845f12d51c0478c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32c04adc1413d5dda4be17617d8c9d0e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a32c04adc1413d5dda4be17617d8c9d0e">recomputeLiveInValues</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, DominatorTree &amp;DT, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; CallBase * &gt; toUpdate, MutableArrayRef&lt; struct PartiallyConstructedSafepointRecord &gt; records)</td></tr>
+<tr class="memitem:a32c04adc1413d5dda4be17617d8c9d0e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a32c04adc1413d5dda4be17617d8c9d0e">recomputeLiveInValues</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> * &gt; toUpdate, <a class="el" href="classllvm_1_1MutableArrayRef.html">MutableArrayRef</a>&lt; struct PartiallyConstructedSafepointRecord &gt; records)</td></tr>
 <tr class="separator:a32c04adc1413d5dda4be17617d8c9d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4225c0d5e9678855f9784efc312ed92e"><td class="memItemLeft" align="right" valign="top">static BasicBlock *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a4225c0d5e9678855f9784efc312ed92e">normalizeForInvokeSafepoint</a> (BasicBlock *BB, BasicBlock *InvokeParent, DominatorTree &amp;DT)</td></tr>
+<tr class="memitem:a4225c0d5e9678855f9784efc312ed92e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a4225c0d5e9678855f9784efc312ed92e">normalizeForInvokeSafepoint</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *InvokeParent, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT)</td></tr>
 <tr class="separator:a4225c0d5e9678855f9784efc312ed92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a469276b1664feb30d2333f1668b5da0b"><td class="memItemLeft" align="right" valign="top">static AttributeList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a469276b1664feb30d2333f1668b5da0b">legalizeCallAttributes</a> (AttributeList AL)</td></tr>
+<tr class="memitem:a469276b1664feb30d2333f1668b5da0b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1AttributeList.html">AttributeList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a469276b1664feb30d2333f1668b5da0b">legalizeCallAttributes</a> (<a class="el" href="classllvm_1_1AttributeList.html">AttributeList</a> AL)</td></tr>
 <tr class="separator:a469276b1664feb30d2333f1668b5da0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a7e0d33b087e9d4ef3b3d167445aa9f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a2a7e0d33b087e9d4ef3b3d167445aa9f">CreateGCRelocates</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; LiveVariables, const int LiveStart, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; BasePtrs, Instruction *StatepointToken, IRBuilder&lt;&gt; Builder)</td></tr>
+<tr class="memitem:a2a7e0d33b087e9d4ef3b3d167445aa9f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a2a7e0d33b087e9d4ef3b3d167445aa9f">CreateGCRelocates</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; LiveVariables, const int LiveStart, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; BasePtrs, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *StatepointToken, <a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; Builder)</td></tr>
 <tr class="memdesc:a2a7e0d33b087e9d4ef3b3d167445aa9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to place all gc relocates necessary for the given statepoint.  <a href="RewriteStatepointsForGC_8cpp.html#a2a7e0d33b087e9d4ef3b3d167445aa9f">More...</a><br /></td></tr>
 <tr class="separator:a2a7e0d33b087e9d4ef3b3d167445aa9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6d87a400bc9669540b19739d36b4488"><td class="memItemLeft" align="right" valign="top">static StringRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ad6d87a400bc9669540b19739d36b4488">getDeoptLowering</a> (CallBase *Call)</td></tr>
+<tr class="memitem:ad6d87a400bc9669540b19739d36b4488"><td class="memItemLeft" align="right" valign="top">static StringRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ad6d87a400bc9669540b19739d36b4488">getDeoptLowering</a> (<a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *Call)</td></tr>
 <tr class="separator:ad6d87a400bc9669540b19739d36b4488"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1861c9e8c3f5921b4fefd6d0ff5819e6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a1861c9e8c3f5921b4fefd6d0ff5819e6">makeStatepointExplicitImpl</a> (CallBase *Call, const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;BasePtrs, const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;LiveVariables, PartiallyConstructedSafepointRecord &amp;Result, std::vector&lt; DeferredReplacement &gt; &amp;Replacements)</td></tr>
+<tr class="memitem:a1861c9e8c3f5921b4fefd6d0ff5819e6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a1861c9e8c3f5921b4fefd6d0ff5819e6">makeStatepointExplicitImpl</a> (<a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *Call, const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;BasePtrs, const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;LiveVariables, PartiallyConstructedSafepointRecord &amp;Result, std::vector&lt; DeferredReplacement &gt; &amp;Replacements)</td></tr>
 <tr class="separator:a1861c9e8c3f5921b4fefd6d0ff5819e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8902dde28946921ba8133af10372607"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ad8902dde28946921ba8133af10372607">makeStatepointExplicit</a> (DominatorTree &amp;DT, CallBase *Call, PartiallyConstructedSafepointRecord &amp;Result, std::vector&lt; DeferredReplacement &gt; &amp;Replacements)</td></tr>
+<tr class="memitem:ad8902dde28946921ba8133af10372607"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ad8902dde28946921ba8133af10372607">makeStatepointExplicit</a> (<a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *Call, PartiallyConstructedSafepointRecord &amp;Result, std::vector&lt; DeferredReplacement &gt; &amp;Replacements)</td></tr>
 <tr class="separator:ad8902dde28946921ba8133af10372607"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e3071be46334a57263e70548609d657"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a3e3071be46334a57263e70548609d657">insertRelocationStores</a> (iterator_range&lt; Value::user_iterator &gt; GCRelocs, DenseMap&lt; Value *, AllocaInst * &gt; &amp;AllocaMap, DenseSet&lt; Value * &gt; &amp;VisitedLiveValues)</td></tr>
+<tr class="memitem:a3e3071be46334a57263e70548609d657"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a3e3071be46334a57263e70548609d657">insertRelocationStores</a> (iterator_range&lt; <a class="el" href="classllvm_1_1Value.html#acd2fbee42afeb868be98aaae56528636">Value::user_iterator</a> &gt; GCRelocs, DenseMap&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classllvm_1_1AllocaInst.html">AllocaInst</a> * &gt; &amp;AllocaMap, DenseSet&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;VisitedLiveValues)</td></tr>
 <tr class="separator:a3e3071be46334a57263e70548609d657"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8210289419425d82cf453d7b32bd2d2c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a8210289419425d82cf453d7b32bd2d2c">insertRematerializationStores</a> (const RematerializedValueMapTy &amp;RematerializedValues, DenseMap&lt; Value *, AllocaInst * &gt; &amp;AllocaMap, DenseSet&lt; Value * &gt; &amp;VisitedLiveValues)</td></tr>
+<tr class="memitem:a8210289419425d82cf453d7b32bd2d2c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a8210289419425d82cf453d7b32bd2d2c">insertRematerializationStores</a> (const RematerializedValueMapTy &amp;RematerializedValues, DenseMap&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classllvm_1_1AllocaInst.html">AllocaInst</a> * &gt; &amp;AllocaMap, DenseSet&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;VisitedLiveValues)</td></tr>
 <tr class="separator:a8210289419425d82cf453d7b32bd2d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55412d2c237115c95f20e12ba0d95922"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a55412d2c237115c95f20e12ba0d95922">relocationViaAlloca</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, DominatorTree &amp;DT, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; <a class="el" href="DeadArgumentElimination_8cpp.html#a4e86f60fbe61a3e52ab0ba9183cc3fe5">Live</a>, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; PartiallyConstructedSafepointRecord &gt; Records)</td></tr>
+<tr class="memitem:a55412d2c237115c95f20e12ba0d95922"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a55412d2c237115c95f20e12ba0d95922">relocationViaAlloca</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; <a class="el" href="DeadArgumentElimination_8cpp.html#a4e86f60fbe61a3e52ab0ba9183cc3fe5">Live</a>, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; PartiallyConstructedSafepointRecord &gt; Records)</td></tr>
 <tr class="memdesc:a55412d2c237115c95f20e12ba0d95922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do all the relocation update via allocas and mem2reg.  <a href="RewriteStatepointsForGC_8cpp.html#a55412d2c237115c95f20e12ba0d95922">More...</a><br /></td></tr>
 <tr class="separator:a55412d2c237115c95f20e12ba0d95922"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d739ace36dfd7ba0b4069716611fd74"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a1d739ace36dfd7ba0b4069716611fd74"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a1d739ace36dfd7ba0b4069716611fd74">unique_unsorted</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; T &gt; &amp;Vec)</td></tr>
 <tr class="memdesc:a1d739ace36dfd7ba0b4069716611fd74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement a unique function which doesn't require we sort the input vector.  <a href="RewriteStatepointsForGC_8cpp.html#a1d739ace36dfd7ba0b4069716611fd74">More...</a><br /></td></tr>
 <tr class="separator:a1d739ace36dfd7ba0b4069716611fd74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b7912ea5edc4563fe03afc57fa9b0c6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a6b7912ea5edc4563fe03afc57fa9b0c6">insertUseHolderAfter</a> (CallBase *Call, const <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; Values, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; CallInst * &gt; &amp;Holders)</td></tr>
+<tr class="memitem:a6b7912ea5edc4563fe03afc57fa9b0c6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a6b7912ea5edc4563fe03afc57fa9b0c6">insertUseHolderAfter</a> (<a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *Call, const <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; Values, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> * &gt; &amp;Holders)</td></tr>
 <tr class="memdesc:a6b7912ea5edc4563fe03afc57fa9b0c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert holders so that each Value is obviously live through the entire lifetime of the call.  <a href="RewriteStatepointsForGC_8cpp.html#a6b7912ea5edc4563fe03afc57fa9b0c6">More...</a><br /></td></tr>
 <tr class="separator:a6b7912ea5edc4563fe03afc57fa9b0c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85d99fb76e7a5fc99d3a416b8aac7f5a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a85d99fb76e7a5fc99d3a416b8aac7f5a">findLiveReferences</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, DominatorTree &amp;DT, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; CallBase * &gt; toUpdate, MutableArrayRef&lt; struct PartiallyConstructedSafepointRecord &gt; records)</td></tr>
+<tr class="memitem:a85d99fb76e7a5fc99d3a416b8aac7f5a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a85d99fb76e7a5fc99d3a416b8aac7f5a">findLiveReferences</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> * &gt; toUpdate, <a class="el" href="classllvm_1_1MutableArrayRef.html">MutableArrayRef</a>&lt; struct PartiallyConstructedSafepointRecord &gt; records)</td></tr>
 <tr class="separator:a85d99fb76e7a5fc99d3a416b8aac7f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2d8fa2ef0e7ead8200cad6bd101af3e"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#aa2d8fa2ef0e7ead8200cad6bd101af3e">findRematerializableChainToBasePointer</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Instruction * &gt; &amp;ChainToBase, Value *CurrentValue)</td></tr>
+<tr class="memitem:aa2d8fa2ef0e7ead8200cad6bd101af3e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#aa2d8fa2ef0e7ead8200cad6bd101af3e">findRematerializableChainToBasePointer</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; &amp;ChainToBase, <a class="el" href="classllvm_1_1Value.html">Value</a> *CurrentValue)</td></tr>
 <tr class="separator:aa2d8fa2ef0e7ead8200cad6bd101af3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1348d90883581d4ed3fd28a7068d4099"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a1348d90883581d4ed3fd28a7068d4099">chainToBasePointerCost</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Instruction * &gt; &amp;Chain, TargetTransformInfo &amp;TTI)</td></tr>
+<tr class="memitem:a1348d90883581d4ed3fd28a7068d4099"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a1348d90883581d4ed3fd28a7068d4099">chainToBasePointerCost</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; &amp;Chain, <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;TTI)</td></tr>
 <tr class="separator:a1348d90883581d4ed3fd28a7068d4099"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55b03f8424779067813a7747a82a0b45"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a55b03f8424779067813a7747a82a0b45">AreEquivalentPhiNodes</a> (PHINode &amp;OrigRootPhi, PHINode &amp;AlternateRootPhi)</td></tr>
+<tr class="memitem:a55b03f8424779067813a7747a82a0b45"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a55b03f8424779067813a7747a82a0b45">AreEquivalentPhiNodes</a> (<a class="el" href="classllvm_1_1PHINode.html">PHINode</a> &amp;OrigRootPhi, <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> &amp;AlternateRootPhi)</td></tr>
 <tr class="separator:a55b03f8424779067813a7747a82a0b45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae26cc12711e09058ec61fc7715e81bd3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ae26cc12711e09058ec61fc7715e81bd3">rematerializeLiveValues</a> (CallBase *Call, PartiallyConstructedSafepointRecord &amp;Info, TargetTransformInfo &amp;TTI)</td></tr>
+<tr class="memitem:ae26cc12711e09058ec61fc7715e81bd3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ae26cc12711e09058ec61fc7715e81bd3">rematerializeLiveValues</a> (<a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *Call, PartiallyConstructedSafepointRecord &amp;Info, <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;TTI)</td></tr>
 <tr class="separator:ae26cc12711e09058ec61fc7715e81bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae428a59d7bd0de6f605f481dfcd52d36"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ae428a59d7bd0de6f605f481dfcd52d36">insertParsePoints</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, DominatorTree &amp;DT, TargetTransformInfo &amp;TTI, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; CallBase * &gt; &amp;ToUpdate)</td></tr>
+<tr class="memitem:ae428a59d7bd0de6f605f481dfcd52d36"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ae428a59d7bd0de6f605f481dfcd52d36">insertParsePoints</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;TTI, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> * &gt; &amp;ToUpdate)</td></tr>
 <tr class="separator:ae428a59d7bd0de6f605f481dfcd52d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5dcf347805981dd4c6df11a7ef56719"><td class="memTemplParams" colspan="2">template&lt;typename AttrHolder &gt; </td></tr>
-<tr class="memitem:ae5dcf347805981dd4c6df11a7ef56719"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ae5dcf347805981dd4c6df11a7ef56719">RemoveNonValidAttrAtIndex</a> (LLVMContext &amp;Ctx, AttrHolder &amp;AH, unsigned Index)</td></tr>
+<tr class="memitem:ae5dcf347805981dd4c6df11a7ef56719"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ae5dcf347805981dd4c6df11a7ef56719">RemoveNonValidAttrAtIndex</a> (<a class="el" href="classllvm_1_1LLVMContext.html">LLVMContext</a> &amp;Ctx, AttrHolder &amp;AH, <a class="el" href="classunsigned.html">unsigned</a> Index)</td></tr>
 <tr class="separator:ae5dcf347805981dd4c6df11a7ef56719"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97d7bb2d0dc7b8e471e481ef8e4d3986"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a97d7bb2d0dc7b8e471e481ef8e4d3986">stripNonValidAttributesFromPrototype</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a97d7bb2d0dc7b8e471e481ef8e4d3986"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a97d7bb2d0dc7b8e471e481ef8e4d3986">stripNonValidAttributesFromPrototype</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a97d7bb2d0dc7b8e471e481ef8e4d3986"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d12b579baa093a4a9e2eb24c69b7129"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a9d12b579baa093a4a9e2eb24c69b7129">stripInvalidMetadataFromInstruction</a> (Instruction &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:a9d12b579baa093a4a9e2eb24c69b7129"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a9d12b579baa093a4a9e2eb24c69b7129">stripInvalidMetadataFromInstruction</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="memdesc:a9d12b579baa093a4a9e2eb24c69b7129"><td class="mdescLeft">&#160;</td><td class="mdescRight">Certain metadata on instructions are invalid after running RS4GC.  <a href="RewriteStatepointsForGC_8cpp.html#a9d12b579baa093a4a9e2eb24c69b7129">More...</a><br /></td></tr>
 <tr class="separator:a9d12b579baa093a4a9e2eb24c69b7129"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bf12026ed9de594d2117077b422c24d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a2bf12026ed9de594d2117077b422c24d">stripNonValidDataFromBody</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a2bf12026ed9de594d2117077b422c24d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a2bf12026ed9de594d2117077b422c24d">stripNonValidDataFromBody</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a2bf12026ed9de594d2117077b422c24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd0c2cbbd675177a7487bdd4bfc961f7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#afd0c2cbbd675177a7487bdd4bfc961f7">computeLiveInValues</a> (BasicBlock::reverse_iterator Begin, BasicBlock::reverse_iterator End, SetVector&lt; Value * &gt; &amp;LiveTmp)</td></tr>
+<tr class="memitem:afd0c2cbbd675177a7487bdd4bfc961f7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#afd0c2cbbd675177a7487bdd4bfc961f7">computeLiveInValues</a> (<a class="el" href="classllvm_1_1BasicBlock.html#a6d3231fb84ed4182ec22e9442a87dbf8">BasicBlock::reverse_iterator</a> Begin, <a class="el" href="classllvm_1_1BasicBlock.html#a6d3231fb84ed4182ec22e9442a87dbf8">BasicBlock::reverse_iterator</a> End, SetVector&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;LiveTmp)</td></tr>
 <tr class="memdesc:afd0c2cbbd675177a7487bdd4bfc961f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the live-in set for the location rbegin starting from the live-out set of the basic block.  <a href="RewriteStatepointsForGC_8cpp.html#afd0c2cbbd675177a7487bdd4bfc961f7">More...</a><br /></td></tr>
 <tr class="separator:afd0c2cbbd675177a7487bdd4bfc961f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff49e4c13812a3ad8aba8623d8bf7853"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#aff49e4c13812a3ad8aba8623d8bf7853">computeLiveOutSeed</a> (BasicBlock *BB, SetVector&lt; Value * &gt; &amp;LiveTmp)</td></tr>
+<tr class="memitem:aff49e4c13812a3ad8aba8623d8bf7853"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#aff49e4c13812a3ad8aba8623d8bf7853">computeLiveOutSeed</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB, SetVector&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;LiveTmp)</td></tr>
 <tr class="separator:aff49e4c13812a3ad8aba8623d8bf7853"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b3f1a8e92b336accfc74d234c1d024e"><td class="memItemLeft" align="right" valign="top">static SetVector&lt; Value * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a5b3f1a8e92b336accfc74d234c1d024e">computeKillSet</a> (BasicBlock *BB)</td></tr>
+<tr class="memitem:a5b3f1a8e92b336accfc74d234c1d024e"><td class="memItemLeft" align="right" valign="top">static SetVector&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a5b3f1a8e92b336accfc74d234c1d024e">computeKillSet</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB)</td></tr>
 <tr class="separator:a5b3f1a8e92b336accfc74d234c1d024e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1f0acfffdda650ed4ceb4d4622c1248"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ad1f0acfffdda650ed4ceb4d4622c1248">checkBasicSSA</a> (DominatorTree &amp;DT, SetVector&lt; Value * &gt; &amp;<a class="el" href="DeadArgumentElimination_8cpp.html#a4e86f60fbe61a3e52ab0ba9183cc3fe5">Live</a>, Instruction *TI, bool TermOkay=false)</td></tr>
+<tr class="memitem:ad1f0acfffdda650ed4ceb4d4622c1248"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ad1f0acfffdda650ed4ceb4d4622c1248">checkBasicSSA</a> (<a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, SetVector&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;<a class="el" href="DeadArgumentElimination_8cpp.html#a4e86f60fbe61a3e52ab0ba9183cc3fe5">Live</a>, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *TI, <a class="el" href="classbool.html">bool</a> TermOkay=false)</td></tr>
 <tr class="memdesc:ad1f0acfffdda650ed4ceb4d4622c1248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that the items in 'Live' dominate 'TI'.  <a href="RewriteStatepointsForGC_8cpp.html#ad1f0acfffdda650ed4ceb4d4622c1248">More...</a><br /></td></tr>
 <tr class="separator:ad1f0acfffdda650ed4ceb4d4622c1248"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a116214243278440ab010746880a8e6e5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a116214243278440ab010746880a8e6e5">checkBasicSSA</a> (DominatorTree &amp;DT, GCPtrLivenessData &amp;Data, BasicBlock &amp;BB)</td></tr>
+<tr class="memitem:a116214243278440ab010746880a8e6e5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a116214243278440ab010746880a8e6e5">checkBasicSSA</a> (<a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, GCPtrLivenessData &amp;Data, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> &amp;BB)</td></tr>
 <tr class="memdesc:a116214243278440ab010746880a8e6e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that all the liveness sets used during the computation of liveness obey basic SSA properties.  <a href="RewriteStatepointsForGC_8cpp.html#a116214243278440ab010746880a8e6e5">More...</a><br /></td></tr>
 <tr class="separator:a116214243278440ab010746880a8e6e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aae78323e579beb55b2c4820179d7b7e8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#aae78323e579beb55b2c4820179d7b7e8">ClobberNonLive</a> = false</td></tr>
+<tr class="memitem:abec72d4f38d6d32627aedb147dce0740"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#abec72d4f38d6d32627aedb147dce0740">PrintLiveSet</a> (&quot;spp-print-liveset&quot;, cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:abec72d4f38d6d32627aedb147dce0740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa35842e5e8da9f3b7a37ea5a0adceff3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#aa35842e5e8da9f3b7a37ea5a0adceff3">PrintLiveSetSize</a> (&quot;spp-print-liveset-size&quot;, cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:aa35842e5e8da9f3b7a37ea5a0adceff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8e518b81b94c3a5dceaf71955686c22"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ab8e518b81b94c3a5dceaf71955686c22">PrintBasePointers</a> (&quot;spp-print-base-pointers&quot;, cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:ab8e518b81b94c3a5dceaf71955686c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a528e12afc9b7c0bf3691240dd7a199"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a5a528e12afc9b7c0bf3691240dd7a199">RematerializationThreshold</a> (&quot;spp-rematerialization-threshold&quot;, cl::Hidden, cl::init(6))</td></tr>
+<tr class="separator:a5a528e12afc9b7c0bf3691240dd7a199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae78323e579beb55b2c4820179d7b7e8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#aae78323e579beb55b2c4820179d7b7e8">ClobberNonLive</a> = false</td></tr>
 <tr class="separator:aae78323e579beb55b2c4820179d7b7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ca888d5201b0430a87ed7e3dc46f793"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a>, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a3ca888d5201b0430a87ed7e3dc46f793">ClobberNonLiveOverride</a> (&quot;rs4gc-clobber-non-live&quot;, cl::location(<a class="el" href="RewriteStatepointsForGC_8cpp.html#aae78323e579beb55b2c4820179d7b7e8">ClobberNonLive</a>), cl::Hidden)</td></tr>
+<tr class="separator:a3ca888d5201b0430a87ed7e3dc46f793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4ad16904738e07a0d7d3616ab4306a3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#ac4ad16904738e07a0d7d3616ab4306a3">AllowStatepointWithNoDeoptInfo</a> (&quot;rs4gc-allow-statepoint-with-no-deopt-info&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:ac4ad16904738e07a0d7d3616ab4306a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0230b531ba2214a31157027481fde94c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PoisonChecking_8cpp.html#a702ebb77e7ff7f0a10a1b4690d8ecfc8">rewrite</a> <a class="el" href="RewriteStatepointsForGC_8cpp.html#a056b1e140d5170fc706d4adc8cf051be">statepoints</a> for&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a0230b531ba2214a31157027481fde94c">gc</a></td></tr>
 <tr class="separator:a0230b531ba2214a31157027481fde94c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a056b1e140d5170fc706d4adc8cf051be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PoisonChecking_8cpp.html#a702ebb77e7ff7f0a10a1b4690d8ecfc8">rewrite</a> statepoints for Make relocations at&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RewriteStatepointsForGC_8cpp.html#a056b1e140d5170fc706d4adc8cf051be">statepoints</a></td></tr>
@@ -320,50 +320,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="abfe6d3c9df5cd55984faeb9d176aedfb" name="abfe6d3c9df5cd55984faeb9d176aedfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfe6d3c9df5cd55984faeb9d176aedfb">&#9670;&nbsp;</a></span>AllowStatepointWithNoDeoptInfo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; AllowStatepointWithNoDeoptInfo </td>
-          <td>(</td>
-          <td class="paramtype">&quot;rs4gc-allow-statepoint-with-no-deopt-info&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00287">GetDeoptBundleOperands()</a>.</p>
-
-</div>
-</div>
 <a id="a44cddbe72f77a2f86a5d2a15242803ab" name="a44cddbe72f77a2f86a5d2a15242803ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a44cddbe72f77a2f86a5d2a15242803ab">&#9670;&nbsp;</a></span>analyzeParsePointLiveness()</h2>
 
@@ -376,7 +332,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void analyzeParsePointLiveness </td>
           <td>(</td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
@@ -388,7 +344,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">CallBase *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
           <td class="paramname"><em>Call</em>, </td>
         </tr>
         <tr>
@@ -412,7 +368,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00371">371</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02791">findLiveSetAtInst()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp.html#ace93c40c37d58147987a7e8ea32eeaf0">PrintLiveSet()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp.html#a9f44652b1d875276484b26420a7bb241">PrintLiveSetSize()</a>.</p>
+<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02791">findLiveSetAtInst()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp.html#abec72d4f38d6d32627aedb147dce0740">PrintLiveSet</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp.html#aa35842e5e8da9f3b7a37ea5a0adceff3">PrintLiveSetSize</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01915">findLiveReferences()</a>.</p>
 
@@ -428,15 +384,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool AreEquivalentPhiNodes </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> AreEquivalentPhiNodes </td>
           <td>(</td>
-          <td class="paramtype">PHINode &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1PHINode.html">PHINode</a> &amp;&#160;</td>
           <td class="paramname"><em>OrigRootPhi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">PHINode &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1PHINode.html">PHINode</a> &amp;&#160;</td>
           <td class="paramname"><em>AlternateRootPhi</em>&#160;</td>
         </tr>
         <tr>
@@ -454,6 +410,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01989">1989</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Instructions_8h_source.html#l02654">llvm::PHINode::getIncomingBlock()</a>, <a class="el" href="Instructions_8h_source.html#l02634">llvm::PHINode::getIncomingValue()</a>, <a class="el" href="Instructions_8h_source.html#l02630">llvm::PHINode::getNumIncomingValues()</a>, and <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02019">rematerializeLiveValues()</a>.</p>
 
 </div>
@@ -468,15 +426,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static unsigned chainToBasePointerCost </td>
+          <td class="memname">static <a class="el" href="classunsigned.html">unsigned</a> chainToBasePointerCost </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Instruction * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Chain</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">TargetTransformInfo &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>TTI</em>&#160;</td>
         </tr>
         <tr>
@@ -494,7 +452,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01958">1958</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00703">llvm::TargetTransformInfo::getAddressComputationCost()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00596">llvm::TargetTransformInfo::getCastInstrCost()</a>, and <a class="el" href="ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02019">rematerializeLiveValues()</a>.</p>
 
@@ -512,7 +470,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void checkBasicSSA </td>
           <td>(</td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
@@ -524,7 +482,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> &amp;&#160;</td>
           <td class="paramname"><em>BB</em>&#160;</td>
         </tr>
         <tr>
@@ -545,7 +503,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02716">2716</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02698">checkBasicSSA()</a>.</p>
+<p class="reference">References <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02698">checkBasicSSA()</a>, and <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>.</p>
 
 </div>
 </div>
@@ -561,25 +519,25 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void checkBasicSSA </td>
           <td>(</td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SetVector&lt; Value * &gt; &amp;&#160;</td>
+          <td class="paramtype">SetVector&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Live</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>TI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>TermOkay</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
@@ -600,51 +558,9 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02698">2698</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00463">Live</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Dominators_8cpp_source.html#l00248">llvm::DominatorTree::dominates()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00463">Live</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02716">checkBasicSSA()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02724">computeLiveInValues()</a>.</p>
-
-</div>
-</div>
-<a id="abfb32eed8a93b0c9a72cf993b61f402f" name="abfb32eed8a93b0c9a72cf993b61f402f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfb32eed8a93b0c9a72cf993b61f402f">&#9670;&nbsp;</a></span>ClobberNonLiveOverride()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a> &gt; ClobberNonLiveOverride </td>
-          <td>(</td>
-          <td class="paramtype">&quot;rs4gc-clobber-non-live&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::location(<a class="el" href="RewriteStatepointsForGC_8cpp.html#aae78323e579beb55b2c4820179d7b7e8">ClobberNonLive</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -658,9 +574,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static SetVector&lt; Value * &gt; computeKillSet </td>
+          <td class="memname">static SetVector&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; computeKillSet </td>
           <td>(</td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>BB</em></td><td>)</td>
           <td></td>
         </tr>
@@ -692,19 +608,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void computeLiveInValues </td>
           <td>(</td>
-          <td class="paramtype">BasicBlock::reverse_iterator&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html#a6d3231fb84ed4182ec22e9442a87dbf8">BasicBlock::reverse_iterator</a>&#160;</td>
           <td class="paramname"><em>Begin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock::reverse_iterator&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html#a6d3231fb84ed4182ec22e9442a87dbf8">BasicBlock::reverse_iterator</a>&#160;</td>
           <td class="paramname"><em>End</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SetVector&lt; Value * &gt; &amp;&#160;</td>
+          <td class="paramtype">SetVector&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>LiveTmp</em>&#160;</td>
         </tr>
         <tr>
@@ -740,13 +656,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void computeLiveInValues </td>
           <td>(</td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
@@ -772,7 +688,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02724">2724</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02698">checkBasicSSA()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02687">computeKillSet()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02724">computeLiveInValues()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02671">computeLiveOutSeed()</a>, and <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02698">checkBasicSSA()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02687">computeKillSet()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02724">computeLiveInValues()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02671">computeLiveOutSeed()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Interval_8h_source.html#l00112">llvm::pred_begin()</a>, <a class="el" href="Interval_8h_source.html#l00115">llvm::pred_end()</a>, and <a class="el" href="IR_2CFG_8h_source.html#l00259">llvm::successors()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02724">computeLiveInValues()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01915">findLiveReferences()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02791">findLiveSetAtInst()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01201">recomputeLiveInValues()</a>.</p>
 
@@ -790,13 +706,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void computeLiveOutSeed </td>
           <td>(</td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SetVector&lt; Value * &gt; &amp;&#160;</td>
+          <td class="paramtype">SetVector&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>LiveTmp</em>&#160;</td>
         </tr>
         <tr>
@@ -814,7 +730,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02671">2671</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00325">isHandledGCPointerType()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00355">isUnhandledGCPointerType()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Instructions_8h_source.html#l02723">llvm::PHINode::getIncomingValueForBlock()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00325">isHandledGCPointerType()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00355">isUnhandledGCPointerType()</a>, and <a class="el" href="IR_2CFG_8h_source.html#l00259">llvm::successors()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02724">computeLiveInValues()</a>.</p>
 
@@ -830,9 +746,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool containsGCPtrType </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> containsGCPtrType </td>
           <td>(</td>
-          <td class="paramtype">Type *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
           <td class="paramname"><em>Ty</em></td><td>)</td>
           <td></td>
         </tr>
@@ -848,9 +764,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00340">340</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00340">containsGCPtrType()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00312">isGCPointerType()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00340">containsGCPtrType()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00355">isUnhandledGCPointerType()</a>.</p>
+<p class="reference">References <a class="el" href="SafepointIRVerifier_8cpp_source.html#l00262">containsGCPtrType()</a>, and <a class="el" href="SafepointIRVerifier_8cpp_source.html#l00253">isGCPointerType()</a>.</p>
 
 </div>
 </div>
@@ -866,7 +780,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void CreateGCRelocates </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
           <td class="paramname"><em>LiveVariables</em>, </td>
         </tr>
         <tr>
@@ -878,19 +792,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
           <td class="paramname"><em>BasePtrs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>StatepointToken</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">IRBuilder&lt;&gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt;&#160;</td>
           <td class="paramname"><em>Builder</em>&#160;</td>
         </tr>
         <tr>
@@ -911,7 +825,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01268">1268</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00325">isHandledGCPointerType()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00362">suffixed_name_or()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="CallingConv_8h_source.html#l00048">llvm::CallingConv::Cold</a>, <a class="el" href="IRBuilder_8h_source.html#l02193">llvm::IRBuilder&lt; T, Inserter &gt;::CreateCall()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, <a class="el" href="IRBuilder_8h_source.html#l00343">llvm::IRBuilderBase::getInt32()</a>, <a class="el" href="Type_8cpp_source.html#l00219">llvm::Type::getInt8PtrTy()</a>, <a class="el" href="Instruction_8cpp_source.html#l00055">llvm::Instruction::getModule()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00325">isHandledGCPointerType()</a>, <a class="el" href="InstrTypes_8h_source.html#l01348">llvm::CallBase::setCallingConv()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00362">suffixed_name_or()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01414">makeStatepointExplicitImpl()</a>.</p>
 
@@ -929,7 +843,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static BaseDefiningValueResult findBaseDefiningValue </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -946,7 +860,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00492">492</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00492">findBaseDefiningValue()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00434">findBaseDefiningValueOfVector()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00492">findBaseDefiningValue()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00434">findBaseDefiningValueOfVector()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>, and <a class="el" href="Value_8cpp_source.html#l00535">llvm::Value::stripPointerCasts()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00492">findBaseDefiningValue()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00611">findBaseDefiningValueCached()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00434">findBaseDefiningValueOfVector()</a>.</p>
 
@@ -962,9 +876,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * findBaseDefiningValueCached </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * findBaseDefiningValueCached </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
@@ -990,7 +904,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00611">611</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00492">findBaseDefiningValue()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00492">findBaseDefiningValue()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00624">findBaseOrBDV()</a>.</p>
 
@@ -1008,7 +922,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static BaseDefiningValueResult findBaseDefiningValueOfVector </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1025,7 +939,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00434">434</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00492">findBaseDefiningValue()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00492">findBaseDefiningValue()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00492">findBaseDefiningValue()</a>.</p>
 
@@ -1041,9 +955,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * findBaseOrBDV </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * findBaseOrBDV </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
@@ -1086,9 +1000,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * findBasePointer </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * findBasePointer </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
@@ -1116,7 +1030,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00761">761</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00624">findBaseOrBDV()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00637">isKnownBaseResult()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00750">meetBDVState()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00362">suffixed_name_or()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Instructions_8h_source.html#l02576">llvm::PHINode::Create()</a>, <a class="el" href="Instructions_8h_source.html#l01740">llvm::SelectInst::Create()</a>, <a class="el" href="Instructions_8h_source.html#l01853">llvm::ExtractElementInst::Create()</a>, <a class="el" href="Instructions_8h_source.html#l01918">llvm::InsertElementInst::Create()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00624">findBaseOrBDV()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="Instructions_8h_source.html#l01758">llvm::SelectInst::getFalseValue()</a>, <a class="el" href="Instructions_8h_source.html#l02654">llvm::PHINode::getIncomingBlock()</a>, <a class="el" href="Instructions_8h_source.html#l02634">llvm::PHINode::getIncomingValue()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="Instructions_8h_source.html#l02630">llvm::PHINode::getNumIncomingValues()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="Instructions_8h_source.html#l01757">llvm::SelectInst::getTrueValue()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00637">isKnownBaseResult()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00750">meetBDVState()</a>, <a class="el" href="IR_2CFG_8h_source.html#l00121">llvm::pred_size()</a>, <a class="el" href="Metadata_8cpp_source.html#l01222">llvm::Instruction::setMetadata()</a>, <a class="el" href="Value_8cpp_source.html#l00535">llvm::Value::stripPointerCasts()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00362">suffixed_name_or()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01159">findBasePointers()</a>.</p>
 
@@ -1140,13 +1054,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">MapVector&lt; Value *, Value * &gt; &amp;&#160;</td>
+          <td class="paramtype">MapVector&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>PointerToBase</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DominatorTree *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
@@ -1170,7 +1084,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01159">1159</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00761">findBasePointer()</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00355">live</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Dominators_8cpp_source.html#l00248">llvm::DominatorTree::dominates()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00761">findBasePointer()</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00355">live</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01175">findBasePointers()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02171">insertParsePoints()</a>.</p>
 
@@ -1188,7 +1102,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void findBasePointers </td>
           <td>(</td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
@@ -1200,7 +1114,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">CallBase *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
           <td class="paramname"><em>Call</em>, </td>
         </tr>
         <tr>
@@ -1226,7 +1140,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01175">1175</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01159">findBasePointers()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp.html#a6687c1ed9dd60f6c3a919647dea000bc">PrintBasePointers()</a>.</p>
+<p class="reference">References <a class="el" href="raw__ostream_8cpp_source.html#l00853">llvm::errs()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01159">findBasePointers()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp.html#ab8e518b81b94c3a5dceaf71955686c22">PrintBasePointers</a>.</p>
 
 </div>
 </div>
@@ -1242,25 +1156,25 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void findLiveReferences </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; CallBase * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> * &gt;&#160;</td>
           <td class="paramname"><em>toUpdate</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">MutableArrayRef&lt; struct PartiallyConstructedSafepointRecord &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1MutableArrayRef.html">MutableArrayRef</a>&lt; struct PartiallyConstructedSafepointRecord &gt;&#160;</td>
           <td class="paramname"><em>records</em>&#160;</td>
         </tr>
         <tr>
@@ -1296,7 +1210,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void findLiveSetAtInst </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>inst</em>, </td>
         </tr>
         <tr>
@@ -1328,7 +1242,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02791">2791</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02724">computeLiveInValues()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02724">computeLiveInValues()</a>, <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, and <a class="el" href="BasicBlock_8h_source.html#l00273">llvm::BasicBlock::rbegin()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00371">analyzeParsePointLiveness()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02809">recomputeLiveInValues()</a>.</p>
 
@@ -1344,15 +1258,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * findRematerializableChainToBasePointer </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * findRematerializableChainToBasePointer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Instruction * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>ChainToBase</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>CurrentValue</em>&#160;</td>
         </tr>
         <tr>
@@ -1386,9 +1300,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Use &gt; GetDeoptBundleOperands </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Use.html">Use</a> &gt; GetDeoptBundleOperands </td>
           <td>(</td>
-          <td class="paramtype">const CallBase *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
           <td class="paramname"><em>Call</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1402,7 +1316,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00287">287</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="RewriteStatepointsForGC_8cpp.html#abfe6d3c9df5cd55984faeb9d176aedfb">AllowStatepointWithNoDeoptInfo()</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a>.</p>
+<p class="reference">References <a class="el" href="RewriteStatepointsForGC_8cpp.html#ac4ad16904738e07a0d7d3616ab4306a3">AllowStatepointWithNoDeoptInfo</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870a6adf97f83acf6453d4a6a4b1070f3754">llvm::None</a>, and <a class="el" href="LLVMContext_8h_source.html#l00110">llvm::LLVMContext::OB_deopt</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02171">insertParsePoints()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01414">makeStatepointExplicitImpl()</a>.</p>
 
@@ -1420,7 +1334,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static StringRef getDeoptLowering </td>
           <td>(</td>
-          <td class="paramtype">CallBase *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
           <td class="paramname"><em>Call</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1434,7 +1348,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01397">1397</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Attributes_8h_source.html#l00340">llvm::AttributeList::FunctionIndex</a>, <a class="el" href="Attributes_8cpp_source.html#l01343">llvm::AttributeList::getAttribute()</a>, <a class="el" href="Attributes_8cpp_source.html#l00223">llvm::Attribute::getValueAsString()</a>, and <a class="el" href="Attributes_8cpp_source.html#l01302">llvm::AttributeList::hasAttribute()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01414">makeStatepointExplicitImpl()</a>.</p>
 
@@ -1496,27 +1410,27 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool insertParsePoints </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> insertParsePoints </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">TargetTransformInfo &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>TTI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; CallBase * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>ToUpdate</em>&#160;</td>
         </tr>
         <tr>
@@ -1534,7 +1448,9 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02171">2171</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01159">findBasePointers()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01915">findLiveReferences()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00287">GetDeoptBundleOperands()</a>, <a class="el" href="LazyValueInfo_8cpp_source.html#l00054">info</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01890">insertUseHolderAfter()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00325">isHandledGCPointerType()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00355">isUnhandledGCPointerType()</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00463">Live</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01601">makeStatepointExplicit()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01221">normalizeForInvokeSafepoint()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp.html#a6687c1ed9dd60f6c3a919647dea000bc">PrintBasePointers()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02809">recomputeLiveInValues()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01686">relocationViaAlloca()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02019">rematerializeLiveValues()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01882">unique_unsorted()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Dominators_8cpp_source.html#l00248">llvm::DominatorTree::dominates()</a>, <a class="el" href="raw__ostream_8cpp_source.html#l00853">llvm::errs()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01159">findBasePointers()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01915">findLiveReferences()</a>, <a class="el" href="Statepoint_8h_source.html#l00249">llvm::StatepointBase&lt; FunTy, InstructionTy, ValueTy, CallBaseTy &gt;::gc_args()</a>, <a class="el" href="Statepoint_8h_source.html#l00241">llvm::StatepointBase&lt; FunTy, InstructionTy, ValueTy, CallBaseTy &gt;::gc_args_begin()</a>, <a class="el" href="Statepoint_8h_source.html#l00242">llvm::StatepointBase&lt; FunTy, InstructionTy, ValueTy, CallBaseTy &gt;::gc_args_end()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00287">GetDeoptBundleOperands()</a>, <a class="el" href="LazyValueInfo_8cpp_source.html#l00054">info</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01890">insertUseHolderAfter()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00325">isHandledGCPointerType()</a>, <a class="el" href="Dominators_8cpp_source.html#l00299">llvm::DominatorTree::isReachableFromEntry()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00355">isUnhandledGCPointerType()</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00463">Live</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01601">makeStatepointExplicit()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01221">normalizeForInvokeSafepoint()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp.html#ab8e518b81b94c3a5dceaf71955686c22">PrintBasePointers</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02809">recomputeLiveInValues()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01686">relocationViaAlloca()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02019">rematerializeLiveValues()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01882">unique_unsorted()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02516">llvm::RewriteStatepointsForGC::runOnFunction()</a>.</p>
 
 </div>
 </div>
@@ -1550,19 +1466,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void insertRelocationStores </td>
           <td>(</td>
-          <td class="paramtype">iterator_range&lt; Value::user_iterator &gt;&#160;</td>
+          <td class="paramtype">iterator_range&lt; <a class="el" href="classllvm_1_1Value.html#acd2fbee42afeb868be98aaae56528636">Value::user_iterator</a> &gt;&#160;</td>
           <td class="paramname"><em>GCRelocs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DenseMap&lt; Value *, AllocaInst * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseMap&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classllvm_1_1AllocaInst.html">AllocaInst</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>AllocaMap</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DenseSet&lt; Value * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>VisitedLiveValues</em>&#160;</td>
         </tr>
         <tr>
@@ -1580,7 +1496,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01630">1630</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00362">suffixed_name_or()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="Statepoint_8h_source.html#l00387">llvm::GCRelocateInst::getDerivedPtr()</a>, <a class="el" href="Instruction_8cpp_source.html#l00079">llvm::Instruction::insertAfter()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00362">suffixed_name_or()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01686">relocationViaAlloca()</a>.</p>
 
@@ -1604,13 +1520,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DenseMap&lt; Value *, AllocaInst * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseMap&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classllvm_1_1AllocaInst.html">AllocaInst</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>AllocaMap</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DenseSet&lt; Value * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>VisitedLiveValues</em>&#160;</td>
         </tr>
         <tr>
@@ -1628,7 +1544,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01664">1664</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="Instruction_8cpp_source.html#l00079">llvm::Instruction::insertAfter()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01686">relocationViaAlloca()</a>.</p>
 
@@ -1646,19 +1562,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void insertUseHolderAfter </td>
           <td>(</td>
-          <td class="paramtype">CallBase *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
           <td class="paramname"><em>Call</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
           <td class="paramname"><em>Values</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; CallInst * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Holders</em>&#160;</td>
         </tr>
         <tr>
@@ -1678,6 +1594,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01890">1890</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Instructions_8h_source.html#l01437">llvm::CallInst::Create()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, and <a class="el" href="IRBuilder_8h_source.html#l00416">llvm::IRBuilderBase::getVoidTy()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02171">insertParsePoints()</a>.</p>
 
 </div>
@@ -1692,9 +1610,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isGCPointerType </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isGCPointerType </td>
           <td>(</td>
-          <td class="paramtype">Type *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
           <td class="paramname"><em>T</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1708,8 +1626,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00312">312</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00340">containsGCPtrType()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00325">isHandledGCPointerType()</a>.</p>
-
 </div>
 </div>
 <a id="aa73e6adc1d41196ebfa5d037943cb213" name="aa73e6adc1d41196ebfa5d037943cb213"></a>
@@ -1722,9 +1638,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isHandledGCPointerType </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isHandledGCPointerType </td>
           <td>(</td>
-          <td class="paramtype">Type *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
           <td class="paramname"><em>T</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1738,7 +1654,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00325">325</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00312">isGCPointerType()</a>.</p>
+<p class="reference">References <a class="el" href="SafepointIRVerifier_8cpp_source.html#l00253">isGCPointerType()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02687">computeKillSet()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02638">computeLiveInValues()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02671">computeLiveOutSeed()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01268">CreateGCRelocates()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02171">insertParsePoints()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00355">isUnhandledGCPointerType()</a>.</p>
 
@@ -1754,9 +1670,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isKnownBaseResult </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isKnownBaseResult </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1786,9 +1702,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isUnhandledGCPointerType </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isUnhandledGCPointerType </td>
           <td>(</td>
-          <td class="paramtype">Type *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
           <td class="paramname"><em>Ty</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1802,7 +1718,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00355">355</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00340">containsGCPtrType()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00325">isHandledGCPointerType()</a>.</p>
+<p class="reference">References <a class="el" href="SafepointIRVerifier_8cpp_source.html#l00262">containsGCPtrType()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00325">isHandledGCPointerType()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02638">computeLiveInValues()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02671">computeLiveOutSeed()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02171">insertParsePoints()</a>.</p>
 
@@ -1818,9 +1734,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static AttributeList legalizeCallAttributes </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1AttributeList.html">AttributeList</a> legalizeCallAttributes </td>
           <td>(</td>
-          <td class="paramtype">AttributeList&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1AttributeList.html">AttributeList</a>&#160;</td>
           <td class="paramname"><em>AL</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1833,6 +1749,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01240">1240</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Attributes_8h_source.html#l00340">llvm::AttributeList::FunctionIndex</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="Attributes_8cpp_source.html#l01288">llvm::AttributeList::getContext()</a>, <a class="el" href="Attributes_8cpp_source.html#l01298">llvm::AttributeList::getFnAttributes()</a>, <a class="el" href="Attributes_8h_source.html#l00668">llvm::AttributeList::isEmpty()</a>, <a class="el" href="Statepoint_8cpp_source.html#l00054">llvm::isStatepointDirectiveAttr()</a>, <a class="el" href="ModuleSummaryIndex_8h_source.html#l00543">llvm::FunctionSummary::FFlags::ReadNone</a>, <a class="el" href="ModuleSummaryIndex_8h_source.html#l00165">llvm::ValueInfo::ReadOnly</a>, <a class="el" href="Attributes_8cpp_source.html#l01610">llvm::AttrBuilder::remove()</a>, and <a class="el" href="Attributes_8cpp_source.html#l01484">llvm::AttrBuilder::removeAttribute()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01414">makeStatepointExplicitImpl()</a>.</p>
 
@@ -1850,13 +1768,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void makeStatepointExplicit </td>
           <td>(</td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">CallBase *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
           <td class="paramname"><em>Call</em>, </td>
         </tr>
         <tr>
@@ -1904,19 +1822,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void makeStatepointExplicitImpl </td>
           <td>(</td>
-          <td class="paramtype">CallBase *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
           <td class="paramname"><em>Call</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>BasePtrs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>LiveVariables</em>, </td>
         </tr>
         <tr>
@@ -1946,7 +1864,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01414">1414</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01268">CreateGCRelocates()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00287">GetDeoptBundleOperands()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01397">getDeoptLowering()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01240">legalizeCallAttributes()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01268">CreateGCRelocates()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00703">llvm::IRBuilderBase::CreateGCResult()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00622">llvm::IRBuilderBase::CreateGCStatepointCall()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00672">llvm::IRBuilderBase::CreateGCStatepointInvoke()</a>, <a class="el" href="Statepoint_8h_source.html#l00441">llvm::StatepointDirectives::DefaultStatepointID</a>, <a class="el" href="namespacellvm.html#abba0f0474eb4e32d1ed7b6dfdb0d5140a8cf633e3cd4e8b21a16304c58495bfbc">llvm::DeoptLiveIn</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Statepoint_8h_source.html#l00244">llvm::StatepointBase&lt; FunTy, InstructionTy, ValueTy, CallBaseTy &gt;::gcArgsStartIdx()</a>, <a class="el" href="namespacellvm.html#abba0f0474eb4e32d1ed7b6dfdb0d5140a9db1ed1dc0fe1fc6b917ab0430b7844c">llvm::GCTransition</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00287">GetDeoptBundleOperands()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01397">getDeoptLowering()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00216">llvm::BasicBlock::getFirstInsertionPt()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00468">llvm::BasicBlock::getLandingPadInst()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00246">llvm::BasicBlock::getUniquePredecessor()</a>, <a class="el" href="IRBuilder_8h_source.html#l00416">llvm::IRBuilderBase::getVoidTy()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01240">legalizeCallAttributes()</a>, <a class="el" href="namespacellvm.html#abba0f0474eb4e32d1ed7b6dfdb0d5140a6adf97f83acf6453d4a6a4b1070f3754">llvm::None</a>, <a class="el" href="Statepoint_8h_source.html#l00438">llvm::StatepointDirectives::NumPatchBytes</a>, <a class="el" href="LLVMContext_8h_source.html#l00112">llvm::LLVMContext::OB_gc_transition</a>, <a class="el" href="Statepoint_8cpp_source.html#l00060">llvm::parseStatepointDirectivesFromAttrs()</a>, <a class="el" href="Attributes_8h_source.html#l00339">llvm::AttributeList::ReturnIndex</a>, <a class="el" href="InstrTypes_8h_source.html#l01370">llvm::CallBase::setAttributes()</a>, <a class="el" href="InstrTypes_8h_source.html#l01348">llvm::CallBase::setCallingConv()</a>, <a class="el" href="IRBuilder_8h_source.html#l00156">llvm::IRBuilderBase::SetCurrentDebugLocation()</a>, <a class="el" href="IRBuilder_8h_source.html#l00132">llvm::IRBuilderBase::SetInsertPoint()</a>, <a class="el" href="Value_8cpp_source.html#l00285">llvm::Value::setName()</a>, <a class="el" href="Instructions_8h_source.html#l01651">llvm::CallInst::setTailCallKind()</a>, and <a class="el" href="Statepoint_8h_source.html#l00439">llvm::StatepointDirectives::StatepointID</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01601">makeStatepointExplicit()</a>.</p>
 
@@ -2030,7 +1948,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00722">722</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00750">meetBDVState()</a>.</p>
 
@@ -2046,21 +1964,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static BasicBlock * normalizeForInvokeSafepoint </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * normalizeForInvokeSafepoint </td>
           <td>(</td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>InvokeParent</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -2078,7 +1996,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01221">1221</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="BasicBlockUtils_8cpp_source.html#l00139">llvm::FoldSingleEntryPHINodes()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00246">llvm::BasicBlock::getUniquePredecessor()</a>, and <a class="el" href="BasicBlockUtils_8cpp_source.html#l00556">llvm::SplitBlockPredecessors()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02171">insertParsePoints()</a>.</p>
 
@@ -2094,9 +2012,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static raw_ostream &amp; operator&lt;&lt; </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp; operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype">raw_ostream &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
           <td class="paramname"><em>OS</em>, </td>
         </tr>
         <tr>
@@ -2122,138 +2040,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a6687c1ed9dd60f6c3a919647dea000bc" name="a6687c1ed9dd60f6c3a919647dea000bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6687c1ed9dd60f6c3a919647dea000bc">&#9670;&nbsp;</a></span>PrintBasePointers()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintBasePointers </td>
-          <td>(</td>
-          <td class="paramtype">&quot;spp-print-base-pointers&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01175">findBasePointers()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02171">insertParsePoints()</a>.</p>
-
-</div>
-</div>
-<a id="ace93c40c37d58147987a7e8ea32eeaf0" name="ace93c40c37d58147987a7e8ea32eeaf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace93c40c37d58147987a7e8ea32eeaf0">&#9670;&nbsp;</a></span>PrintLiveSet()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintLiveSet </td>
-          <td>(</td>
-          <td class="paramtype">&quot;spp-print-liveset&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00371">analyzeParsePointLiveness()</a>.</p>
-
-</div>
-</div>
-<a id="a9f44652b1d875276484b26420a7bb241" name="a9f44652b1d875276484b26420a7bb241"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f44652b1d875276484b26420a7bb241">&#9670;&nbsp;</a></span>PrintLiveSetSize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintLiveSetSize </td>
-          <td>(</td>
-          <td class="paramtype">&quot;spp-print-liveset-size&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00371">analyzeParsePointLiveness()</a>.</p>
-
-</div>
-</div>
 <a id="a32c04adc1413d5dda4be17617d8c9d0e" name="a32c04adc1413d5dda4be17617d8c9d0e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a32c04adc1413d5dda4be17617d8c9d0e">&#9670;&nbsp;</a></span>recomputeLiveInValues() <span class="overload">[1/2]</span></h2>
 
@@ -2266,25 +2052,25 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void recomputeLiveInValues </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; CallBase * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> * &gt;&#160;</td>
           <td class="paramname"><em>toUpdate</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">MutableArrayRef&lt; struct PartiallyConstructedSafepointRecord &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1MutableArrayRef.html">MutableArrayRef</a>&lt; struct PartiallyConstructedSafepointRecord &gt;&#160;</td>
           <td class="paramname"><em>records</em>&#160;</td>
         </tr>
         <tr>
@@ -2324,7 +2110,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">CallBase *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
           <td class="paramname"><em>Call</em>, </td>
         </tr>
         <tr>
@@ -2368,19 +2154,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void relocationViaAlloca </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
           <td class="paramname"><em>Live</em>, </td>
         </tr>
         <tr>
@@ -2406,53 +2192,9 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01686">1686</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00101">ClobberNonLive</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01630">insertRelocationStores()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01664">insertRematerializationStores()</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00463">Live</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00658">Uses</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00101">ClobberNonLive</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="DataLayout_8h_source.html#l00269">llvm::DataLayout::getAllocaAddrSpace()</a>, <a class="el" href="Instructions_8h_source.html#l00105">llvm::AllocaInst::getAllocatedType()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00189">llvm::BasicBlock::getFirstNonPHI()</a>, <a class="el" href="Instructions_8h_source.html#l02654">llvm::PHINode::getIncomingBlock()</a>, <a class="el" href="Instructions_8h_source.html#l02634">llvm::PHINode::getIncomingValue()</a>, <a class="el" href="Instructions_8h_source.html#l02630">llvm::PHINode::getNumIncomingValues()</a>, <a class="el" href="Value_8cpp_source.html#l00160">llvm::Value::getNumUses()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Instruction_8cpp_source.html#l00079">llvm::Instruction::insertAfter()</a>, <a class="el" href="Instruction_8cpp_source.html#l00073">llvm::Instruction::insertBefore()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01630">insertRelocationStores()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01664">insertRematerializationStores()</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00463">Live</a>, <a class="el" href="PromoteMemoryToRegister_8cpp_source.html#l01000">llvm::PromoteMemToReg()</a>, <a class="el" href="Instructions_8h_source.html#l02637">llvm::PHINode::setIncomingValue()</a>, <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00658">Uses</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02171">insertParsePoints()</a>.</p>
-
-</div>
-</div>
-<a id="a0993edd3cdde51d79a4009dc0ee00844" name="a0993edd3cdde51d79a4009dc0ee00844"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0993edd3cdde51d79a4009dc0ee00844">&#9670;&nbsp;</a></span>RematerializationThreshold()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; RematerializationThreshold </td>
-          <td>(</td>
-          <td class="paramtype">&quot;spp-rematerialization-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(6)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02019">rematerializeLiveValues()</a>.</p>
 
 </div>
 </div>
@@ -2468,7 +2210,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void rematerializeLiveValues </td>
           <td>(</td>
-          <td class="paramtype">CallBase *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
           <td class="paramname"><em>Call</em>, </td>
         </tr>
         <tr>
@@ -2480,7 +2222,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">TargetTransformInfo &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>TTI</em>&#160;</td>
         </tr>
         <tr>
@@ -2498,7 +2240,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02019">2019</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01989">AreEquivalentPhiNodes()</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01958">chainToBasePointerCost()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01932">findRematerializableChainToBasePointer()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp.html#a0993edd3cdde51d79a4009dc0ee00844">RematerializationThreshold()</a>.</p>
+<p class="reference">References <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01989">AreEquivalentPhiNodes()</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01958">chainToBasePointerCost()</a>, <a class="el" href="Instruction_8cpp_source.html#l00729">llvm::Instruction::clone()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01932">findRematerializableChainToBasePointer()</a>, <a class="el" href="Instruction_8cpp_source.html#l00073">llvm::Instruction::insertBefore()</a>, <a class="el" href="User_8h_source.html#l00261">llvm::User::operand_values()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp.html#a5a528e12afc9b7c0bf3691240dd7a199">RematerializationThreshold</a>, <a class="el" href="User_8cpp_source.html#l00020">llvm::User::replaceUsesOfWith()</a>, and <a class="el" href="Value_8cpp_source.html#l00285">llvm::Value::setName()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02171">insertParsePoints()</a>.</p>
 
@@ -2518,7 +2260,7 @@ template&lt;typename AttrHolder &gt; </div>
         <tr>
           <td class="memname">static void RemoveNonValidAttrAtIndex </td>
           <td>(</td>
-          <td class="paramtype">LLVMContext &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1LLVMContext.html">LLVMContext</a> &amp;&#160;</td>
           <td class="paramname"><em>Ctx</em>, </td>
         </tr>
         <tr>
@@ -2530,7 +2272,7 @@ template&lt;typename AttrHolder &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>Index</em>&#160;</td>
         </tr>
         <tr>
@@ -2548,6 +2290,8 @@ template&lt;typename AttrHolder &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02383">2383</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, and <a class="el" href="AliasAnalysis_8h_source.html#l00084">llvm::NoAlias</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02399">stripNonValidAttributesFromPrototype()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02442">stripNonValidDataFromBody()</a>.</p>
 
 </div>
@@ -2562,9 +2306,9 @@ template&lt;typename AttrHolder &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool shouldRewriteStatepointsIn </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> shouldRewriteStatepointsIn </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2583,7 +2327,7 @@ template&lt;typename AttrHolder &gt; </div>
 
 <p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02504">stripNonValidData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00127">llvm::RewriteStatepointsForGC::run()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02516">llvm::RewriteStatepointsForGC::runOnFunction()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02504">stripNonValidData()</a>.</p>
 
 </div>
 </div>
@@ -2599,7 +2343,7 @@ template&lt;typename AttrHolder &gt; </div>
         <tr>
           <td class="memname">static void stripInvalidMetadataFromInstruction </td>
           <td>(</td>
-          <td class="paramtype">Instruction &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &amp;&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2616,7 +2360,7 @@ template&lt;typename AttrHolder &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02414">2414</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="LLVMContext_8h_source.html#l00082">llvm::LLVMContext::MD_alias_scope</a>, <a class="el" href="LLVMContext_8h_source.html#l00092">llvm::LLVMContext::MD_align</a>, <a class="el" href="LLVMContext_8h_source.html#l00086">llvm::LLVMContext::MD_nonnull</a>, <a class="el" href="LLVMContext_8h_source.html#l00084">llvm::LLVMContext::MD_nontemporal</a>, <a class="el" href="LLVMContext_8h_source.html#l00079">llvm::LLVMContext::MD_range</a>, <a class="el" href="LLVMContext_8h_source.html#l00076">llvm::LLVMContext::MD_tbaa</a>, and <a class="el" href="LLVMContext_8h_source.html#l00094">llvm::LLVMContext::MD_type</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02442">stripNonValidDataFromBody()</a>.</p>
 
@@ -2634,7 +2378,7 @@ template&lt;typename AttrHolder &gt; </div>
         <tr>
           <td class="memname">static void stripNonValidAttributesFromPrototype </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2648,7 +2392,7 @@ template&lt;typename AttrHolder &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02399">2399</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02383">RemoveNonValidAttrAtIndex()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Attributes_8h_source.html#l00341">llvm::AttributeList::FirstArgIndex</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02383">RemoveNonValidAttrAtIndex()</a>, and <a class="el" href="Attributes_8h_source.html#l00339">llvm::AttributeList::ReturnIndex</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02504">stripNonValidData()</a>.</p>
 
@@ -2666,7 +2410,7 @@ template&lt;typename AttrHolder &gt; </div>
         <tr>
           <td class="memname">static void stripNonValidData </td>
           <td>(</td>
-          <td class="paramtype">Module &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> &amp;&#160;</td>
           <td class="paramname"><em>M</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2685,6 +2429,8 @@ template&lt;typename AttrHolder &gt; </div>
 
 <p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02492">shouldRewriteStatepointsIn()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02399">stripNonValidAttributesFromPrototype()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02442">stripNonValidDataFromBody()</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00127">llvm::RewriteStatepointsForGC::run()</a>.</p>
+
 </div>
 </div>
 <a id="a2bf12026ed9de594d2117077b422c24d" name="a2bf12026ed9de594d2117077b422c24d"></a>
@@ -2699,7 +2445,7 @@ template&lt;typename AttrHolder &gt; </div>
         <tr>
           <td class="memname">static void stripNonValidDataFromBody </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2713,7 +2459,7 @@ template&lt;typename AttrHolder &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02442">2442</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="InstructionCombining_8cpp_source.html#l03614">instructions</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02383">RemoveNonValidAttrAtIndex()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02414">stripInvalidMetadataFromInstruction()</a>.</p>
+<p class="reference">References <a class="el" href="MDBuilder_8cpp_source.html#l00278">llvm::MDBuilder::createMutableTBAAAccessTag()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Attributes_8h_source.html#l00341">llvm::AttributeList::FirstArgIndex</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="InstructionCombining_8cpp_source.html#l03614">instructions</a>, <a class="el" href="LLVMContext_8h_source.html#l00076">llvm::LLVMContext::MD_tbaa</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02383">RemoveNonValidAttrAtIndex()</a>, <a class="el" href="Attributes_8h_source.html#l00339">llvm::AttributeList::ReturnIndex</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02414">stripInvalidMetadataFromInstruction()</a>, and <a class="el" href="namespacellvm.html#ac226f3d2b9ca090171a8e0a8cb92c343ac101058e7ea21bbbf2a5ac893088e90b">llvm::Tag</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02504">stripNonValidData()</a>.</p>
 
@@ -2731,7 +2477,7 @@ template&lt;typename AttrHolder &gt; </div>
         <tr>
           <td class="memname">static std::string suffixed_name_or </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
@@ -2760,6 +2506,8 @@ template&lt;typename AttrHolder &gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00362">362</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, and <a class="el" href="Value_8h_source.html#l00250">llvm::Value::hasName()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01268">CreateGCRelocates()</a>, <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00761">findBasePointer()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01630">insertRelocationStores()</a>.</p>
 
@@ -2801,6 +2549,50 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="ac4ad16904738e07a0d7d3616ab4306a3" name="ac4ad16904738e07a0d7d3616ab4306a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4ad16904738e07a0d7d3616ab4306a3">&#9670;&nbsp;</a></span>AllowStatepointWithNoDeoptInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; AllowStatepointWithNoDeoptInfo(&quot;rs4gc-allow-statepoint-with-no-deopt-info&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;rs4gc-allow-statepoint-with-no-deopt-info&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00287">GetDeoptBundleOperands()</a>.</p>
+
+</div>
+</div>
 <a id="aae78323e579beb55b2c4820179d7b7e8" name="aae78323e579beb55b2c4820179d7b7e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae78323e579beb55b2c4820179d7b7e8">&#9670;&nbsp;</a></span>ClobberNonLive</h2>
 
@@ -2811,7 +2603,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool ClobberNonLive = false</td>
+          <td class="memname"><a class="el" href="classbool.html">bool</a> ClobberNonLive = false</td>
         </tr>
       </table>
   </td>
@@ -2824,6 +2616,48 @@ template&lt;typename T &gt; </div>
 <p class="definition">Definition at line <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00101">101</a> of file <a class="el" href="RewriteStatepointsForGC_8cpp_source.html">RewriteStatepointsForGC.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01686">relocationViaAlloca()</a>.</p>
+
+</div>
+</div>
+<a id="a3ca888d5201b0430a87ed7e3dc46f793" name="a3ca888d5201b0430a87ed7e3dc46f793"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ca888d5201b0430a87ed7e3dc46f793">&#9670;&nbsp;</a></span>ClobberNonLiveOverride</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a>, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a> &gt; ClobberNonLiveOverride(&quot;rs4gc-clobber-non-live&quot;, cl::location(<a class="el" href="RewriteStatepointsForGC_8cpp.html#aae78323e579beb55b2c4820179d7b7e8">ClobberNonLive</a>), cl::Hidden) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;rs4gc-clobber-non-live&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::location(<a class="el" href="RewriteStatepointsForGC_8cpp.html#aae78323e579beb55b2c4820179d7b7e8">ClobberNonLive</a>)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -2859,6 +2693,182 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="ab8e518b81b94c3a5dceaf71955686c22" name="ab8e518b81b94c3a5dceaf71955686c22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e518b81b94c3a5dceaf71955686c22">&#9670;&nbsp;</a></span>PrintBasePointers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintBasePointers(&quot;spp-print-base-pointers&quot;, cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;spp-print-base-pointers&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l01175">findBasePointers()</a>, and <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02171">insertParsePoints()</a>.</p>
+
+</div>
+</div>
+<a id="abec72d4f38d6d32627aedb147dce0740" name="abec72d4f38d6d32627aedb147dce0740"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abec72d4f38d6d32627aedb147dce0740">&#9670;&nbsp;</a></span>PrintLiveSet</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintLiveSet(&quot;spp-print-liveset&quot;, cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;spp-print-liveset&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00371">analyzeParsePointLiveness()</a>.</p>
+
+</div>
+</div>
+<a id="aa35842e5e8da9f3b7a37ea5a0adceff3" name="aa35842e5e8da9f3b7a37ea5a0adceff3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa35842e5e8da9f3b7a37ea5a0adceff3">&#9670;&nbsp;</a></span>PrintLiveSetSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintLiveSetSize(&quot;spp-print-liveset-size&quot;, cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;spp-print-liveset-size&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l00371">analyzeParsePointLiveness()</a>.</p>
+
+</div>
+</div>
+<a id="a5a528e12afc9b7c0bf3691240dd7a199" name="a5a528e12afc9b7c0bf3691240dd7a199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a528e12afc9b7c0bf3691240dd7a199">&#9670;&nbsp;</a></span>RematerializationThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; RematerializationThreshold(&quot;spp-rematerialization-threshold&quot;, cl::Hidden, cl::init(6)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;spp-rematerialization-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(6)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="RewriteStatepointsForGC_8cpp_source.html#l02019">rematerializeLiveValues()</a>.</p>
+
+</div>
+</div>
 <a id="a056b1e140d5170fc706d4adc8cf051be" name="a056b1e140d5170fc706d4adc8cf051be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a056b1e140d5170fc706d4adc8cf051be">&#9670;&nbsp;</a></span>statepoints</h2>
 
@@ -2886,7 +2896,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

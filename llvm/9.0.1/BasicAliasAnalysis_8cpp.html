@@ -57,48 +57,48 @@ $(function() {
   <div class="headertitle"><div class="title">BasicAliasAnalysis.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Analysis/BasicAliasAnalysis.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="BasicAliasAnalysis_8h_source.html">llvm/Analysis/BasicAliasAnalysis.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/APInt.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/CFG.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/CaptureTracking.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/InstructionSimplify.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/MemoryBuiltins.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/MemoryLocation.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/PhiValues.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GetElementPtrTypeIterator.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalAlias.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalVariable.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Operator.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/User.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Analysis_2CFG_8h_source.html">llvm/Analysis/CFG.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CaptureTracking_8h_source.html">llvm/Analysis/CaptureTracking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstructionSimplify_8h_source.html">llvm/Analysis/InstructionSimplify.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MemoryBuiltins_8h_source.html">llvm/Analysis/MemoryBuiltins.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MemoryLocation_8h_source.html">llvm/Analysis/MemoryLocation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PhiValues_8h_source.html">llvm/Analysis/PhiValues.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GetElementPtrTypeIterator_8h_source.html">llvm/IR/GetElementPtrTypeIterator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalAlias_8h_source.html">llvm/IR/GlobalAlias.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalVariable_8h_source.html">llvm/IR/GlobalVariable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Operator_8h_source.html">llvm/IR/Operator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Compiler.h&quot;</code><br />
-<code>#include &quot;llvm/Support/KnownBits.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Compiler_8h_source.html">llvm/Support/Compiler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="KnownBits_8h_source.html">llvm/Support/KnownBits.h</a>&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;cstdlib&gt;</code><br />
@@ -108,53 +108,56 @@ Include dependency graph for BasicAliasAnalysis.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="BasicAliasAnalysis_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2BasicAliasAnalysis_8cpp" alt=""/></div>
 <map name="alib_2Analysis_2BasicAliasAnalysis_8cpp" id="alib_2Analysis_2BasicAliasAnalysis_8cpp">
-<area shape="rect" title=" " alt="" coords="4533,5,4784,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,187,119"/>
-<area shape="rect" title=" " alt="" coords="211,86,343,111"/>
-<area shape="rect" title=" " alt="" coords="367,86,542,111"/>
-<area shape="rect" title=" " alt="" coords="566,86,741,111"/>
-<area shape="rect" title=" " alt="" coords="765,86,915,111"/>
-<area shape="rect" title=" " alt="" coords="940,86,1153,111"/>
-<area shape="rect" title=" " alt="" coords="1178,79,1369,119"/>
-<area shape="rect" title=" " alt="" coords="1393,86,1546,111"/>
-<area shape="rect" title=" " alt="" coords="1570,86,1801,111"/>
-<area shape="rect" title=" " alt="" coords="1825,79,2007,119"/>
-<area shape="rect" title=" " alt="" coords="2031,86,2214,111"/>
-<area shape="rect" title=" " alt="" coords="2239,86,2468,111"/>
-<area shape="rect" title=" " alt="" coords="2492,86,2727,111"/>
-<area shape="rect" title=" " alt="" coords="2750,79,2949,119"/>
-<area shape="rect" title=" " alt="" coords="2973,86,3189,111"/>
-<area shape="rect" title=" " alt="" coords="3213,86,3403,111"/>
-<area shape="rect" title=" " alt="" coords="3427,86,3575,111"/>
-<area shape="rect" title=" " alt="" coords="3599,86,3747,111"/>
-<area shape="rect" title=" " alt="" coords="3771,86,3914,111"/>
-<area shape="rect" title=" " alt="" coords="3939,86,4088,111"/>
-<area shape="rect" title=" " alt="" coords="4113,86,4271,111"/>
-<area shape="rect" title=" " alt="" coords="4295,86,4467,111"/>
-<area shape="rect" title=" " alt="" coords="4492,86,4652,111"/>
-<area shape="rect" title=" " alt="" coords="4676,86,4815,111"/>
-<area shape="rect" title=" " alt="" coords="4839,79,5036,119"/>
-<area shape="rect" title=" " alt="" coords="5061,86,5219,111"/>
-<area shape="rect" title=" " alt="" coords="5244,86,5423,111"/>
-<area shape="rect" title=" " alt="" coords="5447,86,5598,111"/>
-<area shape="rect" title=" " alt="" coords="5622,86,5775,111"/>
-<area shape="rect" title=" " alt="" coords="5800,86,5960,111"/>
-<area shape="rect" title=" " alt="" coords="5984,86,6144,111"/>
-<area shape="rect" title=" " alt="" coords="6169,86,6311,111"/>
-<area shape="rect" title=" " alt="" coords="6336,86,6483,111"/>
-<area shape="rect" title=" " alt="" coords="6507,86,6647,111"/>
-<area shape="rect" title=" " alt="" coords="6672,86,6787,111"/>
-<area shape="rect" title=" " alt="" coords="6811,86,6925,111"/>
-<area shape="rect" title=" " alt="" coords="6949,86,7069,111"/>
-<area shape="rect" title=" " alt="" coords="7093,86,7189,111"/>
-<area shape="rect" title=" " alt="" coords="7213,86,7384,111"/>
-<area shape="rect" title=" " alt="" coords="7409,86,7623,111"/>
-<area shape="rect" title=" " alt="" coords="7648,86,7827,111"/>
-<area shape="rect" title=" " alt="" coords="7851,86,8042,111"/>
-<area shape="rect" title=" " alt="" coords="8067,86,8136,111"/>
-<area shape="rect" title=" " alt="" coords="8160,86,8227,111"/>
-<area shape="rect" title=" " alt="" coords="8251,86,8317,111"/>
-<area shape="rect" title=" " alt="" coords="8341,86,8401,111"/>
+<area shape="rect" title=" " alt="" coords="3313,5,3564,31"/>
+<area shape="rect" href="BasicAliasAnalysis_8h.html" title="This is the interface for LLVM&#39;s primary stateless and local alias analysis." alt="" coords="4549,79,4731,119"/>
+<area shape="rect" title=" " alt="" coords="6115,695,6290,720"/>
+<area shape="rect" title=" " alt="" coords="4382,401,4557,427"/>
+<area shape="rect" href="AliasAnalysis_8h.html" title=" " alt="" coords="3995,167,4208,192"/>
+<area shape="rect" href="MemoryLocation_8h.html" title="This file provides utility analysis objects describing memory locations." alt="" coords="3661,240,3896,265"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="2368,321,2528,346"/>
+<area shape="rect" href="Attributes_8h.html" title="This file contains the simple types necessary to represent the attributes associated with functions a..." alt="" coords="3423,621,3571,647"/>
+<area shape="rect" title=" " alt="" coords="3533,841,3603,867"/>
+<area shape="rect" title=" " alt="" coords="2744,695,2811,720"/>
+<area shape="rect" title=" " alt="" coords="4767,695,4827,720"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="1203,548,1346,573"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="1233,621,1346,647"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="1683,695,1803,720"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="907,768,1077,793"/>
+<area shape="rect" href="Compiler_8h.html" title=" " alt="" coords="903,841,1081,867"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="803,548,975,573"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="2080,621,2195,647"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="2789,475,2928,500"/>
+<area shape="rect" href="Argument_8h.html" title=" " alt="" coords="2891,548,3039,573"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="2209,401,2359,427"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="1299,475,1448,500"/>
+<area shape="rect" title=" " alt="" coords="6482,548,6614,573"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="1929,475,2082,500"/>
+<area shape="rect" href="Metadata_8h.html" title="This file contains the declarations for metadata subclasses." alt="" coords="3445,321,3592,346"/>
+<area shape="rect" href="TargetLibraryInfo_8h.html" title=" " alt="" coords="5354,313,5553,353"/>
+<area shape="rect" title=" " alt="" coords="4991,401,5087,427"/>
+<area shape="rect" href="AssumptionCache_8h.html" title=" " alt="" coords="5139,313,5330,353"/>
+<area shape="rect" title=" " alt="" coords="3654,86,3805,111"/>
+<area shape="rect" href="Analysis_2CFG_8h.html" title=" " alt="" coords="3829,86,3982,111"/>
+<area shape="rect" href="CaptureTracking_8h.html" title=" " alt="" coords="4006,86,4237,111"/>
+<area shape="rect" href="InstructionSimplify_8h.html" title=" " alt="" coords="1505,313,1687,353"/>
+<area shape="rect" href="Operator_8h.html" title=" " alt="" coords="1358,401,1498,427"/>
+<area shape="rect" href="LoopInfo_8h.html" title=" " alt="" coords="4779,240,4962,265"/>
+<area shape="rect" href="MemoryBuiltins_8h.html" title=" " alt="" coords="6228,240,6457,265"/>
+<area shape="rect" href="ValueTracking_8h.html" title=" " alt="" coords="3109,240,3325,265"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="3059,321,3218,346"/>
+<area shape="rect" href="Intrinsics_8h.html" title=" " alt="" coords="3667,321,3810,346"/>
+<area shape="rect" href="PhiValues_8h.html" title=" " alt="" coords="5577,321,5767,346"/>
+<area shape="rect" href="Dominators_8h.html" title=" " alt="" coords="5943,321,6103,346"/>
+<area shape="rect" href="GetElementPtrTypeIterator_8h.html" title=" " alt="" coords="673,313,871,353"/>
+<area shape="rect" href="GlobalAlias_8h.html" title=" " alt="" coords="287,167,446,192"/>
+<area shape="rect" href="GlobalVariable_8h.html" title=" " alt="" coords="3571,548,3749,573"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="2655,240,2815,265"/>
+<area shape="rect" href="CommandLine_8h.html" title=" " alt="" coords="4393,321,4607,346"/>
+<area shape="rect" href="KnownBits_8h.html" title=" " alt="" coords="6501,167,6691,192"/>
+<area shape="rect" title=" " alt="" coords="6767,86,6833,111"/>
+<area shape="rect" title=" " alt="" coords="5043,475,5210,500"/>
+<area shape="rect" title=" " alt="" coords="4147,695,4301,720"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="5366,401,5535,427"/>
 </map>
 </div>
 </div>
@@ -167,64 +170,64 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a00c3931a93426ac46ff9e2d2d1b47b3b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a00c3931a93426ac46ff9e2d2d1b47b3b">EnableRecPhiAnalysis</a> (&quot;basicaa-recphi&quot;, cl::Hidden, cl::init(false))</td></tr>
-<tr class="memdesc:a00c3931a93426ac46ff9e2d2d1b47b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable analysis of recursive PHI nodes.  <a href="BasicAliasAnalysis_8cpp.html#a00c3931a93426ac46ff9e2d2d1b47b3b">More...</a><br /></td></tr>
-<tr class="separator:a00c3931a93426ac46ff9e2d2d1b47b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f99457ad37abb6438a4bf6795389a31"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a2f99457ad37abb6438a4bf6795389a31">ForceAtLeast64Bits</a> (&quot;basicaa-force-at-least-64b&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="memdesc:a2f99457ad37abb6438a4bf6795389a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">By default, even on 32-bit architectures we use 64-bit integers for calculations.  <a href="BasicAliasAnalysis_8cpp.html#a2f99457ad37abb6438a4bf6795389a31">More...</a><br /></td></tr>
-<tr class="separator:a2f99457ad37abb6438a4bf6795389a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a711fb46ced44f3bbf1ee106f67631404"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a711fb46ced44f3bbf1ee106f67631404">DoubleCalcBits</a> (&quot;basicaa-double-calc-bits&quot;, cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a711fb46ced44f3bbf1ee106f67631404"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a399bf1a0cd818337a59f27a9aacd595b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a399bf1a0cd818337a59f27a9aacd595b">STATISTIC</a> (SearchLimitReached, &quot;Number of times the limit to &quot; &quot;decompose GEPs is reached&quot;)</td></tr>
 <tr class="memdesc:a399bf1a0cd818337a59f27a9aacd595b"><td class="mdescLeft">&#160;</td><td class="mdescRight">SearchLimitReached / SearchTimes shows how often the limit of to decompose GEPs is reached.  <a href="BasicAliasAnalysis_8cpp.html#a399bf1a0cd818337a59f27a9aacd595b">More...</a><br /></td></tr>
 <tr class="separator:a399bf1a0cd818337a59f27a9aacd595b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48cf5613525a741f9d2f28261cb87329"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a48cf5613525a741f9d2f28261cb87329">STATISTIC</a> (SearchTimes, &quot;Number of times a GEP is decomposed&quot;)</td></tr>
 <tr class="separator:a48cf5613525a741f9d2f28261cb87329"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5c09978c1ed309e960db6b5a46dd613"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#ab5c09978c1ed309e960db6b5a46dd613">isNonEscapingLocalObject</a> (const Value *V, SmallDenseMap&lt; const Value *, bool, 8 &gt; *IsCapturedCache=nullptr)</td></tr>
+<tr class="memitem:ab5c09978c1ed309e960db6b5a46dd613"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#ab5c09978c1ed309e960db6b5a46dd613">isNonEscapingLocalObject</a> (const <a class="el" href="classllvm_1_1Value.html">Value</a> *V, SmallDenseMap&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classbool.html">bool</a>, 8 &gt; *IsCapturedCache=nullptr)</td></tr>
 <tr class="memdesc:ab5c09978c1ed309e960db6b5a46dd613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the pointer is to a function-local object that never escapes from the function.  <a href="BasicAliasAnalysis_8cpp.html#ab5c09978c1ed309e960db6b5a46dd613">More...</a><br /></td></tr>
 <tr class="separator:ab5c09978c1ed309e960db6b5a46dd613"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0bb832d02fac3060687f324ee493bae"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#ab0bb832d02fac3060687f324ee493bae">isEscapeSource</a> (const Value *V)</td></tr>
+<tr class="memitem:ab0bb832d02fac3060687f324ee493bae"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#ab0bb832d02fac3060687f324ee493bae">isEscapeSource</a> (const <a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
 <tr class="memdesc:ab0bb832d02fac3060687f324ee493bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the pointer is one which would have been considered an escape by isNonEscapingLocalObject.  <a href="BasicAliasAnalysis_8cpp.html#ab0bb832d02fac3060687f324ee493bae">More...</a><br /></td></tr>
 <tr class="separator:ab0bb832d02fac3060687f324ee493bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c50d03ba7d1e7ffd53ddc4d1154cdf9"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a1c50d03ba7d1e7ffd53ddc4d1154cdf9">getObjectSize</a> (const Value *V, const DataLayout &amp;DL, const TargetLibraryInfo &amp;TLI, bool NullIsValidLoc, bool RoundToAlign=false)</td></tr>
+<tr class="memitem:a1c50d03ba7d1e7ffd53ddc4d1154cdf9"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a1c50d03ba7d1e7ffd53ddc4d1154cdf9">getObjectSize</a> (const <a class="el" href="classllvm_1_1Value.html">Value</a> *V, const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL, const <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI, <a class="el" href="classbool.html">bool</a> NullIsValidLoc, <a class="el" href="classbool.html">bool</a> RoundToAlign=false)</td></tr>
 <tr class="memdesc:a1c50d03ba7d1e7ffd53ddc4d1154cdf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the object specified by V or UnknownSize if unknown.  <a href="BasicAliasAnalysis_8cpp.html#a1c50d03ba7d1e7ffd53ddc4d1154cdf9">More...</a><br /></td></tr>
 <tr class="separator:a1c50d03ba7d1e7ffd53ddc4d1154cdf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dece9dafed3ece6857ff7d3488d0bd3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a9dece9dafed3ece6857ff7d3488d0bd3">isObjectSmallerThan</a> (const Value *V, uint64_t Size, const DataLayout &amp;DL, const TargetLibraryInfo &amp;TLI, bool NullIsValidLoc)</td></tr>
+<tr class="memitem:a9dece9dafed3ece6857ff7d3488d0bd3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a9dece9dafed3ece6857ff7d3488d0bd3">isObjectSmallerThan</a> (const <a class="el" href="classllvm_1_1Value.html">Value</a> *V, uint64_t Size, const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL, const <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI, <a class="el" href="classbool.html">bool</a> NullIsValidLoc)</td></tr>
 <tr class="memdesc:a9dece9dafed3ece6857ff7d3488d0bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if we can prove that the object specified by V is smaller than Size.  <a href="BasicAliasAnalysis_8cpp.html#a9dece9dafed3ece6857ff7d3488d0bd3">More...</a><br /></td></tr>
 <tr class="separator:a9dece9dafed3ece6857ff7d3488d0bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9c5d1c5fdba6ac59d92d34f0bb09833"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#af9c5d1c5fdba6ac59d92d34f0bb09833">isObjectSize</a> (const Value *V, uint64_t Size, const DataLayout &amp;DL, const TargetLibraryInfo &amp;TLI, bool NullIsValidLoc)</td></tr>
+<tr class="memitem:af9c5d1c5fdba6ac59d92d34f0bb09833"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#af9c5d1c5fdba6ac59d92d34f0bb09833">isObjectSize</a> (const <a class="el" href="classllvm_1_1Value.html">Value</a> *V, uint64_t Size, const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL, const <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI, <a class="el" href="classbool.html">bool</a> NullIsValidLoc)</td></tr>
 <tr class="memdesc:af9c5d1c5fdba6ac59d92d34f0bb09833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if we can prove that the object specified by V has size Size.  <a href="BasicAliasAnalysis_8cpp.html#af9c5d1c5fdba6ac59d92d34f0bb09833">More...</a><br /></td></tr>
 <tr class="separator:af9c5d1c5fdba6ac59d92d34f0bb09833"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb4b9a5cfe79ab9c8de1c2bc25de5ce1"><td class="memItemLeft" align="right" valign="top">static APInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#adb4b9a5cfe79ab9c8de1c2bc25de5ce1">adjustToPointerSize</a> (APInt Offset, unsigned PointerSize)</td></tr>
+<tr class="memitem:adb4b9a5cfe79ab9c8de1c2bc25de5ce1"><td class="memItemLeft" align="right" valign="top">static APInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#adb4b9a5cfe79ab9c8de1c2bc25de5ce1">adjustToPointerSize</a> (APInt Offset, <a class="el" href="classunsigned.html">unsigned</a> PointerSize)</td></tr>
 <tr class="memdesc:adb4b9a5cfe79ab9c8de1c2bc25de5ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">To ensure a pointer offset fits in an integer of size PointerSize (in bits) when that size is smaller than the maximum pointer size.  <a href="BasicAliasAnalysis_8cpp.html#adb4b9a5cfe79ab9c8de1c2bc25de5ce1">More...</a><br /></td></tr>
 <tr class="separator:adb4b9a5cfe79ab9c8de1c2bc25de5ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86000393d98373ed1adfa2400bc426b0"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a86000393d98373ed1adfa2400bc426b0">getMaxPointerSize</a> (const DataLayout &amp;DL)</td></tr>
+<tr class="memitem:a86000393d98373ed1adfa2400bc426b0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a86000393d98373ed1adfa2400bc426b0">getMaxPointerSize</a> (const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL)</td></tr>
 <tr class="separator:a86000393d98373ed1adfa2400bc426b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a2755dcf4ee5b4de99a8ed9643c595a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a5a2755dcf4ee5b4de99a8ed9643c595a">isWriteOnlyParam</a> (const CallBase *Call, unsigned ArgIdx, const TargetLibraryInfo &amp;TLI)</td></tr>
+<tr class="memitem:a5a2755dcf4ee5b4de99a8ed9643c595a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a5a2755dcf4ee5b4de99a8ed9643c595a">isWriteOnlyParam</a> (const <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *Call, <a class="el" href="classunsigned.html">unsigned</a> ArgIdx, const <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI)</td></tr>
 <tr class="memdesc:a5a2755dcf4ee5b4de99a8ed9643c595a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this is a writeonly (i.e Mod only) parameter.  <a href="BasicAliasAnalysis_8cpp.html#a5a2755dcf4ee5b4de99a8ed9643c595a">More...</a><br /></td></tr>
 <tr class="separator:a5a2755dcf4ee5b4de99a8ed9643c595a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accae7d75b860b14d28facd90a9e8465e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#accae7d75b860b14d28facd90a9e8465e">isIntrinsicCall</a> (const CallBase *Call, Intrinsic::ID IID)</td></tr>
+<tr class="memitem:accae7d75b860b14d28facd90a9e8465e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#accae7d75b860b14d28facd90a9e8465e">isIntrinsicCall</a> (const <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *Call, <a class="el" href="namespacellvm_1_1Intrinsic.html#a2bbee8c5fe6b399c136d84248090178b">Intrinsic::ID</a> IID)</td></tr>
 <tr class="separator:accae7d75b860b14d28facd90a9e8465e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b8850f1ed44c12bc3501175a71c251c"><td class="memItemLeft" align="right" valign="top">static const Function *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a1b8850f1ed44c12bc3501175a71c251c">getParent</a> (const Value *V)</td></tr>
+<tr class="memitem:a1b8850f1ed44c12bc3501175a71c251c"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a1b8850f1ed44c12bc3501175a71c251c">getParent</a> (const <a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
 <tr class="separator:a1b8850f1ed44c12bc3501175a71c251c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75bdc7a047c6fe9cd26342a3819e2b25"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a75bdc7a047c6fe9cd26342a3819e2b25">notDifferentParent</a> (const Value *O1, const Value *O2)</td></tr>
+<tr class="memitem:a75bdc7a047c6fe9cd26342a3819e2b25"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a75bdc7a047c6fe9cd26342a3819e2b25">notDifferentParent</a> (const <a class="el" href="classllvm_1_1Value.html">Value</a> *O1, const <a class="el" href="classllvm_1_1Value.html">Value</a> *O2)</td></tr>
 <tr class="separator:a75bdc7a047c6fe9cd26342a3819e2b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a377325ad38e2edf391ab29fb8433c8a4"><td class="memItemLeft" align="right" valign="top">static AliasResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a377325ad38e2edf391ab29fb8433c8a4">aliasSameBasePointerGEPs</a> (const GEPOperator *GEP1, LocationSize MaybeV1Size, const GEPOperator *GEP2, LocationSize MaybeV2Size, const DataLayout &amp;DL)</td></tr>
+<tr class="memitem:a377325ad38e2edf391ab29fb8433c8a4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespacellvm.html#ae1738272abcf2ac638b97e7dc6360cfd">AliasResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a377325ad38e2edf391ab29fb8433c8a4">aliasSameBasePointerGEPs</a> (const <a class="el" href="classllvm_1_1GEPOperator.html">GEPOperator</a> *GEP1, <a class="el" href="classllvm_1_1LocationSize.html">LocationSize</a> MaybeV1Size, const <a class="el" href="classllvm_1_1GEPOperator.html">GEPOperator</a> *GEP2, <a class="el" href="classllvm_1_1LocationSize.html">LocationSize</a> MaybeV2Size, const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL)</td></tr>
 <tr class="memdesc:a377325ad38e2edf391ab29fb8433c8a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide ad-hoc rules to disambiguate accesses through two GEP operators, both having the exact same pointer operand.  <a href="BasicAliasAnalysis_8cpp.html#a377325ad38e2edf391ab29fb8433c8a4">More...</a><br /></td></tr>
 <tr class="separator:a377325ad38e2edf391ab29fb8433c8a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f870dd8d68f3aa2160bcdb056fd89cb"><td class="memItemLeft" align="right" valign="top">static AliasResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a8f870dd8d68f3aa2160bcdb056fd89cb">MergeAliasResults</a> (AliasResult A, AliasResult B)</td></tr>
+<tr class="memitem:a8f870dd8d68f3aa2160bcdb056fd89cb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespacellvm.html#ae1738272abcf2ac638b97e7dc6360cfd">AliasResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a8f870dd8d68f3aa2160bcdb056fd89cb">MergeAliasResults</a> (<a class="el" href="namespacellvm.html#ae1738272abcf2ac638b97e7dc6360cfd">AliasResult</a> A, <a class="el" href="namespacellvm.html#ae1738272abcf2ac638b97e7dc6360cfd">AliasResult</a> B)</td></tr>
 <tr class="separator:a8f870dd8d68f3aa2160bcdb056fd89cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73c0e541e8b7742c78da31f6114a5f37"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a73c0e541e8b7742c78da31f6114a5f37">INITIALIZE_PASS_BEGIN</a> (BasicAAWrapperPass, &quot;basicaa&quot;, &quot;Basic Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a> (stateless AA <a class="el" href="PlaceSafepoints_8cpp.html#abd1ccb1bf511e1965414eb1d2e137302">impl</a>)&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) INITIALIZE_PASS_END(BasicAAWrapperPass</td></tr>
+<tr class="memitem:a73c0e541e8b7742c78da31f6114a5f37"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a73c0e541e8b7742c78da31f6114a5f37">INITIALIZE_PASS_BEGIN</a> (<a class="el" href="classllvm_1_1BasicAAWrapperPass.html">BasicAAWrapperPass</a>, &quot;basicaa&quot;, &quot;Basic Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a> (stateless AA <a class="el" href="PlaceSafepoints_8cpp.html#abd1ccb1bf511e1965414eb1d2e137302">impl</a>)&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) INITIALIZE_PASS_END(<a class="el" href="classllvm_1_1BasicAAWrapperPass.html">BasicAAWrapperPass</a></td></tr>
 <tr class="separator:a73c0e541e8b7742c78da31f6114a5f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99130f18ea4cacce032d9ab1f8515cca"><td class="memItemLeft" align="right" valign="top">Basic Alias&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a99130f18ea4cacce032d9ab1f8515cca">Analysis</a> (stateless AA <a class="el" href="PlaceSafepoints_8cpp.html#abd1ccb1bf511e1965414eb1d2e137302">impl</a>)&quot;</td></tr>
 <tr class="separator:a99130f18ea4cacce032d9ab1f8515cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:afb492e6cf13f476bfcc4ae5a206f732c"><td class="memItemLeft" align="right" valign="top">const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#afb492e6cf13f476bfcc4ae5a206f732c">MaxNumPhiBBsValueReachabilityCheck</a> = 20</td></tr>
+<tr class="memitem:a34e95faa5c2498766aa029bdde5b0e10"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a34e95faa5c2498766aa029bdde5b0e10">EnableRecPhiAnalysis</a> (&quot;basicaa-recphi&quot;, cl::Hidden, cl::init(false))</td></tr>
+<tr class="memdesc:a34e95faa5c2498766aa029bdde5b0e10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable analysis of recursive PHI nodes.  <a href="BasicAliasAnalysis_8cpp.html#a34e95faa5c2498766aa029bdde5b0e10">More...</a><br /></td></tr>
+<tr class="separator:a34e95faa5c2498766aa029bdde5b0e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0199bff444141e4f08585f7aba9128da"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#a0199bff444141e4f08585f7aba9128da">ForceAtLeast64Bits</a> (&quot;basicaa-force-at-least-64b&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="memdesc:a0199bff444141e4f08585f7aba9128da"><td class="mdescLeft">&#160;</td><td class="mdescRight">By default, even on 32-bit architectures we use 64-bit integers for calculations.  <a href="BasicAliasAnalysis_8cpp.html#a0199bff444141e4f08585f7aba9128da">More...</a><br /></td></tr>
+<tr class="separator:a0199bff444141e4f08585f7aba9128da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad257554f22e52173ae0c54345aae5e9a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#ad257554f22e52173ae0c54345aae5e9a">DoubleCalcBits</a> (&quot;basicaa-double-calc-bits&quot;, cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:ad257554f22e52173ae0c54345aae5e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb492e6cf13f476bfcc4ae5a206f732c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#afb492e6cf13f476bfcc4ae5a206f732c">MaxNumPhiBBsValueReachabilityCheck</a> = 20</td></tr>
 <tr class="memdesc:afb492e6cf13f476bfcc4ae5a206f732c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cutoff after which to stop analysing a set of phi nodes potentially involved in a cycle.  <a href="BasicAliasAnalysis_8cpp.html#afb492e6cf13f476bfcc4ae5a206f732c">More...</a><br /></td></tr>
 <tr class="separator:afb492e6cf13f476bfcc4ae5a206f732c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af78df0c316edaaff2ccded54c6975501"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#af78df0c316edaaff2ccded54c6975501">MaxLookupSearchDepth</a> = 6</td></tr>
+<tr class="memitem:af78df0c316edaaff2ccded54c6975501"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#af78df0c316edaaff2ccded54c6975501">MaxLookupSearchDepth</a> = 6</td></tr>
 <tr class="separator:af78df0c316edaaff2ccded54c6975501"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac00786e3aa2a5617246d4edc3c7226fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicAliasAnalysis_8cpp.html#ac00786e3aa2a5617246d4edc3c7226fe">basicaa</a></td></tr>
 <tr class="separator:ac00786e3aa2a5617246d4edc3c7226fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -267,7 +270,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>PointerSize</em>&#160;</td>
         </tr>
         <tr>
@@ -302,33 +305,33 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static AliasResult aliasSameBasePointerGEPs </td>
+          <td class="memname">static <a class="el" href="namespacellvm.html#ae1738272abcf2ac638b97e7dc6360cfd">AliasResult</a> aliasSameBasePointerGEPs </td>
           <td>(</td>
-          <td class="paramtype">const GEPOperator *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1GEPOperator.html">GEPOperator</a> *&#160;</td>
           <td class="paramname"><em>GEP1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">LocationSize&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1LocationSize.html">LocationSize</a>&#160;</td>
           <td class="paramname"><em>MaybeV1Size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const GEPOperator *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1GEPOperator.html">GEPOperator</a> *&#160;</td>
           <td class="paramname"><em>GEP2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">LocationSize&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1LocationSize.html">LocationSize</a>&#160;</td>
           <td class="paramname"><em>MaybeV2Size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DataLayout &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
           <td class="paramname"><em>DL</em>&#160;</td>
         </tr>
         <tr>
@@ -348,7 +351,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l01063">1063</a> of file <a class="el" href="BasicAliasAnalysis_8cpp_source.html">BasicAliasAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l01627">computeKnownBits()</a>, and <a class="el" href="ValueTracking_8cpp_source.html#l02257">isKnownNonEqual()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l00167">llvm::computeKnownBits()</a>, <a class="el" href="Constants_8h_source.html#l00142">llvm::ConstantInt::getBitWidth()</a>, <a class="el" href="DataLayout_8h_source.html#l00584">llvm::StructLayout::getElementOffset()</a>, <a class="el" href="GetElementPtrTypeIterator_8h_source.html#l00068">llvm::generic_gep_type_iterator&lt; ItTy &gt;::getIndexedType()</a>, <a class="el" href="Operator_8h_source.html#l00496">llvm::GEPOperator::getNumIndices()</a>, <a class="el" href="User_8h_source.html#l00191">llvm::User::getNumOperands()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Operator_8h_source.html#l00473">llvm::GEPOperator::getPointerOperand()</a>, <a class="el" href="Operator_8h_source.html#l00484">llvm::GEPOperator::getPointerOperandType()</a>, <a class="el" href="DataLayout_8h_source.html#l00570">llvm::StructLayout::getSizeInBytes()</a>, <a class="el" href="Operator_8cpp_source.html#l00022">llvm::GEPOperator::getSourceElementType()</a>, <a class="el" href="DataLayout_8cpp_source.html#l00604">llvm::DataLayout::getStructLayout()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="DataLayout_8h_source.html#l00444">llvm::DataLayout::getTypeStoreSize()</a>, <a class="el" href="MemoryLocation_8h_source.html#l00126">llvm::LocationSize::getValue()</a>, <a class="el" href="Constants_8h_source.html#l00137">llvm::ConstantInt::getValue()</a>, <a class="el" href="Constants_8h_source.html#l00148">llvm::ConstantInt::getZExtValue()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l00276">llvm::isKnownNonEqual()</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00086">llvm::MayAlias</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00084">llvm::NoAlias</a>, <a class="el" href="KnownBits_8h_source.html#l00024">llvm::KnownBits::One</a>, <a class="el" href="Value_8cpp_source.html#l00552">llvm::Value::stripPointerCastsAndInvariantGroups()</a>, <a class="el" href="MemoryLocation_8h_source.html#l00101">llvm::LocationSize::unknown()</a>, and <a class="el" href="KnownBits_8h_source.html#l00023">llvm::KnownBits::Zero</a>.</p>
 
 </div>
 </div>
@@ -370,141 +373,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a711fb46ced44f3bbf1ee106f67631404" name="a711fb46ced44f3bbf1ee106f67631404"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a711fb46ced44f3bbf1ee106f67631404">&#9670;&nbsp;</a></span>DoubleCalcBits()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; DoubleCalcBits </td>
-          <td>(</td>
-          <td class="paramtype">&quot;basicaa-double-calc-bits&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00421">getMaxPointerSize()</a>.</p>
-
-</div>
-</div>
-<a id="a00c3931a93426ac46ff9e2d2d1b47b3b" name="a00c3931a93426ac46ff9e2d2d1b47b3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00c3931a93426ac46ff9e2d2d1b47b3b">&#9670;&nbsp;</a></span>EnableRecPhiAnalysis()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; EnableRecPhiAnalysis </td>
-          <td>(</td>
-          <td class="paramtype">&quot;basicaa-recphi&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enable analysis of recursive PHI nodes. </p>
-
-</div>
-</div>
-<a id="a2f99457ad37abb6438a4bf6795389a31" name="a2f99457ad37abb6438a4bf6795389a31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f99457ad37abb6438a4bf6795389a31">&#9670;&nbsp;</a></span>ForceAtLeast64Bits()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ForceAtLeast64Bits </td>
-          <td>(</td>
-          <td class="paramtype">&quot;basicaa-force-at-least-64b&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>By default, even on 32-bit architectures we use 64-bit integers for calculations. </p>
-<p >This will allow us to more-aggressively decompose indexing expressions calculated using i64 values (e.g., long long in C) which is common enough to worry about. </p>
-
-<p class="reference">Referenced by <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00421">getMaxPointerSize()</a>.</p>
-
-</div>
-</div>
 <a id="a86000393d98373ed1adfa2400bc426b0" name="a86000393d98373ed1adfa2400bc426b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a86000393d98373ed1adfa2400bc426b0">&#9670;&nbsp;</a></span>getMaxPointerSize()</h2>
 
@@ -515,9 +383,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static unsigned getMaxPointerSize </td>
+          <td class="memname">static <a class="el" href="classunsigned.html">unsigned</a> getMaxPointerSize </td>
           <td>(</td>
-          <td class="paramtype">const DataLayout &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
           <td class="paramname"><em>DL</em></td><td>)</td>
           <td></td>
         </tr>
@@ -531,7 +399,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00421">421</a> of file <a class="el" href="BasicAliasAnalysis_8cpp_source.html">BasicAliasAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BasicAliasAnalysis_8cpp.html#a711fb46ced44f3bbf1ee106f67631404">DoubleCalcBits()</a>, and <a class="el" href="BasicAliasAnalysis_8cpp.html#a2f99457ad37abb6438a4bf6795389a31">ForceAtLeast64Bits()</a>.</p>
+<p class="reference">References <a class="el" href="BasicAliasAnalysis_8cpp.html#ad257554f22e52173ae0c54345aae5e9a">DoubleCalcBits</a>, <a class="el" href="BasicAliasAnalysis_8cpp.html#a0199bff444141e4f08585f7aba9128da">ForceAtLeast64Bits</a>, and <a class="el" href="DataLayout_8h_source.html#l00393">llvm::DataLayout::getMaxPointerSizeInBits()</a>.</p>
 
 </div>
 </div>
@@ -547,31 +415,31 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static uint64_t getObjectSize </td>
           <td>(</td>
-          <td class="paramtype">const Value *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DataLayout &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
           <td class="paramname"><em>DL</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>NullIsValidLoc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>RoundToAlign</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
@@ -591,9 +459,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00180">180</a> of file <a class="el" href="BasicAliasAnalysis_8cpp_source.html">BasicAliasAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00180">getObjectSize()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="InstructionSimplify_8cpp_source.html#l02145">computePointerICmp()</a>, <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00180">getObjectSize()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00311">getPointerSize()</a>, <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00237">isObjectSize()</a>, and <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00195">isObjectSmallerThan()</a>.</p>
+<p class="reference">References <a class="el" href="MemoryBuiltins_8cpp_source.html#l00452">llvm::getObjectSize()</a>, <a class="el" href="MemoryBuiltins_8h_source.html#l00182">llvm::ObjectSizeOpts::NullIsUnknownSize</a>, <a class="el" href="MemoryBuiltins_8h_source.html#l00178">llvm::ObjectSizeOpts::RoundToAlign</a>, and <a class="el" href="MemoryLocation_8h_source.html#l00179">llvm::MemoryLocation::UnknownSize</a>.</p>
 
 </div>
 </div>
@@ -607,9 +473,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static const Function * getParent </td>
+          <td class="memname">static const <a class="el" href="classllvm_1_1Function.html">Function</a> * getParent </td>
           <td>(</td>
-          <td class="paramtype">const Value *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
           <td></td>
         </tr>
@@ -623,7 +489,9 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00797">797</a> of file <a class="el" href="BasicAliasAnalysis_8cpp_source.html">BasicAliasAnalysis.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LoopIdiomRecognize_8cpp_source.html#l01222">detectPopcountIdiom()</a>, <a class="el" href="SimplifyCFG_8cpp_source.html#l02863">ensureValueAvailableInSuccessor()</a>, <a class="el" href="Attributor_8cpp_source.html#l01035">AANonNullImpl::generatePredicate()</a>, <a class="el" href="Metadata_8cpp_source.html#l00331">getLocalFunctionMetadata()</a>, <a class="el" href="Attributor_8cpp_source.html#l01129">AANonNullCallSiteArgument::initialize()</a>, <a class="el" href="CodeExtractor_8cpp_source.html#l00085">isBlockValidForExtraction()</a>, <a class="el" href="Core_8cpp_source.html#l02578">LLVMGetBasicBlockParent()</a>, <a class="el" href="Core_8cpp_source.html#l01820">LLVMGetGlobalParent()</a>, <a class="el" href="Core_8cpp_source.html#l02691">LLVMGetInstructionParent()</a>, <a class="el" href="Core_8cpp_source.html#l02455">LLVMGetParamParent()</a>, <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00810">notDifferentParent()</a>, <a class="el" href="CorrelatedValuePropagation_8cpp_source.html#l00311">processSwitch()</a>, <a class="el" href="Local_8cpp_source.html#l00904">redirectValuesFromPredecessorsToPhi()</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00304">splitCallSite()</a>, <a class="el" href="Attributor_8cpp_source.html#l01151">AANonNullArgument::updateImpl()</a>, and <a class="el" href="SLPVectorizer_8cpp_source.html#l04010">llvm::slpvectorizer::BoUpSLP::vectorizeTree()</a>.</p>
+<p class="reference">References <a class="el" href="GlobalValue_8h_source.html#l00575">llvm::GlobalValue::getParent()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="CloneFunction_8cpp_source.html#l00433">llvm::CloneAndPruneIntoFromInst()</a>, <a class="el" href="JumpThreading_8cpp_source.html#l00583">llvm::JumpThreadingPass::ComputeValueKnownInPredecessorsImpl()</a>, <a class="el" href="RegionInfoImpl_8h_source.html#l00104">llvm::RegionBase&lt; RegionTraits&lt; Function &gt; &gt;::contains()</a>, <a class="el" href="LoopIdiomRecognize_8cpp_source.html#l01222">detectPopcountIdiom()</a>, <a class="el" href="SimplifyCFG_8cpp_source.html#l02863">ensureValueAvailableInSuccessor()</a>, <a class="el" href="CodeExtractor_8cpp_source.html#l00460">llvm::CodeExtractor::findAllocas()</a>, <a class="el" href="Attributor_8cpp_source.html#l01035">AANonNullImpl::generatePredicate()</a>, <a class="el" href="Metadata_8cpp_source.html#l00331">getLocalFunctionMetadata()</a>, <a class="el" href="Attributor_8cpp_source.html#l01129">AANonNullCallSiteArgument::initialize()</a>, <a class="el" href="CodeExtractor_8cpp_source.html#l00085">isBlockValidForExtraction()</a>, <a class="el" href="CodeExtractor_8cpp_source.html#l00310">llvm::CodeExtractor::isLegalToShrinkwrapLifetimeMarkers()</a>, <a class="el" href="Core_8cpp_source.html#l02578">LLVMGetBasicBlockParent()</a>, <a class="el" href="Core_8cpp_source.html#l01820">LLVMGetGlobalParent()</a>, <a class="el" href="Core_8cpp_source.html#l02691">LLVMGetInstructionParent()</a>, <a class="el" href="Core_8cpp_source.html#l02455">LLVMGetParamParent()</a>, <a class="el" href="PHITransAddr_8h_source.html#l00063">llvm::PHITransAddr::NeedsPHITranslationFromBlock()</a>, <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00810">notDifferentParent()</a>, <a class="el" href="CorrelatedValuePropagation_8cpp_source.html#l00311">processSwitch()</a>, <a class="el" href="Local_8cpp_source.html#l00904">redirectValuesFromPredecessorsToPhi()</a>, <a class="el" href="AssumptionCache_8cpp_source.html#l00185">llvm::AssumptionCache::registerAssumption()</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00304">splitCallSite()</a>, <a class="el" href="Attributor_8cpp_source.html#l01151">AANonNullArgument::updateImpl()</a>, and <a class="el" href="SLPVectorizer_8cpp_source.html#l04010">llvm::slpvectorizer::BoUpSLP::vectorizeTree()</a>.</p>
 
 </div>
 </div>
@@ -636,7 +504,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">INITIALIZE_PASS_BEGIN </td>
           <td>(</td>
-          <td class="paramtype">BasicAAWrapperPass&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicAAWrapperPass.html">BasicAAWrapperPass</a>&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -683,9 +551,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isEscapeSource </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isEscapeSource </td>
           <td>(</td>
-          <td class="paramtype">const Value *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
           <td></td>
         </tr>
@@ -713,15 +581,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isIntrinsicCall </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isIntrinsicCall </td>
           <td>(</td>
-          <td class="paramtype">const CallBase *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
           <td class="paramname"><em>Call</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Intrinsic::ID&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacellvm_1_1Intrinsic.html#a2bbee8c5fe6b399c136d84248090178b">Intrinsic::ID</a>&#160;</td>
           <td class="paramname"><em>IID</em>&#160;</td>
         </tr>
         <tr>
@@ -739,6 +607,10 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00791">791</a> of file <a class="el" href="BasicAliasAnalysis_8cpp_source.html">BasicAliasAnalysis.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="IntrinsicInst_8h_source.html#l00050">llvm::IntrinsicInst::getIntrinsicID()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00849">llvm::BasicAAResult::getModRefInfo()</a>.</p>
+
 </div>
 </div>
 <a id="ab5c09978c1ed309e960db6b5a46dd613" name="ab5c09978c1ed309e960db6b5a46dd613"></a>
@@ -751,15 +623,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isNonEscapingLocalObject </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isNonEscapingLocalObject </td>
           <td>(</td>
-          <td class="paramtype">const Value *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SmallDenseMap&lt; const Value *, bool, 8 &gt; *&#160;</td>
+          <td class="paramtype">SmallDenseMap&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classbool.html">bool</a>, 8 &gt; *&#160;</td>
           <td class="paramname"><em>IsCapturedCache</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -779,6 +651,10 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00119">119</a> of file <a class="el" href="BasicAliasAnalysis_8cpp_source.html">BasicAliasAnalysis.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="AliasAnalysis_8cpp_source.html#l00868">llvm::isNoAliasCall()</a>, and <a class="el" href="CaptureTracking_8cpp_source.html#l00158">llvm::PointerMayBeCaptured()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00849">llvm::BasicAAResult::getModRefInfo()</a>.</p>
+
 </div>
 </div>
 <a id="af9c5d1c5fdba6ac59d92d34f0bb09833" name="af9c5d1c5fdba6ac59d92d34f0bb09833"></a>
@@ -791,9 +667,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isObjectSize </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isObjectSize </td>
           <td>(</td>
-          <td class="paramtype">const Value *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
@@ -805,19 +681,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DataLayout &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
           <td class="paramname"><em>DL</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>NullIsValidLoc</em>&#160;</td>
         </tr>
         <tr>
@@ -837,7 +713,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00237">237</a> of file <a class="el" href="BasicAliasAnalysis_8cpp_source.html">BasicAliasAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00180">getObjectSize()</a>.</p>
+<p class="reference">References <a class="el" href="MemoryBuiltins_8cpp_source.html#l00452">llvm::getObjectSize()</a>, and <a class="el" href="MemoryLocation_8h_source.html#l00179">llvm::MemoryLocation::UnknownSize</a>.</p>
 
 </div>
 </div>
@@ -851,9 +727,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isObjectSmallerThan </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isObjectSmallerThan </td>
           <td>(</td>
-          <td class="paramtype">const Value *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
@@ -865,19 +741,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DataLayout &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
           <td class="paramname"><em>DL</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>NullIsValidLoc</em>&#160;</td>
         </tr>
         <tr>
@@ -897,7 +773,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00195">195</a> of file <a class="el" href="BasicAliasAnalysis_8cpp_source.html">BasicAliasAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00180">getObjectSize()</a>.</p>
+<p class="reference">References <a class="el" href="MemoryBuiltins_8cpp_source.html#l00452">llvm::getObjectSize()</a>, <a class="el" href="AliasAnalysis_8cpp_source.html#l00880">llvm::isIdentifiedObject()</a>, and <a class="el" href="MemoryLocation_8h_source.html#l00179">llvm::MemoryLocation::UnknownSize</a>.</p>
 
 </div>
 </div>
@@ -911,21 +787,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isWriteOnlyParam </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isWriteOnlyParam </td>
           <td>(</td>
-          <td class="paramtype">const CallBase *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
           <td class="paramname"><em>Call</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>ArgIdx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>&#160;</td>
         </tr>
         <tr>
@@ -945,7 +821,9 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00751">751</a> of file <a class="el" href="BasicAliasAnalysis_8cpp_source.html">BasicAliasAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="TargetLibraryInfo_8h_source.html#l00231">llvm::TargetLibraryInfo::getLibFunc()</a>, <a class="el" href="TargetLibraryInfo_8h_source.html#l00247">llvm::TargetLibraryInfo::has()</a>, and <a class="el" href="ModuleSummaryIndex_8h_source.html#l00165">llvm::ValueInfo::WriteOnly</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00776">llvm::BasicAAResult::getArgModRefInfo()</a>.</p>
 
 </div>
 </div>
@@ -959,15 +837,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static AliasResult MergeAliasResults </td>
+          <td class="memname">static <a class="el" href="namespacellvm.html#ae1738272abcf2ac638b97e7dc6360cfd">AliasResult</a> MergeAliasResults </td>
           <td>(</td>
-          <td class="paramtype">AliasResult&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacellvm.html#ae1738272abcf2ac638b97e7dc6360cfd">AliasResult</a>&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">AliasResult&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacellvm.html#ae1738272abcf2ac638b97e7dc6360cfd">AliasResult</a>&#160;</td>
           <td class="paramname"><em>B</em>&#160;</td>
         </tr>
         <tr>
@@ -985,6 +863,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l01513">1513</a> of file <a class="el" href="BasicAliasAnalysis_8cpp_source.html">BasicAliasAnalysis.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="AliasAnalysis_8h_source.html#l00086">llvm::MayAlias</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00090">llvm::MustAlias</a>, and <a class="el" href="AliasAnalysis_8h_source.html#l00088">llvm::PartialAlias</a>.</p>
+
 </div>
 </div>
 <a id="a75bdc7a047c6fe9cd26342a3819e2b25" name="a75bdc7a047c6fe9cd26342a3819e2b25"></a>
@@ -997,15 +877,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool notDifferentParent </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> notDifferentParent </td>
           <td>(</td>
-          <td class="paramtype">const Value *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>O1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Value *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>O2</em>&#160;</td>
         </tr>
         <tr>
@@ -1024,6 +904,8 @@ Variables</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00810">810</a> of file <a class="el" href="BasicAliasAnalysis_8cpp_source.html">BasicAliasAnalysis.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00797">getParent()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00819">llvm::BasicAAResult::alias()</a>, and <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00849">llvm::BasicAAResult::getModRefInfo()</a>.</p>
 
 </div>
 </div>
@@ -1103,6 +985,94 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ad257554f22e52173ae0c54345aae5e9a" name="ad257554f22e52173ae0c54345aae5e9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad257554f22e52173ae0c54345aae5e9a">&#9670;&nbsp;</a></span>DoubleCalcBits</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; DoubleCalcBits(&quot;basicaa-double-calc-bits&quot;, cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;basicaa-double-calc-bits&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00421">getMaxPointerSize()</a>.</p>
+
+</div>
+</div>
+<a id="a34e95faa5c2498766aa029bdde5b0e10" name="a34e95faa5c2498766aa029bdde5b0e10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34e95faa5c2498766aa029bdde5b0e10">&#9670;&nbsp;</a></span>EnableRecPhiAnalysis</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; EnableRecPhiAnalysis(&quot;basicaa-recphi&quot;, cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;basicaa-recphi&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable analysis of recursive PHI nodes. </p>
+
+</div>
+</div>
 <a id="a807d20da74481db0021777fffe75bb59" name="a807d20da74481db0021777fffe75bb59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a807d20da74481db0021777fffe75bb59">&#9670;&nbsp;</a></span>false</h2>
 
@@ -1119,6 +1089,53 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a0199bff444141e4f08585f7aba9128da" name="a0199bff444141e4f08585f7aba9128da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0199bff444141e4f08585f7aba9128da">&#9670;&nbsp;</a></span>ForceAtLeast64Bits</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ForceAtLeast64Bits(&quot;basicaa-force-at-least-64b&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;basicaa-force-at-least-64b&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>By default, even on 32-bit architectures we use 64-bit integers for calculations. </p>
+<p >This will allow us to more-aggressively decompose indexing expressions calculated using i64 values (e.g., long long in C) which is common enough to worry about. </p>
+
+<p class="reference">Referenced by <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00421">getMaxPointerSize()</a>.</p>
+
+</div>
+</div>
 <a id="af78df0c316edaaff2ccded54c6975501" name="af78df0c316edaaff2ccded54c6975501"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af78df0c316edaaff2ccded54c6975501">&#9670;&nbsp;</a></span>MaxLookupSearchDepth</h2>
 
@@ -1129,7 +1146,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const unsigned MaxLookupSearchDepth = 6</td>
+          <td class="memname">const <a class="el" href="classunsigned.html">unsigned</a> MaxLookupSearchDepth = 6</td>
         </tr>
       </table>
   </td>
@@ -1150,7 +1167,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const unsigned MaxNumPhiBBsValueReachabilityCheck = 20</td>
+          <td class="memname">const <a class="el" href="classunsigned.html">unsigned</a> MaxNumPhiBBsValueReachabilityCheck = 20</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1165,7 +1182,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:36 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

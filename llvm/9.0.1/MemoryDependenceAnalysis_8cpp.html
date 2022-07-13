@@ -57,47 +57,47 @@ $(function() {
   <div class="headertitle"><div class="title">MemoryDependenceAnalysis.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Analysis/MemoryDependenceAnalysis.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="MemoryDependenceAnalysis_8h_source.html">llvm/Analysis/MemoryDependenceAnalysis.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/MemoryBuiltins.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/MemoryLocation.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/OrderedBasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/PHITransAddr.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/PhiValues.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/PredIteratorCache.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Use.h&quot;</code><br />
-<code>#include &quot;llvm/IR/User.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MemoryBuiltins_8h_source.html">llvm/Analysis/MemoryBuiltins.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MemoryLocation_8h_source.html">llvm/Analysis/MemoryLocation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="OrderedBasicBlock_8h_source.html">llvm/Analysis/OrderedBasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PHITransAddr_8h_source.html">llvm/Analysis/PHITransAddr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PhiValues_8h_source.html">llvm/Analysis/PhiValues.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PredIteratorCache_8h_source.html">llvm/IR/PredIteratorCache.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Use_8h_source.html">llvm/IR/Use.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/AtomicOrdering.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Compiler.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/MathExtras.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="AtomicOrdering_8h_source.html">llvm/Support/AtomicOrdering.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Compiler_8h_source.html">llvm/Support/Compiler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MathExtras_8h_source.html">llvm/Support/MathExtras.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
@@ -108,53 +108,56 @@ Include dependency graph for MemoryDependenceAnalysis.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="MemoryDependenceAnalysis_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2MemoryDependenceAnalysis_8cpp" alt=""/></div>
 <map name="alib_2Analysis_2MemoryDependenceAnalysis_8cpp" id="alib_2Analysis_2MemoryDependenceAnalysis_8cpp">
-<area shape="rect" title=" " alt="" coords="4632,5,4868,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,255,133"/>
-<area shape="rect" title=" " alt="" coords="279,101,445,126"/>
-<area shape="rect" title=" " alt="" coords="470,101,633,126"/>
-<area shape="rect" title=" " alt="" coords="657,101,832,126"/>
-<area shape="rect" title=" " alt="" coords="856,101,1031,126"/>
-<area shape="rect" title=" " alt="" coords="1055,101,1205,126"/>
-<area shape="rect" title=" " alt="" coords="1230,101,1443,126"/>
-<area shape="rect" title=" " alt="" coords="1468,93,1659,133"/>
-<area shape="rect" title=" " alt="" coords="1683,101,1913,126"/>
-<area shape="rect" title=" " alt="" coords="1937,101,2171,126"/>
-<area shape="rect" title=" " alt="" coords="2196,93,2397,133"/>
-<area shape="rect" title=" " alt="" coords="2422,101,2633,126"/>
-<area shape="rect" title=" " alt="" coords="2657,101,2846,126"/>
-<area shape="rect" title=" " alt="" coords="2871,93,3069,133"/>
-<area shape="rect" title=" " alt="" coords="3094,101,3310,126"/>
-<area shape="rect" title=" " alt="" coords="3335,101,3483,126"/>
-<area shape="rect" title=" " alt="" coords="3507,101,3662,126"/>
-<area shape="rect" title=" " alt="" coords="3686,101,3835,126"/>
-<area shape="rect" title=" " alt="" coords="3860,101,4019,126"/>
-<area shape="rect" title=" " alt="" coords="4043,101,4215,126"/>
-<area shape="rect" title=" " alt="" coords="4239,101,4399,126"/>
-<area shape="rect" title=" " alt="" coords="4423,101,4562,126"/>
-<area shape="rect" title=" " alt="" coords="4587,101,4737,126"/>
-<area shape="rect" title=" " alt="" coords="4761,101,4915,126"/>
-<area shape="rect" title=" " alt="" coords="4939,101,5099,126"/>
-<area shape="rect" title=" " alt="" coords="5123,101,5283,126"/>
-<area shape="rect" title=" " alt="" coords="5308,101,5477,126"/>
-<area shape="rect" title=" " alt="" coords="5502,101,5649,126"/>
-<area shape="rect" title=" " alt="" coords="5673,101,5805,126"/>
-<area shape="rect" title=" " alt="" coords="5829,101,6031,126"/>
-<area shape="rect" title=" " alt="" coords="6055,101,6170,126"/>
-<area shape="rect" title=" " alt="" coords="6194,101,6303,126"/>
-<area shape="rect" title=" " alt="" coords="6328,101,6441,126"/>
-<area shape="rect" title=" " alt="" coords="6466,101,6586,126"/>
-<area shape="rect" title=" " alt="" coords="6610,101,6706,126"/>
-<area shape="rect" title=" " alt="" coords="6731,101,6953,126"/>
-<area shape="rect" title=" " alt="" coords="6978,101,7149,126"/>
-<area shape="rect" title=" " alt="" coords="7173,101,7388,126"/>
-<area shape="rect" title=" " alt="" coords="7413,101,7591,126"/>
-<area shape="rect" title=" " alt="" coords="7615,101,7778,126"/>
-<area shape="rect" title=" " alt="" coords="7802,101,7997,126"/>
-<area shape="rect" title=" " alt="" coords="8021,101,8106,126"/>
-<area shape="rect" title=" " alt="" coords="8130,101,8199,126"/>
-<area shape="rect" title=" " alt="" coords="8223,101,8290,126"/>
-<area shape="rect" title=" " alt="" coords="8315,101,8385,126"/>
-<area shape="rect" title=" " alt="" coords="8409,101,8469,126"/>
+<area shape="rect" title=" " alt="" coords="3165,5,3401,45"/>
+<area shape="rect" href="MemoryDependenceAnalysis_8h.html" title=" " alt="" coords="5439,93,5689,133"/>
+<area shape="rect" title=" " alt="" coords="5363,592,5530,617"/>
+<area shape="rect" title=" " alt="" coords="6402,739,6577,764"/>
+<area shape="rect" href="AliasAnalysis_8h.html" title=" " alt="" coords="4656,189,4869,214"/>
+<area shape="rect" title=" " alt="" coords="4810,592,4985,617"/>
+<area shape="rect" href="MemoryLocation_8h.html" title="This file provides utility analysis objects describing memory locations." alt="" coords="4347,269,4581,295"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="2383,350,2543,375"/>
+<area shape="rect" title=" " alt="" coords="3285,665,3448,691"/>
+<area shape="rect" href="Attributes_8h.html" title="This file contains the simple types necessary to represent the attributes associated with functions a..." alt="" coords="4230,592,4378,617"/>
+<area shape="rect" title=" " alt="" coords="2444,959,2513,984"/>
+<area shape="rect" title=" " alt="" coords="3177,812,3244,837"/>
+<area shape="rect" title=" " alt="" coords="5589,739,5649,764"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="1685,592,1840,617"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="1934,665,2087,691"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="1289,739,1402,764"/>
+<area shape="rect" href="Use_8h.html" title="This defines the Use class." alt="" coords="1353,885,1463,911"/>
+<area shape="rect" href="Compiler_8h.html" title=" " alt="" coords="579,959,757,984"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="1643,812,1763,837"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="1031,885,1201,911"/>
+<area shape="rect" title=" " alt="" coords="2165,885,2235,911"/>
+<area shape="rect" title=" " alt="" coords="499,739,584,764"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="2422,592,2594,617"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="2619,665,2733,691"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="1955,511,2093,537"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="2387,431,2538,456"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="1432,511,1581,537"/>
+<area shape="rect" href="LLVMContext_8h.html" title=" " alt="" coords="3126,592,3295,617"/>
+<area shape="rect" href="AtomicOrdering_8h.html" title="Atomic ordering constants." alt="" coords="1634,431,1857,456"/>
+<area shape="rect" href="Metadata_8h.html" title="This file contains the declarations for metadata subclasses." alt="" coords="4080,511,4227,537"/>
+<area shape="rect" href="TargetLibraryInfo_8h.html" title=" " alt="" coords="4897,343,5095,383"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="4246,431,4378,456"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="3131,511,3290,537"/>
+<area shape="rect" title=" " alt="" coords="6375,592,6471,617"/>
+<area shape="rect" href="MathExtras_8h.html" title=" " alt="" coords="549,665,744,691"/>
+<area shape="rect" href="PredIteratorCache_8h.html" title=" " alt="" coords="5221,350,5422,375"/>
+<area shape="rect" title=" " alt="" coords="5265,101,5415,126"/>
+<area shape="rect" href="AssumptionCache_8h.html" title=" " alt="" coords="5891,504,6082,544"/>
+<area shape="rect" href="MemoryBuiltins_8h.html" title=" " alt="" coords="5992,269,6221,295"/>
+<area shape="rect" href="OrderedBasicBlock_8h.html" title=" " alt="" coords="3803,504,4005,544"/>
+<area shape="rect" href="PHITransAddr_8h.html" title=" " alt="" coords="3416,511,3627,537"/>
+<area shape="rect" href="PhiValues_8h.html" title=" " alt="" coords="6208,511,6397,537"/>
+<area shape="rect" href="ValueTracking_8h.html" title=" " alt="" coords="3295,431,3511,456"/>
+<area shape="rect" href="Dominators_8h.html" title=" " alt="" coords="5707,511,5867,537"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="1383,269,1543,295"/>
+<area shape="rect" href="CommandLine_8h.html" title=" " alt="" coords="5062,511,5277,537"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="6979,101,7141,126"/>
+<area shape="rect" title=" " alt="" coords="4491,665,4645,691"/>
+<area shape="rect" title=" " alt="" coords="5466,181,5667,221"/>
+<area shape="rect" title=" " alt="" coords="4705,959,4889,984"/>
 </map>
 </div>
 </div>
@@ -181,37 +184,37 @@ Functions</h2></td></tr>
 <tr class="separator:a9f4c5319b6a358ba4ea62339fd806382"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbf0e548b07cef51df838a7728612810"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#acbf0e548b07cef51df838a7728612810">STATISTIC</a> (NumCacheCompleteNonLocalPtr, &quot;Number of block queries that were completely cached&quot;)</td></tr>
 <tr class="separator:acbf0e548b07cef51df838a7728612810"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15fdf2cab9e6cfc9617c9100167c79ed"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a15fdf2cab9e6cfc9617c9100167c79ed">BlockScanLimit</a> (&quot;memdep-block-<a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a>-limit&quot;, cl::Hidden, cl::init(100), cl::desc(&quot;The number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> to <a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a> in a block in memory &quot; &quot;dependency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> (default = 100)&quot;))</td></tr>
-<tr class="separator:a15fdf2cab9e6cfc9617c9100167c79ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2ea6fda159c30060df2bd339958b623"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#af2ea6fda159c30060df2bd339958b623">BlockNumberLimit</a> (&quot;memdep-block-number-limit&quot;, cl::Hidden, cl::init(1000), cl::desc(&quot;The number of blocks to <a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a> during memory &quot; &quot;dependency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> (default = 1000)&quot;))</td></tr>
-<tr class="separator:af2ea6fda159c30060df2bd339958b623"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90f6ea490b2dda15f00cf09a9c5cd98d"><td class="memTemplParams" colspan="2">template&lt;typename KeyTy &gt; </td></tr>
-<tr class="memitem:a90f6ea490b2dda15f00cf09a9c5cd98d"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a90f6ea490b2dda15f00cf09a9c5cd98d">RemoveFromReverseMap</a> (DenseMap&lt; Instruction *, SmallPtrSet&lt; KeyTy, 4 &gt; &gt; &amp;ReverseMap, Instruction *Inst, KeyTy Val)</td></tr>
+<tr class="memitem:a90f6ea490b2dda15f00cf09a9c5cd98d"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a90f6ea490b2dda15f00cf09a9c5cd98d">RemoveFromReverseMap</a> (DenseMap&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, SmallPtrSet&lt; KeyTy, 4 &gt; &gt; &amp;ReverseMap, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Inst, KeyTy Val)</td></tr>
 <tr class="memdesc:a90f6ea490b2dda15f00cf09a9c5cd98d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a helper function that removes Val from 'Inst's set in ReverseMap.  <a href="MemoryDependenceAnalysis_8cpp.html#a90f6ea490b2dda15f00cf09a9c5cd98d">More...</a><br /></td></tr>
 <tr class="separator:a90f6ea490b2dda15f00cf09a9c5cd98d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fd364675c871bdf0a532d46bab77e3d"><td class="memItemLeft" align="right" valign="top">static ModRefInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a3fd364675c871bdf0a532d46bab77e3d">GetLocation</a> (const Instruction *Inst, MemoryLocation &amp;Loc, const TargetLibraryInfo &amp;TLI)</td></tr>
+<tr class="memitem:a3fd364675c871bdf0a532d46bab77e3d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespacellvm.html#a9db8c44b250b90e3ab7e4d144e7c9c2e">ModRefInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a3fd364675c871bdf0a532d46bab77e3d">GetLocation</a> (const <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Inst, <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> &amp;Loc, const <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI)</td></tr>
 <tr class="memdesc:a3fd364675c871bdf0a532d46bab77e3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the given instruction references a specific memory location, fill in Loc with the details, otherwise set Loc.Ptr to null.  <a href="MemoryDependenceAnalysis_8cpp.html#a3fd364675c871bdf0a532d46bab77e3d">More...</a><br /></td></tr>
 <tr class="separator:a3fd364675c871bdf0a532d46bab77e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85744948b76f6e89e5f2157d49ffff79"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a85744948b76f6e89e5f2157d49ffff79">isVolatile</a> (Instruction *Inst)</td></tr>
+<tr class="memitem:a85744948b76f6e89e5f2157d49ffff79"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a85744948b76f6e89e5f2157d49ffff79">isVolatile</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Inst)</td></tr>
 <tr class="separator:a85744948b76f6e89e5f2157d49ffff79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac7d0e8a679e82bca022febc48796059"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#aac7d0e8a679e82bca022febc48796059">AssertSorted</a> (MemoryDependenceResults::NonLocalDepInfo &amp;Cache, int Count=-1)</td></tr>
+<tr class="memitem:aac7d0e8a679e82bca022febc48796059"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#aac7d0e8a679e82bca022febc48796059">AssertSorted</a> (<a class="el" href="classllvm_1_1MemoryDependenceResults.html#a1fb5d4e618ecf28ecd42ab6fab5a4245">MemoryDependenceResults::NonLocalDepInfo</a> &amp;Cache, int Count=-1)</td></tr>
 <tr class="memdesc:aac7d0e8a679e82bca022febc48796059"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used when -debug is specified to verify that cache arrays are properly kept sorted.  <a href="MemoryDependenceAnalysis_8cpp.html#aac7d0e8a679e82bca022febc48796059">More...</a><br /></td></tr>
 <tr class="separator:aac7d0e8a679e82bca022febc48796059"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4e25bdf0f935cc6fbe85bc85888de81"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#aa4e25bdf0f935cc6fbe85bc85888de81">SortNonLocalDepInfoCache</a> (MemoryDependenceResults::NonLocalDepInfo &amp;Cache, unsigned NumSortedEntries)</td></tr>
+<tr class="memitem:aa4e25bdf0f935cc6fbe85bc85888de81"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#aa4e25bdf0f935cc6fbe85bc85888de81">SortNonLocalDepInfoCache</a> (<a class="el" href="classllvm_1_1MemoryDependenceResults.html#a1fb5d4e618ecf28ecd42ab6fab5a4245">MemoryDependenceResults::NonLocalDepInfo</a> &amp;Cache, <a class="el" href="classunsigned.html">unsigned</a> NumSortedEntries)</td></tr>
 <tr class="memdesc:aa4e25bdf0f935cc6fbe85bc85888de81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort the NonLocalDepInfo cache, given a certain number of elements in the array that are already properly ordered.  <a href="MemoryDependenceAnalysis_8cpp.html#aa4e25bdf0f935cc6fbe85bc85888de81">More...</a><br /></td></tr>
 <tr class="separator:aa4e25bdf0f935cc6fbe85bc85888de81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a865dea47ca1862c87d7bed49760b9133"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a865dea47ca1862c87d7bed49760b9133">INITIALIZE_PASS_BEGIN</a> (MemoryDependenceWrapperPass, &quot;memdep&quot;, &quot;Memory Dependence Analysis&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) INITIALIZE_PASS_END(MemoryDependenceWrapperPass</td></tr>
+<tr class="memitem:a865dea47ca1862c87d7bed49760b9133"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a865dea47ca1862c87d7bed49760b9133">INITIALIZE_PASS_BEGIN</a> (<a class="el" href="classllvm_1_1MemoryDependenceWrapperPass.html">MemoryDependenceWrapperPass</a>, &quot;memdep&quot;, &quot;Memory <a class="el" href="classllvm_1_1Dependence.html">Dependence</a> Analysis&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) INITIALIZE_PASS_END(<a class="el" href="classllvm_1_1MemoryDependenceWrapperPass.html">MemoryDependenceWrapperPass</a></td></tr>
 <tr class="separator:a865dea47ca1862c87d7bed49760b9133"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a2f0fcb9c7daf7faa22e51485d733a473"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a2f0fcb9c7daf7faa22e51485d733a473">NumResultsLimit</a> = 100</td></tr>
+<tr class="memitem:afe8b73d52b1eb3bf70a363b023e89b76"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#afe8b73d52b1eb3bf70a363b023e89b76">BlockScanLimit</a> (&quot;memdep-block-<a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a>-limit&quot;, cl::Hidden, cl::init(100), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> to <a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a> in a block in memory &quot; &quot;dependency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> (default = 100)&quot;))</td></tr>
+<tr class="separator:afe8b73d52b1eb3bf70a363b023e89b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f2bb0a7c3de17be1e0dea5d92c75be4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a8f2bb0a7c3de17be1e0dea5d92c75be4">BlockNumberLimit</a> (&quot;memdep-block-number-limit&quot;, cl::Hidden, cl::init(1000), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The number of blocks to <a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a> during memory &quot; &quot;dependency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> (default = 1000)&quot;))</td></tr>
+<tr class="separator:a8f2bb0a7c3de17be1e0dea5d92c75be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f0fcb9c7daf7faa22e51485d733a473"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classunsigned.html">unsigned</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a2f0fcb9c7daf7faa22e51485d733a473">NumResultsLimit</a> = 100</td></tr>
 <tr class="separator:a2f0fcb9c7daf7faa22e51485d733a473"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3950b99d68513a8206c71fdc9f95627c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a3950b99d68513a8206c71fdc9f95627c">memdep</a></td></tr>
 <tr class="separator:a3950b99d68513a8206c71fdc9f95627c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7401c647f9a17905e254a5cbb65c7ee"><td class="memItemLeft" align="right" valign="top">Memory Dependence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#ac7401c647f9a17905e254a5cbb65c7ee">Analysis</a></td></tr>
+<tr class="memitem:ac7401c647f9a17905e254a5cbb65c7ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1sys_1_1Memory.html">Memory</a> <a class="el" href="classllvm_1_1Dependence.html">Dependence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#ac7401c647f9a17905e254a5cbb65c7ee">Analysis</a></td></tr>
 <tr class="separator:ac7401c647f9a17905e254a5cbb65c7ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68467917887af0ab956c384969815087"><td class="memItemLeft" align="right" valign="top">Memory Dependence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a68467917887af0ab956c384969815087">false</a></td></tr>
+<tr class="memitem:a68467917887af0ab956c384969815087"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1sys_1_1Memory.html">Memory</a> <a class="el" href="classllvm_1_1Dependence.html">Dependence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MemoryDependenceAnalysis_8cpp.html#a68467917887af0ab956c384969815087">false</a></td></tr>
 <tr class="separator:a68467917887af0ab956c384969815087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -244,7 +247,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void AssertSorted </td>
           <td>(</td>
-          <td class="paramtype">MemoryDependenceResults::NonLocalDepInfo &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1MemoryDependenceResults.html#a1fb5d4e618ecf28ecd42ab6fab5a4245">MemoryDependenceResults::NonLocalDepInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>Cache</em>, </td>
         </tr>
         <tr>
@@ -272,101 +275,7 @@ Variables</h2></td></tr>
 
 <p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
-</div>
-</div>
-<a id="af2ea6fda159c30060df2bd339958b623" name="af2ea6fda159c30060df2bd339958b623"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2ea6fda159c30060df2bd339958b623">&#9670;&nbsp;</a></span>BlockNumberLimit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; BlockNumberLimit </td>
-          <td>(</td>
-          <td class="paramtype">&quot;memdep-block-number-limit&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(1000)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;The number of blocks to <a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a> during memory &quot; &quot;dependency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> (default = 1000)&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a15fdf2cab9e6cfc9617c9100167c79ed" name="a15fdf2cab9e6cfc9617c9100167c79ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15fdf2cab9e6cfc9617c9100167c79ed">&#9670;&nbsp;</a></span>BlockScanLimit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; BlockScanLimit </td>
-          <td>(</td>
-          <td class="paramtype">&quot;memdep-block-<a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a>-limit&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(100)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;The number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> to <a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a> in a block in memory &quot; &quot;dependency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> (default = 100)&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p class="reference">Referenced by <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l00785">llvm::MemoryDependenceResults::getNonLocalCallDependency()</a>.</p>
 
 </div>
 </div>
@@ -380,21 +289,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static ModRefInfo GetLocation </td>
+          <td class="memname">static <a class="el" href="namespacellvm.html#a9db8c44b250b90e3ab7e4d144e7c9c2e">ModRefInfo</a> GetLocation </td>
           <td>(</td>
-          <td class="paramtype">const Instruction *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>Inst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">MemoryLocation &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> &amp;&#160;</td>
           <td class="paramname"><em>Loc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>&#160;</td>
         </tr>
         <tr>
@@ -415,6 +324,10 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l00116">116</a> of file <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html">MemoryDependenceAnalysis.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="MemoryLocation_8cpp_source.html#l00034">llvm::MemoryLocation::get()</a>, <a class="el" href="MemoryLocation_8cpp_source.html#l00127">llvm::MemoryLocation::getForArgument()</a>, <a class="el" href="MemoryBuiltins_8cpp_source.html#l00423">llvm::isFreeCall()</a>, <a class="el" href="Instruction_8cpp_source.html#l00513">llvm::Instruction::mayReadFromMemory()</a>, <a class="el" href="Instruction_8cpp_source.html#l00533">llvm::Instruction::mayWriteToMemory()</a>, and <a class="el" href="namespacellvm.html#abf74b2f0dbae96f4708d3e407b36df02a14194d0b2e6c6680067975517cd58eac">llvm::Monotonic</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l00714">llvm::MemoryDependenceResults::getDependency()</a>.</p>
+
 </div>
 </div>
 <a id="a865dea47ca1862c87d7bed49760b9133" name="a865dea47ca1862c87d7bed49760b9133"></a>
@@ -426,7 +339,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">INITIALIZE_PASS_BEGIN </td>
           <td>(</td>
-          <td class="paramtype">MemoryDependenceWrapperPass&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1MemoryDependenceWrapperPass.html">MemoryDependenceWrapperPass</a>&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -438,7 +351,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Memory Dependence Analysis&quot;&#160;</td>
+          <td class="paramtype">&quot;Memory <a class="el" href="classllvm_1_1Dependence.html">Dependence</a> Analysis&quot;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -473,9 +386,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isVolatile </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isVolatile </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>Inst</em></td><td>)</td>
           <td></td>
         </tr>
@@ -489,7 +402,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l00317">317</a> of file <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html">MemoryDependenceAnalysis.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l00448">determinePointerReadAttrs()</a>, and <a class="el" href="Core_8cpp_source.html#l03608">LLVMSetVolatile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="IRBuilder_8h_source.html#l01624">llvm::IRBuilder&lt; T, Inserter &gt;::CreateAlignedLoad()</a>, <a class="el" href="IRBuilder_8h_source.html#l01649">llvm::IRBuilder&lt; T, Inserter &gt;::CreateAlignedStore()</a>, <a class="el" href="IRBuilder_8h_source.html#l01584">llvm::IRBuilder&lt; T, Inserter &gt;::CreateLoad()</a>, <a class="el" href="IRBuilder_8h_source.html#l00482">llvm::IRBuilderBase::CreateMemCpy()</a>, <a class="el" href="IRBuilder_8h_source.html#l00530">llvm::IRBuilderBase::CreateMemMove()</a>, <a class="el" href="IRBuilder_8h_source.html#l00440">llvm::IRBuilderBase::CreateMemSet()</a>, <a class="el" href="IRBuilder_8h_source.html#l01605">llvm::IRBuilder&lt; T, Inserter &gt;::CreateStore()</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l00448">determinePointerReadAttrs()</a>, <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l00914">llvm::MemoryDependenceResults::getNonLocalPointerDependency()</a>, <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l00440">llvm::MemoryDependenceResults::getSimplePointerDependencyFrom()</a>, <a class="el" href="Attributor_8cpp_source.html#l00844">AANoSyncFunction::isNoSyncIntrinsic()</a>, <a class="el" href="InstructionPrecedenceTracking_8cpp_source.html#l00125">llvm::ImplicitControlFlowTracking::isSpecialInstruction()</a>, <a class="el" href="Core_8cpp_source.html#l03608">LLVMSetVolatile()</a>, <a class="el" href="CaptureTracking_8cpp_source.html#l00211">llvm::PointerMayBeCaptured()</a>, and <a class="el" href="Attributor_8cpp_source.html#l00884">AANoSyncFunction::updateImpl()</a>.</p>
 
 </div>
 </div>
@@ -507,13 +420,13 @@ template&lt;typename KeyTy &gt; </div>
         <tr>
           <td class="memname">static void RemoveFromReverseMap </td>
           <td>(</td>
-          <td class="paramtype">DenseMap&lt; Instruction *, SmallPtrSet&lt; KeyTy, 4 &gt; &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseMap&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, SmallPtrSet&lt; KeyTy, 4 &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>ReverseMap</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>Inst</em>, </td>
         </tr>
         <tr>
@@ -542,6 +455,8 @@ template&lt;typename KeyTy &gt; </div>
 
 <p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l00714">llvm::MemoryDependenceResults::getDependency()</a>, and <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l01541">llvm::MemoryDependenceResults::removeInstruction()</a>.</p>
+
 </div>
 </div>
 <a id="aa4e25bdf0f935cc6fbe85bc85888de81" name="aa4e25bdf0f935cc6fbe85bc85888de81"></a>
@@ -556,13 +471,13 @@ template&lt;typename KeyTy &gt; </div>
         <tr>
           <td class="memname">static void SortNonLocalDepInfoCache </td>
           <td>(</td>
-          <td class="paramtype">MemoryDependenceResults::NonLocalDepInfo &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1MemoryDependenceResults.html#a1fb5d4e618ecf28ecd42ab6fab5a4245">MemoryDependenceResults::NonLocalDepInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>Cache</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>NumSortedEntries</em>&#160;</td>
         </tr>
         <tr>
@@ -582,6 +497,8 @@ template&lt;typename KeyTy &gt; </div>
 <p >This is optimized for the case when only a few entries are added. </p>
 
 <p class="definition">Definition at line <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l01047">1047</a> of file <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html">MemoryDependenceAnalysis.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Compiler_8h_source.html#l00250">LLVM_FALLTHROUGH</a>.</p>
 
 </div>
 </div>
@@ -801,12 +718,110 @@ template&lt;typename KeyTy &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Memory Dependence Analysis</td>
+          <td class="memname"><a class="el" href="classllvm_1_1sys_1_1Memory.html">Memory</a> <a class="el" href="classllvm_1_1Dependence.html">Dependence</a> Analysis</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l01769">1769</a> of file <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html">MemoryDependenceAnalysis.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8f2bb0a7c3de17be1e0dea5d92c75be4" name="a8f2bb0a7c3de17be1e0dea5d92c75be4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f2bb0a7c3de17be1e0dea5d92c75be4">&#9670;&nbsp;</a></span>BlockNumberLimit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; BlockNumberLimit(&quot;memdep-block-number-limit&quot;, cl::Hidden, cl::init(1000), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The number of blocks to <a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a> during memory &quot; &quot;dependency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> (default = 1000)&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;memdep-block-number-limit&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(1000)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The number of blocks to <a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a> during memory &quot; &quot;dependency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> (default = 1000)&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afe8b73d52b1eb3bf70a363b023e89b76" name="afe8b73d52b1eb3bf70a363b023e89b76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe8b73d52b1eb3bf70a363b023e89b76">&#9670;&nbsp;</a></span>BlockScanLimit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; BlockScanLimit(&quot;memdep-block-<a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a>-limit&quot;, cl::Hidden, cl::init(100), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> to <a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a> in a block in memory &quot; &quot;dependency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> (default = 100)&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;memdep-block-<a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a>-limit&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(100)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> to <a class="el" href="GlobPattern_8cpp.html#ab79f2a85d3d116cb8dcd4b05c2fcfadc">scan</a> in a block in memory &quot; &quot;dependency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> (default = 100)&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l01809">llvm::MemoryDependenceResults::getDefaultBlockScanLimit()</a>, and <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l00440">llvm::MemoryDependenceResults::getSimplePointerDependencyFrom()</a>.</p>
 
 </div>
 </div>
@@ -817,7 +832,7 @@ template&lt;typename KeyTy &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Memory Dependence false</td>
+          <td class="memname"><a class="el" href="classllvm_1_1sys_1_1Memory.html">Memory</a> <a class="el" href="classllvm_1_1Dependence.html">Dependence</a> false</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -852,7 +867,7 @@ template&lt;typename KeyTy &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const unsigned int NumResultsLimit = 100</td>
+          <td class="memname">const <a class="el" href="classunsigned.html">unsigned</a> int NumResultsLimit = 100</td>
         </tr>
       </table>
   </td>
@@ -869,7 +884,7 @@ template&lt;typename KeyTy &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:37 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

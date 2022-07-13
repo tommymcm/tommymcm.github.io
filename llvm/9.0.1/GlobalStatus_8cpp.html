@@ -55,23 +55,23 @@ $(function() {
   <div class="headertitle"><div class="title">GlobalStatus.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/Utils/GlobalStatus.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="GlobalStatus_8h_source.html">llvm/Transforms/Utils/GlobalStatus.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalValue.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalVariable.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Use.h&quot;</code><br />
-<code>#include &quot;llvm/IR/User.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
-<code>#include &quot;llvm/Support/AtomicOrdering.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalValue_8h_source.html">llvm/IR/GlobalValue.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalVariable_8h_source.html">llvm/IR/GlobalVariable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Use_8h_source.html">llvm/IR/Use.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AtomicOrdering_8h_source.html">llvm/Support/AtomicOrdering.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -79,26 +79,56 @@ Include dependency graph for GlobalStatus.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="GlobalStatus_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Utils_2GlobalStatus_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Utils_2GlobalStatus_8cpp" id="alib_2Transforms_2Utils_2GlobalStatus_8cpp">
-<area shape="rect" title=" " alt="" coords="1636,5,1784,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,167,133"/>
-<area shape="rect" title=" " alt="" coords="191,101,365,126"/>
-<area shape="rect" title=" " alt="" coords="390,101,545,126"/>
-<area shape="rect" title=" " alt="" coords="569,101,704,126"/>
-<area shape="rect" title=" " alt="" coords="728,101,871,126"/>
-<area shape="rect" title=" " alt="" coords="895,101,1045,126"/>
-<area shape="rect" title=" " alt="" coords="1069,101,1231,126"/>
-<area shape="rect" title=" " alt="" coords="1255,101,1434,126"/>
-<area shape="rect" title=" " alt="" coords="1459,101,1609,126"/>
-<area shape="rect" title=" " alt="" coords="1633,101,1787,126"/>
-<area shape="rect" title=" " alt="" coords="1811,101,1971,126"/>
-<area shape="rect" title=" " alt="" coords="1995,101,2155,126"/>
-<area shape="rect" title=" " alt="" coords="2179,101,2289,126"/>
-<area shape="rect" title=" " alt="" coords="2313,101,2427,126"/>
-<area shape="rect" title=" " alt="" coords="2451,101,2571,126"/>
-<area shape="rect" title=" " alt="" coords="2596,101,2819,126"/>
-<area shape="rect" title=" " alt="" coords="2843,101,3014,126"/>
-<area shape="rect" title=" " alt="" coords="3038,101,3123,126"/>
-<area shape="rect" title=" " alt="" coords="3147,101,3217,126"/>
+<area shape="rect" title=" " alt="" coords="6027,5,6175,45"/>
+<area shape="rect" href="GlobalStatus_8h.html" title=" " alt="" coords="6494,167,6655,207"/>
+<area shape="rect" href="AtomicOrdering_8h.html" title="Atomic ordering constants." alt="" coords="6493,255,6715,280"/>
+<area shape="rect" title=" " alt="" coords="7001,93,7175,119"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="5872,475,6027,500"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="4015,548,4169,573"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="4547,621,4661,647"/>
+<area shape="rect" href="Use_8h.html" title="This defines the Use class." alt="" coords="6497,768,6607,793"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="3487,915,3657,940"/>
+<area shape="rect" title=" " alt="" coords="4392,988,4461,1013"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="4641,695,4761,720"/>
+<area shape="rect" title=" " alt="" coords="4273,621,4359,647"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="4891,93,5026,119"/>
+<area shape="rect" href="GlobalValue_8h.html" title=" " alt="" coords="3281,475,3444,500"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="4697,548,4839,573"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="2181,255,2331,280"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="1071,475,1220,500"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="4879,174,5039,199"/>
+<area shape="rect" href="GlobalVariable_8h.html" title=" " alt="" coords="4841,328,5020,353"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="855,93,1015,119"/>
+<area shape="rect" title=" " alt="" coords="5071,695,5142,720"/>
+<area shape="rect" title=" " alt="" coords="5859,915,5975,940"/>
+<area shape="rect" title=" " alt="" coords="4966,548,5101,573"/>
+<area shape="rect" title=" " alt="" coords="5821,695,5944,720"/>
+<area shape="rect" title=" " alt="" coords="5243,621,5405,647"/>
+<area shape="rect" title=" " alt="" coords="6273,695,6418,720"/>
+<area shape="rect" title=" " alt="" coords="4223,768,4414,793"/>
+<area shape="rect" href="SymbolTableListTraits_8h.html" title=" " alt="" coords="4994,621,5219,647"/>
+<area shape="rect" href="CBindingWrapping_8h.html" title=" " alt="" coords="5797,841,6038,867"/>
+<area shape="rect" href="Compiler_8h.html" title=" " alt="" coords="2675,988,2853,1013"/>
+<area shape="rect" title=" " alt="" coords="5431,768,5502,793"/>
+<area shape="rect" title=" " alt="" coords="2241,621,2396,647"/>
+<area shape="rect" title=" " alt="" coords="3914,621,4046,647"/>
+<area shape="rect" title=" " alt="" coords="2836,621,2993,647"/>
+<area shape="rect" title=" " alt="" coords="2897,695,2964,720"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="3273,695,3484,720"/>
+<area shape="rect" title=" " alt="" coords="6589,841,6773,867"/>
+<area shape="rect" title=" " alt="" coords="2505,768,2564,793"/>
+<area shape="rect" title=" " alt="" coords="1437,548,1590,573"/>
+<area shape="rect" href="Attributes_8h.html" title="This file contains the simple types necessary to represent the attributes associated with functions a..." alt="" coords="2511,475,2659,500"/>
+<area shape="rect" href="CallingConv_8h.html" title=" " alt="" coords="4174,401,4335,427"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="3287,328,3425,353"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="1919,548,2091,573"/>
+<area shape="rect" href="GlobalObject_8h.html" title=" " alt="" coords="3272,401,3440,427"/>
+<area shape="rect" href="OperandTraits_8h.html" title=" " alt="" coords="4498,548,4673,573"/>
+<area shape="rect" title=" " alt="" coords="1696,621,1859,647"/>
+<area shape="rect" href="MD5_8h.html" title=" " alt="" coords="3079,548,3230,573"/>
+<area shape="rect" title=" " alt="" coords="601,548,749,573"/>
+<area shape="rect" title=" " alt="" coords="773,548,905,573"/>
+<area shape="rect" title=" " alt="" coords="5019,401,5202,427"/>
 </map>
 </div>
 </div>
@@ -106,10 +136,10 @@ Include dependency graph for GlobalStatus.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa0dfee5215507fd57aef686907c1ff26"><td class="memItemLeft" align="right" valign="top">static AtomicOrdering&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GlobalStatus_8cpp.html#aa0dfee5215507fd57aef686907c1ff26">strongerOrdering</a> (AtomicOrdering <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>, AtomicOrdering <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y</a>)</td></tr>
+<tr class="memitem:aa0dfee5215507fd57aef686907c1ff26"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespacellvm.html#abf74b2f0dbae96f4708d3e407b36df02">AtomicOrdering</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GlobalStatus_8cpp.html#aa0dfee5215507fd57aef686907c1ff26">strongerOrdering</a> (<a class="el" href="namespacellvm.html#abf74b2f0dbae96f4708d3e407b36df02">AtomicOrdering</a> <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>, <a class="el" href="namespacellvm.html#abf74b2f0dbae96f4708d3e407b36df02">AtomicOrdering</a> <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y</a>)</td></tr>
 <tr class="memdesc:aa0dfee5215507fd57aef686907c1ff26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the stronger of the two ordering.  <a href="GlobalStatus_8cpp.html#aa0dfee5215507fd57aef686907c1ff26">More...</a><br /></td></tr>
 <tr class="separator:aa0dfee5215507fd57aef686907c1ff26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17a474b70329d911e0b4f13e552dc99f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GlobalStatus_8cpp.html#a17a474b70329d911e0b4f13e552dc99f">analyzeGlobalAux</a> (const Value *V, GlobalStatus &amp;GS, SmallPtrSetImpl&lt; const Value * &gt; &amp;VisitedUsers)</td></tr>
+<tr class="memitem:a17a474b70329d911e0b4f13e552dc99f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GlobalStatus_8cpp.html#a17a474b70329d911e0b4f13e552dc99f">analyzeGlobalAux</a> (const <a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="structllvm_1_1GlobalStatus.html">GlobalStatus</a> &amp;GS, <a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;VisitedUsers)</td></tr>
 <tr class="separator:a17a474b70329d911e0b4f13e552dc99f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -123,21 +153,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool analyzeGlobalAux </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> analyzeGlobalAux </td>
           <td>(</td>
-          <td class="paramtype">const Value *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">GlobalStatus &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1GlobalStatus.html">GlobalStatus</a> &amp;&#160;</td>
           <td class="paramname"><em>GS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SmallPtrSetImpl&lt; const Value * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>VisitedUsers</em>&#160;</td>
         </tr>
         <tr>
@@ -155,9 +185,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GlobalStatus_8cpp_source.html#l00061">61</a> of file <a class="el" href="GlobalStatus_8cpp_source.html">GlobalStatus.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="GlobalStatus_8cpp_source.html#l00061">analyzeGlobalAux()</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="GlobalStatus_8cpp_source.html#l00034">strongerOrdering()</a>.</p>
+<p class="reference">References <a class="el" href="GlobalStatus_8h_source.html#l00064">llvm::GlobalStatus::AccessingFunction</a>, <a class="el" href="GlobalStatus_8cpp_source.html#l00061">analyzeGlobalAux()</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="GlobalStatus_8h_source.html#l00065">llvm::GlobalStatus::HasMultipleAccessingFunctions</a>, <a class="el" href="GlobalStatus_8h_source.html#l00069">llvm::GlobalStatus::HasNonInstructionUser</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="GlobalStatus_8h_source.html#l00044">llvm::GlobalStatus::InitializerStored</a>, <a class="el" href="GlobalStatus_8h_source.html#l00031">llvm::GlobalStatus::IsCompared</a>, <a class="el" href="GlobalStatus_8h_source.html#l00035">llvm::GlobalStatus::IsLoaded</a>, <a class="el" href="GlobalStatus_8cpp_source.html#l00045">llvm::isSafeToDestroyConstant()</a>, <a class="el" href="GlobalStatus_8h_source.html#l00072">llvm::GlobalStatus::Ordering</a>, <a class="el" href="GlobalStatus_8h_source.html#l00054">llvm::GlobalStatus::Stored</a>, <a class="el" href="GlobalStatus_8h_source.html#l00050">llvm::GlobalStatus::StoredOnce</a>, <a class="el" href="GlobalStatus_8h_source.html#l00059">llvm::GlobalStatus::StoredOnceValue</a>, <a class="el" href="GlobalStatus_8cpp_source.html#l00034">strongerOrdering()</a>, and <a class="el" href="Value_8h_source.html#l00354">llvm::Value::uses()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GlobalStatus_8cpp_source.html#l00061">analyzeGlobalAux()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GlobalStatus_8cpp_source.html#l00191">llvm::GlobalStatus::analyzeGlobal()</a>, and <a class="el" href="GlobalStatus_8cpp_source.html#l00061">analyzeGlobalAux()</a>.</p>
 
 </div>
 </div>
@@ -171,15 +201,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static AtomicOrdering strongerOrdering </td>
+          <td class="memname">static <a class="el" href="namespacellvm.html#abf74b2f0dbae96f4708d3e407b36df02">AtomicOrdering</a> strongerOrdering </td>
           <td>(</td>
-          <td class="paramtype">AtomicOrdering&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacellvm.html#abf74b2f0dbae96f4708d3e407b36df02">AtomicOrdering</a>&#160;</td>
           <td class="paramname"><em>X</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">AtomicOrdering&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacellvm.html#abf74b2f0dbae96f4708d3e407b36df02">AtomicOrdering</a>&#160;</td>
           <td class="paramname"><em>Y</em>&#160;</td>
         </tr>
         <tr>
@@ -200,7 +230,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GlobalStatus_8cpp_source.html#l00034">34</a> of file <a class="el" href="GlobalStatus_8cpp_source.html">GlobalStatus.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>, and <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y()</a>.</p>
+<p class="reference">References <a class="el" href="namespacellvm.html#abf74b2f0dbae96f4708d3e407b36df02a993ca650a85e8e69b8f7eaa4809c4862">llvm::Acquire</a>, <a class="el" href="namespacellvm.html#abf74b2f0dbae96f4708d3e407b36df02a960fbd067612ca87e16d5dfdb12fe40a">llvm::AcquireRelease</a>, <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>, and <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="GlobalStatus_8cpp_source.html#l00061">analyzeGlobalAux()</a>.</p>
 
@@ -209,7 +239,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

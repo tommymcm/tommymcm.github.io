@@ -68,41 +68,41 @@ $(function() {
 <code>#include &quot;llvm/ADT/StringExtras.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Triple.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalAlias.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalValue.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalVariable.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InlineAsm.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstVisitor.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
-<code>#include &quot;llvm/IR/MDBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/User.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalAlias_8h_source.html">llvm/IR/GlobalAlias.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalValue_8h_source.html">llvm/IR/GlobalValue.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalVariable_8h_source.html">llvm/IR/GlobalVariable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InlineAsm_8h_source.html">llvm/IR/InlineAsm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstVisitor_8h_source.html">llvm/IR/InstVisitor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MDBuilder_8h_source.html">llvm/IR/MDBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
-<code>#include &quot;llvm/Support/SpecialCaseList.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Instrumentation.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SpecialCaseList_8h_source.html">llvm/Support/SpecialCaseList.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instrumentation_8h_source.html">llvm/Transforms/Instrumentation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
@@ -118,27 +118,27 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a369d00268765df8d99b235179f891a92"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#a369d00268765df8d99b235179f891a92">ClPreserveAlignment</a> (&quot;dfsan-preserve-alignment&quot;, cl::desc(&quot;respect alignment requirements provided by input IR&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a369d00268765df8d99b235179f891a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0a95e2dd420b0c6680e1674fac88da0"><td class="memItemLeft" align="right" valign="top">static cl::list&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#af0a95e2dd420b0c6680e1674fac88da0">ClABIListFiles</a> (&quot;dfsan-abilist&quot;, cl::desc(&quot;File listing native ABI <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> and how the pass treats them&quot;), cl::Hidden)</td></tr>
-<tr class="separator:af0a95e2dd420b0c6680e1674fac88da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96680cb4e424dceab67147ea0a4c4d86"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#a96680cb4e424dceab67147ea0a4c4d86">ClArgsABI</a> (&quot;dfsan-args-abi&quot;, cl::desc(&quot;Use the argument ABI rather than the TLS ABI&quot;), cl::Hidden)</td></tr>
-<tr class="separator:a96680cb4e424dceab67147ea0a4c4d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc89e2b7507f158e9e01357245faef87"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#abc89e2b7507f158e9e01357245faef87">ClCombinePointerLabelsOnLoad</a> (&quot;dfsan-combine-pointer-labels-on-load&quot;, cl::desc(&quot;Combine the label of the pointer with the label of the data when &quot; &quot;loading from memory.&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:abc89e2b7507f158e9e01357245faef87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d38b539ed9456f5c59b80221a3e242b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#a2d38b539ed9456f5c59b80221a3e242b">ClCombinePointerLabelsOnStore</a> (&quot;dfsan-combine-pointer-labels-on-store&quot;, cl::desc(&quot;Combine the label of the pointer with the label of the data when &quot; &quot;storing in memory.&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a2d38b539ed9456f5c59b80221a3e242b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54c5108d81661d33c29bee5df1410e06"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#a54c5108d81661d33c29bee5df1410e06">ClDebugNonzeroLabels</a> (&quot;dfsan-debug-nonzero-labels&quot;, cl::desc(&quot;Insert <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to __dfsan_nonzero_label on observing a parameter, &quot; &quot;load or return with a nonzero label&quot;), cl::Hidden)</td></tr>
-<tr class="separator:a54c5108d81661d33c29bee5df1410e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b0a8bcfedd238274a8da09ad4eba7da"><td class="memItemLeft" align="right" valign="top">static StringRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#a9b0a8bcfedd238274a8da09ad4eba7da">GetGlobalTypeString</a> (const GlobalValue &amp;<a class="el" href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>)</td></tr>
+<tr class="memitem:a9b0a8bcfedd238274a8da09ad4eba7da"><td class="memItemLeft" align="right" valign="top">static StringRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#a9b0a8bcfedd238274a8da09ad4eba7da">GetGlobalTypeString</a> (const <a class="el" href="classllvm_1_1GlobalValue.html">GlobalValue</a> &amp;<a class="el" href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>)</td></tr>
 <tr class="separator:a9b0a8bcfedd238274a8da09ad4eba7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a426328f208ff0fd8993dc9a0bf45c478"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#a426328f208ff0fd8993dc9a0bf45c478">INITIALIZE_PASS</a> (DataFlowSanitizer, &quot;dfsan&quot;, &quot;DataFlowSanitizer: dynamic data flow analysis.&quot;, false, false) ModulePass *llvm</td></tr>
+<tr class="memitem:a426328f208ff0fd8993dc9a0bf45c478"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#a426328f208ff0fd8993dc9a0bf45c478">INITIALIZE_PASS</a> (DataFlowSanitizer, &quot;dfsan&quot;, &quot;DataFlowSanitizer: dynamic data flow analysis.&quot;, false, false) <a class="el" href="classModulePass.html">ModulePass</a> *llvm</td></tr>
 <tr class="separator:a426328f208ff0fd8993dc9a0bf45c478"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a13d25ad39212dc08061e5e22eedecec7"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#a13d25ad39212dc08061e5e22eedecec7">kDFSanExternShadowPtrMask</a> = &quot;__dfsan_shadow_ptr_mask&quot;</td></tr>
+<tr class="memitem:a13d25ad39212dc08061e5e22eedecec7"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#a13d25ad39212dc08061e5e22eedecec7">kDFSanExternShadowPtrMask</a> = &quot;__dfsan_shadow_ptr_mask&quot;</td></tr>
 <tr class="separator:a13d25ad39212dc08061e5e22eedecec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f58d18a4fdfd2fda2d3f931f869e2a1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#a5f58d18a4fdfd2fda2d3f931f869e2a1">ClPreserveAlignment</a> (&quot;dfsan-preserve-alignment&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;respect alignment requirements provided by input IR&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a5f58d18a4fdfd2fda2d3f931f869e2a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a512552844843860182e5376df0ff2e15"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1list.html">cl::list</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#a512552844843860182e5376df0ff2e15">ClABIListFiles</a> (&quot;dfsan-abilist&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;File listing native ABI <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> and how the pass treats them&quot;), cl::Hidden)</td></tr>
+<tr class="separator:a512552844843860182e5376df0ff2e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa80b9669cd8afb038bbca97d9439a814"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#aa80b9669cd8afb038bbca97d9439a814">ClArgsABI</a> (&quot;dfsan-args-abi&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Use the argument ABI rather than the TLS ABI&quot;), cl::Hidden)</td></tr>
+<tr class="separator:aa80b9669cd8afb038bbca97d9439a814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa72e9c0876c1f988da22e2133b90fab8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#aa72e9c0876c1f988da22e2133b90fab8">ClCombinePointerLabelsOnLoad</a> (&quot;dfsan-combine-pointer-labels-on-load&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Combine the label of the pointer with the label of the data when &quot; &quot;loading from memory.&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:aa72e9c0876c1f988da22e2133b90fab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c6e501915dcb2a02bc707fd5c57c2f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#ab0c6e501915dcb2a02bc707fd5c57c2f">ClCombinePointerLabelsOnStore</a> (&quot;dfsan-combine-pointer-labels-on-store&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Combine the label of the pointer with the label of the data when &quot; &quot;storing in memory.&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:ab0c6e501915dcb2a02bc707fd5c57c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60271da6df28421978d5ab731d16173c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataFlowSanitizer_8cpp.html#a60271da6df28421978d5ab731d16173c">ClDebugNonzeroLabels</a> (&quot;dfsan-debug-nonzero-labels&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Insert <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to __dfsan_nonzero_label on observing a parameter, &quot; &quot;load or return with a nonzero label&quot;), cl::Hidden)</td></tr>
+<tr class="separator:a60271da6df28421978d5ab731d16173c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This file is a part of DataFlowSanitizer, a generalised dynamic data flow analysis. </p>
@@ -150,276 +150,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="DataFlowSanitizer_8cpp_source.html">DataFlowSanitizer.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="af0a95e2dd420b0c6680e1674fac88da0" name="af0a95e2dd420b0c6680e1674fac88da0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0a95e2dd420b0c6680e1674fac88da0">&#9670;&nbsp;</a></span>ClABIListFiles()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static cl::list&lt; std::string &gt; ClABIListFiles </td>
-          <td>(</td>
-          <td class="paramtype">&quot;dfsan-abilist&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;File listing native ABI <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> and how the pass treats them&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a96680cb4e424dceab67147ea0a4c4d86" name="a96680cb4e424dceab67147ea0a4c4d86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96680cb4e424dceab67147ea0a4c4d86">&#9670;&nbsp;</a></span>ClArgsABI()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClArgsABI </td>
-          <td>(</td>
-          <td class="paramtype">&quot;dfsan-args-abi&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Use the argument ABI rather than the TLS ABI&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abc89e2b7507f158e9e01357245faef87" name="abc89e2b7507f158e9e01357245faef87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc89e2b7507f158e9e01357245faef87">&#9670;&nbsp;</a></span>ClCombinePointerLabelsOnLoad()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClCombinePointerLabelsOnLoad </td>
-          <td>(</td>
-          <td class="paramtype">&quot;dfsan-combine-pointer-labels-on-load&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Combine the label of the pointer with the label of the data when &quot; &quot;loading from memory.&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2d38b539ed9456f5c59b80221a3e242b" name="a2d38b539ed9456f5c59b80221a3e242b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d38b539ed9456f5c59b80221a3e242b">&#9670;&nbsp;</a></span>ClCombinePointerLabelsOnStore()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClCombinePointerLabelsOnStore </td>
-          <td>(</td>
-          <td class="paramtype">&quot;dfsan-combine-pointer-labels-on-store&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Combine the label of the pointer with the label of the data when &quot; &quot;storing in memory.&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a54c5108d81661d33c29bee5df1410e06" name="a54c5108d81661d33c29bee5df1410e06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54c5108d81661d33c29bee5df1410e06">&#9670;&nbsp;</a></span>ClDebugNonzeroLabels()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClDebugNonzeroLabels </td>
-          <td>(</td>
-          <td class="paramtype">&quot;dfsan-debug-nonzero-labels&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Insert <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to __dfsan_nonzero_label on observing a parameter, &quot; &quot;load or return with a nonzero label&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a369d00268765df8d99b235179f891a92" name="a369d00268765df8d99b235179f891a92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a369d00268765df8d99b235179f891a92">&#9670;&nbsp;</a></span>ClPreserveAlignment()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClPreserveAlignment </td>
-          <td>(</td>
-          <td class="paramtype">&quot;dfsan-preserve-alignment&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;respect alignment requirements provided by input IR&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a9b0a8bcfedd238274a8da09ad4eba7da" name="a9b0a8bcfedd238274a8da09ad4eba7da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b0a8bcfedd238274a8da09ad4eba7da">&#9670;&nbsp;</a></span>GetGlobalTypeString()</h2>
 
@@ -432,7 +162,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static StringRef GetGlobalTypeString </td>
           <td>(</td>
-          <td class="paramtype">const GlobalValue &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1GlobalValue.html">GlobalValue</a> &amp;&#160;</td>
           <td class="paramname"><em>G</em></td><td>)</td>
           <td></td>
         </tr>
@@ -499,6 +229,276 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a512552844843860182e5376df0ff2e15" name="a512552844843860182e5376df0ff2e15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a512552844843860182e5376df0ff2e15">&#9670;&nbsp;</a></span>ClABIListFiles</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1list.html">cl::list</a>&lt; std::string &gt; ClABIListFiles(&quot;dfsan-abilist&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;File listing native ABI <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> and how the pass treats them&quot;), cl::Hidden) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;dfsan-abilist&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;File listing native ABI <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> and how the pass treats them&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa80b9669cd8afb038bbca97d9439a814" name="aa80b9669cd8afb038bbca97d9439a814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa80b9669cd8afb038bbca97d9439a814">&#9670;&nbsp;</a></span>ClArgsABI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClArgsABI(&quot;dfsan-args-abi&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Use the argument ABI rather than the TLS ABI&quot;), cl::Hidden) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;dfsan-args-abi&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Use the argument ABI rather than the TLS ABI&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa72e9c0876c1f988da22e2133b90fab8" name="aa72e9c0876c1f988da22e2133b90fab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa72e9c0876c1f988da22e2133b90fab8">&#9670;&nbsp;</a></span>ClCombinePointerLabelsOnLoad</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClCombinePointerLabelsOnLoad(&quot;dfsan-combine-pointer-labels-on-load&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Combine the label of the pointer with the label of the data when &quot; &quot;loading from memory.&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;dfsan-combine-pointer-labels-on-load&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Combine the label of the pointer with the label of the data when &quot; &quot;loading from memory.&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab0c6e501915dcb2a02bc707fd5c57c2f" name="ab0c6e501915dcb2a02bc707fd5c57c2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0c6e501915dcb2a02bc707fd5c57c2f">&#9670;&nbsp;</a></span>ClCombinePointerLabelsOnStore</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClCombinePointerLabelsOnStore(&quot;dfsan-combine-pointer-labels-on-store&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Combine the label of the pointer with the label of the data when &quot; &quot;storing in memory.&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;dfsan-combine-pointer-labels-on-store&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Combine the label of the pointer with the label of the data when &quot; &quot;storing in memory.&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60271da6df28421978d5ab731d16173c" name="a60271da6df28421978d5ab731d16173c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60271da6df28421978d5ab731d16173c">&#9670;&nbsp;</a></span>ClDebugNonzeroLabels</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClDebugNonzeroLabels(&quot;dfsan-debug-nonzero-labels&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Insert <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to __dfsan_nonzero_label on observing a parameter, &quot; &quot;load or return with a nonzero label&quot;), cl::Hidden) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;dfsan-debug-nonzero-labels&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Insert <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to __dfsan_nonzero_label on observing a parameter, &quot; &quot;load or return with a nonzero label&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5f58d18a4fdfd2fda2d3f931f869e2a1" name="a5f58d18a4fdfd2fda2d3f931f869e2a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f58d18a4fdfd2fda2d3f931f869e2a1">&#9670;&nbsp;</a></span>ClPreserveAlignment</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClPreserveAlignment(&quot;dfsan-preserve-alignment&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;respect alignment requirements provided by input IR&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;dfsan-preserve-alignment&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;respect alignment requirements provided by input IR&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a13d25ad39212dc08061e5e22eedecec7" name="a13d25ad39212dc08061e5e22eedecec7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a13d25ad39212dc08061e5e22eedecec7">&#9670;&nbsp;</a></span>kDFSanExternShadowPtrMask</h2>
 
@@ -509,7 +509,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const kDFSanExternShadowPtrMask = &quot;__dfsan_shadow_ptr_mask&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const kDFSanExternShadowPtrMask = &quot;__dfsan_shadow_ptr_mask&quot;</td>
         </tr>
       </table>
   </td>
@@ -526,7 +526,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

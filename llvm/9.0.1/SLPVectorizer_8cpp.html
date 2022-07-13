@@ -59,7 +59,7 @@ $(function() {
   <div class="headertitle"><div class="title">SLPVectorizer.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/Vectorize/SLPVectorizer.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="SLPVectorizer_8h_source.html">llvm/Transforms/Vectorize/SLPVectorizer.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/DenseSet.h&quot;</code><br />
@@ -75,59 +75,59 @@ $(function() {
 <code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/iterator.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/iterator_range.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/CodeMetrics.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/DemandedBits.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopAccessAnalysis.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/MemoryLocation.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/OptimizationRemarkEmitter.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ScalarEvolution.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ScalarEvolutionExpressions.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/VectorUtils.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DebugLoc.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/NoFolder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Operator.h&quot;</code><br />
-<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
-<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Use.h&quot;</code><br />
-<code>#include &quot;llvm/IR/User.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
-<code>#include &quot;llvm/IR/ValueHandle.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Verifier.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CodeMetrics_8h_source.html">llvm/Analysis/CodeMetrics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DemandedBits_8h_source.html">llvm/Analysis/DemandedBits.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalsModRef_8h_source.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopAccessAnalysis_8h_source.html">llvm/Analysis/LoopAccessAnalysis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MemoryLocation_8h_source.html">llvm/Analysis/MemoryLocation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="OptimizationRemarkEmitter_8h_source.html">llvm/Analysis/OptimizationRemarkEmitter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScalarEvolution_8h_source.html">llvm/Analysis/ScalarEvolution.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScalarEvolutionExpressions_8h_source.html">llvm/Analysis/ScalarEvolutionExpressions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="VectorUtils_8h_source.html">llvm/Analysis/VectorUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DebugLoc_8h_source.html">llvm/IR/DebugLoc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NoFolder_8h_source.html">llvm/IR/NoFolder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Operator_8h_source.html">llvm/IR/Operator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Use_8h_source.html">llvm/IR/Use.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueHandle_8h_source.html">llvm/IR/ValueHandle.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Verifier_8h_source.html">llvm/IR/Verifier.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Compiler.h&quot;</code><br />
-<code>#include &quot;llvm/Support/DOTGraphTraits.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
-<code>#include &quot;llvm/Support/GraphWriter.h&quot;</code><br />
-<code>#include &quot;llvm/Support/KnownBits.h&quot;</code><br />
-<code>#include &quot;llvm/Support/MathExtras.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/LoopUtils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Vectorize.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Compiler_8h_source.html">llvm/Support/Compiler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DOTGraphTraits_8h_source.html">llvm/Support/DOTGraphTraits.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GraphWriter_8h_source.html">llvm/Support/GraphWriter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="KnownBits_8h_source.html">llvm/Support/KnownBits.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MathExtras_8h_source.html">llvm/Support/MathExtras.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopUtils_8h_source.html">llvm/Transforms/Utils/LoopUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Vectorize_8h_source.html">llvm/Transforms/Vectorize.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
@@ -168,8 +168,10 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
+<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacellvm_1_1slpvectorizer"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1slpvectorizer.html">llvm::slpvectorizer</a></td></tr>
+<tr class="memdesc:namespacellvm_1_1slpvectorizer"><td class="mdescLeft">&#160;</td><td class="mdescRight">A private "module" namespace for types and utilities used by this pass. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -183,89 +185,89 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ae36ebcd8ea18a5e24ffe0c11fb9e965f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#ae36ebcd8ea18a5e24ffe0c11fb9e965f">STATISTIC</a> (NumVectorInstructions, &quot;Number of vector <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> generated&quot;)</td></tr>
 <tr class="separator:ae36ebcd8ea18a5e24ffe0c11fb9e965f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a043a8336eb4f346f6cb7f88be4ed611c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a043a8336eb4f346f6cb7f88be4ed611c">SLPCostThreshold</a> (&quot;slp-threshold&quot;, cl::init(0), cl::Hidden, cl::desc(&quot;Only vectorize <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> you gain more than this &quot; &quot;number &quot;))</td></tr>
-<tr class="separator:a043a8336eb4f346f6cb7f88be4ed611c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a990230d1fc14f4b06a496ff7a4b901fa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a990230d1fc14f4b06a496ff7a4b901fa">ShouldVectorizeHor</a> (&quot;slp-vectorize-hor&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, cl::desc(&quot;Attempt to vectorize horizontal reductions&quot;))</td></tr>
-<tr class="separator:a990230d1fc14f4b06a496ff7a4b901fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc49ed8e85692a2ddd2007dcd4f283b6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#acc49ed8e85692a2ddd2007dcd4f283b6">ShouldStartVectorizeHorAtStore</a> (&quot;slp-vectorize-hor-store&quot;, cl::init(false), cl::Hidden, cl::desc(&quot;Attempt to vectorize horizontal reductions feeding into a store&quot;))</td></tr>
-<tr class="separator:acc49ed8e85692a2ddd2007dcd4f283b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bc59529b0ce5da6b39838c2bc79556e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a5bc59529b0ce5da6b39838c2bc79556e">MaxVectorRegSizeOption</a> (&quot;slp-max-reg-size&quot;, cl::init(128), cl::Hidden, cl::desc(&quot;Attempt to vectorize for this register size in bits&quot;))</td></tr>
-<tr class="separator:a5bc59529b0ce5da6b39838c2bc79556e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d70d1e3c4fc05998ae502e5cc9831ea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a1d70d1e3c4fc05998ae502e5cc9831ea">ScheduleRegionSizeBudget</a> (&quot;slp-schedule-budget&quot;, cl::init(100000), cl::Hidden, cl::desc(&quot;Limit the size of the SLP scheduling region per block&quot;))</td></tr>
-<tr class="memdesc:a1d70d1e3c4fc05998ae502e5cc9831ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limits the size of scheduling regions in a block.  <a href="SLPVectorizer_8cpp.html#a1d70d1e3c4fc05998ae502e5cc9831ea">More...</a><br /></td></tr>
-<tr class="separator:a1d70d1e3c4fc05998ae502e5cc9831ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad694e5f5d4e351bd1ab0fa825e6ae319"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#ad694e5f5d4e351bd1ab0fa825e6ae319">MinVectorRegSizeOption</a> (&quot;slp-min-reg-size&quot;, cl::init(128), cl::Hidden, cl::desc(&quot;Attempt to vectorize for this register size in bits&quot;))</td></tr>
-<tr class="separator:ad694e5f5d4e351bd1ab0fa825e6ae319"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af496ac4d91174633d3f1a6794d03603d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#af496ac4d91174633d3f1a6794d03603d">RecursionMaxDepth</a> (&quot;slp-<a class="el" href="DeadArgumentElimination_8cpp.html#a05fa3b6b6c6cbc0732f37d9953bdf480">recursion</a>-max-depth&quot;, cl::init(12), cl::Hidden, cl::desc(&quot;Limit the <a class="el" href="DeadArgumentElimination_8cpp.html#a05fa3b6b6c6cbc0732f37d9953bdf480">recursion</a> depth when building a vectorizable tree&quot;))</td></tr>
-<tr class="separator:af496ac4d91174633d3f1a6794d03603d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af01b22e2be5259649042e2da6818a292"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#af01b22e2be5259649042e2da6818a292">MinTreeSize</a> (&quot;slp-min-tree-size&quot;, cl::init(3), cl::Hidden, cl::desc(&quot;Only vectorize small trees <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> they are fully vectorizable&quot;))</td></tr>
-<tr class="separator:af01b22e2be5259649042e2da6818a292"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a83f669bc1ecf94617c7451936421de"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a8a83f669bc1ecf94617c7451936421de">ViewSLPTree</a> (&quot;view-slp-tree&quot;, cl::Hidden, cl::desc(&quot;Display the SLP trees with Graphviz&quot;))</td></tr>
-<tr class="separator:a8a83f669bc1ecf94617c7451936421de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcc15b8825f5e5c6718e7f19a5094f55"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#adcc15b8825f5e5c6718e7f19a5094f55">isValidElementType</a> (Type *Ty)</td></tr>
-<tr class="memdesc:adcc15b8825f5e5c6718e7f19a5094f55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predicate for the element types that the SLP vectorizer supports.  <a href="SLPVectorizer_8cpp.html#adcc15b8825f5e5c6718e7f19a5094f55">More...</a><br /></td></tr>
-<tr class="separator:adcc15b8825f5e5c6718e7f19a5094f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd5114d6b451e9ca85a36fc3f19f76c4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#abd5114d6b451e9ca85a36fc3f19f76c4">allSameBlock</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; VL)</td></tr>
+<tr class="memitem:aa3ea54a95743867473d32853d3c65603"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#aa3ea54a95743867473d32853d3c65603">isValidElementType</a> (<a class="el" href="classllvm_1_1Type.html">Type</a> *Ty)</td></tr>
+<tr class="memdesc:aa3ea54a95743867473d32853d3c65603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predicate for the element types that the SLP vectorizer supports.  <a href="SLPVectorizer_8cpp.html#aa3ea54a95743867473d32853d3c65603">More...</a><br /></td></tr>
+<tr class="separator:aa3ea54a95743867473d32853d3c65603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd5114d6b451e9ca85a36fc3f19f76c4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#abd5114d6b451e9ca85a36fc3f19f76c4">allSameBlock</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; VL)</td></tr>
 <tr class="separator:abd5114d6b451e9ca85a36fc3f19f76c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7568c08b526dbf7f7b5402f3eb605b55"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a7568c08b526dbf7f7b5402f3eb605b55">allConstant</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; VL)</td></tr>
+<tr class="memitem:a7568c08b526dbf7f7b5402f3eb605b55"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a7568c08b526dbf7f7b5402f3eb605b55">allConstant</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; VL)</td></tr>
 <tr class="separator:a7568c08b526dbf7f7b5402f3eb605b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ef5b86735d738868e5fb00a18643b1c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a6ef5b86735d738868e5fb00a18643b1c">isSplat</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; VL)</td></tr>
+<tr class="memitem:a6ef5b86735d738868e5fb00a18643b1c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a6ef5b86735d738868e5fb00a18643b1c">isSplat</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; VL)</td></tr>
 <tr class="separator:a6ef5b86735d738868e5fb00a18643b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0da56db6da27340e5a7151a4676106a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#ab0da56db6da27340e5a7151a4676106a">isCommutative</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:ab0da56db6da27340e5a7151a4676106a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#ab0da56db6da27340e5a7151a4676106a">isCommutative</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="separator:ab0da56db6da27340e5a7151a4676106a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ff001ae4bec33ac20922ab80b0d2da2"><td class="memItemLeft" align="right" valign="top">static Optional&lt; TargetTransformInfo::ShuffleKind &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a4ff001ae4bec33ac20922ab80b0d2da2">isShuffle</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; VL)</td></tr>
+<tr class="memitem:a4ff001ae4bec33ac20922ab80b0d2da2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classllvm_1_1TargetTransformInfo.html#af46433d0e36d3f80afc3a8c67b5c53ec">TargetTransformInfo::ShuffleKind</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a4ff001ae4bec33ac20922ab80b0d2da2">isShuffle</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; VL)</td></tr>
 <tr class="memdesc:a4ff001ae4bec33ac20922ab80b0d2da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the vector of instructions can be represented as a shuffle, like: x0 = extractelement &lt;4 x i8&gt; x, i32 0 x3 = extractelement &lt;4 x i8&gt; x, i32 3 y1 = extractelement &lt;4 x i8&gt; y, i32 1 y2 = extractelement &lt;4 x i8&gt; y, i32 2 x0x0 = mul i8 x0, x0 x3x3 = mul i8 x3, x3 y1y1 = mul i8 y1, y1 y2y2 = mul i8 y2, y2 ins1 = insertelement &lt;4 x i8&gt; undef, i8 x0x0, i32 0 ins2 = insertelement &lt;4 x i8&gt; ins1, i8 x3x3, i32 1 ins3 = insertelement &lt;4 x i8&gt; ins2, i8 y1y1, i32 2 ins4 = insertelement &lt;4 x i8&gt; ins3, i8 y2y2, i32 3 ret &lt;4 x i8&gt; ins4 can be transformed into: %1 = shufflevector &lt;4 x i8&gt; x, &lt;4 x i8&gt; y, &lt;4 x i32&gt; &lt;i32 0, i32 3, i32 5, i32 6&gt; %2 = mul &lt;4 x i8&gt; %1, %1 ret &lt;4 x i8&gt; %2 We convert this initially to something like: x0 = extractelement &lt;4 x i8&gt; x, i32 0 x3 = extractelement &lt;4 x i8&gt; x, i32 3 y1 = extractelement &lt;4 x i8&gt; y, i32 1 y2 = extractelement &lt;4 x i8&gt; y, i32 2 %1 = insertelement &lt;4 x i8&gt; undef, i8 x0, i32 0 %2 = insertelement &lt;4 x i8&gt; %1, i8 x3, i32 1 %3 = insertelement &lt;4 x i8&gt; %2, i8 y1, i32 2 %4 = insertelement &lt;4 x i8&gt; %3, i8 y2, i32 3 %5 = mul &lt;4 x i8&gt; %4, %4 %6 = extractelement &lt;4 x i8&gt; %5, i32 0 ins1 = insertelement &lt;4 x i8&gt; undef, i8 %6, i32 0 %7 = extractelement &lt;4 x i8&gt; %5, i32 1 ins2 = insertelement &lt;4 x i8&gt; ins1, i8 %7, i32 1 %8 = extractelement &lt;4 x i8&gt; %5, i32 2 ins3 = insertelement &lt;4 x i8&gt; ins2, i8 %8, i32 2 %9 = extractelement &lt;4 x i8&gt; %5, i32 3 ins4 = insertelement &lt;4 x i8&gt; ins3, i8 %9, i32 3 ret &lt;4 x i8&gt; ins4 InstCombiner transforms this into a shuffle and vector mul TODO: Can we split off and reuse the shuffle mask detection from TargetTransformInfo::getInstructionThroughput?  <a href="SLPVectorizer_8cpp.html#a4ff001ae4bec33ac20922ab80b0d2da2">More...</a><br /></td></tr>
 <tr class="separator:a4ff001ae4bec33ac20922ab80b0d2da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a119e14ec060ce3f75acefac34c082bad"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a119e14ec060ce3f75acefac34c082bad">isOneOf</a> (const InstructionsState &amp;S, Value *Op)</td></tr>
+<tr class="memitem:a119e14ec060ce3f75acefac34c082bad"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a119e14ec060ce3f75acefac34c082bad">isOneOf</a> (const InstructionsState &amp;S, <a class="el" href="classllvm_1_1Value.html">Value</a> *Op)</td></tr>
 <tr class="memdesc:a119e14ec060ce3f75acefac34c082bad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chooses the correct key for scheduling data.  <a href="SLPVectorizer_8cpp.html#a119e14ec060ce3f75acefac34c082bad">More...</a><br /></td></tr>
 <tr class="separator:a119e14ec060ce3f75acefac34c082bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15ac13de9baf57a57ba81c1b50c059dd"><td class="memItemLeft" align="right" valign="top">static InstructionsState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a15ac13de9baf57a57ba81c1b50c059dd">getSameOpcode</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; VL, unsigned BaseIndex=0)</td></tr>
+<tr class="memitem:a15ac13de9baf57a57ba81c1b50c059dd"><td class="memItemLeft" align="right" valign="top">static InstructionsState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a15ac13de9baf57a57ba81c1b50c059dd">getSameOpcode</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; VL, <a class="el" href="classunsigned.html">unsigned</a> BaseIndex=0)</td></tr>
 <tr class="separator:a15ac13de9baf57a57ba81c1b50c059dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabfbce373feafd33ca9e104d8b164ece"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#aabfbce373feafd33ca9e104d8b164ece">allSameType</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; VL)</td></tr>
+<tr class="memitem:aabfbce373feafd33ca9e104d8b164ece"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#aabfbce373feafd33ca9e104d8b164ece">allSameType</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; VL)</td></tr>
 <tr class="separator:aabfbce373feafd33ca9e104d8b164ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d601336b82553eb938d1f15351c8ce5"><td class="memItemLeft" align="right" valign="top">static Optional&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a4d601336b82553eb938d1f15351c8ce5">getExtractIndex</a> (Instruction *E)</td></tr>
+<tr class="memitem:a4d601336b82553eb938d1f15351c8ce5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a4d601336b82553eb938d1f15351c8ce5">getExtractIndex</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *E)</td></tr>
 <tr class="separator:a4d601336b82553eb938d1f15351c8ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afebd06edd5d7c956687d26be5c6040c1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#afebd06edd5d7c956687d26be5c6040c1">InTreeUserNeedToExtract</a> (Value *Scalar, Instruction *UserInst, TargetLibraryInfo *TLI)</td></tr>
+<tr class="memitem:afebd06edd5d7c956687d26be5c6040c1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#afebd06edd5d7c956687d26be5c6040c1">InTreeUserNeedToExtract</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *Scalar, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *UserInst, <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *TLI)</td></tr>
 <tr class="separator:afebd06edd5d7c956687d26be5c6040c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cd468738cbcd26ce7a75f2fa361790c"><td class="memItemLeft" align="right" valign="top">static MemoryLocation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a0cd468738cbcd26ce7a75f2fa361790c">getLocation</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, AliasAnalysis *AA)</td></tr>
+<tr class="memitem:a0cd468738cbcd26ce7a75f2fa361790c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a0cd468738cbcd26ce7a75f2fa361790c">getLocation</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *AA)</td></tr>
 <tr class="separator:a0cd468738cbcd26ce7a75f2fa361790c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ca9742688618517cc4690fb947fb609"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a3ca9742688618517cc4690fb947fb609">isSimple</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:a3ca9742688618517cc4690fb947fb609"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a3ca9742688618517cc4690fb947fb609">isSimple</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="separator:a3ca9742688618517cc4690fb947fb609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac18d96e97f0982c1fab5896d31597746"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#ac18d96e97f0982c1fab5896d31597746">inversePermutation</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; unsigned &gt; Indices, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; unsigned &gt; &amp;Mask)</td></tr>
+<tr class="memitem:ac18d96e97f0982c1fab5896d31597746"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#ac18d96e97f0982c1fab5896d31597746">inversePermutation</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; Indices, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; &amp;Mask)</td></tr>
 <tr class="separator:ac18d96e97f0982c1fab5896d31597746"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada3b8b509fcb2a84e3b9e3bd678ba27f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#ada3b8b509fcb2a84e3b9e3bd678ba27f">collectValuesToDemote</a> (Value *V, SmallPtrSetImpl&lt; Value * &gt; &amp;Expr, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;ToDemote, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;Roots)</td></tr>
+<tr class="memitem:ada3b8b509fcb2a84e3b9e3bd678ba27f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#ada3b8b509fcb2a84e3b9e3bd678ba27f">collectValuesToDemote</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;Expr, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;ToDemote, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;Roots)</td></tr>
 <tr class="separator:ada3b8b509fcb2a84e3b9e3bd678ba27f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45fcf5774db6a4f0b2eb38567f52fe86"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a45fcf5774db6a4f0b2eb38567f52fe86">hasValueBeenRAUWed</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; VL, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; WeakTrackingVH &gt; VH, unsigned SliceBegin, unsigned SliceSize)</td></tr>
+<tr class="memitem:a45fcf5774db6a4f0b2eb38567f52fe86"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a45fcf5774db6a4f0b2eb38567f52fe86">hasValueBeenRAUWed</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; VL, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1WeakTrackingVH.html">WeakTrackingVH</a> &gt; VH, <a class="el" href="classunsigned.html">unsigned</a> SliceBegin, <a class="el" href="classunsigned.html">unsigned</a> SliceSize)</td></tr>
 <tr class="memdesc:a45fcf5774db6a4f0b2eb38567f52fe86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that the Values in the slice in VL array are still existent in the WeakTrackingVH array.  <a href="SLPVectorizer_8cpp.html#a45fcf5774db6a4f0b2eb38567f52fe86">More...</a><br /></td></tr>
 <tr class="separator:a45fcf5774db6a4f0b2eb38567f52fe86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0edda58e11d0c9ba6d6e0f21cfdc3fe"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#ab0edda58e11d0c9ba6d6e0f21cfdc3fe">createRdxShuffleMask</a> (unsigned VecLen, unsigned NumEltsToRdx, bool IsPairwise, bool IsLeft, IRBuilder&lt;&gt; &amp;Builder)</td></tr>
+<tr class="memitem:ab0edda58e11d0c9ba6d6e0f21cfdc3fe"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#ab0edda58e11d0c9ba6d6e0f21cfdc3fe">createRdxShuffleMask</a> (<a class="el" href="classunsigned.html">unsigned</a> VecLen, <a class="el" href="classunsigned.html">unsigned</a> NumEltsToRdx, <a class="el" href="classbool.html">bool</a> IsPairwise, <a class="el" href="classbool.html">bool</a> IsLeft, <a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;Builder)</td></tr>
 <tr class="memdesc:ab0edda58e11d0c9ba6d6e0f21cfdc3fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a shuffle mask to be used in a reduction tree.  <a href="SLPVectorizer_8cpp.html#ab0edda58e11d0c9ba6d6e0f21cfdc3fe">More...</a><br /></td></tr>
 <tr class="separator:ab0edda58e11d0c9ba6d6e0f21cfdc3fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76b0618c25fd2d2573d9b2de94585020"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a76b0618c25fd2d2573d9b2de94585020">findBuildVector</a> (InsertElementInst *LastInsertElem, TargetTransformInfo *TTI, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;BuildVectorOpds, int &amp;UserCost)</td></tr>
+<tr class="memitem:a76b0618c25fd2d2573d9b2de94585020"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a76b0618c25fd2d2573d9b2de94585020">findBuildVector</a> (<a class="el" href="classllvm_1_1InsertElementInst.html">InsertElementInst</a> *LastInsertElem, <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> *TTI, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;BuildVectorOpds, int &amp;UserCost)</td></tr>
 <tr class="memdesc:a76b0618c25fd2d2573d9b2de94585020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recognize construction of vectors like ra = insertelement &lt;4 x float&gt; undef, float s0, i32 0 rb = insertelement &lt;4 x float&gt; ra, float s1, i32 1 rc = insertelement &lt;4 x float&gt; rb, float s2, i32 2 rd = insertelement &lt;4 x float&gt; rc, float s3, i32 3 starting from the last insertelement instruction.  <a href="SLPVectorizer_8cpp.html#a76b0618c25fd2d2573d9b2de94585020">More...</a><br /></td></tr>
 <tr class="separator:a76b0618c25fd2d2573d9b2de94585020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4f4407185ff51e0bb91bda924d6750c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#af4f4407185ff51e0bb91bda924d6750c">findBuildAggregate</a> (InsertValueInst *IV, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;BuildVectorOpds)</td></tr>
+<tr class="memitem:af4f4407185ff51e0bb91bda924d6750c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#af4f4407185ff51e0bb91bda924d6750c">findBuildAggregate</a> (<a class="el" href="classllvm_1_1InsertValueInst.html">InsertValueInst</a> *IV, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;BuildVectorOpds)</td></tr>
 <tr class="memdesc:af4f4407185ff51e0bb91bda924d6750c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like findBuildVector, but looks for construction of aggregate.  <a href="SLPVectorizer_8cpp.html#af4f4407185ff51e0bb91bda924d6750c">More...</a><br /></td></tr>
 <tr class="separator:af4f4407185ff51e0bb91bda924d6750c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3361ac29f4340e5920aa8285320536c6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a3361ac29f4340e5920aa8285320536c6">PhiTypeSorterFunc</a> (Value *V, Value *V2)</td></tr>
+<tr class="memitem:a3361ac29f4340e5920aa8285320536c6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a3361ac29f4340e5920aa8285320536c6">PhiTypeSorterFunc</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1Value.html">Value</a> *V2)</td></tr>
 <tr class="separator:a3361ac29f4340e5920aa8285320536c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adea28c0fb124d7a75dc182a7f7010655"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#adea28c0fb124d7a75dc182a7f7010655">getReductionValue</a> (const DominatorTree *DT, PHINode *<a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, BasicBlock *ParentBB, LoopInfo *LI)</td></tr>
+<tr class="memitem:adea28c0fb124d7a75dc182a7f7010655"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#adea28c0fb124d7a75dc182a7f7010655">getReductionValue</a> (const <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT, <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *<a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *ParentBB, <a class="el" href="classllvm_1_1LoopInfo.html">LoopInfo</a> *LI)</td></tr>
 <tr class="memdesc:adea28c0fb124d7a75dc182a7f7010655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try and get a reduction value from a phi node.  <a href="SLPVectorizer_8cpp.html#adea28c0fb124d7a75dc182a7f7010655">More...</a><br /></td></tr>
 <tr class="separator:adea28c0fb124d7a75dc182a7f7010655"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87767111a82c8278e09d73ed639e21fc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a87767111a82c8278e09d73ed639e21fc">tryToVectorizeHorReductionOrInstOperands</a> (PHINode *<a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, Instruction *Root, BasicBlock *BB, <a class="el" href="classllvm_1_1slpvectorizer_1_1BoUpSLP.html">BoUpSLP</a> &amp;R, TargetTransformInfo *TTI, const function_ref&lt; bool(Instruction *, <a class="el" href="classllvm_1_1slpvectorizer_1_1BoUpSLP.html">BoUpSLP</a> &amp;)&gt; Vectorize)</td></tr>
+<tr class="memitem:a87767111a82c8278e09d73ed639e21fc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a87767111a82c8278e09d73ed639e21fc">tryToVectorizeHorReductionOrInstOperands</a> (<a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *<a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Root, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB, <a class="el" href="classllvm_1_1slpvectorizer_1_1BoUpSLP.html">BoUpSLP</a> &amp;R, <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> *TTI, const function_ref&lt; <a class="el" href="classbool.html">bool</a>(<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, <a class="el" href="classllvm_1_1slpvectorizer_1_1BoUpSLP.html">BoUpSLP</a> &amp;)&gt; Vectorize)</td></tr>
 <tr class="memdesc:a87767111a82c8278e09d73ed639e21fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to reduce a horizontal reduction.  <a href="SLPVectorizer_8cpp.html#a87767111a82c8278e09d73ed639e21fc">More...</a><br /></td></tr>
 <tr class="separator:a87767111a82c8278e09d73ed639e21fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a9d624115133c3a9ac3109be4be89a32f"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a9d624115133c3a9ac3109be4be89a32f">AliasedCheckLimit</a> = 10</td></tr>
+<tr class="memitem:a704fbec676f53c0e32a778dcd57d21d9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a704fbec676f53c0e32a778dcd57d21d9">SLPCostThreshold</a> (&quot;slp-threshold&quot;, cl::init(0), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Only vectorize <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> you gain more than this &quot; &quot;number &quot;))</td></tr>
+<tr class="separator:a704fbec676f53c0e32a778dcd57d21d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67d4a829531287f2d81c7a306b52a4d7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a67d4a829531287f2d81c7a306b52a4d7">ShouldVectorizeHor</a> (&quot;slp-vectorize-hor&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Attempt to vectorize horizontal reductions&quot;))</td></tr>
+<tr class="separator:a67d4a829531287f2d81c7a306b52a4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81dd3124ab70c150ac09a8bb9b921de8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a81dd3124ab70c150ac09a8bb9b921de8">ShouldStartVectorizeHorAtStore</a> (&quot;slp-vectorize-hor-store&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Attempt to vectorize horizontal reductions feeding into a store&quot;))</td></tr>
+<tr class="separator:a81dd3124ab70c150ac09a8bb9b921de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ca809da394247bba762653f861875a1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a1ca809da394247bba762653f861875a1">MaxVectorRegSizeOption</a> (&quot;slp-max-reg-size&quot;, cl::init(128), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Attempt to vectorize for this register size in bits&quot;))</td></tr>
+<tr class="separator:a1ca809da394247bba762653f861875a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfadb82d555661f3a7010a5ff6778e8a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#acfadb82d555661f3a7010a5ff6778e8a">ScheduleRegionSizeBudget</a> (&quot;slp-schedule-budget&quot;, cl::init(100000), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Limit the size of the SLP scheduling region per block&quot;))</td></tr>
+<tr class="memdesc:acfadb82d555661f3a7010a5ff6778e8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limits the size of scheduling regions in a block.  <a href="SLPVectorizer_8cpp.html#acfadb82d555661f3a7010a5ff6778e8a">More...</a><br /></td></tr>
+<tr class="separator:acfadb82d555661f3a7010a5ff6778e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4b62196a6175779b466b2e8f0e5cc12"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#ad4b62196a6175779b466b2e8f0e5cc12">MinVectorRegSizeOption</a> (&quot;slp-min-reg-size&quot;, cl::init(128), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Attempt to vectorize for this register size in bits&quot;))</td></tr>
+<tr class="separator:ad4b62196a6175779b466b2e8f0e5cc12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbff8697d64e4ee139aa777b68999872"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#adbff8697d64e4ee139aa777b68999872">RecursionMaxDepth</a> (&quot;slp-<a class="el" href="DeadArgumentElimination_8cpp.html#a05fa3b6b6c6cbc0732f37d9953bdf480">recursion</a>-max-depth&quot;, cl::init(12), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Limit the <a class="el" href="DeadArgumentElimination_8cpp.html#a05fa3b6b6c6cbc0732f37d9953bdf480">recursion</a> depth when building a vectorizable tree&quot;))</td></tr>
+<tr class="separator:adbff8697d64e4ee139aa777b68999872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630e10d123952904d5da8a02713d935a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a630e10d123952904d5da8a02713d935a">MinTreeSize</a> (&quot;slp-min-tree-size&quot;, cl::init(3), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Only vectorize small trees <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> they are fully vectorizable&quot;))</td></tr>
+<tr class="separator:a630e10d123952904d5da8a02713d935a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a565c181d9f5686f1c52dee18510cb8a1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a565c181d9f5686f1c52dee18510cb8a1">ViewSLPTree</a> (&quot;view-slp-tree&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Display the SLP trees with Graphviz&quot;))</td></tr>
+<tr class="separator:a565c181d9f5686f1c52dee18510cb8a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d624115133c3a9ac3109be4be89a32f"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a9d624115133c3a9ac3109be4be89a32f">AliasedCheckLimit</a> = 10</td></tr>
 <tr class="separator:a9d624115133c3a9ac3109be4be89a32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ce8fdf40e75ddf217650e2b1b15b5e6"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a4ce8fdf40e75ddf217650e2b1b15b5e6">MaxMemDepDistance</a> = 160</td></tr>
+<tr class="memitem:a4ce8fdf40e75ddf217650e2b1b15b5e6"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a4ce8fdf40e75ddf217650e2b1b15b5e6">MaxMemDepDistance</a> = 160</td></tr>
 <tr class="separator:a4ce8fdf40e75ddf217650e2b1b15b5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d78104bfada8d17dad04e588b7d9a17"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a3d78104bfada8d17dad04e588b7d9a17">MinScheduleRegionSize</a> = 16</td></tr>
 <tr class="memdesc:a3d78104bfada8d17dad04e588b7d9a17"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the ScheduleRegionSizeBudget is exhausted, we allow small scheduling regions to be handled.  <a href="SLPVectorizer_8cpp.html#a3d78104bfada8d17dad04e588b7d9a17">More...</a><br /></td></tr>
 <tr class="separator:a3d78104bfada8d17dad04e588b7d9a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ce679c74f9d5aa21d8ea3d1a798f0a9"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a5ce679c74f9d5aa21d8ea3d1a798f0a9">lv_name</a> [] = &quot;SLP Vectorizer&quot;</td></tr>
+<tr class="memitem:a5ce679c74f9d5aa21d8ea3d1a798f0a9"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SLPVectorizer_8cpp.html#a5ce679c74f9d5aa21d8ea3d1a798f0a9">lv_name</a> [] = &quot;SLP Vectorizer&quot;</td></tr>
 <tr class="separator:a5ce679c74f9d5aa21d8ea3d1a798f0a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -312,9 +314,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool allConstant </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> allConstant </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
           <td class="paramname"><em>VL</em></td><td>)</td>
           <td></td>
         </tr>
@@ -341,9 +343,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool allSameBlock </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> allSameBlock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
           <td class="paramname"><em>VL</em></td><td>)</td>
           <td></td>
         </tr>
@@ -358,7 +360,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SLPVectorizer_8cpp_source.html#l00181">181</a> of file <a class="el" href="SLPVectorizer_8cpp_source.html">SLPVectorizer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -372,9 +374,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool allSameType </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> allSameType </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
           <td class="paramname"><em>VL</em></td><td>)</td>
           <td></td>
         </tr>
@@ -403,27 +405,27 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool collectValuesToDemote </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> collectValuesToDemote </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SmallPtrSetImpl&lt; Value * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Expr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>ToDemote</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Roots</em>&#160;</td>
         </tr>
         <tr>
@@ -441,7 +443,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SLPVectorizer_8cpp_source.html#l04754">4754</a> of file <a class="el" href="SLPVectorizer_8cpp_source.html">SLPVectorizer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SLPVectorizer_8cpp_source.html#l04754">collectValuesToDemote()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="Instructions_8h_source.html#l00713">llvm::AtomicRMWInst::And</a>, <a class="el" href="SLPVectorizer_8cpp_source.html#l04754">collectValuesToDemote()</a>, <a class="el" href="Instructions_8h_source.html#l01758">llvm::SelectInst::getFalseValue()</a>, <a class="el" href="Instructions_8h_source.html#l01757">llvm::SelectInst::getTrueValue()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Instructions_8h_source.html#l02624">llvm::PHINode::incoming_values()</a>, <a class="el" href="Instructions_8h_source.html#l00717">llvm::AtomicRMWInst::Or</a>, <a class="el" href="Instructions_8h_source.html#l00711">llvm::AtomicRMWInst::Sub</a>, and <a class="el" href="Instructions_8h_source.html#l00719">llvm::AtomicRMWInst::Xor</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l04754">collectValuesToDemote()</a>, and <a class="el" href="SLPVectorizer_8cpp_source.html#l04822">llvm::slpvectorizer::BoUpSLP::computeMinimumValueSizes()</a>.</p>
 
@@ -457,33 +459,33 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * createRdxShuffleMask </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * createRdxShuffleMask </td>
           <td>(</td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>VecLen</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>NumEltsToRdx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>IsPairwise</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>IsLeft</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>Builder</em>&#160;</td>
         </tr>
         <tr>
@@ -512,7 +514,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SLPVectorizer_8cpp_source.html#l05471">5471</a> of file <a class="el" href="SLPVectorizer_8cpp_source.html">SLPVectorizer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="IRBuilder_8h_source.html#l00343">llvm::IRBuilderBase::getInt32()</a>, and <a class="el" href="IRBuilder_8h_source.html#l00383">llvm::IRBuilderBase::getInt32Ty()</a>.</p>
 
 </div>
 </div>
@@ -526,15 +528,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool findBuildAggregate </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> findBuildAggregate </td>
           <td>(</td>
-          <td class="paramtype">InsertValueInst *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1InsertValueInst.html">InsertValueInst</a> *&#160;</td>
           <td class="paramname"><em>IV</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>BuildVectorOpds</em>&#160;</td>
         </tr>
         <tr>
@@ -555,6 +557,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SLPVectorizer_8cpp_source.html#l06430">6430</a> of file <a class="el" href="SLPVectorizer_8cpp_source.html">SLPVectorizer.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Instructions_8h_source.html#l02458">llvm::InsertValueInst::getAggregateOperand()</a>, <a class="el" href="Instructions_8h_source.html#l02468">llvm::InsertValueInst::getInsertedValueOperand()</a>, and <a class="el" href="Value_8h_source.html#l00412">llvm::Value::hasOneUse()</a>.</p>
+
 </div>
 </div>
 <a id="a76b0618c25fd2d2573d9b2de94585020" name="a76b0618c25fd2d2573d9b2de94585020"></a>
@@ -567,21 +571,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool findBuildVector </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> findBuildVector </td>
           <td>(</td>
-          <td class="paramtype">InsertElementInst *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1InsertElementInst.html">InsertElementInst</a> *&#160;</td>
           <td class="paramname"><em>LastInsertElem</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">TargetTransformInfo *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> *&#160;</td>
           <td class="paramname"><em>TTI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>BuildVectorOpds</em>, </td>
         </tr>
         <tr>
@@ -608,6 +612,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SLPVectorizer_8cpp_source.html#l06403">6403</a> of file <a class="el" href="SLPVectorizer_8cpp_source.html">SLPVectorizer.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Instructions_8h_source.html#l01937">llvm::InsertElementInst::getType()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00628">llvm::TargetTransformInfo::getVectorInstrCost()</a>, and <a class="el" href="Value_8h_source.html#l00412">llvm::Value::hasOneUse()</a>.</p>
+
 </div>
 </div>
 <a id="a4d601336b82553eb938d1f15351c8ce5" name="a4d601336b82553eb938d1f15351c8ce5"></a>
@@ -620,9 +626,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Optional&lt; unsigned &gt; getExtractIndex </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; getExtractIndex </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>E</em></td><td>)</td>
           <td></td>
         </tr>
@@ -637,7 +643,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SLPVectorizer_8cpp_source.html#l00417">417</a> of file <a class="el" href="SLPVectorizer_8cpp_source.html">SLPVectorizer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Instructions_8h_source.html#l02351">llvm::ExtractValueInst::getNumIndices()</a>, <a class="el" href="Instructions_8h_source.html#l02331">llvm::ExtractValueInst::idx_begin()</a>, and <a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870a6adf97f83acf6453d4a6a4b1070f3754">llvm::None</a>.</p>
 
 </div>
 </div>
@@ -651,15 +657,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static MemoryLocation getLocation </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> getLocation </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">AliasAnalysis *&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *&#160;</td>
           <td class="paramname"><em>AA</em>&#160;</td>
         </tr>
         <tr>
@@ -678,7 +684,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SLPVectorizer_8cpp_source.html#l00463">463</a> of file <a class="el" href="SLPVectorizer_8cpp_source.html">SLPVectorizer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="MemoryLocation_8cpp_source.html#l00034">llvm::MemoryLocation::get()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -692,27 +698,27 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * getReductionValue </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * getReductionValue </td>
           <td>(</td>
-          <td class="paramtype">const DominatorTree *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">PHINode *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *&#160;</td>
           <td class="paramname"><em>P</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>ParentBB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">LoopInfo *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1LoopInfo.html">LoopInfo</a> *&#160;</td>
           <td class="paramname"><em>LI</em>&#160;</td>
         </tr>
         <tr>
@@ -735,7 +741,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SLPVectorizer_8cpp_source.html#l06457">6457</a> of file <a class="el" href="SLPVectorizer_8cpp_source.html">SLPVectorizer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>.</p>
+<p class="reference">References <a class="el" href="Dominators_8cpp_source.html#l00248">llvm::DominatorTree::dominates()</a>, <a class="el" href="LoopInfo_8h_source.html#l00897">llvm::LoopInfoBase&lt; BlockT, LoopT &gt;::getLoopFor()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00211">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopLatch()</a>, and <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>.</p>
 
 </div>
 </div>
@@ -751,13 +757,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static InstructionsState getSameOpcode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
           <td class="paramname"><em>VL</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>BaseIndex</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -788,27 +794,27 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool hasValueBeenRAUWed </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> hasValueBeenRAUWed </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
           <td class="paramname"><em>VL</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; WeakTrackingVH &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1WeakTrackingVH.html">WeakTrackingVH</a> &gt;&#160;</td>
           <td class="paramname"><em>VH</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>SliceBegin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>SliceSize</em>&#160;</td>
         </tr>
         <tr>
@@ -841,21 +847,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool InTreeUserNeedToExtract </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> InTreeUserNeedToExtract </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>Scalar</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>UserInst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">TargetLibraryInfo *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *&#160;</td>
           <td class="paramname"><em>TLI</em>&#160;</td>
         </tr>
         <tr>
@@ -874,6 +880,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SLPVectorizer_8cpp_source.html#l00436">436</a> of file <a class="el" href="SLPVectorizer_8cpp_source.html">SLPVectorizer.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="InstrTypes_8h_source.html#l01239">llvm::CallBase::getNumArgOperands()</a>, <a class="el" href="Instruction_8h_source.html#l00125">llvm::Instruction::getOpcode()</a>, <a class="el" href="Instructions_8h_source.html#l00284">llvm::LoadInst::getPointerOperand()</a>, <a class="el" href="Instructions_8h_source.html#l00412">llvm::StoreInst::getPointerOperand()</a>, <a class="el" href="VectorUtils_8cpp_source.html#l00110">llvm::getVectorIntrinsicIDForCall()</a>, <a class="el" href="VectorUtils_8cpp_source.html#l00091">llvm::hasVectorInstrinsicScalarOpd()</a>, and <a class="el" href="Compiler_8h_source.html#l00250">LLVM_FALLTHROUGH</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l01954">llvm::slpvectorizer::BoUpSLP::buildTree()</a>.</p>
 
 </div>
@@ -890,13 +898,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void inversePermutation </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; unsigned &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td>
           <td class="paramname"><em>Indices</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; unsigned &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>Mask</em>&#160;</td>
         </tr>
         <tr>
@@ -928,9 +936,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isCommutative </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isCommutative </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -959,7 +967,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * isOneOf </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * isOneOf </td>
           <td>(</td>
           <td class="paramtype">const InstructionsState &amp;&#160;</td>
           <td class="paramname"><em>S</em>, </td>
@@ -967,7 +975,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>Op</em>&#160;</td>
         </tr>
         <tr>
@@ -1002,9 +1010,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Optional&lt; TargetTransformInfo::ShuffleKind &gt; isShuffle </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classllvm_1_1TargetTransformInfo.html#af46433d0e36d3f80afc3a8c67b5c53ec">TargetTransformInfo::ShuffleKind</a> &gt; isShuffle </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
           <td class="paramname"><em>VL</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1020,7 +1028,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SLPVectorizer_8cpp_source.html#l00262">262</a> of file <a class="el" href="SLPVectorizer_8cpp_source.html">SLPVectorizer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>, and <a class="el" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>, <a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870a6adf97f83acf6453d4a6a4b1070f3754">llvm::None</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00763">llvm::TargetTransformInfo::SK_PermuteSingleSrc</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00761">llvm::TargetTransformInfo::SK_PermuteTwoSrc</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00755">llvm::TargetTransformInfo::SK_Select</a>, and <a class="el" href="namespacellvm.html#a5d56157a385f8cd7d3e54ed87da1ba6aa88183b946cc5f0e8c96b2e66e1c74a7e">llvm::Unknown</a>.</p>
 
 </div>
 </div>
@@ -1034,9 +1042,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isSimple </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isSimple </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1053,7 +1061,7 @@ Variables</h2></td></tr>
 
 <p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DomPrinter_8cpp_source.html#l00033">llvm::DOTGraphTraits&lt; DomTreeNode * &gt;::getNodeLabel()</a>, and <a class="el" href="RegionPrinter_8cpp_source.html#l00043">llvm::DOTGraphTraits&lt; RegionNode * &gt;::getNodeLabel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CFGPrinter_8h_source.html#l00119">llvm::DOTGraphTraits&lt; const Function * &gt;::getNodeLabel()</a>, <a class="el" href="DomPrinter_8cpp_source.html#l00033">llvm::DOTGraphTraits&lt; DomTreeNode * &gt;::getNodeLabel()</a>, and <a class="el" href="RegionPrinter_8cpp_source.html#l00043">llvm::DOTGraphTraits&lt; RegionNode * &gt;::getNodeLabel()</a>.</p>
 
 </div>
 </div>
@@ -1067,9 +1075,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isSplat </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isSplat </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
           <td class="paramname"><em>VL</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1088,8 +1096,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="adcc15b8825f5e5c6718e7f19a5094f55" name="adcc15b8825f5e5c6718e7f19a5094f55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcc15b8825f5e5c6718e7f19a5094f55">&#9670;&nbsp;</a></span>isValidElementType()</h2>
+<a id="aa3ea54a95743867473d32853d3c65603" name="aa3ea54a95743867473d32853d3c65603"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3ea54a95743867473d32853d3c65603">&#9670;&nbsp;</a></span>isValidElementType()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1098,9 +1106,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool PointerType::isValidElementType </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isValidElementType </td>
           <td>(</td>
-          <td class="paramtype">Type *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
           <td class="paramname"><em>Ty</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1117,157 +1125,9 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SLPVectorizer_8cpp_source.html#l00174">174</a> of file <a class="el" href="SLPVectorizer_8cpp_source.html">SLPVectorizer.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Type_8h_source.html#l00158">llvm::Type::isPPC_FP128Ty()</a>, <a class="el" href="Type_8cpp_source.html#l00623">llvm::VectorType::isValidElementType()</a>, and <a class="el" href="Type_8h_source.html#l00152">llvm::Type::isX86_FP80Ty()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l02612">llvm::slpvectorizer::BoUpSLP::canMapToVector()</a>.</p>
-
-</div>
-</div>
-<a id="a5bc59529b0ce5da6b39838c2bc79556e" name="a5bc59529b0ce5da6b39838c2bc79556e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bc59529b0ce5da6b39838c2bc79556e">&#9670;&nbsp;</a></span>MaxVectorRegSizeOption()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; MaxVectorRegSizeOption </td>
-          <td>(</td>
-          <td class="paramtype">&quot;slp-max-reg-size&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(128)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Attempt to vectorize for this register size in bits&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l00498">llvm::slpvectorizer::BoUpSLP::BoUpSLP()</a>.</p>
-
-</div>
-</div>
-<a id="af01b22e2be5259649042e2da6818a292" name="af01b22e2be5259649042e2da6818a292"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af01b22e2be5259649042e2da6818a292">&#9670;&nbsp;</a></span>MinTreeSize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; MinTreeSize </td>
-          <td>(</td>
-          <td class="paramtype">&quot;slp-min-tree-size&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(3)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Only vectorize small trees <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> they are fully vectorizable&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l03101">llvm::slpvectorizer::BoUpSLP::isTreeTinyAndNotFullyVectorizable()</a>.</p>
-
-</div>
-</div>
-<a id="ad694e5f5d4e351bd1ab0fa825e6ae319" name="ad694e5f5d4e351bd1ab0fa825e6ae319"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad694e5f5d4e351bd1ab0fa825e6ae319">&#9670;&nbsp;</a></span>MinVectorRegSizeOption()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; MinVectorRegSizeOption </td>
-          <td>(</td>
-          <td class="paramtype">&quot;slp-min-reg-size&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(128)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Attempt to vectorize for this register size in bits&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l00498">llvm::slpvectorizer::BoUpSLP::BoUpSLP()</a>.</p>
 
 </div>
 </div>
@@ -1281,15 +1141,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool PhiTypeSorterFunc </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> PhiTypeSorterFunc </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V2</em>&#160;</td>
         </tr>
         <tr>
@@ -1307,252 +1167,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SLPVectorizer_8cpp_source.html#l06446">6446</a> of file <a class="el" href="SLPVectorizer_8cpp_source.html">SLPVectorizer.cpp</a>.</p>
 
-</div>
-</div>
-<a id="af496ac4d91174633d3f1a6794d03603d" name="af496ac4d91174633d3f1a6794d03603d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af496ac4d91174633d3f1a6794d03603d">&#9670;&nbsp;</a></span>RecursionMaxDepth()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; RecursionMaxDepth </td>
-          <td>(</td>
-          <td class="paramtype">&quot;slp-<a class="el" href="DeadArgumentElimination_8cpp.html#a05fa3b6b6c6cbc0732f37d9953bdf480">recursion</a>-max-depth&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(12)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Limit the <a class="el" href="DeadArgumentElimination_8cpp.html#a05fa3b6b6c6cbc0732f37d9953bdf480">recursion</a> depth when building a vectorizable tree&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l06512">tryToVectorizeHorReductionOrInstOperands()</a>.</p>
-
-</div>
-</div>
-<a id="a1d70d1e3c4fc05998ae502e5cc9831ea" name="a1d70d1e3c4fc05998ae502e5cc9831ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d70d1e3c4fc05998ae502e5cc9831ea">&#9670;&nbsp;</a></span>ScheduleRegionSizeBudget()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; ScheduleRegionSizeBudget </td>
-          <td>(</td>
-          <td class="paramtype">&quot;slp-schedule-budget&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(100000)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Limit the size of the SLP scheduling region per block&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Limits the size of scheduling regions in a block. </p>
-<p >It avoid long compile times for <em>very</em> large blocks where vector instructions are spread over a wide range. This limit is way higher than needed by real-world functions. </p>
-
-</div>
-</div>
-<a id="acc49ed8e85692a2ddd2007dcd4f283b6" name="acc49ed8e85692a2ddd2007dcd4f283b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc49ed8e85692a2ddd2007dcd4f283b6">&#9670;&nbsp;</a></span>ShouldStartVectorizeHorAtStore()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ShouldStartVectorizeHorAtStore </td>
-          <td>(</td>
-          <td class="paramtype">&quot;slp-vectorize-hor-store&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Attempt to vectorize horizontal reductions feeding into a store&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a990230d1fc14f4b06a496ff7a4b901fa" name="a990230d1fc14f4b06a496ff7a4b901fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a990230d1fc14f4b06a496ff7a4b901fa">&#9670;&nbsp;</a></span>ShouldVectorizeHor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ShouldVectorizeHor </td>
-          <td>(</td>
-          <td class="paramtype">&quot;slp-vectorize-hor&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Attempt to vectorize horizontal reductions&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l06512">tryToVectorizeHorReductionOrInstOperands()</a>.</p>
-
-</div>
-</div>
-<a id="a043a8336eb4f346f6cb7f88be4ed611c" name="a043a8336eb4f346f6cb7f88be4ed611c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a043a8336eb4f346f6cb7f88be4ed611c">&#9670;&nbsp;</a></span>SLPCostThreshold()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; SLPCostThreshold </td>
-          <td>(</td>
-          <td class="paramtype">&quot;slp-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(0)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Only vectorize <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> you gain more than this &quot; &quot;number &quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p class="reference">References <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>.</p>
 
 </div>
 </div>
@@ -1594,21 +1209,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool tryToVectorizeHorReductionOrInstOperands </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> tryToVectorizeHorReductionOrInstOperands </td>
           <td>(</td>
-          <td class="paramtype">PHINode *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *&#160;</td>
           <td class="paramname"><em>P</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>Root</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
@@ -1620,13 +1235,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">TargetTransformInfo *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> *&#160;</td>
           <td class="paramname"><em>TTI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const function_ref&lt; bool(Instruction *, <a class="el" href="classllvm_1_1slpvectorizer_1_1BoUpSLP.html">BoUpSLP</a> &amp;)&gt;&#160;</td>
+          <td class="paramtype">const function_ref&lt; <a class="el" href="classbool.html">bool</a>(<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, <a class="el" href="classllvm_1_1slpvectorizer_1_1BoUpSLP.html">BoUpSLP</a> &amp;)&gt;&#160;</td>
           <td class="paramname"><em>Vectorize</em>&#160;</td>
         </tr>
         <tr>
@@ -1649,51 +1264,7 @@ false if a horizontal reduction was not matched (or not possible) or no vectoriz
 
 <p class="definition">Definition at line <a class="el" href="SLPVectorizer_8cpp_source.html#l06512">6512</a> of file <a class="el" href="SLPVectorizer_8cpp_source.html">SLPVectorizer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="SLPVectorizer_8cpp.html#af496ac4d91174633d3f1a6794d03603d">RecursionMaxDepth()</a>, and <a class="el" href="SLPVectorizer_8cpp.html#a990230d1fc14f4b06a496ff7a4b901fa">ShouldVectorizeHor()</a>.</p>
-
-</div>
-</div>
-<a id="a8a83f669bc1ecf94617c7451936421de" name="a8a83f669bc1ecf94617c7451936421de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a83f669bc1ecf94617c7451936421de">&#9670;&nbsp;</a></span>ViewSLPTree()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ViewSLPTree </td>
-          <td>(</td>
-          <td class="paramtype">&quot;view-slp-tree&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Display the SLP trees with Graphviz&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l03190">llvm::slpvectorizer::BoUpSLP::getTreeCost()</a>.</p>
+<p class="reference">References <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="SLPVectorizer_8cpp.html#adbff8697d64e4ee139aa777b68999872">RecursionMaxDepth</a>, and <a class="el" href="SLPVectorizer_8cpp.html#a67d4a829531287f2d81c7a306b52a4d7">ShouldVectorizeHor</a>.</p>
 
 </div>
 </div>
@@ -1708,7 +1279,7 @@ false if a horizontal reduction was not matched (or not possible) or no vectoriz
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const unsigned AliasedCheckLimit = 10</td>
+          <td class="memname">const <a class="el" href="classunsigned.html">unsigned</a> AliasedCheckLimit = 10</td>
         </tr>
       </table>
   </td>
@@ -1732,7 +1303,7 @@ false if a horizontal reduction was not matched (or not possible) or no vectoriz
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char lv_name[] = &quot;SLP Vectorizer&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a> lv_name[] = &quot;SLP Vectorizer&quot;</td>
         </tr>
       </table>
   </td>
@@ -1756,7 +1327,7 @@ false if a horizontal reduction was not matched (or not possible) or no vectoriz
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const unsigned MaxMemDepDistance = 160</td>
+          <td class="memname">const <a class="el" href="classunsigned.html">unsigned</a> MaxMemDepDistance = 160</td>
         </tr>
       </table>
   </td>
@@ -1767,6 +1338,56 @@ false if a horizontal reduction was not matched (or not possible) or no vectoriz
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="SLPVectorizer_8cpp_source.html#l00161">161</a> of file <a class="el" href="SLPVectorizer_8cpp_source.html">SLPVectorizer.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1ca809da394247bba762653f861875a1" name="a1ca809da394247bba762653f861875a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca809da394247bba762653f861875a1">&#9670;&nbsp;</a></span>MaxVectorRegSizeOption</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; MaxVectorRegSizeOption(&quot;slp-max-reg-size&quot;, cl::init(128), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Attempt to vectorize for this register size in bits&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;slp-max-reg-size&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(128)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Attempt to vectorize for this register size in bits&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l00498">llvm::slpvectorizer::BoUpSLP::BoUpSLP()</a>.</p>
 
 </div>
 </div>
@@ -1796,10 +1417,401 @@ false if a horizontal reduction was not matched (or not possible) or no vectoriz
 
 </div>
 </div>
+<a id="a630e10d123952904d5da8a02713d935a" name="a630e10d123952904d5da8a02713d935a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630e10d123952904d5da8a02713d935a">&#9670;&nbsp;</a></span>MinTreeSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; MinTreeSize(&quot;slp-min-tree-size&quot;, cl::init(3), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Only vectorize small trees <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> they are fully vectorizable&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;slp-min-tree-size&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(3)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Only vectorize small trees <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> they are fully vectorizable&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l03101">llvm::slpvectorizer::BoUpSLP::isTreeTinyAndNotFullyVectorizable()</a>.</p>
+
+</div>
+</div>
+<a id="ad4b62196a6175779b466b2e8f0e5cc12" name="ad4b62196a6175779b466b2e8f0e5cc12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4b62196a6175779b466b2e8f0e5cc12">&#9670;&nbsp;</a></span>MinVectorRegSizeOption</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; MinVectorRegSizeOption(&quot;slp-min-reg-size&quot;, cl::init(128), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Attempt to vectorize for this register size in bits&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;slp-min-reg-size&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(128)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Attempt to vectorize for this register size in bits&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l00498">llvm::slpvectorizer::BoUpSLP::BoUpSLP()</a>.</p>
+
+</div>
+</div>
+<a id="adbff8697d64e4ee139aa777b68999872" name="adbff8697d64e4ee139aa777b68999872"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbff8697d64e4ee139aa777b68999872">&#9670;&nbsp;</a></span>RecursionMaxDepth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; RecursionMaxDepth(&quot;slp-<a class="el" href="DeadArgumentElimination_8cpp.html#a05fa3b6b6c6cbc0732f37d9953bdf480">recursion</a>-max-depth&quot;, cl::init(12), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Limit the <a class="el" href="DeadArgumentElimination_8cpp.html#a05fa3b6b6c6cbc0732f37d9953bdf480">recursion</a> depth when building a vectorizable tree&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;slp-<a class="el" href="DeadArgumentElimination_8cpp.html#a05fa3b6b6c6cbc0732f37d9953bdf480">recursion</a>-max-depth&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(12)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Limit the <a class="el" href="DeadArgumentElimination_8cpp.html#a05fa3b6b6c6cbc0732f37d9953bdf480">recursion</a> depth when building a vectorizable tree&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l06512">tryToVectorizeHorReductionOrInstOperands()</a>.</p>
+
+</div>
+</div>
+<a id="acfadb82d555661f3a7010a5ff6778e8a" name="acfadb82d555661f3a7010a5ff6778e8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfadb82d555661f3a7010a5ff6778e8a">&#9670;&nbsp;</a></span>ScheduleRegionSizeBudget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; ScheduleRegionSizeBudget(&quot;slp-schedule-budget&quot;, cl::init(100000), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Limit the size of the SLP scheduling region per block&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;slp-schedule-budget&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(100000)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Limit the size of the SLP scheduling region per block&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Limits the size of scheduling regions in a block. </p>
+<p >It avoid long compile times for <em>very</em> large blocks where vector instructions are spread over a wide range. This limit is way higher than needed by real-world functions. </p>
+
+</div>
+</div>
+<a id="a81dd3124ab70c150ac09a8bb9b921de8" name="a81dd3124ab70c150ac09a8bb9b921de8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81dd3124ab70c150ac09a8bb9b921de8">&#9670;&nbsp;</a></span>ShouldStartVectorizeHorAtStore</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ShouldStartVectorizeHorAtStore(&quot;slp-vectorize-hor-store&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>( &quot;Attempt to vectorize horizontal reductions feeding into a store&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;slp-vectorize-hor-store&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>( &quot;Attempt to vectorize horizontal reductions feeding into a store&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a67d4a829531287f2d81c7a306b52a4d7" name="a67d4a829531287f2d81c7a306b52a4d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67d4a829531287f2d81c7a306b52a4d7">&#9670;&nbsp;</a></span>ShouldVectorizeHor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ShouldVectorizeHor(&quot;slp-vectorize-hor&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Attempt to vectorize horizontal reductions&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;slp-vectorize-hor&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Attempt to vectorize horizontal reductions&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l06512">tryToVectorizeHorReductionOrInstOperands()</a>.</p>
+
+</div>
+</div>
+<a id="a704fbec676f53c0e32a778dcd57d21d9" name="a704fbec676f53c0e32a778dcd57d21d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a704fbec676f53c0e32a778dcd57d21d9">&#9670;&nbsp;</a></span>SLPCostThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; SLPCostThreshold(&quot;slp-threshold&quot;, cl::init(0), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Only vectorize <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> you gain more than this &quot; &quot;number &quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;slp-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(0)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Only vectorize <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> you gain more than this &quot; &quot;number &quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a565c181d9f5686f1c52dee18510cb8a1" name="a565c181d9f5686f1c52dee18510cb8a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a565c181d9f5686f1c52dee18510cb8a1">&#9670;&nbsp;</a></span>ViewSLPTree</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ViewSLPTree(&quot;view-slp-tree&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Display the SLP trees with Graphviz&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;view-slp-tree&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Display the SLP trees with Graphviz&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="SLPVectorizer_8cpp_source.html#l03190">llvm::slpvectorizer::BoUpSLP::getTreeCost()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

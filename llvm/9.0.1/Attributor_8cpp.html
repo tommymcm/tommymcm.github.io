@@ -59,46 +59,78 @@ $(function() {
   <div class="headertitle"><div class="title">Attributor.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/IPO/Attributor.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Attributor_8h_source.html">llvm/Transforms/IPO/Attributor.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/DepthFirstIterator.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SetVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstIterator.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalsModRef_8h_source.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstIterator_8h_source.html">llvm/IR/InstIterator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Attributor.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Attributor_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2IPO_2Attributor_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2IPO_2Attributor_8cpp" id="alib_2Transforms_2IPO_2Attributor_8cpp">
-<area shape="rect" title=" " alt="" coords="1633,5,1773,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,159,133"/>
-<area shape="rect" title=" " alt="" coords="183,101,395,126"/>
-<area shape="rect" title=" " alt="" coords="419,101,577,126"/>
-<area shape="rect" title=" " alt="" coords="601,101,776,126"/>
-<area shape="rect" title=" " alt="" coords="800,101,975,126"/>
-<area shape="rect" title=" " alt="" coords="999,101,1149,126"/>
-<area shape="rect" title=" " alt="" coords="1173,93,1364,133"/>
-<area shape="rect" title=" " alt="" coords="1389,101,1605,126"/>
-<area shape="rect" title=" " alt="" coords="1629,101,1777,126"/>
-<area shape="rect" title=" " alt="" coords="1801,101,1949,126"/>
-<area shape="rect" title=" " alt="" coords="1973,101,2084,126"/>
-<area shape="rect" title=" " alt="" coords="2109,101,2263,126"/>
-<area shape="rect" title=" " alt="" coords="2287,101,2447,126"/>
-<area shape="rect" title=" " alt="" coords="2472,101,2687,126"/>
-<area shape="rect" title=" " alt="" coords="2711,101,2874,126"/>
-<area shape="rect" title=" " alt="" coords="2899,101,3105,126"/>
-<area shape="rect" title=" " alt="" coords="3130,101,3199,126"/>
+<area shape="rect" title=" " alt="" coords="1183,5,1323,45"/>
+<area shape="rect" href="Attributor_8h.html" title=" " alt="" coords="1177,93,1330,133"/>
+<area shape="rect" title=" " alt="" coords="430,255,589,280"/>
+<area shape="rect" title=" " alt="" coords="526,401,701,427"/>
+<area shape="rect" title=" " alt="" coords="505,475,679,500"/>
+<area shape="rect" title=" " alt="" coords="2764,629,2833,654"/>
+<area shape="rect" href="Argument_8h.html" title=" " alt="" coords="1971,475,2119,500"/>
+<area shape="rect" href="Attributes_8h.html" title="This file contains the simple types necessary to represent the attributes associated with functions a..." alt="" coords="1465,548,1613,573"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="576,328,739,353"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="1030,401,1237,427"/>
+<area shape="rect" title=" " alt="" coords="1354,101,1566,126"/>
+<area shape="rect" title=" " alt="" coords="1590,101,1741,126"/>
+<area shape="rect" href="GlobalsModRef_8h.html" title="This is the interface for a simple mod/ref and alias analysis over globals." alt="" coords="2434,93,2625,133"/>
+<area shape="rect" href="ValueTracking_8h.html" title=" " alt="" coords="4168,255,4384,280"/>
+<area shape="rect" href="IR_2CFG_8h.html" title="This file provides various utilities for inspecting and working with the control flow graph in LLVM I..." alt="" coords="2089,328,2199,353"/>
+<area shape="rect" href="InstIterator_8h.html" title=" " alt="" coords="144,328,299,353"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="3595,328,3755,353"/>
+<area shape="rect" href="CommandLine_8h.html" title=" " alt="" coords="915,328,1130,353"/>
+<area shape="rect" href="LazyCallGraph_8h.html" title="Implements a lazy call graph analysis and related passes for the new pass manager." alt="" coords="1143,181,1363,207"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="1545,255,1714,280"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="2550,328,2685,353"/>
+<area shape="rect" title=" " alt="" coords="3261,629,3416,654"/>
+<area shape="rect" title=" " alt="" coords="3891,629,4045,654"/>
+<area shape="rect" title=" " alt="" coords="1911,629,2068,654"/>
+<area shape="rect" title=" " alt="" coords="657,629,847,654"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="3539,475,3688,500"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="1976,401,2115,427"/>
+<area shape="rect" title=" " alt="" coords="956,629,1015,654"/>
+<area shape="rect" title=" " alt="" coords="871,629,931,654"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="2388,548,2508,573"/>
+<area shape="rect" title=" " alt="" coords="3475,629,3541,654"/>
+<area shape="rect" title=" " alt="" coords="2167,629,2283,654"/>
+<area shape="rect" title=" " alt="" coords="1891,548,2026,573"/>
+<area shape="rect" title=" " alt="" coords="2050,548,2211,573"/>
+<area shape="rect" title=" " alt="" coords="1510,629,1677,654"/>
+<area shape="rect" title=" " alt="" coords="1701,629,1886,654"/>
+<area shape="rect" href="PointerLikeTypeTraits_8h.html" title=" " alt="" coords="1039,621,1220,661"/>
+<area shape="rect" title=" " alt="" coords="1244,629,1303,654"/>
+<area shape="rect" title=" " alt="" coords="2092,629,2143,654"/>
+<area shape="rect" title=" " alt="" coords="1327,629,1486,654"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="1713,328,1845,353"/>
+<area shape="rect" title=" " alt="" coords="1971,328,2013,353"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="3001,401,3159,427"/>
+<area shape="rect" title=" " alt="" coords="4067,475,4163,500"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="2601,475,2754,500"/>
+<area shape="rect" href="AliasAnalysis_8h.html" title=" " alt="" coords="2700,181,2913,207"/>
+<area shape="rect" href="CallGraph_8h.html" title="This file provides interfaces used to build and manipulate a call graph, which is a very useful tool ..." alt="" coords="2434,181,2625,207"/>
+<area shape="rect" href="ValueHandle_8h.html" title=" " alt="" coords="2579,255,2746,280"/>
+<area shape="rect" href="Intrinsics_8h.html" title=" " alt="" coords="4002,548,4145,573"/>
+<area shape="rect" title=" " alt="" coords="4371,328,4527,353"/>
 </map>
 </div>
 </div>
@@ -144,10 +176,10 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a2bee0a9f7c1d2120fed24c07bf2207f6"><td class="memTemplParams" colspan="2">template&lt;typename StateTy &gt; </td></tr>
-<tr class="memitem:a2bee0a9f7c1d2120fed24c07bf2207f6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a2bee0a9f7c1d2120fed24c07bf2207f6">followValueCB_t</a> = <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">std::function</a>&lt; bool(Value *, StateTy &amp;State)&gt;</td></tr>
+<tr class="memitem:a2bee0a9f7c1d2120fed24c07bf2207f6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a2bee0a9f7c1d2120fed24c07bf2207f6">followValueCB_t</a> = <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">std::function</a>&lt; <a class="el" href="classbool.html">bool</a>(<a class="el" href="classllvm_1_1Value.html">Value</a> *, StateTy &amp;State)&gt;</td></tr>
 <tr class="separator:a2bee0a9f7c1d2120fed24c07bf2207f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30bf1ae286834e1babbc363775329e10"><td class="memTemplParams" colspan="2">template&lt;typename StateTy &gt; </td></tr>
-<tr class="memitem:a30bf1ae286834e1babbc363775329e10"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a30bf1ae286834e1babbc363775329e10">visitValueCB_t</a> = <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">std::function</a>&lt; void(Value *, StateTy &amp;State)&gt;</td></tr>
+<tr class="memitem:a30bf1ae286834e1babbc363775329e10"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a30bf1ae286834e1babbc363775329e10">visitValueCB_t</a> = <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">std::function</a>&lt; void(<a class="el" href="classllvm_1_1Value.html">Value</a> *, StateTy &amp;State)&gt;</td></tr>
 <tr class="separator:a30bf1ae286834e1babbc363775329e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -156,11 +188,11 @@ Functions</h2></td></tr>
 <tr class="separator:ab2bab3d5f04f93909ae872597a165a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae49ba7b6696bf8e5fbf4f3157818d99a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#ae49ba7b6696bf8e5fbf4f3157818d99a">STATISTIC</a> (NumFnWithoutExactDefinition, &quot;Number of <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> without exact definitions&quot;)</td></tr>
 <tr class="separator:ae49ba7b6696bf8e5fbf4f3157818d99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af018678b819f781564539a13d039376c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#af018678b819f781564539a13d039376c">STATISTIC</a> (NumAttributesTimedOut, &quot;Number of abstract <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> timed out before fixpoint&quot;)</td></tr>
+<tr class="memitem:af018678b819f781564539a13d039376c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#af018678b819f781564539a13d039376c">STATISTIC</a> (NumAttributesTimedOut, &quot;Number of abstract <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> timed out before fixpoint&quot;)</td></tr>
 <tr class="separator:af018678b819f781564539a13d039376c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1d7bb9a9827a512de4312992c592d59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#af1d7bb9a9827a512de4312992c592d59">STATISTIC</a> (NumAttributesValidFixpoint, &quot;Number of abstract <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> in a valid fixpoint state&quot;)</td></tr>
+<tr class="memitem:af1d7bb9a9827a512de4312992c592d59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#af1d7bb9a9827a512de4312992c592d59">STATISTIC</a> (NumAttributesValidFixpoint, &quot;Number of abstract <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> in a valid fixpoint state&quot;)</td></tr>
 <tr class="separator:af1d7bb9a9827a512de4312992c592d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4b6d17177f81f5c10b071f8c1bdf8a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#aa4b6d17177f81f5c10b071f8c1bdf8a6">STATISTIC</a> (NumAttributesManifested, &quot;Number of abstract <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> manifested in IR&quot;)</td></tr>
+<tr class="memitem:aa4b6d17177f81f5c10b071f8c1bdf8a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#aa4b6d17177f81f5c10b071f8c1bdf8a6">STATISTIC</a> (NumAttributesManifested, &quot;Number of abstract <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> manifested in IR&quot;)</td></tr>
 <tr class="separator:aa4b6d17177f81f5c10b071f8c1bdf8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d2c2be48941b71dc44561b1aff4dc54"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a6d2c2be48941b71dc44561b1aff4dc54">STATISTIC</a> (NumFnNoUnwind, &quot;Number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> marked nounwind&quot;)</td></tr>
 <tr class="separator:a6d2c2be48941b71dc44561b1aff4dc54"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,33 +214,27 @@ Functions</h2></td></tr>
 <tr class="separator:a1114e20612cbca23099c25d4a5f615b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0459d16152cb2801cf52a7e4e567e634"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a0459d16152cb2801cf52a7e4e567e634">STATISTIC</a> (NumFnWillReturn, &quot;Number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> marked willreturn&quot;)</td></tr>
 <tr class="separator:a0459d16152cb2801cf52a7e4e567e634"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff3e012a8727a77363cb632c911660ec"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#aff3e012a8727a77363cb632c911660ec">MaxFixpointIterations</a> (&quot;attributor-max-iterations&quot;, cl::Hidden, cl::desc(&quot;Maximal number of fixpoint iterations.&quot;), cl::init(32))</td></tr>
-<tr class="separator:aff3e012a8727a77363cb632c911660ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3edeabbd836b96e67075e611090a041"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#af3edeabbd836b96e67075e611090a041">DisableAttributor</a> (&quot;attributor-disable&quot;, cl::Hidden, cl::desc(&quot;Disable the <a class="el" href="Attributor_8cpp.html#a38226a7919a4a94dfe49908e00b40a13">attributor</a> inter-procedural deduction pass.&quot;), cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:af3edeabbd836b96e67075e611090a041"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a813efd161b5940129fd7a17c4a3208b3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a813efd161b5940129fd7a17c4a3208b3">VerifyAttributor</a> (&quot;attributor-verify&quot;, cl::Hidden, cl::desc(&quot;Verify the Attributor deduction and &quot; &quot;manifestation of <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> -- may issue false-positive errors&quot;), cl::init(false))</td></tr>
-<tr class="separator:a813efd161b5940129fd7a17c4a3208b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9eeb9bc9662a349062cfd71b26a72728"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a9eeb9bc9662a349062cfd71b26a72728">bookkeeping</a> (AbstractAttribute::ManifestPosition MP, const Attribute &amp;Attr)</td></tr>
+<tr class="memitem:a9eeb9bc9662a349062cfd71b26a72728"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a9eeb9bc9662a349062cfd71b26a72728">bookkeeping</a> (<a class="el" href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1">AbstractAttribute::ManifestPosition</a> MP, const <a class="el" href="classllvm_1_1Attribute.html">Attribute</a> &amp;Attr)</td></tr>
 <tr class="memdesc:a9eeb9bc9662a349062cfd71b26a72728"><td class="mdescLeft">&#160;</td><td class="mdescRight">}  <a href="Attributor_8cpp.html#a9eeb9bc9662a349062cfd71b26a72728">More...</a><br /></td></tr>
 <tr class="separator:a9eeb9bc9662a349062cfd71b26a72728"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8c09cabaaabb28e1af8fe7ef34a67e4"><td class="memTemplParams" colspan="2">template&lt;typename StateTy &gt; </td></tr>
-<tr class="memitem:af8c09cabaaabb28e1af8fe7ef34a67e4"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#af8c09cabaaabb28e1af8fe7ef34a67e4">genericValueTraversal</a> (Value *InitV, StateTy &amp;State, <a class="el" href="Attributor_8cpp.html#a30bf1ae286834e1babbc363775329e10">visitValueCB_t</a>&lt; StateTy &gt; &amp;VisitValueCB, <a class="el" href="Attributor_8cpp.html#a2bee0a9f7c1d2120fed24c07bf2207f6">followValueCB_t</a>&lt; StateTy &gt; *FollowValueCB=nullptr, int MaxValues=8)</td></tr>
+<tr class="memitem:af8c09cabaaabb28e1af8fe7ef34a67e4"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#af8c09cabaaabb28e1af8fe7ef34a67e4">genericValueTraversal</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *InitV, StateTy &amp;State, <a class="el" href="Attributor_8cpp.html#a30bf1ae286834e1babbc363775329e10">visitValueCB_t</a>&lt; StateTy &gt; &amp;VisitValueCB, <a class="el" href="Attributor_8cpp.html#a2bee0a9f7c1d2120fed24c07bf2207f6">followValueCB_t</a>&lt; StateTy &gt; *FollowValueCB=nullptr, int MaxValues=8)</td></tr>
 <tr class="memdesc:af8c09cabaaabb28e1af8fe7ef34a67e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively visit all values that might become <code>InitV</code> at some point.  <a href="Attributor_8cpp.html#af8c09cabaaabb28e1af8fe7ef34a67e4">More...</a><br /></td></tr>
 <tr class="separator:af8c09cabaaabb28e1af8fe7ef34a67e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6217021f2b4ee69913d35220cd2d426c"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a6217021f2b4ee69913d35220cd2d426c">getAttrIndex</a> (AbstractAttribute::ManifestPosition MP, unsigned ArgNo=0)</td></tr>
+<tr class="memitem:a6217021f2b4ee69913d35220cd2d426c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a6217021f2b4ee69913d35220cd2d426c">getAttrIndex</a> (<a class="el" href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1">AbstractAttribute::ManifestPosition</a> MP, <a class="el" href="classunsigned.html">unsigned</a> ArgNo=0)</td></tr>
 <tr class="memdesc:a6217021f2b4ee69913d35220cd2d426c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to identify the correct offset into an attribute list.  <a href="Attributor_8cpp.html#a6217021f2b4ee69913d35220cd2d426c">More...</a><br /></td></tr>
 <tr class="separator:a6217021f2b4ee69913d35220cd2d426c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9460e7e520ab945be65ecc565f727cf5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a9460e7e520ab945be65ecc565f727cf5">isEqualOrWorse</a> (const Attribute &amp;New, const Attribute &amp;Old)</td></tr>
+<tr class="memitem:a9460e7e520ab945be65ecc565f727cf5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a9460e7e520ab945be65ecc565f727cf5">isEqualOrWorse</a> (const <a class="el" href="classllvm_1_1Attribute.html">Attribute</a> &amp;New, const <a class="el" href="classllvm_1_1Attribute.html">Attribute</a> &amp;Old)</td></tr>
 <tr class="memdesc:a9460e7e520ab945be65ecc565f727cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if <code>New</code> is equal or worse than <code>Old</code>.  <a href="Attributor_8cpp.html#a9460e7e520ab945be65ecc565f727cf5">More...</a><br /></td></tr>
 <tr class="separator:a9460e7e520ab945be65ecc565f727cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e6cb0bee4001aade211ccfdf6ada9e6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a7e6cb0bee4001aade211ccfdf6ada9e6">addIfNotExistent</a> (LLVMContext &amp;Ctx, const Attribute &amp;Attr, AttributeList &amp;Attrs, AbstractAttribute::ManifestPosition MP, unsigned ArgNo=0)</td></tr>
+<tr class="memitem:a7e6cb0bee4001aade211ccfdf6ada9e6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a7e6cb0bee4001aade211ccfdf6ada9e6">addIfNotExistent</a> (<a class="el" href="classllvm_1_1LLVMContext.html">LLVMContext</a> &amp;Ctx, const <a class="el" href="classllvm_1_1Attribute.html">Attribute</a> &amp;Attr, <a class="el" href="classllvm_1_1AttributeList.html">AttributeList</a> &amp;Attrs, <a class="el" href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1">AbstractAttribute::ManifestPosition</a> MP, <a class="el" href="classunsigned.html">unsigned</a> ArgNo=0)</td></tr>
 <tr class="memdesc:a7e6cb0bee4001aade211ccfdf6ada9e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the information provided by <code>Attr</code> was added to the attribute list <code>Attrs</code>.  <a href="Attributor_8cpp.html#a7e6cb0bee4001aade211ccfdf6ada9e6">More...</a><br /></td></tr>
 <tr class="separator:a7e6cb0bee4001aade211ccfdf6ada9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5a7088a98973e9b6793b824ad8683da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#ad5a7088a98973e9b6793b824ad8683da">containsCycle</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:ad5a7088a98973e9b6793b824ad8683da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#ad5a7088a98973e9b6793b824ad8683da">containsCycle</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:ad5a7088a98973e9b6793b824ad8683da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fbb54278cd49c0f41b85e23190b998e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a8fbb54278cd49c0f41b85e23190b998e">containsPossiblyEndlessLoop</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a8fbb54278cd49c0f41b85e23190b998e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a8fbb54278cd49c0f41b85e23190b998e">containsPossiblyEndlessLoop</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a8fbb54278cd49c0f41b85e23190b998e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af239f3c5bfcc9003962bf18c3e89876d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#af239f3c5bfcc9003962bf18c3e89876d">runAttributorOnModule</a> (Module &amp;M)</td></tr>
+<tr class="memitem:af239f3c5bfcc9003962bf18c3e89876d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#af239f3c5bfcc9003962bf18c3e89876d">runAttributorOnModule</a> (<a class="el" href="classllvm_1_1Module.html">Module</a> &amp;M)</td></tr>
 <tr class="memdesc:af239f3c5bfcc9003962bf18c3e89876d"><td class="mdescLeft">&#160;</td><td class="mdescRight">}  <a href="Attributor_8cpp.html#af239f3c5bfcc9003962bf18c3e89876d">More...</a><br /></td></tr>
 <tr class="separator:af239f3c5bfcc9003962bf18c3e89876d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8566e9c1528d11dce5e145ec7c44ad6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#ad8566e9c1528d11dce5e145ec7c44ad6">INITIALIZE_PASS_BEGIN</a> (AttributorLegacyPass, &quot;attributor&quot;, &quot;Deduce and <a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a> attributes&quot;, false, false) INITIALIZE_PASS_END(AttributorLegacyPass</td></tr>
@@ -216,10 +242,16 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:af7f5e067de7ed39291ead78f3cb4da80"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#af7f5e067de7ed39291ead78f3cb4da80">MaxFixpointIterations</a> (&quot;attributor-max-iterations&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Maximal number of fixpoint iterations.&quot;), cl::init(32))</td></tr>
+<tr class="separator:af7f5e067de7ed39291ead78f3cb4da80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1071189c394b9181fe5082a35c38c246"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a1071189c394b9181fe5082a35c38c246">DisableAttributor</a> (&quot;attributor-disable&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Disable the <a class="el" href="Attributor_8cpp.html#a38226a7919a4a94dfe49908e00b40a13">attributor</a> inter-procedural deduction pass.&quot;), cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:a1071189c394b9181fe5082a35c38c246"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c931fa398f913641c52c4361fb052b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a89c931fa398f913641c52c4361fb052b">VerifyAttributor</a> (&quot;attributor-verify&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Verify the <a class="el" href="structllvm_1_1Attributor.html">Attributor</a> deduction and &quot; &quot;manifestation of <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> -- may issue false-positive errors&quot;), cl::init(false))</td></tr>
+<tr class="separator:a89c931fa398f913641c52c4361fb052b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38226a7919a4a94dfe49908e00b40a13"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a38226a7919a4a94dfe49908e00b40a13">attributor</a></td></tr>
 <tr class="separator:a38226a7919a4a94dfe49908e00b40a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad84a22c0ca79437f4ec14e006f34e8ed"><td class="memItemLeft" align="right" valign="top">Deduce and <a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a></td></tr>
-<tr class="separator:ad84a22c0ca79437f4ec14e006f34e8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a585f917d72b821b6041dfff8afc26cfc"><td class="memItemLeft" align="right" valign="top">Deduce and <a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a></td></tr>
+<tr class="separator:a585f917d72b821b6041dfff8afc26cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85e2c5160caae4f366f6809941736030"><td class="memItemLeft" align="right" valign="top">Deduce and <a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributor_8cpp.html#a85e2c5160caae4f366f6809941736030">false</a></td></tr>
 <tr class="separator:a85e2c5160caae4f366f6809941736030"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -250,7 +282,7 @@ Variables</h2></td></tr>
 template&lt;typename StateTy &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="Attributor_8cpp.html#a2bee0a9f7c1d2120fed24c07bf2207f6">followValueCB_t</a> =  <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">std::function</a>&lt;bool(Value *, StateTy &amp;State)&gt;</td>
+          <td class="memname">using <a class="el" href="Attributor_8cpp.html#a2bee0a9f7c1d2120fed24c07bf2207f6">followValueCB_t</a> =  <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">std::function</a>&lt;<a class="el" href="classbool.html">bool</a>(<a class="el" href="classllvm_1_1Value.html">Value</a> *, StateTy &amp;State)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -268,7 +300,7 @@ template&lt;typename StateTy &gt; </div>
 template&lt;typename StateTy &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="Attributor_8cpp.html#a30bf1ae286834e1babbc363775329e10">visitValueCB_t</a> =  <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">std::function</a>&lt;void(Value *, StateTy &amp;State)&gt;</td>
+          <td class="memname">using <a class="el" href="Attributor_8cpp.html#a30bf1ae286834e1babbc363775329e10">visitValueCB_t</a> =  <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">std::function</a>&lt;void(<a class="el" href="classllvm_1_1Value.html">Value</a> *, StateTy &amp;State)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -288,33 +320,33 @@ template&lt;typename StateTy &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool addIfNotExistent </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> addIfNotExistent </td>
           <td>(</td>
-          <td class="paramtype">LLVMContext &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1LLVMContext.html">LLVMContext</a> &amp;&#160;</td>
           <td class="paramname"><em>Ctx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Attribute &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Attribute.html">Attribute</a> &amp;&#160;</td>
           <td class="paramname"><em>Attr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">AttributeList &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1AttributeList.html">AttributeList</a> &amp;&#160;</td>
           <td class="paramname"><em>Attrs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">AbstractAttribute::ManifestPosition&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1">AbstractAttribute::ManifestPosition</a>&#160;</td>
           <td class="paramname"><em>MP</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>ArgNo</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -335,7 +367,9 @@ template&lt;typename StateTy &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00251">251</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Attributor_8cpp_source.html#l00226">getAttrIndex()</a>, and <a class="el" href="Attributor_8cpp_source.html#l00241">isEqualOrWorse()</a>.</p>
+<p class="reference">References <a class="el" href="Attributor_8cpp_source.html#l00226">getAttrIndex()</a>, <a class="el" href="Attributes_8cpp_source.html#l00202">llvm::Attribute::getKindAsEnum()</a>, <a class="el" href="Attributes_8cpp_source.html#l00216">llvm::Attribute::getKindAsString()</a>, <a class="el" href="Attributes_8cpp_source.html#l00186">llvm::Attribute::isEnumAttribute()</a>, <a class="el" href="Attributor_8cpp_source.html#l00241">isEqualOrWorse()</a>, <a class="el" href="Attributes_8cpp_source.html#l00194">llvm::Attribute::isStringAttribute()</a>, and <a class="el" href="ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l00292">llvm::AbstractAttribute::manifest()</a>.</p>
 
 </div>
 </div>
@@ -351,13 +385,13 @@ template&lt;typename StateTy &gt; </div>
         <tr>
           <td class="memname">static void bookkeeping </td>
           <td>(</td>
-          <td class="paramtype">AbstractAttribute::ManifestPosition&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1">AbstractAttribute::ManifestPosition</a>&#160;</td>
           <td class="paramname"><em>MP</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Attribute &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Attribute.html">Attribute</a> &amp;&#160;</td>
           <td class="paramname"><em>Attr</em>&#160;</td>
         </tr>
         <tr>
@@ -378,6 +412,10 @@ template&lt;typename StateTy &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00099">99</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Attributes_8cpp_source.html#l00202">llvm::Attribute::getKindAsEnum()</a>, <a class="el" href="Attributes_8cpp_source.html#l00186">llvm::Attribute::isEnumAttribute()</a>, <a class="el" href="Attributor_8h_source.html#l00518">llvm::AbstractAttribute::MP_ARGUMENT</a>, <a class="el" href="Attributor_8h_source.html#l00519">llvm::AbstractAttribute::MP_CALL_SITE_ARGUMENT</a>, and <a class="el" href="Attributor_8h_source.html#l00521">llvm::AbstractAttribute::MP_RETURNED</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l00292">llvm::AbstractAttribute::manifest()</a>.</p>
+
 </div>
 </div>
 <a id="ad5a7088a98973e9b6793b824ad8683da" name="ad5a7088a98973e9b6793b824ad8683da"></a>
@@ -387,9 +425,9 @@ template&lt;typename StateTy &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool containsCycle </td>
+          <td class="memname"><a class="el" href="classbool.html">bool</a> containsCycle </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -398,7 +436,7 @@ template&lt;typename StateTy &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l01249">1249</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="IR_2CFG_8h_source.html#l00259">llvm::successors()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l01267">containsPossiblyEndlessLoop()</a>.</p>
 
@@ -411,9 +449,9 @@ template&lt;typename StateTy &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool containsPossiblyEndlessLoop </td>
+          <td class="memname"><a class="el" href="classbool.html">bool</a> containsPossiblyEndlessLoop </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -425,56 +463,6 @@ template&lt;typename StateTy &gt; </div>
 <p class="reference">References <a class="el" href="Attributor_8cpp_source.html#l01249">containsCycle()</a>, and <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l01269">AAWillReturnFunction::initialize()</a>.</p>
-
-</div>
-</div>
-<a id="af3edeabbd836b96e67075e611090a041" name="af3edeabbd836b96e67075e611090a041"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3edeabbd836b96e67075e611090a041">&#9670;&nbsp;</a></span>DisableAttributor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; DisableAttributor </td>
-          <td>(</td>
-          <td class="paramtype">&quot;attributor-disable&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Disable the <a class="el" href="Attributor_8cpp.html#a38226a7919a4a94dfe49908e00b40a13">attributor</a> inter-procedural deduction pass.&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l01613">runAttributorOnModule()</a>.</p>
 
 </div>
 </div>
@@ -490,9 +478,9 @@ template&lt;typename StateTy &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool genericValueTraversal </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> genericValueTraversal </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>InitV</em>, </td>
         </tr>
         <tr>
@@ -537,6 +525,8 @@ template&lt;typename StateTy &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00156">156</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Function_8h_source.html#l00713">llvm::Function::args()</a>, <a class="el" href="CallSite_8h_source.html#l00307">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getArgOperand()</a>, <a class="el" href="CallSite_8h_source.html#l00111">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getCalledFunction()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Type_8h_source.html#l00223">llvm::Type::isPointerTy()</a>, and <a class="el" href="Value_8cpp_source.html#l00535">llvm::Value::stripPointerCasts()</a>.</p>
+
 </div>
 </div>
 <a id="a6217021f2b4ee69913d35220cd2d426c" name="a6217021f2b4ee69913d35220cd2d426c"></a>
@@ -549,15 +539,15 @@ template&lt;typename StateTy &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static unsigned getAttrIndex </td>
+          <td class="memname">static <a class="el" href="classunsigned.html">unsigned</a> getAttrIndex </td>
           <td>(</td>
-          <td class="paramtype">AbstractAttribute::ManifestPosition&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1AbstractAttribute.html#af2cb78e8e0702c73aff2ae4ed01889a1">AbstractAttribute::ManifestPosition</a>&#160;</td>
           <td class="paramname"><em>MP</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>ArgNo</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -576,6 +566,8 @@ template&lt;typename StateTy &gt; </div>
 <p>Helper to identify the correct offset into an attribute list. </p>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00226">226</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Attributes_8h_source.html#l00341">llvm::AttributeList::FirstArgIndex</a>, <a class="el" href="Attributes_8h_source.html#l00340">llvm::AttributeList::FunctionIndex</a>, <a class="el" href="ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>, <a class="el" href="Attributor_8h_source.html#l00518">llvm::AbstractAttribute::MP_ARGUMENT</a>, <a class="el" href="Attributor_8h_source.html#l00519">llvm::AbstractAttribute::MP_CALL_SITE_ARGUMENT</a>, <a class="el" href="Attributor_8h_source.html#l00520">llvm::AbstractAttribute::MP_FUNCTION</a>, <a class="el" href="Attributor_8h_source.html#l00521">llvm::AbstractAttribute::MP_RETURNED</a>, and <a class="el" href="Attributes_8h_source.html#l00339">llvm::AttributeList::ReturnIndex</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l00251">addIfNotExistent()</a>.</p>
 
@@ -637,15 +629,15 @@ template&lt;typename StateTy &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isEqualOrWorse </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isEqualOrWorse </td>
           <td>(</td>
-          <td class="paramtype">const Attribute &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Attribute.html">Attribute</a> &amp;&#160;</td>
           <td class="paramname"><em>New</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Attribute &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Attribute.html">Attribute</a> &amp;&#160;</td>
           <td class="paramname"><em>Old</em>&#160;</td>
         </tr>
         <tr>
@@ -665,55 +657,9 @@ template&lt;typename StateTy &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l00241">241</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Attributes_8cpp_source.html#l00209">llvm::Attribute::getValueAsInt()</a>, and <a class="el" href="Attributes_8cpp_source.html#l00190">llvm::Attribute::isIntAttribute()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l00251">addIfNotExistent()</a>.</p>
-
-</div>
-</div>
-<a id="aff3e012a8727a77363cb632c911660ec" name="aff3e012a8727a77363cb632c911660ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff3e012a8727a77363cb632c911660ec">&#9670;&nbsp;</a></span>MaxFixpointIterations()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; MaxFixpointIterations </td>
-          <td>(</td>
-          <td class="paramtype">&quot;attributor-max-iterations&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Maximal number of fixpoint iterations.&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(32)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -727,9 +673,9 @@ template&lt;typename StateTy &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool runAttributorOnModule </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> runAttributorOnModule </td>
           <td>(</td>
-          <td class="paramtype">Module &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> &amp;&#160;</td>
           <td class="paramname"><em>M</em></td><td>)</td>
           <td></td>
         </tr>
@@ -743,12 +689,14 @@ template&lt;typename StateTy &gt; </div>
 
 <p>} </p>
 <hr  />
- <h2><a class="anchor" id="autotoc_md5"></a>
+ <h2><a class="anchor" id="autotoc_md27"></a>
 Pass (Manager) Boilerplate</h2>
 
 <p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l01613">1613</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Attributor_8cpp.html#af3edeabbd836b96e67075e611090a041">DisableAttributor()</a>, and <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
+<p class="reference">References <a class="el" href="namespacellvm.html#acd850975ae5042cacb64a9d0ea4715f3ae6b94e58bfd13b21bc786578d9f8ba4a">llvm::CHANGED</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="Attributor_8cpp.html#a1071189c394b9181fe5082a35c38c246">DisableAttributor</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, and <a class="el" href="namespacellvm_1_1codeview.html#ad25a1310d512e19d2f6318e963dcb30bafa555455b01d6ff32568479afa1f1947">llvm::codeview::Naked</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l01653">llvm::AttributorPass::run()</a>.</p>
 
 </div>
 </div>
@@ -767,7 +715,7 @@ Pass (Manager) Boilerplate</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of abstract <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> manifested in IR&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of abstract <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> manifested in IR&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -795,7 +743,7 @@ Pass (Manager) Boilerplate</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of abstract <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> timed out before fixpoint&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of abstract <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> timed out before fixpoint&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -823,7 +771,7 @@ Pass (Manager) Boilerplate</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of abstract <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> in a valid fixpoint state&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of abstract <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> in a valid fixpoint state&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1172,8 +1120,43 @@ Pass (Manager) Boilerplate</h2>
 
 </div>
 </div>
-<a id="a813efd161b5940129fd7a17c4a3208b3" name="a813efd161b5940129fd7a17c4a3208b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a813efd161b5940129fd7a17c4a3208b3">&#9670;&nbsp;</a></span>VerifyAttributor()</h2>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a585f917d72b821b6041dfff8afc26cfc" name="a585f917d72b821b6041dfff8afc26cfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a585f917d72b821b6041dfff8afc26cfc">&#9670;&nbsp;</a></span>attributes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Deduce and <a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a> attributes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l01690">1690</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="LTOModule_8h_source.html#l00138">llvm::LTOModule::getSymbolAttributes()</a>.</p>
+
+</div>
+</div>
+<a id="a38226a7919a4a94dfe49908e00b40a13" name="a38226a7919a4a94dfe49908e00b40a13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38226a7919a4a94dfe49908e00b40a13">&#9670;&nbsp;</a></span>attributor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">attributor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l01689">1689</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1071189c394b9181fe5082a35c38c246" name="a1071189c394b9181fe5082a35c38c246"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1071189c394b9181fe5082a35c38c246">&#9670;&nbsp;</a></span>DisableAttributor</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1182,7 +1165,123 @@ Pass (Manager) Boilerplate</h2>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; VerifyAttributor </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; DisableAttributor(&quot;attributor-disable&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Disable the <a class="el" href="Attributor_8cpp.html#a38226a7919a4a94dfe49908e00b40a13">attributor</a> inter-procedural deduction pass.&quot;), cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;attributor-disable&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Disable the <a class="el" href="Attributor_8cpp.html#a38226a7919a4a94dfe49908e00b40a13">attributor</a> inter-procedural deduction pass.&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l01613">runAttributorOnModule()</a>.</p>
+
+</div>
+</div>
+<a id="a85e2c5160caae4f366f6809941736030" name="a85e2c5160caae4f366f6809941736030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85e2c5160caae4f366f6809941736030">&#9670;&nbsp;</a></span>false</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Deduce and <a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a> false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l01690">1690</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af7f5e067de7ed39291ead78f3cb4da80" name="af7f5e067de7ed39291ead78f3cb4da80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f5e067de7ed39291ead78f3cb4da80">&#9670;&nbsp;</a></span>MaxFixpointIterations</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; MaxFixpointIterations(&quot;attributor-max-iterations&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Maximal number of fixpoint iterations.&quot;), cl::init(32)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;attributor-max-iterations&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Maximal number of fixpoint iterations.&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(32)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l01355">llvm::Attributor::run()</a>.</p>
+
+</div>
+</div>
+<a id="a89c931fa398f913641c52c4361fb052b" name="a89c931fa398f913641c52c4361fb052b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89c931fa398f913641c52c4361fb052b">&#9670;&nbsp;</a></span>VerifyAttributor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; VerifyAttributor(&quot;attributor-verify&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Verify the <a class="el" href="structllvm_1_1Attributor.html">Attributor</a> deduction and &quot; &quot;manifestation of <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> -- may issue false-positive errors&quot;), cl::init(false)) </td>
           <td>(</td>
           <td class="paramtype">&quot;attributor-verify&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -1196,7 +1295,7 @@ Pass (Manager) Boilerplate</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Verify the Attributor deduction and &quot; &quot;manifestation of <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> -- may issue false-positive errors&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Verify the <a class="el" href="structllvm_1_1Attributor.html">Attributor</a> deduction and &quot; &quot;manifestation of <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> -- may issue false-positive errors&quot;)&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -1218,61 +1317,14 @@ Pass (Manager) Boilerplate</h2>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ad84a22c0ca79437f4ec14e006f34e8ed" name="ad84a22c0ca79437f4ec14e006f34e8ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad84a22c0ca79437f4ec14e006f34e8ed">&#9670;&nbsp;</a></span>attributes</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">iterator_range&lt; DWARFDie::attribute_iterator &gt; DWARFDie::attributes</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l01690">1690</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a38226a7919a4a94dfe49908e00b40a13" name="a38226a7919a4a94dfe49908e00b40a13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38226a7919a4a94dfe49908e00b40a13">&#9670;&nbsp;</a></span>attributor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">attributor</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l01689">1689</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a85e2c5160caae4f366f6809941736030" name="a85e2c5160caae4f366f6809941736030"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85e2c5160caae4f366f6809941736030">&#9670;&nbsp;</a></span>false</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Deduce and <a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a> false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Attributor_8cpp_source.html#l01690">1690</a> of file <a class="el" href="Attributor_8cpp_source.html">Attributor.cpp</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Attributor_8cpp_source.html#l01355">llvm::Attributor::run()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

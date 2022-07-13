@@ -87,10 +87,10 @@ $(function() {
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <a class="code hl_class" href="classllvm_1_1VPlan.html">VPlan</a> &amp;Plan;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="comment">// VPLoopInfo for Plan&#39;s HCFG.</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_typedef" href="namespacellvm.html#a1321b4e7151f98e2243556eb8a9461f3">VPLoopInfo</a> *VPLI;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_class" href="classllvm_1_1LoopInfoBase.html">VPLoopInfo</a> *VPLI;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="comment">// Dominator tree for Plan&#39;s HCFG.</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_typedef" href="namespacellvm.html#a02f0323faf84065c92e4c2e4617cc903">VPDominatorTree</a> VPDomTree;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_class" href="classllvm_1_1DominatorTreeBase.html">VPDominatorTree</a> VPDomTree;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="comment">// VPlan builder used to generate VPInstructions for block predicates.</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <a class="code hl_class" href="classllvm_1_1VPBuilder.html">VPBuilder</a> Builder;</div>
@@ -111,13 +111,13 @@ $(function() {
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">  /// Create or propagate predicate for \p CurrBlock in region \p Region using</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">  /// predicate(s) of its predecessor(s)</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"></span>  <span class="keywordtype">void</span> createOrPropagatePredicates(<a class="code hl_class" href="classllvm_1_1VPBlockBase.html">VPBlockBase</a> *CurrBlock,</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                                   <a class="code hl_class" href="classllvm_1_1VPRegionBlock.html">VPRegionBlock</a> *Region);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                                   <a class="code hl_class" href="classllvm_1_1VPRegionBlock.html">VPRegionBlock</a> *<a class="code hl_class" href="classllvm_1_1Region.html">Region</a>);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment"></span> </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">  /// Predicate the CFG within \p Region.</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment"></span>  <span class="keywordtype">void</span> predicateRegionRec(<a class="code hl_class" href="classllvm_1_1VPRegionBlock.html">VPRegionBlock</a> *Region);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment"></span>  <span class="keywordtype">void</span> predicateRegionRec(<a class="code hl_class" href="classllvm_1_1VPRegionBlock.html">VPRegionBlock</a> *<a class="code hl_class" href="classllvm_1_1Region.html">Region</a>);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment"></span> </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">  /// Linearize the CFG within \p Region.</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"></span>  <span class="keywordtype">void</span> linearizeRegionRec(<a class="code hl_class" href="classllvm_1_1VPRegionBlock.html">VPRegionBlock</a> *Region);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"></span>  <span class="keywordtype">void</span> linearizeRegionRec(<a class="code hl_class" href="classllvm_1_1VPRegionBlock.html">VPRegionBlock</a> *<a class="code hl_class" href="classllvm_1_1Region.html">Region</a>);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <a class="code hl_class" href="classllvm_1_1VPlanPredicator.html">VPlanPredicator</a>(<a class="code hl_class" href="classllvm_1_1VPlan.html">VPlan</a> &amp;Plan);</div>
@@ -130,6 +130,9 @@ $(function() {
 <div class="ttc" id="aLoopVectorizationPlanner_8h_html"><div class="ttname"><a href="LoopVectorizationPlanner_8h.html">LoopVectorizationPlanner.h</a></div><div class="ttdoc">This file provides a LoopVectorizationPlanner class.</div></div>
 <div class="ttc" id="aVPlanDominatorTree_8h_html"><div class="ttname"><a href="VPlanDominatorTree_8h.html">VPlanDominatorTree.h</a></div><div class="ttdoc">This file implements dominator tree analysis for a single level of a VPlan's H-CFG.</div></div>
 <div class="ttc" id="aVPlan_8h_html"><div class="ttname"><a href="VPlan_8h.html">VPlan.h</a></div><div class="ttdoc">This file contains the declarations of the Vectorization Plan base classes:</div></div>
+<div class="ttc" id="aclassllvm_1_1DominatorTreeBase_html"><div class="ttname"><a href="classllvm_1_1DominatorTreeBase.html">llvm::DominatorTreeBase</a></div><div class="ttdoc">Core dominator tree base class.</div><div class="ttdef"><b>Definition:</b> <a href="GenericDomTree_8h_source.html#l00219">GenericDomTree.h:219</a></div></div>
+<div class="ttc" id="aclassllvm_1_1LoopInfoBase_html"><div class="ttname"><a href="classllvm_1_1LoopInfoBase.html">llvm::LoopInfoBase&lt; VPBlockBase, VPLoop &gt;</a></div></div>
+<div class="ttc" id="aclassllvm_1_1Region_html"><div class="ttname"><a href="classllvm_1_1Region.html">llvm::Region</a></div><div class="ttdef"><b>Definition:</b> <a href="RegionInfo_8h_source.html#l00893">RegionInfo.h:893</a></div></div>
 <div class="ttc" id="aclassllvm_1_1VPBasicBlock_html"><div class="ttname"><a href="classllvm_1_1VPBasicBlock.html">llvm::VPBasicBlock</a></div><div class="ttdoc">VPBasicBlock serves as the leaf of the Hierarchical Control-Flow Graph.</div><div class="ttdef"><b>Definition:</b> <a href="VPlan_8h_source.html#l00982">VPlan.h:982</a></div></div>
 <div class="ttc" id="aclassllvm_1_1VPBlockBase_html"><div class="ttname"><a href="classllvm_1_1VPBlockBase.html">llvm::VPBlockBase</a></div><div class="ttdoc">VPBlockBase is the building block of the Hierarchical Control-Flow Graph.</div><div class="ttdef"><b>Definition:</b> <a href="VPlan_8h_source.html#l00333">VPlan.h:333</a></div></div>
 <div class="ttc" id="aclassllvm_1_1VPBuilder_html"><div class="ttname"><a href="classllvm_1_1VPBuilder.html">llvm::VPBuilder</a></div><div class="ttdoc">VPlan-based builder utility analogous to IRBuilder.</div><div class="ttdef"><b>Definition:</b> <a href="LoopVectorizationPlanner_8h_source.html#l00035">LoopVectorizationPlanner.h:35</a></div></div>
@@ -138,13 +141,11 @@ $(function() {
 <div class="ttc" id="aclassllvm_1_1VPlanPredicator_html"><div class="ttname"><a href="classllvm_1_1VPlanPredicator.html">llvm::VPlanPredicator</a></div><div class="ttdef"><b>Definition:</b> <a href="VPlanPredicator_8h_source.html#l00024">VPlanPredicator.h:24</a></div></div>
 <div class="ttc" id="aclassllvm_1_1VPlanPredicator_html_aba0d4c7530810eb83cdccee1c22a01b5"><div class="ttname"><a href="classllvm_1_1VPlanPredicator.html#aba0d4c7530810eb83cdccee1c22a01b5">llvm::VPlanPredicator::predicate</a></div><div class="ttdeci">void predicate(void)</div><div class="ttdoc">Predicate Plan's HCFG.</div><div class="ttdef"><b>Definition:</b> <a href="VPlanPredicator_8cpp_source.html#l00234">VPlanPredicator.cpp:234</a></div></div>
 <div class="ttc" id="aclassllvm_1_1VPlan_html"><div class="ttname"><a href="classllvm_1_1VPlan.html">llvm::VPlan</a></div><div class="ttdoc">VPlan models a candidate for vectorization, encoding various decisions take to produce efficient outp...</div><div class="ttdef"><b>Definition:</b> <a href="VPlan_8h_source.html#l01147">VPlan.h:1147</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
-<div class="ttc" id="anamespacellvm_html_a02f0323faf84065c92e4c2e4617cc903"><div class="ttname"><a href="namespacellvm.html#a02f0323faf84065c92e4c2e4617cc903">llvm::VPDominatorTree</a></div><div class="ttdeci">DomTreeBase&lt; VPBlockBase &gt; VPDominatorTree</div><div class="ttdoc">Template specialization of the standard LLVM dominator tree utility for VPBlockBases.</div><div class="ttdef"><b>Definition:</b> <a href="VPlanDominatorTree_8h_source.html#l00026">VPlanDominatorTree.h:26</a></div></div>
-<div class="ttc" id="anamespacellvm_html_a1321b4e7151f98e2243556eb8a9461f3"><div class="ttname"><a href="namespacellvm.html#a1321b4e7151f98e2243556eb8a9461f3">llvm::VPLoopInfo</a></div><div class="ttdeci">LoopInfoBase&lt; VPBlockBase, VPLoop &gt; VPLoopInfo</div><div class="ttdoc">VPLoopInfo provides analysis of natural loop for VPBlockBase-based Hierarchical CFG.</div><div class="ttdef"><b>Definition:</b> <a href="VPlanLoopInfo_8h_source.html#l00040">VPlanLoopInfo.h:40</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysis_8h_source.html#l00056">AliasAnalysis.h:56</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:34 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -55,22 +55,22 @@ $(function() {
   <div class="headertitle"><div class="title">UDTLayout.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/DebugInfo/PDB/UDTLayout.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="UDTLayout_8h_source.html">llvm/DebugInfo/PDB/UDTLayout.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/BitVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/IPDBRawSymbol.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/IPDBSession.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbol.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbolData.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbolFunc.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbolTypeBaseClass.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbolTypeBuiltin.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbolTypePointer.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbolTypeUDT.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbolTypeVTable.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBTypes.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="IPDBRawSymbol_8h_source.html">llvm/DebugInfo/PDB/IPDBRawSymbol.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IPDBSession_8h_source.html">llvm/DebugInfo/PDB/IPDBSession.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbol_8h_source.html">llvm/DebugInfo/PDB/PDBSymbol.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbolData_8h_source.html">llvm/DebugInfo/PDB/PDBSymbolData.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbolFunc_8h_source.html">llvm/DebugInfo/PDB/PDBSymbolFunc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbolTypeBaseClass_8h_source.html">llvm/DebugInfo/PDB/PDBSymbolTypeBaseClass.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbolTypeBuiltin_8h_source.html">llvm/DebugInfo/PDB/PDBSymbolTypeBuiltin.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbolTypePointer_8h_source.html">llvm/DebugInfo/PDB/PDBSymbolTypePointer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbolTypeUDT_8h_source.html">llvm/DebugInfo/PDB/PDBSymbolTypeUDT.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbolTypeVTable_8h_source.html">llvm/DebugInfo/PDB/PDBSymbolTypeVTable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBTypes_8h_source.html">llvm/DebugInfo/PDB/PDBTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
@@ -80,27 +80,56 @@ Include dependency graph for UDTLayout.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="UDTLayout_8cpp__incl.png" border="0" usemap="#alib_2DebugInfo_2PDB_2UDTLayout_8cpp" alt=""/></div>
 <map name="alib_2DebugInfo_2PDB_2UDTLayout_8cpp" id="alib_2DebugInfo_2PDB_2UDTLayout_8cpp">
-<area shape="rect" title=" " alt="" coords="1713,5,1955,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,159,119"/>
-<area shape="rect" title=" " alt="" coords="183,86,338,111"/>
-<area shape="rect" title=" " alt="" coords="363,86,519,111"/>
-<area shape="rect" title=" " alt="" coords="543,86,706,111"/>
-<area shape="rect" title=" " alt="" coords="731,79,884,119"/>
-<area shape="rect" title=" " alt="" coords="908,79,1061,119"/>
-<area shape="rect" title=" " alt="" coords="1085,79,1239,119"/>
-<area shape="rect" title=" " alt="" coords="1263,79,1416,119"/>
-<area shape="rect" title=" " alt="" coords="1440,79,1593,119"/>
-<area shape="rect" title=" " alt="" coords="1618,79,1829,119"/>
-<area shape="rect" title=" " alt="" coords="1853,79,2039,119"/>
-<area shape="rect" title=" " alt="" coords="2063,79,2253,119"/>
-<area shape="rect" title=" " alt="" coords="2277,79,2447,119"/>
-<area shape="rect" title=" " alt="" coords="2471,79,2658,119"/>
-<area shape="rect" title=" " alt="" coords="2683,79,2836,119"/>
-<area shape="rect" title=" " alt="" coords="2861,86,3031,111"/>
-<area shape="rect" title=" " alt="" coords="3055,86,3141,111"/>
-<area shape="rect" title=" " alt="" coords="3165,86,3234,111"/>
-<area shape="rect" title=" " alt="" coords="3258,86,3325,111"/>
-<area shape="rect" title=" " alt="" coords="3349,86,3426,111"/>
+<area shape="rect" title=" " alt="" coords="1569,5,1812,31"/>
+<area shape="rect" href="UDTLayout_8h.html" title=" " alt="" coords="1006,79,1159,119"/>
+<area shape="rect" title=" " alt="" coords="419,174,573,199"/>
+<area shape="rect" title=" " alt="" coords="598,174,754,199"/>
+<area shape="rect" href="PDBSymbol_8h.html" title=" " alt="" coords="1359,431,1513,471"/>
+<area shape="rect" title=" " alt="" coords="2047,856,2116,881"/>
+<area shape="rect" title=" " alt="" coords="619,856,685,881"/>
+<area shape="rect" title=" " alt="" coords="2189,775,2267,801"/>
+<area shape="rect" href="PDBTypes_8h.html" title=" " alt="" coords="597,592,750,632"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="2429,687,2600,713"/>
+<area shape="rect" title=" " alt="" coords="1648,599,1733,625"/>
+<area shape="rect" href="IPDBRawSymbol_8h.html" title=" " alt="" coords="1771,519,1914,544"/>
+<area shape="rect" title=" " alt="" coords="1989,519,2152,544"/>
+<area shape="rect" href="PDBSymbolData_8h.html" title=" " alt="" coords="373,255,526,295"/>
+<area shape="rect" href="PDBSymbolTypeBaseClass_8h.html" title=" " alt="" coords="1447,255,1657,295"/>
+<area shape="rect" href="PDBSymbolTypeVTable_8h.html" title=" " alt="" coords="1573,343,1760,383"/>
+<area shape="rect" href="PDBSymbolTypeBuiltin_8h.html" title=" " alt="" coords="1120,255,1307,295"/>
+<area shape="rect" href="PDBSymbolTypeUDT_8h.html" title=" " alt="" coords="1467,167,1637,207"/>
+<area shape="rect" href="IPDBSession_8h.html" title=" " alt="" coords="1987,350,2101,375"/>
+<area shape="rect" href="PDBSymbolFunc_8h.html" title=" " alt="" coords="195,255,349,295"/>
+<area shape="rect" href="PDBSymbolTypePointer_8h.html" title=" " alt="" coords="856,343,1045,383"/>
+<area shape="rect" title=" " alt="" coords="1660,687,1817,713"/>
+<area shape="rect" title=" " alt="" coords="291,775,349,801"/>
+<area shape="rect" title=" " alt="" coords="881,174,943,199"/>
+<area shape="rect" href="ConcreteSymbolEnumerator_8h.html" title=" " alt="" coords="1349,519,1565,544"/>
+<area shape="rect" href="PDBExtras_8h.html" title=" " alt="" coords="1222,519,1325,544"/>
+<area shape="rect" href="IPDBEnumChildren_8h.html" title=" " alt="" coords="1425,680,1585,720"/>
+<area shape="rect" href="CodeView_8h.html" title=" " alt="" coords="1210,680,1401,720"/>
+<area shape="rect" title=" " alt="" coords="1086,856,1157,881"/>
+<area shape="rect" title=" " alt="" coords="869,856,936,881"/>
+<area shape="rect" href="IPDBFrameData_8h.html" title=" " alt="" coords="145,680,298,720"/>
+<area shape="rect" href="RawTypes_8h.html" title=" " alt="" coords="879,680,1033,720"/>
+<area shape="rect" title=" " alt="" coords="475,687,541,713"/>
+<area shape="rect" title=" " alt="" coords="565,687,651,713"/>
+<area shape="rect" title=" " alt="" coords="1961,775,2044,801"/>
+<area shape="rect" title=" " alt="" coords="2237,856,2329,881"/>
+<area shape="rect" href="Endian_8h.html" title=" " alt="" coords="1159,775,1324,801"/>
+<area shape="rect" title=" " alt="" coords="1399,775,1548,801"/>
+<area shape="rect" title=" " alt="" coords="1572,775,1740,801"/>
+<area shape="rect" title=" " alt="" coords="1764,775,1937,801"/>
+<area shape="rect" href="Compiler_8h.html" title=" " alt="" coords="2449,856,2628,881"/>
+<area shape="rect" href="GUID_8h.html" title=" " alt="" coords="741,768,931,808"/>
+<area shape="rect" href="type__traits_8h.html" title=" " alt="" coords="2443,775,2634,801"/>
+<area shape="rect" title=" " alt="" coords="1960,599,2149,625"/>
+<area shape="rect" title=" " alt="" coords="1842,687,2017,713"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="965,599,1171,625"/>
+<area shape="rect" title=" " alt="" coords="1195,599,1319,625"/>
+<area shape="rect" href="IPDBLineNumber_8h.html" title=" " alt="" coords="246,350,389,375"/>
+<area shape="rect" href="PDBSymbolTypeVTableShape_8h.html" title=" " alt="" coords="1323,343,1549,383"/>
+<area shape="rect" href="PDBSymbolTypeFunctionSig_8h.html" title=" " alt="" coords="566,350,781,375"/>
 </map>
 </div>
 </div>
@@ -108,9 +137,9 @@ Include dependency graph for UDTLayout.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9e32eafcf44bd2c6a419a9fe615d9f4c"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; PDBSymbol &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UDTLayout_8cpp.html#a9e32eafcf44bd2c6a419a9fe615d9f4c">getSymbolType</a> (const PDBSymbol &amp;Symbol)</td></tr>
+<tr class="memitem:a9e32eafcf44bd2c6a419a9fe615d9f4c"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classllvm_1_1pdb_1_1PDBSymbol.html">PDBSymbol</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UDTLayout_8cpp.html#a9e32eafcf44bd2c6a419a9fe615d9f4c">getSymbolType</a> (const <a class="el" href="classllvm_1_1pdb_1_1PDBSymbol.html">PDBSymbol</a> &amp;Symbol)</td></tr>
 <tr class="separator:a9e32eafcf44bd2c6a419a9fe615d9f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33d3e2e087cade1db9986aa11f7207a6"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UDTLayout_8cpp.html#a33d3e2e087cade1db9986aa11f7207a6">getTypeLength</a> (const PDBSymbol &amp;Symbol)</td></tr>
+<tr class="memitem:a33d3e2e087cade1db9986aa11f7207a6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UDTLayout_8cpp.html#a33d3e2e087cade1db9986aa11f7207a6">getTypeLength</a> (const <a class="el" href="classllvm_1_1pdb_1_1PDBSymbol.html">PDBSymbol</a> &amp;Symbol)</td></tr>
 <tr class="separator:a33d3e2e087cade1db9986aa11f7207a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -124,9 +153,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::unique_ptr&lt; PDBSymbol &gt; getSymbolType </td>
+          <td class="memname">static std::unique_ptr&lt; <a class="el" href="classllvm_1_1pdb_1_1PDBSymbol.html">PDBSymbol</a> &gt; getSymbolType </td>
           <td>(</td>
-          <td class="paramtype">const PDBSymbol &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1pdb_1_1PDBSymbol.html">PDBSymbol</a> &amp;&#160;</td>
           <td class="paramname"><em>Symbol</em></td><td>)</td>
           <td></td>
         </tr>
@@ -139,6 +168,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="UDTLayout_8cpp_source.html#l00033">33</a> of file <a class="el" href="UDTLayout_8cpp_source.html">UDTLayout.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="classllvm_1_1pdb_1_1IPDBSession.html#af1a5e8227daa0df4bf2603f1c79619d9">llvm::pdb::IPDBSession::getSymbolById()</a>, and <a class="el" href="classllvm_1_1pdb_1_1IPDBRawSymbol.html#af2d3204420c4a501391a94801d1093e3">llvm::pdb::IPDBRawSymbol::getTypeId()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="UDTLayout_8cpp_source.html#l00040">getTypeLength()</a>.</p>
 
@@ -154,9 +185,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static uint32_t getTypeLength </td>
+          <td class="memname">static <a class="el" href="classuint32__t.html">uint32_t</a> getTypeLength </td>
           <td>(</td>
-          <td class="paramtype">const PDBSymbol &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1pdb_1_1PDBSymbol.html">PDBSymbol</a> &amp;&#160;</td>
           <td class="paramname"><em>Symbol</em></td><td>)</td>
           <td></td>
         </tr>
@@ -170,14 +201,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="UDTLayout_8cpp_source.html#l00040">40</a> of file <a class="el" href="UDTLayout_8cpp_source.html">UDTLayout.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="UDTLayout_8cpp_source.html#l00033">getSymbolType()</a>.</p>
+<p class="reference">References <a class="el" href="classllvm_1_1pdb_1_1IPDBRawSymbol.html#a93a2474b599e4ddbbd72285c98febe31">llvm::pdb::IPDBRawSymbol::getLength()</a>, and <a class="el" href="UDTLayout_8cpp_source.html#l00033">getSymbolType()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:37 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -57,40 +57,40 @@ $(function() {
   <div class="headertitle"><div class="title">InstrProfiling.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/Instrumentation/InstrProfiling.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="InstrProfiling_8h_source.html">llvm/Transforms/Instrumentation/InstrProfiling.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Triple.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Twine.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/BlockFrequencyInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/BranchProbabilityInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalValue.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalVariable.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="BlockFrequencyInfo_8h_source.html">llvm/Analysis/BlockFrequencyInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BranchProbabilityInfo_8h_source.html">llvm/Analysis/BranchProbabilityInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalValue_8h_source.html">llvm/IR/GlobalValue.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalVariable_8h_source.html">llvm/IR/GlobalVariable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
 <code>#include &quot;llvm/ProfileData/InstrProf.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Error.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/ModuleUtils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/SSAUpdater.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Error_8h_source.html">llvm/Support/Error.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ModuleUtils_8h_source.html">llvm/Transforms/Utils/ModuleUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SSAUpdater_8h_source.html">llvm/Transforms/Utils/SSAUpdater.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
@@ -102,47 +102,56 @@ Include dependency graph for InstrProfiling.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="InstrProfiling_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Instrumentation_2InstrProfiling_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Instrumentation_2InstrProfiling_8cpp" id="alib_2Transforms_2Instrumentation_2InstrProfiling_8cpp">
-<area shape="rect" title=" " alt="" coords="3738,5,3961,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,240,133"/>
-<area shape="rect" title=" " alt="" coords="264,101,419,126"/>
-<area shape="rect" title=" " alt="" coords="443,101,618,126"/>
-<area shape="rect" title=" " alt="" coords="643,101,800,126"/>
-<area shape="rect" title=" " alt="" coords="824,101,957,126"/>
-<area shape="rect" title=" " alt="" coords="982,101,1117,126"/>
-<area shape="rect" title=" " alt="" coords="1141,93,1358,133"/>
-<area shape="rect" title=" " alt="" coords="1383,93,1612,133"/>
-<area shape="rect" title=" " alt="" coords="1637,101,1819,126"/>
-<area shape="rect" title=" " alt="" coords="1843,93,2042,133"/>
-<area shape="rect" title=" " alt="" coords="2066,101,2214,126"/>
-<area shape="rect" title=" " alt="" coords="2239,101,2393,126"/>
-<area shape="rect" title=" " alt="" coords="2418,101,2561,126"/>
-<area shape="rect" title=" " alt="" coords="2585,101,2735,126"/>
-<area shape="rect" title=" " alt="" coords="2759,101,2931,126"/>
-<area shape="rect" title=" " alt="" coords="2956,101,3116,126"/>
-<area shape="rect" title=" " alt="" coords="3140,101,3279,126"/>
-<area shape="rect" title=" " alt="" coords="3303,101,3465,126"/>
-<area shape="rect" title=" " alt="" coords="3489,101,3668,126"/>
-<area shape="rect" title=" " alt="" coords="3693,101,3835,126"/>
-<area shape="rect" title=" " alt="" coords="3859,101,4013,126"/>
-<area shape="rect" title=" " alt="" coords="4037,101,4197,126"/>
-<area shape="rect" title=" " alt="" coords="4221,101,4381,126"/>
-<area shape="rect" title=" " alt="" coords="4406,101,4538,126"/>
-<area shape="rect" title=" " alt="" coords="4563,101,4677,126"/>
-<area shape="rect" title=" " alt="" coords="4701,101,4797,126"/>
-<area shape="rect" title=" " alt="" coords="4821,101,5019,126"/>
-<area shape="rect" title=" " alt="" coords="5043,101,5213,126"/>
-<area shape="rect" title=" " alt="" coords="5238,101,5453,126"/>
-<area shape="rect" title=" " alt="" coords="5477,101,5627,126"/>
-<area shape="rect" title=" " alt="" coords="5652,101,5863,126"/>
-<area shape="rect" title=" " alt="" coords="5886,93,6047,133"/>
-<area shape="rect" title=" " alt="" coords="6071,93,6233,133"/>
-<area shape="rect" title=" " alt="" coords="6257,93,6418,133"/>
-<area shape="rect" title=" " alt="" coords="6443,101,6528,126"/>
-<area shape="rect" title=" " alt="" coords="6552,101,6621,126"/>
-<area shape="rect" title=" " alt="" coords="6646,101,6717,126"/>
-<area shape="rect" title=" " alt="" coords="6741,101,6808,126"/>
-<area shape="rect" title=" " alt="" coords="6832,101,6891,126"/>
-<area shape="rect" title=" " alt="" coords="6915,93,7101,133"/>
+<area shape="rect" title=" " alt="" coords="3045,5,3267,45"/>
+<area shape="rect" href="InstrProfiling_8h.html" title="This file provides the interface for LLVM&#39;s PGO Instrumentation lowering pass." alt="" coords="3539,93,3773,133"/>
+<area shape="rect" title=" " alt="" coords="3077,592,3235,617"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="1379,181,1539,207"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="1157,431,1307,456"/>
+<area shape="rect" title=" " alt="" coords="900,665,1055,691"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="1891,511,2034,537"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="1717,665,1888,691"/>
+<area shape="rect" title=" " alt="" coords="1653,739,1723,764"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="809,511,981,537"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="816,592,931,617"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="3888,665,4099,691"/>
+<area shape="rect" title=" " alt="" coords="4035,739,4093,764"/>
+<area shape="rect" title=" " alt="" coords="2497,665,2564,691"/>
+<area shape="rect" title=" " alt="" coords="2161,511,2231,537"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="2800,350,2939,375"/>
+<area shape="rect" title=" " alt="" coords="2358,511,2493,537"/>
+<area shape="rect" href="Attributes_8h.html" title="This file contains the simple types necessary to represent the attributes associated with functions a..." alt="" coords="2878,431,3026,456"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="2192,431,2347,456"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="1510,511,1663,537"/>
+<area shape="rect" title=" " alt="" coords="5169,592,5255,617"/>
+<area shape="rect" href="GlobalValue_8h.html" title=" " alt="" coords="3355,431,3517,456"/>
+<area shape="rect" href="GlobalVariable_8h.html" title=" " alt="" coords="2293,350,2472,375"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="1695,262,1855,287"/>
+<area shape="rect" title=" " alt="" coords="5099,511,5274,537"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="4097,262,4229,287"/>
+<area shape="rect" title=" " alt="" coords="3269,181,3467,207"/>
+<area shape="rect" title=" " alt="" coords="5237,181,5371,207"/>
+<area shape="rect" href="BlockFrequencyInfo_8h.html" title=" " alt="" coords="5299,93,5517,133"/>
+<area shape="rect" title=" " alt="" coords="4915,181,5011,207"/>
+<area shape="rect" href="BranchProbabilityInfo_8h.html" title=" " alt="" coords="4275,93,4504,133"/>
+<area shape="rect" href="LoopInfo_8h.html" title=" " alt="" coords="4649,101,4831,126"/>
+<area shape="rect" href="TargetLibraryInfo_8h.html" title=" " alt="" coords="4967,93,5166,133"/>
+<area shape="rect" href="Dominators_8h.html" title=" " alt="" coords="3963,101,4123,126"/>
+<area shape="rect" href="IRBuilder_8h.html" title=" " alt="" coords="1235,101,1378,126"/>
+<area shape="rect" href="CommandLine_8h.html" title=" " alt="" coords="3795,431,4010,456"/>
+<area shape="rect" href="Error_8h.html" title=" " alt="" coords="5603,431,5754,456"/>
+<area shape="rect" href="BasicBlockUtils_8h.html" title=" " alt="" coords="145,343,306,383"/>
+<area shape="rect" href="ModuleUtils_8h.html" title=" " alt="" coords="3113,255,3274,295"/>
+<area shape="rect" href="SSAUpdater_8h.html" title=" " alt="" coords="3582,504,3743,544"/>
+<area shape="rect" title=" " alt="" coords="6147,93,6333,133"/>
+<area shape="rect" title=" " alt="" coords="4806,262,4973,287"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="4366,181,4535,207"/>
+<area shape="rect" title=" " alt="" coords="4275,511,4338,537"/>
+<area shape="rect" title=" " alt="" coords="3923,262,3989,287"/>
+<area shape="rect" href="Instrumentation_8h.html" title=" " alt="" coords="3917,350,4163,375"/>
+<area shape="rect" title=" " alt="" coords="4414,511,4567,537"/>
+<area shape="rect" title=" " alt="" coords="4845,739,4923,764"/>
+<area shape="rect" href="BlockFrequency_8h.html" title=" " alt="" coords="5495,181,5718,207"/>
+<area shape="rect" title=" " alt="" coords="3947,181,4139,207"/>
 </map>
 </div>
 </div>
@@ -169,29 +178,29 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7124e97d1f3834a00cb56cbc28d6274e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#a7124e97d1f3834a00cb56cbc28d6274e">MemOPSizeRange</a> (&quot;memop-size-range&quot;, cl::desc(&quot;Set the range of size in memory intrinsic <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to be profiled &quot; &quot;precisely, in a format of &lt;start_val&gt;:&lt;end_val&gt;&quot;), cl::init(&quot;&quot;))</td></tr>
-<tr class="separator:a7124e97d1f3834a00cb56cbc28d6274e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9ca5f938d049fa2c490f08d371f8b42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#ab9ca5f938d049fa2c490f08d371f8b42">MemOPSizeLarge</a> (&quot;memop-size-large&quot;, cl::desc(&quot;Set large value thresthold in memory intrinsic size profiling. &quot; &quot;Value of 0 disables the large value profiling.&quot;), cl::init(8192))</td></tr>
-<tr class="separator:ab9ca5f938d049fa2c490f08d371f8b42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67bc2c6586c0db4cfbfde6d7dd7cba14"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#a67bc2c6586c0db4cfbfde6d7dd7cba14">INITIALIZE_PASS_BEGIN</a> (InstrProfilingLegacyPass, &quot;instrprof&quot;, &quot;Frontend <a class="el" href="PGOInstrumentation_8cpp.html#adac8189ad0ec3e77037d43c983e85fff">instrumentation</a>-based coverage lowering.&quot;, false, false) INITIALIZE_PASS_END(InstrProfilingLegacyPass</td></tr>
 <tr class="separator:a67bc2c6586c0db4cfbfde6d7dd7cba14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada228e8571988153161975f2a96e035a"><td class="memItemLeft" align="right" valign="top">static InstrProfIncrementInst *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#ada228e8571988153161975f2a96e035a">castToIncrementInst</a> (Instruction *Instr)</td></tr>
+<tr class="memitem:ada228e8571988153161975f2a96e035a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1InstrProfIncrementInst.html">InstrProfIncrementInst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#ada228e8571988153161975f2a96e035a">castToIncrementInst</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Instr)</td></tr>
 <tr class="separator:ada228e8571988153161975f2a96e035a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ca28a37cc6f2fdfc1a57471623dd411"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#a3ca28a37cc6f2fdfc1a57471623dd411">containsProfilingIntrinsics</a> (Module &amp;M)</td></tr>
+<tr class="memitem:a3ca28a37cc6f2fdfc1a57471623dd411"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#a3ca28a37cc6f2fdfc1a57471623dd411">containsProfilingIntrinsics</a> (<a class="el" href="classllvm_1_1Module.html">Module</a> &amp;M)</td></tr>
 <tr class="memdesc:a3ca28a37cc6f2fdfc1a57471623dd411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the module contains uses of any profiling intrinsics.  <a href="InstrProfiling_8cpp.html#a3ca28a37cc6f2fdfc1a57471623dd411">More...</a><br /></td></tr>
 <tr class="separator:a3ca28a37cc6f2fdfc1a57471623dd411"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43d2be8478bbbba71c623f229522cdc4"><td class="memItemLeft" align="right" valign="top">static FunctionCallee&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#a43d2be8478bbbba71c623f229522cdc4">getOrInsertValueProfilingCall</a> (Module &amp;M, const TargetLibraryInfo &amp;TLI, bool IsRange=false)</td></tr>
+<tr class="memitem:a43d2be8478bbbba71c623f229522cdc4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1FunctionCallee.html">FunctionCallee</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#a43d2be8478bbbba71c623f229522cdc4">getOrInsertValueProfilingCall</a> (<a class="el" href="classllvm_1_1Module.html">Module</a> &amp;M, const <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI, <a class="el" href="classbool.html">bool</a> IsRange=false)</td></tr>
 <tr class="separator:a43d2be8478bbbba71c623f229522cdc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5443297c33124bc3c402c77959675ced"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#a5443297c33124bc3c402c77959675ced">getVarName</a> (InstrProfIncrementInst *Inc, StringRef Prefix)</td></tr>
+<tr class="memitem:a5443297c33124bc3c402c77959675ced"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#a5443297c33124bc3c402c77959675ced">getVarName</a> (<a class="el" href="classllvm_1_1InstrProfIncrementInst.html">InstrProfIncrementInst</a> *Inc, StringRef Prefix)</td></tr>
 <tr class="memdesc:a5443297c33124bc3c402c77959675ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of a profiling variable for a particular function.  <a href="InstrProfiling_8cpp.html#a5443297c33124bc3c402c77959675ced">More...</a><br /></td></tr>
 <tr class="separator:a5443297c33124bc3c402c77959675ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a086fd5027d9c9be2f6540c33e9e777dc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#a086fd5027d9c9be2f6540c33e9e777dc">shouldRecordFunctionAddr</a> (Function *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a086fd5027d9c9be2f6540c33e9e777dc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#a086fd5027d9c9be2f6540c33e9e777dc">shouldRecordFunctionAddr</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a086fd5027d9c9be2f6540c33e9e777dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeea8848370a2113b69a2c4b4f4ad2473"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#aeea8848370a2113b69a2c4b4f4ad2473">needsRuntimeRegistrationOfSectionRange</a> (const Triple &amp;TT)</td></tr>
+<tr class="memitem:aeea8848370a2113b69a2c4b4f4ad2473"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#aeea8848370a2113b69a2c4b4f4ad2473">needsRuntimeRegistrationOfSectionRange</a> (const Triple &amp;TT)</td></tr>
 <tr class="separator:aeea8848370a2113b69a2c4b4f4ad2473"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a411e9e3e150ab6385e82e8d66366fdd5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#a411e9e3e150ab6385e82e8d66366fdd5">MemOPSizeRange</a> (&quot;memop-size-range&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Set the range of size in memory intrinsic <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to be profiled &quot; &quot;precisely, in a format of &lt;start_val&gt;:&lt;end_val&gt;&quot;), cl::init(&quot;&quot;))</td></tr>
+<tr class="separator:a411e9e3e150ab6385e82e8d66366fdd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc7b8741c38c721dceea9c83d888325"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#a1dc7b8741c38c721dceea9c83d888325">MemOPSizeLarge</a> (&quot;memop-size-large&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Set large value thresthold in memory intrinsic size profiling. &quot; &quot;<a class="el" href="classllvm_1_1Value.html">Value</a> of 0 disables the large value profiling.&quot;), cl::init(8192))</td></tr>
+<tr class="separator:a1dc7b8741c38c721dceea9c83d888325"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a194c800ff697b17dfd4090d3d09d8607"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#a194c800ff697b17dfd4090d3d09d8607">instrprof</a></td></tr>
 <tr class="separator:a194c800ff697b17dfd4090d3d09d8607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e9a586792e82fb2fa53608f1fec0bd0"><td class="memItemLeft" align="right" valign="top">Frontend <a class="el" href="PGOInstrumentation_8cpp.html#adac8189ad0ec3e77037d43c983e85fff">instrumentation</a> based coverage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstrProfiling_8cpp.html#a2e9a586792e82fb2fa53608f1fec0bd0">lowering</a></td></tr>
@@ -443,9 +452,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static InstrProfIncrementInst * castToIncrementInst </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1InstrProfIncrementInst.html">InstrProfIncrementInst</a> * castToIncrementInst </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>Instr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -471,9 +480,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool containsProfilingIntrinsics </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> containsProfilingIntrinsics </td>
           <td>(</td>
-          <td class="paramtype">Module &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> &amp;&#160;</td>
           <td class="paramname"><em>M</em></td><td>)</td>
           <td></td>
         </tr>
@@ -489,7 +498,9 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstrProfiling_8cpp_source.html#l00469">469</a> of file <a class="el" href="InstrProfiling_8cpp_source.html">InstrProfiling.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="Function_8cpp_source.html#l00637">llvm::Intrinsic::getName()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="InstrProfiling_8cpp_source.html#l00485">llvm::InstrProfiling::run()</a>.</p>
 
 </div>
 </div>
@@ -503,21 +514,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static FunctionCallee getOrInsertValueProfilingCall </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1FunctionCallee.html">FunctionCallee</a> getOrInsertValueProfilingCall </td>
           <td>(</td>
-          <td class="paramtype">Module &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> &amp;&#160;</td>
           <td class="paramname"><em>M</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
           <td class="paramname"><em>IsRange</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
@@ -535,6 +546,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstrProfiling_8cpp_source.html#l00543">543</a> of file <a class="el" href="InstrProfiling_8cpp_source.html">InstrProfiling.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Attributes_8h_source.html#l00412">llvm::AttributeList::addParamAttribute()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="TargetLibraryInfo_8h_source.html#l00305">llvm::TargetLibraryInfo::getExtAttrForI32Param()</a>, and <a class="el" href="IRBuilder_8h_source.html#l00416">llvm::IRBuilderBase::getVoidTy()</a>.</p>
+
 </div>
 </div>
 <a id="a5443297c33124bc3c402c77959675ced" name="a5443297c33124bc3c402c77959675ced"></a>
@@ -549,7 +562,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static std::string getVarName </td>
           <td>(</td>
-          <td class="paramtype">InstrProfIncrementInst *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1InstrProfIncrementInst.html">InstrProfIncrementInst</a> *&#160;</td>
           <td class="paramname"><em>Inc</em>, </td>
         </tr>
         <tr>
@@ -575,7 +588,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstrProfiling_8cpp_source.html#l00665">665</a> of file <a class="el" href="InstrProfiling_8cpp_source.html">InstrProfiling.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="IntrinsicInst_8h_source.html#l00826">llvm::InstrProfIncrementInst::getHash()</a>, <a class="el" href="IntrinsicInst_8h_source.html#l00821">llvm::InstrProfIncrementInst::getName()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, and <a class="el" href="Constants_8h_source.html#l00148">llvm::ConstantInt::getZExtValue()</a>.</p>
 
 </div>
 </div>
@@ -625,74 +638,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab9ca5f938d049fa2c490f08d371f8b42" name="ab9ca5f938d049fa2c490f08d371f8b42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9ca5f938d049fa2c490f08d371f8b42">&#9670;&nbsp;</a></span>MemOPSizeLarge()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; MemOPSizeLarge </td>
-          <td>(</td>
-          <td class="paramtype">&quot;memop-size-large&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Set large value thresthold in memory intrinsic size profiling. &quot; &quot;Value of 0 disables the large value profiling.&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(8192)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7124e97d1f3834a00cb56cbc28d6274e" name="a7124e97d1f3834a00cb56cbc28d6274e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7124e97d1f3834a00cb56cbc28d6274e">&#9670;&nbsp;</a></span>MemOPSizeRange()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt; MemOPSizeRange </td>
-          <td>(</td>
-          <td class="paramtype">&quot;memop-size-range&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Set the range of size in memory intrinsic <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to be profiled &quot; &quot;precisely, in a format of &lt;start_val&gt;:&lt;end_val&gt;&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(&quot;&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aeea8848370a2113b69a2c4b4f4ad2473" name="aeea8848370a2113b69a2c4b4f4ad2473"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeea8848370a2113b69a2c4b4f4ad2473">&#9670;&nbsp;</a></span>needsRuntimeRegistrationOfSectionRange()</h2>
 
@@ -703,7 +648,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool needsRuntimeRegistrationOfSectionRange </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> needsRuntimeRegistrationOfSectionRange </td>
           <td>(</td>
           <td class="paramtype">const Triple &amp;&#160;</td>
           <td class="paramname"><em>TT</em></td><td>)</td>
@@ -731,9 +676,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool shouldRecordFunctionAddr </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> shouldRecordFunctionAddr </td>
           <td>(</td>
-          <td class="paramtype">Function *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -800,10 +745,80 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a1dc7b8741c38c721dceea9c83d888325" name="a1dc7b8741c38c721dceea9c83d888325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dc7b8741c38c721dceea9c83d888325">&#9670;&nbsp;</a></span>MemOPSizeLarge</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; MemOPSizeLarge(&quot;memop-size-large&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Set large value thresthold in memory intrinsic size profiling. &quot; &quot;<a class="el" href="classllvm_1_1Value.html">Value</a> of 0 disables the large value profiling.&quot;), cl::init(8192)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;memop-size-large&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Set large value thresthold in memory intrinsic size profiling. &quot; &quot;<a class="el" href="classllvm_1_1Value.html">Value</a> of 0 disables the large value profiling.&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(8192)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a411e9e3e150ab6385e82e8d66366fdd5" name="a411e9e3e150ab6385e82e8d66366fdd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a411e9e3e150ab6385e82e8d66366fdd5">&#9670;&nbsp;</a></span>MemOPSizeRange</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt; MemOPSizeRange(&quot;memop-size-range&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Set the range of size in memory intrinsic <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to be profiled &quot; &quot;precisely, in a format of &lt;start_val&gt;:&lt;end_val&gt;&quot;), cl::init(&quot;&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;memop-size-range&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Set the range of size in memory intrinsic <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to be profiled &quot; &quot;precisely, in a format of &lt;start_val&gt;:&lt;end_val&gt;&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(&quot;&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="InstrProfiling_8cpp_source.html#l00485">llvm::InstrProfiling::run()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

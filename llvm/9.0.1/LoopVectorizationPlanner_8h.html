@@ -60,42 +60,64 @@ $(function() {
 <p>This file provides a LoopVectorizationPlanner class.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="VPlan_8h_source.html">VPlan.h</a>&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LoopVectorizationPlanner.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="LoopVectorizationPlanner_8h__incl.png" border="0" usemap="#alib_2Transforms_2Vectorize_2LoopVectorizationPlanner_8h" alt=""/></div>
 <map name="alib_2Transforms_2Vectorize_2LoopVectorizationPlanner_8h" id="alib_2Transforms_2Vectorize_2LoopVectorizationPlanner_8h">
-<area shape="rect" title="This file provides a LoopVectorizationPlanner class." alt="" coords="1852,5,2055,45"/>
-<area shape="rect" href="VPlan_8h.html" title="This file contains the declarations of the Vectorization Plan base classes:" alt="" coords="1661,101,1731,126"/>
-<area shape="rect" title=" " alt="" coords="1755,101,1938,126"/>
-<area shape="rect" title=" " alt="" coords="1962,93,2161,133"/>
-<area shape="rect" title=" " alt="" coords="2185,93,2404,133"/>
-<area shape="rect" href="VPlanLoopInfo_8h.html" title="This file defines VPLoopInfo analysis and VPLoop class." alt="" coords="130,181,257,207"/>
-<area shape="rect" href="VPlanValue_8h.html" title="This file contains the declarations of the entities induced by Vectorization Plans,..." alt="" coords="509,181,616,207"/>
-<area shape="rect" title=" " alt="" coords="239,255,406,280"/>
-<area shape="rect" title=" " alt="" coords="430,255,605,280"/>
-<area shape="rect" title=" " alt="" coords="641,181,853,207"/>
-<area shape="rect" title=" " alt="" coords="877,181,1049,207"/>
-<area shape="rect" title=" " alt="" coords="1073,181,1226,207"/>
-<area shape="rect" title=" " alt="" coords="1250,181,1425,207"/>
-<area shape="rect" title=" " alt="" coords="1449,181,1605,207"/>
-<area shape="rect" title=" " alt="" coords="1629,181,1763,207"/>
-<area shape="rect" title=" " alt="" coords="1788,181,1911,207"/>
-<area shape="rect" title=" " alt="" coords="1935,181,2097,207"/>
-<area shape="rect" title=" " alt="" coords="2121,181,2319,207"/>
-<area shape="rect" title=" " alt="" coords="2343,181,2486,207"/>
-<area shape="rect" title=" " alt="" coords="2511,181,2596,207"/>
-<area shape="rect" title=" " alt="" coords="2620,181,2689,207"/>
-<area shape="rect" title=" " alt="" coords="2714,181,2785,207"/>
-<area shape="rect" title=" " alt="" coords="2809,181,2860,207"/>
-<area shape="rect" title=" " alt="" coords="2884,181,2943,207"/>
-<area shape="rect" title=" " alt="" coords="5,255,216,280"/>
-<area shape="rect" title=" " alt="" coords="629,255,749,280"/>
-<area shape="rect" title=" " alt="" coords="773,255,936,280"/>
-<area shape="rect" title=" " alt="" coords="961,255,1167,280"/>
+<area shape="rect" title="This file provides a LoopVectorizationPlanner class." alt="" coords="1928,5,2131,45"/>
+<area shape="rect" href="VPlan_8h.html" title="This file contains the declarations of the Vectorization Plan base classes:" alt="" coords="1618,93,1689,119"/>
+<area shape="rect" href="LoopInfo_8h.html" title=" " alt="" coords="3178,335,3361,361"/>
+<area shape="rect" href="TargetLibraryInfo_8h.html" title=" " alt="" coords="887,328,1086,368"/>
+<area shape="rect" href="TargetTransformInfo_8h.html" title="This pass exposes codegen information to IR&#45;level passes." alt="" coords="2239,167,2457,207"/>
+<area shape="rect" href="VPlanLoopInfo_8h.html" title="This file defines VPLoopInfo analysis and VPLoop class." alt="" coords="2087,174,2214,199"/>
+<area shape="rect" title=" " alt="" coords="1905,423,2117,449"/>
+<area shape="rect" title=" " alt="" coords="2899,504,3066,529"/>
+<area shape="rect" title=" " alt="" coords="2363,504,2535,529"/>
+<area shape="rect" title=" " alt="" coords="3497,504,3671,529"/>
+<area shape="rect" title=" " alt="" coords="3294,577,3469,603"/>
+<area shape="rect" title=" " alt="" coords="195,651,330,676"/>
+<area shape="rect" title=" " alt="" coords="559,651,721,676"/>
+<area shape="rect" title=" " alt="" coords="1748,724,1817,749"/>
+<area shape="rect" title=" " alt="" coords="1171,651,1242,676"/>
+<area shape="rect" title=" " alt="" coords="441,651,500,676"/>
+<area shape="rect" title=" " alt="" coords="3915,651,4000,676"/>
+<area shape="rect" title=" " alt="" coords="1179,577,1333,603"/>
+<area shape="rect" href="VPlanValue_8h.html" title="This file contains the declarations of the entities induced by Vectorization Plans,..." alt="" coords="2292,423,2399,449"/>
+<area shape="rect" title=" " alt="" coords="1634,174,1790,199"/>
+<area shape="rect" title=" " alt="" coords="1815,174,1937,199"/>
+<area shape="rect" href="VectorUtils_8h.html" title=" " alt="" coords="888,255,1085,280"/>
+<area shape="rect" href="IRBuilder_8h.html" title=" " alt="" coords="930,423,1073,449"/>
+<area shape="rect" title=" " alt="" coords="2012,174,2063,199"/>
+<area shape="rect" href="LoopInfoImpl_8h.html" title=" " alt="" coords="2045,255,2256,280"/>
+<area shape="rect" href="Dominators_8h.html" title=" " alt="" coords="2492,335,2652,361"/>
+<area shape="rect" title=" " alt="" coords="3019,651,3179,676"/>
+<area shape="rect" href="IR_2CFG_8h.html" title="This file provides various utilities for inspecting and working with the control flow graph in LLVM I..." alt="" coords="2645,423,2755,449"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="1763,577,1917,603"/>
+<area shape="rect" title=" " alt="" coords="3226,651,3286,676"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="1477,504,1637,529"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="2933,423,3102,449"/>
+<area shape="rect" title=" " alt="" coords="2423,423,2519,449"/>
+<area shape="rect" href="Allocator_8h.html" title="This file defines the MallocAllocator and BumpPtrAllocator interfaces." alt="" coords="3797,504,3976,529"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="571,577,709,603"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="1665,651,1785,676"/>
+<area shape="rect" href="AtomicOrdering_8h.html" title="Atomic ordering constants." alt="" coords="882,577,1105,603"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="702,504,834,529"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="2560,504,2723,529"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="2081,504,2287,529"/>
+<area shape="rect" title=" " alt="" coords="550,335,717,361"/>
+<area shape="rect" href="LoopAccessAnalysis_8h.html" title=" " alt="" coords="1511,328,1702,368"/>
+<area shape="rect" title=" " alt="" coords="499,423,632,449"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="1199,423,1334,449"/>
+<area shape="rect" title=" " alt="" coords="657,416,855,456"/>
+<area shape="rect" href="Operator_8h.html" title=" " alt="" coords="1713,504,1853,529"/>
+<area shape="rect" title=" " alt="" coords="1011,504,1098,529"/>
+<area shape="rect" href="DataTypes_8h.html" title=" " alt="" coords="2537,255,2727,280"/>
+<area shape="rect" href="ScalarEvolution_8h.html" title=" " alt="" coords="3027,255,3253,280"/>
+<area shape="rect" href="AssumptionCache_8h.html" title=" " alt="" coords="2802,328,2993,368"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -117,7 +139,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html">llvm::VPBuilder</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">VPlan-based builder utility analogous to IRBuilder.  <a href="classllvm_1_1VPBuilder.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">VPlan-based builder utility analogous to <a class="el" href="classllvm_1_1IRBuilder.html" title="This provides a uniform API for creating instructions and inserting them into a basic block: either a...">IRBuilder</a>.  <a href="classllvm_1_1VPBuilder.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder_1_1VPInsertPoint.html">llvm::VPBuilder::VPInsertPoint</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">InsertPoint - A saved insertion point.  <a href="classllvm_1_1VPBuilder_1_1VPInsertPoint.html#details">More...</a><br /></td></tr>
@@ -135,6 +157,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
+<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -146,7 +169,7 @@ Namespaces</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

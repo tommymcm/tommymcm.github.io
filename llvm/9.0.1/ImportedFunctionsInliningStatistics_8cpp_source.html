@@ -64,19 +64,19 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// ThinLTO.</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;llvm/Transforms/Utils/ImportedFunctionsInliningStatistics.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="ImportedFunctionsInliningStatistics_8h.html">llvm/Transforms/Utils/ImportedFunctionsInliningStatistics.h</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;llvm/ADT/STLExtras.h&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;llvm/IR/Function.h&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;llvm/IR/Module.h&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;llvm/Support/Debug.h&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;llvm/Support/raw_ostream.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="Function_8h.html">llvm/IR/Function.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="Module_8h.html">llvm/IR/Module.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="Debug_8h.html">llvm/Support/Debug.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="raw__ostream_8h.html">llvm/Support/raw_ostream.h</a>&quot;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm.html">llvm</a>;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>ImportedFunctionsInliningStatistics::InlineGraphNode &amp;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>ImportedFunctionsInliningStatistics::createInlineGraphNode(<span class="keyword">const</span> Function &amp;<a class="code hl_define" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>ImportedFunctionsInliningStatistics::createInlineGraphNode(<span class="keyword">const</span> <a class="code hl_class" href="classllvm_1_1Function.html">Function</a> &amp;<a class="code hl_define" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>) {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keyword">auto</span> &amp;ValueLookup = NodesMap[<a class="code hl_define" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>.getName()];</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordflow">if</span> (!ValueLookup) {</div>
@@ -86,8 +86,8 @@ $(function() {
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keywordflow">return</span> *ValueLookup;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keywordtype">void</span> ImportedFunctionsInliningStatistics::recordInline(<span class="keyword">const</span> Function &amp;Caller,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                                                       <span class="keyword">const</span> Function &amp;Callee) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classllvm_1_1ImportedFunctionsInliningStatistics.html#a869c36ec45c584dfa6f3d914d230b15f">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classllvm_1_1ImportedFunctionsInliningStatistics.html#a869c36ec45c584dfa6f3d914d230b15f">ImportedFunctionsInliningStatistics::recordInline</a>(<span class="keyword">const</span> <a class="code hl_class" href="classllvm_1_1Function.html">Function</a> &amp;Caller,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                                                       <span class="keyword">const</span> <a class="code hl_class" href="classllvm_1_1Function.html">Function</a> &amp;Callee) {</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  InlineGraphNode &amp;CallerNode = createInlineGraphNode(Caller);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  InlineGraphNode &amp;CalleeNode = createInlineGraphNode(Callee);</div>
@@ -113,7 +113,7 @@ $(function() {
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">void</span> ImportedFunctionsInliningStatistics::setModuleInfo(<span class="keyword">const</span> Module &amp;M) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classllvm_1_1ImportedFunctionsInliningStatistics.html#a00fe0b2043a8218ede17ada91d286272">   61</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classllvm_1_1ImportedFunctionsInliningStatistics.html#a00fe0b2043a8218ede17ada91d286272">ImportedFunctionsInliningStatistics::setModuleInfo</a>(<span class="keyword">const</span> <a class="code hl_class" href="classllvm_1_1Module.html">Module</a> &amp;M) {</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  ModuleName = M.getName();</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code hl_define" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> : M.functions()) {</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>.isDeclaration())</div>
@@ -137,7 +137,7 @@ $(function() {
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordflow">return</span> Str.str();</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keywordtype">void</span> ImportedFunctionsInliningStatistics::dump(<span class="keyword">const</span> <span class="keywordtype">bool</span> Verbose) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classllvm_1_1ImportedFunctionsInliningStatistics.html#a776e5ef304e07acc5bbbf585443459a4">   85</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classllvm_1_1AliasSet.html#af940c8979b258033f9a1fbd65f6c073a">ImportedFunctionsInliningStatistics::dump</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> Verbose) {</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  calculateRealInlines();</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  NonImportedCallers.clear();</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
@@ -150,7 +150,7 @@ $(function() {
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keyword">const</span> <span class="keyword">auto</span> SortedNodes = getSortedNodes();</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  std::string Out;</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  Out.reserve(5000);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  raw_string_ostream Ostream(Out);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <a class="code hl_class" href="classllvm_1_1raw__string__ostream.html">raw_string_ostream</a> Ostream(Out);</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  Ostream &lt;&lt; <span class="stringliteral">&quot;------- Dumping inliner stats for [&quot;</span> &lt;&lt; ModuleName</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>          &lt;&lt; <span class="stringliteral">&quot;] -------\n&quot;</span>;</div>
@@ -209,8 +209,8 @@ $(function() {
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                 <span class="stringliteral">&quot;non-imported functions inlined into importing module&quot;</span>,</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                 InlinedNotImportedFunctionsToImportingModuleCount,</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                 NotImportedFuncCount, <span class="stringliteral">&quot;non-imported functions&quot;</span>);</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  Ostream.flush();</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  dbgs() &lt;&lt; Out;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  Ostream.<a class="code hl_function" href="classllvm_1_1raw__ostream.html#a520bdf57dfe3e73abb53d482893f0a27">flush</a>();</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <a class="code hl_function" href="namespacellvm.html#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; Out;</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>}</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keywordtype">void</span> ImportedFunctionsInliningStatistics::calculateRealInlines() {</div>
@@ -257,13 +257,26 @@ $(function() {
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}</div>
 <div class="ttc" id="aDeadArgumentElimination_8cpp_html_aa5bfc84fa71b9e3477e24efecb60fae5"><div class="ttname"><a href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a></div><div class="ttdeci">assert(!RetTy-&gt;isVoidTy() &amp;&amp;&quot;void type has no subtype&quot;)</div></div>
 <div class="ttc" id="aDeadArgumentElimination_8cpp_html_ac09a30d47dd36dfe05dda91e8d67e92f"><div class="ttname"><a href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a></div><div class="ttdeci">if(StructType *STy=dyn_cast&lt; StructType &gt;(RetTy)) return STy -&gt; getElementType(Idx)</div></div>
+<div class="ttc" id="aDebug_8h_html"><div class="ttname"><a href="Debug_8h.html">Debug.h</a></div></div>
+<div class="ttc" id="aFunction_8h_html"><div class="ttname"><a href="Function_8h.html">Function.h</a></div></div>
 <div class="ttc" id="aImportedFunctionsInliningStatistics_8cpp_html_a3fadf39a420def06338f8c70f3c236ea"><div class="ttname"><a href="ImportedFunctionsInliningStatistics_8cpp.html#a3fadf39a420def06338f8c70f3c236ea">getStatString</a></div><div class="ttdeci">static std::string getStatString(const char *Msg, int32_t Fraction, int32_t All, const char *PercentageOfMsg, bool LineEnd=true)</div><div class="ttdef"><b>Definition:</b> <a href="ImportedFunctionsInliningStatistics_8cpp_source.html#l00070">ImportedFunctionsInliningStatistics.cpp:70</a></div></div>
+<div class="ttc" id="aImportedFunctionsInliningStatistics_8h_html"><div class="ttname"><a href="ImportedFunctionsInliningStatistics_8h.html">ImportedFunctionsInliningStatistics.h</a></div></div>
 <div class="ttc" id="aMD5_8cpp_html_a96d73bbd7af15cb1fc38c3f4a3bd82e9"><div class="ttname"><a href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a></div><div class="ttdeci">#define F(x, y, z)</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00055">MD5.cpp:55</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
+<div class="ttc" id="aModule_8h_html"><div class="ttname"><a href="Module_8h.html">Module.h</a></div><div class="ttdoc">Module.h This file contains the declarations for the Module class.</div></div>
+<div class="ttc" id="aclassllvm_1_1AliasSet_html_af940c8979b258033f9a1fbd65f6c073a"><div class="ttname"><a href="classllvm_1_1AliasSet.html#af940c8979b258033f9a1fbd65f6c073a">llvm::AliasSet::dump</a></div><div class="ttdeci">void dump() const</div><div class="ttdef"><b>Definition:</b> <a href="AliasSetTracker_8cpp_source.html#l00701">AliasSetTracker.cpp:701</a></div></div>
+<div class="ttc" id="aclassllvm_1_1Function_html"><div class="ttname"><a href="classllvm_1_1Function.html">llvm::Function</a></div><div class="ttdef"><b>Definition:</b> <a href="Function_8h_source.html#l00059">Function.h:59</a></div></div>
+<div class="ttc" id="aclassllvm_1_1ImportedFunctionsInliningStatistics_html_a00fe0b2043a8218ede17ada91d286272"><div class="ttname"><a href="classllvm_1_1ImportedFunctionsInliningStatistics.html#a00fe0b2043a8218ede17ada91d286272">llvm::ImportedFunctionsInliningStatistics::setModuleInfo</a></div><div class="ttdeci">void setModuleInfo(const Module &amp;M)</div><div class="ttdoc">Set information like AllFunctions, ImportedFunctions, ModuleName.</div><div class="ttdef"><b>Definition:</b> <a href="ImportedFunctionsInliningStatistics_8cpp_source.html#l00061">ImportedFunctionsInliningStatistics.cpp:61</a></div></div>
+<div class="ttc" id="aclassllvm_1_1ImportedFunctionsInliningStatistics_html_a869c36ec45c584dfa6f3d914d230b15f"><div class="ttname"><a href="classllvm_1_1ImportedFunctionsInliningStatistics.html#a869c36ec45c584dfa6f3d914d230b15f">llvm::ImportedFunctionsInliningStatistics::recordInline</a></div><div class="ttdeci">void recordInline(const Function &amp;Caller, const Function &amp;Callee)</div><div class="ttdoc">Record inline of.</div><div class="ttdef"><b>Definition:</b> <a href="ImportedFunctionsInliningStatistics_8cpp_source.html#l00034">ImportedFunctionsInliningStatistics.cpp:34</a></div></div>
+<div class="ttc" id="aclassllvm_1_1Module_html"><div class="ttname"><a href="classllvm_1_1Module.html">llvm::Module</a></div><div class="ttdoc">A Module instance is used to store all the information related to an LLVM module.</div><div class="ttdef"><b>Definition:</b> <a href="Module_8h_source.html#l00065">Module.h:65</a></div></div>
+<div class="ttc" id="aclassllvm_1_1raw__ostream_html_a520bdf57dfe3e73abb53d482893f0a27"><div class="ttname"><a href="classllvm_1_1raw__ostream.html#a520bdf57dfe3e73abb53d482893f0a27">llvm::raw_ostream::flush</a></div><div class="ttdeci">void flush()</div><div class="ttdef"><b>Definition:</b> <a href="raw__ostream_8h_source.html#l00141">raw_ostream.h:141</a></div></div>
+<div class="ttc" id="aclassllvm_1_1raw__string__ostream_html"><div class="ttname"><a href="classllvm_1_1raw__string__ostream.html">llvm::raw_string_ostream</a></div><div class="ttdoc">A raw_ostream that writes to an std::string.</div><div class="ttdef"><b>Definition:</b> <a href="raw__ostream_8h_source.html#l00482">raw_ostream.h:482</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysis_8h_source.html#l00056">AliasAnalysis.h:56</a></div></div>
+<div class="ttc" id="anamespacellvm_html_a7c46c742c31be54870e2038048e6b391"><div class="ttname"><a href="namespacellvm.html#a7c46c742c31be54870e2038048e6b391">llvm::dbgs</a></div><div class="ttdeci">raw_ostream &amp; dbgs()</div><div class="ttdoc">dbgs() - This returns a reference to a raw_ostream for debugging messages.</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00132">Debug.cpp:132</a></div></div>
+<div class="ttc" id="araw__ostream_8h_html"><div class="ttname"><a href="raw__ostream_8h.html">raw_ostream.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:42 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:32 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

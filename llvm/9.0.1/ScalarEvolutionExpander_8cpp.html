@@ -56,40 +56,75 @@ $(function() {
   <div class="headertitle"><div class="title">ScalarEvolutionExpander.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Analysis/ScalarEvolutionExpander.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="ScalarEvolutionExpander_8h_source.html">llvm/Analysis/ScalarEvolutionExpander.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallSet.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/InstructionSimplify.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstructionSimplify_8h_source.html">llvm/Analysis/InstructionSimplify.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ScalarEvolutionExpander.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ScalarEvolutionExpander_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2ScalarEvolutionExpander_8cpp" alt=""/></div>
 <map name="alib_2Analysis_2ScalarEvolutionExpander_8cpp" id="alib_2Analysis_2ScalarEvolutionExpander_8cpp">
-<area shape="rect" title=" " alt="" coords="1339,5,1542,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,220,133"/>
-<area shape="rect" title=" " alt="" coords="245,101,407,126"/>
-<area shape="rect" title=" " alt="" coords="432,101,588,126"/>
-<area shape="rect" title=" " alt="" coords="612,93,795,133"/>
-<area shape="rect" title=" " alt="" coords="819,101,1001,126"/>
-<area shape="rect" title=" " alt="" coords="1026,93,1245,133"/>
-<area shape="rect" title=" " alt="" coords="1269,101,1428,126"/>
-<area shape="rect" title=" " alt="" coords="1453,101,1613,126"/>
-<area shape="rect" title=" " alt="" coords="1637,101,1797,126"/>
-<area shape="rect" title=" " alt="" coords="1821,101,1991,126"/>
-<area shape="rect" title=" " alt="" coords="2015,101,2147,126"/>
-<area shape="rect" title=" " alt="" coords="2171,101,2342,126"/>
-<area shape="rect" title=" " alt="" coords="2366,101,2529,126"/>
-<area shape="rect" title=" " alt="" coords="2553,101,2760,126"/>
+<area shape="rect" title=" " alt="" coords="2515,5,2718,45"/>
+<area shape="rect" href="ScalarEvolutionExpander_8h.html" title=" " alt="" coords="2386,93,2601,133"/>
+<area shape="rect" href="LoopInfo_8h.html" title=" " alt="" coords="3814,438,3997,463"/>
+<area shape="rect" title=" " alt="" coords="772,827,935,852"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="1124,599,1256,625"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="1129,680,1288,705"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="4436,599,4599,625"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="3648,680,3854,705"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="544,599,704,625"/>
+<area shape="rect" href="LLVMContext_8h.html" title=" " alt="" coords="1534,599,1704,625"/>
+<area shape="rect" title=" " alt="" coords="3440,101,3596,126"/>
+<area shape="rect" href="InstructionSimplify_8h.html" title=" " alt="" coords="2592,592,2774,632"/>
+<area shape="rect" href="TargetTransformInfo_8h.html" title="This pass exposes codegen information to IR&#45;level passes." alt="" coords="3226,269,3444,309"/>
+<area shape="rect" href="Dominators_8h.html" title=" " alt="" coords="4724,438,4884,463"/>
+<area shape="rect" href="PatternMatch_8h.html" title=" " alt="" coords="2143,599,2314,625"/>
+<area shape="rect" title=" " alt="" coords="3256,599,3422,625"/>
+<area shape="rect" title=" " alt="" coords="3551,519,3711,544"/>
+<area shape="rect" title=" " alt="" coords="2805,753,2958,779"/>
+<area shape="rect" href="ScalarEvolutionExpressions_8h.html" title=" " alt="" coords="2412,269,2626,309"/>
+<area shape="rect" href="ValueHandle_8h.html" title=" " alt="" coords="780,599,946,625"/>
+<area shape="rect" href="ScalarEvolutionNormalization_8h.html" title=" " alt="" coords="2386,181,2601,221"/>
+<area shape="rect" href="TargetFolder_8h.html" title=" " alt="" coords="1047,189,1252,214"/>
+<area shape="rect" href="IRBuilder_8h.html" title=" " alt="" coords="1324,519,1466,544"/>
+<area shape="rect" title=" " alt="" coords="4352,900,4526,925"/>
+<area shape="rect" title=" " alt="" coords="3354,753,3529,779"/>
+<area shape="rect" href="ScalarEvolution_8h.html" title=" " alt="" coords="2944,357,3171,383"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="1794,900,1964,925"/>
+<area shape="rect" title=" " alt="" coords="2496,973,2566,999"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="2255,900,2466,925"/>
+<area shape="rect" title=" " alt="" coords="903,900,1058,925"/>
+<area shape="rect" title=" " alt="" coords="2805,680,2964,705"/>
+<area shape="rect" title=" " alt="" coords="3410,827,3495,852"/>
+<area shape="rect" title=" " alt="" coords="4014,827,4074,852"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="1948,680,2108,705"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="3989,519,4158,544"/>
+<area shape="rect" title=" " alt="" coords="4262,753,4358,779"/>
+<area shape="rect" href="Allocator_8h.html" title="This file defines the MallocAllocator and BumpPtrAllocator interfaces." alt="" coords="3394,680,3572,705"/>
+<area shape="rect" href="Operator_8h.html" title=" " alt="" coords="2437,680,2577,705"/>
+<area shape="rect" title=" " alt="" coords="4725,599,4897,625"/>
+<area shape="rect" href="IR_2CFG_8h.html" title="This file provides various utilities for inspecting and working with the control flow graph in LLVM I..." alt="" coords="4837,519,4948,544"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="2525,753,2678,779"/>
+<area shape="rect" title=" " alt="" coords="1652,827,1810,852"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="2474,827,2588,852"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="1018,753,1190,779"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="1380,827,1495,852"/>
+<area shape="rect" href="AtomicOrdering_8h.html" title="Atomic ordering constants." alt="" coords="1620,753,1842,779"/>
+<area shape="rect" href="MathExtras_8h.html" title=" " alt="" coords="3084,753,3279,779"/>
+<area shape="rect" title=" " alt="" coords="1728,599,1814,625"/>
+<area shape="rect" href="DataTypes_8h.html" title=" " alt="" coords="3398,357,3587,383"/>
+<area shape="rect" href="AssumptionCache_8h.html" title=" " alt="" coords="3298,431,3489,471"/>
 </map>
 </div>
 </div>
@@ -98,37 +133,40 @@ Include dependency graph for ScalarEvolutionExpander.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
+<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a02776aac5511cad037cf4d73ea0ab155"><td class="memItemLeft" align="right" valign="top">static BasicBlock::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#a02776aac5511cad037cf4d73ea0ab155">findInsertPointAfter</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, BasicBlock *MustDominate)</td></tr>
+<tr class="memitem:a02776aac5511cad037cf4d73ea0ab155"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BasicBlock.html#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#a02776aac5511cad037cf4d73ea0ab155">findInsertPointAfter</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *MustDominate)</td></tr>
 <tr class="separator:a02776aac5511cad037cf4d73ea0ab155"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add03dfa11ffe2b9902da53aecc8591fb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#add03dfa11ffe2b9902da53aecc8591fb">FactorOutConstant</a> (const SCEV *&amp;S, const SCEV *&amp;Remainder, const SCEV *Factor, ScalarEvolution &amp;SE, const DataLayout &amp;DL)</td></tr>
+<tr class="memitem:add03dfa11ffe2b9902da53aecc8591fb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#add03dfa11ffe2b9902da53aecc8591fb">FactorOutConstant</a> (const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&amp;S, const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&amp;Remainder, const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *Factor, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE, const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL)</td></tr>
 <tr class="memdesc:add03dfa11ffe2b9902da53aecc8591fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">FactorOutConstant - Test if S is divisible by Factor, using signed division.  <a href="ScalarEvolutionExpander_8cpp.html#add03dfa11ffe2b9902da53aecc8591fb">More...</a><br /></td></tr>
 <tr class="separator:add03dfa11ffe2b9902da53aecc8591fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bc337eb05f0a2d638e1fe8e583db078"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#a9bc337eb05f0a2d638e1fe8e583db078">SimplifyAddOperands</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const SCEV * &gt; &amp;Ops, Type *Ty, ScalarEvolution &amp;SE)</td></tr>
+<tr class="memitem:a9bc337eb05f0a2d638e1fe8e583db078"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#a9bc337eb05f0a2d638e1fe8e583db078">SimplifyAddOperands</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> * &gt; &amp;Ops, <a class="el" href="classllvm_1_1Type.html">Type</a> *Ty, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE)</td></tr>
 <tr class="memdesc:a9bc337eb05f0a2d638e1fe8e583db078"><td class="mdescLeft">&#160;</td><td class="mdescRight">SimplifyAddOperands - Sort and simplify a list of add operands.  <a href="ScalarEvolutionExpander_8cpp.html#a9bc337eb05f0a2d638e1fe8e583db078">More...</a><br /></td></tr>
 <tr class="separator:a9bc337eb05f0a2d638e1fe8e583db078"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae138dd892b8a5f945944cdbd7d151304"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#ae138dd892b8a5f945944cdbd7d151304">SplitAddRecs</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const SCEV * &gt; &amp;Ops, Type *Ty, ScalarEvolution &amp;SE)</td></tr>
+<tr class="memitem:ae138dd892b8a5f945944cdbd7d151304"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#ae138dd892b8a5f945944cdbd7d151304">SplitAddRecs</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> * &gt; &amp;Ops, <a class="el" href="classllvm_1_1Type.html">Type</a> *Ty, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE)</td></tr>
 <tr class="memdesc:ae138dd892b8a5f945944cdbd7d151304"><td class="mdescLeft">&#160;</td><td class="mdescRight">SplitAddRecs - Flatten a list of add operands, moving addrec start values out to the top level.  <a href="ScalarEvolutionExpander_8cpp.html#ae138dd892b8a5f945944cdbd7d151304">More...</a><br /></td></tr>
 <tr class="separator:ae138dd892b8a5f945944cdbd7d151304"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a604892413799925b9f8c886abee9e5ca"><td class="memItemLeft" align="right" valign="top">static const Loop *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#a604892413799925b9f8c886abee9e5ca">PickMostRelevantLoop</a> (const Loop *A, const Loop *B, DominatorTree &amp;DT)</td></tr>
+<tr class="memitem:a604892413799925b9f8c886abee9e5ca"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#a604892413799925b9f8c886abee9e5ca">PickMostRelevantLoop</a> (const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *A, const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *B, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT)</td></tr>
 <tr class="memdesc:a604892413799925b9f8c886abee9e5ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">PickMostRelevantLoop - Given two loops pick the one that's most relevant for SCEV expansion.  <a href="ScalarEvolutionExpander_8cpp.html#a604892413799925b9f8c886abee9e5ca">More...</a><br /></td></tr>
 <tr class="separator:a604892413799925b9f8c886abee9e5ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb811bb4a3e1c56acb04c713200c9a42"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#aeb811bb4a3e1c56acb04c713200c9a42">ExposePointerBase</a> (const SCEV *&amp;Base, const SCEV *&amp;Rest, ScalarEvolution &amp;SE)</td></tr>
+<tr class="memitem:aeb811bb4a3e1c56acb04c713200c9a42"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#aeb811bb4a3e1c56acb04c713200c9a42">ExposePointerBase</a> (const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&amp;Base, const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&amp;Rest, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE)</td></tr>
 <tr class="memdesc:aeb811bb4a3e1c56acb04c713200c9a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move parts of Base into Rest to leave Base with the minimal expression that provides a pointer operand suitable for a GEP expansion.  <a href="ScalarEvolutionExpander_8cpp.html#aeb811bb4a3e1c56acb04c713200c9a42">More...</a><br /></td></tr>
 <tr class="separator:aeb811bb4a3e1c56acb04c713200c9a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9683831e3a4c794ca05bf81af366e5e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#ac9683831e3a4c794ca05bf81af366e5e">canBeCheaplyTransformed</a> (ScalarEvolution &amp;SE, const SCEVAddRecExpr *Phi, const SCEVAddRecExpr *Requested, bool &amp;InvertStep)</td></tr>
+<tr class="memitem:ac9683831e3a4c794ca05bf81af366e5e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#ac9683831e3a4c794ca05bf81af366e5e">canBeCheaplyTransformed</a> (<a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE, const <a class="el" href="classllvm_1_1SCEVAddRecExpr.html">SCEVAddRecExpr</a> *Phi, const <a class="el" href="classllvm_1_1SCEVAddRecExpr.html">SCEVAddRecExpr</a> *Requested, <a class="el" href="classbool.html">bool</a> &amp;InvertStep)</td></tr>
 <tr class="memdesc:ac9683831e3a4c794ca05bf81af366e5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether we can cheaply express the requested SCEV in terms of the available PHI SCEV by truncation and/or inversion of the step.  <a href="ScalarEvolutionExpander_8cpp.html#ac9683831e3a4c794ca05bf81af366e5e">More...</a><br /></td></tr>
 <tr class="separator:ac9683831e3a4c794ca05bf81af366e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9780ca905174166ea524a30801e7e69b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#a9780ca905174166ea524a30801e7e69b">IsIncrementNSW</a> (ScalarEvolution &amp;SE, const SCEVAddRecExpr *AR)</td></tr>
+<tr class="memitem:a9780ca905174166ea524a30801e7e69b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#a9780ca905174166ea524a30801e7e69b">IsIncrementNSW</a> (<a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE, const <a class="el" href="classllvm_1_1SCEVAddRecExpr.html">SCEVAddRecExpr</a> *AR)</td></tr>
 <tr class="separator:a9780ca905174166ea524a30801e7e69b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a202c702ced6d0c47a226adf851aba6eb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#a202c702ced6d0c47a226adf851aba6eb">IsIncrementNUW</a> (ScalarEvolution &amp;SE, const SCEVAddRecExpr *AR)</td></tr>
+<tr class="memitem:a202c702ced6d0c47a226adf851aba6eb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScalarEvolutionExpander_8cpp.html#a202c702ced6d0c47a226adf851aba6eb">IsIncrementNUW</a> (<a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE, const <a class="el" href="classllvm_1_1SCEVAddRecExpr.html">SCEVAddRecExpr</a> *AR)</td></tr>
 <tr class="separator:a202c702ced6d0c47a226adf851aba6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed54a8c39c1f5f066957f1297bd6bd0b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#aed54a8c39c1f5f066957f1297bd6bd0b">llvm::isSafeToExpand</a> (const SCEV *S, ScalarEvolution &amp;SE)</td></tr>
+<tr class="memitem:aed54a8c39c1f5f066957f1297bd6bd0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#aed54a8c39c1f5f066957f1297bd6bd0b">llvm::isSafeToExpand</a> (const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *S, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE)</td></tr>
+<tr class="memdesc:aed54a8c39c1f5f066957f1297bd6bd0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the given expression is safe to expand in the sense that all materialized values are safe to speculate anywhere their operands are defined.  <a href="namespacellvm.html#aed54a8c39c1f5f066957f1297bd6bd0b">More...</a><br /></td></tr>
 <tr class="separator:aed54a8c39c1f5f066957f1297bd6bd0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ba8e34db731da356a7bbef2178c6f73"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a7ba8e34db731da356a7bbef2178c6f73">llvm::isSafeToExpandAt</a> (const SCEV *S, const Instruction *InsertionPoint, ScalarEvolution &amp;SE)</td></tr>
+<tr class="memitem:a7ba8e34db731da356a7bbef2178c6f73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a7ba8e34db731da356a7bbef2178c6f73">llvm::isSafeToExpandAt</a> (const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *S, const <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *InsertionPoint, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE)</td></tr>
+<tr class="memdesc:a7ba8e34db731da356a7bbef2178c6f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the given expression is safe to expand in the sense that all materialized values are defined and safe to speculate at the specified location and their operands are defined at this location.  <a href="namespacellvm.html#a7ba8e34db731da356a7bbef2178c6f73">More...</a><br /></td></tr>
 <tr class="separator:a7ba8e34db731da356a7bbef2178c6f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -142,27 +180,27 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool canBeCheaplyTransformed </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> canBeCheaplyTransformed </td>
           <td>(</td>
-          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
           <td class="paramname"><em>SE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SCEVAddRecExpr *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEVAddRecExpr.html">SCEVAddRecExpr</a> *&#160;</td>
           <td class="paramname"><em>Phi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SCEVAddRecExpr *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEVAddRecExpr.html">SCEVAddRecExpr</a> *&#160;</td>
           <td class="paramname"><em>Requested</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classbool.html">bool</a> &amp;&#160;</td>
           <td class="paramname"><em>InvertStep</em>&#160;</td>
         </tr>
         <tr>
@@ -182,6 +220,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l01099">1099</a> of file <a class="el" href="ScalarEvolutionExpander_8cpp_source.html">ScalarEvolutionExpander.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="ScalarEvolution_8cpp_source.html#l02402">llvm::ScalarEvolution::getAddExpr()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03779">llvm::ScalarEvolution::getEffectiveSCEVType()</a>, <a class="el" href="DerivedTypes_8h_source.html#l00097">llvm::Type::getIntegerBitWidth()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03942">llvm::ScalarEvolution::getNegativeSCEV()</a>, <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00306">llvm::SCEVAddRecExpr::getStart()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l04100">llvm::ScalarEvolution::getTruncateOrNoop()</a>, and <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00173">llvm::SCEVNAryExpr::getType()</a>.</p>
+
 </div>
 </div>
 <a id="aeb811bb4a3e1c56acb04c713200c9a42" name="aeb811bb4a3e1c56acb04c713200c9a42"></a>
@@ -196,19 +236,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void ExposePointerBase </td>
           <td>(</td>
-          <td class="paramtype">const SCEV *&amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&amp;&#160;</td>
           <td class="paramname"><em>Base</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SCEV *&amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&amp;&#160;</td>
           <td class="paramname"><em>Rest</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
           <td class="paramname"><em>SE</em>&#160;</td>
         </tr>
         <tr>
@@ -228,7 +268,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00878">878</a> of file <a class="el" href="ScalarEvolutionExpander_8cpp_source.html">ScalarEvolutionExpander.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00878">ExposePointerBase()</a>.</p>
+<p class="reference">References <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00878">ExposePointerBase()</a>, <a class="el" href="ScalarEvolution_8h_source.html#l00115">llvm::SCEV::FlagNW</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l02402">llvm::ScalarEvolution::getAddExpr()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03388">llvm::ScalarEvolution::getAddRecExpr()</a>, and <a class="el" href="ScalarEvolution_8cpp_source.html#l00416">llvm::ScalarEvolution::getConstant()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00878">ExposePointerBase()</a>.</p>
 
@@ -244,33 +284,33 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool FactorOutConstant </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> FactorOutConstant </td>
           <td>(</td>
-          <td class="paramtype">const SCEV *&amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&amp;&#160;</td>
           <td class="paramname"><em>S</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SCEV *&amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&amp;&#160;</td>
           <td class="paramname"><em>Remainder</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SCEV *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&#160;</td>
           <td class="paramname"><em>Factor</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
           <td class="paramname"><em>SE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DataLayout &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
           <td class="paramname"><em>DL</em>&#160;</td>
         </tr>
         <tr>
@@ -291,7 +331,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00246">246</a> of file <a class="el" href="ScalarEvolutionExpander_8cpp_source.html">ScalarEvolutionExpander.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00246">FactorOutConstant()</a>.</p>
+<p class="reference">References <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00246">FactorOutConstant()</a>, <a class="el" href="ScalarEvolution_8h_source.html#l00115">llvm::SCEV::FlagNW</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l02402">llvm::ScalarEvolution::getAddExpr()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03388">llvm::ScalarEvolution::getAddRecExpr()</a>, <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00057">llvm::SCEVConstant::getAPInt()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00416">llvm::ScalarEvolution::getConstant()</a>, <a class="el" href="ScalarEvolution_8h_source.html#l00506">llvm::ScalarEvolution::getContext()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l02903">llvm::ScalarEvolution::getMulExpr()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00352">llvm::SCEV::getType()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00385">llvm::SCEV::isOne()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00379">llvm::SCEV::isZero()</a>, and <a class="el" href="Constants_8h_source.html#l00192">llvm::ConstantInt::isZero()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00246">FactorOutConstant()</a>.</p>
 
@@ -307,15 +347,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static BasicBlock::iterator findInsertPointAfter </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1BasicBlock.html#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> findInsertPointAfter </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>MustDominate</em>&#160;</td>
         </tr>
         <tr>
@@ -333,7 +373,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00086">86</a> of file <a class="el" href="ScalarEvolutionExpander_8cpp_source.html">ScalarEvolutionExpander.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00216">llvm::BasicBlock::getFirstInsertionPt()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -347,15 +387,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool IsIncrementNSW </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> IsIncrementNSW </td>
           <td>(</td>
-          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
           <td class="paramname"><em>SE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SCEVAddRecExpr *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEVAddRecExpr.html">SCEVAddRecExpr</a> *&#160;</td>
           <td class="paramname"><em>AR</em>&#160;</td>
         </tr>
         <tr>
@@ -373,6 +413,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l01130">1130</a> of file <a class="el" href="ScalarEvolutionExpander_8cpp_source.html">ScalarEvolutionExpander.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l02402">llvm::ScalarEvolution::getAddExpr()</a>, <a class="el" href="Type_8h_source.html#l00129">llvm::Type::getContext()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l01940">llvm::ScalarEvolution::getSignExtendExpr()</a>, <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00313">llvm::SCEVAddRecExpr::getStepRecurrence()</a>, and <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00173">llvm::SCEVNAryExpr::getType()</a>.</p>
+
 </div>
 </div>
 <a id="a202c702ced6d0c47a226adf851aba6eb" name="a202c702ced6d0c47a226adf851aba6eb"></a>
@@ -385,15 +427,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool IsIncrementNUW </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> IsIncrementNUW </td>
           <td>(</td>
-          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
           <td class="paramname"><em>SE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SCEVAddRecExpr *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SCEVAddRecExpr.html">SCEVAddRecExpr</a> *&#160;</td>
           <td class="paramname"><em>AR</em>&#160;</td>
         </tr>
         <tr>
@@ -411,6 +453,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l01144">1144</a> of file <a class="el" href="ScalarEvolutionExpander_8cpp_source.html">ScalarEvolutionExpander.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l02402">llvm::ScalarEvolution::getAddExpr()</a>, <a class="el" href="Type_8h_source.html#l00129">llvm::Type::getContext()</a>, <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00313">llvm::SCEVAddRecExpr::getStepRecurrence()</a>, <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00173">llvm::SCEVNAryExpr::getType()</a>, and <a class="el" href="ScalarEvolution_8cpp_source.html#l01634">llvm::ScalarEvolution::getZeroExtendExpr()</a>.</p>
+
 </div>
 </div>
 <a id="a604892413799925b9f8c886abee9e5ca" name="a604892413799925b9f8c886abee9e5ca"></a>
@@ -423,21 +467,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static const Loop * PickMostRelevantLoop </td>
+          <td class="memname">static const <a class="el" href="classllvm_1_1Loop.html">Loop</a> * PickMostRelevantLoop </td>
           <td>(</td>
-          <td class="paramtype">const Loop *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Loop *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -458,6 +502,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00608">608</a> of file <a class="el" href="ScalarEvolutionExpander_8cpp_source.html">ScalarEvolutionExpander.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="LoopInfo_8h_source.html#l00112">llvm::LoopBase&lt; BlockT, LoopT &gt;::contains()</a>, <a class="el" href="Dominators_8cpp_source.html#l00248">llvm::DominatorTree::dominates()</a>, and <a class="el" href="LoopInfo_8h_source.html#l00102">llvm::LoopBase&lt; BlockT, LoopT &gt;::getHeader()</a>.</p>
+
 </div>
 </div>
 <a id="a9bc337eb05f0a2d638e1fe8e583db078" name="a9bc337eb05f0a2d638e1fe8e583db078"></a>
@@ -472,19 +518,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void SimplifyAddOperands </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const SCEV * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Ops</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Type *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
           <td class="paramname"><em>Ty</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
           <td class="paramname"><em>SE</em>&#160;</td>
         </tr>
         <tr>
@@ -505,6 +551,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00319">319</a> of file <a class="el" href="ScalarEvolutionExpander_8cpp_source.html">ScalarEvolutionExpander.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="ScalarEvolution_8cpp_source.html#l02402">llvm::ScalarEvolution::getAddExpr()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00416">llvm::ScalarEvolution::getConstant()</a>, and <a class="el" href="ScalarEvolution_8cpp_source.html#l00379">llvm::SCEV::isZero()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00348">SplitAddRecs()</a>.</p>
 
 </div>
@@ -521,19 +569,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void SplitAddRecs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const SCEV * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Ops</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Type *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
           <td class="paramname"><em>Ty</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
           <td class="paramname"><em>SE</em>&#160;</td>
         </tr>
         <tr>
@@ -554,14 +602,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00348">348</a> of file <a class="el" href="ScalarEvolutionExpander_8cpp_source.html">ScalarEvolutionExpander.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00319">SimplifyAddOperands()</a>.</p>
+<p class="reference">References <a class="el" href="ScalarEvolution_8h_source.html#l00115">llvm::SCEV::FlagNW</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03388">llvm::ScalarEvolution::getAddRecExpr()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00416">llvm::ScalarEvolution::getConstant()</a>, and <a class="el" href="ScalarEvolutionExpander_8cpp_source.html#l00319">SimplifyAddOperands()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:37 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

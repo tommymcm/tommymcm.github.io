@@ -59,26 +59,26 @@ $(function() {
   <div class="headertitle"><div class="title">SSAUpdater.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/Utils/SSAUpdater.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="SSAUpdater_8h_source.html">llvm/Transforms/Utils/SSAUpdater.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/TinyPtrVector.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/InstructionSimplify.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DebugLoc.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Use.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
-<code>#include &quot;llvm/IR/ValueHandle.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/SSAUpdaterImpl.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstructionSimplify_8h_source.html">llvm/Analysis/InstructionSimplify.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DebugLoc_8h_source.html">llvm/IR/DebugLoc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Use_8h_source.html">llvm/IR/Use.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueHandle_8h_source.html">llvm/IR/ValueHandle.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SSAUpdaterImpl_8h_source.html">llvm/Transforms/Utils/SSAUpdaterImpl.h</a>&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -86,29 +86,56 @@ Include dependency graph for SSAUpdater.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="SSAUpdater_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Utils_2SSAUpdater_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Utils_2SSAUpdater_8cpp" id="alib_2Transforms_2Utils_2SSAUpdater_8cpp">
-<area shape="rect" title=" " alt="" coords="1939,5,2087,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,167,133"/>
-<area shape="rect" title=" " alt="" coords="191,101,357,126"/>
-<area shape="rect" title=" " alt="" coords="382,101,545,126"/>
-<area shape="rect" title=" " alt="" coords="569,101,744,126"/>
-<area shape="rect" title=" " alt="" coords="769,101,953,126"/>
-<area shape="rect" title=" " alt="" coords="977,93,1160,133"/>
-<area shape="rect" title=" " alt="" coords="1185,101,1339,126"/>
-<area shape="rect" title=" " alt="" coords="1364,101,1475,126"/>
-<area shape="rect" title=" " alt="" coords="1499,101,1649,126"/>
-<area shape="rect" title=" " alt="" coords="1673,101,1821,126"/>
-<area shape="rect" title=" " alt="" coords="1845,101,1999,126"/>
-<area shape="rect" title=" " alt="" coords="2023,101,2183,126"/>
-<area shape="rect" title=" " alt="" coords="2208,101,2340,126"/>
-<area shape="rect" title=" " alt="" coords="2365,101,2474,126"/>
-<area shape="rect" title=" " alt="" coords="2498,101,2618,126"/>
-<area shape="rect" title=" " alt="" coords="2643,101,2809,126"/>
-<area shape="rect" title=" " alt="" coords="2834,101,3005,126"/>
-<area shape="rect" title=" " alt="" coords="3029,101,3191,126"/>
-<area shape="rect" title=" " alt="" coords="3216,101,3423,126"/>
-<area shape="rect" title=" " alt="" coords="3447,93,3608,133"/>
-<area shape="rect" title=" " alt="" coords="3633,101,3702,126"/>
-<area shape="rect" title=" " alt="" coords="3727,101,3787,126"/>
+<area shape="rect" title=" " alt="" coords="4421,5,4569,45"/>
+<area shape="rect" href="SSAUpdater_8h.html" title=" " alt="" coords="1321,269,1482,309"/>
+<area shape="rect" title=" " alt="" coords="5701,189,5867,214"/>
+<area shape="rect" title=" " alt="" coords="1197,504,1360,529"/>
+<area shape="rect" title=" " alt="" coords="5210,277,5385,302"/>
+<area shape="rect" title=" " alt="" coords="6231,101,6415,126"/>
+<area shape="rect" href="InstructionSimplify_8h.html" title=" " alt="" coords="3991,181,4174,221"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="3863,431,4017,456"/>
+<area shape="rect" href="DebugLoc_8h.html" title=" " alt="" coords="4679,504,4827,529"/>
+<area shape="rect" href="Use_8h.html" title="This defines the Use class." alt="" coords="863,651,972,676"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="3428,797,3599,823"/>
+<area shape="rect" title=" " alt="" coords="4102,944,4162,969"/>
+<area shape="rect" title=" " alt="" coords="695,871,764,896"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="2044,577,2164,603"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="2215,357,2364,383"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="4300,357,4455,383"/>
+<area shape="rect" href="IR_2CFG_8h.html" title="This file provides various utilities for inspecting and working with the control flow graph in LLVM I..." alt="" coords="4773,101,4883,126"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="2975,101,3135,126"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="1743,189,1875,214"/>
+<area shape="rect" href="ValueHandle_8h.html" title=" " alt="" coords="651,504,818,529"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="5892,189,6055,214"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="4967,189,5174,214"/>
+<area shape="rect" href="SSAUpdaterImpl_8h.html" title=" " alt="" coords="5549,93,5710,133"/>
+<area shape="rect" title=" " alt="" coords="1485,504,1640,529"/>
+<area shape="rect" title=" " alt="" coords="1664,504,1821,529"/>
+<area shape="rect" title=" " alt="" coords="2439,357,2497,383"/>
+<area shape="rect" title=" " alt="" coords="3914,277,4073,302"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="3187,504,3301,529"/>
+<area shape="rect" href="Operator_8h.html" title=" " alt="" coords="3183,277,3323,302"/>
+<area shape="rect" title=" " alt="" coords="2517,504,2649,529"/>
+<area shape="rect" title=" " alt="" coords="3687,504,3849,529"/>
+<area shape="rect" href="SymbolTableListTraits_8h.html" title=" " alt="" coords="4329,504,4554,529"/>
+<area shape="rect" title=" " alt="" coords="4304,577,4427,603"/>
+<area shape="rect" title=" " alt="" coords="4606,577,4677,603"/>
+<area shape="rect" title=" " alt="" coords="3441,577,3586,603"/>
+<area shape="rect" title=" " alt="" coords="2819,651,3010,676"/>
+<area shape="rect" href="Compiler_8h.html" title=" " alt="" coords="1897,944,2076,969"/>
+<area shape="rect" title=" " alt="" coords="5055,651,5126,676"/>
+<area shape="rect" title=" " alt="" coords="961,797,1077,823"/>
+<area shape="rect" href="CBindingWrapping_8h.html" title=" " alt="" coords="1287,724,1529,749"/>
+<area shape="rect" href="type__traits_8h.html" title=" " alt="" coords="3903,871,4094,896"/>
+<area shape="rect" title=" " alt="" coords="1761,431,1914,456"/>
+<area shape="rect" title=" " alt="" coords="2142,431,2290,456"/>
+<area shape="rect" title=" " alt="" coords="2314,431,2446,456"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="3029,431,3171,456"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="1158,431,1330,456"/>
+<area shape="rect" title=" " alt="" coords="3501,431,3635,456"/>
+<area shape="rect" title=" " alt="" coords="5301,189,5473,214"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="2847,277,2985,302"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="2565,189,2715,214"/>
 </map>
 </div>
 </div>
@@ -124,6 +151,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
+<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -133,14 +161,14 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:afa4f7d2adb326a5e96f308c9c10fdef4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SSAUpdater_8cpp.html#afa4f7d2adb326a5e96f308c9c10fdef4">AvailableValsTy</a> = DenseMap&lt; BasicBlock *, Value * &gt;</td></tr>
+<tr class="memitem:afa4f7d2adb326a5e96f308c9c10fdef4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SSAUpdater_8cpp.html#afa4f7d2adb326a5e96f308c9c10fdef4">AvailableValsTy</a> = DenseMap&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;</td></tr>
 <tr class="separator:afa4f7d2adb326a5e96f308c9c10fdef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a8c3648be397b04fce3a02bd44212659e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="SSAUpdater_8cpp.html#afa4f7d2adb326a5e96f308c9c10fdef4">AvailableValsTy</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SSAUpdater_8cpp.html#a8c3648be397b04fce3a02bd44212659e">getAvailableVals</a> (void *AV)</td></tr>
 <tr class="separator:a8c3648be397b04fce3a02bd44212659e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8af038511783f111fd72d2361df7506"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SSAUpdater_8cpp.html#aa8af038511783f111fd72d2361df7506">IsEquivalentPHI</a> (PHINode *PHI, SmallDenseMap&lt; BasicBlock *, Value *, 8 &gt; &amp;ValueMapping)</td></tr>
+<tr class="memitem:aa8af038511783f111fd72d2361df7506"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SSAUpdater_8cpp.html#aa8af038511783f111fd72d2361df7506">IsEquivalentPHI</a> (<a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *PHI, SmallDenseMap&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, <a class="el" href="classllvm_1_1Value.html">Value</a> *, 8 &gt; &amp;ValueMapping)</td></tr>
 <tr class="separator:aa8af038511783f111fd72d2361df7506"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -168,7 +196,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="SSAUpdater_8cpp.html#afa4f7d2adb326a5e96f308c9c10fdef4">AvailableValsTy</a> =  DenseMap&lt;BasicBlock *, Value *&gt;</td>
+          <td class="memname">using <a class="el" href="SSAUpdater_8cpp.html#afa4f7d2adb326a5e96f308c9c10fdef4">AvailableValsTy</a> =  DenseMap&lt;<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, <a class="el" href="classllvm_1_1Value.html">Value</a> *&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -204,6 +232,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SSAUpdater_8cpp_source.html#l00042">42</a> of file <a class="el" href="SSAUpdater_8cpp_source.html">SSAUpdater.cpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="SSAUpdater_8cpp_source.html#l00071">llvm::SSAUpdater::AddAvailableValue()</a>, <a class="el" href="SSAUpdater_8cpp_source.html#l00066">llvm::SSAUpdater::FindValueForBlock()</a>, <a class="el" href="SSAUpdater_8cpp_source.html#l00062">llvm::SSAUpdater::HasValueForBlock()</a>, and <a class="el" href="SSAUpdater_8cpp_source.html#l00053">llvm::SSAUpdater::Initialize()</a>.</p>
+
 </div>
 </div>
 <a id="aa8af038511783f111fd72d2361df7506" name="aa8af038511783f111fd72d2361df7506"></a>
@@ -216,15 +246,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool IsEquivalentPHI </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> IsEquivalentPHI </td>
           <td>(</td>
-          <td class="paramtype">PHINode *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *&#160;</td>
           <td class="paramname"><em>PHI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SmallDenseMap&lt; BasicBlock *, Value *, 8 &gt; &amp;&#160;</td>
+          <td class="paramtype">SmallDenseMap&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, <a class="el" href="classllvm_1_1Value.html">Value</a> *, 8 &gt; &amp;&#160;</td>
           <td class="paramname"><em>ValueMapping</em>&#160;</td>
         </tr>
         <tr>
@@ -242,12 +272,16 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SSAUpdater_8cpp_source.html#l00078">78</a> of file <a class="el" href="SSAUpdater_8cpp_source.html">SSAUpdater.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Instructions_8h_source.html#l02654">llvm::PHINode::getIncomingBlock()</a>, <a class="el" href="Instructions_8h_source.html#l02634">llvm::PHINode::getIncomingValue()</a>, and <a class="el" href="Instructions_8h_source.html#l02630">llvm::PHINode::getNumIncomingValues()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="SSAUpdater_8cpp_source.html#l00099">llvm::SSAUpdater::GetValueInMiddleOfBlock()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

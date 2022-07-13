@@ -92,12 +92,12 @@ $(function() {
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> * compile-time configuration.</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;llvm/Support/MD5.h&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="MD5_8h.html">llvm/Support/MD5.h</a>&quot;</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;llvm/ADT/ArrayRef.h&quot;</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;llvm/ADT/StringRef.h&quot;</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &quot;llvm/Support/Endian.h&quot;</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &quot;llvm/Support/Format.h&quot;</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &quot;llvm/Support/raw_ostream.h&quot;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &quot;<a class="code" href="Endian_8h.html">llvm/Support/Endian.h</a>&quot;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &quot;<a class="code" href="Format_8h.html">llvm/Support/Format.h</a>&quot;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &quot;<a class="code" href="raw__ostream_8h.html">llvm/Support/raw_ostream.h</a>&quot;</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#include &lt;array&gt;</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
@@ -238,11 +238,11 @@ $(function() {
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  <span class="keywordflow">return</span> ptr;</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>}</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>MD5::MD5() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><a class="code hl_function" href="classllvm_1_1MD5.html#afa6155ec36de415ab2dcf5e54b670d13">MD5::MD5</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment"></span> </div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">/// Incrementally add the bytes in \p Data to the hash.</span></div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment"></span><span class="keywordtype">void</span> MD5::update(<a class="code hl_class" href="classllvm_1_1ArrayRef.html">ArrayRef&lt;uint8_t&gt;</a> Data) {</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  MD5_u32plus saved_lo;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="classllvm_1_1MD5.html#a3f41856aade4440631544e50238f75f5">  189</a></span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="classllvm_1_1MD5.html#a3f41856aade4440631544e50238f75f5">MD5::update</a>(<a class="code hl_class" href="classllvm_1_1ArrayRef.html">ArrayRef&lt;uint8_t&gt;</a> Data) {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <a class="code hl_class" href="classuint32__t.html">MD5_u32plus</a> saved_lo;</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> used, free;</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="keyword">const</span> uint8_t *Ptr = Data.data();</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> Size = Data.size();</div>
@@ -279,14 +279,14 @@ $(function() {
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="comment">/// Add the bytes in the StringRef \p Str to the hash.</span></div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="comment"></span><span class="comment">// Note that this isn&#39;t a string and so this won&#39;t include any trailing NULL</span></div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="comment">// bytes.</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="keywordtype">void</span> MD5::update(StringRef Str) {</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="classllvm_1_1MD5.html#a155b676479d4f275c239be608c5314ee">  227</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classllvm_1_1MD5.html#a3f41856aade4440631544e50238f75f5">MD5::update</a>(StringRef Str) {</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  <a class="code hl_class" href="classllvm_1_1ArrayRef.html">ArrayRef&lt;uint8_t&gt;</a> SVal((<span class="keyword">const</span> uint8_t *)Str.data(), Str.size());</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  update(SVal);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <a class="code hl_function" href="classllvm_1_1MD5.html#a3f41856aade4440631544e50238f75f5">update</a>(SVal);</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>}</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="comment"></span> </div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="comment">/// Finish the hash and place the resulting hash into \p result.</span></div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment">/// \param Result is assumed to be a minimum of 16-bytes in size.</span></div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment"></span><span class="keywordtype">void</span> MD5::final(MD5Result &amp;Result) {</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="classllvm_1_1MD5.html#a5138672d89124f45e2217d8484a59a40">  234</a></span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="classllvm_1_1SHA1.html#af92d9d65f4731b14a204454344c1a530">MD5::final</a>(<a class="code hl_struct" href="structllvm_1_1MD5_1_1MD5Result.html">MD5Result</a> &amp;Result) {</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> used, free;</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  used = lo &amp; 0x3f;</div>
@@ -305,37 +305,39 @@ $(function() {
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  memset(&amp;buffer[used], 0, free - 8);</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  lo &lt;&lt;= 3;</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  support::endian::write32le(&amp;buffer[56], lo);</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  support::endian::write32le(&amp;buffer[60], hi);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  <a class="code hl_function" href="namespacellvm_1_1support_1_1endian.html#a4f05956d010455624c13f5eb2217bc8b">support::endian::write32le</a>(&amp;buffer[56], lo);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  <a class="code hl_function" href="namespacellvm_1_1support_1_1endian.html#a4f05956d010455624c13f5eb2217bc8b">support::endian::write32le</a>(&amp;buffer[60], hi);</div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  body(makeArrayRef(buffer, 64));</div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  support::endian::write32le(&amp;Result[0], a);</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  support::endian::write32le(&amp;Result[4], b);</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  support::endian::write32le(&amp;Result[8], c);</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>  support::endian::write32le(&amp;Result[12], d);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <a class="code hl_function" href="namespacellvm_1_1support_1_1endian.html#a4f05956d010455624c13f5eb2217bc8b">support::endian::write32le</a>(&amp;Result[0], a);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  <a class="code hl_function" href="namespacellvm_1_1support_1_1endian.html#a4f05956d010455624c13f5eb2217bc8b">support::endian::write32le</a>(&amp;Result[4], b);</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  <a class="code hl_function" href="namespacellvm_1_1support_1_1endian.html#a4f05956d010455624c13f5eb2217bc8b">support::endian::write32le</a>(&amp;Result[8], c);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>  <a class="code hl_function" href="namespacellvm_1_1support_1_1endian.html#a4f05956d010455624c13f5eb2217bc8b">support::endian::write32le</a>(&amp;Result[12], d);</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>}</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>SmallString&lt;32&gt; MD5::MD5Result::digest()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  SmallString&lt;32&gt; Str;</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  raw_svector_ostream Res(Str);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="structllvm_1_1MD5_1_1MD5Result.html#a09ec9cf8d69ac45d9959d3aeb5ec2cce">  264</a></span><a class="code hl_class" href="classllvm_1_1SmallString.html">SmallString&lt;32&gt;</a> <a class="code hl_function" href="structllvm_1_1MD5_1_1MD5Result.html#a09ec9cf8d69ac45d9959d3aeb5ec2cce">MD5::MD5Result::digest</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  <a class="code hl_class" href="classllvm_1_1SmallString.html">SmallString&lt;32&gt;</a> Str;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  <a class="code hl_class" href="classllvm_1_1raw__svector__ostream.html">raw_svector_ostream</a> Res(Str);</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 16; ++i)</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    Res &lt;&lt; format(<span class="stringliteral">&quot;%.2x&quot;</span>, Bytes[i]);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    Res &lt;&lt; <a class="code hl_function" href="namespacellvm.html#a939bc2108d47080767f0c06ba56caec7">format</a>(<span class="stringliteral">&quot;%.2x&quot;</span>, <a class="code hl_variable" href="structllvm_1_1MD5_1_1MD5Result.html#a3d82011cb27dd1a4885cabb65d7a054b">Bytes</a>[i]);</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  <span class="keywordflow">return</span> Str;</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>}</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="keywordtype">void</span> MD5::stringifyResult(MD5Result &amp;Result, SmallString&lt;32&gt; &amp;Str) {</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  Str = Result.digest();</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno"><a class="line" href="classllvm_1_1MD5.html#afee69f4d5f3177875bb2f478b17dc05a">  272</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classllvm_1_1MD5.html#afee69f4d5f3177875bb2f478b17dc05a">MD5::stringifyResult</a>(<a class="code hl_struct" href="structllvm_1_1MD5_1_1MD5Result.html">MD5Result</a> &amp;Result, <a class="code hl_class" href="classllvm_1_1SmallString.html">SmallString&lt;32&gt;</a> &amp;Str) {</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  Str = Result.<a class="code hl_function" href="structllvm_1_1MD5_1_1MD5Result.html#a09ec9cf8d69ac45d9959d3aeb5ec2cce">digest</a>();</div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>}</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>std::array&lt;uint8_t, 16&gt; MD5::hash(<a class="code hl_class" href="classllvm_1_1ArrayRef.html">ArrayRef&lt;uint8_t&gt;</a> Data) {</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  MD5 Hash;</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  Hash.update(Data);</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  MD5::MD5Result Res;</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  Hash.final(Res);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="classllvm_1_1MD5.html#a5bb255b1beeac0a3ad1b9fd23b96d7bd">  276</a></span>std::array&lt;uint8_t, 16&gt; <a class="code hl_variable" href="structcset.html#ab568e443829ddd27010ba41245914ddf">MD5::hash</a>(<a class="code hl_class" href="classllvm_1_1ArrayRef.html">ArrayRef&lt;uint8_t&gt;</a> Data) {</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  <a class="code hl_class" href="classllvm_1_1MD5.html">MD5</a> Hash;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  Hash.<a class="code hl_function" href="classllvm_1_1MD5.html#a3f41856aade4440631544e50238f75f5">update</a>(Data);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <a class="code hl_struct" href="structllvm_1_1MD5_1_1MD5Result.html">MD5::MD5Result</a> Res;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  Hash.<a class="code hl_function" href="classllvm_1_1MD5.html#a5138672d89124f45e2217d8484a59a40">final</a>(Res);</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>  <span class="keywordflow">return</span> Res;</div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>}</div>
+<div class="ttc" id="aEndian_8h_html"><div class="ttname"><a href="Endian_8h.html">Endian.h</a></div></div>
+<div class="ttc" id="aFormat_8h_html"><div class="ttname"><a href="Format_8h.html">Format.h</a></div></div>
 <div class="ttc" id="aMD5_8cpp_html_a22c5b6b56a260ea33a06c9fdebed523e"><div class="ttname"><a href="MD5_8cpp.html#a22c5b6b56a260ea33a06c9fdebed523e">GET</a></div><div class="ttdeci">#define GET(n)</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00073">MD5.cpp:73</a></div></div>
 <div class="ttc" id="aMD5_8cpp_html_a642b3a091bb90dabdf2abb865fefab69"><div class="ttname"><a href="MD5_8cpp.html#a642b3a091bb90dabdf2abb865fefab69">STEP</a></div><div class="ttdeci">#define STEP(f, a, b, c, d, x, t, s)</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00061">MD5.cpp:61</a></div></div>
 <div class="ttc" id="aMD5_8cpp_html_a8be4bf419fd5ebe5cba399d782188517"><div class="ttname"><a href="MD5_8cpp.html#a8be4bf419fd5ebe5cba399d782188517">SET</a></div><div class="ttdeci">#define SET(n)</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00068">MD5.cpp:68</a></div></div>
@@ -343,12 +345,29 @@ $(function() {
 <div class="ttc" id="aMD5_8cpp_html_ac0eafdc9ee161b71e7af98af736952fd"><div class="ttname"><a href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a></div><div class="ttdeci">#define I(x, y, z)</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00058">MD5.cpp:58</a></div></div>
 <div class="ttc" id="aMD5_8cpp_html_ad96b7cf3182ce2ba85e5a7a93b12c441"><div class="ttname"><a href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a></div><div class="ttdeci">#define G(x, y, z)</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00056">MD5.cpp:56</a></div></div>
 <div class="ttc" id="aMD5_8cpp_html_ae42219072d798876e6b08e6b78614ff6"><div class="ttname"><a href="MD5_8cpp.html#ae42219072d798876e6b08e6b78614ff6">H</a></div><div class="ttdeci">#define H(x, y, z)</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00057">MD5.cpp:57</a></div></div>
-<div class="ttc" id="aclassllvm_1_1ArrayRef_html"><div class="ttname"><a href="classllvm_1_1ArrayRef.html">llvm::ArrayRef</a></div><div class="ttdef"><b>Definition:</b> <a href="ConstantFold_8h_source.html#l00024">ConstantFold.h:24</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
+<div class="ttc" id="aMD5_8h_html"><div class="ttname"><a href="MD5_8h.html">MD5.h</a></div></div>
+<div class="ttc" id="aclassllvm_1_1ArrayRef_html"><div class="ttname"><a href="classllvm_1_1ArrayRef.html">llvm::ArrayRef</a></div><div class="ttdef"><b>Definition:</b> <a href="ConstantFolding_8h_source.html#l00024">ConstantFolding.h:24</a></div></div>
+<div class="ttc" id="aclassllvm_1_1MD5_html"><div class="ttname"><a href="classllvm_1_1MD5.html">llvm::MD5</a></div><div class="ttdef"><b>Definition:</b> <a href="MD5_8h_source.html#l00041">MD5.h:41</a></div></div>
+<div class="ttc" id="aclassllvm_1_1MD5_html_a3f41856aade4440631544e50238f75f5"><div class="ttname"><a href="classllvm_1_1MD5.html#a3f41856aade4440631544e50238f75f5">llvm::MD5::update</a></div><div class="ttdeci">void update(ArrayRef&lt; uint8_t &gt; Data)</div><div class="ttdoc">Updates the hash for the byte stream provided.</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00189">MD5.cpp:189</a></div></div>
+<div class="ttc" id="aclassllvm_1_1MD5_html_a5138672d89124f45e2217d8484a59a40"><div class="ttname"><a href="classllvm_1_1MD5.html#a5138672d89124f45e2217d8484a59a40">llvm::MD5::final</a></div><div class="ttdeci">void final(MD5Result &amp;Result)</div><div class="ttdoc">Finishes off the hash and puts the result in result.</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00234">MD5.cpp:234</a></div></div>
+<div class="ttc" id="aclassllvm_1_1MD5_html_afa6155ec36de415ab2dcf5e54b670d13"><div class="ttname"><a href="classllvm_1_1MD5.html#afa6155ec36de415ab2dcf5e54b670d13">llvm::MD5::MD5</a></div><div class="ttdeci">MD5()</div></div>
+<div class="ttc" id="aclassllvm_1_1MD5_html_afee69f4d5f3177875bb2f478b17dc05a"><div class="ttname"><a href="classllvm_1_1MD5.html#afee69f4d5f3177875bb2f478b17dc05a">llvm::MD5::stringifyResult</a></div><div class="ttdeci">static void stringifyResult(MD5Result &amp;Result, SmallString&lt; 32 &gt; &amp;Str)</div><div class="ttdoc">Translates the bytes in Res to a hex string that is deposited into Str.</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00272">MD5.cpp:272</a></div></div>
+<div class="ttc" id="aclassllvm_1_1SHA1_html_af92d9d65f4731b14a204454344c1a530"><div class="ttname"><a href="classllvm_1_1SHA1.html#af92d9d65f4731b14a204454344c1a530">llvm::SHA1::final</a></div><div class="ttdeci">StringRef final()</div><div class="ttdoc">Return a reference to the current raw 160-bits SHA1 for the digested data since the last call to init...</div><div class="ttdef"><b>Definition:</b> <a href="SHA1_8cpp_source.html#l00237">SHA1.cpp:237</a></div></div>
+<div class="ttc" id="aclassllvm_1_1SmallString_html"><div class="ttname"><a href="classllvm_1_1SmallString.html">llvm::SmallString</a></div><div class="ttdef"><b>Definition:</b> <a href="ValueSymbolTable_8h_source.html#l00030">ValueSymbolTable.h:30</a></div></div>
+<div class="ttc" id="aclassllvm_1_1raw__svector__ostream_html"><div class="ttname"><a href="classllvm_1_1raw__svector__ostream.html">llvm::raw_svector_ostream</a></div><div class="ttdoc">A raw_ostream that writes to an SmallVector or SmallString.</div><div class="ttdef"><b>Definition:</b> <a href="raw__ostream_8h_source.html#l00509">raw_ostream.h:509</a></div></div>
+<div class="ttc" id="aclassuint32__t_html"><div class="ttname"><a href="classuint32__t.html">uint32_t</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1support_1_1endian_html_a4f05956d010455624c13f5eb2217bc8b"><div class="ttname"><a href="namespacellvm_1_1support_1_1endian.html#a4f05956d010455624c13f5eb2217bc8b">llvm::support::endian::write32le</a></div><div class="ttdeci">void write32le(void *P, uint32_t V)</div><div class="ttdef"><b>Definition:</b> <a href="Endian_8h_source.html#l00418">Endian.h:418</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysis_8h_source.html#l00056">AliasAnalysis.h:56</a></div></div>
+<div class="ttc" id="anamespacellvm_html_a939bc2108d47080767f0c06ba56caec7"><div class="ttname"><a href="namespacellvm.html#a939bc2108d47080767f0c06ba56caec7">llvm::format</a></div><div class="ttdeci">format_object&lt; Ts... &gt; format(const char *Fmt, const Ts &amp;... Vals)</div><div class="ttdoc">These are helper functions used to produce formatted output.</div><div class="ttdef"><b>Definition:</b> <a href="Format_8h_source.html#l00123">Format.h:123</a></div></div>
+<div class="ttc" id="araw__ostream_8h_html"><div class="ttname"><a href="raw__ostream_8h.html">raw_ostream.h</a></div></div>
+<div class="ttc" id="astructcset_html_ab568e443829ddd27010ba41245914ddf"><div class="ttname"><a href="structcset.html#ab568e443829ddd27010ba41245914ddf">cset::hash</a></div><div class="ttdeci">uch hash</div><div class="ttdef"><b>Definition:</b> <a href="regex2_8h_source.html#l00114">regex2.h:114</a></div></div>
+<div class="ttc" id="astructllvm_1_1MD5_1_1MD5Result_html"><div class="ttname"><a href="structllvm_1_1MD5_1_1MD5Result.html">llvm::MD5::MD5Result</a></div><div class="ttdef"><b>Definition:</b> <a href="MD5_8h_source.html#l00055">MD5.h:55</a></div></div>
+<div class="ttc" id="astructllvm_1_1MD5_1_1MD5Result_html_a09ec9cf8d69ac45d9959d3aeb5ec2cce"><div class="ttname"><a href="structllvm_1_1MD5_1_1MD5Result.html#a09ec9cf8d69ac45d9959d3aeb5ec2cce">llvm::MD5::MD5Result::digest</a></div><div class="ttdeci">SmallString&lt; 32 &gt; digest() const</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00264">MD5.cpp:264</a></div></div>
+<div class="ttc" id="astructllvm_1_1MD5_1_1MD5Result_html_a3d82011cb27dd1a4885cabb65d7a054b"><div class="ttname"><a href="structllvm_1_1MD5_1_1MD5Result.html#a3d82011cb27dd1a4885cabb65d7a054b">llvm::MD5::MD5Result::Bytes</a></div><div class="ttdeci">std::array&lt; uint8_t, 16 &gt; Bytes</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8h_source.html#l00056">MD5.h:56</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:26 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

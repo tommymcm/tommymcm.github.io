@@ -59,64 +59,86 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/EHPersonalities.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/PostDominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DebugInfo.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalVariable.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InlineAsm.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
-<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
-<code>#include &quot;llvm/IR/MDBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Mangler.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Instrumentation.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/ModuleUtils.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="EHPersonalities_8h_source.html">llvm/Analysis/EHPersonalities.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PostDominators_8h_source.html">llvm/Analysis/PostDominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DebugInfo_8h_source.html">llvm/IR/DebugInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalVariable_8h_source.html">llvm/IR/GlobalVariable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InlineAsm_8h_source.html">llvm/IR/InlineAsm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MDBuilder_8h_source.html">llvm/IR/MDBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Mangler_8h_source.html">llvm/IR/Mangler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instrumentation_8h_source.html">llvm/Transforms/Instrumentation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ModuleUtils_8h_source.html">llvm/Transforms/Utils/ModuleUtils.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for SanitizerCoverage.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="SanitizerCoverage_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Instrumentation_2SanitizerCoverage_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Instrumentation_2SanitizerCoverage_8cpp" id="alib_2Transforms_2Instrumentation_2SanitizerCoverage_8cpp">
-<area shape="rect" title=" " alt="" coords="2389,5,2611,45"/>
-<area shape="rect" title=" " alt="" coords="5,101,160,126"/>
-<area shape="rect" title=" " alt="" coords="185,101,359,126"/>
-<area shape="rect" title=" " alt="" coords="383,101,611,126"/>
-<area shape="rect" title=" " alt="" coords="635,101,866,126"/>
-<area shape="rect" title=" " alt="" coords="890,101,1001,126"/>
-<area shape="rect" title=" " alt="" coords="1025,101,1159,126"/>
-<area shape="rect" title=" " alt="" coords="1183,101,1326,126"/>
-<area shape="rect" title=" " alt="" coords="1350,101,1509,126"/>
-<area shape="rect" title=" " alt="" coords="1533,101,1683,126"/>
-<area shape="rect" title=" " alt="" coords="1708,101,1868,126"/>
-<area shape="rect" title=" " alt="" coords="1892,101,2031,126"/>
-<area shape="rect" title=" " alt="" coords="2055,101,2233,126"/>
-<area shape="rect" title=" " alt="" coords="2258,101,2401,126"/>
-<area shape="rect" title=" " alt="" coords="2425,101,2575,126"/>
-<area shape="rect" title=" " alt="" coords="2599,101,2759,126"/>
-<area shape="rect" title=" " alt="" coords="2783,101,2926,126"/>
-<area shape="rect" title=" " alt="" coords="2950,101,3119,126"/>
-<area shape="rect" title=" " alt="" coords="3143,101,3294,126"/>
-<area shape="rect" title=" " alt="" coords="3319,101,3455,126"/>
-<area shape="rect" title=" " alt="" coords="3479,101,3611,126"/>
-<area shape="rect" title=" " alt="" coords="3636,101,3751,126"/>
-<area shape="rect" title=" " alt="" coords="3775,101,3990,126"/>
-<area shape="rect" title=" " alt="" coords="4015,101,4177,126"/>
-<area shape="rect" title=" " alt="" coords="4202,101,4409,126"/>
-<area shape="rect" title=" " alt="" coords="4433,101,4679,126"/>
-<area shape="rect" title=" " alt="" coords="4703,93,4865,133"/>
-<area shape="rect" title=" " alt="" coords="4889,93,5050,133"/>
+<area shape="rect" title=" " alt="" coords="3294,5,3517,45"/>
+<area shape="rect" title=" " alt="" coords="2433,563,2588,588"/>
+<area shape="rect" title=" " alt="" coords="4597,563,4771,588"/>
+<area shape="rect" href="EHPersonalities_8h.html" title=" " alt="" coords="5042,269,5270,295"/>
+<area shape="rect" href="PostDominators_8h.html" title=" " alt="" coords="4162,101,4393,126"/>
+<area shape="rect" href="Dominators_8h.html" title=" " alt="" coords="4071,189,4231,214"/>
+<area shape="rect" href="IR_2CFG_8h.html" title="This file provides various utilities for inspecting and working with the control flow graph in LLVM I..." alt="" coords="3350,269,3461,295"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="1204,416,1343,441"/>
+<area shape="rect" href="LLVMContext_8h.html" title=" " alt="" coords="2818,416,2987,441"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="2393,489,2508,515"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="1770,343,1902,368"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="2279,416,2438,441"/>
+<area shape="rect" href="GlobalVariable_8h.html" title=" " alt="" coords="1468,416,1647,441"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="4635,343,4797,368"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="4647,489,4854,515"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="734,269,869,295"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="514,416,657,441"/>
+<area shape="rect" href="DebugInfo_8h.html" title=" " alt="" coords="3997,489,4147,515"/>
+<area shape="rect" href="IRBuilder_8h.html" title=" " alt="" coords="1510,269,1653,295"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="144,343,304,368"/>
+<area shape="rect" href="Intrinsics_8h.html" title=" " alt="" coords="885,416,1027,441"/>
+<area shape="rect" href="InlineAsm_8h.html" title=" " alt="" coords="3823,489,3972,515"/>
+<area shape="rect" href="MDBuilder_8h.html" title=" " alt="" coords="5531,101,5682,126"/>
+<area shape="rect" href="Mangler_8h.html" title=" " alt="" coords="4876,189,5012,214"/>
+<area shape="rect" href="CommandLine_8h.html" title=" " alt="" coords="4354,416,4569,441"/>
+<area shape="rect" href="Instrumentation_8h.html" title=" " alt="" coords="3771,416,4018,441"/>
+<area shape="rect" href="BasicBlockUtils_8h.html" title=" " alt="" coords="3198,181,3359,221"/>
+<area shape="rect" href="ModuleUtils_8h.html" title=" " alt="" coords="5706,93,5867,133"/>
+<area shape="rect" title=" " alt="" coords="4873,343,5039,368"/>
+<area shape="rect" title=" " alt="" coords="5064,343,5248,368"/>
+<area shape="rect" title=" " alt="" coords="5323,343,5456,368"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="2809,563,3020,588"/>
+<area shape="rect" title=" " alt="" coords="4171,269,4383,295"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="4509,269,4678,295"/>
+<area shape="rect" title=" " alt="" coords="4223,489,4319,515"/>
+<area shape="rect" title=" " alt="" coords="3722,343,3894,368"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="3289,489,3444,515"/>
+<area shape="rect" title=" " alt="" coords="3146,563,3291,588"/>
+<area shape="rect" title=" " alt="" coords="2402,636,2593,661"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="1367,563,1487,588"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="1304,636,1475,661"/>
+<area shape="rect" title=" " alt="" coords="2209,709,2279,735"/>
+<area shape="rect" title=" " alt="" coords="2677,636,2747,661"/>
+<area shape="rect" title=" " alt="" coords="2613,563,2683,588"/>
+<area shape="rect" href="type__traits_8h.html" title=" " alt="" coords="1663,709,1854,735"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="2370,343,2521,368"/>
+<area shape="rect" href="Attributes_8h.html" title="This file contains the simple types necessary to represent the attributes associated with functions a..." alt="" coords="1562,489,1710,515"/>
+<area shape="rect" href="CallingConv_8h.html" title=" " alt="" coords="1173,489,1334,515"/>
+<area shape="rect" title=" " alt="" coords="1613,563,1766,588"/>
+<area shape="rect" title=" " alt="" coords="429,343,613,368"/>
 </map>
 </div>
 </div>
@@ -129,91 +151,91 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aabec791b1ad4ee8098da7c6a0075d0f5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#aabec791b1ad4ee8098da7c6a0075d0f5">ClCoverageLevel</a> (&quot;sanitizer-coverage-level&quot;, cl::desc(&quot;Sanitizer Coverage. 0: none, 1: <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> block, 2: all blocks, &quot; &quot;3: all blocks and critical edges&quot;), cl::Hidden, cl::init(0))</td></tr>
-<tr class="separator:aabec791b1ad4ee8098da7c6a0075d0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28f62e3ef1fc7537be43a889157eb781"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a28f62e3ef1fc7537be43a889157eb781">ClTracePC</a> (&quot;sanitizer-coverage-trace-pc&quot;, cl::desc(&quot;Experimental pc tracing&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a28f62e3ef1fc7537be43a889157eb781"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73745d68293d7f0ab6d769ea75246f7e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a73745d68293d7f0ab6d769ea75246f7e">ClTracePCGuard</a> (&quot;sanitizer-coverage-trace-pc-guard&quot;, cl::desc(&quot;pc tracing with a guard&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a73745d68293d7f0ab6d769ea75246f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16789826091f72ac06fa083836cb0c66"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a16789826091f72ac06fa083836cb0c66">ClCreatePCTable</a> (&quot;sanitizer-coverage-pc-table&quot;, cl::desc(&quot;create a static PC table&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a16789826091f72ac06fa083836cb0c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26e48c4e490952444bbde43c6553247d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a26e48c4e490952444bbde43c6553247d">ClInline8bitCounters</a> (&quot;sanitizer-coverage-<a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a>-8bit-counters&quot;, cl::desc(&quot;increments 8-bit counter for every edge&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a26e48c4e490952444bbde43c6553247d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e2aba3d7f8ed3f7828dfc62a865ce90"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a5e2aba3d7f8ed3f7828dfc62a865ce90">ClCMPTracing</a> (&quot;sanitizer-coverage-trace-compares&quot;, cl::desc(&quot;Tracing of CMP and similar instructions&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a5e2aba3d7f8ed3f7828dfc62a865ce90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad46ba2b030ebefb30d2f2a65b92e45fa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#ad46ba2b030ebefb30d2f2a65b92e45fa">ClDIVTracing</a> (&quot;sanitizer-coverage-trace-divs&quot;, cl::desc(&quot;Tracing of DIV instructions&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:ad46ba2b030ebefb30d2f2a65b92e45fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9874b8bb3097d9d484786aa7b3eb7407"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a9874b8bb3097d9d484786aa7b3eb7407">ClGEPTracing</a> (&quot;sanitizer-coverage-trace-geps&quot;, cl::desc(&quot;Tracing of GEP instructions&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a9874b8bb3097d9d484786aa7b3eb7407"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d8eee4d348b293408249746c57da105"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a7d8eee4d348b293408249746c57da105">ClPruneBlocks</a> (&quot;sanitizer-coverage-prune-blocks&quot;, cl::desc(&quot;Reduce the number of instrumented blocks&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:a7d8eee4d348b293408249746c57da105"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af89baa0601f7524e5f2043e60a3d2746"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#af89baa0601f7524e5f2043e60a3d2746">ClStackDepth</a> (&quot;sanitizer-coverage-stack-depth&quot;, cl::desc(&quot;max stack depth tracing&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:af89baa0601f7524e5f2043e60a3d2746"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af51b0bf5f4cdc18cec25eb708c2724bc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#af51b0bf5f4cdc18cec25eb708c2724bc">isFullDominator</a> (const BasicBlock *BB, const DominatorTree *DT)</td></tr>
+<tr class="memitem:af51b0bf5f4cdc18cec25eb708c2724bc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#af51b0bf5f4cdc18cec25eb708c2724bc">isFullDominator</a> (const <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB, const <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT)</td></tr>
 <tr class="separator:af51b0bf5f4cdc18cec25eb708c2724bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a389babcd755bc9d74d3d78c82df65a85"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a389babcd755bc9d74d3d78c82df65a85">isFullPostDominator</a> (const BasicBlock *BB, const PostDominatorTree *PDT)</td></tr>
+<tr class="memitem:a389babcd755bc9d74d3d78c82df65a85"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a389babcd755bc9d74d3d78c82df65a85">isFullPostDominator</a> (const <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB, const <a class="el" href="classllvm_1_1PostDominatorTree.html">PostDominatorTree</a> *PDT)</td></tr>
 <tr class="separator:a389babcd755bc9d74d3d78c82df65a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8189ef3408e7c0badf5ea064a837d150"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a8189ef3408e7c0badf5ea064a837d150">shouldInstrumentBlock</a> (const Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, const BasicBlock *BB, const DominatorTree *DT, const PostDominatorTree *PDT, const SanitizerCoverageOptions &amp;Options)</td></tr>
+<tr class="memitem:a8189ef3408e7c0badf5ea064a837d150"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a8189ef3408e7c0badf5ea064a837d150">shouldInstrumentBlock</a> (const <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, const <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB, const <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT, const <a class="el" href="classllvm_1_1PostDominatorTree.html">PostDominatorTree</a> *PDT, const <a class="el" href="structllvm_1_1SanitizerCoverageOptions.html">SanitizerCoverageOptions</a> &amp;Options)</td></tr>
 <tr class="separator:a8189ef3408e7c0badf5ea064a837d150"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cd1b409f530b8d28f113c51247a6d88"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a1cd1b409f530b8d28f113c51247a6d88">IsBackEdge</a> (BasicBlock *From, BasicBlock *To, const DominatorTree *DT)</td></tr>
+<tr class="memitem:a1cd1b409f530b8d28f113c51247a6d88"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a1cd1b409f530b8d28f113c51247a6d88">IsBackEdge</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *From, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *To, const <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT)</td></tr>
 <tr class="separator:a1cd1b409f530b8d28f113c51247a6d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad74b422e3e02588ab23608dcaeac29cb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#ad74b422e3e02588ab23608dcaeac29cb">IsInterestingCmp</a> (ICmpInst *CMP, const DominatorTree *DT, const SanitizerCoverageOptions &amp;Options)</td></tr>
+<tr class="memitem:ad74b422e3e02588ab23608dcaeac29cb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#ad74b422e3e02588ab23608dcaeac29cb">IsInterestingCmp</a> (<a class="el" href="classllvm_1_1ICmpInst.html">ICmpInst</a> *CMP, const <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT, const <a class="el" href="structllvm_1_1SanitizerCoverageOptions.html">SanitizerCoverageOptions</a> &amp;Options)</td></tr>
 <tr class="separator:ad74b422e3e02588ab23608dcaeac29cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2764fcd64582fc0fdce926a438597b5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a2764fcd64582fc0fdce926a438597b5b">INITIALIZE_PASS_BEGIN</a> (SanitizerCoverageModule, &quot;sancov&quot;, &quot;SanitizerCoverage: TODO.&quot; &quot;ModulePass&quot;, false, false) INITIALIZE_PASS_END(SanitizerCoverageModule</td></tr>
 <tr class="separator:a2764fcd64582fc0fdce926a438597b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a5380f39a08a9f226ec7c3b69c7e292c0"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a5380f39a08a9f226ec7c3b69c7e292c0">SanCovTracePCIndirName</a></td></tr>
+<tr class="memitem:a5380f39a08a9f226ec7c3b69c7e292c0"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a5380f39a08a9f226ec7c3b69c7e292c0">SanCovTracePCIndirName</a></td></tr>
 <tr class="separator:a5380f39a08a9f226ec7c3b69c7e292c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6111e46bad1192039674c51f2d933ff8"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a6111e46bad1192039674c51f2d933ff8">SanCovTracePCName</a> = &quot;__sanitizer_cov_trace_pc&quot;</td></tr>
+<tr class="memitem:a6111e46bad1192039674c51f2d933ff8"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a6111e46bad1192039674c51f2d933ff8">SanCovTracePCName</a> = &quot;__sanitizer_cov_trace_pc&quot;</td></tr>
 <tr class="separator:a6111e46bad1192039674c51f2d933ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d9f39801c2a13ca7e702b9e0e276b41"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a9d9f39801c2a13ca7e702b9e0e276b41">SanCovTraceCmp1</a> = &quot;__sanitizer_cov_trace_cmp1&quot;</td></tr>
+<tr class="memitem:a9d9f39801c2a13ca7e702b9e0e276b41"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a9d9f39801c2a13ca7e702b9e0e276b41">SanCovTraceCmp1</a> = &quot;__sanitizer_cov_trace_cmp1&quot;</td></tr>
 <tr class="separator:a9d9f39801c2a13ca7e702b9e0e276b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a803cec56c3cd9835117987c80ecf4f2d"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a803cec56c3cd9835117987c80ecf4f2d">SanCovTraceCmp2</a> = &quot;__sanitizer_cov_trace_cmp2&quot;</td></tr>
+<tr class="memitem:a803cec56c3cd9835117987c80ecf4f2d"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a803cec56c3cd9835117987c80ecf4f2d">SanCovTraceCmp2</a> = &quot;__sanitizer_cov_trace_cmp2&quot;</td></tr>
 <tr class="separator:a803cec56c3cd9835117987c80ecf4f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ddd26662d35e8ee81089c7266e223de"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a6ddd26662d35e8ee81089c7266e223de">SanCovTraceCmp4</a> = &quot;__sanitizer_cov_trace_cmp4&quot;</td></tr>
+<tr class="memitem:a6ddd26662d35e8ee81089c7266e223de"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a6ddd26662d35e8ee81089c7266e223de">SanCovTraceCmp4</a> = &quot;__sanitizer_cov_trace_cmp4&quot;</td></tr>
 <tr class="separator:a6ddd26662d35e8ee81089c7266e223de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20c548545879f984400961a43062c4f4"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a20c548545879f984400961a43062c4f4">SanCovTraceCmp8</a> = &quot;__sanitizer_cov_trace_cmp8&quot;</td></tr>
+<tr class="memitem:a20c548545879f984400961a43062c4f4"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a20c548545879f984400961a43062c4f4">SanCovTraceCmp8</a> = &quot;__sanitizer_cov_trace_cmp8&quot;</td></tr>
 <tr class="separator:a20c548545879f984400961a43062c4f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55422498901401a19f889e94b4a89be1"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a55422498901401a19f889e94b4a89be1">SanCovTraceConstCmp1</a></td></tr>
+<tr class="memitem:a55422498901401a19f889e94b4a89be1"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a55422498901401a19f889e94b4a89be1">SanCovTraceConstCmp1</a></td></tr>
 <tr class="separator:a55422498901401a19f889e94b4a89be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cdd57a8129c666c56ec8c4cf4022031"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a6cdd57a8129c666c56ec8c4cf4022031">SanCovTraceConstCmp2</a></td></tr>
+<tr class="memitem:a6cdd57a8129c666c56ec8c4cf4022031"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a6cdd57a8129c666c56ec8c4cf4022031">SanCovTraceConstCmp2</a></td></tr>
 <tr class="separator:a6cdd57a8129c666c56ec8c4cf4022031"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8ee4040c10f8dfb03e7d76775ea8988"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#aa8ee4040c10f8dfb03e7d76775ea8988">SanCovTraceConstCmp4</a></td></tr>
+<tr class="memitem:aa8ee4040c10f8dfb03e7d76775ea8988"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#aa8ee4040c10f8dfb03e7d76775ea8988">SanCovTraceConstCmp4</a></td></tr>
 <tr class="separator:aa8ee4040c10f8dfb03e7d76775ea8988"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83c2c82c390566f615f261fd6ae05cf0"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a83c2c82c390566f615f261fd6ae05cf0">SanCovTraceConstCmp8</a></td></tr>
+<tr class="memitem:a83c2c82c390566f615f261fd6ae05cf0"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a83c2c82c390566f615f261fd6ae05cf0">SanCovTraceConstCmp8</a></td></tr>
 <tr class="separator:a83c2c82c390566f615f261fd6ae05cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a4bc71764d07736bed02c25ae454eba"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a0a4bc71764d07736bed02c25ae454eba">SanCovTraceDiv4</a> = &quot;__sanitizer_cov_trace_div4&quot;</td></tr>
+<tr class="memitem:a0a4bc71764d07736bed02c25ae454eba"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a0a4bc71764d07736bed02c25ae454eba">SanCovTraceDiv4</a> = &quot;__sanitizer_cov_trace_div4&quot;</td></tr>
 <tr class="separator:a0a4bc71764d07736bed02c25ae454eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae103ea9bb56f5cc6bdd234daf7ae6a10"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#ae103ea9bb56f5cc6bdd234daf7ae6a10">SanCovTraceDiv8</a> = &quot;__sanitizer_cov_trace_div8&quot;</td></tr>
+<tr class="memitem:ae103ea9bb56f5cc6bdd234daf7ae6a10"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#ae103ea9bb56f5cc6bdd234daf7ae6a10">SanCovTraceDiv8</a> = &quot;__sanitizer_cov_trace_div8&quot;</td></tr>
 <tr class="separator:ae103ea9bb56f5cc6bdd234daf7ae6a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc8a04332ca9c61e9bd9e86879fd166d"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#acc8a04332ca9c61e9bd9e86879fd166d">SanCovTraceGep</a> = &quot;__sanitizer_cov_trace_gep&quot;</td></tr>
+<tr class="memitem:acc8a04332ca9c61e9bd9e86879fd166d"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#acc8a04332ca9c61e9bd9e86879fd166d">SanCovTraceGep</a> = &quot;__sanitizer_cov_trace_gep&quot;</td></tr>
 <tr class="separator:acc8a04332ca9c61e9bd9e86879fd166d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba6d755a89e19e9e762026e37aee8c62"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#aba6d755a89e19e9e762026e37aee8c62">SanCovTraceSwitchName</a> = &quot;__sanitizer_cov_trace_switch&quot;</td></tr>
+<tr class="memitem:aba6d755a89e19e9e762026e37aee8c62"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#aba6d755a89e19e9e762026e37aee8c62">SanCovTraceSwitchName</a> = &quot;__sanitizer_cov_trace_switch&quot;</td></tr>
 <tr class="separator:aba6d755a89e19e9e762026e37aee8c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9d9fd2bc9dc16540ede2164810050b0"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#ab9d9fd2bc9dc16540ede2164810050b0">SanCovModuleCtorTracePcGuardName</a></td></tr>
+<tr class="memitem:ab9d9fd2bc9dc16540ede2164810050b0"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#ab9d9fd2bc9dc16540ede2164810050b0">SanCovModuleCtorTracePcGuardName</a></td></tr>
 <tr class="separator:ab9d9fd2bc9dc16540ede2164810050b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac8a87850c04b0804d759d385ad9adf5"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#aac8a87850c04b0804d759d385ad9adf5">SanCovModuleCtor8bitCountersName</a></td></tr>
+<tr class="memitem:aac8a87850c04b0804d759d385ad9adf5"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#aac8a87850c04b0804d759d385ad9adf5">SanCovModuleCtor8bitCountersName</a></td></tr>
 <tr class="separator:aac8a87850c04b0804d759d385ad9adf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55f48a0c5e236f9c3dba145653d2e23c"><td class="memItemLeft" align="right" valign="top">static const uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a55f48a0c5e236f9c3dba145653d2e23c">SanCtorAndDtorPriority</a> = 2</td></tr>
 <tr class="separator:a55f48a0c5e236f9c3dba145653d2e23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfde3c7432aec9ea648ccd5ad1842dfe"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#acfde3c7432aec9ea648ccd5ad1842dfe">SanCovTracePCGuardName</a></td></tr>
+<tr class="memitem:acfde3c7432aec9ea648ccd5ad1842dfe"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#acfde3c7432aec9ea648ccd5ad1842dfe">SanCovTracePCGuardName</a></td></tr>
 <tr class="separator:acfde3c7432aec9ea648ccd5ad1842dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1147700b6e611af5d43b18df165fb33f"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a1147700b6e611af5d43b18df165fb33f">SanCovTracePCGuardInitName</a></td></tr>
+<tr class="memitem:a1147700b6e611af5d43b18df165fb33f"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a1147700b6e611af5d43b18df165fb33f">SanCovTracePCGuardInitName</a></td></tr>
 <tr class="separator:a1147700b6e611af5d43b18df165fb33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78b1742a839c63ed249b7447d99e148c"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a78b1742a839c63ed249b7447d99e148c">SanCov8bitCountersInitName</a></td></tr>
+<tr class="memitem:a78b1742a839c63ed249b7447d99e148c"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a78b1742a839c63ed249b7447d99e148c">SanCov8bitCountersInitName</a></td></tr>
 <tr class="separator:a78b1742a839c63ed249b7447d99e148c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a385a553b55a688ea017acc543f6ab40d"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a385a553b55a688ea017acc543f6ab40d">SanCovPCsInitName</a> = &quot;__sanitizer_cov_pcs_init&quot;</td></tr>
+<tr class="memitem:a385a553b55a688ea017acc543f6ab40d"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a385a553b55a688ea017acc543f6ab40d">SanCovPCsInitName</a> = &quot;__sanitizer_cov_pcs_init&quot;</td></tr>
 <tr class="separator:a385a553b55a688ea017acc543f6ab40d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a708c462ef7ca49ed5f79dd0962e6bdf6"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a708c462ef7ca49ed5f79dd0962e6bdf6">SanCovGuardsSectionName</a> = &quot;sancov_guards&quot;</td></tr>
+<tr class="memitem:a708c462ef7ca49ed5f79dd0962e6bdf6"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a708c462ef7ca49ed5f79dd0962e6bdf6">SanCovGuardsSectionName</a> = &quot;sancov_guards&quot;</td></tr>
 <tr class="separator:a708c462ef7ca49ed5f79dd0962e6bdf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8db33a0f0964e50d0d958740b97ea289"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a8db33a0f0964e50d0d958740b97ea289">SanCovCountersSectionName</a> = &quot;sancov_cntrs&quot;</td></tr>
+<tr class="memitem:a8db33a0f0964e50d0d958740b97ea289"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a8db33a0f0964e50d0d958740b97ea289">SanCovCountersSectionName</a> = &quot;sancov_cntrs&quot;</td></tr>
 <tr class="separator:a8db33a0f0964e50d0d958740b97ea289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4fae1c9375e25f27c0eee85dfcd172b"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#af4fae1c9375e25f27c0eee85dfcd172b">SanCovPCsSectionName</a> = &quot;sancov_pcs&quot;</td></tr>
+<tr class="memitem:af4fae1c9375e25f27c0eee85dfcd172b"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#af4fae1c9375e25f27c0eee85dfcd172b">SanCovPCsSectionName</a> = &quot;sancov_pcs&quot;</td></tr>
 <tr class="separator:af4fae1c9375e25f27c0eee85dfcd172b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab73167a80333ab47b13b87857611c786"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#ab73167a80333ab47b13b87857611c786">SanCovLowestStackName</a> = &quot;__sancov_lowest_stack&quot;</td></tr>
+<tr class="memitem:ab73167a80333ab47b13b87857611c786"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#ab73167a80333ab47b13b87857611c786">SanCovLowestStackName</a> = &quot;__sancov_lowest_stack&quot;</td></tr>
 <tr class="separator:ab73167a80333ab47b13b87857611c786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeabf0eb77af3ab88b4e56b1ae5a950a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#aaeabf0eb77af3ab88b4e56b1ae5a950a">ClCoverageLevel</a> (&quot;sanitizer-coverage-level&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Sanitizer Coverage. 0: none, 1: <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> block, 2: all blocks, &quot; &quot;3: all blocks and critical edges&quot;), cl::Hidden, cl::init(0))</td></tr>
+<tr class="separator:aaeabf0eb77af3ab88b4e56b1ae5a950a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb8550fe98a1380b81e60a49c68d61a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a5fb8550fe98a1380b81e60a49c68d61a">ClTracePC</a> (&quot;sanitizer-coverage-trace-pc&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Experimental pc tracing&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a5fb8550fe98a1380b81e60a49c68d61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82de50ab0218869c936e804f84661648"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a82de50ab0218869c936e804f84661648">ClTracePCGuard</a> (&quot;sanitizer-coverage-trace-pc-guard&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;pc tracing with a guard&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a82de50ab0218869c936e804f84661648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02696e28e5853a98b019c8ab107e2001"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a02696e28e5853a98b019c8ab107e2001">ClCreatePCTable</a> (&quot;sanitizer-coverage-pc-table&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;create a static PC table&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a02696e28e5853a98b019c8ab107e2001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12cdac846c83c53beb0e1d4bdcf385d6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a12cdac846c83c53beb0e1d4bdcf385d6">ClInline8bitCounters</a> (&quot;sanitizer-coverage-<a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a>-8bit-counters&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;increments 8-bit counter for every edge&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a12cdac846c83c53beb0e1d4bdcf385d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eae6fc06fb8133d4b2b9bff2dc40905"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a3eae6fc06fb8133d4b2b9bff2dc40905">ClCMPTracing</a> (&quot;sanitizer-coverage-trace-compares&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Tracing of CMP and similar instructions&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a3eae6fc06fb8133d4b2b9bff2dc40905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af919deea6f6e2bd453359260fe7b2680"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#af919deea6f6e2bd453359260fe7b2680">ClDIVTracing</a> (&quot;sanitizer-coverage-trace-divs&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Tracing of DIV instructions&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:af919deea6f6e2bd453359260fe7b2680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afecc03b6a0e25e5dc1529f3157305fb1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#afecc03b6a0e25e5dc1529f3157305fb1">ClGEPTracing</a> (&quot;sanitizer-coverage-trace-geps&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Tracing of GEP instructions&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:afecc03b6a0e25e5dc1529f3157305fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa46a35f0a2abc392c67dfc56b9a6c40"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#aaa46a35f0a2abc392c67dfc56b9a6c40">ClPruneBlocks</a> (&quot;sanitizer-coverage-prune-blocks&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Reduce the number of instrumented blocks&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:aaa46a35f0a2abc392c67dfc56b9a6c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa3c1cf8749d19ff7ef1e035506cf84"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a5aa3c1cf8749d19ff7ef1e035506cf84">ClStackDepth</a> (&quot;sanitizer-coverage-stack-depth&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;max stack depth tracing&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a5aa3c1cf8749d19ff7ef1e035506cf84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad301b53e046d170a7d3bf7ccd8c7b0fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#ad301b53e046d170a7d3bf7ccd8c7b0fc">sancov</a></td></tr>
 <tr class="separator:ad301b53e046d170a7d3bf7ccd8c7b0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2314d8efbafba3def6eabeb31269c507"><td class="memItemLeft" align="right" valign="top">SanitizerCoverage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SanitizerCoverage_8cpp.html#a2314d8efbafba3def6eabeb31269c507">__pad0__</a></td></tr>
@@ -239,486 +261,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a5e2aba3d7f8ed3f7828dfc62a865ce90" name="a5e2aba3d7f8ed3f7828dfc62a865ce90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e2aba3d7f8ed3f7828dfc62a865ce90">&#9670;&nbsp;</a></span>ClCMPTracing()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClCMPTracing </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sanitizer-coverage-trace-compares&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Tracing of CMP and similar instructions&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aabec791b1ad4ee8098da7c6a0075d0f5" name="aabec791b1ad4ee8098da7c6a0075d0f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabec791b1ad4ee8098da7c6a0075d0f5">&#9670;&nbsp;</a></span>ClCoverageLevel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; ClCoverageLevel </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sanitizer-coverage-level&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Sanitizer Coverage. 0: none, 1: <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> block, 2: all blocks, &quot; &quot;3: all blocks and critical edges&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(0)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a16789826091f72ac06fa083836cb0c66" name="a16789826091f72ac06fa083836cb0c66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16789826091f72ac06fa083836cb0c66">&#9670;&nbsp;</a></span>ClCreatePCTable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClCreatePCTable </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sanitizer-coverage-pc-table&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;create a static PC table&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad46ba2b030ebefb30d2f2a65b92e45fa" name="ad46ba2b030ebefb30d2f2a65b92e45fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad46ba2b030ebefb30d2f2a65b92e45fa">&#9670;&nbsp;</a></span>ClDIVTracing()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClDIVTracing </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sanitizer-coverage-trace-divs&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Tracing of DIV instructions&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9874b8bb3097d9d484786aa7b3eb7407" name="a9874b8bb3097d9d484786aa7b3eb7407"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9874b8bb3097d9d484786aa7b3eb7407">&#9670;&nbsp;</a></span>ClGEPTracing()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClGEPTracing </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sanitizer-coverage-trace-geps&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Tracing of GEP instructions&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a26e48c4e490952444bbde43c6553247d" name="a26e48c4e490952444bbde43c6553247d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26e48c4e490952444bbde43c6553247d">&#9670;&nbsp;</a></span>ClInline8bitCounters()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClInline8bitCounters </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sanitizer-coverage-<a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a>-8bit-counters&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;increments 8-bit counter for every edge&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7d8eee4d348b293408249746c57da105" name="a7d8eee4d348b293408249746c57da105"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d8eee4d348b293408249746c57da105">&#9670;&nbsp;</a></span>ClPruneBlocks()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClPruneBlocks </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sanitizer-coverage-prune-blocks&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Reduce the number of instrumented blocks&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af89baa0601f7524e5f2043e60a3d2746" name="af89baa0601f7524e5f2043e60a3d2746"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af89baa0601f7524e5f2043e60a3d2746">&#9670;&nbsp;</a></span>ClStackDepth()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClStackDepth </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sanitizer-coverage-stack-depth&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;max stack depth tracing&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a28f62e3ef1fc7537be43a889157eb781" name="a28f62e3ef1fc7537be43a889157eb781"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28f62e3ef1fc7537be43a889157eb781">&#9670;&nbsp;</a></span>ClTracePC()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClTracePC </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sanitizer-coverage-trace-pc&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Experimental pc tracing&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a73745d68293d7f0ab6d769ea75246f7e" name="a73745d68293d7f0ab6d769ea75246f7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73745d68293d7f0ab6d769ea75246f7e">&#9670;&nbsp;</a></span>ClTracePCGuard()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClTracePCGuard </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sanitizer-coverage-trace-pc-guard&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;pc tracing with a guard&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a2764fcd64582fc0fdce926a438597b5b" name="a2764fcd64582fc0fdce926a438597b5b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2764fcd64582fc0fdce926a438597b5b">&#9670;&nbsp;</a></span>INITIALIZE_PASS_BEGIN()</h2>
 
@@ -775,21 +317,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool IsBackEdge </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> IsBackEdge </td>
           <td>(</td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>From</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>To</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DominatorTree *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -807,6 +349,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SanitizerCoverage_8cpp_source.html#l00495">495</a> of file <a class="el" href="SanitizerCoverage_8cpp_source.html">SanitizerCoverage.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Dominators_8cpp_source.html#l00248">llvm::DominatorTree::dominates()</a>, and <a class="el" href="BasicBlock_8cpp_source.html#l00276">llvm::BasicBlock::getUniqueSuccessor()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="SanitizerCoverage_8cpp_source.html#l00510">IsInterestingCmp()</a>.</p>
 
 </div>
@@ -821,15 +365,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isFullDominator </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isFullDominator </td>
           <td>(</td>
-          <td class="paramtype">const BasicBlock *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DominatorTree *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -847,6 +391,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SanitizerCoverage_8cpp_source.html#l00434">434</a> of file <a class="el" href="SanitizerCoverage_8cpp_source.html">SanitizerCoverage.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Dominators_8cpp_source.html#l00248">llvm::DominatorTree::dominates()</a>, <a class="el" href="Interval_8h_source.html#l00102">llvm::succ_begin()</a>, and <a class="el" href="Interval_8h_source.html#l00105">llvm::succ_end()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="SanitizerCoverage_8cpp_source.html#l00460">shouldInstrumentBlock()</a>.</p>
 
 </div>
@@ -861,15 +407,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isFullPostDominator </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isFullPostDominator </td>
           <td>(</td>
-          <td class="paramtype">const BasicBlock *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const PostDominatorTree *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1PostDominatorTree.html">PostDominatorTree</a> *&#160;</td>
           <td class="paramname"><em>PDT</em>&#160;</td>
         </tr>
         <tr>
@@ -887,6 +433,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SanitizerCoverage_8cpp_source.html#l00447">447</a> of file <a class="el" href="SanitizerCoverage_8cpp_source.html">SanitizerCoverage.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="GenericDomTree_8h_source.html#l00393">llvm::DominatorTreeBase&lt; NodeT, IsPostDom &gt;::dominates()</a>, <a class="el" href="Interval_8h_source.html#l00112">llvm::pred_begin()</a>, and <a class="el" href="Interval_8h_source.html#l00115">llvm::pred_end()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="SanitizerCoverage_8cpp_source.html#l00460">shouldInstrumentBlock()</a>.</p>
 
 </div>
@@ -901,21 +449,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool IsInterestingCmp </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> IsInterestingCmp </td>
           <td>(</td>
-          <td class="paramtype">ICmpInst *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ICmpInst.html">ICmpInst</a> *&#160;</td>
           <td class="paramname"><em>CMP</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DominatorTree *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SanitizerCoverageOptions &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structllvm_1_1SanitizerCoverageOptions.html">SanitizerCoverageOptions</a> &amp;&#160;</td>
           <td class="paramname"><em>Options</em>&#160;</td>
         </tr>
         <tr>
@@ -933,7 +481,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SanitizerCoverage_8cpp_source.html#l00510">510</a> of file <a class="el" href="SanitizerCoverage_8cpp_source.html">SanitizerCoverage.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SanitizerCoverage_8cpp_source.html#l00495">IsBackEdge()</a>.</p>
+<p class="reference">References <a class="el" href="Value_8h_source.html#l00412">llvm::Value::hasOneUse()</a>, <a class="el" href="SanitizerCoverage_8cpp_source.html#l00495">IsBackEdge()</a>, <a class="el" href="Instrumentation_8h_source.html#l00178">llvm::SanitizerCoverageOptions::NoPrune</a>, and <a class="el" href="Instruction_8h_source.html#l00063">llvm::Instruction::user_back()</a>.</p>
 
 </div>
 </div>
@@ -947,33 +495,33 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool shouldInstrumentBlock </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> shouldInstrumentBlock </td>
           <td>(</td>
-          <td class="paramtype">const Function &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const BasicBlock *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DominatorTree *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const PostDominatorTree *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1PostDominatorTree.html">PostDominatorTree</a> *&#160;</td>
           <td class="paramname"><em>PDT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SanitizerCoverageOptions &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structllvm_1_1SanitizerCoverageOptions.html">SanitizerCoverageOptions</a> &amp;&#160;</td>
           <td class="paramname"><em>Options</em>&#160;</td>
         </tr>
         <tr>
@@ -991,7 +539,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SanitizerCoverage_8cpp_source.html#l00460">460</a> of file <a class="el" href="SanitizerCoverage_8cpp_source.html">SanitizerCoverage.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="SanitizerCoverage_8cpp_source.html#l00434">isFullDominator()</a>, and <a class="el" href="SanitizerCoverage_8cpp_source.html#l00447">isFullPostDominator()</a>.</p>
+<p class="reference">References <a class="el" href="structllvm_1_1SanitizerCoverageOptions.html#a09606541d39f43887258e83b257e34c1">llvm::SanitizerCoverageOptions::CoverageType</a>, <a class="el" href="BasicBlock_8h_source.html#l00270">llvm::BasicBlock::end()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00216">llvm::BasicBlock::getFirstInsertionPt()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00203">llvm::BasicBlock::getFirstNonPHIOrDbgOrLifetime()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00233">llvm::BasicBlock::getSinglePredecessor()</a>, <a class="el" href="SanitizerCoverage_8cpp_source.html#l00434">isFullDominator()</a>, <a class="el" href="SanitizerCoverage_8cpp_source.html#l00447">isFullPostDominator()</a>, <a class="el" href="Instrumentation_8h_source.html#l00178">llvm::SanitizerCoverageOptions::NoPrune</a>, and <a class="el" href="Instrumentation_8h_source.html#l00164">llvm::SanitizerCoverageOptions::SCK_Function</a>.</p>
 
 </div>
 </div>
@@ -1009,6 +557,486 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="SanitizerCoverage_8cpp_source.html#l00897">897</a> of file <a class="el" href="SanitizerCoverage_8cpp_source.html">SanitizerCoverage.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3eae6fc06fb8133d4b2b9bff2dc40905" name="a3eae6fc06fb8133d4b2b9bff2dc40905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eae6fc06fb8133d4b2b9bff2dc40905">&#9670;&nbsp;</a></span>ClCMPTracing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClCMPTracing(&quot;sanitizer-coverage-trace-compares&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Tracing of CMP and similar instructions&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sanitizer-coverage-trace-compares&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Tracing of CMP and similar instructions&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaeabf0eb77af3ab88b4e56b1ae5a950a" name="aaeabf0eb77af3ab88b4e56b1ae5a950a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeabf0eb77af3ab88b4e56b1ae5a950a">&#9670;&nbsp;</a></span>ClCoverageLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; ClCoverageLevel(&quot;sanitizer-coverage-level&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Sanitizer Coverage. 0: none, 1: <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> block, 2: all blocks, &quot; &quot;3: all blocks and critical edges&quot;), cl::Hidden, cl::init(0)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sanitizer-coverage-level&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Sanitizer Coverage. 0: none, 1: <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> block, 2: all blocks, &quot; &quot;3: all blocks and critical edges&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(0)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a02696e28e5853a98b019c8ab107e2001" name="a02696e28e5853a98b019c8ab107e2001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02696e28e5853a98b019c8ab107e2001">&#9670;&nbsp;</a></span>ClCreatePCTable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClCreatePCTable(&quot;sanitizer-coverage-pc-table&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;create a static PC table&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sanitizer-coverage-pc-table&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;create a static PC table&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af919deea6f6e2bd453359260fe7b2680" name="af919deea6f6e2bd453359260fe7b2680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af919deea6f6e2bd453359260fe7b2680">&#9670;&nbsp;</a></span>ClDIVTracing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClDIVTracing(&quot;sanitizer-coverage-trace-divs&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Tracing of DIV instructions&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sanitizer-coverage-trace-divs&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Tracing of DIV instructions&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afecc03b6a0e25e5dc1529f3157305fb1" name="afecc03b6a0e25e5dc1529f3157305fb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afecc03b6a0e25e5dc1529f3157305fb1">&#9670;&nbsp;</a></span>ClGEPTracing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClGEPTracing(&quot;sanitizer-coverage-trace-geps&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Tracing of GEP instructions&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sanitizer-coverage-trace-geps&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Tracing of GEP instructions&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a12cdac846c83c53beb0e1d4bdcf385d6" name="a12cdac846c83c53beb0e1d4bdcf385d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12cdac846c83c53beb0e1d4bdcf385d6">&#9670;&nbsp;</a></span>ClInline8bitCounters</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClInline8bitCounters(&quot;sanitizer-coverage-<a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a>-8bit-counters&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;increments 8-bit counter for every edge&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sanitizer-coverage-<a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a>-8bit-counters&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;increments 8-bit counter for every edge&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaa46a35f0a2abc392c67dfc56b9a6c40" name="aaa46a35f0a2abc392c67dfc56b9a6c40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa46a35f0a2abc392c67dfc56b9a6c40">&#9670;&nbsp;</a></span>ClPruneBlocks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClPruneBlocks(&quot;sanitizer-coverage-prune-blocks&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Reduce the number of instrumented blocks&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sanitizer-coverage-prune-blocks&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Reduce the number of instrumented blocks&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5aa3c1cf8749d19ff7ef1e035506cf84" name="a5aa3c1cf8749d19ff7ef1e035506cf84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aa3c1cf8749d19ff7ef1e035506cf84">&#9670;&nbsp;</a></span>ClStackDepth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClStackDepth(&quot;sanitizer-coverage-stack-depth&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;max stack depth tracing&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sanitizer-coverage-stack-depth&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;max stack depth tracing&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5fb8550fe98a1380b81e60a49c68d61a" name="a5fb8550fe98a1380b81e60a49c68d61a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fb8550fe98a1380b81e60a49c68d61a">&#9670;&nbsp;</a></span>ClTracePC</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClTracePC(&quot;sanitizer-coverage-trace-pc&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Experimental pc tracing&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sanitizer-coverage-trace-pc&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Experimental pc tracing&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82de50ab0218869c936e804f84661648" name="a82de50ab0218869c936e804f84661648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82de50ab0218869c936e804f84661648">&#9670;&nbsp;</a></span>ClTracePCGuard</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClTracePCGuard(&quot;sanitizer-coverage-trace-pc-guard&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;pc tracing with a guard&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sanitizer-coverage-trace-pc-guard&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;pc tracing with a guard&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1054,7 +1082,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCov8bitCountersInitName</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCov8bitCountersInitName</td>
         </tr>
       </table>
   </td>
@@ -1080,7 +1108,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovCountersSectionName = &quot;sancov_cntrs&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovCountersSectionName = &quot;sancov_cntrs&quot;</td>
         </tr>
       </table>
   </td>
@@ -1104,7 +1132,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovGuardsSectionName = &quot;sancov_guards&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovGuardsSectionName = &quot;sancov_guards&quot;</td>
         </tr>
       </table>
   </td>
@@ -1128,7 +1156,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovLowestStackName = &quot;__sancov_lowest_stack&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovLowestStackName = &quot;__sancov_lowest_stack&quot;</td>
         </tr>
       </table>
   </td>
@@ -1152,7 +1180,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovModuleCtor8bitCountersName</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovModuleCtor8bitCountersName</td>
         </tr>
       </table>
   </td>
@@ -1178,7 +1206,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovModuleCtorTracePcGuardName</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovModuleCtorTracePcGuardName</td>
         </tr>
       </table>
   </td>
@@ -1204,7 +1232,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovPCsInitName = &quot;__sanitizer_cov_pcs_init&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovPCsInitName = &quot;__sanitizer_cov_pcs_init&quot;</td>
         </tr>
       </table>
   </td>
@@ -1228,7 +1256,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovPCsSectionName = &quot;sancov_pcs&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovPCsSectionName = &quot;sancov_pcs&quot;</td>
         </tr>
       </table>
   </td>
@@ -1252,7 +1280,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTraceCmp1 = &quot;__sanitizer_cov_trace_cmp1&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTraceCmp1 = &quot;__sanitizer_cov_trace_cmp1&quot;</td>
         </tr>
       </table>
   </td>
@@ -1276,7 +1304,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTraceCmp2 = &quot;__sanitizer_cov_trace_cmp2&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTraceCmp2 = &quot;__sanitizer_cov_trace_cmp2&quot;</td>
         </tr>
       </table>
   </td>
@@ -1300,7 +1328,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTraceCmp4 = &quot;__sanitizer_cov_trace_cmp4&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTraceCmp4 = &quot;__sanitizer_cov_trace_cmp4&quot;</td>
         </tr>
       </table>
   </td>
@@ -1324,7 +1352,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTraceCmp8 = &quot;__sanitizer_cov_trace_cmp8&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTraceCmp8 = &quot;__sanitizer_cov_trace_cmp8&quot;</td>
         </tr>
       </table>
   </td>
@@ -1348,7 +1376,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTraceConstCmp1</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTraceConstCmp1</td>
         </tr>
       </table>
   </td>
@@ -1374,7 +1402,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTraceConstCmp2</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTraceConstCmp2</td>
         </tr>
       </table>
   </td>
@@ -1400,7 +1428,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTraceConstCmp4</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTraceConstCmp4</td>
         </tr>
       </table>
   </td>
@@ -1426,7 +1454,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTraceConstCmp8</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTraceConstCmp8</td>
         </tr>
       </table>
   </td>
@@ -1452,7 +1480,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTraceDiv4 = &quot;__sanitizer_cov_trace_div4&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTraceDiv4 = &quot;__sanitizer_cov_trace_div4&quot;</td>
         </tr>
       </table>
   </td>
@@ -1476,7 +1504,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTraceDiv8 = &quot;__sanitizer_cov_trace_div8&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTraceDiv8 = &quot;__sanitizer_cov_trace_div8&quot;</td>
         </tr>
       </table>
   </td>
@@ -1500,7 +1528,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTraceGep = &quot;__sanitizer_cov_trace_gep&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTraceGep = &quot;__sanitizer_cov_trace_gep&quot;</td>
         </tr>
       </table>
   </td>
@@ -1524,7 +1552,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTracePCGuardInitName</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTracePCGuardInitName</td>
         </tr>
       </table>
   </td>
@@ -1550,7 +1578,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTracePCGuardName</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTracePCGuardName</td>
         </tr>
       </table>
   </td>
@@ -1576,7 +1604,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTracePCIndirName</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTracePCIndirName</td>
         </tr>
       </table>
   </td>
@@ -1602,7 +1630,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTracePCName = &quot;__sanitizer_cov_trace_pc&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTracePCName = &quot;__sanitizer_cov_trace_pc&quot;</td>
         </tr>
       </table>
   </td>
@@ -1626,7 +1654,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const SanCovTraceSwitchName = &quot;__sanitizer_cov_trace_switch&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const SanCovTraceSwitchName = &quot;__sanitizer_cov_trace_switch&quot;</td>
         </tr>
       </table>
   </td>
@@ -1667,7 +1695,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

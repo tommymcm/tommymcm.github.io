@@ -52,20 +52,20 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">IndirectCallPromotionAnalysis.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Analysis/IndirectCallPromotionAnalysis.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="IndirectCallPromotionAnalysis_8h_source.html">llvm/Analysis/IndirectCallPromotionAnalysis.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/IndirectCallVisitor.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstIterator.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstVisitor.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="IndirectCallVisitor_8h_source.html">llvm/Analysis/IndirectCallVisitor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstIterator_8h_source.html">llvm/IR/InstIterator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstVisitor_8h_source.html">llvm/IR/InstVisitor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ProfileData/InstrProf.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -74,20 +74,56 @@ Include dependency graph for IndirectCallPromotionAnalysis.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="IndirectCallPromotionAnalysis_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2IndirectCallPromotionAnalysis_8cpp" alt=""/></div>
 <map name="alib_2Analysis_2IndirectCallPromotionAnalysis_8cpp" id="alib_2Analysis_2IndirectCallPromotionAnalysis_8cpp">
-<area shape="rect" title=" " alt="" coords="1121,5,1296,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,193,133"/>
-<area shape="rect" title=" " alt="" coords="218,101,381,126"/>
-<area shape="rect" title=" " alt="" coords="405,93,593,133"/>
-<area shape="rect" title=" " alt="" coords="617,101,752,126"/>
-<area shape="rect" title=" " alt="" coords="777,101,931,126"/>
-<area shape="rect" title=" " alt="" coords="955,101,1105,126"/>
-<area shape="rect" title=" " alt="" coords="1129,101,1289,126"/>
-<area shape="rect" title=" " alt="" coords="1313,101,1473,126"/>
-<area shape="rect" title=" " alt="" coords="1497,101,1694,126"/>
-<area shape="rect" title=" " alt="" coords="1718,101,1881,126"/>
-<area shape="rect" title=" " alt="" coords="1905,101,1963,126"/>
-<area shape="rect" title=" " alt="" coords="1988,101,2048,126"/>
-<area shape="rect" title=" " alt="" coords="2072,101,2135,126"/>
+<area shape="rect" title=" " alt="" coords="4558,5,4732,45"/>
+<area shape="rect" href="IndirectCallPromotionAnalysis_8h.html" title="Interface to identify indirect call promotion candidates." alt="" coords="87,93,275,133"/>
+<area shape="rect" title=" " alt="" coords="14,181,212,207"/>
+<area shape="rect" title=" " alt="" coords="1348,621,1510,647"/>
+<area shape="rect" href="IndirectCallVisitor_8h.html" title=" " alt="" coords="4683,93,4871,133"/>
+<area shape="rect" href="InstVisitor_8h.html" title=" " alt="" coords="4636,181,4785,207"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="3718,255,3852,280"/>
+<area shape="rect" title=" " alt="" coords="6092,841,6150,867"/>
+<area shape="rect" title=" " alt="" coords="4372,695,4432,720"/>
+<area shape="rect" title=" " alt="" coords="5520,475,5583,500"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="3998,328,4158,353"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="1774,255,1934,280"/>
+<area shape="rect" href="InstIterator_8h.html" title=" " alt="" coords="5916,401,6070,427"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="7030,101,7193,126"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="4496,475,4634,500"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="5905,768,6116,793"/>
+<area shape="rect" title=" " alt="" coords="4151,695,4318,720"/>
+<area shape="rect" href="Intrinsics_8h.html" title=" " alt="" coords="2412,548,2555,573"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="4810,401,4942,427"/>
+<area shape="rect" title=" " alt="" coords="2564,621,2718,647"/>
+<area shape="rect" title=" " alt="" coords="12,915,196,940"/>
+<area shape="rect" title=" " alt="" coords="5047,841,5238,867"/>
+<area shape="rect" href="Attributes_8h.html" title="This file contains the simple types necessary to represent the attributes associated with functions a..." alt="" coords="4384,548,4532,573"/>
+<area shape="rect" title=" " alt="" coords="3012,915,3081,940"/>
+<area shape="rect" title=" " alt="" coords="1433,768,1500,793"/>
+<area shape="rect" href="CallingConv_8h.html" title=" " alt="" coords="4199,548,4360,573"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="3855,621,4008,647"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="3199,695,3312,720"/>
+<area shape="rect" href="Use_8h.html" title="This defines the Use class." alt="" coords="145,841,254,867"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="2848,768,2968,793"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="1310,841,1481,867"/>
+<area shape="rect" title=" " alt="" coords="3802,841,3872,867"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="3634,401,3784,427"/>
+<area shape="rect" title=" " alt="" coords="2209,695,2364,720"/>
+<area shape="rect" title=" " alt="" coords="3969,695,4126,720"/>
+<area shape="rect" title=" " alt="" coords="5858,621,5992,647"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="5337,548,5492,573"/>
+<area shape="rect" href="SymbolTableListTraits_8h.html" title=" " alt="" coords="5704,695,5930,720"/>
+<area shape="rect" title=" " alt="" coords="5782,768,5852,793"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="1183,548,1355,573"/>
+<area shape="rect" href="OperandTraits_8h.html" title=" " alt="" coords="3543,548,3718,573"/>
+<area shape="rect" title=" " alt="" coords="5180,768,5326,793"/>
+<area shape="rect" title=" " alt="" coords="2538,695,2670,720"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="1158,621,1273,647"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="1836,475,1985,500"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="1890,621,2032,647"/>
+<area shape="rect" title=" " alt="" coords="3351,621,3526,647"/>
+<area shape="rect" href="AtomicOrdering_8h.html" title="Atomic ordering constants." alt="" coords="6216,401,6439,427"/>
+<area shape="rect" href="GlobalVariable_8h.html" title=" " alt="" coords="4912,475,5090,500"/>
+<area shape="rect" href="Metadata_8h.html" title="This file contains the declarations for metadata subclasses." alt="" coords="3065,548,3212,573"/>
 </map>
 </div>
 </div>
@@ -98,14 +134,14 @@ Macros</h2></td></tr>
 <tr class="memitem:ad78e062f62e0d6e453941fb4ca843e4d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotionAnalysis_8cpp.html#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG_TYPE</a>&#160;&#160;&#160;&quot;pgo-icall-<a class="el" href="IndirectCallPromotion_8cpp.html#ae3617329667b9476eda809bc4af2169f">prom</a>-analysis&quot;</td></tr>
 <tr class="separator:ad78e062f62e0d6e453941fb4ca843e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a75fbdbcaff9ddefb88ea341658ffcf48"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotionAnalysis_8cpp.html#a75fbdbcaff9ddefb88ea341658ffcf48">ICPRemainingPercentThreshold</a> (&quot;icp-remaining-percent-threshold&quot;, cl::init(30), cl::Hidden, cl::ZeroOrMore, cl::desc(&quot;The percentage threshold against remaining unpromoted indirect &quot; &quot;call count for the promotion&quot;))</td></tr>
-<tr class="separator:a75fbdbcaff9ddefb88ea341658ffcf48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a569f4577a5cc3a03dcfee47f9d2efac5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotionAnalysis_8cpp.html#a569f4577a5cc3a03dcfee47f9d2efac5">ICPTotalPercentThreshold</a> (&quot;icp-total-percent-threshold&quot;, cl::init(5), cl::Hidden, cl::ZeroOrMore, cl::desc(&quot;The percentage threshold against total &quot; &quot;count for the promotion&quot;))</td></tr>
-<tr class="separator:a569f4577a5cc3a03dcfee47f9d2efac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaafd2ad705568fd1c7cf0d5e86393422"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotionAnalysis_8cpp.html#aaafd2ad705568fd1c7cf0d5e86393422">MaxNumPromotions</a> (&quot;icp-max-prom&quot;, cl::init(3), cl::Hidden, cl::ZeroOrMore, cl::desc(&quot;Max number of promotions for a single indirect &quot; &quot;call callsite&quot;))</td></tr>
-<tr class="separator:aaafd2ad705568fd1c7cf0d5e86393422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ad71dbf331a331ebbff929ccd47487adf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotionAnalysis_8cpp.html#ad71dbf331a331ebbff929ccd47487adf">ICPRemainingPercentThreshold</a> (&quot;icp-remaining-percent-threshold&quot;, cl::init(30), cl::Hidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The percentage threshold against remaining unpromoted indirect &quot; &quot;call count for the promotion&quot;))</td></tr>
+<tr class="separator:ad71dbf331a331ebbff929ccd47487adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33dd0224e3913a703715d65e4ea1dc98"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotionAnalysis_8cpp.html#a33dd0224e3913a703715d65e4ea1dc98">ICPTotalPercentThreshold</a> (&quot;icp-total-percent-threshold&quot;, cl::init(5), cl::Hidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The percentage threshold against total &quot; &quot;count for the promotion&quot;))</td></tr>
+<tr class="separator:a33dd0224e3913a703715d65e4ea1dc98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa795fb757850901815176ac62ad68196"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotionAnalysis_8cpp.html#aa795fb757850901815176ac62ad68196">MaxNumPromotions</a> (&quot;icp-max-prom&quot;, cl::init(3), cl::Hidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Max number of promotions for a single indirect &quot; &quot;call callsite&quot;))</td></tr>
+<tr class="separator:aa795fb757850901815176ac62ad68196"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad78e062f62e0d6e453941fb4ca843e4d" name="ad78e062f62e0d6e453941fb4ca843e4d"></a>
@@ -124,9 +160,9 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a75fbdbcaff9ddefb88ea341658ffcf48" name="a75fbdbcaff9ddefb88ea341658ffcf48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75fbdbcaff9ddefb88ea341658ffcf48">&#9670;&nbsp;</a></span>ICPRemainingPercentThreshold()</h2>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ad71dbf331a331ebbff929ccd47487adf" name="ad71dbf331a331ebbff929ccd47487adf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad71dbf331a331ebbff929ccd47487adf">&#9670;&nbsp;</a></span>ICPRemainingPercentThreshold</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,7 +171,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; ICPRemainingPercentThreshold </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; ICPRemainingPercentThreshold(&quot;icp-remaining-percent-threshold&quot;, cl::init(30), cl::Hidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The percentage threshold against remaining unpromoted indirect &quot; &quot;call count for the promotion&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;icp-remaining-percent-threshold&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -161,7 +197,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;The percentage threshold against remaining unpromoted indirect &quot; &quot;call count for the promotion&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The percentage threshold against remaining unpromoted indirect &quot; &quot;call count for the promotion&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -179,8 +215,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a569f4577a5cc3a03dcfee47f9d2efac5" name="a569f4577a5cc3a03dcfee47f9d2efac5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a569f4577a5cc3a03dcfee47f9d2efac5">&#9670;&nbsp;</a></span>ICPTotalPercentThreshold()</h2>
+<a id="a33dd0224e3913a703715d65e4ea1dc98" name="a33dd0224e3913a703715d65e4ea1dc98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33dd0224e3913a703715d65e4ea1dc98">&#9670;&nbsp;</a></span>ICPTotalPercentThreshold</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,7 +225,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; ICPTotalPercentThreshold </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; ICPTotalPercentThreshold(&quot;icp-total-percent-threshold&quot;, cl::init(5), cl::Hidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The percentage threshold against total &quot; &quot;count for the promotion&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;icp-total-percent-threshold&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -215,7 +251,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;The percentage threshold against total &quot; &quot;count for the promotion&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The percentage threshold against total &quot; &quot;count for the promotion&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -233,8 +269,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aaafd2ad705568fd1c7cf0d5e86393422" name="aaafd2ad705568fd1c7cf0d5e86393422"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaafd2ad705568fd1c7cf0d5e86393422">&#9670;&nbsp;</a></span>MaxNumPromotions()</h2>
+<a id="aa795fb757850901815176ac62ad68196" name="aa795fb757850901815176ac62ad68196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa795fb757850901815176ac62ad68196">&#9670;&nbsp;</a></span>MaxNumPromotions</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,7 +279,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; MaxNumPromotions </td>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; MaxNumPromotions(&quot;icp-max-prom&quot;, cl::init(3), cl::Hidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Max number of promotions for a single indirect &quot; &quot;call callsite&quot;)) </td>
           <td>(</td>
           <td class="paramtype">&quot;icp-max-prom&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -269,7 +305,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cl::desc(&quot;Max number of promotions for a single indirect &quot; &quot;call callsite&quot;)&#160;</td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Max number of promotions for a single indirect &quot; &quot;call callsite&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -285,12 +321,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="IndirectCallPromotionAnalysis_8cpp_source.html#l00094">llvm::ICallPromotionAnalysis::getPromotionCandidatesForInstruction()</a>, and <a class="el" href="IndirectCallPromotionAnalysis_8cpp_source.html#l00055">llvm::ICallPromotionAnalysis::ICallPromotionAnalysis()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:36 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

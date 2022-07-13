@@ -60,36 +60,73 @@ $(function() {
 
 <p>This pass performs merges of loads and stores on both sides of a.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/MergedLoadStoreMotion.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="MergedLoadStoreMotion_8h_source.html">llvm/Transforms/Scalar/MergedLoadStoreMotion.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/CFG.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/Loads.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Analysis_2CFG_8h_source.html">llvm/Analysis/CFG.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalsModRef_8h_source.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Loads_8h_source.html">llvm/Analysis/Loads.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for MergedLoadStoreMotion.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="MergedLoadStoreMotion_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2MergedLoadStoreMotion_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Scalar_2MergedLoadStoreMotion_8cpp" id="alib_2Transforms_2Scalar_2MergedLoadStoreMotion_8cpp">
-<area shape="rect" title="This pass performs merges of loads and stores on both sides of a." alt="" coords="1115,5,1327,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,203,133"/>
-<area shape="rect" title=" " alt="" coords="227,101,378,126"/>
-<area shape="rect" title=" " alt="" coords="403,101,616,126"/>
-<area shape="rect" title=" " alt="" coords="641,101,794,126"/>
-<area shape="rect" title=" " alt="" coords="818,93,1009,133"/>
-<area shape="rect" title=" " alt="" coords="1033,101,1197,126"/>
-<area shape="rect" title=" " alt="" coords="1221,101,1437,126"/>
-<area shape="rect" title=" " alt="" coords="1461,101,1608,126"/>
-<area shape="rect" title=" " alt="" coords="1632,101,1795,126"/>
-<area shape="rect" title=" " alt="" coords="1819,101,2026,126"/>
-<area shape="rect" title=" " alt="" coords="2050,101,2233,126"/>
-<area shape="rect" title=" " alt="" coords="2257,93,2418,133"/>
+<area shape="rect" title="This pass performs merges of loads and stores on both sides of a." alt="" coords="4030,5,4242,45"/>
+<area shape="rect" href="MergedLoadStoreMotion_8h.html" title="This pass performs merges of loads and stores on both sides of a." alt="" coords="3876,255,4073,295"/>
+<area shape="rect" href="Metadata_8h.html" title="This file contains the declarations for metadata subclasses." alt="" coords="2444,504,2591,529"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="4003,431,4165,456"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="3403,504,3610,529"/>
+<area shape="rect" title=" " alt="" coords="5411,101,5562,126"/>
+<area shape="rect" href="AliasAnalysis_8h.html" title=" " alt="" coords="3013,181,3227,207"/>
+<area shape="rect" href="Analysis_2CFG_8h.html" title=" " alt="" coords="5361,350,5514,375"/>
+<area shape="rect" href="GlobalsModRef_8h.html" title="This is the interface for a simple mod/ref and alias analysis over globals." alt="" coords="3743,93,3934,133"/>
+<area shape="rect" href="Loads_8h.html" title=" " alt="" coords="4479,101,4643,126"/>
+<area shape="rect" href="ValueTracking_8h.html" title=" " alt="" coords="592,262,808,287"/>
+<area shape="rect" href="Scalar_8h.html" title=" " alt="" coords="5067,181,5250,207"/>
+<area shape="rect" href="BasicBlockUtils_8h.html" title=" " alt="" coords="4909,343,5070,383"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="3846,431,3978,456"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="3530,350,3699,375"/>
+<area shape="rect" title=" " alt="" coords="1187,504,1341,529"/>
+<area shape="rect" title=" " alt="" coords="2789,577,2952,603"/>
+<area shape="rect" title=" " alt="" coords="2455,724,2612,749"/>
+<area shape="rect" title=" " alt="" coords="4281,651,4471,676"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="1771,504,1930,529"/>
+<area shape="rect" title=" " alt="" coords="1476,724,1543,749"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="3939,504,4077,529"/>
+<area shape="rect" title=" " alt="" coords="3761,651,3839,676"/>
+<area shape="rect" title=" " alt="" coords="4254,504,4317,529"/>
+<area shape="rect" title=" " alt="" coords="1085,724,1240,749"/>
+<area shape="rect" title=" " alt="" coords="2977,577,3151,603"/>
+<area shape="rect" title=" " alt="" coords="1507,577,1603,603"/>
+<area shape="rect" title=" " alt="" coords="3936,724,4005,749"/>
+<area shape="rect" title=" " alt="" coords="3190,724,3351,749"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="4749,577,4904,603"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="1086,651,1239,676"/>
+<area shape="rect" title=" " alt="" coords="602,724,734,749"/>
+<area shape="rect" title=" " alt="" coords="3393,577,3559,603"/>
+<area shape="rect" title=" " alt="" coords="3176,577,3368,603"/>
+<area shape="rect" title=" " alt="" coords="2134,577,2317,603"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="1339,577,1482,603"/>
+<area shape="rect" href="LLVMContext_8h.html" title=" " alt="" coords="2494,577,2663,603"/>
+<area shape="rect" title=" " alt="" coords="3779,431,3821,456"/>
+<area shape="rect" href="MemoryLocation_8h.html" title="This file provides utility analysis objects describing memory locations." alt="" coords="2376,350,2611,375"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="1939,431,2099,456"/>
+<area shape="rect" href="TargetLibraryInfo_8h.html" title=" " alt="" coords="2953,255,3151,295"/>
+<area shape="rect" title=" " alt="" coords="5102,504,5189,529"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="985,350,1119,375"/>
+<area shape="rect" href="IR_2CFG_8h.html" title="This file provides various utilities for inspecting and working with the control flow graph in LLVM I..." alt="" coords="5197,431,5307,456"/>
+<area shape="rect" href="CallGraph_8h.html" title="This file provides interfaces used to build and manipulate a call graph, which is a very useful tool ..." alt="" coords="4285,262,4475,287"/>
+<area shape="rect" href="ValueHandle_8h.html" title=" " alt="" coords="4646,350,4813,375"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="629,431,779,456"/>
+<area shape="rect" href="Intrinsics_8h.html" title=" " alt="" coords="1425,431,1567,456"/>
+<area shape="rect" href="CommandLine_8h.html" title=" " alt="" coords="4595,431,4810,456"/>
+<area shape="rect" title=" " alt="" coords="43,350,199,375"/>
 </map>
 </div>
 </div>
@@ -213,6 +250,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MergedLoadStoreMotion_8cpp_source.html#l00384">384</a> of file <a class="el" href="MergedLoadStoreMotion_8cpp_source.html">MergedLoadStoreMotion.cpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="MergedLoadStoreMotion_8cpp_source.html#l00387">llvm::MergedLoadStoreMotionPass::run()</a>.</p>
+
 </div>
 </div>
 <a id="ae97104d1acc20ff71d90c63236fdf1fd" name="ae97104d1acc20ff71d90c63236fdf1fd"></a>
@@ -234,7 +273,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

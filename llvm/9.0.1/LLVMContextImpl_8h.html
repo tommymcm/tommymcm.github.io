@@ -74,17 +74,17 @@ $(function() {
 <code>#include &quot;llvm/ADT/StringMap.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
 <code>#include &quot;llvm/BinaryFormat/Dwarf.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DebugInfoMetadata.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
-<code>#include &quot;llvm/IR/RemarkStreamer.h&quot;</code><br />
-<code>#include &quot;llvm/IR/TrackingMDRef.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Allocator.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/StringSaver.h&quot;</code><br />
-<code>#include &quot;llvm/Support/YAMLTraits.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DebugInfoMetadata_8h_source.html">llvm/IR/DebugInfoMetadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="RemarkStreamer_8h_source.html">llvm/IR/RemarkStreamer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TrackingMDRef_8h_source.html">llvm/IR/TrackingMDRef.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Allocator_8h_source.html">llvm/Support/Allocator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="StringSaver_8h_source.html">llvm/Support/StringSaver.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="YAMLTraits_8h_source.html">llvm/Support/YAMLTraits.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
@@ -99,54 +99,56 @@ Include dependency graph for LLVMContextImpl.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="LLVMContextImpl_8h__incl.png" border="0" usemap="#alib_2IR_2LLVMContextImpl_8h" alt=""/></div>
 <map name="alib_2IR_2LLVMContextImpl_8h" id="alib_2IR_2LLVMContextImpl_8h">
-<area shape="rect" title=" " alt="" coords="2328,5,2513,31"/>
-<area shape="rect" href="AttributeImpl_8h.html" title="This file defines various helper methods and classes used by LLVMContextImpl for creating and managin..." alt="" coords="941,79,1061,104"/>
-<area shape="rect" title=" " alt="" coords="793,152,947,177"/>
-<area shape="rect" title=" " alt="" coords="5,152,172,177"/>
-<area shape="rect" title=" " alt="" coords="197,152,354,177"/>
-<area shape="rect" title=" " alt="" coords="1054,152,1123,177"/>
-<area shape="rect" title=" " alt="" coords="1148,152,1219,177"/>
-<area shape="rect" title=" " alt="" coords="1243,152,1310,177"/>
-<area shape="rect" title=" " alt="" coords="971,152,1030,177"/>
-<area shape="rect" title=" " alt="" coords="1335,152,1395,177"/>
-<area shape="rect" href="ConstantsContext_8h.html" title=" " alt="" coords="1804,79,1955,104"/>
-<area shape="rect" title=" " alt="" coords="1419,152,1611,177"/>
-<area shape="rect" title=" " alt="" coords="1635,152,1795,177"/>
-<area shape="rect" title=" " alt="" coords="1820,152,1971,177"/>
-<area shape="rect" title=" " alt="" coords="3521,152,3696,177"/>
-<area shape="rect" title=" " alt="" coords="3721,152,3870,177"/>
-<area shape="rect" title=" " alt="" coords="3895,152,4067,177"/>
-<area shape="rect" title=" " alt="" coords="4091,152,4262,177"/>
-<area shape="rect" title=" " alt="" coords="2183,79,2331,104"/>
-<area shape="rect" title=" " alt="" coords="2355,79,2487,104"/>
-<area shape="rect" title=" " alt="" coords="2511,79,2677,104"/>
-<area shape="rect" title=" " alt="" coords="2701,79,2855,104"/>
-<area shape="rect" title=" " alt="" coords="2879,79,3042,104"/>
-<area shape="rect" title=" " alt="" coords="3067,79,3241,104"/>
-<area shape="rect" title=" " alt="" coords="3265,79,3429,104"/>
-<area shape="rect" title=" " alt="" coords="3454,79,3651,104"/>
-<area shape="rect" title=" " alt="" coords="3675,79,3889,104"/>
-<area shape="rect" title=" " alt="" coords="3913,79,4083,104"/>
-<area shape="rect" title=" " alt="" coords="4107,79,4254,104"/>
-<area shape="rect" title=" " alt="" coords="4278,79,4473,104"/>
-<area shape="rect" title=" " alt="" coords="4497,79,4678,104"/>
-<area shape="rect" title=" " alt="" coords="4702,79,4881,104"/>
-<area shape="rect" title=" " alt="" coords="4905,79,5099,104"/>
-<area shape="rect" title=" " alt="" coords="5124,79,5315,104"/>
-<area shape="rect" title=" " alt="" coords="5339,79,5425,104"/>
-<area shape="rect" title=" " alt="" coords="5449,79,5526,104"/>
-<area shape="rect" title=" " alt="" coords="5551,79,5613,104"/>
-<area shape="rect" title=" " alt="" coords="5637,79,5796,104"/>
-<area shape="rect" title=" " alt="" coords="379,152,527,177"/>
-<area shape="rect" title=" " alt="" coords="551,152,768,177"/>
-<area shape="rect" title=" " alt="" coords="3024,152,3156,177"/>
-<area shape="rect" title=" " alt="" coords="3180,152,3323,177"/>
-<area shape="rect" title=" " alt="" coords="3347,152,3497,177"/>
-<area shape="rect" title=" " alt="" coords="1995,152,2148,177"/>
-<area shape="rect" title=" " alt="" coords="2172,152,2347,177"/>
-<area shape="rect" title=" " alt="" coords="2371,152,2534,177"/>
-<area shape="rect" title=" " alt="" coords="2558,152,2769,177"/>
-<area shape="rect" title=" " alt="" coords="2793,152,3000,177"/>
+<area shape="rect" title=" " alt="" coords="3671,5,3857,31"/>
+<area shape="rect" href="AttributeImpl_8h.html" title="This file defines various helper methods and classes used by LLVMContextImpl for creating and managin..." alt="" coords="593,152,713,177"/>
+<area shape="rect" title=" " alt="" coords="3457,299,3612,324"/>
+<area shape="rect" title=" " alt="" coords="74,299,241,324"/>
+<area shape="rect" title=" " alt="" coords="2792,299,2949,324"/>
+<area shape="rect" title=" " alt="" coords="1826,299,1979,324"/>
+<area shape="rect" title=" " alt="" coords="3233,519,3303,544"/>
+<area shape="rect" title=" " alt="" coords="2983,372,3049,397"/>
+<area shape="rect" title=" " alt="" coords="1196,445,1255,471"/>
+<area shape="rect" title=" " alt="" coords="1742,299,1802,324"/>
+<area shape="rect" title=" " alt="" coords="3407,372,3478,397"/>
+<area shape="rect" href="ConstantsContext_8h.html" title=" " alt="" coords="3195,79,3346,104"/>
+<area shape="rect" title=" " alt="" coords="5436,225,5628,251"/>
+<area shape="rect" title=" " alt="" coords="2131,152,2291,177"/>
+<area shape="rect" title=" " alt="" coords="3689,152,3839,177"/>
+<area shape="rect" title=" " alt="" coords="2207,299,2382,324"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="4620,445,4791,471"/>
+<area shape="rect" title=" " alt="" coords="4599,519,4676,544"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="4320,152,4469,177"/>
+<area shape="rect" title=" " alt="" coords="5005,225,5153,251"/>
+<area shape="rect" title=" " alt="" coords="5229,225,5361,251"/>
+<area shape="rect" title=" " alt="" coords="5317,299,5480,324"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="3147,225,3319,251"/>
+<area shape="rect" title=" " alt="" coords="2147,225,2210,251"/>
+<area shape="rect" title=" " alt="" coords="5012,299,5097,324"/>
+<area shape="rect" title=" " alt="" coords="6463,225,6630,251"/>
+<area shape="rect" title=" " alt="" coords="7142,79,7317,104"/>
+<area shape="rect" title=" " alt="" coords="1067,225,1231,251"/>
+<area shape="rect" title=" " alt="" coords="5125,152,5323,177"/>
+<area shape="rect" href="DebugInfoMetadata_8h.html" title=" " alt="" coords="4144,79,4357,104"/>
+<area shape="rect" href="Metadata_8h.html" title="This file contains the declarations for metadata subclasses." alt="" coords="5964,152,6111,177"/>
+<area shape="rect" href="LLVMContext_8h.html" title=" " alt="" coords="4049,299,4218,324"/>
+<area shape="rect" title=" " alt="" coords="6654,225,6813,251"/>
+<area shape="rect" href="RemarkStreamer_8h.html" title=" " alt="" coords="1440,152,1635,177"/>
+<area shape="rect" href="TrackingMDRef_8h.html" title=" " alt="" coords="5823,79,6004,104"/>
+<area shape="rect" href="Allocator_8h.html" title="This file defines the MallocAllocator and BumpPtrAllocator interfaces." alt="" coords="1792,225,1971,251"/>
+<area shape="rect" href="StringSaver_8h.html" title=" " alt="" coords="2033,79,2228,104"/>
+<area shape="rect" href="YAMLTraits_8h.html" title=" " alt="" coords="1659,152,1850,177"/>
+<area shape="rect" href="Attributes_8h.html" title="This file contains the simple types necessary to represent the attributes associated with functions a..." alt="" coords="691,225,839,251"/>
+<area shape="rect" href="TrailingObjects_8h.html" title="This header defines support for implementing classes that have some trailing object (or arrays of obj..." alt="" coords="246,225,463,251"/>
+<area shape="rect" title=" " alt="" coords="4482,299,4614,324"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="4685,225,4827,251"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="3501,372,3712,397"/>
+<area shape="rect" href="OperandTraits_8h.html" title=" " alt="" coords="4130,225,4305,251"/>
+<area shape="rect" href="InlineAsm_8h.html" title=" " alt="" coords="2517,152,2667,177"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="3343,225,3497,251"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="2995,152,3157,177"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="1459,225,1666,251"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="4242,299,4355,324"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="4472,372,4592,397"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -189,19 +191,19 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1FunctionTypeKeyInfo_1_1KeyTy.html">llvm::FunctionTypeKeyInfo::KeyTy</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1MDNodeOpsKey.html">llvm::MDNodeOpsKey</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for hashing arbitrary MDNode operands.  <a href="classllvm_1_1MDNodeOpsKey.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for hashing arbitrary <a class="el" href="classllvm_1_1MDNode.html" title="Metadata node.">MDNode</a> operands.  <a href="classllvm_1_1MDNodeOpsKey.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1MDNodeSubsetEqualImpl.html">llvm::MDNodeSubsetEqualImpl&lt; NodeTy &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration point for <a class="el" href="structllvm_1_1MDNodeInfo.html#a476686fcf71f6633092fbe016ff34fc4">MDNodeInfo::isEqual()</a>.  <a href="structllvm_1_1MDNodeSubsetEqualImpl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1MDNodeKeyImpl_3_01MDTuple_01_4.html">llvm::MDNodeKeyImpl&lt; MDTuple &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DenseMapInfo for MDTuple.  <a href="structllvm_1_1MDNodeKeyImpl_3_01MDTuple_01_4.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structllvm_1_1DenseMapInfo.html">DenseMapInfo</a> for <a class="el" href="classllvm_1_1MDTuple.html" title="Tuple of metadata.">MDTuple</a>.  <a href="structllvm_1_1MDNodeKeyImpl_3_01MDTuple_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1MDNodeKeyImpl_3_01DILocation_01_4.html">llvm::MDNodeKeyImpl&lt; DILocation &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DenseMapInfo for DILocation.  <a href="structllvm_1_1MDNodeKeyImpl_3_01DILocation_01_4.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structllvm_1_1DenseMapInfo.html">DenseMapInfo</a> for <a class="el" href="classllvm_1_1DILocation.html" title="Debug location.">DILocation</a>.  <a href="structllvm_1_1MDNodeKeyImpl_3_01DILocation_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1MDNodeKeyImpl_3_01GenericDINode_01_4.html">llvm::MDNodeKeyImpl&lt; GenericDINode &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DenseMapInfo for GenericDINode.  <a href="structllvm_1_1MDNodeKeyImpl_3_01GenericDINode_01_4.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structllvm_1_1DenseMapInfo.html">DenseMapInfo</a> for <a class="el" href="classllvm_1_1GenericDINode.html" title="Generic tagged DWARF-like metadata node.">GenericDINode</a>.  <a href="structllvm_1_1MDNodeKeyImpl_3_01GenericDINode_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1MDNodeKeyImpl_3_01DISubrange_01_4.html">llvm::MDNodeKeyImpl&lt; DISubrange &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -256,7 +258,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1MDNodeKeyImpl_3_01DIMacroFile_01_4.html">llvm::MDNodeKeyImpl&lt; DIMacroFile &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structllvm_1_1MDNodeInfo.html">llvm::MDNodeInfo&lt; NodeTy &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DenseMapInfo for MDNode subclasses.  <a href="structllvm_1_1MDNodeInfo.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structllvm_1_1DenseMapInfo.html">DenseMapInfo</a> for <a class="el" href="classllvm_1_1MDNode.html" title="Metadata node.">MDNode</a> subclasses.  <a href="structllvm_1_1MDNodeInfo.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1MDAttachmentMap.html">llvm::MDAttachmentMap</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map-like storage for metadata attachments.  <a href="classllvm_1_1MDAttachmentMap.html#details">More...</a><br /></td></tr>
@@ -270,6 +272,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
+<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -323,7 +326,7 @@ Macros</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:37 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

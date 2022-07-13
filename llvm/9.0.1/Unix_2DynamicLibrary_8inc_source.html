@@ -68,7 +68,7 @@ $(function() {
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#if defined(HAVE_DLFCN_H) &amp;&amp; defined(HAVE_DLOPEN)</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;dlfcn.h&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#aaf0954ecbfd61b5bb24432b3fba76378">DynamicLibrary::HandleSet::~HandleSet</a>() {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#aac812445033afca9d6ebe400399b4830">DynamicLibrary::HandleSet::~HandleSet</a>() {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="comment">// Close the libraries in reverse order.</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordflow">for</span> (<span class="keywordtype">void</span> *Handle : llvm::reverse(Handles))</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    ::dlclose(Handle);</div>
@@ -79,7 +79,7 @@ $(function() {
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  DynamicLibrary::SearchOrder = DynamicLibrary::SO_Linker;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> *<a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#ae03bee732af2ae41b8995ef62c9aefdb">DynamicLibrary::HandleSet::DLOpen</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *File, std::string *Err) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> *<a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#a9df2a55f4a1ee34610802540457f3fab">DynamicLibrary::HandleSet::DLOpen</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *File, std::string *Err) {</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordtype">void</span> *Handle = ::dlopen(File, RTLD_LAZY|RTLD_GLOBAL);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordflow">if</span> (!Handle) {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span> (Err) *Err = ::dlerror();</div>
@@ -96,27 +96,27 @@ $(function() {
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordflow">return</span> Handle;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">void</span> <a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#a102c07ca04f6a44e7a317d7866515b6a">DynamicLibrary::HandleSet::DLClose</a>(<span class="keywordtype">void</span> *Handle) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">void</span> <a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#ae7a8e4c562fe12a27adea30aba533254">DynamicLibrary::HandleSet::DLClose</a>(<span class="keywordtype">void</span> *Handle) {</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  ::dlclose(Handle);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> *<a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#a8de332ed843170da320743d20d028db2">DynamicLibrary::HandleSet::DLSym</a>(<span class="keywordtype">void</span> *Handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *Symbol) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> *<a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#aaea4161534624cd91cd5404b6f25291c">DynamicLibrary::HandleSet::DLSym</a>(<span class="keywordtype">void</span> *Handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *Symbol) {</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  return ::dlsym(Handle, Symbol);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#else </span><span class="comment">// !HAVE_DLOPEN</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#aaf0954ecbfd61b5bb24432b3fba76378">DynamicLibrary::HandleSet::~HandleSet</a>() {}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#aac812445033afca9d6ebe400399b4830">DynamicLibrary::HandleSet::~HandleSet</a>() {}</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keywordtype">void</span> *<a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#ae03bee732af2ae41b8995ef62c9aefdb">DynamicLibrary::HandleSet::DLOpen</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *File, std::string *Err) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keywordtype">void</span> *<a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#a9df2a55f4a1ee34610802540457f3fab">DynamicLibrary::HandleSet::DLOpen</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *File, std::string *Err) {</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordflow">if</span> (Err) *Err = <span class="stringliteral">&quot;dlopen() not supported on this platform&quot;</span>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordflow">return</span> &amp;Invalid;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordflow">return</span> &amp;<a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a0883f644d58e1e0e4624e4773b4fc372a4bbb8f967da6d1a610596d7257179c2b">Invalid</a>;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">void</span> <a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#a102c07ca04f6a44e7a317d7866515b6a">DynamicLibrary::HandleSet::DLClose</a>(<span class="keywordtype">void</span> *Handle) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">void</span> <a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#ae7a8e4c562fe12a27adea30aba533254">DynamicLibrary::HandleSet::DLClose</a>(<span class="keywordtype">void</span> *Handle) {</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">void</span> *<a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#a8de332ed843170da320743d20d028db2">DynamicLibrary::HandleSet::DLSym</a>(<span class="keywordtype">void</span> *Handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *Symbol) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">void</span> *<a class="code hl_function" href="classDynamicLibrary_1_1HandleSet.html#aaea4161534624cd91cd5404b6f25291c">DynamicLibrary::HandleSet::DLSym</a>(<span class="keywordtype">void</span> *Handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *Symbol) {</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
@@ -187,14 +187,15 @@ $(function() {
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
-<div class="ttc" id="aclassDynamicLibrary_1_1HandleSet_html_a102c07ca04f6a44e7a317d7866515b6a"><div class="ttname"><a href="classDynamicLibrary_1_1HandleSet.html#a102c07ca04f6a44e7a317d7866515b6a">DynamicLibrary::HandleSet::DLClose</a></div><div class="ttdeci">static void DLClose(void *Handle)</div></div>
-<div class="ttc" id="aclassDynamicLibrary_1_1HandleSet_html_a8de332ed843170da320743d20d028db2"><div class="ttname"><a href="classDynamicLibrary_1_1HandleSet.html#a8de332ed843170da320743d20d028db2">DynamicLibrary::HandleSet::DLSym</a></div><div class="ttdeci">static void * DLSym(void *Handle, const char *Symbol)</div></div>
-<div class="ttc" id="aclassDynamicLibrary_1_1HandleSet_html_aaf0954ecbfd61b5bb24432b3fba76378"><div class="ttname"><a href="classDynamicLibrary_1_1HandleSet.html#aaf0954ecbfd61b5bb24432b3fba76378">DynamicLibrary::HandleSet::~HandleSet</a></div><div class="ttdeci">~HandleSet()</div></div>
-<div class="ttc" id="aclassDynamicLibrary_1_1HandleSet_html_ae03bee732af2ae41b8995ef62c9aefdb"><div class="ttname"><a href="classDynamicLibrary_1_1HandleSet.html#ae03bee732af2ae41b8995ef62c9aefdb">DynamicLibrary::HandleSet::DLOpen</a></div><div class="ttdeci">static void * DLOpen(const char *Filename, std::string *Err)</div></div>
+<div class="ttc" id="aclassDynamicLibrary_1_1HandleSet_html_a9df2a55f4a1ee34610802540457f3fab"><div class="ttname"><a href="classDynamicLibrary_1_1HandleSet.html#a9df2a55f4a1ee34610802540457f3fab">llvm::sys::DynamicLibrary::HandleSet::DLOpen</a></div><div class="ttdeci">static void * DLOpen(const char *Filename, std::string *Err)</div></div>
+<div class="ttc" id="aclassDynamicLibrary_1_1HandleSet_html_aac812445033afca9d6ebe400399b4830"><div class="ttname"><a href="classDynamicLibrary_1_1HandleSet.html#aac812445033afca9d6ebe400399b4830">llvm::sys::DynamicLibrary::HandleSet::~HandleSet</a></div><div class="ttdeci">~HandleSet()</div></div>
+<div class="ttc" id="aclassDynamicLibrary_1_1HandleSet_html_aaea4161534624cd91cd5404b6f25291c"><div class="ttname"><a href="classDynamicLibrary_1_1HandleSet.html#aaea4161534624cd91cd5404b6f25291c">llvm::sys::DynamicLibrary::HandleSet::DLSym</a></div><div class="ttdeci">static void * DLSym(void *Handle, const char *Symbol)</div></div>
+<div class="ttc" id="aclassDynamicLibrary_1_1HandleSet_html_ae7a8e4c562fe12a27adea30aba533254"><div class="ttname"><a href="classDynamicLibrary_1_1HandleSet.html#ae7a8e4c562fe12a27adea30aba533254">llvm::sys::DynamicLibrary::HandleSet::DLClose</a></div><div class="ttdeci">static void DLClose(void *Handle)</div></div>
+<div class="ttc" id="anamespacellvm_1_1codeview_html_a0883f644d58e1e0e4624e4773b4fc372a4bbb8f967da6d1a610596d7257179c2b"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a0883f644d58e1e0e4624e4773b4fc372a4bbb8f967da6d1a610596d7257179c2b">llvm::codeview::BinaryAnnotationsOpCode::Invalid</a></div><div class="ttdeci">@ Invalid</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:26 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

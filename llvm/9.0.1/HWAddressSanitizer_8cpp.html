@@ -60,82 +60,96 @@ $(function() {
 
 <p>This file is a part of HWAddressSanitizer, an address sanity checker based on tagged addressing.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;llvm/Transforms/Instrumentation/HWAddressSanitizer.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="HWAddressSanitizer_8h_source.html">llvm/Transforms/Instrumentation/HWAddressSanitizer.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringExtras.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Triple.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DebugInfoMetadata.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InlineAsm.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstVisitor.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
-<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
-<code>#include &quot;llvm/IR/MDBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DebugInfoMetadata_8h_source.html">llvm/IR/DebugInfoMetadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InlineAsm_8h_source.html">llvm/IR/InlineAsm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstVisitor_8h_source.html">llvm/IR/InstVisitor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MDBuilder_8h_source.html">llvm/IR/MDBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Instrumentation.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/ModuleUtils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/PromoteMemToReg.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instrumentation_8h_source.html">llvm/Transforms/Instrumentation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ModuleUtils_8h_source.html">llvm/Transforms/Utils/ModuleUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PromoteMemToReg_8h_source.html">llvm/Transforms/Utils/PromoteMemToReg.h</a>&quot;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for HWAddressSanitizer.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="HWAddressSanitizer_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Instrumentation_2HWAddressSanitizer_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Instrumentation_2HWAddressSanitizer_8cpp" id="alib_2Transforms_2Instrumentation_2HWAddressSanitizer_8cpp">
-<area shape="rect" title="This file is a part of HWAddressSanitizer, an address sanity checker based on tagged addressing." alt="" coords="3141,5,3363,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,240,133"/>
-<area shape="rect" title=" " alt="" coords="265,101,439,126"/>
-<area shape="rect" title=" " alt="" coords="463,101,641,126"/>
-<area shape="rect" title=" " alt="" coords="665,101,823,126"/>
-<area shape="rect" title=" " alt="" coords="847,101,980,126"/>
-<area shape="rect" title=" " alt="" coords="1005,101,1153,126"/>
-<area shape="rect" title=" " alt="" coords="1177,101,1332,126"/>
-<area shape="rect" title=" " alt="" coords="1357,101,1499,126"/>
-<area shape="rect" title=" " alt="" coords="1524,101,1673,126"/>
-<area shape="rect" title=" " alt="" coords="1698,101,1857,126"/>
-<area shape="rect" title=" " alt="" coords="1881,101,2095,126"/>
-<area shape="rect" title=" " alt="" coords="2119,101,2291,126"/>
-<area shape="rect" title=" " alt="" coords="2316,101,2455,126"/>
-<area shape="rect" title=" " alt="" coords="2479,101,2622,126"/>
-<area shape="rect" title=" " alt="" coords="2647,101,2796,126"/>
-<area shape="rect" title=" " alt="" coords="2820,101,2969,126"/>
-<area shape="rect" title=" " alt="" coords="2994,101,3147,126"/>
-<area shape="rect" title=" " alt="" coords="3172,101,3332,126"/>
-<area shape="rect" title=" " alt="" coords="3356,101,3516,126"/>
-<area shape="rect" title=" " alt="" coords="3541,101,3683,126"/>
-<area shape="rect" title=" " alt="" coords="3707,101,3877,126"/>
-<area shape="rect" title=" " alt="" coords="3901,101,4051,126"/>
-<area shape="rect" title=" " alt="" coords="4075,101,4207,126"/>
-<area shape="rect" title=" " alt="" coords="4232,101,4347,126"/>
-<area shape="rect" title=" " alt="" coords="4371,101,4491,126"/>
-<area shape="rect" title=" " alt="" coords="4515,101,4611,126"/>
-<area shape="rect" title=" " alt="" coords="4635,101,4805,126"/>
-<area shape="rect" title=" " alt="" coords="4830,101,5045,126"/>
-<area shape="rect" title=" " alt="" coords="5069,101,5232,126"/>
-<area shape="rect" title=" " alt="" coords="5257,101,5463,126"/>
-<area shape="rect" title=" " alt="" coords="5487,101,5734,126"/>
-<area shape="rect" title=" " alt="" coords="5758,93,5919,133"/>
-<area shape="rect" title=" " alt="" coords="5943,93,6105,133"/>
-<area shape="rect" title=" " alt="" coords="6129,93,6295,133"/>
-<area shape="rect" title=" " alt="" coords="6319,101,6393,126"/>
+<area shape="rect" title="This file is a part of HWAddressSanitizer, an address sanity checker based on tagged addressing." alt="" coords="3270,5,3493,45"/>
+<area shape="rect" href="HWAddressSanitizer_8h.html" title=" " alt="" coords="4328,93,4563,133"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="2667,335,2805,361"/>
+<area shape="rect" title=" " alt="" coords="4751,577,4908,603"/>
+<area shape="rect" href="Attributes_8h.html" title="This file contains the simple types necessary to represent the attributes associated with functions a..." alt="" coords="3902,416,4050,441"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="717,416,872,441"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="1107,497,1261,522"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="984,577,1104,603"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="1213,651,1384,676"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="1758,416,1930,441"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="1488,497,1603,522"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="4121,255,4253,280"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="2995,335,3154,361"/>
+<area shape="rect" title=" " alt="" coords="5339,497,5514,522"/>
+<area shape="rect" title=" " alt="" coords="4277,416,4373,441"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="5004,255,5167,280"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="5449,416,5655,441"/>
+<area shape="rect" title=" " alt="" coords="6187,101,6365,126"/>
+<area shape="rect" title=" " alt="" coords="6389,101,6523,126"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="550,416,693,441"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="2392,335,2541,361"/>
+<area shape="rect" href="DebugInfoMetadata_8h.html" title=" " alt="" coords="3419,255,3632,280"/>
+<area shape="rect" href="IRBuilder_8h.html" title=" " alt="" coords="1563,101,1706,126"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="1555,255,1715,280"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="2203,181,2363,207"/>
+<area shape="rect" href="Intrinsics_8h.html" title=" " alt="" coords="3049,255,3191,280"/>
+<area shape="rect" href="LLVMContext_8h.html" title=" " alt="" coords="2158,416,2327,441"/>
+<area shape="rect" href="InlineAsm_8h.html" title=" " alt="" coords="5021,416,5171,441"/>
+<area shape="rect" href="InstVisitor_8h.html" title=" " alt="" coords="2988,101,3137,126"/>
+<area shape="rect" href="MDBuilder_8h.html" title=" " alt="" coords="5843,497,5994,522"/>
+<area shape="rect" href="CommandLine_8h.html" title=" " alt="" coords="5599,335,5814,361"/>
+<area shape="rect" href="Instrumentation_8h.html" title=" " alt="" coords="4658,335,4905,361"/>
+<area shape="rect" href="BasicBlockUtils_8h.html" title=" " alt="" coords="145,328,306,368"/>
+<area shape="rect" href="ModuleUtils_8h.html" title=" " alt="" coords="6018,489,6179,529"/>
+<area shape="rect" href="PromoteMemToReg_8h.html" title=" " alt="" coords="6547,93,6712,133"/>
+<area shape="rect" title=" " alt="" coords="6736,101,6811,126"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="4755,181,4925,207"/>
+<area shape="rect" title=" " alt="" coords="3398,651,3589,676"/>
+<area shape="rect" title=" " alt="" coords="2137,724,2207,749"/>
+<area shape="rect" title=" " alt="" coords="2417,577,2484,603"/>
+<area shape="rect" title=" " alt="" coords="4800,497,4859,522"/>
+<area shape="rect" title=" " alt="" coords="1425,651,1541,676"/>
+<area shape="rect" title=" " alt="" coords="1873,577,2028,603"/>
+<area shape="rect" title=" " alt="" coords="4457,497,4623,522"/>
+<area shape="rect" title=" " alt="" coords="3350,497,3503,522"/>
+<area shape="rect" title=" " alt="" coords="3883,497,4069,522"/>
+<area shape="rect" href="PointerLikeTypeTraits_8h.html" title=" " alt="" coords="4093,489,4275,529"/>
+<area shape="rect" title=" " alt="" coords="4299,497,4357,522"/>
+<area shape="rect" title=" " alt="" coords="4381,497,4432,522"/>
+<area shape="rect" title=" " alt="" coords="5507,577,5567,603"/>
 </map>
 </div>
 </div>
@@ -148,60 +162,24 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7500337928a4bc24253827e026990e22"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a7500337928a4bc24253827e026990e22">ClMemoryAccessCallbackPrefix</a> (&quot;hwasan-memory-access-callback-prefix&quot;, cl::desc(&quot;Prefix for memory access callbacks&quot;), cl::Hidden, cl::init(&quot;__hwasan_&quot;))</td></tr>
-<tr class="separator:a7500337928a4bc24253827e026990e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9d0439d159e1709a9b3ba51031eccbd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#ad9d0439d159e1709a9b3ba51031eccbd">ClInstrumentWithCalls</a> (&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-with-calls&quot;, cl::desc(&quot;instrument reads and writes with callbacks&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:ad9d0439d159e1709a9b3ba51031eccbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0836ad5a84e9a07f8c94140b5b288703"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a0836ad5a84e9a07f8c94140b5b288703">ClInstrumentReads</a> (&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-reads&quot;, cl::desc(&quot;instrument read instructions&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:a0836ad5a84e9a07f8c94140b5b288703"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16094110dec5e4217ab198eb97a14a7b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a16094110dec5e4217ab198eb97a14a7b">ClInstrumentWrites</a> (&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-writes&quot;, cl::desc(&quot;instrument write instructions&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:a16094110dec5e4217ab198eb97a14a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e9c823f77b6e3a561666987edd80c28"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a3e9c823f77b6e3a561666987edd80c28">ClInstrumentAtomics</a> (&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-atomics&quot;, cl::desc(&quot;instrument atomic <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> (rmw, cmpxchg)&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:a3e9c823f77b6e3a561666987edd80c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0f4793cfb519f09a6becae2f6b365ab"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#aa0f4793cfb519f09a6becae2f6b365ab">ClRecover</a> (&quot;hwasan-recover&quot;, cl::desc(&quot;Enable recovery mode (continue-after-<a class="el" href="SymbolRecordMapping_8cpp.html#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a>).&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:aa0f4793cfb519f09a6becae2f6b365ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6b03e9878d2ee85ea131dab4041c90d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#aa6b03e9878d2ee85ea131dab4041c90d">ClInstrumentStack</a> (&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-stack&quot;, cl::desc(&quot;instrument stack (allocas)&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:aa6b03e9878d2ee85ea131dab4041c90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a447b2771654df6fecce4116e6cbf7ef7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a447b2771654df6fecce4116e6cbf7ef7">ClUARRetagToZero</a> (&quot;hwasan-uar-retag-to-zero&quot;, cl::desc(&quot;Clear alloca tags before returning from the <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> to allow &quot; &quot;non-instrumented and instrumented <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> mix. When set &quot; &quot;to false, allocas are retagged before returning from the &quot; &quot;<a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> to detect <a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a> after return.&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:a447b2771654df6fecce4116e6cbf7ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6b04118cb790abba22cccd6fef6b570"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#ae6b04118cb790abba22cccd6fef6b570">ClGenerateTagsWithCalls</a> (&quot;hwasan-generate-tags-with-calls&quot;, cl::desc(&quot;generate new tags with runtime library calls&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:ae6b04118cb790abba22cccd6fef6b570"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a233fbaee7332945bef142fce5bcbaf9b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a233fbaee7332945bef142fce5bcbaf9b">ClMatchAllTag</a> (&quot;hwasan-match-all-tag&quot;, cl::desc(&quot;don't report bad accesses via pointers with this tag&quot;), cl::Hidden, cl::init(-1))</td></tr>
-<tr class="separator:a233fbaee7332945bef142fce5bcbaf9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b291fb1ae2751320745af8d91534ad1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a3b291fb1ae2751320745af8d91534ad1">ClEnableKhwasan</a> (&quot;hwasan-kernel&quot;, cl::desc(&quot;Enable KernelHWAddressSanitizer instrumentation&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a3b291fb1ae2751320745af8d91534ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa630c8ec7b2aa9e59502e7a3278a6d6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#afa630c8ec7b2aa9e59502e7a3278a6d6">ClMappingOffset</a> (&quot;hwasan-mapping-offset&quot;, cl::desc(&quot;HWASan shadow mapping offset [EXPERIMENTAL]&quot;), cl::Hidden, cl::init(0))</td></tr>
-<tr class="separator:afa630c8ec7b2aa9e59502e7a3278a6d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bd493cb52e72ad4354276a801cade7d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a1bd493cb52e72ad4354276a801cade7d">ClWithIfunc</a> (&quot;hwasan-with-ifunc&quot;, cl::desc(&quot;Access dynamic shadow through an ifunc global on &quot; &quot;platforms that support this&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a1bd493cb52e72ad4354276a801cade7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a246381046b2545c2aff3cd890788334b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a246381046b2545c2aff3cd890788334b">ClWithTls</a> (&quot;hwasan-with-tls&quot;, cl::desc(&quot;Access dynamic shadow through an thread-local pointer on &quot; &quot;platforms that support this&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:a246381046b2545c2aff3cd890788334b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bdc745ed08113030861796eda9668c6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a5bdc745ed08113030861796eda9668c6">ClRecordStackHistory</a> (&quot;hwasan-record-stack-history&quot;, cl::desc(&quot;Record stack frames with tagged allocations &quot; &quot;in a thread-local ring buffer&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:a5bdc745ed08113030861796eda9668c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac50f4e94dc25bf0be51f9657da06294f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#ac50f4e94dc25bf0be51f9657da06294f">ClInstrumentMemIntrinsics</a> (&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-mem-intrinsics&quot;, cl::desc(&quot;instrument memory intrinsics&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:ac50f4e94dc25bf0be51f9657da06294f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a568c07da4f793e91b678d6c75b437b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a8a568c07da4f793e91b678d6c75b437b">ClInstrumentLandingPads</a> (&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-landing-pads&quot;, cl::desc(&quot;instrument landing pads&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:a8a568c07da4f793e91b678d6c75b437b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7180daff9602bc9b8cfc4fba034fdaf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#ac7180daff9602bc9b8cfc4fba034fdaf">ClInlineAllChecks</a> (&quot;hwasan-<a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a>-all-checks&quot;, cl::desc(&quot;inline all checks&quot;), cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:ac7180daff9602bc9b8cfc4fba034fdaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5846bee9f6e7e517ff430de68429a77f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a5846bee9f6e7e517ff430de68429a77f">INITIALIZE_PASS_BEGIN</a> (HWAddressSanitizerLegacyPass, &quot;hwasan&quot;, &quot;HWAddressSanitizer: detect memory bugs using tagged addressing.&quot;, false, false) INITIALIZE_PASS_END(HWAddressSanitizerLegacyPass</td></tr>
 <tr class="separator:a5846bee9f6e7e517ff430de68429a77f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5c3fea3e9699b6299cc037334eeb83e"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#ad5c3fea3e9699b6299cc037334eeb83e">getPointerOperandIndex</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:ad5c3fea3e9699b6299cc037334eeb83e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#ad5c3fea3e9699b6299cc037334eeb83e">getPointerOperandIndex</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="separator:ad5c3fea3e9699b6299cc037334eeb83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cf7e80624365372e769be7d6c04d74b"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a0cf7e80624365372e769be7d6c04d74b">TypeSizeToSizeIndex</a> (uint32_t TypeSize)</td></tr>
+<tr class="memitem:a0cf7e80624365372e769be7d6c04d74b"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a0cf7e80624365372e769be7d6c04d74b">TypeSizeToSizeIndex</a> (<a class="el" href="classuint32__t.html">uint32_t</a> TypeSize)</td></tr>
 <tr class="separator:a0cf7e80624365372e769be7d6c04d74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd0b8a34fe817d41190821de3f6d0088"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#afd0b8a34fe817d41190821de3f6d0088">getAllocaSizeInBytes</a> (const AllocaInst &amp;AI)</td></tr>
+<tr class="memitem:afd0b8a34fe817d41190821de3f6d0088"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#afd0b8a34fe817d41190821de3f6d0088">getAllocaSizeInBytes</a> (const <a class="el" href="classllvm_1_1AllocaInst.html">AllocaInst</a> &amp;AI)</td></tr>
 <tr class="separator:afd0b8a34fe817d41190821de3f6d0088"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a770672f75e2f7a0c1641920a31051619"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a770672f75e2f7a0c1641920a31051619">RetagMask</a> (unsigned AllocaNo)</td></tr>
+<tr class="memitem:a770672f75e2f7a0c1641920a31051619"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a770672f75e2f7a0c1641920a31051619">RetagMask</a> (<a class="el" href="classunsigned.html">unsigned</a> AllocaNo)</td></tr>
 <tr class="separator:a770672f75e2f7a0c1641920a31051619"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ab58ceba4a6bbef56410d4a28b7b0e4ea"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#ab58ceba4a6bbef56410d4a28b7b0e4ea">kHwasanModuleCtorName</a> = &quot;hwasan.module_ctor&quot;</td></tr>
+<tr class="memitem:ab58ceba4a6bbef56410d4a28b7b0e4ea"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#ab58ceba4a6bbef56410d4a28b7b0e4ea">kHwasanModuleCtorName</a> = &quot;hwasan.module_ctor&quot;</td></tr>
 <tr class="separator:ab58ceba4a6bbef56410d4a28b7b0e4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c362160e4130a58383b91b8062121c6"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a1c362160e4130a58383b91b8062121c6">kHwasanInitName</a> = &quot;__hwasan_init&quot;</td></tr>
+<tr class="memitem:a1c362160e4130a58383b91b8062121c6"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a1c362160e4130a58383b91b8062121c6">kHwasanInitName</a> = &quot;__hwasan_init&quot;</td></tr>
 <tr class="separator:a1c362160e4130a58383b91b8062121c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb7a32b34fe7933989123cafddcb8394"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#acb7a32b34fe7933989123cafddcb8394">kHwasanShadowMemoryDynamicAddress</a></td></tr>
+<tr class="memitem:acb7a32b34fe7933989123cafddcb8394"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#acb7a32b34fe7933989123cafddcb8394">kHwasanShadowMemoryDynamicAddress</a></td></tr>
 <tr class="separator:acb7a32b34fe7933989123cafddcb8394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa62a4d0672bab180dd339cda25b23b2e"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#aa62a4d0672bab180dd339cda25b23b2e">kNumberOfAccessSizes</a> = 5</td></tr>
 <tr class="separator:aa62a4d0672bab180dd339cda25b23b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -209,10 +187,46 @@ Variables</h2></td></tr>
 <tr class="separator:a174914c130f5512b50cf6e97e4de1634"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d1135f2ee91e5d486647a37f8074dcc"><td class="memItemLeft" align="right" valign="top">static const uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a8d1135f2ee91e5d486647a37f8074dcc">kDynamicShadowSentinel</a></td></tr>
 <tr class="separator:a8d1135f2ee91e5d486647a37f8074dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac725a2a39edab84c9ddf4d5e2b5dc356"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#ac725a2a39edab84c9ddf4d5e2b5dc356">kPointerTagShift</a> = 56</td></tr>
+<tr class="memitem:ac725a2a39edab84c9ddf4d5e2b5dc356"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#ac725a2a39edab84c9ddf4d5e2b5dc356">kPointerTagShift</a> = 56</td></tr>
 <tr class="separator:ac725a2a39edab84c9ddf4d5e2b5dc356"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a385738871b08f6474945de0b29bf0aa6"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a385738871b08f6474945de0b29bf0aa6">kShadowBaseAlignment</a> = 32</td></tr>
+<tr class="memitem:a385738871b08f6474945de0b29bf0aa6"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a385738871b08f6474945de0b29bf0aa6">kShadowBaseAlignment</a> = 32</td></tr>
 <tr class="separator:a385738871b08f6474945de0b29bf0aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a926dac98a79c448ca21662778c1c09cc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a926dac98a79c448ca21662778c1c09cc">ClMemoryAccessCallbackPrefix</a> (&quot;hwasan-memory-access-callback-prefix&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Prefix for memory access callbacks&quot;), cl::Hidden, cl::init(&quot;__hwasan_&quot;))</td></tr>
+<tr class="separator:a926dac98a79c448ca21662778c1c09cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ad5863e6e86fc753068c9b70442fda2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a4ad5863e6e86fc753068c9b70442fda2">ClInstrumentWithCalls</a> (&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-with-calls&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument reads and writes with callbacks&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a4ad5863e6e86fc753068c9b70442fda2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a428b2dc183020b8931943b1c59d30512"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a428b2dc183020b8931943b1c59d30512">ClInstrumentReads</a> (&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-reads&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument read instructions&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:a428b2dc183020b8931943b1c59d30512"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16cc83309c8f1f4803a5534d848bbe81"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a16cc83309c8f1f4803a5534d848bbe81">ClInstrumentWrites</a> (&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-writes&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument write instructions&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:a16cc83309c8f1f4803a5534d848bbe81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a524826286a6377f4388587eab145aa4a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a524826286a6377f4388587eab145aa4a">ClInstrumentAtomics</a> (&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-atomics&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument atomic <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> (rmw, cmpxchg)&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:a524826286a6377f4388587eab145aa4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5f2a8a28154eb8277d74631f18aedd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a6c5f2a8a28154eb8277d74631f18aedd">ClRecover</a> (&quot;hwasan-recover&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable recovery mode (continue-after-<a class="el" href="SymbolRecordMapping_8cpp.html#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a>).&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a6c5f2a8a28154eb8277d74631f18aedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a579a4e0b7863b190bc30d37bf9c2eb8e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a579a4e0b7863b190bc30d37bf9c2eb8e">ClInstrumentStack</a> (&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-stack&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument stack (allocas)&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:a579a4e0b7863b190bc30d37bf9c2eb8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d159ef80c695a936f2d5abb3c023ca3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a9d159ef80c695a936f2d5abb3c023ca3">ClUARRetagToZero</a> (&quot;hwasan-uar-retag-to-zero&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Clear alloca tags before returning from the <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> to allow &quot; &quot;non-instrumented and instrumented <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> mix. When set &quot; &quot;to false, allocas are retagged before returning from the &quot; &quot;<a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> to detect <a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a> after return.&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:a9d159ef80c695a936f2d5abb3c023ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f5a4fba5fa4d9ce33951528a92afc11"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a3f5a4fba5fa4d9ce33951528a92afc11">ClGenerateTagsWithCalls</a> (&quot;hwasan-generate-tags-with-calls&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;generate new tags with runtime library calls&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a3f5a4fba5fa4d9ce33951528a92afc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f7c3c3c9730ad73477f498daa70ed0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a22f7c3c3c9730ad73477f498daa70ed0">ClMatchAllTag</a> (&quot;hwasan-match-all-tag&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;don't report bad accesses via pointers with this tag&quot;), cl::Hidden, cl::init(-1))</td></tr>
+<tr class="separator:a22f7c3c3c9730ad73477f498daa70ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d81a5f964afd0f252d69ad7c9b056b1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a7d81a5f964afd0f252d69ad7c9b056b1">ClEnableKhwasan</a> (&quot;hwasan-kernel&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable KernelHWAddressSanitizer instrumentation&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a7d81a5f964afd0f252d69ad7c9b056b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e8f18cd73aef222622884c054646428"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a5e8f18cd73aef222622884c054646428">ClMappingOffset</a> (&quot;hwasan-mapping-offset&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;HWASan shadow mapping offset [EXPERIMENTAL]&quot;), cl::Hidden, cl::init(0))</td></tr>
+<tr class="separator:a5e8f18cd73aef222622884c054646428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7c867516aa6e4f176d3468b1d8b7b28"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#af7c867516aa6e4f176d3468b1d8b7b28">ClWithIfunc</a> (&quot;hwasan-with-ifunc&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Access dynamic shadow through an ifunc global on &quot; &quot;platforms that support this&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:af7c867516aa6e4f176d3468b1d8b7b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5ab4aa365f169c14cc2aebaef052876"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#ab5ab4aa365f169c14cc2aebaef052876">ClWithTls</a> (&quot;hwasan-with-tls&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Access dynamic shadow through an <a class="el" href="namespacellvm.html#a800cad361ef95b1a5e3658b519d7d502">thread</a>-local pointer on &quot; &quot;platforms that support this&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:ab5ab4aa365f169c14cc2aebaef052876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad73e4851d543619f7704f772930210e5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#ad73e4851d543619f7704f772930210e5">ClRecordStackHistory</a> (&quot;hwasan-record-stack-history&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Record stack frames with tagged allocations &quot; &quot;in a <a class="el" href="namespacellvm.html#a800cad361ef95b1a5e3658b519d7d502">thread</a>-local ring buffer&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:ad73e4851d543619f7704f772930210e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa20b2914d2e6d50d5fb635e4fc360ad1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#aa20b2914d2e6d50d5fb635e4fc360ad1">ClInstrumentMemIntrinsics</a> (&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-mem-intrinsics&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument memory intrinsics&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:aa20b2914d2e6d50d5fb635e4fc360ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7f3edadddc1b26fba2302ad892b1c75"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#ac7f3edadddc1b26fba2302ad892b1c75">ClInstrumentLandingPads</a> (&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-landing-pads&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument landing pads&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:ac7f3edadddc1b26fba2302ad892b1c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861afe11ea46a48dcdfe7353b8337876"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a861afe11ea46a48dcdfe7353b8337876">ClInlineAllChecks</a> (&quot;hwasan-<a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a>-all-checks&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;inline all checks&quot;), cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a861afe11ea46a48dcdfe7353b8337876"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a661df417e71e017081efb23b1b761c21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#a661df417e71e017081efb23b1b761c21">hwasan</a></td></tr>
 <tr class="separator:a661df417e71e017081efb23b1b761c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac01108684f0f00ddab45bb87478e96b9"><td class="memItemLeft" align="right" valign="top">HWAddressSanitizer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HWAddressSanitizer_8cpp.html#ac01108684f0f00ddab45bb87478e96b9">__pad0__</a></td></tr>
@@ -242,870 +256,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a3b291fb1ae2751320745af8d91534ad1" name="a3b291fb1ae2751320745af8d91534ad1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b291fb1ae2751320745af8d91534ad1">&#9670;&nbsp;</a></span>ClEnableKhwasan()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClEnableKhwasan </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-kernel&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Enable KernelHWAddressSanitizer instrumentation&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae6b04118cb790abba22cccd6fef6b570" name="ae6b04118cb790abba22cccd6fef6b570"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6b04118cb790abba22cccd6fef6b570">&#9670;&nbsp;</a></span>ClGenerateTagsWithCalls()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClGenerateTagsWithCalls </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-generate-tags-with-calls&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;generate new tags with runtime library calls&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac7180daff9602bc9b8cfc4fba034fdaf" name="ac7180daff9602bc9b8cfc4fba034fdaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7180daff9602bc9b8cfc4fba034fdaf">&#9670;&nbsp;</a></span>ClInlineAllChecks()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClInlineAllChecks </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-<a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a>-all-checks&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;inline all checks&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3e9c823f77b6e3a561666987edd80c28" name="a3e9c823f77b6e3a561666987edd80c28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e9c823f77b6e3a561666987edd80c28">&#9670;&nbsp;</a></span>ClInstrumentAtomics()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClInstrumentAtomics </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-atomics&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;instrument atomic <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> (rmw, cmpxchg)&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8a568c07da4f793e91b678d6c75b437b" name="a8a568c07da4f793e91b678d6c75b437b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a568c07da4f793e91b678d6c75b437b">&#9670;&nbsp;</a></span>ClInstrumentLandingPads()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClInstrumentLandingPads </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-landing-pads&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;instrument landing pads&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac50f4e94dc25bf0be51f9657da06294f" name="ac50f4e94dc25bf0be51f9657da06294f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac50f4e94dc25bf0be51f9657da06294f">&#9670;&nbsp;</a></span>ClInstrumentMemIntrinsics()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClInstrumentMemIntrinsics </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-mem-intrinsics&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;instrument memory intrinsics&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0836ad5a84e9a07f8c94140b5b288703" name="a0836ad5a84e9a07f8c94140b5b288703"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0836ad5a84e9a07f8c94140b5b288703">&#9670;&nbsp;</a></span>ClInstrumentReads()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClInstrumentReads </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-reads&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;instrument read instructions&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa6b03e9878d2ee85ea131dab4041c90d" name="aa6b03e9878d2ee85ea131dab4041c90d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6b03e9878d2ee85ea131dab4041c90d">&#9670;&nbsp;</a></span>ClInstrumentStack()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClInstrumentStack </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-stack&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;instrument stack (allocas)&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad9d0439d159e1709a9b3ba51031eccbd" name="ad9d0439d159e1709a9b3ba51031eccbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9d0439d159e1709a9b3ba51031eccbd">&#9670;&nbsp;</a></span>ClInstrumentWithCalls()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClInstrumentWithCalls </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-with-calls&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;instrument reads and writes with callbacks&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a16094110dec5e4217ab198eb97a14a7b" name="a16094110dec5e4217ab198eb97a14a7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16094110dec5e4217ab198eb97a14a7b">&#9670;&nbsp;</a></span>ClInstrumentWrites()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClInstrumentWrites </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-writes&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;instrument write instructions&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afa630c8ec7b2aa9e59502e7a3278a6d6" name="afa630c8ec7b2aa9e59502e7a3278a6d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa630c8ec7b2aa9e59502e7a3278a6d6">&#9670;&nbsp;</a></span>ClMappingOffset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; uint64_t &gt; ClMappingOffset </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-mapping-offset&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;HWASan shadow mapping offset [EXPERIMENTAL]&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(0)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a233fbaee7332945bef142fce5bcbaf9b" name="a233fbaee7332945bef142fce5bcbaf9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a233fbaee7332945bef142fce5bcbaf9b">&#9670;&nbsp;</a></span>ClMatchAllTag()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; ClMatchAllTag </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-match-all-tag&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;don't report bad accesses via pointers with this tag&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(-1)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7500337928a4bc24253827e026990e22" name="a7500337928a4bc24253827e026990e22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7500337928a4bc24253827e026990e22">&#9670;&nbsp;</a></span>ClMemoryAccessCallbackPrefix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt; ClMemoryAccessCallbackPrefix </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-memory-access-callback-prefix&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Prefix for memory access callbacks&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(&quot;__hwasan_&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5bdc745ed08113030861796eda9668c6" name="a5bdc745ed08113030861796eda9668c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bdc745ed08113030861796eda9668c6">&#9670;&nbsp;</a></span>ClRecordStackHistory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClRecordStackHistory </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-record-stack-history&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Record stack frames with tagged allocations &quot; &quot;in a thread-local ring buffer&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa0f4793cfb519f09a6becae2f6b365ab" name="aa0f4793cfb519f09a6becae2f6b365ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0f4793cfb519f09a6becae2f6b365ab">&#9670;&nbsp;</a></span>ClRecover()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClRecover </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-recover&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Enable recovery mode (continue-after-<a class="el" href="SymbolRecordMapping_8cpp.html#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a>).&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a447b2771654df6fecce4116e6cbf7ef7" name="a447b2771654df6fecce4116e6cbf7ef7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a447b2771654df6fecce4116e6cbf7ef7">&#9670;&nbsp;</a></span>ClUARRetagToZero()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClUARRetagToZero </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-uar-retag-to-zero&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Clear alloca tags before returning from the <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> to allow &quot; &quot;non-instrumented and instrumented <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> mix. When set &quot; &quot;to false, allocas are retagged before returning from the &quot; &quot;<a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> to detect <a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a> after return.&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1bd493cb52e72ad4354276a801cade7d" name="a1bd493cb52e72ad4354276a801cade7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bd493cb52e72ad4354276a801cade7d">&#9670;&nbsp;</a></span>ClWithIfunc()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClWithIfunc </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-with-ifunc&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Access dynamic shadow through an ifunc global on &quot; &quot;platforms that support this&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a246381046b2545c2aff3cd890788334b" name="a246381046b2545c2aff3cd890788334b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a246381046b2545c2aff3cd890788334b">&#9670;&nbsp;</a></span>ClWithTls()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ClWithTls </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hwasan-with-tls&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Access dynamic shadow through an thread-local pointer on &quot; &quot;platforms that support this&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="afd0b8a34fe817d41190821de3f6d0088" name="afd0b8a34fe817d41190821de3f6d0088"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd0b8a34fe817d41190821de3f6d0088">&#9670;&nbsp;</a></span>getAllocaSizeInBytes()</h2>
 
@@ -1118,7 +268,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static uint64_t getAllocaSizeInBytes </td>
           <td>(</td>
-          <td class="paramtype">const AllocaInst &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1AllocaInst.html">AllocaInst</a> &amp;&#160;</td>
           <td class="paramname"><em>AI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1132,7 +282,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HWAddressSanitizer_8cpp_source.html#l00707">707</a> of file <a class="el" href="HWAddressSanitizer_8cpp_source.html">HWAddressSanitizer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Instructions_8h_source.html#l00105">llvm::AllocaInst::getAllocatedType()</a>, <a class="el" href="Instructions_8h_source.html#l00092">llvm::AllocaInst::getArraySize()</a>, <a class="el" href="Module_8cpp_source.html#l00369">llvm::Module::getDataLayout()</a>, <a class="el" href="Instruction_8cpp_source.html#l00055">llvm::Instruction::getModule()</a>, <a class="el" href="DataLayout_8h_source.html#l00469">llvm::DataLayout::getTypeAllocSize()</a>, <a class="el" href="Constants_8h_source.html#l00148">llvm::ConstantInt::getZExtValue()</a>, and <a class="el" href="Instructions_8cpp_source.html#l01262">llvm::AllocaInst::isArrayAllocation()</a>.</p>
 
 </div>
 </div>
@@ -1146,9 +296,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static unsigned getPointerOperandIndex </td>
+          <td class="memname">static <a class="el" href="classunsigned.html">unsigned</a> getPointerOperandIndex </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1222,9 +372,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static unsigned RetagMask </td>
+          <td class="memname">static <a class="el" href="classunsigned.html">unsigned</a> RetagMask </td>
           <td>(</td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>AllocaNo</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1252,7 +402,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static size_t TypeSizeToSizeIndex </td>
           <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramtype"><a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td>
           <td class="paramname"><em>TypeSize</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1266,7 +416,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HWAddressSanitizer_8cpp_source.html#l00524">524</a> of file <a class="el" href="HWAddressSanitizer_8cpp_source.html">HWAddressSanitizer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="HWAddressSanitizer_8cpp_source.html#l00061">kNumberOfAccessSizes</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MathExtras_8h_source.html#l00119">llvm::countTrailingZeros()</a>, and <a class="el" href="AddressSanitizer_8cpp_source.html#l00179">kNumberOfAccessSizes</a>.</p>
 
 </div>
 </div>
@@ -1284,6 +434,870 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="HWAddressSanitizer_8cpp_source.html#l00310">310</a> of file <a class="el" href="HWAddressSanitizer_8cpp_source.html">HWAddressSanitizer.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7d81a5f964afd0f252d69ad7c9b056b1" name="a7d81a5f964afd0f252d69ad7c9b056b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d81a5f964afd0f252d69ad7c9b056b1">&#9670;&nbsp;</a></span>ClEnableKhwasan</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClEnableKhwasan(&quot;hwasan-kernel&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable KernelHWAddressSanitizer instrumentation&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-kernel&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable KernelHWAddressSanitizer instrumentation&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3f5a4fba5fa4d9ce33951528a92afc11" name="a3f5a4fba5fa4d9ce33951528a92afc11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f5a4fba5fa4d9ce33951528a92afc11">&#9670;&nbsp;</a></span>ClGenerateTagsWithCalls</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClGenerateTagsWithCalls(&quot;hwasan-generate-tags-with-calls&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;generate new tags with runtime library calls&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-generate-tags-with-calls&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;generate new tags with runtime library calls&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a861afe11ea46a48dcdfe7353b8337876" name="a861afe11ea46a48dcdfe7353b8337876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a861afe11ea46a48dcdfe7353b8337876">&#9670;&nbsp;</a></span>ClInlineAllChecks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClInlineAllChecks(&quot;hwasan-<a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a>-all-checks&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;inline all checks&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-<a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a>-all-checks&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;inline all checks&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a524826286a6377f4388587eab145aa4a" name="a524826286a6377f4388587eab145aa4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a524826286a6377f4388587eab145aa4a">&#9670;&nbsp;</a></span>ClInstrumentAtomics</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClInstrumentAtomics(&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-atomics&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument atomic <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> (rmw, cmpxchg)&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-atomics&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument atomic <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> (rmw, cmpxchg)&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac7f3edadddc1b26fba2302ad892b1c75" name="ac7f3edadddc1b26fba2302ad892b1c75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7f3edadddc1b26fba2302ad892b1c75">&#9670;&nbsp;</a></span>ClInstrumentLandingPads</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClInstrumentLandingPads(&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-landing-pads&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument landing pads&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-landing-pads&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument landing pads&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa20b2914d2e6d50d5fb635e4fc360ad1" name="aa20b2914d2e6d50d5fb635e4fc360ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa20b2914d2e6d50d5fb635e4fc360ad1">&#9670;&nbsp;</a></span>ClInstrumentMemIntrinsics</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClInstrumentMemIntrinsics(&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-mem-intrinsics&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument memory intrinsics&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-mem-intrinsics&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument memory intrinsics&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a428b2dc183020b8931943b1c59d30512" name="a428b2dc183020b8931943b1c59d30512"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a428b2dc183020b8931943b1c59d30512">&#9670;&nbsp;</a></span>ClInstrumentReads</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClInstrumentReads(&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-reads&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument read instructions&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-reads&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument read instructions&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a579a4e0b7863b190bc30d37bf9c2eb8e" name="a579a4e0b7863b190bc30d37bf9c2eb8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a579a4e0b7863b190bc30d37bf9c2eb8e">&#9670;&nbsp;</a></span>ClInstrumentStack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClInstrumentStack(&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-stack&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument stack (allocas)&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-stack&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument stack (allocas)&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ad5863e6e86fc753068c9b70442fda2" name="a4ad5863e6e86fc753068c9b70442fda2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ad5863e6e86fc753068c9b70442fda2">&#9670;&nbsp;</a></span>ClInstrumentWithCalls</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClInstrumentWithCalls(&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-with-calls&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument reads and writes with callbacks&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-with-calls&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument reads and writes with callbacks&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a16cc83309c8f1f4803a5534d848bbe81" name="a16cc83309c8f1f4803a5534d848bbe81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16cc83309c8f1f4803a5534d848bbe81">&#9670;&nbsp;</a></span>ClInstrumentWrites</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClInstrumentWrites(&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-writes&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument write instructions&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-<a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a>-writes&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;instrument write instructions&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e8f18cd73aef222622884c054646428" name="a5e8f18cd73aef222622884c054646428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e8f18cd73aef222622884c054646428">&#9670;&nbsp;</a></span>ClMappingOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; uint64_t &gt; ClMappingOffset(&quot;hwasan-mapping-offset&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;HWASan shadow mapping offset [EXPERIMENTAL]&quot;), cl::Hidden, cl::init(0)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-mapping-offset&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;HWASan shadow mapping offset [EXPERIMENTAL]&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(0)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22f7c3c3c9730ad73477f498daa70ed0" name="a22f7c3c3c9730ad73477f498daa70ed0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f7c3c3c9730ad73477f498daa70ed0">&#9670;&nbsp;</a></span>ClMatchAllTag</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; ClMatchAllTag(&quot;hwasan-match-all-tag&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;don't report bad accesses via pointers with this tag&quot;), cl::Hidden, cl::init(-1)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-match-all-tag&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;don't report bad accesses via pointers with this tag&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(-1)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a926dac98a79c448ca21662778c1c09cc" name="a926dac98a79c448ca21662778c1c09cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a926dac98a79c448ca21662778c1c09cc">&#9670;&nbsp;</a></span>ClMemoryAccessCallbackPrefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt; ClMemoryAccessCallbackPrefix(&quot;hwasan-memory-access-callback-prefix&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Prefix for memory access callbacks&quot;), cl::Hidden, cl::init(&quot;__hwasan_&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-memory-access-callback-prefix&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Prefix for memory access callbacks&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(&quot;__hwasan_&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad73e4851d543619f7704f772930210e5" name="ad73e4851d543619f7704f772930210e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad73e4851d543619f7704f772930210e5">&#9670;&nbsp;</a></span>ClRecordStackHistory</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClRecordStackHistory(&quot;hwasan-record-stack-history&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Record stack frames with tagged allocations &quot; &quot;in a <a class="el" href="namespacellvm.html#a800cad361ef95b1a5e3658b519d7d502">thread</a>-local ring buffer&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-record-stack-history&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Record stack frames with tagged allocations &quot; &quot;in a <a class="el" href="namespacellvm.html#a800cad361ef95b1a5e3658b519d7d502">thread</a>-local ring buffer&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c5f2a8a28154eb8277d74631f18aedd" name="a6c5f2a8a28154eb8277d74631f18aedd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c5f2a8a28154eb8277d74631f18aedd">&#9670;&nbsp;</a></span>ClRecover</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClRecover(&quot;hwasan-recover&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable recovery mode (continue-after-<a class="el" href="SymbolRecordMapping_8cpp.html#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a>).&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-recover&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable recovery mode (continue-after-<a class="el" href="SymbolRecordMapping_8cpp.html#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a>).&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d159ef80c695a936f2d5abb3c023ca3" name="a9d159ef80c695a936f2d5abb3c023ca3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d159ef80c695a936f2d5abb3c023ca3">&#9670;&nbsp;</a></span>ClUARRetagToZero</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClUARRetagToZero(&quot;hwasan-uar-retag-to-zero&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Clear alloca tags before returning from the <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> to allow &quot; &quot;non-instrumented and instrumented <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> mix. When set &quot; &quot;to false, allocas are retagged before returning from the &quot; &quot;<a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> to detect <a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a> after return.&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-uar-retag-to-zero&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Clear alloca tags before returning from the <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> to allow &quot; &quot;non-instrumented and instrumented <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> mix. When set &quot; &quot;to false, allocas are retagged before returning from the &quot; &quot;<a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> to detect <a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a> after return.&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af7c867516aa6e4f176d3468b1d8b7b28" name="af7c867516aa6e4f176d3468b1d8b7b28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7c867516aa6e4f176d3468b1d8b7b28">&#9670;&nbsp;</a></span>ClWithIfunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClWithIfunc(&quot;hwasan-with-ifunc&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Access dynamic shadow through an ifunc global on &quot; &quot;platforms that support this&quot;), cl::Hidden, cl::init(false)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-with-ifunc&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Access dynamic shadow through an ifunc global on &quot; &quot;platforms that support this&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab5ab4aa365f169c14cc2aebaef052876" name="ab5ab4aa365f169c14cc2aebaef052876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5ab4aa365f169c14cc2aebaef052876">&#9670;&nbsp;</a></span>ClWithTls</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ClWithTls(&quot;hwasan-with-tls&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Access dynamic shadow through an <a class="el" href="namespacellvm.html#a800cad361ef95b1a5e3658b519d7d502">thread</a>-local pointer on &quot; &quot;platforms that support this&quot;), cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hwasan-with-tls&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Access dynamic shadow through an <a class="el" href="namespacellvm.html#a800cad361ef95b1a5e3658b519d7d502">thread</a>-local pointer on &quot; &quot;platforms that support this&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1379,7 +1393,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const kHwasanInitName = &quot;__hwasan_init&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const kHwasanInitName = &quot;__hwasan_init&quot;</td>
         </tr>
       </table>
   </td>
@@ -1403,7 +1417,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const kHwasanModuleCtorName = &quot;hwasan.module_ctor&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const kHwasanModuleCtorName = &quot;hwasan.module_ctor&quot;</td>
         </tr>
       </table>
   </td>
@@ -1427,7 +1441,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* const kHwasanShadowMemoryDynamicAddress</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a>* const kHwasanShadowMemoryDynamicAddress</td>
         </tr>
       </table>
   </td>
@@ -1465,8 +1479,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HWAddressSanitizer_8cpp_source.html#l00061">61</a> of file <a class="el" href="HWAddressSanitizer_8cpp_source.html">HWAddressSanitizer.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HWAddressSanitizer_8cpp_source.html#l00524">TypeSizeToSizeIndex()</a>.</p>
-
 </div>
 </div>
 <a id="ac725a2a39edab84c9ddf4d5e2b5dc356" name="ac725a2a39edab84c9ddf4d5e2b5dc356"></a>
@@ -1479,7 +1491,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const unsigned kPointerTagShift = 56</td>
+          <td class="memname">const <a class="el" href="classunsigned.html">unsigned</a> kPointerTagShift = 56</td>
         </tr>
       </table>
   </td>
@@ -1503,7 +1515,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const unsigned kShadowBaseAlignment = 32</td>
+          <td class="memname">const <a class="el" href="classunsigned.html">unsigned</a> kShadowBaseAlignment = 32</td>
         </tr>
       </table>
   </td>
@@ -1520,7 +1532,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -56,52 +56,81 @@ $(function() {
   <div class="headertitle"><div class="title">ThinLTOBitcodeWriter.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/IPO/ThinLTOBitcodeWriter.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/BasicAliasAnalysis.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ModuleSummaryAnalysis.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TypeMetadataUtils.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="ThinLTOBitcodeWriter_8h_source.html">llvm/Transforms/IPO/ThinLTOBitcodeWriter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicAliasAnalysis_8h_source.html">llvm/Analysis/BasicAliasAnalysis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ModuleSummaryAnalysis_8h_source.html">llvm/Analysis/ModuleSummaryAnalysis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TypeMetadataUtils_8h_source.html">llvm/Analysis/TypeMetadataUtils.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Bitcode/BitcodeWriter.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DebugInfo.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DebugInfo_8h_source.html">llvm/IR/DebugInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Object/ModuleSymbolTable.h&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ScopedPrinter.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/IPO.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/IPO/FunctionAttrs.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/IPO/FunctionImport.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/Cloning.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/ModuleUtils.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScopedPrinter_8h_source.html">llvm/Support/ScopedPrinter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IPO_8h_source.html">llvm/Transforms/IPO.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="FunctionAttrs_8h_source.html">llvm/Transforms/IPO/FunctionAttrs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="FunctionImport_8h_source.html">llvm/Transforms/IPO/FunctionImport.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Cloning_8h_source.html">llvm/Transforms/Utils/Cloning.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ModuleUtils_8h_source.html">llvm/Transforms/Utils/ModuleUtils.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ThinLTOBitcodeWriter.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ThinLTOBitcodeWriter_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2IPO_2ThinLTOBitcodeWriter_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2IPO_2ThinLTOBitcodeWriter_8cpp" id="alib_2Transforms_2IPO_2ThinLTOBitcodeWriter_8cpp">
-<area shape="rect" title=" " alt="" coords="1942,5,2135,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,184,133"/>
-<area shape="rect" title=" " alt="" coords="208,93,389,133"/>
-<area shape="rect" title=" " alt="" coords="414,93,639,133"/>
-<area shape="rect" title=" " alt="" coords="664,93,883,133"/>
-<area shape="rect" title=" " alt="" coords="907,93,1114,133"/>
-<area shape="rect" title=" " alt="" coords="1139,101,1347,126"/>
-<area shape="rect" title=" " alt="" coords="1371,101,1520,126"/>
-<area shape="rect" title=" " alt="" coords="1545,101,1695,126"/>
-<area shape="rect" title=" " alt="" coords="1719,101,1862,126"/>
-<area shape="rect" title=" " alt="" coords="1886,101,2018,126"/>
-<area shape="rect" title=" " alt="" coords="2042,101,2211,126"/>
-<area shape="rect" title=" " alt="" coords="2235,93,2434,133"/>
-<area shape="rect" title=" " alt="" coords="2459,101,2555,126"/>
-<area shape="rect" title=" " alt="" coords="2579,101,2789,126"/>
-<area shape="rect" title=" " alt="" coords="2814,101,3021,126"/>
-<area shape="rect" title=" " alt="" coords="3045,101,3211,126"/>
-<area shape="rect" title=" " alt="" coords="3235,93,3389,133"/>
-<area shape="rect" title=" " alt="" coords="3413,93,3566,133"/>
-<area shape="rect" title=" " alt="" coords="3590,93,3751,133"/>
-<area shape="rect" title=" " alt="" coords="3775,93,3937,133"/>
+<area shape="rect" title=" " alt="" coords="2837,5,3030,45"/>
+<area shape="rect" href="ThinLTOBitcodeWriter_8h.html" title=" " alt="" coords="3693,181,3872,221"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="3318,277,3487,302"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="2979,357,3111,383"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="3653,357,3859,383"/>
+<area shape="rect" href="BasicAliasAnalysis_8h.html" title="This is the interface for LLVM&#39;s primary stateless and local alias analysis." alt="" coords="2019,93,2200,133"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="795,504,944,529"/>
+<area shape="rect" title=" " alt="" coords="1672,277,1768,302"/>
+<area shape="rect" href="ModuleSummaryAnalysis_8h.html" title="This is the interface to build a ModuleSummaryIndex for a module." alt="" coords="2883,181,3109,221"/>
+<area shape="rect" href="ProfileSummaryInfo_8h.html" title=" " alt="" coords="1391,181,1609,221"/>
+<area shape="rect" href="TypeMetadataUtils_8h.html" title=" " alt="" coords="1046,181,1253,221"/>
+<area shape="rect" title=" " alt="" coords="2900,101,3108,126"/>
+<area shape="rect" href="DebugInfo_8h.html" title=" " alt="" coords="2593,277,2743,302"/>
+<area shape="rect" href="Intrinsics_8h.html" title=" " alt="" coords="297,504,439,529"/>
+<area shape="rect" title=" " alt="" coords="3233,93,3431,133"/>
+<area shape="rect" href="ScopedPrinter_8h.html" title=" " alt="" coords="3083,277,3293,302"/>
+<area shape="rect" href="IPO_8h.html" title=" " alt="" coords="2693,189,2859,214"/>
+<area shape="rect" href="FunctionAttrs_8h.html" title="Provides passes for computing function attributes based on interprocedural analyses." alt="" coords="3455,93,3609,133"/>
+<area shape="rect" href="FunctionImport_8h.html" title=" " alt="" coords="3947,181,4101,221"/>
+<area shape="rect" href="Cloning_8h.html" title=" " alt="" coords="2322,93,2483,133"/>
+<area shape="rect" href="ModuleUtils_8h.html" title=" " alt="" coords="4173,269,4334,309"/>
+<area shape="rect" title=" " alt="" coords="2089,357,2255,383"/>
+<area shape="rect" title=" " alt="" coords="2475,357,2650,383"/>
+<area shape="rect" title=" " alt="" coords="3257,651,3415,676"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="2121,504,2260,529"/>
+<area shape="rect" title=" " alt="" coords="3297,577,3375,603"/>
+<area shape="rect" title=" " alt="" coords="2923,504,3008,529"/>
+<area shape="rect" title=" " alt="" coords="3986,357,4046,383"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="1682,577,1854,603"/>
+<area shape="rect" title=" " alt="" coords="2137,651,2204,676"/>
+<area shape="rect" href="OperandTraits_8h.html" title=" " alt="" coords="1254,577,1429,603"/>
+<area shape="rect" title=" " alt="" coords="131,651,285,676"/>
+<area shape="rect" title=" " alt="" coords="1536,651,1699,676"/>
+<area shape="rect" title=" " alt="" coords="1505,577,1658,603"/>
+<area shape="rect" href="ProfileSummary_8h.html" title=" " alt="" coords="2600,431,2787,456"/>
+<area shape="rect" title=" " alt="" coords="2097,431,2271,456"/>
+<area shape="rect" href="AliasAnalysis_8h.html" title=" " alt="" coords="1817,189,2031,214"/>
+<area shape="rect" href="MemoryLocation_8h.html" title="This file provides utility analysis objects describing memory locations." alt="" coords="565,277,800,302"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="1121,431,1271,456"/>
+<area shape="rect" href="AssumptionCache_8h.html" title=" " alt="" coords="2225,181,2415,221"/>
+<area shape="rect" title=" " alt="" coords="347,577,479,603"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="989,357,1149,383"/>
+<area shape="rect" title=" " alt="" coords="2870,277,2957,302"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="503,577,646,603"/>
+<area shape="rect" title=" " alt="" coords="722,577,870,603"/>
+<area shape="rect" title=" " alt="" coords="894,577,1026,603"/>
+<area shape="rect" href="ValueHandle_8h.html" title=" " alt="" coords="2147,277,2314,302"/>
+<area shape="rect" href="ModuleSummaryIndex_8h.html" title="ModuleSummaryIndex.h This file contains the declarations the classes that hold the module index and s..." alt="" coords="3511,277,3742,302"/>
+<area shape="rect" title=" " alt="" coords="875,277,1031,302"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="1158,277,1293,302"/>
 </map>
 </div>
 </div>
@@ -220,7 +249,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -57,7 +57,7 @@ $(function() {
   <div class="headertitle"><div class="title">LoopLoadElimination.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/LoopLoadElimination.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="LoopLoadElimination_8h_source.html">llvm/Transforms/Scalar/LoopLoadElimination.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/APInt.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/DepthFirstIterator.h&quot;</code><br />
@@ -65,37 +65,37 @@ $(function() {
 <code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/BlockFrequencyInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LazyBlockFrequencyInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopAccessAnalysis.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopAnalysisManager.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/MemorySSA.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ScalarEvolution.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ScalarEvolutionExpander.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ScalarEvolutionExpressions.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
-<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BlockFrequencyInfo_8h_source.html">llvm/Analysis/BlockFrequencyInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalsModRef_8h_source.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LazyBlockFrequencyInfo_8h_source.html">llvm/Analysis/LazyBlockFrequencyInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopAccessAnalysis_8h_source.html">llvm/Analysis/LoopAccessAnalysis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopAnalysisManager_8h_source.html">llvm/Analysis/LoopAnalysisManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MemorySSA_8h_source.html">llvm/Analysis/MemorySSA.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScalarEvolution_8h_source.html">llvm/Analysis/ScalarEvolution.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScalarEvolutionExpander_8h_source.html">llvm/Analysis/ScalarEvolutionExpander.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScalarEvolutionExpressions_8h_source.html">llvm/Analysis/ScalarEvolutionExpressions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/LoopVersioning.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/SizeOpts.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Utils_8h_source.html">llvm/Transforms/Utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopVersioning_8h_source.html">llvm/Transforms/Utils/LoopVersioning.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SizeOpts_8h_source.html">llvm/Transforms/Utils/SizeOpts.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;forward_list&gt;</code><br />
@@ -107,52 +107,56 @@ Include dependency graph for LoopLoadElimination.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="LoopLoadElimination_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2LoopLoadElimination_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Scalar_2LoopLoadElimination_8cpp" id="alib_2Transforms_2Scalar_2LoopLoadElimination_8cpp">
-<area shape="rect" title=" " alt="" coords="4814,5,5003,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,180,133"/>
-<area shape="rect" title=" " alt="" coords="204,101,336,126"/>
-<area shape="rect" title=" " alt="" coords="360,101,527,126"/>
-<area shape="rect" title=" " alt="" coords="551,101,763,126"/>
-<area shape="rect" title=" " alt="" coords="787,101,950,126"/>
-<area shape="rect" title=" " alt="" coords="975,101,1149,126"/>
-<area shape="rect" title=" " alt="" coords="1173,101,1348,126"/>
-<area shape="rect" title=" " alt="" coords="1372,101,1523,126"/>
-<area shape="rect" title=" " alt="" coords="1547,101,1761,126"/>
-<area shape="rect" title=" " alt="" coords="1785,93,1976,133"/>
-<area shape="rect" title=" " alt="" coords="2000,93,2217,133"/>
-<area shape="rect" title=" " alt="" coords="2241,93,2432,133"/>
-<area shape="rect" title=" " alt="" coords="2456,93,2703,133"/>
-<area shape="rect" title=" " alt="" coords="2727,93,2917,133"/>
-<area shape="rect" title=" " alt="" coords="2942,93,3142,133"/>
-<area shape="rect" title=" " alt="" coords="3167,101,3349,126"/>
-<area shape="rect" title=" " alt="" coords="3373,101,3580,126"/>
-<area shape="rect" title=" " alt="" coords="3605,93,3823,133"/>
-<area shape="rect" title=" " alt="" coords="3847,101,4074,126"/>
-<area shape="rect" title=" " alt="" coords="4099,93,4313,133"/>
-<area shape="rect" title=" " alt="" coords="4337,93,4552,133"/>
-<area shape="rect" title=" " alt="" coords="4576,93,4775,133"/>
-<area shape="rect" title=" " alt="" coords="4799,93,5018,133"/>
-<area shape="rect" title=" " alt="" coords="5043,101,5201,126"/>
-<area shape="rect" title=" " alt="" coords="5226,101,5386,126"/>
-<area shape="rect" title=" " alt="" coords="5410,101,5570,126"/>
-<area shape="rect" title=" " alt="" coords="5595,101,5727,126"/>
-<area shape="rect" title=" " alt="" coords="5751,101,5920,126"/>
-<area shape="rect" title=" " alt="" coords="5945,101,6059,126"/>
-<area shape="rect" title=" " alt="" coords="6083,101,6203,126"/>
-<area shape="rect" title=" " alt="" coords="6227,101,6323,126"/>
-<area shape="rect" title=" " alt="" coords="6347,101,6518,126"/>
-<area shape="rect" title=" " alt="" coords="6543,101,6757,126"/>
-<area shape="rect" title=" " alt="" coords="6782,101,6945,126"/>
-<area shape="rect" title=" " alt="" coords="6969,101,7176,126"/>
-<area shape="rect" title=" " alt="" coords="7200,101,7383,126"/>
-<area shape="rect" title=" " alt="" coords="7407,101,7581,126"/>
-<area shape="rect" title=" " alt="" coords="7605,93,7767,133"/>
-<area shape="rect" title=" " alt="" coords="7791,93,7952,133"/>
-<area shape="rect" title=" " alt="" coords="7977,101,8062,126"/>
-<area shape="rect" title=" " alt="" coords="8086,101,8155,126"/>
-<area shape="rect" title=" " alt="" coords="8179,101,8278,126"/>
-<area shape="rect" title=" " alt="" coords="8302,101,8345,126"/>
-<area shape="rect" title=" " alt="" coords="8369,101,8424,126"/>
-<area shape="rect" title=" " alt="" coords="8448,101,8508,126"/>
+<area shape="rect" title=" " alt="" coords="3036,5,3225,45"/>
+<area shape="rect" href="LoopLoadElimination_8h.html" title="This header defines the LoopLoadEliminationPass object." alt="" coords="2561,181,2735,221"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="2793,621,2962,647"/>
+<area shape="rect" title=" " alt="" coords="2045,695,2211,720"/>
+<area shape="rect" title=" " alt="" coords="4353,915,4527,940"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="1208,841,1328,867"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="963,915,1133,940"/>
+<area shape="rect" title=" " alt="" coords="2316,988,2385,1013"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="603,695,735,720"/>
+<area shape="rect" title=" " alt="" coords="715,841,877,867"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="475,768,634,793"/>
+<area shape="rect" title=" " alt="" coords="4378,841,4553,867"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="256,841,371,867"/>
+<area shape="rect" title=" " alt="" coords="2657,841,2753,867"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="1779,695,1941,720"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="4959,768,5166,793"/>
+<area shape="rect" title=" " alt="" coords="3779,695,3864,720"/>
+<area shape="rect" title=" " alt="" coords="1966,695,2021,720"/>
+<area shape="rect" title=" " alt="" coords="3557,695,3617,720"/>
+<area shape="rect" title=" " alt="" coords="4909,541,5041,566"/>
+<area shape="rect" title=" " alt="" coords="2882,541,3094,566"/>
+<area shape="rect" title=" " alt="" coords="2891,101,3042,126"/>
+<area shape="rect" href="AliasAnalysis_8h.html" title=" " alt="" coords="1693,453,1907,478"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="936,621,1096,647"/>
+<area shape="rect" href="TargetLibraryInfo_8h.html" title=" " alt="" coords="1607,533,1806,573"/>
+<area shape="rect" href="AssumptionCache_8h.html" title=" " alt="" coords="3882,533,4073,573"/>
+<area shape="rect" href="BlockFrequencyInfo_8h.html" title=" " alt="" coords="2337,533,2554,573"/>
+<area shape="rect" href="GlobalsModRef_8h.html" title="This is the interface for a simple mod/ref and alias analysis over globals." alt="" coords="473,357,663,397"/>
+<area shape="rect" href="LazyBlockFrequencyInfo_8h.html" title=" " alt="" coords="2359,445,2606,485"/>
+<area shape="rect" href="LoopAccessAnalysis_8h.html" title=" " alt="" coords="3769,181,3959,221"/>
+<area shape="rect" href="LoopAnalysisManager_8h.html" title="This header provides classes for managing per&#45;loop analyses." alt="" coords="2680,269,2880,309"/>
+<area shape="rect" href="LoopInfo_8h.html" title=" " alt="" coords="3675,541,3858,566"/>
+<area shape="rect" href="MemorySSA_8h.html" title="This file exposes an interface to building/using memory SSA to walk memory instructions using a use/d..." alt="" coords="1991,365,2198,390"/>
+<area shape="rect" href="Dominators_8h.html" title=" " alt="" coords="2984,453,3144,478"/>
+<area shape="rect" href="ScalarEvolution_8h.html" title=" " alt="" coords="4225,453,4452,478"/>
+<area shape="rect" href="TargetTransformInfo_8h.html" title="This pass exposes codegen information to IR&#45;level passes." alt="" coords="3477,357,3696,397"/>
+<area shape="rect" href="ScalarEvolutionExpressions_8h.html" title=" " alt="" coords="4231,357,4446,397"/>
+<area shape="rect" href="ProfileSummaryInfo_8h.html" title=" " alt="" coords="600,533,819,573"/>
+<area shape="rect" href="ScalarEvolutionExpander_8h.html" title=" " alt="" coords="1401,269,1615,309"/>
+<area shape="rect" href="CommandLine_8h.html" title=" " alt="" coords="5130,695,5345,720"/>
+<area shape="rect" href="Scalar_8h.html" title=" " alt="" coords="5471,101,5654,126"/>
+<area shape="rect" href="Utils_8h.html" title=" " alt="" coords="5679,101,5852,126"/>
+<area shape="rect" href="LoopVersioning_8h.html" title=" " alt="" coords="3803,93,3965,133"/>
+<area shape="rect" href="SizeOpts_8h.html" title=" " alt="" coords="5927,93,6089,133"/>
+<area shape="rect" title=" " alt="" coords="6113,101,6212,126"/>
+<area shape="rect" title=" " alt="" coords="6236,101,6279,126"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="1013,768,1152,793"/>
+<area shape="rect" title=" " alt="" coords="1513,768,1666,793"/>
+<area shape="rect" title=" " alt="" coords="1166,695,1298,720"/>
+<area shape="rect" href="MemoryLocation_8h.html" title="This file provides utility analysis objects describing memory locations." alt="" coords="1096,541,1331,566"/>
 </map>
 </div>
 </div>
@@ -167,24 +171,24 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae1229e9853750a19de410d70b95109a4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopLoadElimination_8cpp.html#ae1229e9853750a19de410d70b95109a4">CheckPerElim</a> (&quot;runtime-check-per-loop-load-elim&quot;, cl::Hidden, cl::desc(&quot;Max number of memchecks allowed per eliminated load on average&quot;), cl::init(1))</td></tr>
-<tr class="separator:ae1229e9853750a19de410d70b95109a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba5bcad5346a063aa46c16900f99d34b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopLoadElimination_8cpp.html#aba5bcad5346a063aa46c16900f99d34b">LoadElimSCEVCheckThreshold</a> (&quot;loop-load-<a class="el" href="InductiveRangeCheckElimination_8cpp.html#a9615611bbacf6f823667984844b3c3ae">elimination</a>-scev-check-threshold&quot;, cl::init(8), cl::Hidden, cl::desc(&quot;The maximum number of SCEV checks allowed for Loop &quot; &quot;Load Elimination&quot;))</td></tr>
-<tr class="separator:aba5bcad5346a063aa46c16900f99d34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdaaf3aa5bc2f5400e9a10696b09f88c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopLoadElimination_8cpp.html#abdaaf3aa5bc2f5400e9a10696b09f88c">STATISTIC</a> (NumLoopLoadEliminted, &quot;Number of loads eliminated by LLE&quot;)</td></tr>
 <tr class="separator:abdaaf3aa5bc2f5400e9a10696b09f88c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf5c3bcafb3f5f0f1a0fd9ddfe9b6e1a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopLoadElimination_8cpp.html#aaf5c3bcafb3f5f0f1a0fd9ddfe9b6e1a">doesStoreDominatesAllLatches</a> (BasicBlock *StoreBlock, Loop *L, DominatorTree *DT)</td></tr>
+<tr class="memitem:aaf5c3bcafb3f5f0f1a0fd9ddfe9b6e1a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopLoadElimination_8cpp.html#aaf5c3bcafb3f5f0f1a0fd9ddfe9b6e1a">doesStoreDominatesAllLatches</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *StoreBlock, <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT)</td></tr>
 <tr class="memdesc:aaf5c3bcafb3f5f0f1a0fd9ddfe9b6e1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the store dominates all latches, so as long as there is no intervening store this value will be loaded in the next iteration.  <a href="LoopLoadElimination_8cpp.html#aaf5c3bcafb3f5f0f1a0fd9ddfe9b6e1a">More...</a><br /></td></tr>
 <tr class="separator:aaf5c3bcafb3f5f0f1a0fd9ddfe9b6e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b98d1a31b5292d6b2f4772277c8147f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopLoadElimination_8cpp.html#a7b98d1a31b5292d6b2f4772277c8147f">isLoadConditional</a> (LoadInst *Load, Loop *L)</td></tr>
+<tr class="memitem:a7b98d1a31b5292d6b2f4772277c8147f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopLoadElimination_8cpp.html#a7b98d1a31b5292d6b2f4772277c8147f">isLoadConditional</a> (<a class="el" href="classllvm_1_1LoadInst.html">LoadInst</a> *Load, <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L)</td></tr>
 <tr class="memdesc:a7b98d1a31b5292d6b2f4772277c8147f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the load is not executed on all paths in the loop.  <a href="LoopLoadElimination_8cpp.html#a7b98d1a31b5292d6b2f4772277c8147f">More...</a><br /></td></tr>
 <tr class="separator:a7b98d1a31b5292d6b2f4772277c8147f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae009b210d5dfbeb001a4ee6109a5c30d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopLoadElimination_8cpp.html#ae009b210d5dfbeb001a4ee6109a5c30d">eliminateLoadsAcrossLoops</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, LoopInfo &amp;LI, DominatorTree &amp;DT, BlockFrequencyInfo *BFI, ProfileSummaryInfo *PSI, function_ref&lt; const LoopAccessInfo &amp;(Loop &amp;)&gt; GetLAI)</td></tr>
+<tr class="memitem:ae009b210d5dfbeb001a4ee6109a5c30d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopLoadElimination_8cpp.html#ae009b210d5dfbeb001a4ee6109a5c30d">eliminateLoadsAcrossLoops</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classllvm_1_1LoopInfo.html">LoopInfo</a> &amp;LI, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, <a class="el" href="classllvm_1_1BlockFrequencyInfo.html">BlockFrequencyInfo</a> *BFI, <a class="el" href="classllvm_1_1ProfileSummaryInfo.html">ProfileSummaryInfo</a> *PSI, function_ref&lt; const <a class="el" href="classllvm_1_1LoopAccessInfo.html">LoopAccessInfo</a> &amp;(<a class="el" href="classllvm_1_1Loop.html">Loop</a> &amp;)&gt; GetLAI)</td></tr>
 <tr class="separator:ae009b210d5dfbeb001a4ee6109a5c30d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a464b122d83bb52adc3adbf0662da7501"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopLoadElimination_8cpp.html#a464b122d83bb52adc3adbf0662da7501">LLE_name</a> [] = &quot;Loop Load Elimination&quot;</td></tr>
+<tr class="memitem:aeefd30738f7dfce8871907e590774efc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopLoadElimination_8cpp.html#aeefd30738f7dfce8871907e590774efc">CheckPerElim</a> (&quot;runtime-check-per-loop-load-elim&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Max number of memchecks allowed per eliminated load on average&quot;), cl::init(1))</td></tr>
+<tr class="separator:aeefd30738f7dfce8871907e590774efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51307482517e908392a567704b219419"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopLoadElimination_8cpp.html#a51307482517e908392a567704b219419">LoadElimSCEVCheckThreshold</a> (&quot;loop-load-<a class="el" href="InductiveRangeCheckElimination_8cpp.html#a9615611bbacf6f823667984844b3c3ae">elimination</a>-scev-check-threshold&quot;, cl::init(8), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The maximum number of <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> checks allowed for <a class="el" href="classllvm_1_1Loop.html">Loop</a> &quot; &quot;Load Elimination&quot;))</td></tr>
+<tr class="separator:a51307482517e908392a567704b219419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a464b122d83bb52adc3adbf0662da7501"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classchar.html">char</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopLoadElimination_8cpp.html#a464b122d83bb52adc3adbf0662da7501">LLE_name</a> [] = &quot;Loop Load Elimination&quot;</td></tr>
 <tr class="separator:a464b122d83bb52adc3adbf0662da7501"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -221,54 +225,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae1229e9853750a19de410d70b95109a4" name="ae1229e9853750a19de410d70b95109a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1229e9853750a19de410d70b95109a4">&#9670;&nbsp;</a></span>CheckPerElim()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; CheckPerElim </td>
-          <td>(</td>
-          <td class="paramtype">&quot;runtime-check-per-loop-load-elim&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Max number of memchecks allowed per eliminated load on average&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(1)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aaf5c3bcafb3f5f0f1a0fd9ddfe9b6e1a" name="aaf5c3bcafb3f5f0f1a0fd9ddfe9b6e1a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaf5c3bcafb3f5f0f1a0fd9ddfe9b6e1a">&#9670;&nbsp;</a></span>doesStoreDominatesAllLatches()</h2>
 
@@ -279,21 +235,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool doesStoreDominatesAllLatches </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> doesStoreDominatesAllLatches </td>
           <td>(</td>
-          <td class="paramtype">BasicBlock *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
           <td class="paramname"><em>StoreBlock</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Loop *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DominatorTree *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -313,6 +269,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopLoadElimination_8cpp_source.html#l00146">146</a> of file <a class="el" href="LoopLoadElimination_8cpp_source.html">LoopLoadElimination.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Dominators_8cpp_source.html#l00248">llvm::DominatorTree::dominates()</a>, and <a class="el" href="LoopInfo_8h_source.html#l00311">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopLatches()</a>.</p>
+
 </div>
 </div>
 <a id="ae009b210d5dfbeb001a4ee6109a5c30d" name="ae009b210d5dfbeb001a4ee6109a5c30d"></a>
@@ -325,39 +283,39 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool eliminateLoadsAcrossLoops </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> eliminateLoadsAcrossLoops </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">LoopInfo &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1LoopInfo.html">LoopInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>LI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DominatorTree &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BlockFrequencyInfo *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1BlockFrequencyInfo.html">BlockFrequencyInfo</a> *&#160;</td>
           <td class="paramname"><em>BFI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ProfileSummaryInfo *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ProfileSummaryInfo.html">ProfileSummaryInfo</a> *&#160;</td>
           <td class="paramname"><em>PSI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">function_ref&lt; const LoopAccessInfo &amp;(Loop &amp;)&gt;&#160;</td>
+          <td class="paramtype">function_ref&lt; const <a class="el" href="classllvm_1_1LoopAccessInfo.html">LoopAccessInfo</a> &amp;(<a class="el" href="classllvm_1_1Loop.html">Loop</a> &amp;)&gt;&#160;</td>
           <td class="paramname"><em>GetLAI</em>&#160;</td>
         </tr>
         <tr>
@@ -375,6 +333,10 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopLoadElimination_8cpp_source.html#l00598">598</a> of file <a class="el" href="LoopLoadElimination_8cpp_source.html">LoopLoadElimination.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="LoopInfo_8h_source.html#l00148">llvm::LoopBase&lt; BlockT, LoopT &gt;::empty()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="LoopLoadElimination_8cpp_source.html#l00688">llvm::LoopLoadEliminationPass::run()</a>.</p>
+
 </div>
 </div>
 <a id="a7b98d1a31b5292d6b2f4772277c8147f" name="a7b98d1a31b5292d6b2f4772277c8147f"></a>
@@ -387,15 +349,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isLoadConditional </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isLoadConditional </td>
           <td>(</td>
-          <td class="paramtype">LoadInst *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1LoadInst.html">LoadInst</a> *&#160;</td>
           <td class="paramname"><em>Load</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Loop *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
           <td class="paramname"><em>L</em>&#160;</td>
         </tr>
         <tr>
@@ -415,53 +377,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopLoadElimination_8cpp_source.html#l00156">156</a> of file <a class="el" href="LoopLoadElimination_8cpp_source.html">LoopLoadElimination.cpp</a>.</p>
 
-</div>
-</div>
-<a id="aba5bcad5346a063aa46c16900f99d34b" name="aba5bcad5346a063aa46c16900f99d34b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba5bcad5346a063aa46c16900f99d34b">&#9670;&nbsp;</a></span>LoadElimSCEVCheckThreshold()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; LoadElimSCEVCheckThreshold </td>
-          <td>(</td>
-          <td class="paramtype">&quot;loop-load-<a class="el" href="InductiveRangeCheckElimination_8cpp.html#a9615611bbacf6f823667984844b3c3ae">elimination</a>-scev-check-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(8)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;The maximum number of SCEV checks allowed for Loop &quot; &quot;Load Elimination&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p class="reference">References <a class="el" href="LoopInfo_8h_source.html#l00102">llvm::LoopBase&lt; BlockT, LoopT &gt;::getHeader()</a>, and <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>.</p>
 
 </div>
 </div>
@@ -494,6 +410,54 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="aeefd30738f7dfce8871907e590774efc" name="aeefd30738f7dfce8871907e590774efc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeefd30738f7dfce8871907e590774efc">&#9670;&nbsp;</a></span>CheckPerElim</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; CheckPerElim(&quot;runtime-check-per-loop-load-elim&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Max number of memchecks allowed per eliminated load on average&quot;), cl::init(1)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;runtime-check-per-loop-load-elim&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Max number of memchecks allowed per eliminated load on average&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(1)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a464b122d83bb52adc3adbf0662da7501" name="a464b122d83bb52adc3adbf0662da7501"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a464b122d83bb52adc3adbf0662da7501">&#9670;&nbsp;</a></span>LLE_name</h2>
 
@@ -504,7 +468,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char LLE_name[] = &quot;Loop Load Elimination&quot;</td>
+          <td class="memname">const <a class="el" href="classchar.html">char</a> LLE_name[] = &quot;Loop Load Elimination&quot;</td>
         </tr>
       </table>
   </td>
@@ -518,10 +482,58 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a51307482517e908392a567704b219419" name="a51307482517e908392a567704b219419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51307482517e908392a567704b219419">&#9670;&nbsp;</a></span>LoadElimSCEVCheckThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; LoadElimSCEVCheckThreshold(&quot;loop-load-<a class="el" href="InductiveRangeCheckElimination_8cpp.html#a9615611bbacf6f823667984844b3c3ae">elimination</a>-scev-check-threshold&quot;, cl::init(8), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The maximum number of <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> checks allowed for <a class="el" href="classllvm_1_1Loop.html">Loop</a> &quot; &quot;Load Elimination&quot;)) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;loop-load-<a class="el" href="InductiveRangeCheckElimination_8cpp.html#a9615611bbacf6f823667984844b3c3ae">elimination</a>-scev-check-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(8)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The maximum number of <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> checks allowed for <a class="el" href="classllvm_1_1Loop.html">Loop</a> &quot; &quot;Load Elimination&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

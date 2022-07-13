@@ -56,30 +56,70 @@ $(function() {
   <div class="headertitle"><div class="title">CodeMetrics.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Analysis/CodeMetrics.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="CodeMetrics_8h_source.html">llvm/Analysis/CodeMetrics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for CodeMetrics.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="CodeMetrics_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2CodeMetrics_8cpp" alt=""/></div>
 <map name="alib_2Analysis_2CodeMetrics_8cpp" id="alib_2Analysis_2CodeMetrics_8cpp">
-<area shape="rect" title=" " alt="" coords="904,5,1113,31"/>
-<area shape="rect" title=" " alt="" coords="5,86,212,111"/>
-<area shape="rect" title=" " alt="" coords="236,79,427,119"/>
-<area shape="rect" title=" " alt="" coords="451,86,633,111"/>
-<area shape="rect" title=" " alt="" coords="658,79,877,119"/>
-<area shape="rect" title=" " alt="" coords="901,86,1117,111"/>
-<area shape="rect" title=" " alt="" coords="1141,86,1300,111"/>
-<area shape="rect" title=" " alt="" coords="1325,86,1463,111"/>
-<area shape="rect" title=" " alt="" coords="1487,86,1650,111"/>
-<area shape="rect" title=" " alt="" coords="1675,86,1881,111"/>
+<area shape="rect" title=" " alt="" coords="2694,5,2903,31"/>
+<area shape="rect" href="CodeMetrics_8h.html" title=" " alt="" coords="619,328,826,353"/>
+<area shape="rect" href="AssumptionCache_8h.html" title=" " alt="" coords="902,240,1093,280"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="3407,401,3545,427"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="613,401,776,427"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="3721,401,3927,427"/>
+<area shape="rect" href="LoopInfo_8h.html" title=" " alt="" coords="2125,247,2307,273"/>
+<area shape="rect" href="TargetTransformInfo_8h.html" title="This pass exposes codegen information to IR&#45;level passes." alt="" coords="2201,79,2420,119"/>
+<area shape="rect" href="ValueTracking_8h.html" title=" " alt="" coords="5493,167,5709,192"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="4606,401,4765,427"/>
+<area shape="rect" title=" " alt="" coords="902,401,1069,427"/>
+<area shape="rect" title=" " alt="" coords="1121,621,1295,647"/>
+<area shape="rect" title=" " alt="" coords="5504,621,5659,647"/>
+<area shape="rect" title=" " alt="" coords="296,401,488,427"/>
+<area shape="rect" title=" " alt="" coords="2041,475,2215,500"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="1478,328,1647,353"/>
+<area shape="rect" title=" " alt="" coords="1372,695,1449,720"/>
+<area shape="rect" href="ValueHandle_8h.html" title=" " alt="" coords="1027,328,1194,353"/>
+<area shape="rect" title=" " alt="" coords="361,475,457,500"/>
+<area shape="rect" title=" " alt="" coords="3921,548,4079,573"/>
+<area shape="rect" title=" " alt="" coords="3416,695,3485,720"/>
+<area shape="rect" title=" " alt="" coords="1939,548,2024,573"/>
+<area shape="rect" title=" " alt="" coords="1753,475,1813,500"/>
+<area shape="rect" title=" " alt="" coords="2915,475,3075,500"/>
+<area shape="rect" title=" " alt="" coords="3590,475,3725,500"/>
+<area shape="rect" title=" " alt="" coords="3150,475,3311,500"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="4358,475,4530,500"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="2061,621,2232,647"/>
+<area shape="rect" title=" " alt="" coords="4976,695,5035,720"/>
+<area shape="rect" title=" " alt="" coords="4325,621,4392,647"/>
+<area shape="rect" title=" " alt="" coords="5052,548,5215,573"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="4255,548,4369,573"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="4900,621,5111,647"/>
+<area shape="rect" title=" " alt="" coords="1651,401,1823,427"/>
+<area shape="rect" href="IR_2CFG_8h.html" title="This file provides various utilities for inspecting and working with the control flow graph in LLVM I..." alt="" coords="1814,328,1925,353"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="2811,401,2965,427"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="4077,328,4237,353"/>
+<area shape="rect" href="Allocator_8h.html" title="This file defines the MallocAllocator and BumpPtrAllocator interfaces." alt="" coords="2507,401,2685,427"/>
+<area shape="rect" href="AtomicOrdering_8h.html" title="Atomic ordering constants." alt="" coords="5399,401,5622,427"/>
+<area shape="rect" title=" " alt="" coords="5670,475,5823,500"/>
+<area shape="rect" href="MathExtras_8h.html" title=" " alt="" coords="2392,475,2587,500"/>
+<area shape="rect" href="Operator_8h.html" title=" " alt="" coords="2818,328,2958,353"/>
+<area shape="rect" href="DataTypes_8h.html" title=" " alt="" coords="2151,167,2340,192"/>
+<area shape="rect" href="ScalarEvolution_8h.html" title=" " alt="" coords="1900,167,2127,192"/>
+<area shape="rect" href="Dominators_8h.html" title=" " alt="" coords="1645,247,1805,273"/>
+<area shape="rect" title=" " alt="" coords="2415,167,2502,192"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="5024,401,5173,427"/>
+<area shape="rect" title=" " alt="" coords="5937,247,6093,273"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="4181,247,4315,273"/>
+<area shape="rect" href="Intrinsics_8h.html" title=" " alt="" coords="5950,401,6093,427"/>
 </map>
 </div>
 </div>
@@ -92,9 +132,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ada13d2155f1d7c672e7b7134819fc847"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeMetrics_8cpp.html#ada13d2155f1d7c672e7b7134819fc847">appendSpeculatableOperands</a> (const Value *V, SmallPtrSetImpl&lt; const Value * &gt; &amp;Visited, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const Value * &gt; &amp;Worklist)</td></tr>
+<tr class="memitem:ada13d2155f1d7c672e7b7134819fc847"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeMetrics_8cpp.html#ada13d2155f1d7c672e7b7134819fc847">appendSpeculatableOperands</a> (const <a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;Visited, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;Worklist)</td></tr>
 <tr class="separator:ada13d2155f1d7c672e7b7134819fc847"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef97e4d556598a7e91419873352ed1ba"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeMetrics_8cpp.html#aef97e4d556598a7e91419873352ed1ba">completeEphemeralValues</a> (SmallPtrSetImpl&lt; const Value * &gt; &amp;Visited, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const Value * &gt; &amp;Worklist, SmallPtrSetImpl&lt; const Value * &gt; &amp;EphValues)</td></tr>
+<tr class="memitem:aef97e4d556598a7e91419873352ed1ba"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeMetrics_8cpp.html#aef97e4d556598a7e91419873352ed1ba">completeEphemeralValues</a> (<a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;Visited, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;Worklist, <a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;EphValues)</td></tr>
 <tr class="separator:aef97e4d556598a7e91419873352ed1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -127,19 +167,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void appendSpeculatableOperands </td>
           <td>(</td>
-          <td class="paramtype">const Value *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SmallPtrSetImpl&lt; const Value * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Visited</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const Value * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Worklist</em>&#160;</td>
         </tr>
         <tr>
@@ -157,7 +197,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CodeMetrics_8cpp_source.html#l00028">28</a> of file <a class="el" href="CodeMetrics_8cpp_source.html">CodeMetrics.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CodeMetrics_8cpp_source.html#l00041">completeEphemeralValues()</a>.</p>
+<p class="reference">References <a class="el" href="ValueTracking_8cpp_source.html#l03868">llvm::isSafeToSpeculativelyExecute()</a>, and <a class="el" href="User_8h_source.html#l00237">llvm::User::operands()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="CodeMetrics_8cpp_source.html#l00070">llvm::CodeMetrics::collectEphemeralValues()</a>, and <a class="el" href="CodeMetrics_8cpp_source.html#l00041">completeEphemeralValues()</a>.</p>
 
 </div>
 </div>
@@ -173,19 +215,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void completeEphemeralValues </td>
           <td>(</td>
-          <td class="paramtype">SmallPtrSetImpl&lt; const Value * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Visited</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const Value * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Worklist</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SmallPtrSetImpl&lt; const Value * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; const <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>EphValues</em>&#160;</td>
         </tr>
         <tr>
@@ -203,14 +245,16 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CodeMetrics_8cpp_source.html#l00041">41</a> of file <a class="el" href="CodeMetrics_8cpp_source.html">CodeMetrics.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CodeMetrics_8cpp_source.html#l00028">appendSpeculatableOperands()</a>, and <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
+<p class="reference">References <a class="el" href="CodeMetrics_8cpp_source.html#l00028">appendSpeculatableOperands()</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, and <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="CodeMetrics_8cpp_source.html#l00070">llvm::CodeMetrics::collectEphemeralValues()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:36 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

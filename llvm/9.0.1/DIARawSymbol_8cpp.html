@@ -57,44 +57,77 @@ $(function() {
   <div class="headertitle"><div class="title">DIARawSymbol.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/DebugInfo/PDB/DIA/DIARawSymbol.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="DIARawSymbol_8h_source.html">llvm/DebugInfo/PDB/DIA/DIARawSymbol.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/CodeView/Formatters.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/DIA/DIAEnumLineNumbers.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/DIA/DIAEnumSymbols.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/DIA/DIALineNumber.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/DIA/DIASession.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/DIA/DIAUtils.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBExtras.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbolTypeBuiltin.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbolTypePointer.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbolTypeVTable.h&quot;</code><br />
-<code>#include &quot;llvm/DebugInfo/PDB/PDBSymbolTypeVTableShape.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ConvertUTF.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="CodeView_2Formatters_8h_source.html">llvm/DebugInfo/CodeView/Formatters.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DIAEnumLineNumbers_8h_source.html">llvm/DebugInfo/PDB/DIA/DIAEnumLineNumbers.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DIAEnumSymbols_8h_source.html">llvm/DebugInfo/PDB/DIA/DIAEnumSymbols.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DIALineNumber_8h_source.html">llvm/DebugInfo/PDB/DIA/DIALineNumber.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DIASession_8h_source.html">llvm/DebugInfo/PDB/DIA/DIASession.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DIAUtils_8h_source.html">llvm/DebugInfo/PDB/DIA/DIAUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBExtras_8h_source.html">llvm/DebugInfo/PDB/PDBExtras.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbolTypeBuiltin_8h_source.html">llvm/DebugInfo/PDB/PDBSymbolTypeBuiltin.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbolTypePointer_8h_source.html">llvm/DebugInfo/PDB/PDBSymbolTypePointer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbolTypeVTable_8h_source.html">llvm/DebugInfo/PDB/PDBSymbolTypeVTable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PDBSymbolTypeVTableShape_8h_source.html">llvm/DebugInfo/PDB/PDBSymbolTypeVTableShape.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ConvertUTF_8h_source.html">llvm/Support/ConvertUTF.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for DIARawSymbol.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="DIARawSymbol_8cpp__incl.png" border="0" usemap="#alib_2DebugInfo_2PDB_2DIA_2DIARawSymbol_8cpp" alt=""/></div>
 <map name="alib_2DebugInfo_2PDB_2DIA_2DIARawSymbol_8cpp" id="alib_2DebugInfo_2PDB_2DIA_2DIARawSymbol_8cpp">
-<area shape="rect" title=" " alt="" coords="1489,5,1655,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,171,133"/>
-<area shape="rect" title=" " alt="" coords="195,101,349,126"/>
-<area shape="rect" title=" " alt="" coords="373,101,536,126"/>
-<area shape="rect" title=" " alt="" coords="561,93,751,133"/>
-<area shape="rect" title=" " alt="" coords="776,93,987,133"/>
-<area shape="rect" title=" " alt="" coords="1011,93,1192,133"/>
-<area shape="rect" title=" " alt="" coords="1217,93,1383,133"/>
-<area shape="rect" title=" " alt="" coords="1407,93,1561,133"/>
-<area shape="rect" title=" " alt="" coords="1585,93,1738,133"/>
-<area shape="rect" title=" " alt="" coords="1762,93,1915,133"/>
-<area shape="rect" title=" " alt="" coords="1940,93,2127,133"/>
-<area shape="rect" title=" " alt="" coords="2151,93,2340,133"/>
-<area shape="rect" title=" " alt="" coords="2364,93,2551,133"/>
-<area shape="rect" title=" " alt="" coords="2575,93,2801,133"/>
-<area shape="rect" title=" " alt="" coords="2826,101,3022,126"/>
-<area shape="rect" title=" " alt="" coords="3046,101,3253,126"/>
+<area shape="rect" title=" " alt="" coords="1534,5,1701,45"/>
+<area shape="rect" href="DIARawSymbol_8h.html" title=" " alt="" coords="773,93,939,133"/>
+<area shape="rect" title=" " alt="" coords="2504,445,2659,471"/>
+<area shape="rect" title=" " alt="" coords="2072,614,2235,639"/>
+<area shape="rect" href="CodeView_2Formatters_8h.html" title=" " alt="" coords="1810,357,2001,397"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="1689,614,1895,639"/>
+<area shape="rect" href="DIAEnumLineNumbers_8h.html" title=" " alt="" coords="141,93,352,133"/>
+<area shape="rect" href="DIAEnumSymbols_8h.html" title=" " alt="" coords="376,93,557,133"/>
+<area shape="rect" href="PDBExtras_8h.html" title=" " alt="" coords="1370,365,1473,390"/>
+<area shape="rect" href="DIALineNumber_8h.html" title=" " alt="" coords="582,93,749,133"/>
+<area shape="rect" href="DIASession_8h.html" title=" " alt="" coords="1599,93,1753,133"/>
+<area shape="rect" href="DIAUtils_8h.html" title=" " alt="" coords="2555,357,2709,397"/>
+<area shape="rect" href="ConvertUTF_8h.html" title=" " alt="" coords="2513,614,2709,639"/>
+<area shape="rect" href="PDBSymbolTypeBuiltin_8h.html" title=" " alt="" coords="1175,181,1361,221"/>
+<area shape="rect" href="PDBSymbolTypePointer_8h.html" title=" " alt="" coords="1385,181,1575,221"/>
+<area shape="rect" href="PDBSymbolTypeVTable_8h.html" title=" " alt="" coords="713,181,900,221"/>
+<area shape="rect" href="PDBSymbolTypeVTableShape_8h.html" title=" " alt="" coords="924,181,1151,221"/>
+<area shape="rect" href="DIASupport_8h.html" title=" " alt="" coords="303,189,409,214"/>
+<area shape="rect" href="IPDBRawSymbol_8h.html" title=" " alt="" coords="1102,357,1255,397"/>
+<area shape="rect" title=" " alt="" coords="315,277,397,302"/>
+<area shape="rect" title=" " alt="" coords="421,277,512,302"/>
+<area shape="rect" title=" " alt="" coords="537,277,621,302"/>
+<area shape="rect" title=" " alt="" coords="109,277,171,302"/>
+<area shape="rect" title=" " alt="" coords="195,277,290,302"/>
+<area shape="rect" href="PDBTypes_8h.html" title=" " alt="" coords="720,445,819,471"/>
+<area shape="rect" href="CodeView_8h.html" title=" " alt="" coords="869,519,1059,559"/>
+<area shape="rect" title=" " alt="" coords="240,614,317,639"/>
+<area shape="rect" title=" " alt="" coords="944,445,1133,471"/>
+<area shape="rect" title=" " alt="" coords="1513,695,1687,720"/>
+<area shape="rect" title=" " alt="" coords="1913,695,2071,720"/>
+<area shape="rect" title=" " alt="" coords="1757,695,1827,720"/>
+<area shape="rect" title=" " alt="" coords="505,695,572,720"/>
+<area shape="rect" title=" " alt="" coords="756,695,823,720"/>
+<area shape="rect" href="IPDBEnumChildren_8h.html" title=" " alt="" coords="5,519,165,559"/>
+<area shape="rect" title=" " alt="" coords="1374,614,1461,639"/>
+<area shape="rect" title=" " alt="" coords="709,614,792,639"/>
+<area shape="rect" href="Endian_8h.html" title=" " alt="" coords="867,614,1032,639"/>
+<area shape="rect" title=" " alt="" coords="1035,695,1104,720"/>
+<area shape="rect" href="GUID_8h.html" title=" " alt="" coords="443,607,634,647"/>
+<area shape="rect" href="TypeIndex_8h.html" title=" " alt="" coords="1186,519,1377,559"/>
+<area shape="rect" href="FormatAdapters_8h.html" title=" " alt="" coords="1813,445,2038,471"/>
+<area shape="rect" href="FormatVariadic_8h.html" title=" " alt="" coords="2117,526,2336,551"/>
+<area shape="rect" title=" " alt="" coords="1157,614,1349,639"/>
+<area shape="rect" href="Error_8h.html" title=" " alt="" coords="1554,526,1705,551"/>
+<area shape="rect" title=" " alt="" coords="2299,695,2357,720"/>
+<area shape="rect" title=" " alt="" coords="2498,695,2606,720"/>
+<area shape="rect" href="IPDBLineNumber_8h.html" title=" " alt="" coords="434,181,587,221"/>
+<area shape="rect" href="PDBSymbol_8h.html" title=" " alt="" coords="950,269,1103,309"/>
+<area shape="rect" title=" " alt="" coords="1310,445,1434,471"/>
+<area shape="rect" href="IPDBSession_8h.html" title=" " alt="" coords="1599,181,1753,221"/>
 </map>
 </div>
 </div>
@@ -103,6 +136,7 @@ Include dependency graph for DIARawSymbol.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
+<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -111,12 +145,12 @@ Macros</h2></td></tr>
 <tr class="separator:af692299230707620c17a5cc8462ee94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0575bfe05438286c96eb56bcb485e6a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DIARawSymbol_8cpp.html#ac0575bfe05438286c96eb56bcb485e6a">RAW_METHOD_DUMP</a>(Stream,  Method)</td></tr>
 <tr class="separator:ac0575bfe05438286c96eb56bcb485e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5da7db4d1270ca2d1c3dfe1f5965956b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DIARawSymbol_8cpp.html#a5da7db4d1270ca2d1c3dfe1f5965956b">RAW_METHOD_DUMP_AS</a>(Stream,  Method,  Type)</td></tr>
+<tr class="memitem:a5da7db4d1270ca2d1c3dfe1f5965956b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DIARawSymbol_8cpp.html#a5da7db4d1270ca2d1c3dfe1f5965956b">RAW_METHOD_DUMP_AS</a>(Stream,  Method,  <a class="el" href="classllvm_1_1Type.html">Type</a>)</td></tr>
 <tr class="separator:a5da7db4d1270ca2d1c3dfe1f5965956b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0cd8b517dd45f8189d131d3155fb505b"><td class="memItemLeft" align="right" valign="top">llvm::raw_ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a0cd8b517dd45f8189d131d3155fb505b">llvm::operator&lt;&lt;</a> (llvm::raw_ostream &amp;OS, const GUID &amp;<a class="el" href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>)</td></tr>
+<tr class="memitem:a0cd8b517dd45f8189d131d3155fb505b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1raw__ostream.html">llvm::raw_ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a0cd8b517dd45f8189d131d3155fb505b">llvm::operator&lt;&lt;</a> (<a class="el" href="classllvm_1_1raw__ostream.html">llvm::raw_ostream</a> &amp;OS, const GUID &amp;<a class="el" href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>)</td></tr>
 <tr class="separator:a0cd8b517dd45f8189d131d3155fb505b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -231,7 +265,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">Type&#160;</td>
+          <td class="paramname"><a class="el" href="classllvm_1_1Type.html">Type</a>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -250,7 +284,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:37 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

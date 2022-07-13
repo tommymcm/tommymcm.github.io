@@ -64,23 +64,23 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// conditions.</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;llvm/Analysis/GuardUtils.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;llvm/IR/PatternMatch.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="Analysis_2GuardUtils_8h.html">llvm/Analysis/GuardUtils.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="PatternMatch_8h.html">llvm/IR/PatternMatch.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm.html">llvm</a>;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">bool</span> llvm::isGuard(<span class="keyword">const</span> User *U) {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">using namespace </span>llvm::PatternMatch;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespacellvm.html#a656efdcee3deb029763304d3e741a2d1">   17</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacellvm.html#a656efdcee3deb029763304d3e741a2d1">llvm::isGuard</a>(<span class="keyword">const</span> <a class="code hl_class" href="classllvm_1_1User.html">User</a> *U) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm_1_1PatternMatch.html">llvm::PatternMatch</a>;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordflow">return</span> match(U, m_Intrinsic&lt;Intrinsic::experimental_guard&gt;());</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">bool</span> llvm::isGuardAsWidenableBranch(<span class="keyword">const</span> User *U) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  Value *Condition, *WidenableCondition;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  BasicBlock *GuardedBB, *DeoptBB;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordflow">if</span> (!parseWidenableBranch(U, Condition, WidenableCondition, GuardedBB,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespacellvm.html#aa36af57c5a44173f32eb7b4c9011c298">   22</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacellvm.html#aa36af57c5a44173f32eb7b4c9011c298">llvm::isGuardAsWidenableBranch</a>(<span class="keyword">const</span> <a class="code hl_class" href="classllvm_1_1User.html">User</a> *U) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <a class="code hl_class" href="classllvm_1_1Value.html">Value</a> *Condition, *WidenableCondition;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <a class="code hl_class" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *GuardedBB, *DeoptBB;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespacellvm.html#a745200db7bc2a7a3c17fa379fb1b56c3">parseWidenableBranch</a>(U, Condition, WidenableCondition, GuardedBB,</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                            DeoptBB))</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keyword">using namespace </span>llvm::PatternMatch;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm_1_1PatternMatch.html">llvm::PatternMatch</a>;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;Insn : *DeoptBB) {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span> (match(&amp;Insn, m_Intrinsic&lt;Intrinsic::experimental_deoptimize&gt;()))</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -90,10 +90,10 @@ $(function() {
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">bool</span> llvm::parseWidenableBranch(<span class="keyword">const</span> User *U, Value *&amp;Condition,</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                                Value *&amp;WidenableCondition,</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                                BasicBlock *&amp;IfTrueBB, BasicBlock *&amp;IfFalseBB) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">using namespace </span>llvm::PatternMatch;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespacellvm.html#a745200db7bc2a7a3c17fa379fb1b56c3">   38</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacellvm.html#a745200db7bc2a7a3c17fa379fb1b56c3">llvm::parseWidenableBranch</a>(<span class="keyword">const</span> <a class="code hl_class" href="classllvm_1_1User.html">User</a> *U, <a class="code hl_class" href="classllvm_1_1Value.html">Value</a> *&amp;Condition,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                                <a class="code hl_class" href="classllvm_1_1Value.html">Value</a> *&amp;WidenableCondition,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                                <a class="code hl_class" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&amp;IfTrueBB, <a class="code hl_class" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&amp;IfFalseBB) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm_1_1PatternMatch.html">llvm::PatternMatch</a>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordflow">if</span> (!match(U, m_Br(m_And(m_Value(Condition), m_Value(WidenableCondition)),</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                     IfTrueBB, IfFalseBB)))</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -102,11 +102,20 @@ $(function() {
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordflow">return</span> match(WidenableCondition,</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>               m_Intrinsic&lt;Intrinsic::experimental_widenable_condition&gt;());</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
+<div class="ttc" id="aAnalysis_2GuardUtils_8h_html"><div class="ttname"><a href="Analysis_2GuardUtils_8h.html">GuardUtils.h</a></div></div>
+<div class="ttc" id="aPatternMatch_8h_html"><div class="ttname"><a href="PatternMatch_8h.html">PatternMatch.h</a></div></div>
+<div class="ttc" id="aclassllvm_1_1BasicBlock_html"><div class="ttname"><a href="classllvm_1_1BasicBlock.html">llvm::BasicBlock</a></div><div class="ttdoc">LLVM Basic Block Representation.</div><div class="ttdef"><b>Definition:</b> <a href="BasicBlock_8h_source.html#l00057">BasicBlock.h:58</a></div></div>
+<div class="ttc" id="aclassllvm_1_1User_html"><div class="ttname"><a href="classllvm_1_1User.html">llvm::User</a></div><div class="ttdef"><b>Definition:</b> <a href="User_8h_source.html#l00044">User.h:44</a></div></div>
+<div class="ttc" id="aclassllvm_1_1Value_html"><div class="ttname"><a href="classllvm_1_1Value.html">llvm::Value</a></div><div class="ttdoc">LLVM Value Representation.</div><div class="ttdef"><b>Definition:</b> <a href="Value_8h_source.html#l00072">Value.h:72</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1PatternMatch_html"><div class="ttname"><a href="namespacellvm_1_1PatternMatch.html">llvm::PatternMatch</a></div><div class="ttdef"><b>Definition:</b> <a href="PatternMatch_8h_source.html#l00045">PatternMatch.h:45</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysis_8h_source.html#l00056">AliasAnalysis.h:56</a></div></div>
+<div class="ttc" id="anamespacellvm_html_a656efdcee3deb029763304d3e741a2d1"><div class="ttname"><a href="namespacellvm.html#a656efdcee3deb029763304d3e741a2d1">llvm::isGuard</a></div><div class="ttdeci">bool isGuard(const User *U)</div><div class="ttdoc">Returns true iff U has semantics of a guard expressed in a form of call of llvm.experimental....</div><div class="ttdef"><b>Definition:</b> <a href="Analysis_2GuardUtils_8cpp_source.html#l00017">GuardUtils.cpp:17</a></div></div>
+<div class="ttc" id="anamespacellvm_html_a745200db7bc2a7a3c17fa379fb1b56c3"><div class="ttname"><a href="namespacellvm.html#a745200db7bc2a7a3c17fa379fb1b56c3">llvm::parseWidenableBranch</a></div><div class="ttdeci">bool parseWidenableBranch(const User *U, Value *&amp;Condition, Value *&amp;WidenableCondition, BasicBlock *&amp;IfTrueBB, BasicBlock *&amp;IfFalseBB)</div><div class="ttdoc">If U is widenable branch looking like: cond = ... wc = call i1 @llvm.experimental....</div><div class="ttdef"><b>Definition:</b> <a href="Analysis_2GuardUtils_8cpp_source.html#l00038">GuardUtils.cpp:38</a></div></div>
+<div class="ttc" id="anamespacellvm_html_aa36af57c5a44173f32eb7b4c9011c298"><div class="ttname"><a href="namespacellvm.html#aa36af57c5a44173f32eb7b4c9011c298">llvm::isGuardAsWidenableBranch</a></div><div class="ttdeci">bool isGuardAsWidenableBranch(const User *U)</div><div class="ttdoc">Returns true iff U has semantics of a guard expressed in a form of a widenable conditional branch to ...</div><div class="ttdef"><b>Definition:</b> <a href="Analysis_2GuardUtils_8cpp_source.html#l00022">GuardUtils.cpp:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:33 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:19 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -52,38 +52,77 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">BlockExtractor.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/MemoryBuffer.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/IPO.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/CodeExtractor.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MemoryBuffer_8h_source.html">llvm/Support/MemoryBuffer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IPO_8h_source.html">llvm/Transforms/IPO.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CodeExtractor_8h_source.html">llvm/Transforms/Utils/CodeExtractor.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for BlockExtractor.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="BlockExtractor_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2IPO_2BlockExtractor_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2IPO_2BlockExtractor_8cpp" id="alib_2Transforms_2IPO_2BlockExtractor_8cpp">
-<area shape="rect" title=" " alt="" coords="864,5,1011,45"/>
-<area shape="rect" title=" " alt="" coords="5,101,168,126"/>
-<area shape="rect" title=" " alt="" coords="193,101,343,126"/>
-<area shape="rect" title=" " alt="" coords="368,101,528,126"/>
-<area shape="rect" title=" " alt="" coords="553,101,685,126"/>
-<area shape="rect" title=" " alt="" coords="709,101,805,126"/>
-<area shape="rect" title=" " alt="" coords="830,101,1045,126"/>
-<area shape="rect" title=" " alt="" coords="1069,101,1232,126"/>
-<area shape="rect" title=" " alt="" coords="1256,101,1469,126"/>
-<area shape="rect" title=" " alt="" coords="1493,101,1659,126"/>
-<area shape="rect" title=" " alt="" coords="1683,93,1845,133"/>
-<area shape="rect" title=" " alt="" coords="1869,93,2030,133"/>
+<area shape="rect" title=" " alt="" coords="3940,5,4087,45"/>
+<area shape="rect" title=" " alt="" coords="4419,416,4581,441"/>
+<area shape="rect" title=" " alt="" coords="2286,101,2437,126"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="3816,101,3976,126"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="1383,189,1515,214"/>
+<area shape="rect" title=" " alt="" coords="4237,343,4333,368"/>
+<area shape="rect" href="CommandLine_8h.html" title=" " alt="" coords="4859,343,5074,368"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="4051,101,4213,126"/>
+<area shape="rect" href="MemoryBuffer_8h.html" title=" " alt="" coords="2259,343,2472,368"/>
+<area shape="rect" href="IPO_8h.html" title=" " alt="" coords="6476,189,6641,214"/>
+<area shape="rect" href="BasicBlockUtils_8h.html" title=" " alt="" coords="2461,93,2622,133"/>
+<area shape="rect" href="CodeExtractor_8h.html" title=" " alt="" coords="6666,181,6827,221"/>
+<area shape="rect" title=" " alt="" coords="4585,489,4740,515"/>
+<area shape="rect" title=" " alt="" coords="5745,489,5877,515"/>
+<area shape="rect" title=" " alt="" coords="5694,416,5869,441"/>
+<area shape="rect" title=" " alt="" coords="2713,489,2871,515"/>
+<area shape="rect" title=" " alt="" coords="2801,416,2935,441"/>
+<area shape="rect" title=" " alt="" coords="3742,563,3887,588"/>
+<area shape="rect" title=" " alt="" coords="1769,636,1959,661"/>
+<area shape="rect" href="Attributes_8h.html" title="This file contains the simple types necessary to represent the attributes associated with functions a..." alt="" coords="2070,416,2218,441"/>
+<area shape="rect" title=" " alt="" coords="2861,709,2931,735"/>
+<area shape="rect" title=" " alt="" coords="3041,563,3108,588"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="1300,343,1455,368"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="3835,416,3989,441"/>
+<area shape="rect" title=" " alt="" coords="1311,563,1382,588"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="3265,489,3378,515"/>
+<area shape="rect" href="Use_8h.html" title="This defines the Use class." alt="" coords="1635,636,1744,661"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="1896,563,2016,588"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="4144,636,4315,661"/>
+<area shape="rect" title=" " alt="" coords="2878,636,2949,661"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="5399,563,5609,588"/>
+<area shape="rect" href="CallingConv_8h.html" title=" " alt="" coords="3566,343,3727,368"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="3617,416,3759,441"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="4561,343,4733,368"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="5352,416,5467,441"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="2748,269,2887,295"/>
+<area shape="rect" href="OperandTraits_8h.html" title=" " alt="" coords="3163,416,3338,441"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="3453,189,3603,214"/>
+<area shape="rect" href="AtomicOrdering_8h.html" title="Atomic ordering constants." alt="" coords="194,189,417,214"/>
+<area shape="rect" title=" " alt="" coords="1387,709,1503,735"/>
+<area shape="rect" title=" " alt="" coords="702,489,855,515"/>
+<area shape="rect" href="SymbolTableListTraits_8h.html" title=" " alt="" coords="1183,489,1409,515"/>
+<area shape="rect" title=" " alt="" coords="5113,416,5277,441"/>
+<area shape="rect" href="Comdat_8h.html" title="This file contains the declaration of the Comdat class, which represents a single COMDAT in LLVM." alt="" coords="13,636,147,661"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="4393,269,4551,295"/>
+<area shape="rect" href="GlobalAlias_8h.html" title=" " alt="" coords="651,269,810,295"/>
+<area shape="rect" href="GlobalIFunc_8h.html" title=" " alt="" coords="835,269,995,295"/>
+<area shape="rect" href="GlobalVariable_8h.html" title=" " alt="" coords="1541,343,1720,368"/>
+<area shape="rect" href="Metadata_8h.html" title="This file contains the declarations for metadata subclasses." alt="" coords="2689,343,2836,368"/>
+<area shape="rect" href="ProfileSummary_8h.html" title=" " alt="" coords="1795,269,1981,295"/>
 </map>
 </div>
 </div>
@@ -98,12 +137,15 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ac668793b24bf0aa89a7927d0a4d1754a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockExtractor_8cpp.html#ac668793b24bf0aa89a7927d0a4d1754a">STATISTIC</a> (NumExtracted, &quot;Number of basic blocks extracted&quot;)</td></tr>
 <tr class="separator:ac668793b24bf0aa89a7927d0a4d1754a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7df9164c0edb0dbba901a80fa0d4f2b3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockExtractor_8cpp.html#a7df9164c0edb0dbba901a80fa0d4f2b3">BlockExtractorFile</a> (&quot;extract-blocks-file&quot;, cl::value_desc(&quot;filename&quot;), cl::desc(&quot;A <a class="el" href="RegionPrinter_8cpp.html#a79dce2d3eafaf25bf0df59f56caf9712">file</a> containing list of basic blocks to extract&quot;), cl::Hidden)</td></tr>
-<tr class="separator:a7df9164c0edb0dbba901a80fa0d4f2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97f72cc28dd154d1d6bf7e8a50493221"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockExtractor_8cpp.html#a97f72cc28dd154d1d6bf7e8a50493221">BlockExtractorEraseFuncs</a> (&quot;extract-blocks-erase-funcs&quot;, cl::desc(&quot;Erase the existing functions&quot;), cl::Hidden)</td></tr>
-<tr class="separator:a97f72cc28dd154d1d6bf7e8a50493221"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1789600faee41dc5b2fc2fcefb8ebba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockExtractor_8cpp.html#ae1789600faee41dc5b2fc2fcefb8ebba">INITIALIZE_PASS</a> (BlockExtractor, &quot;extract-blocks&quot;, &quot;Extract basic blocks from module&quot;, false, false) ModulePass *llvm</td></tr>
+<tr class="memitem:ae1789600faee41dc5b2fc2fcefb8ebba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockExtractor_8cpp.html#ae1789600faee41dc5b2fc2fcefb8ebba">INITIALIZE_PASS</a> (BlockExtractor, &quot;extract-blocks&quot;, &quot;Extract basic blocks from module&quot;, false, false) <a class="el" href="classModulePass.html">ModulePass</a> *llvm</td></tr>
 <tr class="separator:ae1789600faee41dc5b2fc2fcefb8ebba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a7f077dcda33a59d835980e6f595e1330"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockExtractor_8cpp.html#a7f077dcda33a59d835980e6f595e1330">BlockExtractorFile</a> (&quot;extract-blocks-file&quot;, <a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;filename&quot;), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> containing list of basic blocks to extract&quot;), cl::Hidden)</td></tr>
+<tr class="separator:a7f077dcda33a59d835980e6f595e1330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa21b49730a8b3159b78def71ce0f12e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockExtractor_8cpp.html#aa21b49730a8b3159b78def71ce0f12e4">BlockExtractorEraseFuncs</a> (&quot;extract-blocks-erase-funcs&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Erase the existing functions&quot;), cl::Hidden)</td></tr>
+<tr class="separator:aa21b49730a8b3159b78def71ce0f12e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad78e062f62e0d6e453941fb4ca843e4d" name="ad78e062f62e0d6e453941fb4ca843e4d"></a>
@@ -123,88 +165,6 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a97f72cc28dd154d1d6bf7e8a50493221" name="a97f72cc28dd154d1d6bf7e8a50493221"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97f72cc28dd154d1d6bf7e8a50493221">&#9670;&nbsp;</a></span>BlockExtractorEraseFuncs()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; BlockExtractorEraseFuncs </td>
-          <td>(</td>
-          <td class="paramtype">&quot;extract-blocks-erase-funcs&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;Erase the existing functions&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7df9164c0edb0dbba901a80fa0d4f2b3" name="a7df9164c0edb0dbba901a80fa0d4f2b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7df9164c0edb0dbba901a80fa0d4f2b3">&#9670;&nbsp;</a></span>BlockExtractorFile()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt; BlockExtractorFile </td>
-          <td>(</td>
-          <td class="paramtype">&quot;extract-blocks-file&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::value_desc(&quot;filename&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::desc(&quot;A <a class="el" href="RegionPrinter_8cpp.html#a79dce2d3eafaf25bf0df59f56caf9712">file</a> containing list of basic blocks to extract&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ae1789600faee41dc5b2fc2fcefb8ebba" name="ae1789600faee41dc5b2fc2fcefb8ebba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae1789600faee41dc5b2fc2fcefb8ebba">&#9670;&nbsp;</a></span>INITIALIZE_PASS()</h2>
 
@@ -281,10 +241,93 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="aa21b49730a8b3159b78def71ce0f12e4" name="aa21b49730a8b3159b78def71ce0f12e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa21b49730a8b3159b78def71ce0f12e4">&#9670;&nbsp;</a></span>BlockExtractorEraseFuncs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; BlockExtractorEraseFuncs(&quot;extract-blocks-erase-funcs&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Erase the existing functions&quot;), cl::Hidden) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;extract-blocks-erase-funcs&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Erase the existing functions&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7f077dcda33a59d835980e6f595e1330" name="a7f077dcda33a59d835980e6f595e1330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f077dcda33a59d835980e6f595e1330">&#9670;&nbsp;</a></span>BlockExtractorFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt; BlockExtractorFile(&quot;extract-blocks-file&quot;, <a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;filename&quot;), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> containing list of basic blocks to extract&quot;), cl::Hidden) </td>
+          <td>(</td>
+          <td class="paramtype">&quot;extract-blocks-file&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;filename&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> containing list of basic blocks to extract&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

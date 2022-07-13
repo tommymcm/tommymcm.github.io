@@ -58,7 +58,7 @@ $(function() {
   <div class="headertitle"><div class="title">Reassociate.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/Reassociate.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Reassociate_8h_source.html">llvm/Transforms/Scalar/Reassociate.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/APFloat.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/APInt.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
@@ -68,33 +68,33 @@ $(function() {
 <code>#include &quot;llvm/ADT/SmallSet.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Operator.h&quot;</code><br />
-<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
-<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/User.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
-<code>#include &quot;llvm/IR/ValueHandle.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalsModRef_8h_source.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Operator_8h_source.html">llvm/IR/Operator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ValueHandle_8h_source.html">llvm/IR/ValueHandle.h</a>&quot;</code><br />
 <code>#include &quot;llvm/Pass.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
-<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
@@ -103,47 +103,56 @@ Include dependency graph for Reassociate.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Reassociate_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2Reassociate_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Scalar_2Reassociate_8cpp" id="alib_2Transforms_2Scalar_2Reassociate_8cpp">
-<area shape="rect" title=" " alt="" coords="3597,5,3755,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,176,133"/>
-<area shape="rect" title=" " alt="" coords="201,101,349,126"/>
-<area shape="rect" title=" " alt="" coords="373,101,505,126"/>
-<area shape="rect" title=" " alt="" coords="529,101,695,126"/>
-<area shape="rect" title=" " alt="" coords="719,101,929,126"/>
-<area shape="rect" title=" " alt="" coords="953,101,1111,126"/>
-<area shape="rect" title=" " alt="" coords="1135,101,1310,126"/>
-<area shape="rect" title=" " alt="" coords="1334,101,1490,126"/>
-<area shape="rect" title=" " alt="" coords="1514,101,1689,126"/>
-<area shape="rect" title=" " alt="" coords="1713,101,1863,126"/>
-<area shape="rect" title=" " alt="" coords="1887,93,2078,133"/>
-<area shape="rect" title=" " alt="" coords="2102,93,2263,133"/>
-<area shape="rect" title=" " alt="" coords="2288,101,2504,126"/>
-<area shape="rect" title=" " alt="" coords="2529,101,2677,126"/>
-<area shape="rect" title=" " alt="" coords="2701,101,2856,126"/>
-<area shape="rect" title=" " alt="" coords="2881,101,2991,126"/>
-<area shape="rect" title=" " alt="" coords="3015,101,3158,126"/>
-<area shape="rect" title=" " alt="" coords="3183,101,3332,126"/>
-<area shape="rect" title=" " alt="" coords="3356,101,3495,126"/>
-<area shape="rect" title=" " alt="" coords="3519,101,3662,126"/>
-<area shape="rect" title=" " alt="" coords="3686,101,3837,126"/>
-<area shape="rect" title=" " alt="" coords="3861,101,4014,126"/>
-<area shape="rect" title=" " alt="" coords="4039,101,4199,126"/>
-<area shape="rect" title=" " alt="" coords="4223,101,4383,126"/>
-<area shape="rect" title=" " alt="" coords="4407,101,4547,126"/>
-<area shape="rect" title=" " alt="" coords="4571,101,4741,126"/>
-<area shape="rect" title=" " alt="" coords="4765,101,4936,126"/>
-<area shape="rect" title=" " alt="" coords="4960,101,5075,126"/>
-<area shape="rect" title=" " alt="" coords="5099,101,5213,126"/>
-<area shape="rect" title=" " alt="" coords="5237,101,5357,126"/>
-<area shape="rect" title=" " alt="" coords="5382,101,5549,126"/>
-<area shape="rect" title=" " alt="" coords="5573,101,5669,126"/>
-<area shape="rect" title=" " alt="" coords="5693,101,5864,126"/>
-<area shape="rect" title=" " alt="" coords="5888,101,6051,126"/>
-<area shape="rect" title=" " alt="" coords="6075,101,6285,126"/>
-<area shape="rect" title=" " alt="" coords="6310,101,6517,126"/>
-<area shape="rect" title=" " alt="" coords="6541,101,6723,126"/>
-<area shape="rect" title=" " alt="" coords="6748,101,6833,126"/>
-<area shape="rect" title=" " alt="" coords="6857,101,6927,126"/>
-<area shape="rect" title=" " alt="" coords="6951,101,7011,126"/>
+<area shape="rect" title=" " alt="" coords="2929,5,3087,45"/>
+<area shape="rect" href="Reassociate_8h.html" title=" " alt="" coords="819,93,989,133"/>
+<area shape="rect" title=" " alt="" coords="585,416,751,441"/>
+<area shape="rect" title=" " alt="" coords="457,189,666,214"/>
+<area shape="rect" title=" " alt="" coords="994,189,1153,214"/>
+<area shape="rect" href="IRBuilder_8h.html" title=" " alt="" coords="2851,189,2994,214"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="2163,563,2317,588"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="2847,636,3001,661"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="4519,709,4633,735"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="2425,783,2545,808"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="3219,856,3389,881"/>
+<area shape="rect" title=" " alt="" coords="1856,929,1925,955"/>
+<area shape="rect" href="ErrorHandling_8h.html" title=" " alt="" coords="4591,783,4801,808"/>
+<area shape="rect" title=" " alt="" coords="2523,709,2608,735"/>
+<area shape="rect" title=" " alt="" coords="826,709,886,735"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="4982,563,5125,588"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="4699,489,4848,515"/>
+<area shape="rect" title=" " alt="" coords="4810,563,4958,588"/>
+<area shape="rect" title=" " alt="" coords="5201,563,5333,588"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="1675,489,1813,515"/>
+<area shape="rect" href="Argument_8h.html" title=" " alt="" coords="1902,563,2050,588"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="3366,416,3517,441"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="4251,489,4365,515"/>
+<area shape="rect" title=" " alt="" coords="4306,563,4481,588"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="3568,343,3728,368"/>
+<area shape="rect" title=" " alt="" coords="3545,489,3719,515"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="2960,269,3120,295"/>
+<area shape="rect" href="Operator_8h.html" title=" " alt="" coords="4201,416,4341,441"/>
+<area shape="rect" href="ValueHandle_8h.html" title=" " alt="" coords="507,343,674,368"/>
+<area shape="rect" href="PassManager_8h.html" title="This header defines various interfaces for pass management in LLVM." alt="" coords="1105,343,1274,368"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="296,416,459,441"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="2014,416,2221,441"/>
+<area shape="rect" title=" " alt="" coords="5539,489,5695,515"/>
+<area shape="rect" title=" " alt="" coords="5326,101,5477,126"/>
+<area shape="rect" href="GlobalsModRef_8h.html" title="This is the interface for a simple mod/ref and alias analysis over globals." alt="" coords="1415,181,1606,221"/>
+<area shape="rect" title=" " alt="" coords="1451,343,1547,368"/>
+<area shape="rect" href="Transforms_2Utils_2Local_8h.html" title=" " alt="" coords="3989,181,4150,221"/>
+<area shape="rect" href="ValueTracking_8h.html" title=" " alt="" coords="5328,416,5544,441"/>
+<area shape="rect" href="IR_2CFG_8h.html" title="This file provides various utilities for inspecting and working with the control flow graph in LLVM I..." alt="" coords="1622,343,1733,368"/>
+<area shape="rect" href="PatternMatch_8h.html" title=" " alt="" coords="4703,269,4873,295"/>
+<area shape="rect" href="Scalar_8h.html" title=" " alt="" coords="6075,101,6258,126"/>
+<area shape="rect" title=" " alt="" coords="907,189,970,214"/>
+<area shape="rect" title=" " alt="" coords="3760,709,3915,735"/>
+<area shape="rect" href="Module_8h.html" title="Module.h This file contains the declarations for the Module class." alt="" coords="1755,416,1887,441"/>
+<area shape="rect" title=" " alt="" coords="3509,563,3672,588"/>
+<area shape="rect" title=" " alt="" coords="2499,416,2683,441"/>
+<area shape="rect" title=" " alt="" coords="827,416,869,441"/>
+<area shape="rect" href="AliasAnalysis_8h.html" title=" " alt="" coords="1833,269,2047,295"/>
+<area shape="rect" href="CallGraph_8h.html" title="This file provides interfaces used to build and manipulate a call graph, which is a very useful tool ..." alt="" coords="1279,269,1470,295"/>
+<area shape="rect" href="DomTreeUpdater_8h.html" title=" " alt="" coords="3443,269,3677,295"/>
 </map>
 </div>
 </div>
@@ -162,7 +171,7 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aae53c46211422ad4562a1b2f3fb94511"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#aae53c46211422ad4562a1b2f3fb94511">RepeatedValue</a> = std::pair&lt; Value *, APInt &gt;</td></tr>
+<tr class="memitem:aae53c46211422ad4562a1b2f3fb94511"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#aae53c46211422ad4562a1b2f3fb94511">RepeatedValue</a> = std::pair&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, APInt &gt;</td></tr>
 <tr class="separator:aae53c46211422ad4562a1b2f3fb94511"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -173,63 +182,63 @@ Functions</h2></td></tr>
 <tr class="separator:a5127f9d26d2117ccd7cae7e6b8a9f6b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b8fca68b3027883594c1fba2c8e48e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a3b8fca68b3027883594c1fba2c8e48e4">STATISTIC</a> (NumFactor, &quot;Number of multiplies factored&quot;)</td></tr>
 <tr class="separator:a3b8fca68b3027883594c1fba2c8e48e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a035830591fff503ea933e8c88c84f3f8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a035830591fff503ea933e8c88c84f3f8">PrintOps</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; ValueEntry &gt; &amp;Ops)</td></tr>
+<tr class="memitem:a035830591fff503ea933e8c88c84f3f8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a035830591fff503ea933e8c88c84f3f8">PrintOps</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="structllvm_1_1reassociate_1_1ValueEntry.html">ValueEntry</a> &gt; &amp;Ops)</td></tr>
 <tr class="memdesc:a035830591fff503ea933e8c88c84f3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print out the expression identified in the Ops list.  <a href="Reassociate_8cpp.html#a035830591fff503ea933e8c88c84f3f8">More...</a><br /></td></tr>
 <tr class="separator:a035830591fff503ea933e8c88c84f3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c2af9de17a9eb94d9b20f4c6a893736"><td class="memItemLeft" align="right" valign="top">static BinaryOperator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a7c2af9de17a9eb94d9b20f4c6a893736">isReassociableOp</a> (Value *V, unsigned Opcode)</td></tr>
+<tr class="memitem:a7c2af9de17a9eb94d9b20f4c6a893736"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a7c2af9de17a9eb94d9b20f4c6a893736">isReassociableOp</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classunsigned.html">unsigned</a> Opcode)</td></tr>
 <tr class="memdesc:a7c2af9de17a9eb94d9b20f4c6a893736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if V is an instruction of the specified opcode and if it only has one use.  <a href="Reassociate_8cpp.html#a7c2af9de17a9eb94d9b20f4c6a893736">More...</a><br /></td></tr>
 <tr class="separator:a7c2af9de17a9eb94d9b20f4c6a893736"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0171d97d532bd8f3da1d2d508d67e6b0"><td class="memItemLeft" align="right" valign="top">static BinaryOperator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a0171d97d532bd8f3da1d2d508d67e6b0">isReassociableOp</a> (Value *V, unsigned Opcode1, unsigned Opcode2)</td></tr>
+<tr class="memitem:a0171d97d532bd8f3da1d2d508d67e6b0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a0171d97d532bd8f3da1d2d508d67e6b0">isReassociableOp</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classunsigned.html">unsigned</a> Opcode1, <a class="el" href="classunsigned.html">unsigned</a> Opcode2)</td></tr>
 <tr class="separator:a0171d97d532bd8f3da1d2d508d67e6b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f174f4e96f97ae7fe3523159d974722"><td class="memItemLeft" align="right" valign="top">static BinaryOperator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a3f174f4e96f97ae7fe3523159d974722">CreateAdd</a> (Value *S1, Value *S2, const Twine &amp;Name, Instruction *InsertBefore, Value *FlagsOp)</td></tr>
+<tr class="memitem:a3f174f4e96f97ae7fe3523159d974722"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a3f174f4e96f97ae7fe3523159d974722">CreateAdd</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *S1, <a class="el" href="classllvm_1_1Value.html">Value</a> *S2, const Twine &amp;Name, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *InsertBefore, <a class="el" href="classllvm_1_1Value.html">Value</a> *FlagsOp)</td></tr>
 <tr class="separator:a3f174f4e96f97ae7fe3523159d974722"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9cd716a350ef691a9461ebc1fad1470"><td class="memItemLeft" align="right" valign="top">static BinaryOperator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#ad9cd716a350ef691a9461ebc1fad1470">CreateMul</a> (Value *S1, Value *S2, const Twine &amp;Name, Instruction *InsertBefore, Value *FlagsOp)</td></tr>
+<tr class="memitem:ad9cd716a350ef691a9461ebc1fad1470"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#ad9cd716a350ef691a9461ebc1fad1470">CreateMul</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *S1, <a class="el" href="classllvm_1_1Value.html">Value</a> *S2, const Twine &amp;Name, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *InsertBefore, <a class="el" href="classllvm_1_1Value.html">Value</a> *FlagsOp)</td></tr>
 <tr class="separator:ad9cd716a350ef691a9461ebc1fad1470"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c76f730af61e85d0034ddd6ab82a345"><td class="memItemLeft" align="right" valign="top">static BinaryOperator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a7c76f730af61e85d0034ddd6ab82a345">CreateNeg</a> (Value *S1, const Twine &amp;Name, Instruction *InsertBefore, Value *FlagsOp)</td></tr>
+<tr class="memitem:a7c76f730af61e85d0034ddd6ab82a345"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a7c76f730af61e85d0034ddd6ab82a345">CreateNeg</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *S1, const Twine &amp;Name, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *InsertBefore, <a class="el" href="classllvm_1_1Value.html">Value</a> *FlagsOp)</td></tr>
 <tr class="separator:a7c76f730af61e85d0034ddd6ab82a345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a790c96adef17241b1ba4dbf475c3e57e"><td class="memItemLeft" align="right" valign="top">static BinaryOperator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a790c96adef17241b1ba4dbf475c3e57e">LowerNegateToMultiply</a> (Instruction *Neg)</td></tr>
+<tr class="memitem:a790c96adef17241b1ba4dbf475c3e57e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a790c96adef17241b1ba4dbf475c3e57e">LowerNegateToMultiply</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Neg)</td></tr>
 <tr class="memdesc:a790c96adef17241b1ba4dbf475c3e57e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace 0-X with X*-1.  <a href="Reassociate_8cpp.html#a790c96adef17241b1ba4dbf475c3e57e">More...</a><br /></td></tr>
 <tr class="separator:a790c96adef17241b1ba4dbf475c3e57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b5239d08485869f6cb244badd0727fd"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a3b5239d08485869f6cb244badd0727fd">CarmichaelShift</a> (unsigned Bitwidth)</td></tr>
+<tr class="memitem:a3b5239d08485869f6cb244badd0727fd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a3b5239d08485869f6cb244badd0727fd">CarmichaelShift</a> (<a class="el" href="classunsigned.html">unsigned</a> Bitwidth)</td></tr>
 <tr class="memdesc:a3b5239d08485869f6cb244badd0727fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns k such that lambda(2^Bitwidth) = 2^k, where lambda is the Carmichael function.  <a href="Reassociate_8cpp.html#a3b5239d08485869f6cb244badd0727fd">More...</a><br /></td></tr>
 <tr class="separator:a3b5239d08485869f6cb244badd0727fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a838450a1f01fb48a3cc7da747418a8c5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a838450a1f01fb48a3cc7da747418a8c5">IncorporateWeight</a> (APInt &amp;LHS, const APInt &amp;RHS, unsigned Opcode)</td></tr>
+<tr class="memitem:a838450a1f01fb48a3cc7da747418a8c5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a838450a1f01fb48a3cc7da747418a8c5">IncorporateWeight</a> (APInt &amp;LHS, const APInt &amp;RHS, <a class="el" href="classunsigned.html">unsigned</a> Opcode)</td></tr>
 <tr class="memdesc:a838450a1f01fb48a3cc7da747418a8c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the extra weight 'RHS' to the existing weight 'LHS', reducing the combined weight using any special properties of the operation.  <a href="Reassociate_8cpp.html#a838450a1f01fb48a3cc7da747418a8c5">More...</a><br /></td></tr>
 <tr class="separator:a838450a1f01fb48a3cc7da747418a8c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8f68fcebd7c2929078c515421b0c4a7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#ad8f68fcebd7c2929078c515421b0c4a7">LinearizeExprTree</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="Reassociate_8cpp.html#aae53c46211422ad4562a1b2f3fb94511">RepeatedValue</a> &gt; &amp;Ops)</td></tr>
+<tr class="memitem:ad8f68fcebd7c2929078c515421b0c4a7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#ad8f68fcebd7c2929078c515421b0c4a7">LinearizeExprTree</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="Reassociate_8cpp.html#aae53c46211422ad4562a1b2f3fb94511">RepeatedValue</a> &gt; &amp;Ops)</td></tr>
 <tr class="memdesc:ad8f68fcebd7c2929078c515421b0c4a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an associative binary expression, return the leaf nodes in Ops along with their weights (how many times the leaf occurs).  <a href="Reassociate_8cpp.html#ad8f68fcebd7c2929078c515421b0c4a7">More...</a><br /></td></tr>
 <tr class="separator:ad8f68fcebd7c2929078c515421b0c4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac89087c7d7dc7ce68b17d57237c170c8"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#ac89087c7d7dc7ce68b17d57237c170c8">NegateValue</a> (Value *V, Instruction *BI, ReassociatePass::OrderedSet &amp;ToRedo)</td></tr>
+<tr class="memitem:ac89087c7d7dc7ce68b17d57237c170c8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#ac89087c7d7dc7ce68b17d57237c170c8">NegateValue</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *BI, <a class="el" href="classllvm_1_1ReassociatePass.html#ac98feba99afe892014e2dcaf03ade497">ReassociatePass::OrderedSet</a> &amp;ToRedo)</td></tr>
 <tr class="memdesc:ac89087c7d7dc7ce68b17d57237c170c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert instructions before the instruction pointed to by BI, that computes the negative version of the value specified.  <a href="Reassociate_8cpp.html#ac89087c7d7dc7ce68b17d57237c170c8">More...</a><br /></td></tr>
 <tr class="separator:ac89087c7d7dc7ce68b17d57237c170c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19d2abc5a580be68aa7751c0e1ce7263"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a19d2abc5a580be68aa7751c0e1ce7263">ShouldBreakUpSubtract</a> (Instruction *Sub)</td></tr>
+<tr class="memitem:a19d2abc5a580be68aa7751c0e1ce7263"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a19d2abc5a580be68aa7751c0e1ce7263">ShouldBreakUpSubtract</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Sub)</td></tr>
 <tr class="memdesc:a19d2abc5a580be68aa7751c0e1ce7263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if we should break up this subtract of X-Y into (X + -Y).  <a href="Reassociate_8cpp.html#a19d2abc5a580be68aa7751c0e1ce7263">More...</a><br /></td></tr>
 <tr class="separator:a19d2abc5a580be68aa7751c0e1ce7263"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a420bedce165a865417db21cdc88307cb"><td class="memItemLeft" align="right" valign="top">static BinaryOperator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a420bedce165a865417db21cdc88307cb">BreakUpSubtract</a> (Instruction *Sub, ReassociatePass::OrderedSet &amp;ToRedo)</td></tr>
+<tr class="memitem:a420bedce165a865417db21cdc88307cb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a420bedce165a865417db21cdc88307cb">BreakUpSubtract</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Sub, <a class="el" href="classllvm_1_1ReassociatePass.html#ac98feba99afe892014e2dcaf03ade497">ReassociatePass::OrderedSet</a> &amp;ToRedo)</td></tr>
 <tr class="memdesc:a420bedce165a865417db21cdc88307cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">If we have (X-Y), and if either X is an add, or if this is only used by an add, transform this into (X+(0-Y)) to promote better reassociation.  <a href="Reassociate_8cpp.html#a420bedce165a865417db21cdc88307cb">More...</a><br /></td></tr>
 <tr class="separator:a420bedce165a865417db21cdc88307cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ccdf0465e957f46ac1241b63af00864"><td class="memItemLeft" align="right" valign="top">static BinaryOperator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a5ccdf0465e957f46ac1241b63af00864">ConvertShiftToMul</a> (Instruction *Shl)</td></tr>
+<tr class="memitem:a5ccdf0465e957f46ac1241b63af00864"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a5ccdf0465e957f46ac1241b63af00864">ConvertShiftToMul</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Shl)</td></tr>
 <tr class="memdesc:a5ccdf0465e957f46ac1241b63af00864"><td class="mdescLeft">&#160;</td><td class="mdescRight">If this is a shift of a reassociable multiply or is used by one, change this into a multiply by a constant to assist with further reassociation.  <a href="Reassociate_8cpp.html#a5ccdf0465e957f46ac1241b63af00864">More...</a><br /></td></tr>
 <tr class="separator:a5ccdf0465e957f46ac1241b63af00864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69ea590e0a73855d443dd017168a5ba7"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a69ea590e0a73855d443dd017168a5ba7">FindInOperandList</a> (const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; ValueEntry &gt; &amp;Ops, unsigned i, Value *<a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>)</td></tr>
+<tr class="memitem:a69ea590e0a73855d443dd017168a5ba7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a69ea590e0a73855d443dd017168a5ba7">FindInOperandList</a> (const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="structllvm_1_1reassociate_1_1ValueEntry.html">ValueEntry</a> &gt; &amp;Ops, <a class="el" href="classunsigned.html">unsigned</a> i, <a class="el" href="classllvm_1_1Value.html">Value</a> *<a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>)</td></tr>
 <tr class="memdesc:a69ea590e0a73855d443dd017168a5ba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scan backwards and forwards among values with the same rank as element i to see if X exists.  <a href="Reassociate_8cpp.html#a69ea590e0a73855d443dd017168a5ba7">More...</a><br /></td></tr>
 <tr class="separator:a69ea590e0a73855d443dd017168a5ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae530264bb183f2e7e5b5cef785a47e83"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#ae530264bb183f2e7e5b5cef785a47e83">EmitAddTreeOfValues</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; WeakTrackingVH &gt; &amp;Ops)</td></tr>
+<tr class="memitem:ae530264bb183f2e7e5b5cef785a47e83"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#ae530264bb183f2e7e5b5cef785a47e83">EmitAddTreeOfValues</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1WeakTrackingVH.html">WeakTrackingVH</a> &gt; &amp;Ops)</td></tr>
 <tr class="memdesc:ae530264bb183f2e7e5b5cef785a47e83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emit a tree of add instructions, summing Ops together and returning the result.  <a href="Reassociate_8cpp.html#ae530264bb183f2e7e5b5cef785a47e83">More...</a><br /></td></tr>
 <tr class="separator:ae530264bb183f2e7e5b5cef785a47e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45d0fa60c81eecbff60c1b2bb673e87b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a45d0fa60c81eecbff60c1b2bb673e87b">FindSingleUseMultiplyFactors</a> (Value *V, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;Factors)</td></tr>
+<tr class="memitem:a45d0fa60c81eecbff60c1b2bb673e87b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a45d0fa60c81eecbff60c1b2bb673e87b">FindSingleUseMultiplyFactors</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;Factors)</td></tr>
 <tr class="memdesc:a45d0fa60c81eecbff60c1b2bb673e87b"><td class="mdescLeft">&#160;</td><td class="mdescRight">If V is a single-use multiply, recursively add its operands as factors, otherwise add V to the list of factors.  <a href="Reassociate_8cpp.html#a45d0fa60c81eecbff60c1b2bb673e87b">More...</a><br /></td></tr>
 <tr class="separator:a45d0fa60c81eecbff60c1b2bb673e87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a469dd3aa1902b63c89d71ebdfbfa24ea"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a469dd3aa1902b63c89d71ebdfbfa24ea">OptimizeAndOrXor</a> (unsigned Opcode, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; ValueEntry &gt; &amp;Ops)</td></tr>
+<tr class="memitem:a469dd3aa1902b63c89d71ebdfbfa24ea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a469dd3aa1902b63c89d71ebdfbfa24ea">OptimizeAndOrXor</a> (<a class="el" href="classunsigned.html">unsigned</a> Opcode, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="structllvm_1_1reassociate_1_1ValueEntry.html">ValueEntry</a> &gt; &amp;Ops)</td></tr>
 <tr class="memdesc:a469dd3aa1902b63c89d71ebdfbfa24ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimize a series of operands to an 'and', 'or', or 'xor' instruction.  <a href="Reassociate_8cpp.html#a469dd3aa1902b63c89d71ebdfbfa24ea">More...</a><br /></td></tr>
 <tr class="separator:a469dd3aa1902b63c89d71ebdfbfa24ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1048088354c6d92aa28d94c98e7b9d0"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#ad1048088354c6d92aa28d94c98e7b9d0">createAndInstr</a> (Instruction *InsertBefore, Value *Opnd, const APInt &amp;ConstOpnd)</td></tr>
+<tr class="memitem:ad1048088354c6d92aa28d94c98e7b9d0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#ad1048088354c6d92aa28d94c98e7b9d0">createAndInstr</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *InsertBefore, <a class="el" href="classllvm_1_1Value.html">Value</a> *Opnd, const APInt &amp;ConstOpnd)</td></tr>
 <tr class="memdesc:ad1048088354c6d92aa28d94c98e7b9d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function of CombineXorOpnd().  <a href="Reassociate_8cpp.html#ad1048088354c6d92aa28d94c98e7b9d0">More...</a><br /></td></tr>
 <tr class="separator:ad1048088354c6d92aa28d94c98e7b9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ae389cc9acc023d9637b1c1d2b76380"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a5ae389cc9acc023d9637b1c1d2b76380">collectMultiplyFactors</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; ValueEntry &gt; &amp;Ops, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Factor &gt; &amp;Factors)</td></tr>
+<tr class="memitem:a5ae389cc9acc023d9637b1c1d2b76380"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a5ae389cc9acc023d9637b1c1d2b76380">collectMultiplyFactors</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="structllvm_1_1reassociate_1_1ValueEntry.html">ValueEntry</a> &gt; &amp;Ops, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="structllvm_1_1reassociate_1_1Factor.html">Factor</a> &gt; &amp;Factors)</td></tr>
 <tr class="memdesc:a5ae389cc9acc023d9637b1c1d2b76380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build up a vector of value/power pairs factoring a product.  <a href="Reassociate_8cpp.html#a5ae389cc9acc023d9637b1c1d2b76380">More...</a><br /></td></tr>
 <tr class="separator:a5ae389cc9acc023d9637b1c1d2b76380"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d977e92c2fcca67700dc71070608c0c"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a1d977e92c2fcca67700dc71070608c0c">buildMultiplyTree</a> (IRBuilder&lt;&gt; &amp;Builder, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;Ops)</td></tr>
+<tr class="memitem:a1d977e92c2fcca67700dc71070608c0c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#a1d977e92c2fcca67700dc71070608c0c">buildMultiplyTree</a> (<a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;Builder, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;Ops)</td></tr>
 <tr class="memdesc:a1d977e92c2fcca67700dc71070608c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a tree of multiplies, computing the product of Ops.  <a href="Reassociate_8cpp.html#a1d977e92c2fcca67700dc71070608c0c">More...</a><br /></td></tr>
 <tr class="separator:a1d977e92c2fcca67700dc71070608c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6feec0d273faf1e4a68b3839050fc68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Reassociate_8cpp.html#ae6feec0d273faf1e4a68b3839050fc68">INITIALIZE_PASS</a> (ReassociateLegacyPass, &quot;reassociate&quot;, &quot;Reassociate expressions&quot;, false, false) FunctionPass *llvm</td></tr>
@@ -260,7 +269,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="Reassociate_8cpp.html#aae53c46211422ad4562a1b2f3fb94511">RepeatedValue</a> =  std::pair&lt;Value*, APInt&gt;</td>
+          <td class="memname">using <a class="el" href="Reassociate_8cpp.html#aae53c46211422ad4562a1b2f3fb94511">RepeatedValue</a> =  std::pair&lt;<a class="el" href="classllvm_1_1Value.html">Value</a>*, APInt&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -280,15 +289,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static BinaryOperator * BreakUpSubtract </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> * BreakUpSubtract </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>Sub</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ReassociatePass::OrderedSet &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ReassociatePass.html#ac98feba99afe892014e2dcaf03ade497">ReassociatePass::OrderedSet</a> &amp;&#160;</td>
           <td class="paramname"><em>ToRedo</em>&#160;</td>
         </tr>
         <tr>
@@ -308,7 +317,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l00952">952</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Reassociate_8cpp_source.html#l00232">CreateAdd()</a>, and <a class="el" href="Reassociate_8cpp_source.html#l00815">NegateValue()</a>.</p>
+<p class="reference">References <a class="el" href="Reassociate_8cpp_source.html#l00232">CreateAdd()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="Instruction_8h_source.html#l00321">llvm::Instruction::getDebugLoc()</a>, <a class="el" href="Constants_8cpp_source.html#l00274">llvm::Constant::getNullValue()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="Reassociate_8cpp_source.html#l00815">NegateValue()</a>, <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>, <a class="el" href="Instruction_8h_source.html#l00318">llvm::Instruction::setDebugLoc()</a>, <a class="el" href="User_8h_source.html#l00174">llvm::User::setOperand()</a>, and <a class="el" href="Value_8cpp_source.html#l00291">llvm::Value::takeName()</a>.</p>
 
 </div>
 </div>
@@ -322,15 +331,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * buildMultiplyTree </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * buildMultiplyTree </td>
           <td>(</td>
-          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>Builder</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Ops</em>&#160;</td>
         </tr>
         <tr>
@@ -350,6 +359,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l01723">1723</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="IRBuilder_8h_source.html#l01383">llvm::IRBuilder&lt; T, Inserter &gt;::CreateFMul()</a>, <a class="el" href="IRBuilder_8h_source.html#l01152">llvm::IRBuilder&lt; T, Inserter &gt;::CreateMul()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="Type_8h_source.html#l00202">llvm::Type::isIntOrIntVectorTy()</a>.</p>
+
 </div>
 </div>
 <a id="a3b5239d08485869f6cb244badd0727fd" name="a3b5239d08485869f6cb244badd0727fd"></a>
@@ -362,9 +373,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static unsigned CarmichaelShift </td>
+          <td class="memname">static <a class="el" href="classunsigned.html">unsigned</a> CarmichaelShift </td>
           <td>(</td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>Bitwidth</em></td><td>)</td>
           <td></td>
         </tr>
@@ -395,15 +406,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool collectMultiplyFactors </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> collectMultiplyFactors </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; ValueEntry &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="structllvm_1_1reassociate_1_1ValueEntry.html">ValueEntry</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>Ops</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Factor &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="structllvm_1_1reassociate_1_1Factor.html">Factor</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>Factors</em>&#160;</td>
         </tr>
         <tr>
@@ -427,7 +438,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l01669">1669</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>, and <a class="el" href="Reassociate_8h_source.html#l00061">llvm::reassociate::Factor::Power</a>.</p>
 
 </div>
 </div>
@@ -441,9 +452,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static BinaryOperator * ConvertShiftToMul </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> * ConvertShiftToMul </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>Shl</em></td><td>)</td>
           <td></td>
         </tr>
@@ -459,6 +470,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l00975">975</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="TargetFolder_8h_source.html#l00062">llvm::TargetFolder::CreateMul()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="Instruction_8h_source.html#l00321">llvm::Instruction::getDebugLoc()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Constants_8cpp_source.html#l02299">llvm::ConstantExpr::getShl()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>, <a class="el" href="Instruction_8h_source.html#l00318">llvm::Instruction::setDebugLoc()</a>, <a class="el" href="Instruction_8cpp_source.html#l00104">llvm::Instruction::setHasNoSignedWrap()</a>, <a class="el" href="Instruction_8cpp_source.html#l00100">llvm::Instruction::setHasNoUnsignedWrap()</a>, <a class="el" href="User_8h_source.html#l00174">llvm::User::setOperand()</a>, and <a class="el" href="Value_8cpp_source.html#l00291">llvm::Value::takeName()</a>.</p>
+
 </div>
 </div>
 <a id="a3f174f4e96f97ae7fe3523159d974722" name="a3f174f4e96f97ae7fe3523159d974722"></a>
@@ -471,15 +484,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static BinaryOperator * CreateAdd </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> * CreateAdd </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>S1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>S2</em>, </td>
         </tr>
         <tr>
@@ -491,13 +504,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>InsertBefore</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>FlagsOp</em>&#160;</td>
         </tr>
         <tr>
@@ -515,6 +528,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l00232">232</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="TargetFolder_8h_source.html#l00048">llvm::TargetFolder::CreateAdd()</a>, <a class="el" href="TargetFolder_8h_source.html#l00052">llvm::TargetFolder::CreateFAdd()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Type_8h_source.html#l00202">llvm::Type::isIntOrIntVectorTy()</a>, and <a class="el" href="Instruction_8cpp_source.html#l00184">llvm::Instruction::setFastMathFlags()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="Reassociate_8cpp_source.html#l00952">BreakUpSubtract()</a>, <a class="el" href="Reassociate_8cpp_source.html#l01028">EmitAddTreeOfValues()</a>, <a class="el" href="LoopVectorize_8cpp_source.html#l02674">llvm::InnerLoopVectorizer::emitTransformedIndex()</a>, and <a class="el" href="Core_8cpp_source.html#l03258">LLVMBuildAdd()</a>.</p>
 
 </div>
@@ -529,15 +544,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * createAndInstr </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * createAndInstr </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>InsertBefore</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>Opnd</em>, </td>
         </tr>
         <tr>
@@ -564,7 +579,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l01181">1181</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="TargetFolder_8h_source.html#l00097">llvm::TargetFolder::CreateAnd()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="Instruction_8h_source.html#l00321">llvm::Instruction::getDebugLoc()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -578,15 +593,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static BinaryOperator * CreateMul </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> * CreateMul </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>S1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>S2</em>, </td>
         </tr>
         <tr>
@@ -598,13 +613,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>InsertBefore</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>FlagsOp</em>&#160;</td>
         </tr>
         <tr>
@@ -622,6 +637,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l00244">244</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="TargetFolder_8h_source.html#l00066">llvm::TargetFolder::CreateFMul()</a>, <a class="el" href="TargetFolder_8h_source.html#l00062">llvm::TargetFolder::CreateMul()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Type_8h_source.html#l00202">llvm::Type::isIntOrIntVectorTy()</a>, and <a class="el" href="Instruction_8cpp_source.html#l00184">llvm::Instruction::setFastMathFlags()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="LoopVectorize_8cpp_source.html#l02674">llvm::InnerLoopVectorizer::emitTransformedIndex()</a>, <a class="el" href="Core_8cpp_source.html#l03298">LLVMBuildMul()</a>, and <a class="el" href="Reassociate_8cpp_source.html#l00268">LowerNegateToMultiply()</a>.</p>
 
 </div>
@@ -636,9 +653,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static BinaryOperator * CreateNeg </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> * CreateNeg </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>S1</em>, </td>
         </tr>
         <tr>
@@ -650,13 +667,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>InsertBefore</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>FlagsOp</em>&#160;</td>
         </tr>
         <tr>
@@ -674,6 +691,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l00256">256</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="Instructions_8cpp_source.html#l02393">llvm::BinaryOperator::CreateFNeg()</a>, <a class="el" href="Instructions_8cpp_source.html#l02353">llvm::BinaryOperator::CreateNeg()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Type_8h_source.html#l00202">llvm::Type::isIntOrIntVectorTy()</a>, and <a class="el" href="Instruction_8cpp_source.html#l00184">llvm::Instruction::setFastMathFlags()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="Core_8cpp_source.html#l03395">LLVMBuildNeg()</a>, and <a class="el" href="Reassociate_8cpp_source.html#l00815">NegateValue()</a>.</p>
 
 </div>
@@ -688,15 +707,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * EmitAddTreeOfValues </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * EmitAddTreeOfValues </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; WeakTrackingVH &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1WeakTrackingVH.html">WeakTrackingVH</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>Ops</em>&#160;</td>
         </tr>
         <tr>
@@ -733,21 +752,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static unsigned FindInOperandList </td>
+          <td class="memname">static <a class="el" href="classunsigned.html">unsigned</a> FindInOperandList </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; ValueEntry &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="structllvm_1_1reassociate_1_1ValueEntry.html">ValueEntry</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>Ops</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>X</em>&#160;</td>
         </tr>
         <tr>
@@ -786,13 +805,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void FindSingleUseMultiplyFactors </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Factors</em>&#160;</td>
         </tr>
         <tr>
@@ -813,7 +832,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l01115">1115</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Reassociate_8cpp_source.html#l01115">FindSingleUseMultiplyFactors()</a>, and <a class="el" href="Reassociate_8cpp_source.html#l00147">isReassociableOp()</a>.</p>
+<p class="reference">References <a class="el" href="Reassociate_8cpp_source.html#l01115">FindSingleUseMultiplyFactors()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, and <a class="el" href="Reassociate_8cpp_source.html#l00147">isReassociableOp()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Reassociate_8cpp_source.html#l01115">FindSingleUseMultiplyFactors()</a>.</p>
 
@@ -843,7 +862,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>Opcode</em>&#160;</td>
         </tr>
         <tr>
@@ -865,7 +884,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l00303">303</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Reassociate_8cpp_source.html#l00290">CarmichaelShift()</a>, and <a class="el" href="LoopUnswitch_8cpp.html#a725d39a93d534c431e328d8646709c0c">Threshold()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Reassociate_8cpp_source.html#l00290">CarmichaelShift()</a>, <a class="el" href="Instructions_8h_source.html#l00730">llvm::AtomicRMWInst::FAdd</a>, <a class="el" href="Instruction_8h_source.html#l00506">llvm::Instruction::isIdempotent()</a>, <a class="el" href="Instruction_8h_source.html#l00520">llvm::Instruction::isNilpotent()</a>, and <a class="el" href="LoopUnswitch_8cpp.html#af2ed775d49ada2eede225b2fae288a9f">Threshold</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Reassociate_8cpp_source.html#l00451">LinearizeExprTree()</a>.</p>
 
@@ -929,15 +948,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static BinaryOperator * isReassociableOp </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> * isReassociableOp </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>Opcode</em>&#160;</td>
         </tr>
         <tr>
@@ -973,21 +992,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static BinaryOperator * isReassociableOp </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> * isReassociableOp </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>Opcode1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>Opcode2</em>&#160;</td>
         </tr>
         <tr>
@@ -1019,9 +1038,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool LinearizeExprTree </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> LinearizeExprTree </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
@@ -1070,7 +1089,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l00451">451</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="VPlanSLP_8cpp_source.html#l00196">getOpcode()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Reassociate_8cpp_source.html#l00303">IncorporateWeight()</a>, <a class="el" href="Reassociate_8cpp_source.html#l00147">isReassociableOp()</a>, <a class="el" href="Reassociate_8cpp_source.html#l00268">LowerNegateToMultiply()</a>, and <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="Constants_8cpp_source.html#l02316">llvm::ConstantExpr::getBinOpIdentity()</a>, <a class="el" href="VPlanSLP_8cpp_source.html#l00196">getOpcode()</a>, <a class="el" href="Value_8h_source.html#l00412">llvm::Value::hasOneUse()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Reassociate_8cpp_source.html#l00303">IncorporateWeight()</a>, <a class="el" href="Reassociate_8cpp_source.html#l00147">isReassociableOp()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="Reassociate_8cpp_source.html#l00268">LowerNegateToMultiply()</a>, <a class="el" href="PatternMatch_8h_source.html#l00736">llvm::PatternMatch::m_FNeg()</a>, <a class="el" href="PatternMatch_8h_source.html#l01725">llvm::PatternMatch::m_Neg()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, and <a class="el" href="Value_8h_source.html#l00322">llvm::Value::use_empty()</a>.</p>
 
 </div>
 </div>
@@ -1084,9 +1103,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static BinaryOperator * LowerNegateToMultiply </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> * LowerNegateToMultiply </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>Neg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1102,7 +1121,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l00268">268</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="Reassociate_8cpp_source.html#l00244">CreateMul()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Reassociate_8cpp_source.html#l00244">CreateMul()</a>, <a class="el" href="DebugInfoMetadata_8h_source.html#l00073">llvm::DITypeRefArray::get()</a>, <a class="el" href="Constants_8cpp_source.html#l00328">llvm::Constant::getAllOnesValue()</a>, <a class="el" href="Instruction_8h_source.html#l00321">llvm::Instruction::getDebugLoc()</a>, <a class="el" href="Constants_8cpp_source.html#l00274">llvm::Constant::getNullValue()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Type_8h_source.html#l00202">llvm::Type::isIntOrIntVectorTy()</a>, <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>, <a class="el" href="Instruction_8h_source.html#l00318">llvm::Instruction::setDebugLoc()</a>, <a class="el" href="User_8h_source.html#l00174">llvm::User::setOperand()</a>, and <a class="el" href="Value_8cpp_source.html#l00291">llvm::Value::takeName()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Reassociate_8cpp_source.html#l00451">LinearizeExprTree()</a>.</p>
 
@@ -1118,21 +1137,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * NegateValue </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * NegateValue </td>
           <td>(</td>
-          <td class="paramtype">Value *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>BI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ReassociatePass::OrderedSet &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ReassociatePass.html#ac98feba99afe892014e2dcaf03ade497">ReassociatePass::OrderedSet</a> &amp;&#160;</td>
           <td class="paramname"><em>ToRedo</em>&#160;</td>
         </tr>
         <tr>
@@ -1153,7 +1172,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l00815">815</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Reassociate_8cpp_source.html#l00256">CreateNeg()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Reassociate_8cpp_source.html#l00147">isReassociableOp()</a>, and <a class="el" href="Reassociate_8cpp_source.html#l00815">NegateValue()</a>.</p>
+<p class="reference">References <a class="el" href="Instruction_8cpp_source.html#l00267">llvm::Instruction::andIRFlags()</a>, <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="Reassociate_8cpp_source.html#l00256">CreateNeg()</a>, <a class="el" href="BasicBlock_8h_source.html#l00270">llvm::BasicBlock::end()</a>, <a class="el" href="Instructions_8h_source.html#l00730">llvm::AtomicRMWInst::FAdd</a>, <a class="el" href="Function_8h_source.html#l00664">llvm::Function::getEntryBlock()</a>, <a class="el" href="Constants_8cpp_source.html#l02216">llvm::ConstantExpr::getFNeg()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="Constants_8cpp_source.html#l02209">llvm::ConstantExpr::getNeg()</a>, <a class="el" href="InstrTypes_8h_source.html#l00402">llvm::BinaryOperator::getOpcode()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Reassociate_8cpp_source.html#l00147">isReassociableOp()</a>, <a class="el" href="PatternMatch_8h_source.html#l00736">llvm::PatternMatch::m_FNeg()</a>, <a class="el" href="PatternMatch_8h_source.html#l01725">llvm::PatternMatch::m_Neg()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, <a class="el" href="Instruction_8cpp_source.html#l00086">llvm::Instruction::moveBefore()</a>, <a class="el" href="Reassociate_8cpp_source.html#l00815">NegateValue()</a>, <a class="el" href="Instruction_8cpp_source.html#l00104">llvm::Instruction::setHasNoSignedWrap()</a>, <a class="el" href="Instruction_8cpp_source.html#l00100">llvm::Instruction::setHasNoUnsignedWrap()</a>, <a class="el" href="Instructions_8h_source.html#l00711">llvm::AtomicRMWInst::Sub</a>, and <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Reassociate_8cpp_source.html#l00952">BreakUpSubtract()</a>, and <a class="el" href="Reassociate_8cpp_source.html#l00815">NegateValue()</a>.</p>
 
@@ -1169,15 +1188,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Value * OptimizeAndOrXor </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * OptimizeAndOrXor </td>
           <td>(</td>
-          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
           <td class="paramname"><em>Opcode</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; ValueEntry &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="structllvm_1_1reassociate_1_1ValueEntry.html">ValueEntry</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>Ops</em>&#160;</td>
         </tr>
         <tr>
@@ -1198,7 +1217,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l01131">1131</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Reassociate_8cpp_source.html#l01002">FindInOperandList()</a>, and <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>.</p>
+<p class="reference">References <a class="el" href="Instructions_8h_source.html#l00713">llvm::AtomicRMWInst::And</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="Reassociate_8cpp_source.html#l01002">FindInOperandList()</a>, <a class="el" href="Constants_8cpp_source.html#l00328">llvm::Constant::getAllOnesValue()</a>, <a class="el" href="Constants_8cpp_source.html#l00274">llvm::Constant::getNullValue()</a>, <a class="el" href="PatternMatch_8h_source.html#l01732">llvm::PatternMatch::m_Not()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, <a class="el" href="Instructions_8h_source.html#l00717">llvm::AtomicRMWInst::Or</a>, <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>, and <a class="el" href="Instructions_8h_source.html#l00719">llvm::AtomicRMWInst::Xor</a>.</p>
 
 </div>
 </div>
@@ -1214,13 +1233,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void PrintOps </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; ValueEntry &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="structllvm_1_1reassociate_1_1ValueEntry.html">ValueEntry</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>Ops</em>&#160;</td>
         </tr>
         <tr>
@@ -1240,7 +1259,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l00075">75</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="Instruction_8h_source.html#l00127">llvm::Instruction::getOpcodeName()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -1254,9 +1273,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool ShouldBreakUpSubtract </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> ShouldBreakUpSubtract </td>
           <td>(</td>
-          <td class="paramtype">Instruction *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
           <td class="paramname"><em>Sub</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1272,7 +1291,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Reassociate_8cpp_source.html#l00922">922</a> of file <a class="el" href="Reassociate_8cpp_source.html">Reassociate.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Reassociate_8cpp_source.html#l00147">isReassociableOp()</a>.</p>
+<p class="reference">References <a class="el" href="Instructions_8h_source.html#l00730">llvm::AtomicRMWInst::FAdd</a>, <a class="el" href="Instructions_8h_source.html#l00733">llvm::AtomicRMWInst::FSub</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Value_8h_source.html#l00412">llvm::Value::hasOneUse()</a>, <a class="el" href="Reassociate_8cpp_source.html#l00147">isReassociableOp()</a>, <a class="el" href="PatternMatch_8h_source.html#l00736">llvm::PatternMatch::m_FNeg()</a>, <a class="el" href="PatternMatch_8h_source.html#l01725">llvm::PatternMatch::m_Neg()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, <a class="el" href="Instructions_8h_source.html#l00711">llvm::AtomicRMWInst::Sub</a>, and <a class="el" href="Instruction_8h_source.html#l00063">llvm::Instruction::user_back()</a>.</p>
 
 </div>
 </div>
@@ -1363,7 +1382,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

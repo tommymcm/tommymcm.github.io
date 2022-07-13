@@ -56,70 +56,90 @@ $(function() {
   <div class="headertitle"><div class="title">Evaluator.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Transforms/Utils/Evaluator.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Evaluator_8h_source.html">llvm/Transforms/Utils/Evaluator.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
-<code>#include &quot;llvm/Analysis/ConstantFolding.h&quot;</code><br />
-<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
-<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
-<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalAlias.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalValue.h&quot;</code><br />
-<code>#include &quot;llvm/IR/GlobalVariable.h&quot;</code><br />
-<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
-<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Operator.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
-<code>#include &quot;llvm/IR/User.h&quot;</code><br />
-<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
-<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
-<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="ConstantFolding_8h_source.html">llvm/Analysis/ConstantFolding.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalAlias_8h_source.html">llvm/IR/GlobalAlias.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalValue_8h_source.html">llvm/IR/GlobalValue.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GlobalVariable_8h_source.html">llvm/IR/GlobalVariable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Operator_8h_source.html">llvm/IR/Operator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
 <code>#include &lt;iterator&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Evaluator.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Evaluator_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Utils_2Evaluator_8cpp" alt=""/></div>
 <map name="alib_2Transforms_2Utils_2Evaluator_8cpp" id="alib_2Transforms_2Utils_2Evaluator_8cpp">
-<area shape="rect" title=" " alt="" coords="2635,5,2783,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,167,133"/>
-<area shape="rect" title=" " alt="" coords="191,101,357,126"/>
-<area shape="rect" title=" " alt="" coords="382,101,545,126"/>
-<area shape="rect" title=" " alt="" coords="569,101,744,126"/>
-<area shape="rect" title=" " alt="" coords="768,101,943,126"/>
-<area shape="rect" title=" " alt="" coords="967,101,1197,126"/>
-<area shape="rect" title=" " alt="" coords="1222,101,1377,126"/>
-<area shape="rect" title=" " alt="" coords="1401,101,1536,126"/>
-<area shape="rect" title=" " alt="" coords="1560,101,1703,126"/>
-<area shape="rect" title=" " alt="" coords="1727,101,1877,126"/>
-<area shape="rect" title=" " alt="" coords="1901,101,2060,126"/>
-<area shape="rect" title=" " alt="" coords="2084,101,2256,126"/>
-<area shape="rect" title=" " alt="" coords="2281,101,2419,126"/>
-<area shape="rect" title=" " alt="" coords="2444,101,2603,126"/>
-<area shape="rect" title=" " alt="" coords="2627,101,2790,126"/>
-<area shape="rect" title=" " alt="" coords="2814,101,2993,126"/>
-<area shape="rect" title=" " alt="" coords="3017,101,3168,126"/>
-<area shape="rect" title=" " alt="" coords="3192,101,3345,126"/>
-<area shape="rect" title=" " alt="" coords="3370,101,3530,126"/>
-<area shape="rect" title=" " alt="" coords="3554,101,3714,126"/>
-<area shape="rect" title=" " alt="" coords="3739,101,3881,126"/>
-<area shape="rect" title=" " alt="" coords="3905,101,4045,126"/>
-<area shape="rect" title=" " alt="" coords="4070,101,4185,126"/>
-<area shape="rect" title=" " alt="" coords="4209,101,4323,126"/>
-<area shape="rect" title=" " alt="" coords="4347,101,4467,126"/>
-<area shape="rect" title=" " alt="" coords="4491,101,4662,126"/>
-<area shape="rect" title=" " alt="" coords="4686,101,4849,126"/>
-<area shape="rect" title=" " alt="" coords="4873,101,5080,126"/>
-<area shape="rect" title=" " alt="" coords="5104,101,5175,126"/>
+<area shape="rect" title=" " alt="" coords="4138,5,4286,45"/>
+<area shape="rect" href="Evaluator_8h.html" title=" " alt="" coords="1531,93,1693,133"/>
+<area shape="rect" title=" " alt="" coords="1178,181,1345,207"/>
+<area shape="rect" title=" " alt="" coords="94,695,269,720"/>
+<area shape="rect" title=" " alt="" coords="6073,548,6247,573"/>
+<area shape="rect" href="BasicBlock_8h.html" title=" " alt="" coords="1764,475,1919,500"/>
+<area shape="rect" href="Instruction_8h.html" title=" " alt="" coords="2318,548,2471,573"/>
+<area shape="rect" href="User_8h.html" title=" " alt="" coords="1853,621,1966,647"/>
+<area shape="rect" href="Casting_8h.html" title=" " alt="" coords="2260,915,2431,940"/>
+<area shape="rect" href="Value_8h.html" title=" " alt="" coords="2609,695,2729,720"/>
+<area shape="rect" title=" " alt="" coords="930,768,1001,793"/>
+<area shape="rect" href="CallSite_8h.html" title=" " alt="" coords="2106,181,2241,207"/>
+<area shape="rect" href="Function_8h.html" title=" " alt="" coords="2588,401,2727,427"/>
+<area shape="rect" href="DerivedTypes_8h.html" title=" " alt="" coords="5065,548,5237,573"/>
+<area shape="rect" title=" " alt="" coords="5328,621,5491,647"/>
+<area shape="rect" href="Type_8h.html" title=" " alt="" coords="4281,621,4396,647"/>
+<area shape="rect" href="GlobalValue_8h.html" title=" " alt="" coords="3297,475,3460,500"/>
+<area shape="rect" href="Constant_8h.html" title=" " alt="" coords="1947,548,2090,573"/>
+<area shape="rect" href="InstrTypes_8h.html" title=" " alt="" coords="3633,328,3783,353"/>
+<area shape="rect" href="Constants_8h.html" title="This file contains the declarations for the subclasses of Constant, which represent the different fla..." alt="" coords="4435,475,4584,500"/>
+<area shape="rect" href="Instructions_8h.html" title=" " alt="" coords="2876,255,3036,280"/>
+<area shape="rect" href="GlobalVariable_8h.html" title=" " alt="" coords="4325,401,4504,427"/>
+<area shape="rect" href="ConstantFolding_8h.html" title=" " alt="" coords="4982,101,5213,126"/>
+<area shape="rect" href="DataLayout_8h.html" title=" " alt="" coords="5635,475,5794,500"/>
+<area shape="rect" href="GlobalAlias_8h.html" title=" " alt="" coords="1409,548,1567,573"/>
+<area shape="rect" href="IntrinsicInst_8h.html" title=" " alt="" coords="4639,181,4799,207"/>
+<area shape="rect" href="Intrinsics_8h.html" title=" " alt="" coords="5070,255,5213,280"/>
+<area shape="rect" href="Operator_8h.html" title=" " alt="" coords="3809,401,3949,427"/>
+<area shape="rect" href="Debug_8h.html" title=" " alt="" coords="5845,101,6008,126"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="6182,475,6389,500"/>
+<area shape="rect" title=" " alt="" coords="5256,988,5325,1013"/>
+<area shape="rect" title=" " alt="" coords="896,988,973,1013"/>
+<area shape="rect" title=" " alt="" coords="1573,181,1635,207"/>
+<area shape="rect" title=" " alt="" coords="3777,915,3893,940"/>
+<area shape="rect" title=" " alt="" coords="3003,548,3138,573"/>
+<area shape="rect" title=" " alt="" coords="1853,695,1976,720"/>
+<area shape="rect" title=" " alt="" coords="1575,621,1737,647"/>
+<area shape="rect" title=" " alt="" coords="1206,695,1351,720"/>
+<area shape="rect" title=" " alt="" coords="1271,768,1462,793"/>
+<area shape="rect" href="SymbolTableListTraits_8h.html" title=" " alt="" coords="2354,621,2579,647"/>
+<area shape="rect" title=" " alt="" coords="3609,695,3679,720"/>
+<area shape="rect" href="CBindingWrapping_8h.html" title=" " alt="" coords="2715,841,2957,867"/>
+<area shape="rect" href="Compiler_8h.html" title=" " alt="" coords="3189,988,3368,1013"/>
+<area shape="rect" title=" " alt="" coords="4852,695,4919,720"/>
+<area shape="rect" href="Use_8h.html" title="This defines the Use class." alt="" coords="2613,768,2723,793"/>
+<area shape="rect" title=" " alt="" coords="2253,841,2437,867"/>
+<area shape="rect" title=" " alt="" coords="4177,548,4330,573"/>
+<area shape="rect" href="Attributes_8h.html" title="This file contains the simple types necessary to represent the attributes associated with functions a..." alt="" coords="4659,475,4807,500"/>
+<area shape="rect" href="CallingConv_8h.html" title=" " alt="" coords="2301,475,2462,500"/>
+<area shape="rect" title=" " alt="" coords="4435,695,4583,720"/>
 </map>
 </div>
 </div>
@@ -132,20 +152,20 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7ca7b37342866119229c49b5d479ac18"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Evaluator_8cpp.html#a7ca7b37342866119229c49b5d479ac18">isSimpleEnoughValueToCommit</a> (Constant *C, SmallPtrSetImpl&lt; Constant * &gt; &amp;SimpleConstants, const DataLayout &amp;DL)</td></tr>
+<tr class="memitem:a7ca7b37342866119229c49b5d479ac18"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Evaluator_8cpp.html#a7ca7b37342866119229c49b5d479ac18">isSimpleEnoughValueToCommit</a> (<a class="el" href="classllvm_1_1Constant.html">Constant</a> *C, <a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; <a class="el" href="classllvm_1_1Constant.html">Constant</a> * &gt; &amp;SimpleConstants, const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL)</td></tr>
 <tr class="separator:a7ca7b37342866119229c49b5d479ac18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64280af8a02343f452989f8d3fb62653"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Evaluator_8cpp.html#a64280af8a02343f452989f8d3fb62653">isSimpleEnoughValueToCommitHelper</a> (Constant *C, SmallPtrSetImpl&lt; Constant * &gt; &amp;SimpleConstants, const DataLayout &amp;DL)</td></tr>
+<tr class="memitem:a64280af8a02343f452989f8d3fb62653"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Evaluator_8cpp.html#a64280af8a02343f452989f8d3fb62653">isSimpleEnoughValueToCommitHelper</a> (<a class="el" href="classllvm_1_1Constant.html">Constant</a> *C, <a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; <a class="el" href="classllvm_1_1Constant.html">Constant</a> * &gt; &amp;SimpleConstants, const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL)</td></tr>
 <tr class="memdesc:a64280af8a02343f452989f8d3fb62653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the specified constant can be handled by the code generator.  <a href="Evaluator_8cpp.html#a64280af8a02343f452989f8d3fb62653">More...</a><br /></td></tr>
 <tr class="separator:a64280af8a02343f452989f8d3fb62653"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3622348f4394efe3dbe9b1e6366e7235"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Evaluator_8cpp.html#a3622348f4394efe3dbe9b1e6366e7235">isSimpleEnoughPointerToCommit</a> (Constant *C)</td></tr>
+<tr class="memitem:a3622348f4394efe3dbe9b1e6366e7235"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Evaluator_8cpp.html#a3622348f4394efe3dbe9b1e6366e7235">isSimpleEnoughPointerToCommit</a> (<a class="el" href="classllvm_1_1Constant.html">Constant</a> *C)</td></tr>
 <tr class="memdesc:a3622348f4394efe3dbe9b1e6366e7235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if this constant is simple enough for us to understand.  <a href="Evaluator_8cpp.html#a3622348f4394efe3dbe9b1e6366e7235">More...</a><br /></td></tr>
 <tr class="separator:a3622348f4394efe3dbe9b1e6366e7235"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a000c18b962dfe09f748fa5d8a3fc0d3b"><td class="memItemLeft" align="right" valign="top">static Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Evaluator_8cpp.html#a000c18b962dfe09f748fa5d8a3fc0d3b">evaluateBitcastFromPtr</a> (Constant *Ptr, const DataLayout &amp;DL, const TargetLibraryInfo *TLI, <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">std::function</a>&lt; Constant *(Constant *)&gt; Func)</td></tr>
+<tr class="memitem:a000c18b962dfe09f748fa5d8a3fc0d3b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Evaluator_8cpp.html#a000c18b962dfe09f748fa5d8a3fc0d3b">evaluateBitcastFromPtr</a> (<a class="el" href="classllvm_1_1Constant.html">Constant</a> *Ptr, const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL, const <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *TLI, <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">std::function</a>&lt; <a class="el" href="classllvm_1_1Constant.html">Constant</a> *(<a class="el" href="classllvm_1_1Constant.html">Constant</a> *)&gt; Func)</td></tr>
 <tr class="memdesc:a000c18b962dfe09f748fa5d8a3fc0d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply 'Func' to Ptr.  <a href="Evaluator_8cpp.html#a000c18b962dfe09f748fa5d8a3fc0d3b">More...</a><br /></td></tr>
 <tr class="separator:a000c18b962dfe09f748fa5d8a3fc0d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b33600d412897b2ec3fdce25af8ea99"><td class="memItemLeft" align="right" valign="top">static Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Evaluator_8cpp.html#a2b33600d412897b2ec3fdce25af8ea99">getInitializer</a> (Constant *C)</td></tr>
+<tr class="memitem:a2b33600d412897b2ec3fdce25af8ea99"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Evaluator_8cpp.html#a2b33600d412897b2ec3fdce25af8ea99">getInitializer</a> (<a class="el" href="classllvm_1_1Constant.html">Constant</a> *C)</td></tr>
 <tr class="separator:a2b33600d412897b2ec3fdce25af8ea99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92efb02157b6836e1232c577d34678d6"><td class="memItemLeft" align="right" valign="top">static Function *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Evaluator_8cpp.html#a92efb02157b6836e1232c577d34678d6">getFunction</a> (Constant *C)</td></tr>
+<tr class="memitem:a92efb02157b6836e1232c577d34678d6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Evaluator_8cpp.html#a92efb02157b6836e1232c577d34678d6">getFunction</a> (<a class="el" href="classllvm_1_1Constant.html">Constant</a> *C)</td></tr>
 <tr class="separator:a92efb02157b6836e1232c577d34678d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -176,27 +196,27 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Constant * evaluateBitcastFromPtr </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Constant.html">Constant</a> * evaluateBitcastFromPtr </td>
           <td>(</td>
-          <td class="paramtype">Constant *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td>
           <td class="paramname"><em>Ptr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DataLayout &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
           <td class="paramname"><em>DL</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const TargetLibraryInfo *&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">std::function</a>&lt; Constant *(Constant *)&gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">std::function</a>&lt; <a class="el" href="classllvm_1_1Constant.html">Constant</a> *(<a class="el" href="classllvm_1_1Constant.html">Constant</a> *)&gt;&#160;</td>
           <td class="paramname"><em>Func</em>&#160;</td>
         </tr>
         <tr>
@@ -217,6 +237,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Evaluator_8cpp_source.html#l00182">182</a> of file <a class="el" href="Evaluator_8cpp_source.html">Evaluator.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="ConstantFolding_8cpp_source.html#l01171">llvm::ConstantFoldConstant()</a>, <a class="el" href="Type_8cpp_source.html#l00239">llvm::IntegerType::get()</a>, <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="Type_8h_source.html#l00129">llvm::Type::getContext()</a>, <a class="el" href="Constants_8h_source.html#l01153">llvm::ConstantExpr::getGetElementPtr()</a>, and <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Evaluator_8cpp_source.html#l00328">llvm::Evaluator::EvaluateBlock()</a>.</p>
+
 </div>
 </div>
 <a id="a92efb02157b6836e1232c577d34678d6" name="a92efb02157b6836e1232c577d34678d6"></a>
@@ -229,9 +253,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Function * getFunction </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Function.html">Function</a> * getFunction </td>
           <td>(</td>
-          <td class="paramtype">Constant *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td>
           <td class="paramname"><em>C</em></td><td>)</td>
           <td></td>
         </tr>
@@ -245,7 +269,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Evaluator_8cpp_source.html#l00258">258</a> of file <a class="el" href="Evaluator_8cpp_source.html">Evaluator.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="InstructionSimplify_8cpp_source.html#l02145">computePointerICmp()</a>, <a class="el" href="CodeExtractor_8cpp_source.html#l00950">insertLifetimeMarkersSurroundingCall()</a>, <a class="el" href="Core_8cpp_source.html#l02260">LLVMGetNamedFunction()</a>, and <a class="el" href="CoroInstr_8h_source.html#l00168">llvm::CoroIdInst::setCoroutineSelf()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="InstructionSimplify_8cpp_source.html#l02145">computePointerICmp()</a>, <a class="el" href="Evaluator_8cpp_source.html#l00269">llvm::Evaluator::getCalleeWithFormalArgs()</a>, <a class="el" href="CodeExtractor_8cpp_source.html#l00950">insertLifetimeMarkersSurroundingCall()</a>, <a class="el" href="Core_8cpp_source.html#l02260">LLVMGetNamedFunction()</a>, and <a class="el" href="CoroInstr_8h_source.html#l00168">llvm::CoroIdInst::setCoroutineSelf()</a>.</p>
 
 </div>
 </div>
@@ -259,9 +283,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Constant * getInitializer </td>
+          <td class="memname">static <a class="el" href="classllvm_1_1Constant.html">Constant</a> * getInitializer </td>
           <td>(</td>
-          <td class="paramtype">Constant *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td>
           <td class="paramname"><em>C</em></td><td>)</td>
           <td></td>
         </tr>
@@ -289,9 +313,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isSimpleEnoughPointerToCommit </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isSimpleEnoughPointerToCommit </td>
           <td>(</td>
-          <td class="paramtype">Constant *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td>
           <td class="paramname"><em>C</em></td><td>)</td>
           <td></td>
         </tr>
@@ -308,6 +332,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Evaluator_8cpp_source.html#l00131">131</a> of file <a class="el" href="Evaluator_8cpp_source.html">Evaluator.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="ConstantFolding_8cpp_source.html#l01350">llvm::ConstantFoldLoadThroughGEPConstantExpr()</a>, <a class="el" href="GlobalVariable_8h_source.html#l00136">llvm::GlobalVariable::getInitializer()</a>, <a class="el" href="GlobalVariable_8h_source.html#l00122">llvm::GlobalVariable::hasUniqueInitializer()</a>, and <a class="el" href="Constants_8h_source.html#l00192">llvm::ConstantInt::isZero()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Evaluator_8cpp_source.html#l00328">llvm::Evaluator::EvaluateBlock()</a>.</p>
+
 </div>
 </div>
 <a id="a7ca7b37342866119229c49b5d479ac18" name="a7ca7b37342866119229c49b5d479ac18"></a>
@@ -320,21 +348,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isSimpleEnoughValueToCommit </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isSimpleEnoughValueToCommit </td>
           <td>(</td>
-          <td class="paramtype">Constant *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td>
           <td class="paramname"><em>C</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SmallPtrSetImpl&lt; Constant * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; <a class="el" href="classllvm_1_1Constant.html">Constant</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>SimpleConstants</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DataLayout &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
           <td class="paramname"><em>DL</em>&#160;</td>
         </tr>
         <tr>
@@ -354,7 +382,7 @@ Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="Evaluator_8cpp_source.html#l00061">isSimpleEnoughValueToCommitHelper()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Evaluator_8cpp_source.html#l00061">isSimpleEnoughValueToCommitHelper()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Evaluator_8cpp_source.html#l00328">llvm::Evaluator::EvaluateBlock()</a>, and <a class="el" href="Evaluator_8cpp_source.html#l00061">isSimpleEnoughValueToCommitHelper()</a>.</p>
 
 </div>
 </div>
@@ -368,21 +396,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool isSimpleEnoughValueToCommitHelper </td>
+          <td class="memname">static <a class="el" href="classbool.html">bool</a> isSimpleEnoughValueToCommitHelper </td>
           <td>(</td>
-          <td class="paramtype">Constant *&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td>
           <td class="paramname"><em>C</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SmallPtrSetImpl&lt; Constant * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; <a class="el" href="classllvm_1_1Constant.html">Constant</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>SimpleConstants</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const DataLayout &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
           <td class="paramname"><em>DL</em>&#160;</td>
         </tr>
         <tr>
@@ -404,7 +432,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Evaluator_8cpp_source.html#l00061">61</a> of file <a class="el" href="Evaluator_8cpp_source.html">Evaluator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Evaluator_8cpp_source.html#l00116">isSimpleEnoughValueToCommit()</a>.</p>
+<p class="reference">References <a class="el" href="User_8h_source.html#l00191">llvm::User::getNumOperands()</a>, <a class="el" href="Constants_8h_source.html#l01209">llvm::ConstantExpr::getOpcode()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="DataLayout_8h_source.html#l00601">llvm::DataLayout::getTypeSizeInBits()</a>, and <a class="el" href="Evaluator_8cpp_source.html#l00116">isSimpleEnoughValueToCommit()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Evaluator_8cpp_source.html#l00116">isSimpleEnoughValueToCommit()</a>.</p>
 
@@ -413,7 +441,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:39 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

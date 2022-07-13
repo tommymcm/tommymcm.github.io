@@ -57,22 +57,49 @@ $(function() {
   <div class="headertitle"><div class="title">ARMAttributeParser.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;llvm/Support/ARMAttributeParser.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="ARMAttributeParser_8h_source.html">llvm/Support/ARMAttributeParser.h</a>&quot;</code><br />
 <code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
 <code>#include &quot;llvm/ADT/StringExtras.h&quot;</code><br />
-<code>#include &quot;llvm/Support/LEB128.h&quot;</code><br />
-<code>#include &quot;llvm/Support/ScopedPrinter.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="LEB128_8h_source.html">llvm/Support/LEB128.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScopedPrinter_8h_source.html">llvm/Support/ScopedPrinter.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ARMAttributeParser.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ARMAttributeParser_8cpp__incl.png" border="0" usemap="#alib_2Support_2ARMAttributeParser_8cpp" alt=""/></div>
 <map name="alib_2Support_2ARMAttributeParser_8cpp" id="alib_2Support_2ARMAttributeParser_8cpp">
-<area shape="rect" title=" " alt="" coords="411,5,593,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,201,133"/>
-<area shape="rect" title=" " alt="" coords="226,101,389,126"/>
-<area shape="rect" title=" " alt="" coords="413,101,591,126"/>
-<area shape="rect" title=" " alt="" coords="615,101,784,126"/>
-<area shape="rect" title=" " alt="" coords="809,101,1019,126"/>
+<area shape="rect" title=" " alt="" coords="950,5,1133,45"/>
+<area shape="rect" href="ARMAttributeParser_8h.html" title=" " alt="" coords="689,93,885,133"/>
+<area shape="rect" href="ScopedPrinter_8h.html" title=" " alt="" coords="855,181,977,207"/>
+<area shape="rect" title=" " alt="" coords="960,101,1123,126"/>
+<area shape="rect" title=" " alt="" coords="1147,101,1325,126"/>
+<area shape="rect" href="LEB128_8h.html" title=" " alt="" coords="1278,181,1447,207"/>
+<area shape="rect" href="ARMBuildAttributes_8h.html" title=" " alt="" coords="582,181,743,207"/>
+<area shape="rect" title=" " alt="" coords="768,181,819,207"/>
+<area shape="rect" title=" " alt="" coords="1059,255,1199,280"/>
+<area shape="rect" title=" " alt="" coords="5,255,160,280"/>
+<area shape="rect" title=" " alt="" coords="1275,328,1450,353"/>
+<area shape="rect" title=" " alt="" coords="1709,328,1867,353"/>
+<area shape="rect" href="DataTypes_8h.html" title=" " alt="" coords="93,401,283,427"/>
+<area shape="rect" href="Endian_8h.html" title=" " alt="" coords="707,255,872,280"/>
+<area shape="rect" href="raw__ostream_8h.html" title=" " alt="" coords="1259,255,1466,280"/>
+<area shape="rect" title=" " alt="" coords="949,255,1035,280"/>
+<area shape="rect" title=" " alt="" coords="115,475,261,500"/>
+<area shape="rect" href="AlignOf_8h.html" title=" " alt="" coords="581,328,749,353"/>
+<area shape="rect" href="Compiler_8h.html" title=" " alt="" coords="307,401,485,427"/>
+<area shape="rect" title=" " alt="" coords="682,401,753,427"/>
+<area shape="rect" href="Host_8h.html" title=" " alt="" coords="825,328,975,353"/>
+<area shape="rect" href="SwapByteOrder_8h.html" title=" " alt="" coords="285,328,507,353"/>
+<area shape="rect" title=" " alt="" coords="510,401,602,427"/>
+<area shape="rect" title=" " alt="" coords="1000,328,1069,353"/>
+<area shape="rect" title=" " alt="" coords="1093,328,1160,353"/>
+<area shape="rect" title=" " alt="" coords="1184,328,1251,353"/>
+<area shape="rect" title=" " alt="" coords="459,475,645,500"/>
+<area shape="rect" title=" " alt="" coords="286,475,335,500"/>
+<area shape="rect" title=" " alt="" coords="360,475,435,500"/>
+<area shape="rect" title=" " alt="" coords="967,401,1131,427"/>
+<area shape="rect" title=" " alt="" coords="804,401,943,427"/>
+<area shape="rect" title=" " alt="" coords="1332,401,1391,427"/>
+<area shape="rect" title=" " alt="" coords="1577,328,1685,353"/>
 </map>
 </div>
 </div>
@@ -81,6 +108,7 @@ Include dependency graph for ARMAttributeParser.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
+<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -90,7 +118,7 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a8762c204c72eefdd0c3f08d298dfa7c2"><td class="memItemLeft" align="right" valign="top">static const EnumEntry&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ARMAttributeParser_8cpp.html#a8762c204c72eefdd0c3f08d298dfa7c2">TagNames</a> []</td></tr>
+<tr class="memitem:a8762c204c72eefdd0c3f08d298dfa7c2"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ARMAttributeParser_8cpp.html#a8762c204c72eefdd0c3f08d298dfa7c2">TagNames</a> []</td></tr>
 <tr class="separator:a8762c204c72eefdd0c3f08d298dfa7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -125,7 +153,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const EnumEntry&lt;unsigned&gt; TagNames[]</td>
+          <td class="memname">const <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt;<a class="el" href="classunsigned.html">unsigned</a>&gt; TagNames[]</td>
         </tr>
       </table>
   </td>
@@ -135,10 +163,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">  { <span class="stringliteral">&quot;Tag_File&quot;</span>, ARMBuildAttrs::File },</div>
-<div class="line">  { <span class="stringliteral">&quot;Tag_Section&quot;</span>, ARMBuildAttrs::Section },</div>
-<div class="line">  { <span class="stringliteral">&quot;Tag_Symbol&quot;</span>, ARMBuildAttrs::Symbol },</div>
+<div class="line">  { <span class="stringliteral">&quot;Tag_File&quot;</span>, <a class="code hl_enumvalue" href="namespacellvm_1_1ARMBuildAttrs.html#a7c1a2fb50eb1779d204a599368df2e3aaecf09ba70b320e04fec09afb59d502cd">ARMBuildAttrs::File</a> },</div>
+<div class="line">  { <span class="stringliteral">&quot;Tag_Section&quot;</span>, <a class="code hl_enumvalue" href="namespacellvm_1_1ARMBuildAttrs.html#a7c1a2fb50eb1779d204a599368df2e3aa69c8a3bdf3f5753779a342f0cd97c090">ARMBuildAttrs::Section</a> },</div>
+<div class="line">  { <span class="stringliteral">&quot;Tag_Symbol&quot;</span>, <a class="code hl_enumvalue" href="namespacellvm_1_1ARMBuildAttrs.html#a7c1a2fb50eb1779d204a599368df2e3aaa10cda45fcbf7c8c9804e4e4d2e1bcdf">ARMBuildAttrs::Symbol</a> },</div>
 <div class="line">}</div>
+<div class="ttc" id="anamespacellvm_1_1ARMBuildAttrs_html_a7c1a2fb50eb1779d204a599368df2e3aa69c8a3bdf3f5753779a342f0cd97c090"><div class="ttname"><a href="namespacellvm_1_1ARMBuildAttrs.html#a7c1a2fb50eb1779d204a599368df2e3aa69c8a3bdf3f5753779a342f0cd97c090">llvm::ARMBuildAttrs::Section</a></div><div class="ttdeci">@ Section</div><div class="ttdoc">Legacy Tags.</div><div class="ttdef"><b>Definition:</b> <a href="ARMBuildAttributes_8h_source.html#l00076">ARMBuildAttributes.h:76</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1ARMBuildAttrs_html_a7c1a2fb50eb1779d204a599368df2e3aaa10cda45fcbf7c8c9804e4e4d2e1bcdf"><div class="ttname"><a href="namespacellvm_1_1ARMBuildAttrs.html#a7c1a2fb50eb1779d204a599368df2e3aaa10cda45fcbf7c8c9804e4e4d2e1bcdf">llvm::ARMBuildAttrs::Symbol</a></div><div class="ttdeci">@ Symbol</div><div class="ttdef"><b>Definition:</b> <a href="ARMBuildAttributes_8h_source.html#l00077">ARMBuildAttributes.h:77</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1ARMBuildAttrs_html_a7c1a2fb50eb1779d204a599368df2e3aaecf09ba70b320e04fec09afb59d502cd"><div class="ttname"><a href="namespacellvm_1_1ARMBuildAttrs.html#a7c1a2fb50eb1779d204a599368df2e3aaecf09ba70b320e04fec09afb59d502cd">llvm::ARMBuildAttrs::File</a></div><div class="ttdeci">@ File</div><div class="ttdef"><b>Definition:</b> <a href="ARMBuildAttributes_8h_source.html#l00034">ARMBuildAttributes.h:34</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="ARMAttributeParser_8cpp_source.html#l00019">19</a> of file <a class="el" href="ARMAttributeParser_8cpp_source.html">ARMAttributeParser.cpp</a>.</p>
 
@@ -147,7 +178,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:56:37 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>
