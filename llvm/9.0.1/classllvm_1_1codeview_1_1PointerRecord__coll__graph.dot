@@ -1,0 +1,22 @@
+digraph "llvm::codeview::PointerRecord"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::codeview::PointerRecord",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="llvm::codeview::TypeRecord",height=0.2,width=0.4,color="black",URL="$classllvm_1_1codeview_1_1TypeRecord.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Kind" ,fontname="Helvetica"];
+  Node3 [label="TypeRecordKind",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Attrs\nPointerKindMask\nPointerKindShift\nPointerModeMask\nPointerModeShift\nPointerOptionMask\nPointerSizeMask\nPointerSizeShift" ,fontname="Helvetica"];
+  Node4 [label="uint32_t",height=0.2,width=0.4,color="black",URL="$classuint32__t.html",tooltip=" "];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ReferentType" ,fontname="Helvetica"];
+  Node5 [label="llvm::codeview::TypeIndex",height=0.2,width=0.4,color="black",URL="$classllvm_1_1codeview_1_1TypeIndex.html",tooltip="A 32-bit type reference."];
+  Node4 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DecoratedItemIdMask\nFirstNonSimpleIndex\nSimpleKindMask\nSimpleModeMask" ,fontname="Helvetica"];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" MemberInfo" ,fontname="Helvetica"];
+  Node6 [label="llvm::Optional\< llvm\l::codeview::MemberPointerInfo \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1Optional.html",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< llvm::codeview::Member\lPointerInfo \>" ,fontname="Helvetica"];
+  Node7 [label="llvm::Optional\< T \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1Optional.html",tooltip=" "];
+}

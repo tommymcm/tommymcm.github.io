@@ -1,0 +1,23 @@
+digraph "llvm::orc::MaterializationUnit"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::orc::MaterializationUnit",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A MaterializationUnit represents a set of symbol definitions that can be materialized as a group,..."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="llvm::orc::AbsoluteSymbols\lMaterializationUnit",height=0.2,width=0.4,color="black",URL="$classllvm_1_1orc_1_1AbsoluteSymbolsMaterializationUnit.html",tooltip="A MaterializationUnit implementation for pre-existing absolute symbols."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="llvm::orc::BasicObjectLayer\lMaterializationUnit",height=0.2,width=0.4,color="black",URL="$classllvm_1_1orc_1_1BasicObjectLayerMaterializationUnit.html",tooltip="Materializes the given object file (represented by a MemoryBuffer instance) by calling 'emit' on the ..."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="llvm::orc::IRMaterializationUnit",height=0.2,width=0.4,color="black",URL="$classllvm_1_1orc_1_1IRMaterializationUnit.html",tooltip="IRMaterializationUnit is a convenient base class for MaterializationUnits wrapping LLVM IR."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="llvm::orc::BasicIRLayerMaterializationUnit",height=0.2,width=0.4,color="black",URL="$classllvm_1_1orc_1_1BasicIRLayerMaterializationUnit.html",tooltip="MaterializationUnit that materializes modules by calling the 'emit' method on the given IRLayer."];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="llvm::orc::PartitioningIRMaterializationUnit",height=0.2,width=0.4,color="black",URL="$classllvm_1_1orc_1_1PartitioningIRMaterializationUnit.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="llvm::orc::LazyReexports\lMaterializationUnit",height=0.2,width=0.4,color="black",URL="$classllvm_1_1orc_1_1LazyReexportsMaterializationUnit.html",tooltip="A materialization unit that builds lazy re-exports."];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="llvm::orc::ReExportsMaterializationUnit",height=0.2,width=0.4,color="black",URL="$classllvm_1_1orc_1_1ReExportsMaterializationUnit.html",tooltip="A materialization unit for symbol aliases."];
+}

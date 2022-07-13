@@ -1,0 +1,35 @@
+digraph "llvm::COFFYAML::Section"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::COFFYAML::Section",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Header" ,fontname="Helvetica"];
+  Node2 [label="llvm::COFF::section",height=0.2,width=0.4,color="black",URL="$structllvm_1_1COFF_1_1section.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Name" ,fontname="Helvetica"];
+  Node3 [label="char",height=0.2,width=0.4,color="black",URL="$classchar.html",tooltip=" "];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Characteristics\nPointerToLineNumbers\nPointerToRawData\nPointerToRelocations\nSizeOfRawData\nVirtualAddress\nVirtualSize" ,fontname="Helvetica"];
+  Node4 [label="uint32_t",height=0.2,width=0.4,color="black",URL="$classuint32__t.html",tooltip=" "];
+  Node5 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" NumberOfLineNumbers\nNumberOfRelocations" ,fontname="Helvetica"];
+  Node5 [label="uint16_t",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Alignment" ,fontname="Helvetica"];
+  Node6 [label="unsigned",height=0.2,width=0.4,color="black",URL="$classunsigned.html",tooltip=" "];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" SectionData" ,fontname="Helvetica"];
+  Node7 [label="llvm::yaml::BinaryRef",height=0.2,width=0.4,color="black",URL="$classllvm_1_1yaml_1_1BinaryRef.html",tooltip="Specialized YAMLIO scalar type for representing a binary blob."];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DebugS" ,fontname="Helvetica"];
+  Node8 [label="vector\< llvm::CodeViewYAML\l::YAMLDebugSubsection \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node9 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DebugP\nDebugT" ,fontname="Helvetica"];
+  Node9 [label="vector\< llvm::CodeViewYAML\l::LeafRecord \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node10 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DebugH" ,fontname="Helvetica"];
+  Node10 [label="llvm::Optional\< llvm\l::CodeViewYAML::DebugHSection \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1Optional.html",tooltip=" "];
+  Node11 -> Node10 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< llvm::CodeViewYAML\l::DebugHSection \>" ,fontname="Helvetica"];
+  Node11 [label="llvm::Optional\< T \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1Optional.html",tooltip=" "];
+  Node12 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Relocations" ,fontname="Helvetica"];
+  Node12 [label="vector\< llvm::COFFYAML\l::Relocation \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node13 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Name" ,fontname="Helvetica"];
+  Node13 [label="llvm::StringRef",height=0.2,width=0.4,color="black",URL="$classllvm_1_1StringRef.html",tooltip="StringRef - Represent a constant reference to a string, i.e."];
+  Node14 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" npos" ,fontname="Helvetica"];
+  Node14 [label="size_t",height=0.2,width=0.4,color="black",URL="$classsize__t.html",tooltip=" "];
+}

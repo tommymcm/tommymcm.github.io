@@ -1,0 +1,27 @@
+digraph "Transforms"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir=LR;
+  Node2 [label="LLVM-C: C interface\l to LLVM",height=0.2,width=0.4,color="black",URL="$group__LLVMC.html",tooltip="This module exposes parts of the LLVM library as a C API."];
+  Node1 [label="Transforms",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node3 [label="Aggressive Instruction\l Combining transformations",height=0.2,width=0.4,color="black",URL="$group__LLVMCTransformsAggressiveInstCombine.html",tooltip=" "];
+  Node4 [label="Coroutine transformations",height=0.2,width=0.4,color="black",URL="$group__LLVMCTransformsCoroutines.html",tooltip=" "];
+  Node6 [label="Interprocedural transformations",height=0.2,width=0.4,color="black",URL="$group__LLVMCTransformsIPO.html",tooltip=" "];
+  Node5 [label="Instruction Combining\l transformations",height=0.2,width=0.4,color="black",URL="$group__LLVMCTransformsInstCombine.html",tooltip=" "];
+  Node7 [label="Pass manager builder",height=0.2,width=0.4,color="black",URL="$group__LLVMCTransformsPassManagerBuilder.html",tooltip=" "];
+  Node8 [label="Scalar transformations",height=0.2,width=0.4,color="black",URL="$group__LLVMCTransformsScalar.html",tooltip=" "];
+  Node9 [label="Transformation Utilities",height=0.2,width=0.4,color="black",URL="$group__LLVMCTransformsUtils.html",tooltip=" "];
+  Node10 [label="Vectorization transformations",height=0.2,width=0.4,color="black",URL="$group__LLVMCTransformsVectorize.html",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node9 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node10 [shape=plaintext, dir="back", style="solid"];
+}

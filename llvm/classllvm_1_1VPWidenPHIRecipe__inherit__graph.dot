@@ -1,0 +1,32 @@
+digraph "llvm::VPWidenPHIRecipe"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::VPWidenPHIRecipe",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A recipe for handling all phi nodes except for integer and FP inductions."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="llvm::VPRecipeBase",height=0.2,width=0.4,color="black",URL="$classllvm_1_1VPRecipeBase.html",tooltip="VPRecipeBase is a base class modeling a sequence of one or more output IR instructions."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="llvm::ilist_node_with\l_parent\< VPRecipeBase,\l VPBasicBlock \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node__with__parent.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="llvm::ilist_node\< T,\l Options \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="llvm::ilist_node_impl\l\< ilist_detail::compute\l_node_options\< T, Options...\l \>::type \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node__impl.html",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="firebrick4",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="OptionsT::node_base_type",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node7 -> Node5 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< ilist_detail::compute\l_node_options\< T, Options...\l \>::type \>" ,fontname="Helvetica"];
+  Node7 [label="llvm::ilist_node_impl\l\< OptionsT \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node__impl.html",tooltip="Implementation for an ilist node."];
+  Node6 -> Node7 [dir="back",color="firebrick4",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node3 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< VPRecipeBase, VPBasicBlock \>" ,fontname="Helvetica"];
+  Node8 [label="llvm::ilist_node_with\l_parent\< NodeTy, ParentTy,\l Options \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node__with__parent.html",tooltip="An ilist node that can access its parent list."];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="llvm::ilist_node\< NodeTy,\l Options... \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node.html",tooltip=" "];
+  Node10 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="llvm::ilist_node_impl\l\< OptionsT \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node__impl.html",tooltip="Implementation for an ilist node."];
+  Node6 -> Node10 [dir="back",color="firebrick4",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node9 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< NodeTy, Options... \>" ,fontname="Helvetica"];
+  Node11 [label="llvm::ilist_node\< T,\l Options \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node.html",tooltip=" "];
+  Node5 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

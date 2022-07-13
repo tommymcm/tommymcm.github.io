@@ -1,0 +1,51 @@
+digraph "llvm::pdb::ClassLayout"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::pdb::ClassLayout",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="llvm::pdb::UDTLayoutBase",height=0.2,width=0.4,color="black",URL="$classllvm_1_1pdb_1_1UDTLayoutBase.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="llvm::pdb::LayoutItemBase",height=0.2,width=0.4,color="black",URL="$classllvm_1_1pdb_1_1LayoutItemBase.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Symbol" ,fontname="Helvetica"];
+  Node4 [label="llvm::pdb::PDBSymbol",height=0.2,width=0.4,color="black",URL="$classllvm_1_1pdb_1_1PDBSymbol.html",tooltip="PDBSymbol defines the base of the inheritance hierarchy for concrete symbol types (e...."];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Session" ,fontname="Helvetica"];
+  Node5 [label="llvm::pdb::IPDBSession",height=0.2,width=0.4,color="black",URL="$classllvm_1_1pdb_1_1IPDBSession.html",tooltip="IPDBSession defines an interface used to provide a context for querying debug information from a debu..."];
+  Node6 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" OwnedRawSymbol" ,fontname="Helvetica"];
+  Node6 [label="unique_ptr\< llvm::pdb\l::IPDBRawSymbol \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node7 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" RawSymbol" ,fontname="Helvetica"];
+  Node7 [label="llvm::pdb::IPDBRawSymbol",height=0.2,width=0.4,color="black",URL="$classllvm_1_1pdb_1_1IPDBRawSymbol.html",tooltip="IPDBRawSymbol defines an interface used to represent an arbitrary symbol."];
+  Node2 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Parent" ,fontname="Helvetica"];
+  Node8 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" UsedBytes" ,fontname="Helvetica"];
+  Node8 [label="llvm::BitVector",height=0.2,width=0.4,color="black",URL="$classllvm_1_1BitVector.html",tooltip=" "];
+  Node9 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Name" ,fontname="Helvetica"];
+  Node9 [label="string",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node10 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" LayoutSize\nOffsetInParent\nSizeOf" ,fontname="Helvetica"];
+  Node10 [label="uint32_t",height=0.2,width=0.4,color="black",URL="$classuint32__t.html",tooltip=" "];
+  Node11 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" IsElided" ,fontname="Helvetica"];
+  Node11 [label="bool",height=0.2,width=0.4,color="black",URL="$classbool.html",tooltip=" "];
+  Node10 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DirectVBaseCount" ,fontname="Helvetica"];
+  Node12 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Other" ,fontname="Helvetica"];
+  Node12 [label="UniquePtrVector\< llvm\l::pdb::PDBSymbol \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node13 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Funcs" ,fontname="Helvetica"];
+  Node13 [label="UniquePtrVector\< llvm\l::pdb::PDBSymbolFunc \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node14 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ChildStorage" ,fontname="Helvetica"];
+  Node14 [label="UniquePtrVector\< llvm\l::pdb::LayoutItemBase \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node15 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" LayoutItems" ,fontname="Helvetica"];
+  Node15 [label="vector\< llvm::pdb::\lLayoutItemBase * \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node16 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" AllBases" ,fontname="Helvetica"];
+  Node16 [label="vector\< llvm::pdb::\lBaseClassLayout * \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node17 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" NonVirtualBases\nVirtualBases" ,fontname="Helvetica"];
+  Node17 [label="llvm::ArrayRef\< llvm\l::pdb::BaseClassLayout * \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ArrayRef.html",tooltip=" "];
+  Node18 -> Node17 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< llvm::pdb::BaseClassLayout * \>" ,fontname="Helvetica"];
+  Node18 [label="llvm::ArrayRef\< T \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ArrayRef.html",tooltip="ArrayRef - Represent a constant reference to an array (0 or more elements consecutively in memory),..."];
+  Node19 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" VTable" ,fontname="Helvetica"];
+  Node19 [label="llvm::pdb::VTableLayoutItem",height=0.2,width=0.4,color="black",URL="$classllvm_1_1pdb_1_1VTableLayoutItem.html",tooltip=" "];
+  Node3 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" VBPtr" ,fontname="Helvetica"];
+  Node20 [label="llvm::pdb::VBPtrLayoutItem",height=0.2,width=0.4,color="black",URL="$classllvm_1_1pdb_1_1VBPtrLayoutItem.html",tooltip=" "];
+  Node3 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

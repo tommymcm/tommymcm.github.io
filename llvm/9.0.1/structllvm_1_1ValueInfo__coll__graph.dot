@@ -1,0 +1,12 @@
+digraph "llvm::ValueInfo"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  Node1 [label="llvm::ValueInfo",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Struct that holds a reference to a particular GUID in a global value summary."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" RefAndFlags" ,fontname="Helvetica"];
+  Node2 [label="llvm::PointerIntPair\l\< const GlobalValueSummaryMap\lTy::value_type *, 3, int \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1PointerIntPair.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< const GlobalValueSummary\lMapTy::value_type *, 3, int \>" ,fontname="Helvetica"];
+  Node3 [label="llvm::PointerIntPair\l\< PointerTy, IntBits,\l IntType, PtrTraits, Info \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1PointerIntPair.html",tooltip="PointerIntPair - This class implements a pair of a pointer and small integer."];
+}

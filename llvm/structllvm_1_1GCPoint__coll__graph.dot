@@ -1,0 +1,52 @@
+digraph "llvm::GCPoint"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::GCPoint",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="GCPoint - Metadata for a collector-safe point in machine code."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Label" ,fontname="Helvetica"];
+  Node2 [label="llvm::MCSymbol",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MCSymbol.html",tooltip="MCSymbol - Instances of this class represent a symbol name in the MC file, and MCSymbols are created ..."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" AbsolutePseudoFragment" ,fontname="Helvetica"];
+  Node3 [label="llvm::MCFragment",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MCFragment.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="llvm::ilist_node_with\l_parent\< MCFragment,\l MCSection \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node__with__parent.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="llvm::ilist_node\< T,\l Options \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node.html",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="llvm::ilist_node_impl\l\< ilist_detail::compute\l_node_options\< T, Options...\l \>::type \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node__impl.html",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="firebrick4",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="OptionsT::node_base_type",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node8 -> Node6 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< ilist_detail::compute\l_node_options\< T, Options...\l \>::type \>" ,fontname="Helvetica"];
+  Node8 [label="llvm::ilist_node_impl\l\< OptionsT \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node__impl.html",tooltip="Implementation for an ilist node."];
+  Node7 -> Node8 [dir="back",color="firebrick4",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node4 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< MCFragment, MCSection \>" ,fontname="Helvetica"];
+  Node9 [label="llvm::ilist_node_with\l_parent\< NodeTy, ParentTy,\l Options \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node__with__parent.html",tooltip="An ilist node that can access its parent list."];
+  Node10 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="llvm::ilist_node\< NodeTy,\l Options... \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node.html",tooltip=" "];
+  Node11 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="llvm::ilist_node_impl\l\< OptionsT \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node__impl.html",tooltip="Implementation for an ilist node."];
+  Node7 -> Node11 [dir="back",color="firebrick4",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node10 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< NodeTy, Options... \>" ,fontname="Helvetica"];
+  Node12 [label="llvm::ilist_node\< T,\l Options \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ilist__node.html",tooltip=" "];
+  Node6 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" HasInstructions" ,fontname="Helvetica"];
+  Node13 [label="bool",height=0.2,width=0.4,color="black",URL="$classbool.html",tooltip=" "];
+  Node14 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" FragmentAndHasName" ,fontname="Helvetica"];
+  Node14 [label="llvm::PointerIntPair\l\< llvm::MCFragment *, 1 \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1PointerIntPair.html",tooltip=" "];
+  Node15 -> Node14 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< llvm::MCFragment\l *, 1 \>" ,fontname="Helvetica"];
+  Node15 [label="llvm::PointerIntPair\l\< PointerTy, IntBits,\l IntType, PtrTraits, Info \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1PointerIntPair.html",tooltip="PointerIntPair - This class implements a pair of a pointer and small integer."];
+  Node16 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" CommonAlignLog2\nIsExternal\nIsPrivateExtern\nIsRedefinable\nIsRegistered\nIsTemporary\nIsUsed\nIsUsedInReloc\nKind\nSymbolContents\n..." ,fontname="Helvetica"];
+  Node16 [label="unsigned",height=0.2,width=0.4,color="black",URL="$classunsigned.html",tooltip=" "];
+  Node17 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Flags\nIndex" ,fontname="Helvetica"];
+  Node17 [label="uint32_t",height=0.2,width=0.4,color="black",URL="$classuint32__t.html",tooltip=" "];
+  Node18 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" AlignmentPadding\nCommonSize\nOffset" ,fontname="Helvetica"];
+  Node18 [label="uint64_t",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node19 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Value" ,fontname="Helvetica"];
+  Node19 [label="llvm::MCExpr",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MCExpr.html",tooltip="Base class for the full range of assembler expressions which are needed for parsing."];
+  Node20 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" @286" ,fontname="Helvetica"];
+  Node20 [label="anonymous:@286",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node21 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Loc" ,fontname="Helvetica"];
+  Node21 [label="llvm::DebugLoc",height=0.2,width=0.4,color="black",URL="$classllvm_1_1DebugLoc.html",tooltip="A debug info location."];
+}

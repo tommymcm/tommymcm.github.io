@@ -1,0 +1,21 @@
+digraph "llvm::wasm::WasmFunction"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::wasm::WasmFunction",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" CodeOffset\nCodeSectionOffset\nComdat\nIndex\nSize" ,fontname="Helvetica"];
+  Node2 [label="uint32_t",height=0.2,width=0.4,color="black",URL="$classuint32__t.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Locals" ,fontname="Helvetica"];
+  Node3 [label="vector\< llvm::wasm\l::WasmLocalDecl \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Body" ,fontname="Helvetica"];
+  Node4 [label="llvm::ArrayRef\< uint8_t \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ArrayRef.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< uint8_t \>" ,fontname="Helvetica"];
+  Node5 [label="llvm::ArrayRef\< T \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ArrayRef.html",tooltip="ArrayRef - Represent a constant reference to an array (0 or more elements consecutively in memory),..."];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DebugName\nSymbolName" ,fontname="Helvetica"];
+  Node6 [label="llvm::StringRef",height=0.2,width=0.4,color="black",URL="$classllvm_1_1StringRef.html",tooltip="StringRef - Represent a constant reference to a string, i.e."];
+  Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" npos" ,fontname="Helvetica"];
+  Node7 [label="size_t",height=0.2,width=0.4,color="black",URL="$classsize__t.html",tooltip=" "];
+}

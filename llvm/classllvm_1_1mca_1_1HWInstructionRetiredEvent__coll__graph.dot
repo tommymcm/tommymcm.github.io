@@ -1,0 +1,18 @@
+digraph "llvm::mca::HWInstructionRetiredEvent"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  Node1 [label="llvm::mca::HWInstruction\lRetiredEvent",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="llvm::mca::HWInstruction\lEvent",height=0.2,width=0.4,color="black",URL="$classllvm_1_1mca_1_1HWInstructionEvent.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Type" ,fontname="Helvetica"];
+  Node3 [label="unsigned",height=0.2,width=0.4,color="black",URL="$classunsigned.html",tooltip=" "];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" IR" ,fontname="Helvetica"];
+  Node4 [label="llvm::mca::InstRef",height=0.2,width=0.4,color="black",URL="$classllvm_1_1mca_1_1InstRef.html",tooltip="An InstRef contains both a SourceMgr index and Instruction pair."];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" FreedPhysRegs" ,fontname="Helvetica"];
+  Node5 [label="llvm::ArrayRef\< unsigned \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ArrayRef.html",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< unsigned \>" ,fontname="Helvetica"];
+  Node6 [label="llvm::ArrayRef\< T \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ArrayRef.html",tooltip="ArrayRef - Represent a constant reference to an array (0 or more elements consecutively in memory),..."];
+}

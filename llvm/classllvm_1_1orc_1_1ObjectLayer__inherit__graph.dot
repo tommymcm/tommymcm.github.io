@@ -1,0 +1,15 @@
+digraph "llvm::orc::ObjectLayer"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::orc::ObjectLayer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Interface for Layers that accept object files."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="llvm::orc::ObjectLinking\lLayer",height=0.2,width=0.4,color="black",URL="$classllvm_1_1orc_1_1ObjectLinkingLayer.html",tooltip="An ObjectLayer implementation built on JITLink."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="llvm::orc::ObjectTransform\lLayer",height=0.2,width=0.4,color="black",URL="$classllvm_1_1orc_1_1ObjectTransformLayer.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="llvm::orc::RTDyldObjectLinking\lLayer",height=0.2,width=0.4,color="black",URL="$classllvm_1_1orc_1_1RTDyldObjectLinkingLayer.html",tooltip=" "];
+}

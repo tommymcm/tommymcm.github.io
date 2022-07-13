@@ -1,0 +1,12 @@
+digraph "llvm::PointerLikeTypeTraits&lt; ReturnT(*)(ParamTs...)&gt;"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  Node1 [label="llvm::PointerLikeTypeTraits\l\< ReturnT(*)(ParamTs...)\>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Provide a default specialization for function pointers that assumes 4-byte alignment."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="llvm::FunctionPointerLike\lTypeTraits\< 4, ReturnT\l(*)(ParamTs...)\>",height=0.2,width=0.4,color="black",URL="$structllvm_1_1FunctionPointerLikeTypeTraits.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< 4, ReturnT(*)(ParamTs...)\>" ,fontname="Helvetica"];
+  Node3 [label="llvm::FunctionPointerLike\lTypeTraits\< Alignment,\l FunctionPointerT \>",height=0.2,width=0.4,color="black",URL="$structllvm_1_1FunctionPointerLikeTypeTraits.html",tooltip="Provide suitable custom traits struct for function pointers."];
+}

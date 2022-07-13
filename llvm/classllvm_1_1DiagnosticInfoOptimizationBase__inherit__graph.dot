@@ -1,0 +1,35 @@
+digraph "llvm::DiagnosticInfoOptimizationBase"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::DiagnosticInfoOptimizationBase",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Common features for diagnostics dealing with optimization remarks that are used by both IR and MIR pa..."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="llvm::DiagnosticInfoWith\lLocationBase",height=0.2,width=0.4,color="black",URL="$classllvm_1_1DiagnosticInfoWithLocationBase.html",tooltip="Common features for diagnostics with an associated location."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="llvm::DiagnosticInfo",height=0.2,width=0.4,color="black",URL="$classllvm_1_1DiagnosticInfo.html",tooltip="This is the base abstract class for diagnostic reporting in the backend."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="llvm::DiagnosticInfoIROptimization",height=0.2,width=0.4,color="black",URL="$classllvm_1_1DiagnosticInfoIROptimization.html",tooltip="Common features for diagnostics dealing with optimization remarks that are used by IR passes."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="llvm::DiagnosticInfoOptimization\lFailure",height=0.2,width=0.4,color="black",URL="$classllvm_1_1DiagnosticInfoOptimizationFailure.html",tooltip="Diagnostic information for optimization failures."];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="llvm::OptimizationRemark",height=0.2,width=0.4,color="black",URL="$classllvm_1_1OptimizationRemark.html",tooltip="Diagnostic information for applied optimization remarks."];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="llvm::OptimizationRemark\lAnalysis",height=0.2,width=0.4,color="black",URL="$classllvm_1_1OptimizationRemarkAnalysis.html",tooltip="Diagnostic information for optimization analysis remarks."];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="llvm::OptimizationRemark\lAnalysisAliasing",height=0.2,width=0.4,color="black",URL="$classllvm_1_1OptimizationRemarkAnalysisAliasing.html",tooltip="Diagnostic information for optimization analysis remarks related to pointer aliasing."];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="llvm::OptimizationRemark\lAnalysisFPCommute",height=0.2,width=0.4,color="black",URL="$classllvm_1_1OptimizationRemarkAnalysisFPCommute.html",tooltip="Diagnostic information for optimization analysis remarks related to floating-point non-commutativity."];
+  Node4 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="llvm::OptimizationRemark\lMissed",height=0.2,width=0.4,color="black",URL="$classllvm_1_1OptimizationRemarkMissed.html",tooltip="Diagnostic information for missed-optimization remarks."];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="llvm::DiagnosticInfoMIROptimization",height=0.2,width=0.4,color="black",URL="$classllvm_1_1DiagnosticInfoMIROptimization.html",tooltip="Common features for diagnostics dealing with optimization remarks that are used by machine passes."];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="llvm::MachineOptimization\lRemark",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MachineOptimizationRemark.html",tooltip="Diagnostic information for applied optimization remarks."];
+  Node11 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="llvm::MachineOptimization\lRemarkAnalysis",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MachineOptimizationRemarkAnalysis.html",tooltip="Diagnostic information for optimization analysis remarks."];
+  Node11 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="llvm::MachineOptimization\lRemarkMissed",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MachineOptimizationRemarkMissed.html",tooltip="Diagnostic information for missed-optimization remarks."];
+}

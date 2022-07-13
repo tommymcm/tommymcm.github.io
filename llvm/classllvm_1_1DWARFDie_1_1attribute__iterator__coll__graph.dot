@@ -1,0 +1,17 @@
+digraph "llvm::DWARFDie::attribute_iterator"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::DWARFDie::attribute\l_iterator",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="llvm::iterator_facade\l_base\< attribute_iterator,\l std::forward_iterator_tag,\l const DWARFAttribute \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1iterator__facade__base.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="std::iterator\< std\l::forward_iterator_tag,\l const DWARFAttribute,\l std::ptrdiff_t, const\l DWARFAttribute *, const\l DWARFAttribute & \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node4 -> Node2 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< attribute_iterator,\l std::forward_iterator\l_tag, const DWARFAttribute \>" ,fontname="Helvetica"];
+  Node4 [label="llvm::iterator_facade\l_base\< DerivedT, IteratorCategory\lT, T, DifferenceTypeT, PointerT,\l ReferenceT \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1iterator__facade__base.html",tooltip="CRTP base class which implements the entire standard iterator facade in terms of a minimal subset of ..."];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="std::iterator\< IteratorCategory\lT, T, std::ptrdiff_t, T *, T & \>",height=0.2,width=0.4,color="black",tooltip=" "];
+}

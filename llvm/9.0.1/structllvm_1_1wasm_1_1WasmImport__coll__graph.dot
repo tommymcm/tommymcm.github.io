@@ -1,0 +1,35 @@
+digraph "llvm::wasm::WasmImport"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::wasm::WasmImport",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Field\nModule" ,fontname="Helvetica"];
+  Node2 [label="llvm::StringRef",height=0.2,width=0.4,color="black",URL="$classllvm_1_1StringRef.html",tooltip="StringRef - Represent a constant reference to a string, i.e."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" npos" ,fontname="Helvetica"];
+  Node3 [label="size_t",height=0.2,width=0.4,color="black",URL="$classsize__t.html",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Kind" ,fontname="Helvetica"];
+  Node4 [label="uint8_t",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" SigIndex" ,fontname="Helvetica"];
+  Node5 [label="uint32_t",height=0.2,width=0.4,color="black",URL="$classuint32__t.html",tooltip=" "];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Global" ,fontname="Helvetica"];
+  Node6 [label="llvm::wasm::WasmGlobalType",height=0.2,width=0.4,color="black",URL="$structllvm_1_1wasm_1_1WasmGlobalType.html",tooltip=" "];
+  Node4 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Type" ,fontname="Helvetica"];
+  Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Mutable" ,fontname="Helvetica"];
+  Node7 [label="bool",height=0.2,width=0.4,color="black",URL="$classbool.html",tooltip=" "];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Table" ,fontname="Helvetica"];
+  Node8 [label="llvm::wasm::WasmTable",height=0.2,width=0.4,color="black",URL="$structllvm_1_1wasm_1_1WasmTable.html",tooltip=" "];
+  Node4 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ElemType" ,fontname="Helvetica"];
+  Node9 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Limits" ,fontname="Helvetica"];
+  Node9 [label="llvm::wasm::WasmLimits",height=0.2,width=0.4,color="black",URL="$structllvm_1_1wasm_1_1WasmLimits.html",tooltip=" "];
+  Node4 -> Node9 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Flags" ,fontname="Helvetica"];
+  Node5 -> Node9 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Initial\nMaximum" ,fontname="Helvetica"];
+  Node9 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Memory" ,fontname="Helvetica"];
+  Node10 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Event" ,fontname="Helvetica"];
+  Node10 [label="llvm::wasm::WasmEventType",height=0.2,width=0.4,color="black",URL="$structllvm_1_1wasm_1_1WasmEventType.html",tooltip=" "];
+  Node5 -> Node10 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Attribute\nSigIndex" ,fontname="Helvetica"];
+  Node11 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" @152" ,fontname="Helvetica"];
+  Node11 [label="anonymous:@152",height=0.2,width=0.4,color="black",tooltip=" "];
+}

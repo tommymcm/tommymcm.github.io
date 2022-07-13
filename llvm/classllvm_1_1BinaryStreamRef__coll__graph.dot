@@ -1,0 +1,29 @@
+digraph "llvm::BinaryStreamRef"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::BinaryStreamRef",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="BinaryStreamRef is to BinaryStream what ArrayRef is to an Array."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="llvm::BinaryStreamRefBase\l\< BinaryStreamRef, BinaryStream \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1BinaryStreamRefBase.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" SharedImpl" ,fontname="Helvetica"];
+  Node3 [label="shared_ptr\< BinaryStream \>",height=0.2,width=0.4,color="black",URL="$classstd_1_1shared__ptr_3_01BinaryStream_01_4.html",tooltip=" "];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" BorrowedImpl" ,fontname="Helvetica"];
+  Node4 [label="llvm::BinaryStream",height=0.2,width=0.4,color="black",URL="$classllvm_1_1BinaryStream.html",tooltip="An interface for accessing data in a stream-like format, but which discourages copying."];
+  Node5 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ViewOffset" ,fontname="Helvetica"];
+  Node5 [label="uint32_t",height=0.2,width=0.4,color="black",URL="$classuint32__t.html",tooltip=" "];
+  Node6 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Length" ,fontname="Helvetica"];
+  Node6 [label="llvm::Optional\< uint32_t \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1Optional.html",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< uint32_t \>" ,fontname="Helvetica"];
+  Node7 [label="llvm::Optional\< T \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1Optional.html",tooltip=" "];
+  Node8 -> Node2 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< BinaryStreamRef,\l BinaryStream \>" ,fontname="Helvetica"];
+  Node8 [label="llvm::BinaryStreamRefBase\l\< RefType, StreamType \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1BinaryStreamRefBase.html",tooltip="Common stuff for mutable and immutable StreamRefs."];
+  Node9 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" SharedImpl" ,fontname="Helvetica"];
+  Node9 [label="shared_ptr\< StreamType \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node10 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" BorrowedImpl" ,fontname="Helvetica"];
+  Node10 [label="StreamType *",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node5 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ViewOffset" ,fontname="Helvetica"];
+  Node6 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Length" ,fontname="Helvetica"];
+}

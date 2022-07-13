@@ -1,0 +1,18 @@
+digraph "llvm::BinaryStreamRefBase&lt; RefType, StreamType &gt;"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  Node1 [label="llvm::BinaryStreamRefBase\l\< RefType, StreamType \>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Common stuff for mutable and immutable StreamRefs."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" SharedImpl" ,fontname="Helvetica"];
+  Node2 [label="shared_ptr\< StreamType \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" BorrowedImpl" ,fontname="Helvetica"];
+  Node3 [label="StreamType *",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ViewOffset" ,fontname="Helvetica"];
+  Node4 [label="uint32_t",height=0.2,width=0.4,color="black",URL="$classuint32__t.html",tooltip=" "];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Length" ,fontname="Helvetica"];
+  Node5 [label="llvm::Optional\< uint32_t \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1Optional.html",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< uint32_t \>" ,fontname="Helvetica"];
+  Node6 [label="llvm::Optional\< T \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1Optional.html",tooltip=" "];
+}

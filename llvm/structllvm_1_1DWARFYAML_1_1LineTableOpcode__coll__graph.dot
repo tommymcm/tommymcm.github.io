@@ -1,0 +1,28 @@
+digraph "llvm::DWARFYAML::LineTableOpcode"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::DWARFYAML::LineTable\lOpcode",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Opcode" ,fontname="Helvetica"];
+  Node2 [label="LineNumberOps",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Data\nExtLen" ,fontname="Helvetica"];
+  Node3 [label="uint64_t",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" SubOpcode" ,fontname="Helvetica"];
+  Node4 [label="LineNumberExtendedOps",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" SData" ,fontname="Helvetica"];
+  Node5 [label="int64_t",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" FileEntry" ,fontname="Helvetica"];
+  Node6 [label="llvm::DWARFYAML::File",height=0.2,width=0.4,color="black",URL="$structllvm_1_1DWARFYAML_1_1File.html",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Name" ,fontname="Helvetica"];
+  Node7 [label="llvm::StringRef",height=0.2,width=0.4,color="black",URL="$classllvm_1_1StringRef.html",tooltip="StringRef - Represent a constant reference to a string, i.e."];
+  Node8 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" npos" ,fontname="Helvetica"];
+  Node8 [label="size_t",height=0.2,width=0.4,color="black",URL="$classsize__t.html",tooltip=" "];
+  Node3 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DirIdx\nLength\nModTime" ,fontname="Helvetica"];
+  Node9 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" UnknownOpcodeData" ,fontname="Helvetica"];
+  Node9 [label="vector\< llvm::yaml\l::Hex8 \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node10 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" StandardOpcodeData" ,fontname="Helvetica"];
+  Node10 [label="vector\< llvm::yaml\l::Hex64 \>",height=0.2,width=0.4,color="black",tooltip=" "];
+}

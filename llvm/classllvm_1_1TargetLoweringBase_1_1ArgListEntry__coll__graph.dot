@@ -1,0 +1,22 @@
+digraph "llvm::TargetLoweringBase::ArgListEntry"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  Node1 [label="llvm::TargetLoweringBase\l::ArgListEntry",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Val" ,fontname="Helvetica"];
+  Node2 [label="llvm::Value",height=0.2,width=0.4,color="black",URL="$classllvm_1_1Value.html",tooltip="LLVM Value Representation."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" HasDescriptor\nHasHungOffUses\nHasName\nIsUsedByMD\nMaxAlignmentExponent\nMaximumAlignment\nNumUserOperands\nSubclassOptionalData" ,fontname="Helvetica"];
+  Node3 [label="unsigned",height=0.2,width=0.4,color="black",URL="$classunsigned.html",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Node" ,fontname="Helvetica"];
+  Node4 [label="llvm::SDValue",height=0.2,width=0.4,color="black",URL="$classllvm_1_1SDValue.html",tooltip="Unlike LLVM values, Selection DAG nodes may return multiple values as the result of a computation."];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ByValType\nTy" ,fontname="Helvetica"];
+  Node5 [label="llvm::Type",height=0.2,width=0.4,color="black",URL="$classllvm_1_1Type.html",tooltip="The instances of the Type class are immutable: once they are created, they are never changed."];
+  Node3 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" NumContainedTys" ,fontname="Helvetica"];
+  Node5 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ContainedTys" ,fontname="Helvetica"];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" IsByVal\nIsInAlloca\nIsInReg\nIsNest\nIsReturned\nIsSExt\nIsSRet\nIsSwiftError\nIsSwiftSelf\nIsZExt\n..." ,fontname="Helvetica"];
+  Node6 [label="bool",height=0.2,width=0.4,color="black",URL="$classbool.html",tooltip=" "];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Alignment" ,fontname="Helvetica"];
+  Node7 [label="uint16_t",height=0.2,width=0.4,color="black",tooltip=" "];
+}

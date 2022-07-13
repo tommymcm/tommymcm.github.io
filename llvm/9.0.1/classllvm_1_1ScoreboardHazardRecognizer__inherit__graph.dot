@@ -1,0 +1,14 @@
+digraph "llvm::ScoreboardHazardRecognizer"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  Node1 [label="llvm::ScoreboardHazardRecognizer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="llvm::ScheduleHazardRecognizer",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ScheduleHazardRecognizer.html",tooltip="HazardRecognizer - This determines whether or not an instruction can be issued this cycle,..."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="llvm::ARMHazardRecognizer",height=0.2,width=0.4,color="black",URL="$classllvm_1_1ARMHazardRecognizer.html",tooltip="ARMHazardRecognizer handles special constraints that are not expressed in the scheduling itinerary."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="llvm::PPCDispatchGroupSBHazard\lRecognizer",height=0.2,width=0.4,color="black",URL="$classllvm_1_1PPCDispatchGroupSBHazardRecognizer.html",tooltip="PPCDispatchGroupSBHazardRecognizer - This class implements a scoreboard-based hazard recognizer for P..."];
+}

@@ -1,0 +1,21 @@
+digraph "llvm::LoopBase&lt; BlockT, LoopT &gt;"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::LoopBase\< BlockT,\l LoopT \>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Instances of this class are used to represent loops that are detected in the flow graph."];
+  Node1 -> Node2 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< BasicBlock, Loop \>" ,fontname="Helvetica"];
+  Node2 [label="llvm::LoopBase\< BasicBlock,\l Loop \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1LoopBase.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="llvm::Loop",height=0.2,width=0.4,color="black",URL="$classllvm_1_1Loop.html",tooltip="Represents a single loop in the control flow graph."];
+  Node1 -> Node4 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< MachineBasicBlock,\l MachineLoop \>" ,fontname="Helvetica"];
+  Node4 [label="llvm::LoopBase\< MachineBasic\lBlock, MachineLoop \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1LoopBase.html",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="llvm::MachineLoop",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MachineLoop.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< VPBlockBase, VPLoop \>" ,fontname="Helvetica"];
+  Node6 [label="llvm::LoopBase\< VPBlockBase,\l VPLoop \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1LoopBase.html",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="llvm::VPLoop",height=0.2,width=0.4,color="black",URL="$classllvm_1_1VPLoop.html",tooltip="Hold analysis information for every loop detected by VPLoopInfo."];
+}

@@ -1,0 +1,43 @@
+digraph "llvm::minidump::SystemInfo"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="llvm::minidump::SystemInfo",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The SystemInfo stream, containing various information about the system where this minidump was genera..."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ProcessorArch" ,fontname="Helvetica"];
+  Node2 [label="llvm::support::detail\l::packed_endian_specific\l_integral\< ProcessorArchitecture \>",height=0.2,width=0.4,color="black",URL="$structllvm_1_1support_1_1detail_1_1packed__endian__specific__integral.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" endian" ,fontname="Helvetica"];
+  Node3 [label="static constexpr endianness",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" alignment" ,fontname="Helvetica"];
+  Node4 [label="size_t",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node5 -> Node2 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< ProcessorArchitecture \>" ,fontname="Helvetica"];
+  Node5 [label="llvm::support::detail\l::packed_endian_specific\l_integral\< ValueType, Endian,\l Alignment \>",height=0.2,width=0.4,color="black",URL="$structllvm_1_1support_1_1detail_1_1packed__endian__specific__integral.html",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" endian" ,fontname="Helvetica"];
+  Node4 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" alignment" ,fontname="Helvetica"];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ProcessorLevel\nProcessorRevision\nReserved\nSuiteMask" ,fontname="Helvetica"];
+  Node6 [label="packed_endian_specific\l_integral\< uint16_t, little,\l unaligned \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" NumberOfProcessors\nProductType" ,fontname="Helvetica"];
+  Node7 [label="uint8_t",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" BuildNumber\nCSDVersionRVA\nMajorVersion\nMinorVersion" ,fontname="Helvetica"];
+  Node8 [label="packed_endian_specific\l_integral\< uint32_t, little,\l unaligned \>",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node9 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" PlatformId" ,fontname="Helvetica"];
+  Node9 [label="llvm::support::detail\l::packed_endian_specific\l_integral\< OSPlatform \>",height=0.2,width=0.4,color="black",URL="$structllvm_1_1support_1_1detail_1_1packed__endian__specific__integral.html",tooltip=" "];
+  Node3 -> Node9 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" endian" ,fontname="Helvetica"];
+  Node4 -> Node9 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" alignment" ,fontname="Helvetica"];
+  Node5 -> Node9 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< OSPlatform \>" ,fontname="Helvetica"];
+  Node10 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" CPU" ,fontname="Helvetica"];
+  Node10 [label="llvm::minidump::CPUInfo",height=0.2,width=0.4,color="black",URL="$unionllvm_1_1minidump_1_1CPUInfo.html",tooltip="Detailed information about the processor of the system that generated this minidump."];
+  Node11 -> Node10 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" X86" ,fontname="Helvetica"];
+  Node11 [label="llvm::minidump::CPUInfo\l::X86Info",height=0.2,width=0.4,color="black",URL="$structllvm_1_1minidump_1_1CPUInfo_1_1X86Info.html",tooltip=" "];
+  Node12 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" VendorID" ,fontname="Helvetica"];
+  Node12 [label="char",height=0.2,width=0.4,color="black",URL="$classchar.html",tooltip=" "];
+  Node8 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" AMDExtendedFeatures\nFeatureInfo\nVersionInfo" ,fontname="Helvetica"];
+  Node13 -> Node10 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Arm" ,fontname="Helvetica"];
+  Node13 [label="llvm::minidump::CPUInfo\l::ArmInfo",height=0.2,width=0.4,color="black",URL="$structllvm_1_1minidump_1_1CPUInfo_1_1ArmInfo.html",tooltip=" "];
+  Node8 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" CPUID\nElfHWCaps" ,fontname="Helvetica"];
+  Node14 -> Node10 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Other" ,fontname="Helvetica"];
+  Node14 [label="llvm::minidump::CPUInfo\l::OtherInfo",height=0.2,width=0.4,color="black",URL="$structllvm_1_1minidump_1_1CPUInfo_1_1OtherInfo.html",tooltip=" "];
+  Node7 -> Node14 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ProcessorFeatures" ,fontname="Helvetica"];
+}

@@ -1,0 +1,49 @@
+digraph "BaseCL"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  rankdir="LR";
+  Node1 [label="BaseCL",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="llvm::MemSetBase\< BaseCL \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MemSetBase.html",tooltip="Common base class for all memset intrinsics."];
+  Node2 -> Node3 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< AnyMemIntrinsic \>" ,fontname="Helvetica"];
+  Node3 [label="llvm::MemSetBase\< AnyMem\lIntrinsic \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MemSetBase.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="llvm::AnyMemSetInst",height=0.2,width=0.4,color="black",URL="$classllvm_1_1AnyMemSetInst.html",tooltip="This class represents any memset intrinsic."];
+  Node2 -> Node5 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< AtomicMemIntrinsic \>" ,fontname="Helvetica"];
+  Node5 [label="llvm::MemSetBase\< Atomic\lMemIntrinsic \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MemSetBase.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="llvm::AtomicMemSetInst",height=0.2,width=0.4,color="black",URL="$classllvm_1_1AtomicMemSetInst.html",tooltip="This class represents atomic memset intrinsic."];
+  Node2 -> Node7 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< MemIntrinsic \>" ,fontname="Helvetica"];
+  Node7 [label="llvm::MemSetBase\< MemIntrinsic \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MemSetBase.html",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="llvm::MemSetInst",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MemSetInst.html",tooltip="This class wraps the llvm.memset intrinsic."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="llvm::MemTransferBase\l\< BaseCL \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MemTransferBase.html",tooltip="Common base class for all memory transfer intrinsics."];
+  Node9 -> Node10 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< AnyMemIntrinsic \>" ,fontname="Helvetica"];
+  Node10 [label="llvm::MemTransferBase\l\< AnyMemIntrinsic \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MemTransferBase.html",tooltip=" "];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="llvm::AnyMemTransferInst",height=0.2,width=0.4,color="black",URL="$classllvm_1_1AnyMemTransferInst.html",tooltip=" "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="llvm::AnyMemCpyInst",height=0.2,width=0.4,color="black",URL="$classllvm_1_1AnyMemCpyInst.html",tooltip="This class represents any memcpy intrinsic i.e."];
+  Node11 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="llvm::AnyMemMoveInst",height=0.2,width=0.4,color="black",URL="$classllvm_1_1AnyMemMoveInst.html",tooltip="This class represents any memmove intrinsic i.e."];
+  Node9 -> Node14 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< AtomicMemIntrinsic \>" ,fontname="Helvetica"];
+  Node14 [label="llvm::MemTransferBase\l\< AtomicMemIntrinsic \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MemTransferBase.html",tooltip=" "];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="llvm::AtomicMemTransferInst",height=0.2,width=0.4,color="black",URL="$classllvm_1_1AtomicMemTransferInst.html",tooltip=" "];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="llvm::AtomicMemCpyInst",height=0.2,width=0.4,color="black",URL="$classllvm_1_1AtomicMemCpyInst.html",tooltip="This class represents the atomic memcpy intrinsic i.e."];
+  Node15 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="llvm::AtomicMemMoveInst",height=0.2,width=0.4,color="black",URL="$classllvm_1_1AtomicMemMoveInst.html",tooltip="This class represents the atomic memmove intrinsic i.e."];
+  Node9 -> Node18 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< MemIntrinsic \>" ,fontname="Helvetica"];
+  Node18 [label="llvm::MemTransferBase\l\< MemIntrinsic \>",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MemTransferBase.html",tooltip=" "];
+  Node18 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="llvm::MemTransferInst",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MemTransferInst.html",tooltip="This class wraps the llvm.memcpy/memmove intrinsics."];
+  Node19 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="llvm::MemCpyInst",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MemCpyInst.html",tooltip="This class wraps the llvm.memcpy intrinsic."];
+  Node19 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="llvm::MemMoveInst",height=0.2,width=0.4,color="black",URL="$classllvm_1_1MemMoveInst.html",tooltip="This class wraps the llvm.memmove intrinsic."];
+}

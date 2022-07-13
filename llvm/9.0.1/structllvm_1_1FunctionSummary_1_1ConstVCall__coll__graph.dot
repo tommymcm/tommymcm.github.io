@@ -1,0 +1,14 @@
+digraph "llvm::FunctionSummary::ConstVCall"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape="box"];
+  Node1 [label="llvm::FunctionSummary\l::ConstVCall",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A specification for a virtual function call with all constant integer arguments."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" VFunc" ,fontname="Helvetica"];
+  Node2 [label="llvm::FunctionSummary\l::VFuncId",height=0.2,width=0.4,color="black",URL="$structllvm_1_1FunctionSummary_1_1VFuncId.html",tooltip="An \"identifier\" for a virtual function."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" GUID\nOffset" ,fontname="Helvetica"];
+  Node3 [label="uint64_t",height=0.2,width=0.4,color="black",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Args" ,fontname="Helvetica"];
+  Node4 [label="vector\< uint64_t \>",height=0.2,width=0.4,color="black",tooltip=" "];
+}
