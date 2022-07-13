@@ -57,15 +57,23 @@ $(function() {
   <div class="headertitle"><div class="title">PostDominators.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="PostDominators_8h_source.html">llvm/Analysis/PostDominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/PostDominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for PostDominators.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="PostDominators_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2PostDominators_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2PostDominators_8cpp" id="alib_2Analysis_2PostDominators_8cpp">
+<area shape="rect" title=" " alt="" coords="393,5,625,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,236,104"/>
+<area shape="rect" title=" " alt="" coords="261,79,399,104"/>
+<area shape="rect" title=" " alt="" coords="424,79,593,104"/>
+<area shape="rect" title=" " alt="" coords="618,79,714,104"/>
+<area shape="rect" title=" " alt="" coords="739,79,945,104"/>
+</map>
 </div>
 </div>
 <p><a href="PostDominators_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -77,12 +85,12 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3b65784e88b4b016ebfbec32d19e0418"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PostDominators_8cpp.html#a3b65784e88b4b016ebfbec32d19e0418">INITIALIZE_PASS</a> (<a class="el" href="structllvm_1_1PostDominatorTreeWrapperPass.html">PostDominatorTreeWrapperPass</a>, &quot;postdomtree&quot;, &quot;Post-Dominator Tree Construction&quot;, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) <a class="el" href="classbool.html">bool</a> <a class="el" href="classllvm_1_1PostDominatorTree.html">PostDominatorTree</a></td></tr>
+<tr class="memitem:a3b65784e88b4b016ebfbec32d19e0418"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PostDominators_8cpp.html#a3b65784e88b4b016ebfbec32d19e0418">INITIALIZE_PASS</a> (PostDominatorTreeWrapperPass, &quot;postdomtree&quot;, &quot;Post-Dominator Tree Construction&quot;, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) bool PostDominatorTree</td></tr>
 <tr class="separator:a3b65784e88b4b016ebfbec32d19e0418"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6c3fbeb73e85eeba7ca8170412f863a2"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PostDominators_8cpp.html#a6c3fbeb73e85eeba7ca8170412f863a2">ExpensiveChecksEnabled</a> = false</td></tr>
+<tr class="memitem:a6c3fbeb73e85eeba7ca8170412f863a2"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PostDominators_8cpp.html#a6c3fbeb73e85eeba7ca8170412f863a2">ExpensiveChecksEnabled</a> = false</td></tr>
 <tr class="separator:a6c3fbeb73e85eeba7ca8170412f863a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -112,7 +120,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">INITIALIZE_PASS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1PostDominatorTreeWrapperPass.html">PostDominatorTreeWrapperPass</a>&#160;</td>
+          <td class="paramtype">PostDominatorTreeWrapperPass&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -162,7 +170,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classbool.html">bool</a> ExpensiveChecksEnabled = false</td>
+          <td class="memname">constexpr bool ExpensiveChecksEnabled = false</td>
         </tr>
       </table>
   </td>
@@ -174,14 +182,12 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PostDominators_8cpp_source.html#l00026">26</a> of file <a class="el" href="PostDominators_8cpp_source.html">PostDominators.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PostDominators_8cpp_source.html#l00052">llvm::PostDominatorTreeWrapperPass::verifyAnalysis()</a>, and <a class="el" href="Dominators_8cpp_source.html#l00368">llvm::DominatorTreeWrapperPass::verifyAnalysis()</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:12 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -65,22 +65,22 @@ $(function() {
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="circular__raw__ostream_8h.html">llvm/Support/circular_raw_ostream.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;llvm/Support/circular_raw_ostream.h&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm.html">llvm</a>;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span> circular_raw_ostream::write_impl(<span class="keyword">const</span> <span class="keywordtype">char</span> *Ptr, <span class="keywordtype">size_t</span> <a class="code hl_variable" href="Profile_8cpp.html#a1f5ab05b3305a959d954b796c63807c4">Size</a>) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span> circular_raw_ostream::write_impl(<span class="keyword">const</span> <span class="keywordtype">char</span> *Ptr, <span class="keywordtype">size_t</span> Size) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordflow">if</span> (BufferSize == 0) {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    TheStream-&gt;<a class="code hl_function" href="classllvm_1_1raw__ostream.html#a6e0cbc5c8568d8446c284c8538b2c9f1">write</a>(Ptr, <a class="code hl_variable" href="Profile_8cpp.html#a1f5ab05b3305a959d954b796c63807c4">Size</a>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    TheStream-&gt;write(Ptr, Size);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  }</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="comment">// Write into the buffer, wrapping if necessary.</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordflow">while</span> (<a class="code hl_variable" href="Profile_8cpp.html#a1f5ab05b3305a959d954b796c63807c4">Size</a> != 0) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordflow">while</span> (Size != 0) {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">unsigned</span> Bytes =</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      std::min(<span class="keywordtype">unsigned</span>(<a class="code hl_variable" href="Profile_8cpp.html#a1f5ab05b3305a959d954b796c63807c4">Size</a>), <span class="keywordtype">unsigned</span>(BufferSize - (Cur - BufferArray)));</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      std::min(<span class="keywordtype">unsigned</span>(Size), <span class="keywordtype">unsigned</span>(BufferSize - (Cur - BufferArray)));</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    memcpy(Cur, Ptr, Bytes);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_variable" href="Profile_8cpp.html#a1f5ab05b3305a959d954b796c63807c4">Size</a> -= Bytes;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    Size -= Bytes;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    Cur += Bytes;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span> (Cur == BufferArray + BufferSize) {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      <span class="comment">// Reset the output pointer to the start of the buffer.</span></div>
@@ -90,22 +90,18 @@ $(function() {
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  }</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classllvm_1_1circular__raw__ostream.html#a1d35e899d253649e0248ab661f741fa7">   38</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classllvm_1_1circular__raw__ostream.html#a1d35e899d253649e0248ab661f741fa7">circular_raw_ostream::flushBufferWithBanner</a>() {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> circular_raw_ostream::flushBufferWithBanner() {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordflow">if</span> (BufferSize != 0) {</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">// Write out the buffer</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    TheStream-&gt;<a class="code hl_function" href="classllvm_1_1raw__ostream.html#a6e0cbc5c8568d8446c284c8538b2c9f1">write</a>(Banner, std::strlen(Banner));</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    TheStream-&gt;write(Banner, std::strlen(Banner));</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    flushBuffer();</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
-<div class="ttc" id="aProfile_8cpp_html_a1f5ab05b3305a959d954b796c63807c4"><div class="ttname"><a href="Profile_8cpp.html#a1f5ab05b3305a959d954b796c63807c4">Size</a></div><div class="ttdeci">uint32_t Size</div><div class="ttdef"><b>Definition:</b> <a href="Profile_8cpp_source.html#l00046">Profile.cpp:46</a></div></div>
-<div class="ttc" id="acircular__raw__ostream_8h_html"><div class="ttname"><a href="circular__raw__ostream_8h.html">circular_raw_ostream.h</a></div></div>
-<div class="ttc" id="aclassllvm_1_1circular__raw__ostream_html_a1d35e899d253649e0248ab661f741fa7"><div class="ttname"><a href="classllvm_1_1circular__raw__ostream.html#a1d35e899d253649e0248ab661f741fa7">llvm::circular_raw_ostream::flushBufferWithBanner</a></div><div class="ttdeci">void flushBufferWithBanner()</div><div class="ttdoc">flushBufferWithBanner - Force output of the buffer along with a small header.</div><div class="ttdef"><b>Definition:</b> <a href="circular__raw__ostream_8cpp_source.html#l00038">circular_raw_ostream.cpp:38</a></div></div>
-<div class="ttc" id="aclassllvm_1_1raw__ostream_html_a6e0cbc5c8568d8446c284c8538b2c9f1"><div class="ttname"><a href="classllvm_1_1raw__ostream.html#a6e0cbc5c8568d8446c284c8538b2c9f1">llvm::raw_ostream::write</a></div><div class="ttdeci">raw_ostream &amp; write(unsigned char C)</div><div class="ttdef"><b>Definition:</b> <a href="raw__ostream_8cpp_source.html#l00203">raw_ostream.cpp:203</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AllocatorList_8h_source.html#l00023">AllocatorList.h:23</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:23:10 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:37 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

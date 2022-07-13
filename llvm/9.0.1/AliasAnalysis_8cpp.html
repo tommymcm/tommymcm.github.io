@@ -56,31 +56,31 @@ $(function() {
   <div class="headertitle"><div class="title">AliasAnalysis.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicAliasAnalysis_8h_source.html">llvm/Analysis/BasicAliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CFLAndersAliasAnalysis_8h_source.html">llvm/Analysis/CFLAndersAliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CFLSteensAliasAnalysis_8h_source.html">llvm/Analysis/CFLSteensAliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CaptureTracking_8h_source.html">llvm/Analysis/CaptureTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalsModRef_8h_source.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MemoryLocation_8h_source.html">llvm/Analysis/MemoryLocation.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ObjCARCAliasAnalysis_8h_source.html">llvm/Analysis/ObjCARCAliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScalarEvolutionAliasAnalysis_8h_source.html">llvm/Analysis/ScalarEvolutionAliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScopedNoAliasAA_8h_source.html">llvm/Analysis/ScopedNoAliasAA.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TypeBasedAliasAnalysis_8h_source.html">llvm/Analysis/TypeBasedAliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AtomicOrdering_8h_source.html">llvm/Support/AtomicOrdering.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/BasicAliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CFLAndersAliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CFLSteensAliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CaptureTracking.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/MemoryLocation.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ObjCARCAliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScalarEvolutionAliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScopedNoAliasAA.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TypeBasedAliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/AtomicOrdering.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
@@ -89,30 +89,107 @@ $(function() {
 Include dependency graph for AliasAnalysis.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="AliasAnalysis_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2AliasAnalysis_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2AliasAnalysis_8cpp" id="alib_2Analysis_2AliasAnalysis_8cpp">
+<area shape="rect" title=" " alt="" coords="3231,5,3446,31"/>
+<area shape="rect" title=" " alt="" coords="5,86,219,111"/>
+<area shape="rect" title=" " alt="" coords="243,79,424,119"/>
+<area shape="rect" title=" " alt="" coords="448,79,664,119"/>
+<area shape="rect" title=" " alt="" coords="689,79,903,119"/>
+<area shape="rect" title=" " alt="" coords="927,86,1158,111"/>
+<area shape="rect" title=" " alt="" coords="1182,79,1373,119"/>
+<area shape="rect" title=" " alt="" coords="1397,86,1632,111"/>
+<area shape="rect" title=" " alt="" coords="1657,79,1861,119"/>
+<area shape="rect" title=" " alt="" coords="1885,79,2099,119"/>
+<area shape="rect" title=" " alt="" coords="2123,86,2365,111"/>
+<area shape="rect" title=" " alt="" coords="2389,79,2587,119"/>
+<area shape="rect" title=" " alt="" coords="2612,79,2828,119"/>
+<area shape="rect" title=" " alt="" coords="2852,86,3068,111"/>
+<area shape="rect" title=" " alt="" coords="3093,86,3241,111"/>
+<area shape="rect" title=" " alt="" coords="3265,86,3413,111"/>
+<area shape="rect" title=" " alt="" coords="3437,86,3592,111"/>
+<area shape="rect" title=" " alt="" coords="3617,86,3770,111"/>
+<area shape="rect" title=" " alt="" coords="3795,86,3955,111"/>
+<area shape="rect" title=" " alt="" coords="3979,86,4111,111"/>
+<area shape="rect" title=" " alt="" coords="4136,86,4251,111"/>
+<area shape="rect" title=" " alt="" coords="4275,86,4395,111"/>
+<area shape="rect" title=" " alt="" coords="4419,86,4515,111"/>
+<area shape="rect" title=" " alt="" coords="4539,86,4762,111"/>
+<area shape="rect" title=" " alt="" coords="4787,86,4957,111"/>
+<area shape="rect" title=" " alt="" coords="4982,86,5197,111"/>
+<area shape="rect" title=" " alt="" coords="5221,86,5307,111"/>
+<area shape="rect" title=" " alt="" coords="5331,86,5400,111"/>
+<area shape="rect" title=" " alt="" coords="5425,86,5511,111"/>
+<area shape="rect" title=" " alt="" coords="5535,86,5606,111"/>
+</map>
 </div>
 </div>
 <p><a href="AliasAnalysis_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a25a0004a37408852da56ee20c37e5a26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysis_8cpp.html#a25a0004a37408852da56ee20c37e5a26">INITIALIZE_PASS</a> (<a class="el" href="structllvm_1_1ExternalAAWrapperPass.html">ExternalAAWrapperPass</a>, &quot;external-aa&quot;, &quot;External Alias Analysis&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) <a class="el" href="classllvm_1_1ImmutablePass.html">ImmutablePass</a> *llvm</td></tr>
+<tr class="memitem:a3c6cb85de07c1814396e597c1e4d368e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysis_8cpp.html#a3c6cb85de07c1814396e597c1e4d368e">DisableBasicAA</a> (&quot;disable-basicaa&quot;, cl::Hidden, cl::init(false))</td></tr>
+<tr class="memdesc:a3c6cb85de07c1814396e597c1e4d368e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow disabling BasicAA from the AA results.  <a href="AliasAnalysis_8cpp.html#a3c6cb85de07c1814396e597c1e4d368e">More...</a><br /></td></tr>
+<tr class="separator:a3c6cb85de07c1814396e597c1e4d368e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25a0004a37408852da56ee20c37e5a26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysis_8cpp.html#a25a0004a37408852da56ee20c37e5a26">INITIALIZE_PASS</a> (ExternalAAWrapperPass, &quot;external-aa&quot;, &quot;External Alias Analysis&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) ImmutablePass *llvm</td></tr>
 <tr class="separator:a25a0004a37408852da56ee20c37e5a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a387f65094ae15ae3b17f54f9fec20492"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysis_8cpp.html#a387f65094ae15ae3b17f54f9fec20492">INITIALIZE_PASS_BEGIN</a> (<a class="el" href="classllvm_1_1AAResultsWrapperPass.html">AAResultsWrapperPass</a>, &quot;aa&quot;, &quot;Function Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a> Results&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(<a class="el" href="classllvm_1_1AAResultsWrapperPass.html">AAResultsWrapperPass</a></td></tr>
+<tr class="memitem:a387f65094ae15ae3b17f54f9fec20492"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysis_8cpp.html#a387f65094ae15ae3b17f54f9fec20492">INITIALIZE_PASS_BEGIN</a> (AAResultsWrapperPass, &quot;aa&quot;, &quot;Function Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a> Results&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) INITIALIZE_PASS_END(AAResultsWrapperPass</td></tr>
 <tr class="separator:a387f65094ae15ae3b17f54f9fec20492"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6bd39652a0ae9ddcd5afee43993d719f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysis_8cpp.html#a6bd39652a0ae9ddcd5afee43993d719f">DisableBasicAA</a> (&quot;disable-basicaa&quot;, cl::Hidden, cl::init(false))</td></tr>
-<tr class="memdesc:a6bd39652a0ae9ddcd5afee43993d719f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow disabling BasicAA from the AA results.  <a href="AliasAnalysis_8cpp.html#a6bd39652a0ae9ddcd5afee43993d719f">More...</a><br /></td></tr>
-<tr class="separator:a6bd39652a0ae9ddcd5afee43993d719f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74b87337454200d4d33f80c4663dc5e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a></td></tr>
 <tr class="separator:a74b87337454200d4d33f80c4663dc5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e344cff0feadf0b02223fee63cc7475"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Function.html">Function</a> Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysis_8cpp.html#a7e344cff0feadf0b02223fee63cc7475">Results</a></td></tr>
+<tr class="memitem:a7e344cff0feadf0b02223fee63cc7475"><td class="memItemLeft" align="right" valign="top">Function Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysis_8cpp.html#a7e344cff0feadf0b02223fee63cc7475">Results</a></td></tr>
 <tr class="separator:a7e344cff0feadf0b02223fee63cc7475"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59771df77981e87ed0a09221f120f759"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Function.html">Function</a> Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysis_8cpp.html#a59771df77981e87ed0a09221f120f759">false</a></td></tr>
+<tr class="memitem:a59771df77981e87ed0a09221f120f759"><td class="memItemLeft" align="right" valign="top">Function Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysis_8cpp.html#a59771df77981e87ed0a09221f120f759">false</a></td></tr>
 <tr class="separator:a59771df77981e87ed0a09221f120f759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a3c6cb85de07c1814396e597c1e4d368e" name="a3c6cb85de07c1814396e597c1e4d368e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c6cb85de07c1814396e597c1e4d368e">&#9670;&nbsp;</a></span>DisableBasicAA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; DisableBasicAA </td>
+          <td>(</td>
+          <td class="paramtype">&quot;disable-basicaa&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allow disabling BasicAA from the AA results. </p>
+<p >This is particularly useful when testing to isolate a single AA implementation. </p>
+
+</div>
+</div>
 <a id="a25a0004a37408852da56ee20c37e5a26" name="a25a0004a37408852da56ee20c37e5a26"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a25a0004a37408852da56ee20c37e5a26">&#9670;&nbsp;</a></span>INITIALIZE_PASS()</h2>
 
@@ -122,7 +199,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">INITIALIZE_PASS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1ExternalAAWrapperPass.html">ExternalAAWrapperPass</a>&#160;</td>
+          <td class="paramtype">ExternalAAWrapperPass&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -170,7 +247,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">INITIALIZE_PASS_BEGIN </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1AAResultsWrapperPass.html">AAResultsWrapperPass</a>&#160;</td>
+          <td class="paramtype">AAResultsWrapperPass&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -222,54 +299,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="AliasAnalysis_8cpp_source.html#l00764">764</a> of file <a class="el" href="AliasAnalysis_8cpp_source.html">AliasAnalysis.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LiveRangeEdit_8cpp_source.html#l00098">llvm::LiveRangeEdit::anyRematerializable()</a>, <a class="el" href="LiveRangeEdit_8cpp_source.html#l00070">llvm::LiveRangeEdit::checkRematerializable()</a>, <a class="el" href="SelectionDAGBuilder_8cpp_source.html#l01009">llvm::SelectionDAGBuilder::init()</a>, and <a class="el" href="ProvenanceAnalysis_8h_source.html#l00070">llvm::objcarc::ProvenanceAnalysis::setAA()</a>.</p>
-
-</div>
-</div>
-<a id="a6bd39652a0ae9ddcd5afee43993d719f" name="a6bd39652a0ae9ddcd5afee43993d719f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bd39652a0ae9ddcd5afee43993d719f">&#9670;&nbsp;</a></span>DisableBasicAA</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; DisableBasicAA(&quot;disable-basicaa&quot;, cl::Hidden, cl::init(false)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;disable-basicaa&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Allow disabling BasicAA from the AA results. </p>
-<p >This is particularly useful when testing to isolate a single AA implementation. </p>
-
-<p class="reference">Referenced by <a class="el" href="AliasAnalysis_8cpp_source.html#l00841">llvm::createLegacyPMAAResults()</a>, and <a class="el" href="AliasAnalysis_8cpp_source.html#l00779">llvm::AAResultsWrapperPass::runOnFunction()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ProvenanceAnalysis_8h_source.html#l00070">llvm::objcarc::ProvenanceAnalysis::setAA()</a>.</p>
 
 </div>
 </div>
@@ -296,21 +326,21 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1Function.html">Function</a> Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a> Results</td>
+          <td class="memname">Function Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a> Results</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="AliasAnalysis_8cpp_source.html#l00765">765</a> of file <a class="el" href="AliasAnalysis_8cpp_source.html">AliasAnalysis.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WebAssemblyMachineFunctionInfo_8h_source.html#l00070">llvm::WebAssemblyFunctionInfo::addResult()</a>, <a class="el" href="MachineIRBuilder_8cpp_source.html#l00668">llvm::MachineIRBuilder::buildIntrinsic()</a>, <a class="el" href="WebAssemblyMachineFunctionInfo_8h_source.html#l00073">llvm::WebAssemblyFunctionInfo::clearParamsAndResults()</a>, <a class="el" href="WebAssemblyMachineFunctionInfo_8cpp_source.html#l00045">llvm::computeSignatureVTs()</a>, <a class="el" href="X86SelectionDAGInfo_8cpp_source.html#l00236">emitConstantSizeRepmov()</a>, <a class="el" href="WebAssemblyAsmPrinter_8cpp_source.html#l00088">llvm::WebAssemblyAsmPrinter::EmitEndOfAsmFile()</a>, <a class="el" href="X86ISelLowering_8cpp_source.html#l23309">expandIntrinsicWChainHelper()</a>, <a class="el" href="ARMISelLowering_8cpp_source.html#l05269">ExpandREAD_REGISTER()</a>, <a class="el" href="X86ISelLowering_8cpp_source.html#l23364">getReadTimeStampCounter()</a>, <a class="el" href="WebAssemblyMachineFunctionInfo_8h_source.html#l00071">llvm::WebAssemblyFunctionInfo::getResults()</a>, <a class="el" href="SimplifyCFG_8cpp_source.html#l04714">InitializeUniqueCases()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l04154">llvm::isOverflowIntrinsicNoWrap()</a>, <a class="el" href="ARMLegalizerInfo_8cpp_source.html#l00358">llvm::ARMLegalizerInfo::legalizeCustom()</a>, <a class="el" href="X86ISelLowering_8cpp_source.html#l23457">LowerINTRINSIC_W_CHAIN()</a>, <a class="el" href="SelectionDAGBuilder_8cpp_source.html#l09266">llvm::TargetLowering::LowerOperationWrapper()</a>, <a class="el" href="HexagonISelLowering_8cpp_source.html#l02841">llvm::HexagonTargetLowering::LowerOperationWrapper()</a>, <a class="el" href="MipsISelLowering_8cpp_source.html#l01201">llvm::MipsTargetLowering::LowerOperationWrapper()</a>, <a class="el" href="SystemZISelLowering_8cpp_source.html#l05051">llvm::SystemZTargetLowering::LowerOperationWrapper()</a>, <a class="el" href="X86ISelLowering_8cpp_source.html#l27311">llvm::X86TargetLowering::LowerOperationWrapper()</a>, <a class="el" href="X86ISelLowering_8cpp_source.html#l23385">LowerREADCYCLECOUNTER()</a>, <a class="el" href="AMDGPUISelLowering_8cpp_source.html#l01898">llvm::AMDGPUTargetLowering::LowerUDIVREM()</a>, <a class="el" href="AMDGPUISelLowering_8cpp_source.html#l01688">llvm::AMDGPUTargetLowering::LowerUDIVREM64()</a>, <a class="el" href="AArch64ISelLowering_8cpp_source.html#l11578">ReplaceBITCASTResults()</a>, <a class="el" href="AArch64ISelLowering_8cpp_source.html#l11636">ReplaceCMP_SWAP_128Results()</a>, <a class="el" href="ARMISelLowering_8cpp_source.html#l08309">ReplaceCMP_SWAP_64Results()</a>, <a class="el" href="NVPTXISelLowering_8cpp_source.html#l04907">ReplaceINTRINSIC_W_CHAIN()</a>, <a class="el" href="NVPTXISelLowering_8cpp_source.html#l04777">ReplaceLoadVector()</a>, <a class="el" href="ARMISelLowering_8cpp_source.html#l08471">ReplaceLongIntrinsic()</a>, <a class="el" href="R600ISelLowering_8cpp_source.html#l00649">llvm::R600TargetLowering::ReplaceNodeResults()</a>, <a class="el" href="SIISelLowering_8cpp_source.html#l04141">llvm::SITargetLowering::ReplaceNodeResults()</a>, <a class="el" href="ARMISelLowering_8cpp_source.html#l08504">llvm::ARMTargetLowering::ReplaceNodeResults()</a>, <a class="el" href="AVRISelLowering_8cpp_source.html#l00715">llvm::AVRTargetLowering::ReplaceNodeResults()</a>, <a class="el" href="HexagonISelLowering_8cpp_source.html#l02854">llvm::HexagonTargetLowering::ReplaceNodeResults()</a>, <a class="el" href="MipsISelLowering_8cpp_source.html#l01212">llvm::MipsTargetLowering::ReplaceNodeResults()</a>, <a class="el" href="PPCISelLowering_8cpp_source.html#l09995">llvm::PPCTargetLowering::ReplaceNodeResults()</a>, <a class="el" href="RISCVISelLowering_8cpp_source.html#l00837">llvm::RISCVTargetLowering::ReplaceNodeResults()</a>, <a class="el" href="SparcISelLowering_8cpp_source.html#l03332">llvm::SparcTargetLowering::ReplaceNodeResults()</a>, <a class="el" href="SystemZISelLowering_8cpp_source.html#l05107">llvm::SystemZTargetLowering::ReplaceNodeResults()</a>, <a class="el" href="X86ISelLowering_8cpp_source.html#l27338">llvm::X86TargetLowering::ReplaceNodeResults()</a>, <a class="el" href="XCoreISelLowering_8cpp_source.html#l00230">llvm::XCoreTargetLowering::ReplaceNodeResults()</a>, <a class="el" href="ARMISelLowering_8cpp_source.html#l08268">ReplaceREADCYCLECOUNTER()</a>, <a class="el" href="AArch64ISelLowering_8cpp_source.html#l11595">ReplaceReductionResults()</a>, <a class="el" href="HexagonISelDAGToDAGHVX_8cpp_source.html#l02001">llvm::HvxSelector::selectShuffle()</a>, <a class="el" href="WebAssemblyMachineFunctionInfo_8cpp_source.html#l00073">llvm::signatureFromMVTs()</a>, and <a class="el" href="SimplifyCFG_8cpp_source.html#l05237">SwitchToLookupTable()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SimplifyCFG_8cpp_source.html#l04714">InitializeUniqueCases()</a>, and <a class="el" href="SimplifyCFG_8cpp_source.html#l05237">SwitchToLookupTable()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:11 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

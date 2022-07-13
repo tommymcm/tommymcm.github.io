@@ -57,26 +57,26 @@ $(function() {
   <div class="headertitle"><div class="title">Attributes.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="AttributeImpl_8h_source.html">AttributeImpl.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="LLVMContextImpl_8h_source.html">LLVMContextImpl.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ArrayRef_8h_source.html">llvm/ADT/ArrayRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="FoldingSet_8h_source.html">llvm/ADT/FoldingSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Optional_8h_source.html">llvm/ADT/Optional.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringExtras_8h_source.html">llvm/ADT/StringExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringRef_8h_source.html">llvm/ADT/StringRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Twine_8h_source.html">llvm/ADT/Twine.h</a>&quot;</code><br />
+<code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/FoldingSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Optional.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Twine.h&quot;</code><br />
 <code>#include &quot;llvm/Config/llvm-config.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Compiler_8h_source.html">llvm/Support/Compiler.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MathExtras_8h_source.html">llvm/Support/MathExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Compiler.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
+<code>#include &quot;llvm/Support/MathExtras.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;climits&gt;</code><br />
@@ -91,6 +91,58 @@ $(function() {
 Include dependency graph for Attributes.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Attributes_8cpp__incl.png" border="0" usemap="#alib_2IR_2Attributes_8cpp" alt=""/></div>
+<map name="alib_2IR_2Attributes_8cpp" id="alib_2IR_2Attributes_8cpp">
+<area shape="rect" title=" " alt="" coords="4444,5,4595,31"/>
+<area shape="rect" title=" " alt="" coords="5,225,153,251"/>
+<area shape="rect" href="AttributeImpl_8h.html" title="This file defines various helper methods and classes used by LLVMContextImpl for creating and managin..." alt="" coords="567,152,687,177"/>
+<area shape="rect" title=" " alt="" coords="1283,225,1438,251"/>
+<area shape="rect" title=" " alt="" coords="177,225,344,251"/>
+<area shape="rect" title=" " alt="" coords="451,225,609,251"/>
+<area shape="rect" title=" " alt="" coords="2490,225,2559,251"/>
+<area shape="rect" title=" " alt="" coords="875,225,945,251"/>
+<area shape="rect" title=" " alt="" coords="2087,225,2154,251"/>
+<area shape="rect" title=" " alt="" coords="369,225,427,251"/>
+<area shape="rect" title=" " alt="" coords="2800,225,2860,251"/>
+<area shape="rect" href="LLVMContextImpl_8h.html" title=" " alt="" coords="2739,79,2887,104"/>
+<area shape="rect" title=" " alt="" coords="3811,225,3985,251"/>
+<area shape="rect" title=" " alt="" coords="4090,225,4253,251"/>
+<area shape="rect" title=" " alt="" coords="4317,225,4527,251"/>
+<area shape="rect" title=" " alt="" coords="4572,225,4779,251"/>
+<area shape="rect" title=" " alt="" coords="3761,152,3915,177"/>
+<area shape="rect" title=" " alt="" coords="3939,152,4102,177"/>
+<area shape="rect" title=" " alt="" coords="4127,152,4296,177"/>
+<area shape="rect" title=" " alt="" coords="4321,152,4406,177"/>
+<area shape="rect" title=" " alt="" coords="4735,79,4912,104"/>
+<area shape="rect" title=" " alt="" coords="4936,79,5071,104"/>
+<area shape="rect" title=" " alt="" coords="5095,79,5280,104"/>
+<area shape="rect" title=" " alt="" coords="5305,79,5443,104"/>
+<area shape="rect" title=" " alt="" coords="5467,79,5582,104"/>
+<area shape="rect" title=" " alt="" coords="5606,79,5785,104"/>
+<area shape="rect" title=" " alt="" coords="5809,79,6003,104"/>
+<area shape="rect" title=" " alt="" coords="6027,79,6094,104"/>
+<area shape="rect" title=" " alt="" coords="6118,79,6177,104"/>
+<area shape="rect" title=" " alt="" coords="6201,79,6256,104"/>
+<area shape="rect" title=" " alt="" coords="6280,79,6471,104"/>
+<area shape="rect" title=" " alt="" coords="633,225,851,251"/>
+<area shape="rect" href="ConstantsContext_8h.html" title=" " alt="" coords="3003,152,3153,177"/>
+<area shape="rect" title=" " alt="" coords="2583,225,2775,251"/>
+<area shape="rect" title=" " alt="" coords="2885,225,3045,251"/>
+<area shape="rect" title=" " alt="" coords="3069,225,3220,251"/>
+<area shape="rect" title=" " alt="" coords="3245,225,3394,251"/>
+<area shape="rect" title=" " alt="" coords="3419,225,3591,251"/>
+<area shape="rect" title=" " alt="" coords="3615,225,3786,251"/>
+<area shape="rect" title=" " alt="" coords="3381,152,3529,177"/>
+<area shape="rect" title=" " alt="" coords="3553,152,3685,177"/>
+<area shape="rect" title=" " alt="" coords="864,152,1031,177"/>
+<area shape="rect" title=" " alt="" coords="1055,152,1229,177"/>
+<area shape="rect" title=" " alt="" coords="1253,152,1417,177"/>
+<area shape="rect" title=" " alt="" coords="1442,152,1639,177"/>
+<area shape="rect" title=" " alt="" coords="1663,152,1877,177"/>
+<area shape="rect" title=" " alt="" coords="1901,152,2047,177"/>
+<area shape="rect" title=" " alt="" coords="2071,152,2266,177"/>
+<area shape="rect" title=" " alt="" coords="2290,152,2471,177"/>
+<area shape="rect" title=" " alt="" coords="2495,152,2674,177"/>
+</map>
 </div>
 </div>
 <p><a href="Attributes_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -102,43 +154,43 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a418d4deb4955a8f88f18d0a977fa676d"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a418d4deb4955a8f88f18d0a977fa676d">packAllocSizeArgs</a> (<a class="el" href="classunsigned.html">unsigned</a> ElemSizeArg, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; &amp;NumElemsArg)</td></tr>
+<tr class="memitem:a418d4deb4955a8f88f18d0a977fa676d"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a418d4deb4955a8f88f18d0a977fa676d">packAllocSizeArgs</a> (unsigned ElemSizeArg, const Optional&lt; unsigned &gt; &amp;NumElemsArg)</td></tr>
 <tr class="separator:a418d4deb4955a8f88f18d0a977fa676d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef4a50f3a706859fddb7e9980a5330a5"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; <a class="el" href="classunsigned.html">unsigned</a>, <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#aef4a50f3a706859fddb7e9980a5330a5">unpackAllocSizeArgs</a> (uint64_t Num)</td></tr>
+<tr class="memitem:aef4a50f3a706859fddb7e9980a5330a5"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; unsigned, Optional&lt; unsigned &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#aef4a50f3a706859fddb7e9980a5330a5">unpackAllocSizeArgs</a> (uint64_t Num)</td></tr>
 <tr class="separator:aef4a50f3a706859fddb7e9980a5330a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07e81c93c15a2dad3d53385f43dd6f27"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a07e81c93c15a2dad3d53385f43dd6f27">attrIdxToArrayIdx</a> (<a class="el" href="classunsigned.html">unsigned</a> Index)</td></tr>
+<tr class="memitem:a07e81c93c15a2dad3d53385f43dd6f27"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a07e81c93c15a2dad3d53385f43dd6f27">attrIdxToArrayIdx</a> (unsigned Index)</td></tr>
 <tr class="memdesc:a07e81c93c15a2dad3d53385f43dd6f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map from AttributeList index to the internal array index.  <a href="Attributes_8cpp.html#a07e81c93c15a2dad3d53385f43dd6f27">More...</a><br /></td></tr>
 <tr class="separator:a07e81c93c15a2dad3d53385f43dd6f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12f59da641309f7afb7b1d32cb59a7bf"><td class="memTemplParams" colspan="2">template&lt;typename AttrClass &gt; </td></tr>
-<tr class="memitem:a12f59da641309f7afb7b1d32cb59a7bf"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a12f59da641309f7afb7b1d32cb59a7bf">isEqual</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;Caller, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="AMDGPULibCalls_8cpp.html#a537c835c34f0b44b6ad2696643754390">Callee</a>)</td></tr>
+<tr class="memitem:a12f59da641309f7afb7b1d32cb59a7bf"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a12f59da641309f7afb7b1d32cb59a7bf">isEqual</a> (const Function &amp;Caller, const Function &amp;Callee)</td></tr>
 <tr class="separator:a12f59da641309f7afb7b1d32cb59a7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a384a442d2146a5a6faab695abbaa6676"><td class="memTemplParams" colspan="2">template&lt;typename AttrClass &gt; </td></tr>
-<tr class="memitem:a384a442d2146a5a6faab695abbaa6676"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a384a442d2146a5a6faab695abbaa6676">setAND</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;Caller, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="AMDGPULibCalls_8cpp.html#a537c835c34f0b44b6ad2696643754390">Callee</a>)</td></tr>
+<tr class="memitem:a384a442d2146a5a6faab695abbaa6676"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a384a442d2146a5a6faab695abbaa6676">setAND</a> (Function &amp;Caller, const Function &amp;Callee)</td></tr>
 <tr class="memdesc:a384a442d2146a5a6faab695abbaa6676"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the logical AND of the attributes of the caller and the callee.  <a href="Attributes_8cpp.html#a384a442d2146a5a6faab695abbaa6676">More...</a><br /></td></tr>
 <tr class="separator:a384a442d2146a5a6faab695abbaa6676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae83cb1660469243aaf6aff42b7970b25"><td class="memTemplParams" colspan="2">template&lt;typename AttrClass &gt; </td></tr>
-<tr class="memitem:ae83cb1660469243aaf6aff42b7970b25"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#ae83cb1660469243aaf6aff42b7970b25">setOR</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;Caller, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="AMDGPULibCalls_8cpp.html#a537c835c34f0b44b6ad2696643754390">Callee</a>)</td></tr>
+<tr class="memitem:ae83cb1660469243aaf6aff42b7970b25"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#ae83cb1660469243aaf6aff42b7970b25">setOR</a> (Function &amp;Caller, const Function &amp;Callee)</td></tr>
 <tr class="memdesc:ae83cb1660469243aaf6aff42b7970b25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the logical OR of the attributes of the caller and the callee.  <a href="Attributes_8cpp.html#ae83cb1660469243aaf6aff42b7970b25">More...</a><br /></td></tr>
 <tr class="separator:ae83cb1660469243aaf6aff42b7970b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68a3391f6fe564a33343e43587478592"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a68a3391f6fe564a33343e43587478592">adjustCallerSSPLevel</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;Caller, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="AMDGPULibCalls_8cpp.html#a537c835c34f0b44b6ad2696643754390">Callee</a>)</td></tr>
+<tr class="memitem:a68a3391f6fe564a33343e43587478592"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a68a3391f6fe564a33343e43587478592">adjustCallerSSPLevel</a> (Function &amp;Caller, const Function &amp;Callee)</td></tr>
 <tr class="memdesc:a68a3391f6fe564a33343e43587478592"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the inlined function had a higher stack protection level than the calling function, then bump up the caller's stack protection level.  <a href="Attributes_8cpp.html#a68a3391f6fe564a33343e43587478592">More...</a><br /></td></tr>
 <tr class="separator:a68a3391f6fe564a33343e43587478592"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f16a0ff0435cf98879eef2066e5a4df"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a3f16a0ff0435cf98879eef2066e5a4df">adjustCallerStackProbes</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;Caller, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="AMDGPULibCalls_8cpp.html#a537c835c34f0b44b6ad2696643754390">Callee</a>)</td></tr>
+<tr class="memitem:a3f16a0ff0435cf98879eef2066e5a4df"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a3f16a0ff0435cf98879eef2066e5a4df">adjustCallerStackProbes</a> (Function &amp;Caller, const Function &amp;Callee)</td></tr>
 <tr class="memdesc:a3f16a0ff0435cf98879eef2066e5a4df"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the inlined function required stack probes, then ensure that the calling function has those too.  <a href="Attributes_8cpp.html#a3f16a0ff0435cf98879eef2066e5a4df">More...</a><br /></td></tr>
 <tr class="separator:a3f16a0ff0435cf98879eef2066e5a4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5861f2cf66ad90de99ef9dfe8054f75d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a5861f2cf66ad90de99ef9dfe8054f75d">adjustCallerStackProbeSize</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;Caller, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="AMDGPULibCalls_8cpp.html#a537c835c34f0b44b6ad2696643754390">Callee</a>)</td></tr>
+<tr class="memitem:a5861f2cf66ad90de99ef9dfe8054f75d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a5861f2cf66ad90de99ef9dfe8054f75d">adjustCallerStackProbeSize</a> (Function &amp;Caller, const Function &amp;Callee)</td></tr>
 <tr class="memdesc:a5861f2cf66ad90de99ef9dfe8054f75d"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the inlined function defines the size of guard region on the stack, then ensure that the calling function defines a guard region that is no larger.  <a href="Attributes_8cpp.html#a5861f2cf66ad90de99ef9dfe8054f75d">More...</a><br /></td></tr>
 <tr class="separator:a5861f2cf66ad90de99ef9dfe8054f75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4edf7cbc1ca95769993535d584f66a3f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a4edf7cbc1ca95769993535d584f66a3f">adjustMinLegalVectorWidth</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;Caller, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="AMDGPULibCalls_8cpp.html#a537c835c34f0b44b6ad2696643754390">Callee</a>)</td></tr>
+<tr class="memitem:a4edf7cbc1ca95769993535d584f66a3f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a4edf7cbc1ca95769993535d584f66a3f">adjustMinLegalVectorWidth</a> (Function &amp;Caller, const Function &amp;Callee)</td></tr>
 <tr class="memdesc:a4edf7cbc1ca95769993535d584f66a3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the inlined function defines a min legal vector width, then ensure the calling function has the same or larger min legal vector width.  <a href="Attributes_8cpp.html#a4edf7cbc1ca95769993535d584f66a3f">More...</a><br /></td></tr>
 <tr class="separator:a4edf7cbc1ca95769993535d584f66a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa177e0690d977e4dfeafd4fea087f613"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#aa177e0690d977e4dfeafd4fea087f613">adjustNullPointerValidAttr</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;Caller, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="AMDGPULibCalls_8cpp.html#a537c835c34f0b44b6ad2696643754390">Callee</a>)</td></tr>
+<tr class="memitem:aa177e0690d977e4dfeafd4fea087f613"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#aa177e0690d977e4dfeafd4fea087f613">adjustNullPointerValidAttr</a> (Function &amp;Caller, const Function &amp;Callee)</td></tr>
 <tr class="memdesc:aa177e0690d977e4dfeafd4fea087f613"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the inlined function has "null-pointer-is-valid=true" attribute, set this attribute in the caller post inlining.  <a href="Attributes_8cpp.html#aa177e0690d977e4dfeafd4fea087f613">More...</a><br /></td></tr>
 <tr class="separator:aa177e0690d977e4dfeafd4fea087f613"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ab120e0d08d1d90a92f27558a82005dcb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#ab120e0d08d1d90a92f27558a82005dcb">AllocSizeNumElemsNotPresent</a> = -1</td></tr>
+<tr class="memitem:ab120e0d08d1d90a92f27558a82005dcb"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#ab120e0d08d1d90a92f27558a82005dcb">AllocSizeNumElemsNotPresent</a> = -1</td></tr>
 <tr class="separator:ab120e0d08d1d90a92f27558a82005dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -171,13 +223,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void adjustCallerSSPLevel </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>Caller</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">const Function &amp;&#160;</td>
           <td class="paramname"><em>Callee</em>&#160;</td>
         </tr>
         <tr>
@@ -197,8 +249,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Attributes_8cpp_source.html#l01754">1754</a> of file <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Attributes_8cpp_source.html#l01446">llvm::AttrBuilder::addAttribute()</a>, <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>, and <a class="el" href="Attributes_8h_source.html#l00340">llvm::AttributeList::FunctionIndex</a>.</p>
-
 </div>
 </div>
 <a id="a3f16a0ff0435cf98879eef2066e5a4df" name="a3f16a0ff0435cf98879eef2066e5a4df"></a>
@@ -213,13 +263,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void adjustCallerStackProbes </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>Caller</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">const Function &amp;&#160;</td>
           <td class="paramname"><em>Callee</em>&#160;</td>
         </tr>
         <tr>
@@ -239,8 +289,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Attributes_8cpp_source.html#l01778">1778</a> of file <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>.</p>
-
 </div>
 </div>
 <a id="a5861f2cf66ad90de99ef9dfe8054f75d" name="a5861f2cf66ad90de99ef9dfe8054f75d"></a>
@@ -255,13 +303,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void adjustCallerStackProbeSize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>Caller</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">const Function &amp;&#160;</td>
           <td class="paramname"><em>Callee</em>&#160;</td>
         </tr>
         <tr>
@@ -281,8 +329,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Attributes_8cpp_source.html#l01789">1789</a> of file <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>.</p>
-
 </div>
 </div>
 <a id="a4edf7cbc1ca95769993535d584f66a3f" name="a4edf7cbc1ca95769993535d584f66a3f"></a>
@@ -297,13 +343,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void adjustMinLegalVectorWidth </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>Caller</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">const Function &amp;&#160;</td>
           <td class="paramname"><em>Callee</em>&#160;</td>
         </tr>
         <tr>
@@ -324,8 +370,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Attributes_8cpp_source.html#l01819">1819</a> of file <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>.</p>
-
 </div>
 </div>
 <a id="aa177e0690d977e4dfeafd4fea087f613" name="aa177e0690d977e4dfeafd4fea087f613"></a>
@@ -340,13 +384,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void adjustNullPointerValidAttr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>Caller</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">const Function &amp;&#160;</td>
           <td class="paramname"><em>Callee</em>&#160;</td>
         </tr>
         <tr>
@@ -366,8 +410,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Attributes_8cpp_source.html#l01843">1843</a> of file <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>.</p>
-
 </div>
 </div>
 <a id="a07e81c93c15a2dad3d53385f43dd6f27" name="a07e81c93c15a2dad3d53385f43dd6f27"></a>
@@ -380,9 +422,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr <a class="el" href="classunsigned.html">unsigned</a> attrIdxToArrayIdx </td>
+          <td class="memname">static constexpr unsigned attrIdxToArrayIdx </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>Index</em></td><td>)</td>
           <td></td>
         </tr>
@@ -399,9 +441,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Attributes_8cpp_source.html#l00900">900</a> of file <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Attributes_8h_source.html#l00340">llvm::AttributeList::FunctionIndex</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Attributes_8cpp_source.html#l01156">llvm::AttributeList::addAttributes()</a>, <a class="el" href="Attributes_8cpp_source.html#l01185">llvm::AttributeList::addParamAttribute()</a>, <a class="el" href="Attributes_8cpp_source.html#l00904">llvm::AttributeListImpl::AttributeListImpl()</a>, <a class="el" href="Attributes_8cpp_source.html#l01009">llvm::AttributeList::get()</a>, <a class="el" href="Attributes_8cpp_source.html#l01386">llvm::AttributeList::getAttributes()</a>, <a class="el" href="Attributes_8cpp_source.html#l01205">llvm::AttributeList::removeAttribute()</a>, and <a class="el" href="Attributes_8cpp_source.html#l01232">llvm::AttributeList::removeAttributes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Attributes_8cpp_source.html#l00904">llvm::AttributeListImpl::AttributeListImpl()</a>.</p>
 
 </div>
 </div>
@@ -417,15 +457,15 @@ template&lt;typename AttrClass &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isEqual </td>
+          <td class="memname">static bool isEqual </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">const Function &amp;&#160;</td>
           <td class="paramname"><em>Caller</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">const Function &amp;&#160;</td>
           <td class="paramname"><em>Callee</em>&#160;</td>
         </tr>
         <tr>
@@ -443,9 +483,7 @@ template&lt;typename AttrClass &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Attributes_8cpp_source.html#l01723">1723</a> of file <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Local_8cpp_source.html#l01095">llvm::EliminateDuplicatePHINodes()</a>, and <a class="el" href="Local_8cpp_source.html#l02025">markAliveBlocks()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Local_8cpp_source.html#l02025">markAliveBlocks()</a>.</p>
 
 </div>
 </div>
@@ -461,13 +499,13 @@ template&lt;typename AttrClass &gt; </div>
         <tr>
           <td class="memname">static uint64_t packAllocSizeArgs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>ElemSizeArg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const Optional&lt; unsigned &gt; &amp;&#160;</td>
           <td class="paramname"><em>NumElemsArg</em>&#160;</td>
         </tr>
         <tr>
@@ -485,9 +523,7 @@ template&lt;typename AttrClass &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Attributes_8cpp_source.html#l00059">59</a> of file <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Attributes_8cpp_source.html#l00057">AllocSizeNumElemsNotPresent</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="Optional_8h_source.html#l00266">llvm::Optional&lt; T &gt;::getValueOr()</a>, and <a class="el" href="Optional_8h_source.html#l00259">llvm::Optional&lt; T &gt;::hasValue()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Attributes_8cpp_source.html#l01560">llvm::AttrBuilder::addAllocSizeAttr()</a>, and <a class="el" href="Attributes_8cpp_source.html#l00175">llvm::Attribute::getWithAllocSizeArgs()</a>.</p>
+<p class="reference">References <a class="el" href="Attributes_8cpp_source.html#l00057">AllocSizeNumElemsNotPresent</a>, and <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 </div>
 </div>
@@ -505,13 +541,13 @@ template&lt;typename AttrClass &gt; </div>
         <tr>
           <td class="memname">static void setAND </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>Caller</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">const Function &amp;&#160;</td>
           <td class="paramname"><em>Callee</em>&#160;</td>
         </tr>
         <tr>
@@ -532,8 +568,6 @@ template&lt;typename AttrClass &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Attributes_8cpp_source.html#l01734">1734</a> of file <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>.</p>
-
 </div>
 </div>
 <a id="ae83cb1660469243aaf6aff42b7970b25" name="ae83cb1660469243aaf6aff42b7970b25"></a>
@@ -550,13 +584,13 @@ template&lt;typename AttrClass &gt; </div>
         <tr>
           <td class="memname">static void setOR </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>Caller</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">const Function &amp;&#160;</td>
           <td class="paramname"><em>Callee</em>&#160;</td>
         </tr>
         <tr>
@@ -577,8 +611,6 @@ template&lt;typename AttrClass &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Attributes_8cpp_source.html#l01746">1746</a> of file <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>.</p>
-
 </div>
 </div>
 <a id="aef4a50f3a706859fddb7e9980a5330a5" name="aef4a50f3a706859fddb7e9980a5330a5"></a>
@@ -591,7 +623,7 @@ template&lt;typename AttrClass &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::pair&lt; <a class="el" href="classunsigned.html">unsigned</a>, <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; &gt; unpackAllocSizeArgs </td>
+          <td class="memname">static std::pair&lt; unsigned, Optional&lt; unsigned &gt; &gt; unpackAllocSizeArgs </td>
           <td>(</td>
           <td class="paramtype">uint64_t&#160;</td>
           <td class="paramname"><em>Num</em></td><td>)</td>
@@ -609,8 +641,6 @@ template&lt;typename AttrClass &gt; </div>
 
 <p class="reference">References <a class="el" href="Attributes_8cpp_source.html#l00057">AllocSizeNumElemsNotPresent</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Attributes_8cpp_source.html#l00273">llvm::Attribute::getAllocSizeArgs()</a>, and <a class="el" href="Attributes_8cpp_source.html#l01516">llvm::AttrBuilder::getAllocSizeArgs()</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -624,7 +654,7 @@ template&lt;typename AttrClass &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classunsigned.html">unsigned</a> AllocSizeNumElemsNotPresent = -1</td>
+          <td class="memname">const unsigned AllocSizeNumElemsNotPresent = -1</td>
         </tr>
       </table>
   </td>
@@ -643,7 +673,7 @@ template&lt;typename AttrClass &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:14 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

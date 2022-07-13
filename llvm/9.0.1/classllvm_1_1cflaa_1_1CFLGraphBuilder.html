@@ -65,17 +65,17 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9e466f1ab4e01b15096e0084dd677e8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1cflaa_1_1CFLGraphBuilder.html#a9e466f1ab4e01b15096e0084dd677e8f">CFLGraphBuilder</a> (CFLAA &amp;Analysis, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI, <a class="el" href="classllvm_1_1Function.html">Function</a> &amp;Fn)</td></tr>
+<tr class="memitem:a9e466f1ab4e01b15096e0084dd677e8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1cflaa_1_1CFLGraphBuilder.html#a9e466f1ab4e01b15096e0084dd677e8f">CFLGraphBuilder</a> (CFLAA &amp;Analysis, const TargetLibraryInfo &amp;TLI, Function &amp;Fn)</td></tr>
 <tr class="separator:a9e466f1ab4e01b15096e0084dd677e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a2b0ee51d871c8c7c629fb1fbe6efd1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1cflaa_1_1CFLGraph.html">CFLGraph</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1cflaa_1_1CFLGraphBuilder.html#a8a2b0ee51d871c8c7c629fb1fbe6efd1">getCFLGraph</a> () <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a></td></tr>
+<tr class="memitem:a8a2b0ee51d871c8c7c629fb1fbe6efd1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classllvm_1_1cflaa_1_1CFLGraph.html">CFLGraph</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1cflaa_1_1CFLGraphBuilder.html#a8a2b0ee51d871c8c7c629fb1fbe6efd1">getCFLGraph</a> () const</td></tr>
 <tr class="separator:a8a2b0ee51d871c8c7c629fb1fbe6efd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a159caa92f55849f6ac08b61a5e700983"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SmallVector.html">SmallVector</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, 4 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1cflaa_1_1CFLGraphBuilder.html#a159caa92f55849f6ac08b61a5e700983">getReturnValues</a> () <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a></td></tr>
+<tr class="memitem:a159caa92f55849f6ac08b61a5e700983"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classSmallVector.html">SmallVector</a>&lt; Value *, 4 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1cflaa_1_1CFLGraphBuilder.html#a159caa92f55849f6ac08b61a5e700983">getReturnValues</a> () const</td></tr>
 <tr class="separator:a159caa92f55849f6ac08b61a5e700983"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename CFLAA&gt;<br />
 class llvm::cflaa::CFLGraphBuilder&lt; CFLAA &gt;</div><p >A builder class used to create <a class="el" href="classllvm_1_1cflaa_1_1CFLGraph.html" title="The Program Expression Graph (PEG) of CFL analysis CFLGraph is auxiliary data structure used by CFL-b...">CFLGraph</a> instance from a given function The CFL-AA that uses this builder must provide its own type as a template argument. </p>
-<p >This is necessary for interprocedural processing: <a class="el" href="classllvm_1_1cflaa_1_1CFLGraphBuilder.html" title="A builder class used to create CFLGraph instance from a given function The CFL-AA that uses this buil...">CFLGraphBuilder</a> needs a way of obtaining the summary of other functions when callinsts are encountered. As a result, we expect the said CFL-AA to expose a getAliasSummary() public member function that takes a <a class="el" href="classllvm_1_1Function.html">Function</a>&amp; and returns the corresponding summary as a const AliasSummary*. </p>
+<p >This is necessary for interprocedural processing: <a class="el" href="classllvm_1_1cflaa_1_1CFLGraphBuilder.html" title="A builder class used to create CFLGraph instance from a given function The CFL-AA that uses this buil...">CFLGraphBuilder</a> needs a way of obtaining the summary of other functions when callinsts are encountered. As a result, we expect the said CFL-AA to expose a getAliasSummary() public member function that takes a Function&amp; and returns the corresponding summary as a const AliasSummary*. </p>
 
 <p class="definition">Definition at line <a class="el" href="CFLGraph_8h_source.html#l00163">163</a> of file <a class="el" href="CFLGraph_8h_source.html">CFLGraph.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -99,13 +99,13 @@ template&lt;typename CFLAA &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>Fn</em>&#160;</td>
         </tr>
         <tr>
@@ -138,7 +138,7 @@ template&lt;typename CFLAA &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1cflaa_1_1CFLGraph.html">CFLGraph</a> &amp; <a class="el" href="classllvm_1_1cflaa_1_1CFLGraphBuilder.html">llvm::cflaa::CFLGraphBuilder</a>&lt; CFLAA &gt;::getCFLGraph </td>
+          <td class="memname">const <a class="el" href="classllvm_1_1cflaa_1_1CFLGraph.html">CFLGraph</a> &amp; <a class="el" href="classllvm_1_1cflaa_1_1CFLGraphBuilder.html">llvm::cflaa::CFLGraphBuilder</a>&lt; CFLAA &gt;::getCFLGraph </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -167,7 +167,7 @@ template&lt;typename CFLAA &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SmallVector.html">SmallVector</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, 4 &gt; &amp; <a class="el" href="classllvm_1_1cflaa_1_1CFLGraphBuilder.html">llvm::cflaa::CFLGraphBuilder</a>&lt; CFLAA &gt;::getReturnValues </td>
+          <td class="memname">const <a class="el" href="classSmallVector.html">SmallVector</a>&lt; Value *, 4 &gt; &amp; <a class="el" href="classllvm_1_1cflaa_1_1CFLGraphBuilder.html">llvm::cflaa::CFLGraphBuilder</a>&lt; CFLAA &gt;::getReturnValues </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -190,7 +190,7 @@ template&lt;typename CFLAA &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:28:09 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:46 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

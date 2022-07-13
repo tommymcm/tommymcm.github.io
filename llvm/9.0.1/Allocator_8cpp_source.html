@@ -65,16 +65,16 @@ $(function() {
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="Allocator_8h.html">llvm/Support/Allocator.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="raw__ostream_8h.html">llvm/Support/raw_ostream.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;llvm/Support/Allocator.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;llvm/Support/raw_ostream.h&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacellvm.html">llvm</a> {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span>detail {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespacellvm_1_1detail.html">   18</a></span><span class="keyword">namespace </span>detail {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespacellvm_1_1detail.html#a165e5f945e3acb4332662fc5fd76bb3b">   20</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacellvm_1_1detail.html#a165e5f945e3acb4332662fc5fd76bb3b">printBumpPtrAllocatorStats</a>(<span class="keywordtype">unsigned</span> NumSlabs, <span class="keywordtype">size_t</span> BytesAllocated,</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                                <span class="keywordtype">size_t</span> TotalMemory) {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <a class="code hl_function" href="namespacellvm.html#ab8e34eca3b0817ef7a127913fbf6d9e4">errs</a>() &lt;&lt; <span class="stringliteral">&quot;\nNumber of memory regions: &quot;</span> &lt;&lt; NumSlabs &lt;&lt; <span class="charliteral">&#39;\n&#39;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  errs() &lt;&lt; <span class="stringliteral">&quot;\nNumber of memory regions: &quot;</span> &lt;&lt; NumSlabs &lt;&lt; <span class="charliteral">&#39;\n&#39;</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>         &lt;&lt; <span class="stringliteral">&quot;Bytes used: &quot;</span> &lt;&lt; BytesAllocated &lt;&lt; <span class="charliteral">&#39;\n&#39;</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>         &lt;&lt; <span class="stringliteral">&quot;Bytes allocated: &quot;</span> &lt;&lt; TotalMemory &lt;&lt; <span class="charliteral">&#39;\n&#39;</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>         &lt;&lt; <span class="stringliteral">&quot;Bytes wasted: &quot;</span> &lt;&lt; (TotalMemory - BytesAllocated)</div>
@@ -83,26 +83,22 @@ $(function() {
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>} <span class="comment">// End namespace detail.</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="namespacellvm.html#a5d241b2cfd56b41c0f396c7a8ab05de2">   31</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacellvm.html#a5d241b2cfd56b41c0f396c7a8ab05de2">PrintRecyclerStats</a>(<span class="keywordtype">size_t</span> <a class="code hl_variable" href="Profile_8cpp.html#a1f5ab05b3305a959d954b796c63807c4">Size</a>,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="namespacellvm.html#a5d241b2cfd56b41c0f396c7a8ab05de2">   31</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacellvm.html#a5d241b2cfd56b41c0f396c7a8ab05de2">PrintRecyclerStats</a>(<span class="keywordtype">size_t</span> Size,</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                        <span class="keywordtype">size_t</span> Align,</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                        <span class="keywordtype">size_t</span> FreeListSize) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_function" href="namespacellvm.html#ab8e34eca3b0817ef7a127913fbf6d9e4">errs</a>() &lt;&lt; <span class="stringliteral">&quot;Recycler element size: &quot;</span> &lt;&lt; <a class="code hl_variable" href="Profile_8cpp.html#a1f5ab05b3305a959d954b796c63807c4">Size</a> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  errs() &lt;&lt; <span class="stringliteral">&quot;Recycler element size: &quot;</span> &lt;&lt; Size &lt;&lt; <span class="charliteral">&#39;\n&#39;</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>         &lt;&lt; <span class="stringliteral">&quot;Recycler element alignment: &quot;</span> &lt;&lt; Align &lt;&lt; <span class="charliteral">&#39;\n&#39;</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>         &lt;&lt; <span class="stringliteral">&quot;Number of elements free for recycling: &quot;</span> &lt;&lt; FreeListSize &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
-<div class="ttc" id="aAllocator_8h_html"><div class="ttname"><a href="Allocator_8h.html">Allocator.h</a></div><div class="ttdoc">This file defines the MallocAllocator and BumpPtrAllocator interfaces.</div></div>
-<div class="ttc" id="aProfile_8cpp_html_a1f5ab05b3305a959d954b796c63807c4"><div class="ttname"><a href="Profile_8cpp.html#a1f5ab05b3305a959d954b796c63807c4">Size</a></div><div class="ttdeci">uint32_t Size</div><div class="ttdef"><b>Definition:</b> <a href="Profile_8cpp_source.html#l00046">Profile.cpp:46</a></div></div>
 <div class="ttc" id="anamespacellvm_1_1detail_html_a165e5f945e3acb4332662fc5fd76bb3b"><div class="ttname"><a href="namespacellvm_1_1detail.html#a165e5f945e3acb4332662fc5fd76bb3b">llvm::detail::printBumpPtrAllocatorStats</a></div><div class="ttdeci">void printBumpPtrAllocatorStats(unsigned NumSlabs, size_t BytesAllocated, size_t TotalMemory)</div><div class="ttdef"><b>Definition:</b> <a href="Allocator_8cpp_source.html#l00020">Allocator.cpp:20</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AllocatorList_8h_source.html#l00023">AllocatorList.h:23</a></div></div>
-<div class="ttc" id="anamespacellvm_html_a5d241b2cfd56b41c0f396c7a8ab05de2"><div class="ttname"><a href="namespacellvm.html#a5d241b2cfd56b41c0f396c7a8ab05de2">llvm::PrintRecyclerStats</a></div><div class="ttdeci">void PrintRecyclerStats(size_t Size, size_t Align, size_t FreeListSize)</div><div class="ttdoc">PrintRecyclingAllocatorStats - Helper for RecyclingAllocator for printing statistics.</div><div class="ttdef"><b>Definition:</b> <a href="Allocator_8cpp_source.html#l00031">Allocator.cpp:31</a></div></div>
-<div class="ttc" id="anamespacellvm_html_ab8e34eca3b0817ef7a127913fbf6d9e4"><div class="ttname"><a href="namespacellvm.html#ab8e34eca3b0817ef7a127913fbf6d9e4">llvm::errs</a></div><div class="ttdeci">raw_ostream &amp; errs()</div><div class="ttdoc">This returns a reference to a raw_ostream for standard error.</div><div class="ttdef"><b>Definition:</b> <a href="raw__ostream_8cpp_source.html#l00853">raw_ostream.cpp:853</a></div></div>
-<div class="ttc" id="araw__ostream_8h_html"><div class="ttname"><a href="raw__ostream_8h.html">raw_ostream.h</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
+<div class="ttc" id="anamespacellvm_html_a5d241b2cfd56b41c0f396c7a8ab05de2"><div class="ttname"><a href="namespacellvm.html#a5d241b2cfd56b41c0f396c7a8ab05de2">llvm::PrintRecyclerStats</a></div><div class="ttdeci">void PrintRecyclerStats(size_t Size, size_t Align, size_t FreeListSize)</div><div class="ttdef"><b>Definition:</b> <a href="Allocator_8cpp_source.html#l00031">Allocator.cpp:31</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:23:09 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:37 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

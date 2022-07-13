@@ -58,21 +58,21 @@ $(function() {
   <div class="headertitle"><div class="title">BlockFrequencyInfoImpl.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="BlockFrequencyInfoImpl_8h_source.html">llvm/Analysis/BlockFrequencyInfoImpl.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="APInt_8h_source.html">llvm/ADT/APInt.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseMap_8h_source.html">llvm/ADT/DenseMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GraphTraits_8h_source.html">llvm/ADT/GraphTraits.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="None_8h_source.html">llvm/ADT/None.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SCCIterator_8h_source.html">llvm/ADT/SCCIterator.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/BlockFrequencyInfoImpl.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/APInt.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/GraphTraits.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/None.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SCCIterator.h&quot;</code><br />
 <code>#include &quot;llvm/Config/llvm-config.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BlockFrequency_8h_source.html">llvm/Support/BlockFrequency.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BranchProbability_8h_source.html">llvm/Support/BranchProbability.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Compiler_8h_source.html">llvm/Support/Compiler.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScaledNumber_8h_source.html">llvm/Support/ScaledNumber.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MathExtras_8h_source.html">llvm/Support/MathExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/Support/BlockFrequency.h&quot;</code><br />
+<code>#include &quot;llvm/Support/BranchProbability.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Compiler.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ScaledNumber.h&quot;</code><br />
+<code>#include &quot;llvm/Support/MathExtras.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
@@ -86,6 +86,33 @@ $(function() {
 Include dependency graph for BlockFrequencyInfoImpl.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="BlockFrequencyInfoImpl_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2BlockFrequencyInfoImpl_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2BlockFrequencyInfoImpl_8cpp" id="alib_2Analysis_2BlockFrequencyInfoImpl_8cpp">
+<area shape="rect" title=" " alt="" coords="2308,5,2512,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,223,133"/>
+<area shape="rect" title=" " alt="" coords="247,101,379,126"/>
+<area shape="rect" title=" " alt="" coords="403,101,569,126"/>
+<area shape="rect" title=" " alt="" coords="593,101,765,126"/>
+<area shape="rect" title=" " alt="" coords="789,101,921,126"/>
+<area shape="rect" title=" " alt="" coords="946,101,1117,126"/>
+<area shape="rect" title=" " alt="" coords="1141,101,1327,126"/>
+<area shape="rect" title=" " alt="" coords="1351,101,1490,126"/>
+<area shape="rect" title=" " alt="" coords="1515,101,1737,126"/>
+<area shape="rect" title=" " alt="" coords="1761,101,1995,126"/>
+<area shape="rect" title=" " alt="" coords="2019,101,2198,126"/>
+<area shape="rect" title=" " alt="" coords="2222,101,2385,126"/>
+<area shape="rect" title=" " alt="" coords="2409,101,2624,126"/>
+<area shape="rect" title=" " alt="" coords="2649,101,2843,126"/>
+<area shape="rect" title=" " alt="" coords="2868,101,3075,126"/>
+<area shape="rect" title=" " alt="" coords="3099,101,3185,126"/>
+<area shape="rect" title=" " alt="" coords="3209,101,3278,126"/>
+<area shape="rect" title=" " alt="" coords="3303,101,3373,126"/>
+<area shape="rect" title=" " alt="" coords="3398,101,3465,126"/>
+<area shape="rect" title=" " alt="" coords="3489,101,3560,126"/>
+<area shape="rect" title=" " alt="" coords="3585,101,3627,126"/>
+<area shape="rect" title=" " alt="" coords="3651,101,3726,126"/>
+<area shape="rect" title=" " alt="" coords="3751,101,3811,126"/>
+<area shape="rect" title=" " alt="" coords="3835,101,3897,126"/>
+</map>
 </div>
 </div>
 <p><a href="BlockFrequencyInfoImpl_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -98,7 +125,6 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -108,9 +134,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7c993766c71555883cf7cf7a2d98dd51"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classchar.html">char</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#a7c993766c71555883cf7cf7a2d98dd51">getHexDigit</a> (int <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)</td></tr>
+<tr class="memitem:a7c993766c71555883cf7cf7a2d98dd51"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#a7c993766c71555883cf7cf7a2d98dd51">getHexDigit</a> (int <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)</td></tr>
 <tr class="separator:a7c993766c71555883cf7cf7a2d98dd51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63f8c3e98c54556d954cc51ca32293ca"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#a63f8c3e98c54556d954cc51ca32293ca">combineWeight</a> (Weight &amp;W, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> Weight &amp;OtherW)</td></tr>
+<tr class="memitem:a63f8c3e98c54556d954cc51ca32293ca"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#a63f8c3e98c54556d954cc51ca32293ca">combineWeight</a> (Weight &amp;W, const Weight &amp;OtherW)</td></tr>
 <tr class="separator:a63f8c3e98c54556d954cc51ca32293ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1686c286d1b8fa8b1120a58b14cfbc98"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#a1686c286d1b8fa8b1120a58b14cfbc98">combineWeightsBySorting</a> (WeightList &amp;Weights)</td></tr>
 <tr class="separator:a1686c286d1b8fa8b1120a58b14cfbc98"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,20 +146,20 @@ Functions</h2></td></tr>
 <tr class="separator:a6750f9ed35f65ba11b4c3c00d9d4fb4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7b0ebc6a85830e67121d86801e54d8f"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#af7b0ebc6a85830e67121d86801e54d8f">shiftRightAndRound</a> (uint64_t <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, int Shift)</td></tr>
 <tr class="separator:af7b0ebc6a85830e67121d86801e54d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3419f1e4b5a20b3ec28ae5f1f3c6f32b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#a3419f1e4b5a20b3ec28ae5f1f3c6f32b">cleanup</a> (<a class="el" href="classllvm_1_1BlockFrequencyInfoImplBase.html">BlockFrequencyInfoImplBase</a> &amp;BFI)</td></tr>
+<tr class="memitem:a3419f1e4b5a20b3ec28ae5f1f3c6f32b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#a3419f1e4b5a20b3ec28ae5f1f3c6f32b">cleanup</a> (BlockFrequencyInfoImplBase &amp;BFI)</td></tr>
 <tr class="memdesc:a3419f1e4b5a20b3ec28ae5f1f3c6f32b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all memory not needed downstream.  <a href="BlockFrequencyInfoImpl_8cpp.html#a3419f1e4b5a20b3ec28ae5f1f3c6f32b">More...</a><br /></td></tr>
 <tr class="separator:a3419f1e4b5a20b3ec28ae5f1f3c6f32b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66f7e7e39b39bbef6c21b3ea11060c4f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#a66f7e7e39b39bbef6c21b3ea11060c4f">debugAssign</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BlockFrequencyInfoImplBase.html">BlockFrequencyInfoImplBase</a> &amp;BFI, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> DitheringDistributer &amp;<a class="el" href="BuiltinGCs_8cpp.html#a9cb3a7d37a9414f3dc2cdca773d6dee6">D</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> BlockNode &amp;<a class="el" href="classT.html">T</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1bfi__detail_1_1BlockMass.html">BlockMass</a> &amp;M, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *Desc)</td></tr>
+<tr class="memitem:a66f7e7e39b39bbef6c21b3ea11060c4f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#a66f7e7e39b39bbef6c21b3ea11060c4f">debugAssign</a> (const BlockFrequencyInfoImplBase &amp;BFI, const DitheringDistributer &amp;D, const BlockNode &amp;T, const BlockMass &amp;M, const char *Desc)</td></tr>
 <tr class="separator:a66f7e7e39b39bbef6c21b3ea11060c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac95b88432687074901d5cc201b62be76"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#ac95b88432687074901d5cc201b62be76">convertFloatingToInteger</a> (<a class="el" href="classllvm_1_1BlockFrequencyInfoImplBase.html">BlockFrequencyInfoImplBase</a> &amp;BFI, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="SyntheticCountsPropagation_8cpp.html#a49c1e422196c0091065074ac15fb6ba3">Scaled64</a> &amp;Min, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="SyntheticCountsPropagation_8cpp.html#a49c1e422196c0091065074ac15fb6ba3">Scaled64</a> &amp;Max)</td></tr>
+<tr class="memitem:ac95b88432687074901d5cc201b62be76"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#ac95b88432687074901d5cc201b62be76">convertFloatingToInteger</a> (BlockFrequencyInfoImplBase &amp;BFI, const <a class="el" href="SyntheticCountsPropagation_8cpp.html#a49c1e422196c0091065074ac15fb6ba3">Scaled64</a> &amp;Min, const <a class="el" href="SyntheticCountsPropagation_8cpp.html#a49c1e422196c0091065074ac15fb6ba3">Scaled64</a> &amp;Max)</td></tr>
 <tr class="separator:ac95b88432687074901d5cc201b62be76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a494d2e2688c4f4ec901183685c215b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#a4a494d2e2688c4f4ec901183685c215b">unwrapLoop</a> (<a class="el" href="classllvm_1_1BlockFrequencyInfoImplBase.html">BlockFrequencyInfoImplBase</a> &amp;BFI, LoopData &amp;<a class="el" href="classllvm_1_1Loop.html">Loop</a>)</td></tr>
+<tr class="memitem:a4a494d2e2688c4f4ec901183685c215b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#a4a494d2e2688c4f4ec901183685c215b">unwrapLoop</a> (BlockFrequencyInfoImplBase &amp;BFI, LoopData &amp;Loop)</td></tr>
 <tr class="memdesc:a4a494d2e2688c4f4ec901183685c215b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unwrap a loop package.  <a href="BlockFrequencyInfoImpl_8cpp.html#a4a494d2e2688c4f4ec901183685c215b">More...</a><br /></td></tr>
 <tr class="separator:a4a494d2e2688c4f4ec901183685c215b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95338a977e204bee84a88c2b0a8a1fad"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#a95338a977e204bee84a88c2b0a8a1fad">findIrreducibleHeaders</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BlockFrequencyInfoImplBase.html">BlockFrequencyInfoImplBase</a> &amp;BFI, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1bfi__detail_1_1IrreducibleGraph.html">IrreducibleGraph</a> &amp;<a class="el" href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> std::vector&lt; <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1bfi__detail_1_1IrreducibleGraph_1_1IrrNode.html">IrreducibleGraph::IrrNode</a> * &gt; &amp;SCC, LoopData::NodeList &amp;Headers, LoopData::NodeList &amp;Others)</td></tr>
+<tr class="memitem:a95338a977e204bee84a88c2b0a8a1fad"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#a95338a977e204bee84a88c2b0a8a1fad">findIrreducibleHeaders</a> (const BlockFrequencyInfoImplBase &amp;BFI, const IrreducibleGraph &amp;<a class="el" href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>, const std::vector&lt; const IrreducibleGraph::IrrNode * &gt; &amp;SCC, LoopData::NodeList &amp;Headers, LoopData::NodeList &amp;Others)</td></tr>
 <tr class="memdesc:a95338a977e204bee84a88c2b0a8a1fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find extra irreducible headers.  <a href="BlockFrequencyInfoImpl_8cpp.html#a95338a977e204bee84a88c2b0a8a1fad">More...</a><br /></td></tr>
 <tr class="separator:a95338a977e204bee84a88c2b0a8a1fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada202dbe971b41ac9748f92c80464573"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#ada202dbe971b41ac9748f92c80464573">createIrreducibleLoop</a> (<a class="el" href="classllvm_1_1BlockFrequencyInfoImplBase.html">BlockFrequencyInfoImplBase</a> &amp;BFI, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1bfi__detail_1_1IrreducibleGraph.html">IrreducibleGraph</a> &amp;<a class="el" href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>, LoopData *OuterLoop, std::list&lt; LoopData &gt;<a class="el" href="classT_1_1TreeTy_1_1iterator.html">::iterator</a> Insert, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> std::vector&lt; <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1bfi__detail_1_1IrreducibleGraph_1_1IrrNode.html">IrreducibleGraph::IrrNode</a> * &gt; &amp;SCC)</td></tr>
+<tr class="memitem:ada202dbe971b41ac9748f92c80464573"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BlockFrequencyInfoImpl_8cpp.html#ada202dbe971b41ac9748f92c80464573">createIrreducibleLoop</a> (BlockFrequencyInfoImplBase &amp;BFI, const IrreducibleGraph &amp;<a class="el" href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>, LoopData *OuterLoop, std::list&lt; LoopData &gt;::iterator Insert, const std::vector&lt; const IrreducibleGraph::IrrNode * &gt; &amp;SCC)</td></tr>
 <tr class="separator:ada202dbe971b41ac9748f92c80464573"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -166,7 +192,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void cleanup </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BlockFrequencyInfoImplBase.html">BlockFrequencyInfoImplBase</a> &amp;&#160;</td>
+          <td class="paramtype">BlockFrequencyInfoImplBase &amp;&#160;</td>
           <td class="paramname"><em>BFI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -182,8 +208,6 @@ Functions</h2></td></tr>
 <p >Releases all memory not used downstream. In particular, saves Freqs. </p>
 
 <p class="definition">Definition at line <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00282">282</a> of file <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html">BlockFrequencyInfoImpl.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="CrashRecoveryContext_8cpp_source.html#l00135">llvm::CrashRecoveryContext::registerCleanup()</a>, and <a class="el" href="CrashRecoveryContext_8cpp_source.html#l00146">llvm::CrashRecoveryContext::unregisterCleanup()</a>.</p>
 
 </div>
 </div>
@@ -205,7 +229,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> Weight &amp;&#160;</td>
+          <td class="paramtype">const Weight &amp;&#160;</td>
           <td class="paramname"><em>OtherW</em>&#160;</td>
         </tr>
         <tr>
@@ -223,7 +247,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00140">140</a> of file <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html">BlockFrequencyInfoImpl.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, and <a class="el" href="llvm-c_2DataTypes_8h_source.html#l00083">UINT64_MAX</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00177">combineWeightsByHashing()</a>, and <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00156">combineWeightsBySorting()</a>.</p>
 
@@ -257,8 +281,6 @@ Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00177">combineWeightsByHashing()</a>, and <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00156">combineWeightsBySorting()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00214">llvm::BlockFrequencyInfoImplBase::Distribution::normalize()</a>.</p>
-
 </div>
 </div>
 <a id="a409eb8fc01c0f967fa0cdb1b1d529873" name="a409eb8fc01c0f967fa0cdb1b1d529873"></a>
@@ -287,7 +309,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00177">177</a> of file <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html">BlockFrequencyInfoImpl.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00140">combineWeight()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="MathExtras_8h_source.html#l00644">llvm::NextPowerOf2()</a>.</p>
+<p class="reference">References <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00140">combineWeight()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00196">combineWeights()</a>.</p>
 
@@ -319,7 +341,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00156">156</a> of file <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html">BlockFrequencyInfoImpl.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00140">combineWeight()</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="STLExtras_8h_source.html#l01122">llvm::sort()</a>.</p>
+<p class="reference">References <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00140">combineWeight()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00196">combineWeights()</a>.</p>
 
@@ -337,19 +359,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void convertFloatingToInteger </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BlockFrequencyInfoImplBase.html">BlockFrequencyInfoImplBase</a> &amp;&#160;</td>
+          <td class="paramtype">BlockFrequencyInfoImplBase &amp;&#160;</td>
           <td class="paramname"><em>BFI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="SyntheticCountsPropagation_8cpp.html#a49c1e422196c0091065074ac15fb6ba3">Scaled64</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="SyntheticCountsPropagation_8cpp.html#a49c1e422196c0091065074ac15fb6ba3">Scaled64</a> &amp;&#160;</td>
           <td class="paramname"><em>Min</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="SyntheticCountsPropagation_8cpp.html#a49c1e422196c0091065074ac15fb6ba3">Scaled64</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="SyntheticCountsPropagation_8cpp.html#a49c1e422196c0091065074ac15fb6ba3">Scaled64</a> &amp;&#160;</td>
           <td class="paramname"><em>Max</em>&#160;</td>
         </tr>
         <tr>
@@ -367,8 +389,6 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00460">460</a> of file <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html">BlockFrequencyInfoImpl.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="ScaledNumber_8h_source.html#l00677">llvm::ScaledNumber&lt; DigitsT &gt;::inverse()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, and <a class="el" href="ARCInstrInfo_8cpp_source.html#l00035">Scaled</a>.</p>
-
 </div>
 </div>
 <a id="ada202dbe971b41ac9748f92c80464573" name="ada202dbe971b41ac9748f92c80464573"></a>
@@ -383,13 +403,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void createIrreducibleLoop </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BlockFrequencyInfoImplBase.html">BlockFrequencyInfoImplBase</a> &amp;&#160;</td>
+          <td class="paramtype">BlockFrequencyInfoImplBase &amp;&#160;</td>
           <td class="paramname"><em>BFI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1bfi__detail_1_1IrreducibleGraph.html">IrreducibleGraph</a> &amp;&#160;</td>
+          <td class="paramtype">const IrreducibleGraph &amp;&#160;</td>
           <td class="paramname"><em>G</em>, </td>
         </tr>
         <tr>
@@ -401,13 +421,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::list&lt; LoopData &gt;<a class="el" href="classT_1_1TreeTy_1_1iterator.html">::iterator</a>&#160;</td>
+          <td class="paramtype">std::list&lt; LoopData &gt;::iterator&#160;</td>
           <td class="paramname"><em>Insert</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> std::vector&lt; <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1bfi__detail_1_1IrreducibleGraph_1_1IrrNode.html">IrreducibleGraph::IrrNode</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; const IrreducibleGraph::IrrNode * &gt; &amp;&#160;</td>
           <td class="paramname"><em>SCC</em>&#160;</td>
         </tr>
         <tr>
@@ -425,9 +445,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00751">751</a> of file <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html">BlockFrequencyInfoImpl.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00682">findIrreducibleHeaders()</a>, <a class="el" href="MD5_8cpp_source.html#l00056">G</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, and <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00774">llvm::BlockFrequencyInfoImplBase::analyzeIrreducible()</a>.</p>
+<p class="reference">References <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00682">findIrreducibleHeaders()</a>, <a class="el" href="MD5_8cpp_source.html#l00056">G</a>, and <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>.</p>
 
 </div>
 </div>
@@ -443,31 +461,31 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void debugAssign </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BlockFrequencyInfoImplBase.html">BlockFrequencyInfoImplBase</a> &amp;&#160;</td>
+          <td class="paramtype">const BlockFrequencyInfoImplBase &amp;&#160;</td>
           <td class="paramname"><em>BFI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> DitheringDistributer &amp;&#160;</td>
+          <td class="paramtype">const DitheringDistributer &amp;&#160;</td>
           <td class="paramname"><em>D</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> BlockNode &amp;&#160;</td>
+          <td class="paramtype">const BlockNode &amp;&#160;</td>
           <td class="paramname"><em>T</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1bfi__detail_1_1BlockMass.html">BlockMass</a> &amp;&#160;</td>
+          <td class="paramtype">const BlockMass &amp;&#160;</td>
           <td class="paramname"><em>M</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>Desc</em>&#160;</td>
         </tr>
         <tr>
@@ -485,10 +503,6 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00413">413</a> of file <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html">BlockFrequencyInfoImpl.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a9cb3a7d37a9414f3dc2cdca773d6dee6">D</a>, and <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00805">llvm::BlockFrequencyInfoImplBase::adjustLoopHeaderMass()</a>, <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00842">llvm::BlockFrequencyInfoImplBase::distributeIrrLoopHeaderMass()</a>, and <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00425">llvm::BlockFrequencyInfoImplBase::distributeMass()</a>.</p>
-
 </div>
 </div>
 <a id="a95338a977e204bee84a88c2b0a8a1fad" name="a95338a977e204bee84a88c2b0a8a1fad"></a>
@@ -503,19 +517,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void findIrreducibleHeaders </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BlockFrequencyInfoImplBase.html">BlockFrequencyInfoImplBase</a> &amp;&#160;</td>
+          <td class="paramtype">const BlockFrequencyInfoImplBase &amp;&#160;</td>
           <td class="paramname"><em>BFI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1bfi__detail_1_1IrreducibleGraph.html">IrreducibleGraph</a> &amp;&#160;</td>
+          <td class="paramtype">const IrreducibleGraph &amp;&#160;</td>
           <td class="paramname"><em>G</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> std::vector&lt; <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1bfi__detail_1_1IrreducibleGraph_1_1IrrNode.html">IrreducibleGraph::IrrNode</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; const IrreducibleGraph::IrrNode * &gt; &amp;&#160;</td>
           <td class="paramname"><em>SCC</em>, </td>
         </tr>
         <tr>
@@ -548,7 +562,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00682">682</a> of file <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html">BlockFrequencyInfoImpl.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="DenseMap_8h_source.html#l00099">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::begin()</a>, <a class="el" href="DenseMap_8h_source.html#l00171">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::count()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="DenseMap_8h_source.html#l00108">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::end()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="DenseMap_8h_source.html#l00211">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::lookup()</a>, <a class="el" href="iterator__range_8h_source.html#l00053">llvm::make_range()</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="DenseMap_8h_source.html#l00125">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::size()</a>, and <a class="el" href="STLExtras_8h_source.html#l01122">llvm::sort()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00751">createIrreducibleLoop()</a>.</p>
 
@@ -564,7 +578,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classchar.html">char</a> getHexDigit </td>
+          <td class="memname">static char getHexDigit </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>N</em></td><td>)</td>
@@ -580,9 +594,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00053">53</a> of file <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html">BlockFrequencyInfoImpl.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, and <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00060">llvm::bfi_detail::BlockMass::print()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>.</p>
 
 </div>
 </div>
@@ -622,9 +634,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00206">206</a> of file <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html">BlockFrequencyInfoImpl.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, and <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00214">llvm::BlockFrequencyInfoImplBase::Distribution::normalize()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>.</p>
 
 </div>
 </div>
@@ -640,7 +650,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void unwrapLoop </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BlockFrequencyInfoImplBase.html">BlockFrequencyInfoImplBase</a> &amp;&#160;</td>
+          <td class="paramtype">BlockFrequencyInfoImplBase &amp;&#160;</td>
           <td class="paramname"><em>BFI</em>, </td>
         </tr>
         <tr>
@@ -663,20 +673,18 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Unwrap a loop package. </p>
-<p >Visits all the members of a loop, adjusting their <a class="el" href="classBlockData.html">BlockData</a> according to the loop's pseudo-node. </p>
+<p >Visits all the members of a loop, adjusting their BlockData according to the loop's pseudo-node. </p>
 
 <p class="definition">Definition at line <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00499">499</a> of file <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html">BlockFrequencyInfoImpl.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, and <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="BlockFrequencyInfoImpl_8cpp_source.html#l00521">llvm::BlockFrequencyInfoImplBase::unwrapLoops()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:11 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

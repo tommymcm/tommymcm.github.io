@@ -62,62 +62,62 @@ $(function() {
 
 <p>This file implements the new LLVM's Global Value Numbering pass.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="NewGVN_8h_source.html">llvm/Transforms/Scalar/NewGVN.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ArrayRef_8h_source.html">llvm/ADT/ArrayRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BitVector_8h_source.html">llvm/ADT/BitVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseMap_8h_source.html">llvm/ADT/DenseMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseMapInfo_8h_source.html">llvm/ADT/DenseMapInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseSet_8h_source.html">llvm/ADT/DenseSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DepthFirstIterator_8h_source.html">llvm/ADT/DepthFirstIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GraphTraits_8h_source.html">llvm/ADT/GraphTraits.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Hashing_8h_source.html">llvm/ADT/Hashing.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PointerIntPair_8h_source.html">llvm/ADT/PointerIntPair.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PostOrderIterator_8h_source.html">llvm/ADT/PostOrderIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallPtrSet_8h_source.html">llvm/ADT/SmallPtrSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SparseBitVector_8h_source.html">llvm/ADT/SparseBitVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="iterator__range_8h_source.html">llvm/ADT/iterator_range.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CFGPrinter_8h_source.html">llvm/Analysis/CFGPrinter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ConstantFolding_8h_source.html">llvm/Analysis/ConstantFolding.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalsModRef_8h_source.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstructionSimplify_8h_source.html">llvm/Analysis/InstructionSimplify.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MemoryBuiltins_8h_source.html">llvm/Analysis/MemoryBuiltins.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MemorySSA_8h_source.html">llvm/Analysis/MemorySSA.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Use_8h_source.html">llvm/IR/Use.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Allocator_8h_source.html">llvm/Support/Allocator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ArrayRecycler_8h_source.html">llvm/Support/ArrayRecycler.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DebugCounter_8h_source.html">llvm/Support/DebugCounter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PointerLikeTypeTraits_8h_source.html">llvm/Support/PointerLikeTypeTraits.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GVNExpression_8h_source.html">llvm/Transforms/Scalar/GVNExpression.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PredicateInfo_8h_source.html">llvm/Transforms/Utils/PredicateInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="VNCoercion_8h_source.html">llvm/Transforms/Utils/VNCoercion.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/NewGVN.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/BitVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseMapInfo.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DepthFirstIterator.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/GraphTraits.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Hashing.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/PointerIntPair.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/PostOrderIterator.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SparseBitVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/iterator_range.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CFGPrinter.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ConstantFolding.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/InstructionSimplify.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/MemoryBuiltins.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/MemorySSA.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Use.h&quot;</code><br />
+<code>#include &quot;llvm/IR/User.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Allocator.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ArrayRecycler.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/DebugCounter.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
+<code>#include &quot;llvm/Support/PointerLikeTypeTraits.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar/GVNExpression.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/PredicateInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/VNCoercion.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
@@ -144,7 +144,6 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacellvm_1_1GVNExpression"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1GVNExpression.html">llvm::GVNExpression</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,7 +155,7 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa2d187aaccade4784608533695ef20ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#aa2d187aaccade4784608533695ef20ee">STATISTIC</a> (NumGVNInstrDeleted, &quot;Number of <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> deleted&quot;)</td></tr>
+<tr class="memitem:aa2d187aaccade4784608533695ef20ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#aa2d187aaccade4784608533695ef20ee">STATISTIC</a> (NumGVNInstrDeleted, &quot;Number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> deleted&quot;)</td></tr>
 <tr class="separator:aa2d187aaccade4784608533695ef20ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a407afc5446281a7836f05d58730baa53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a407afc5446281a7836f05d58730baa53">STATISTIC</a> (NumGVNBlocksDeleted, &quot;Number of blocks deleted&quot;)</td></tr>
 <tr class="separator:a407afc5446281a7836f05d58730baa53"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,7 +163,7 @@ Functions</h2></td></tr>
 <tr class="separator:ab14a5202fd5c966fb21442f435696767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef49f2b52970ce118eb44e7075bfdab0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#aef49f2b52970ce118eb44e7075bfdab0">STATISTIC</a> (NumGVNPhisAllSame, &quot;Number of PHIs whos arguments are all the same&quot;)</td></tr>
 <tr class="separator:aef49f2b52970ce118eb44e7075bfdab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a227321ab3b30b7025763017b3fd805d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a227321ab3b30b7025763017b3fd805d9">STATISTIC</a> (NumGVNMaxIterations, &quot;Maximum <a class="el" href="Profile_8cpp.html#a14a17296c5e9cf55d96793be90af8715">Number</a> of iterations it took to converge GVN&quot;)</td></tr>
+<tr class="memitem:a227321ab3b30b7025763017b3fd805d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a227321ab3b30b7025763017b3fd805d9">STATISTIC</a> (NumGVNMaxIterations, &quot;Maximum Number of iterations it took to converge GVN&quot;)</td></tr>
 <tr class="separator:a227321ab3b30b7025763017b3fd805d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38c1c17defdc3bf20d294e92c4cd924c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a38c1c17defdc3bf20d294e92c4cd924c">STATISTIC</a> (NumGVNLeaderChanges, &quot;Number of leader changes&quot;)</td></tr>
 <tr class="separator:a38c1c17defdc3bf20d294e92c4cd924c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,48 +171,48 @@ Functions</h2></td></tr>
 <tr class="separator:ad243b986469b60a29fdb3deed1206525"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a227c391763eb62fa21572e364d20202c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a227c391763eb62fa21572e364d20202c">STATISTIC</a> (NumGVNAvoidedSortedLeaderChanges, &quot;Number of avoided sorted leader changes&quot;)</td></tr>
 <tr class="separator:a227c391763eb62fa21572e364d20202c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f96bba2a38525f999e32baa61850829"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a5f96bba2a38525f999e32baa61850829">STATISTIC</a> (NumGVNDeadStores, &quot;Number of redundant/dead <a class="el" href="HexagonStoreWidening_8cpp.html#a7d2c711a42f51c1f7b3ce3f8f560fa74">stores</a> eliminated&quot;)</td></tr>
+<tr class="memitem:a5f96bba2a38525f999e32baa61850829"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a5f96bba2a38525f999e32baa61850829">STATISTIC</a> (NumGVNDeadStores, &quot;Number of redundant/dead stores eliminated&quot;)</td></tr>
 <tr class="separator:a5f96bba2a38525f999e32baa61850829"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbc45b86a15596e1ea665d447e75874f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#adbc45b86a15596e1ea665d447e75874f">STATISTIC</a> (NumGVNPHIOfOpsCreated, &quot;Number of PHI of <a class="el" href="XRayInstrumentation_8cpp.html#a3d7f8a500f0593da70cb5a39b985840d">ops</a> created&quot;)</td></tr>
+<tr class="memitem:adbc45b86a15596e1ea665d447e75874f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#adbc45b86a15596e1ea665d447e75874f">STATISTIC</a> (NumGVNPHIOfOpsCreated, &quot;Number of PHI of ops created&quot;)</td></tr>
 <tr class="separator:adbc45b86a15596e1ea665d447e75874f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3b4ae50809dc82f3cac6b44f0f791bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#aa3b4ae50809dc82f3cac6b44f0f791bc">STATISTIC</a> (NumGVNPHIOfOpsEliminations, &quot;Number of things eliminated using PHI of ops&quot;)</td></tr>
 <tr class="separator:aa3b4ae50809dc82f3cac6b44f0f791bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab78a3f0b02df270f43a69be077e6ce17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#ab78a3f0b02df270f43a69be077e6ce17">DEBUG_COUNTER</a> (VNCounter, &quot;newgvn-vn&quot;, &quot;Controls which <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> are value numbered&quot;)</td></tr>
+<tr class="memitem:ab78a3f0b02df270f43a69be077e6ce17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#ab78a3f0b02df270f43a69be077e6ce17">DEBUG_COUNTER</a> (VNCounter, &quot;newgvn-vn&quot;, &quot;Controls which <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> are value numbered&quot;)</td></tr>
 <tr class="separator:ab78a3f0b02df270f43a69be077e6ce17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4c4a1fa6fe23d25f3d3d8e51dc5087e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#ab4c4a1fa6fe23d25f3d3d8e51dc5087e">DEBUG_COUNTER</a> (PHIOfOpsCounter, &quot;newgvn-phi&quot;, &quot;Controls which <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> we create phi of <a class="el" href="XRayInstrumentation_8cpp.html#a3d7f8a500f0593da70cb5a39b985840d">ops</a> for&quot;)</td></tr>
+<tr class="memitem:ab4c4a1fa6fe23d25f3d3d8e51dc5087e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#ab4c4a1fa6fe23d25f3d3d8e51dc5087e">DEBUG_COUNTER</a> (PHIOfOpsCounter, &quot;newgvn-phi&quot;, &quot;Controls which <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> we create phi of ops for&quot;)</td></tr>
 <tr class="separator:ab4c4a1fa6fe23d25f3d3d8e51dc5087e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac63d3f0019b657181ccb0ea9d8cee8dc"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classT.html">T</a> &gt; </td></tr>
-<tr class="memitem:ac63d3f0019b657181ccb0ea9d8cee8dc"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#ac63d3f0019b657181ccb0ea9d8cee8dc">equalsLoadStoreHelper</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classT.html">T</a> &amp;LHS, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1GVNExpression_1_1Expression.html">Expression</a> &amp;RHS)</td></tr>
+<tr class="memitem:a78cb5c72f58ec912ab031c4b7bb05c78"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a78cb5c72f58ec912ab031c4b7bb05c78">EnableStoreRefinement</a> (&quot;enable-store-refinement&quot;, cl::init(false), cl::Hidden)</td></tr>
+<tr class="separator:a78cb5c72f58ec912ab031c4b7bb05c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac65d8c9e05ff24c5b5b71edf2972149a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#ac65d8c9e05ff24c5b5b71edf2972149a">EnablePhiOfOps</a> (&quot;enable-phi-of-ops&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden)</td></tr>
+<tr class="memdesc:ac65d8c9e05ff24c5b5b71edf2972149a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently, the generation "phi of ops" can result in correctness issues.  <a href="NewGVN_8cpp.html#ac65d8c9e05ff24c5b5b71edf2972149a">More...</a><br /></td></tr>
+<tr class="separator:ac65d8c9e05ff24c5b5b71edf2972149a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac63d3f0019b657181ccb0ea9d8cee8dc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ac63d3f0019b657181ccb0ea9d8cee8dc"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#ac63d3f0019b657181ccb0ea9d8cee8dc">equalsLoadStoreHelper</a> (const T &amp;LHS, const Expression &amp;RHS)</td></tr>
 <tr class="separator:ac63d3f0019b657181ccb0ea9d8cee8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcbc48eaf6f3e66fdab487bcb42282c1"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#abcbc48eaf6f3e66fdab487bcb42282c1">getBlockName</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>)</td></tr>
+<tr class="memitem:abcbc48eaf6f3e66fdab487bcb42282c1"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#abcbc48eaf6f3e66fdab487bcb42282c1">getBlockName</a> (const BasicBlock *B)</td></tr>
 <tr class="separator:abcbc48eaf6f3e66fdab487bcb42282c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1759f3f63c1791f1303206987fa1f339"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a1759f3f63c1791f1303206987fa1f339">getCopyOf</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
+<tr class="memitem:a1759f3f63c1791f1303206987fa1f339"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a1759f3f63c1791f1303206987fa1f339">getCopyOf</a> (const Value *V)</td></tr>
 <tr class="separator:a1759f3f63c1791f1303206987fa1f339"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a279d695e1e5499f1dda690d12d856163"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a279d695e1e5499f1dda690d12d856163">isCopyOfPHI</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *PN)</td></tr>
+<tr class="memitem:a279d695e1e5499f1dda690d12d856163"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a279d695e1e5499f1dda690d12d856163">isCopyOfPHI</a> (const Value *V, const PHINode *PN)</td></tr>
 <tr class="separator:a279d695e1e5499f1dda690d12d856163"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6877858b952e1d6edf55787f1dde3d1b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a6877858b952e1d6edf55787f1dde3d1b">isCopyOfAPHI</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
+<tr class="memitem:a6877858b952e1d6edf55787f1dde3d1b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a6877858b952e1d6edf55787f1dde3d1b">isCopyOfAPHI</a> (const Value *V)</td></tr>
 <tr class="separator:a6877858b952e1d6edf55787f1dde3d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e0bbb945b104354f807720a83da3c8b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a0e0bbb945b104354f807720a83da3c8b">alwaysAvailable</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
+<tr class="memitem:a0e0bbb945b104354f807720a83da3c8b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a0e0bbb945b104354f807720a83da3c8b">alwaysAvailable</a> (Value *V)</td></tr>
 <tr class="separator:a0e0bbb945b104354f807720a83da3c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2f97a4498e0dd660c984aad5fe45062"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#aa2f97a4498e0dd660c984aad5fe45062">okayForPHIOfOps</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:aa2f97a4498e0dd660c984aad5fe45062"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#aa2f97a4498e0dd660c984aad5fe45062">okayForPHIOfOps</a> (const Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="separator:aa2f97a4498e0dd660c984aad5fe45062"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab85468c2bfc360b5d4bc512d241d1440"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#ab85468c2bfc360b5d4bc512d241d1440">patchAndReplaceAllUsesWith</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1Value.html">Value</a> *Repl)</td></tr>
+<tr class="memitem:ab85468c2bfc360b5d4bc512d241d1440"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#ab85468c2bfc360b5d4bc512d241d1440">patchAndReplaceAllUsesWith</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, Value *Repl)</td></tr>
 <tr class="separator:ab85468c2bfc360b5d4bc512d241d1440"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d51a8da687c3e4eb9e4415ad250fbc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a7d51a8da687c3e4eb9e4415ad250fbc9">INITIALIZE_PASS_BEGIN</a> (NewGVNLegacyPass, &quot;newgvn&quot;, &quot;Global <a class="el" href="classllvm_1_1Value.html">Value</a> Numbering&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(NewGVNLegacyPass</td></tr>
+<tr class="memitem:a7d51a8da687c3e4eb9e4415ad250fbc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a7d51a8da687c3e4eb9e4415ad250fbc9">INITIALIZE_PASS_BEGIN</a> (NewGVNLegacyPass, &quot;newgvn&quot;, &quot;Global Value Numbering&quot;, false, false) INITIALIZE_PASS_END(NewGVNLegacyPass</td></tr>
 <tr class="separator:a7d51a8da687c3e4eb9e4415ad250fbc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aab51dd0f49b403414f696ff00d370b96"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#aab51dd0f49b403414f696ff00d370b96">EnableStoreRefinement</a> (&quot;enable-store-refinement&quot;, cl::init(false), cl::Hidden)</td></tr>
-<tr class="separator:aab51dd0f49b403414f696ff00d370b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4d37daebfe6b46b1f07c42ec89209d5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#af4d37daebfe6b46b1f07c42ec89209d5">EnablePhiOfOps</a> (&quot;enable-phi-of-ops&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden)</td></tr>
-<tr class="memdesc:af4d37daebfe6b46b1f07c42ec89209d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently, the generation "phi of ops" can result in correctness issues.  <a href="NewGVN_8cpp.html#af4d37daebfe6b46b1f07c42ec89209d5">More...</a><br /></td></tr>
-<tr class="separator:af4d37daebfe6b46b1f07c42ec89209d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66d98f5478c50c2139490661c60770f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a66d98f5478c50c2139490661c60770f1">newgvn</a></td></tr>
 <tr class="separator:a66d98f5478c50c2139490661c60770f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3802ce53978393ea3d2d69b646cd49f9"><td class="memItemLeft" align="right" valign="top">Global <a class="el" href="classllvm_1_1Value.html">Value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a3802ce53978393ea3d2d69b646cd49f9">Numbering</a></td></tr>
+<tr class="memitem:a3802ce53978393ea3d2d69b646cd49f9"><td class="memItemLeft" align="right" valign="top">Global Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a3802ce53978393ea3d2d69b646cd49f9">Numbering</a></td></tr>
 <tr class="separator:a3802ce53978393ea3d2d69b646cd49f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d49b0df0088ffc5480b0967e8662245"><td class="memItemLeft" align="right" valign="top">Global <a class="el" href="classllvm_1_1Value.html">Value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a4d49b0df0088ffc5480b0967e8662245">false</a></td></tr>
+<tr class="memitem:a4d49b0df0088ffc5480b0967e8662245"><td class="memItemLeft" align="right" valign="top">Global Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NewGVN_8cpp.html#a4d49b0df0088ffc5480b0967e8662245">false</a></td></tr>
 <tr class="separator:a4d49b0df0088ffc5480b0967e8662245"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -221,7 +220,7 @@ Variables</h2></td></tr>
 <p >GVN partitions values computed by a function into congruence classes. Values ending up in the same congruence class are guaranteed to be the same for every execution of the program. In that respect, congruency is a compile-time approximation of equivalence of values at runtime. The algorithm implemented here uses a sparse formulation and it's based on the ideas described in the paper: "A Sparse Algorithm for Predicated Global Value Numbering" from Karthik Gargi.</p>
 <p >A brief overview of the algorithm: The algorithm is essentially the same as the standard RPO value numbering algorithm (a good reference is the paper "SCC based value numbering" by L. Taylor Simpson) with one major difference: The RPO algorithm proceeds, on every iteration, to process every reachable block and every instruction in that block. This is because the standard RPO algorithm does not track what things have the same value number, it only tracks what the value number of a given operation is (the mapping is operation -&gt; value number). Thus, when a value number of an operation changes, it must reprocess everything to ensure all uses of a value number get updated properly. In constrast, the sparse algorithm we use <em>also</em> tracks what operations have a given value number (IE it also tracks the reverse mapping from value number -&gt; operations with that value number), so that it only needs to reprocess the instructions that are affected when something's value number changes. The vast majority of complexity and code in this file is devoted to tracking what value numbers could change for what instructions when various things happen. The rest of the algorithm is devoted to performing symbolic evaluation, forward propagation, and simplification of operations based on the value numbers deduced so far</p>
 <p >In order to make the GVN mostly-complete, we use a technique derived from "Detection of Redundant Expressions: A Complete and Polynomial-time
-Algorithm in SSA" by <a class="el" href="structllvm_1_1MIPatternMatch_1_1BinaryOp__match.html#a42c6dc5c5769424f4095323a9a232a1a">R.R</a>. Pai. The source of incompleteness in most SSA based GVN algorithms is related to their inability to detect equivalence between phi of ops (IE phi(a+b, c+d)) and op of phis (phi(a,c) + phi(b, d)). We resolve this issue by generating the equivalent "phi of ops" form for each op of phis we see, in a way that only takes polynomial time to resolve.</p>
+Algorithm in SSA" by R.R. Pai. The source of incompleteness in most SSA based GVN algorithms is related to their inability to detect equivalence between phi of ops (IE phi(a+b, c+d)) and op of phis (phi(a,c) + phi(b, d)). We resolve this issue by generating the equivalent "phi of ops" form for each op of phis we see, in a way that only takes polynomial time to resolve.</p>
 <p >We also do not perform elimination by using any published algorithm. All published algorithms are O(Instructions). Instead, we use a technique that is O(number of operations with the same value number), enabling us to skip trying to eliminate things that have unique value numbers. </p>
 
 <p class="definition">Definition in file <a class="el" href="NewGVN_8cpp_source.html">NewGVN.cpp</a>.</p>
@@ -253,9 +252,9 @@ Algorithm in SSA" by <a class="el" href="structllvm_1_1MIPatternMatch_1_1BinaryO
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> alwaysAvailable </td>
+          <td class="memname">static bool alwaysAvailable </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
           <td></td>
         </tr>
@@ -292,7 +291,7 @@ Algorithm in SSA" by <a class="el" href="structllvm_1_1MIPatternMatch_1_1BinaryO
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Controls which <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> we create phi of <a class="el" href="XRayInstrumentation_8cpp.html#a3d7f8a500f0593da70cb5a39b985840d">ops</a> for&quot;&#160;</td>
+          <td class="paramtype">&quot;Controls which <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> we create phi of ops for&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -326,7 +325,7 @@ Algorithm in SSA" by <a class="el" href="structllvm_1_1MIPatternMatch_1_1BinaryO
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Controls which <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> are value numbered&quot;&#160;</td>
+          <td class="paramtype">&quot;Controls which <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> are value numbered&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -339,27 +338,115 @@ Algorithm in SSA" by <a class="el" href="structllvm_1_1MIPatternMatch_1_1BinaryO
 
 </div>
 </div>
+<a id="ac65d8c9e05ff24c5b5b71edf2972149a" name="ac65d8c9e05ff24c5b5b71edf2972149a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac65d8c9e05ff24c5b5b71edf2972149a">&#9670;&nbsp;</a></span>EnablePhiOfOps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; EnablePhiOfOps </td>
+          <td>(</td>
+          <td class="paramtype">&quot;enable-phi-of-ops&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Currently, the generation "phi of ops" can result in correctness issues. </p>
+
+<p class="reference">Referenced by <a class="el" href="NewGVN_8cpp_source.html#l02572">okayForPHIOfOps()</a>.</p>
+
+</div>
+</div>
+<a id="a78cb5c72f58ec912ab031c4b7bb05c78" name="a78cb5c72f58ec912ab031c4b7bb05c78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78cb5c72f58ec912ab031c4b7bb05c78">&#9670;&nbsp;</a></span>EnableStoreRefinement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; EnableStoreRefinement </td>
+          <td>(</td>
+          <td class="paramtype">&quot;enable-store-refinement&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac63d3f0019b657181ccb0ea9d8cee8dc" name="ac63d3f0019b657181ccb0ea9d8cee8dc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac63d3f0019b657181ccb0ea9d8cee8dc">&#9670;&nbsp;</a></span>equalsLoadStoreHelper()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> equalsLoadStoreHelper </td>
+          <td class="memname">static bool equalsLoadStoreHelper </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classT.html">T</a> &amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>LHS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1GVNExpression_1_1Expression.html">Expression</a> &amp;&#160;</td>
+          <td class="paramtype">const Expression &amp;&#160;</td>
           <td class="paramname"><em>RHS</em>&#160;</td>
         </tr>
         <tr>
@@ -377,8 +464,6 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="NewGVN_8cpp_source.html#l00869">869</a> of file <a class="el" href="NewGVN_8cpp_source.html">NewGVN.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NewGVN_8cpp_source.html#l00875">llvm::GVNExpression::LoadExpression::equals()</a>, and <a class="el" href="NewGVN_8cpp_source.html#l00879">llvm::GVNExpression::StoreExpression::equals()</a>.</p>
-
 </div>
 </div>
 <a id="abcbc48eaf6f3e66fdab487bcb42282c1" name="abcbc48eaf6f3e66fdab487bcb42282c1"></a>
@@ -393,7 +478,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
         <tr>
           <td class="memname">static std::string getBlockName </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">const BasicBlock *&#160;</td>
           <td class="paramname"><em>B</em></td><td>)</td>
           <td></td>
         </tr>
@@ -407,8 +492,6 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="NewGVN_8cpp_source.html#l00897">897</a> of file <a class="el" href="NewGVN_8cpp_source.html">NewGVN.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, and <a class="el" href="CFGPrinter_8h_source.html#l00062">llvm::DOTGraphTraits&lt; const Function * &gt;::getSimpleNodeLabel()</a>.</p>
-
 </div>
 </div>
 <a id="a1759f3f63c1791f1303206987fa1f339" name="a1759f3f63c1791f1303206987fa1f339"></a>
@@ -421,9 +504,9 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * getCopyOf </td>
+          <td class="memname">static Value * getCopyOf </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">const Value *&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
           <td></td>
         </tr>
@@ -462,7 +545,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Global <a class="el" href="classllvm_1_1Value.html">Value</a> Numbering&quot;&#160;</td>
+          <td class="paramtype">&quot;Global Value Numbering&quot;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -497,9 +580,9 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isCopyOfAPHI </td>
+          <td class="memname">static bool isCopyOfAPHI </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">const Value *&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
           <td></td>
         </tr>
@@ -527,15 +610,15 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isCopyOfPHI </td>
+          <td class="memname">static bool isCopyOfPHI </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">const Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *&#160;</td>
+          <td class="paramtype">const PHINode *&#160;</td>
           <td class="paramname"><em>PN</em>&#160;</td>
         </tr>
         <tr>
@@ -567,9 +650,9 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> okayForPHIOfOps </td>
+          <td class="memname">static bool okayForPHIOfOps </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">const Instruction *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -583,7 +666,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="NewGVN_8cpp_source.html#l02572">2572</a> of file <a class="el" href="NewGVN_8cpp_source.html">NewGVN.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="NewGVN_8cpp.html#af4d37daebfe6b46b1f07c42ec89209d5">EnablePhiOfOps</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="NewGVN_8cpp.html#ac65d8c9e05ff24c5b5b71edf2972149a">EnablePhiOfOps()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -599,13 +682,13 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
         <tr>
           <td class="memname">static void patchAndReplaceAllUsesWith </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Repl</em>&#160;</td>
         </tr>
         <tr>
@@ -623,7 +706,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="NewGVN_8cpp_source.html#l03671">3671</a> of file <a class="el" href="NewGVN_8cpp_source.html">NewGVN.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="Local_8cpp_source.html#l02392">llvm::patchReplacementInstruction()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -698,7 +781,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of redundant/dead <a class="el" href="HexagonStoreWidening_8cpp.html#a7d2c711a42f51c1f7b3ce3f8f560fa74">stores</a> eliminated&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of redundant/dead stores eliminated&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -726,7 +809,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> deleted&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> deleted&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -782,7 +865,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Maximum <a class="el" href="Profile_8cpp.html#a14a17296c5e9cf55d96793be90af8715">Number</a> of iterations it took to converge GVN&quot;&#160;</td>
+          <td class="paramtype">&quot;Maximum Number of iterations it took to converge GVN&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -838,7 +921,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of PHI of <a class="el" href="XRayInstrumentation_8cpp.html#a3d7f8a500f0593da70cb5a39b985840d">ops</a> created&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of PHI of ops created&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -936,94 +1019,6 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="af4d37daebfe6b46b1f07c42ec89209d5" name="af4d37daebfe6b46b1f07c42ec89209d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4d37daebfe6b46b1f07c42ec89209d5">&#9670;&nbsp;</a></span>EnablePhiOfOps</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; EnablePhiOfOps(&quot;enable-phi-of-ops&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;enable-phi-of-ops&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Currently, the generation "phi of ops" can result in correctness issues. </p>
-
-<p class="reference">Referenced by <a class="el" href="NewGVN_8cpp_source.html#l02572">okayForPHIOfOps()</a>.</p>
-
-</div>
-</div>
-<a id="aab51dd0f49b403414f696ff00d370b96" name="aab51dd0f49b403414f696ff00d370b96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab51dd0f49b403414f696ff00d370b96">&#9670;&nbsp;</a></span>EnableStoreRefinement</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; EnableStoreRefinement(&quot;enable-store-refinement&quot;, cl::init(false), cl::Hidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;enable-store-refinement&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a4d49b0df0088ffc5480b0967e8662245" name="a4d49b0df0088ffc5480b0967e8662245"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d49b0df0088ffc5480b0967e8662245">&#9670;&nbsp;</a></span>false</h2>
 
@@ -1031,7 +1026,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Global <a class="el" href="classllvm_1_1Value.html">Value</a> false</td>
+          <td class="memname">Global Value false</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1063,7 +1058,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Global <a class="el" href="classllvm_1_1Value.html">Value</a> Numbering</td>
+          <td class="memname">Global Value Numbering</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1075,7 +1070,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:23 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

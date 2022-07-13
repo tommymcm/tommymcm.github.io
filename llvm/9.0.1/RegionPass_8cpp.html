@@ -56,16 +56,25 @@ $(function() {
   <div class="headertitle"><div class="title">RegionPass.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="RegionPass_8h_source.html">llvm/Analysis/RegionPass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="OptBisect_8h_source.html">llvm/IR/OptBisect.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassTimingInfo_8h_source.html">llvm/IR/PassTimingInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Timer_8h_source.html">llvm/Support/Timer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/RegionPass.h&quot;</code><br />
+<code>#include &quot;llvm/IR/OptBisect.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassTimingInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Timer.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for RegionPass.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="RegionPass_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2RegionPass_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2RegionPass_8cpp" id="alib_2Analysis_2RegionPass_8cpp">
+<area shape="rect" title=" " alt="" coords="489,5,692,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,205,104"/>
+<area shape="rect" title=" " alt="" coords="229,79,376,104"/>
+<area shape="rect" title=" " alt="" coords="401,79,583,104"/>
+<area shape="rect" title=" " alt="" coords="608,79,771,104"/>
+<area shape="rect" title=" " alt="" coords="795,79,954,104"/>
+<area shape="rect" title=" " alt="" coords="978,79,1185,104"/>
+</map>
 </div>
 </div>
 <p><a href="RegionPass_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -77,9 +86,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1490d79fb9c17eb8f9e88808512910a1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RegionPass_8cpp.html#a1490d79fb9c17eb8f9e88808512910a1">addRegionIntoQueue</a> (<a class="el" href="classllvm_1_1Region.html">Region</a> &amp;R, std::deque&lt; <a class="el" href="classllvm_1_1Region.html">Region</a> * &gt; &amp;RQ)</td></tr>
+<tr class="memitem:a1490d79fb9c17eb8f9e88808512910a1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RegionPass_8cpp.html#a1490d79fb9c17eb8f9e88808512910a1">addRegionIntoQueue</a> (Region &amp;R, std::deque&lt; Region * &gt; &amp;RQ)</td></tr>
 <tr class="separator:a1490d79fb9c17eb8f9e88808512910a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18ca70491cb198159a0a4150ef0dbaaa"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RegionPass_8cpp.html#a18ca70491cb198159a0a4150ef0dbaaa">getDescription</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Region.html">Region</a> &amp;R)</td></tr>
+<tr class="memitem:a18ca70491cb198159a0a4150ef0dbaaa"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RegionPass_8cpp.html#a18ca70491cb198159a0a4150ef0dbaaa">getDescription</a> (const Region &amp;R)</td></tr>
 <tr class="separator:a18ca70491cb198159a0a4150ef0dbaaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -112,13 +121,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void addRegionIntoQueue </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Region.html">Region</a> &amp;&#160;</td>
+          <td class="paramtype">Region &amp;&#160;</td>
           <td class="paramname"><em>R</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::deque&lt; <a class="el" href="classllvm_1_1Region.html">Region</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">std::deque&lt; Region * &gt; &amp;&#160;</td>
           <td class="paramname"><em>RQ</em>&#160;</td>
         </tr>
         <tr>
@@ -136,9 +145,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RegionPass_8cpp_source.html#l00040">40</a> of file <a class="el" href="RegionPass_8cpp_source.html">RegionPass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="RegionPass_8cpp_source.html#l00040">addRegionIntoQueue()</a>, and <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>.</p>
+<p class="reference">References <a class="el" href="RegionPass_8cpp_source.html#l00040">addRegionIntoQueue()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RegionPass_8cpp_source.html#l00040">addRegionIntoQueue()</a>, and <a class="el" href="RegionPass_8cpp_source.html#l00054">llvm::RGPassManager::runOnFunction()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RegionPass_8cpp_source.html#l00040">addRegionIntoQueue()</a>.</p>
 
 </div>
 </div>
@@ -154,7 +163,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static std::string getDescription </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Region.html">Region</a> &amp;&#160;</td>
+          <td class="paramtype">const Region &amp;&#160;</td>
           <td class="paramname"><em>R</em></td><td>)</td>
           <td></td>
         </tr>
@@ -173,7 +182,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:12 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -62,12 +62,12 @@ $(function() {
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="Signposts_8h.html">llvm/Support/Signposts.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="Timer_8h.html">llvm/Support/Timer.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;llvm/Support/Signposts.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;llvm/Support/Timer.h&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;llvm/Config/config.h&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#if LLVM_SUPPORT_XCODE_SIGNPOSTS</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="DenseMap_8h.html">llvm/ADT/DenseMap.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;llvm/ADT/DenseMap.h&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;os/signpost.h&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#endif </span><span class="comment">// if LLVM_SUPPORT_XCODE_SIGNPOSTS</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
@@ -76,13 +76,13 @@ $(function() {
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#if LLVM_SUPPORT_XCODE_SIGNPOSTS</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span>{</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>os_log_t *LogCreator() {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  os_log_t *<a class="code hl_variable" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a> = <span class="keyword">new</span> os_log_t;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  *<a class="code hl_variable" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a> = os_log_create(<span class="stringliteral">&quot;org.llvm.signposts&quot;</span>, OS_LOG_CATEGORY_POINTS_OF_INTEREST);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  os_log_t *<a class="code hl_function" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a> = <span class="keyword">new</span> os_log_t;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  *<a class="code hl_function" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a> = os_log_create(<span class="stringliteral">&quot;org.llvm.signposts&quot;</span>, OS_LOG_CATEGORY_POINTS_OF_INTEREST);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">void</span> LogDeleter(os_log_t *<a class="code hl_variable" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  os_release(*<a class="code hl_variable" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keyword">delete</span> <a class="code hl_variable" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">void</span> LogDeleter(os_log_t *<a class="code hl_function" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>) {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  os_release(*<a class="code hl_function" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keyword">delete</span> <a class="code hl_function" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>} <span class="comment">// end anonymous namespace</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
@@ -93,16 +93,16 @@ $(function() {
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">using </span>LogTy = LogPtrTy::element_type;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  LogPtrTy SignpostLog;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <a class="code hl_class" href="classllvm_1_1DenseMap.html">DenseMap&lt;const Timer *, os_signpost_id_t&gt;</a> <a class="code hl_variable" href="Timer_8cpp.html#a037bd43e96fd0e85342bf0579ff49e2f">Signposts</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  DenseMap&lt;const Timer *, os_signpost_id_t&gt; <a class="code hl_variable" href="Timer_8cpp.html#a037bd43e96fd0e85342bf0579ff49e2f">Signposts</a>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  LogTy &amp;getLogger()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *SignpostLog; }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  os_signpost_id_t getSignpostForTimer(<span class="keyword">const</span> <a class="code hl_class" href="classllvm_1_1Timer.html">Timer</a> *<a class="code hl_class" href="classT.html">T</a>) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code hl_define" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a> = <a class="code hl_variable" href="Timer_8cpp.html#a037bd43e96fd0e85342bf0579ff49e2f">Signposts</a>.find(<a class="code hl_class" href="classT.html">T</a>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  os_signpost_id_t getSignpostForTimer(<span class="keyword">const</span> Timer *T) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code hl_define" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a> = <a class="code hl_variable" href="Timer_8cpp.html#a037bd43e96fd0e85342bf0579ff49e2f">Signposts</a>.find(T);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a> != <a class="code hl_variable" href="Timer_8cpp.html#a037bd43e96fd0e85342bf0579ff49e2f">Signposts</a>.end())</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      <span class="keywordflow">return</span> <a class="code hl_define" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>-&gt;second;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;Inserted = <a class="code hl_variable" href="Timer_8cpp.html#a037bd43e96fd0e85342bf0579ff49e2f">Signposts</a>.insert(</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        std::make_pair(<a class="code hl_class" href="classT.html">T</a>, os_signpost_id_make_with_pointer(getLogger(), <a class="code hl_class" href="classT.html">T</a>)));</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        std::make_pair(T, os_signpost_id_make_with_pointer(getLogger(), T)));</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">return</span> Inserted.first-&gt;second;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  }</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
@@ -111,20 +111,20 @@ $(function() {
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">bool</span> isEnabled()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> os_signpost_enabled(*SignpostLog); }</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordtype">void</span> startTimerInterval(<a class="code hl_class" href="classllvm_1_1Timer.html">Timer</a> *<a class="code hl_class" href="classT.html">T</a>) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordtype">void</span> startTimerInterval(Timer *T) {</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (isEnabled()) {</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      <span class="comment">// Both strings used here are required to be constant literal strings</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      os_signpost_interval_begin(getLogger(), getSignpostForTimer(<a class="code hl_class" href="classT.html">T</a>),</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      os_signpost_interval_begin(getLogger(), getSignpostForTimer(T),</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                                 <span class="stringliteral">&quot;Pass Timers&quot;</span>, <span class="stringliteral">&quot;Begin %s&quot;</span>,</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                                 <a class="code hl_class" href="classT.html">T</a>-&gt;getName().c_str());</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                                 T-&gt;getName().c_str());</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  }</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordtype">void</span> endTimerInterval(<a class="code hl_class" href="classllvm_1_1Timer.html">Timer</a> *<a class="code hl_class" href="classT.html">T</a>) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordtype">void</span> endTimerInterval(Timer *T) {</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">if</span> (isEnabled()) {</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      <span class="comment">// Both strings used here are required to be constant literal strings</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      os_signpost_interval_end(getLogger(), getSignpostForTimer(<a class="code hl_class" href="classT.html">T</a>),</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                               <span class="stringliteral">&quot;Pass Timers&quot;</span>, <span class="stringliteral">&quot;End %s&quot;</span>, <a class="code hl_class" href="classT.html">T</a>-&gt;getName().c_str());</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      os_signpost_interval_end(getLogger(), getSignpostForTimer(T),</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                               <span class="stringliteral">&quot;Pass Timers&quot;</span>, <span class="stringliteral">&quot;End %s&quot;</span>, T-&gt;getName().c_str());</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  }</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
@@ -135,7 +135,7 @@ $(function() {
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#define HAVE_ANY_SIGNPOST_IMPL 1</span></div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classllvm_1_1SignpostEmitter.html#a3974ad424159d4082da3d76c178d7fb6">   83</a></span><a class="code hl_function" href="classllvm_1_1SignpostEmitter.html#a3974ad424159d4082da3d76c178d7fb6">SignpostEmitter::SignpostEmitter</a>() {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>SignpostEmitter::SignpostEmitter() {</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#if HAVE_ANY_SIGNPOST_IMPL</span></div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  Impl = <span class="keyword">new</span> SignpostEmitterImpl();</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#else </span><span class="comment">// if HAVE_ANY_SIGNPOST_IMPL</span></div>
@@ -143,13 +143,13 @@ $(function() {
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#endif </span><span class="comment">// if !HAVE_ANY_SIGNPOST_IMPL</span></div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classllvm_1_1SignpostEmitter.html#aeb67bfd11a09bad8e35b4b022e74be50">   91</a></span><a class="code hl_function" href="classllvm_1_1SignpostEmitter.html#aeb67bfd11a09bad8e35b4b022e74be50">SignpostEmitter::~SignpostEmitter</a>() {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>SignpostEmitter::~SignpostEmitter() {</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#if HAVE_ANY_SIGNPOST_IMPL</span></div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keyword">delete</span> Impl;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#endif </span><span class="comment">// if HAVE_ANY_SIGNPOST_IMPL</span></div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classllvm_1_1SignpostEmitter.html#a7f1c4999aa128be520b428e05c9c85a3">   97</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classllvm_1_1SignpostEmitter.html#a7f1c4999aa128be520b428e05c9c85a3">SignpostEmitter::isEnabled</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keywordtype">bool</span> SignpostEmitter::isEnabled()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#if HAVE_ANY_SIGNPOST_IMPL</span></div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordflow">return</span> Impl-&gt;isEnabled();</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#else</span></div>
@@ -157,40 +157,29 @@ $(function() {
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#endif </span><span class="comment">// if !HAVE_ANY_SIGNPOST_IMPL</span></div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classllvm_1_1SignpostEmitter.html#a148a8773530cc668f253db7be740518c">  105</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classllvm_1_1SignpostEmitter.html#a148a8773530cc668f253db7be740518c">SignpostEmitter::startTimerInterval</a>(<a class="code hl_class" href="classllvm_1_1Timer.html">Timer</a> *<a class="code hl_class" href="classT.html">T</a>) {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keywordtype">void</span> SignpostEmitter::startTimerInterval(Timer *T) {</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">#if HAVE_ANY_SIGNPOST_IMPL</span></div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordflow">if</span> (Impl == <span class="keyword">nullptr</span>)</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keywordflow">return</span> Impl-&gt;startTimerInterval(<a class="code hl_class" href="classT.html">T</a>);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keywordflow">return</span> Impl-&gt;startTimerInterval(T);</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#endif </span><span class="comment">// if !HAVE_ANY_SIGNPOST_IMPL</span></div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classllvm_1_1SignpostEmitter.html#a0c0bbd7817f6ab058934467c15bcbd2f">  113</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classllvm_1_1SignpostEmitter.html#a0c0bbd7817f6ab058934467c15bcbd2f">SignpostEmitter::endTimerInterval</a>(<a class="code hl_class" href="classllvm_1_1Timer.html">Timer</a> *<a class="code hl_class" href="classT.html">T</a>) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keywordtype">void</span> SignpostEmitter::endTimerInterval(Timer *T) {</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#if HAVE_ANY_SIGNPOST_IMPL</span></div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keywordflow">if</span> (Impl == <span class="keyword">nullptr</span>)</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  Impl-&gt;endTimerInterval(<a class="code hl_class" href="classT.html">T</a>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  Impl-&gt;endTimerInterval(T);</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#endif </span><span class="comment">// if !HAVE_ANY_SIGNPOST_IMPL</span></div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
-<div class="ttc" id="aDenseMap_8h_html"><div class="ttname"><a href="DenseMap_8h.html">DenseMap.h</a></div></div>
-<div class="ttc" id="aErlangGCPrinter_8cpp_html_a7ad930f7345a8faa5e6132305e2a6f49"><div class="ttname"><a href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a></div><div class="ttdeci">static GCMetadataPrinterRegistry::Add&lt; ErlangGCPrinter &gt; X(&quot;erlang&quot;, &quot;erlang-compatible garbage collector&quot;)</div></div>
+<div class="ttc" id="aHello_8cpp_html_a5e1a2e7ef3f32b337808eafe48a5b6ac"><div class="ttname"><a href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a></div><div class="ttdeci">static RegisterPass&lt; Hello &gt; X(&quot;hello&quot;, &quot;Hello World Pass&quot;)</div></div>
 <div class="ttc" id="aMD5_8cpp_html_ac0eafdc9ee161b71e7af98af736952fd"><div class="ttname"><a href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a></div><div class="ttdeci">#define I(x, y, z)</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00058">MD5.cpp:58</a></div></div>
-<div class="ttc" id="aSignposts_8h_html"><div class="ttname"><a href="Signposts_8h.html">Signposts.h</a></div></div>
 <div class="ttc" id="aTimer_8cpp_html_a037bd43e96fd0e85342bf0579ff49e2f"><div class="ttname"><a href="Timer_8cpp.html#a037bd43e96fd0e85342bf0579ff49e2f">Signposts</a></div><div class="ttdeci">static ManagedStatic&lt; SignpostEmitter &gt; Signposts</div><div class="ttdoc">Allows llvm::Timer to emit signposts when supported.</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8cpp_source.html#l00044">Timer.cpp:44</a></div></div>
-<div class="ttc" id="aTimer_8h_html"><div class="ttname"><a href="Timer_8h.html">Timer.h</a></div></div>
-<div class="ttc" id="aclassT_html"><div class="ttname"><a href="classT.html">T</a></div></div>
-<div class="ttc" id="aclassllvm_1_1DenseMap_html"><div class="ttname"><a href="classllvm_1_1DenseMap.html">llvm::DenseMap</a></div><div class="ttdef"><b>Definition:</b> <a href="DenseMap_8h_source.html#l00710">DenseMap.h:711</a></div></div>
-<div class="ttc" id="aclassllvm_1_1SignpostEmitter_html_a0c0bbd7817f6ab058934467c15bcbd2f"><div class="ttname"><a href="classllvm_1_1SignpostEmitter.html#a0c0bbd7817f6ab058934467c15bcbd2f">llvm::SignpostEmitter::endTimerInterval</a></div><div class="ttdeci">void endTimerInterval(Timer *T)</div><div class="ttdoc">End a signposted interval for the given timer.</div><div class="ttdef"><b>Definition:</b> <a href="Signposts_8cpp_source.html#l00113">Signposts.cpp:113</a></div></div>
-<div class="ttc" id="aclassllvm_1_1SignpostEmitter_html_a148a8773530cc668f253db7be740518c"><div class="ttname"><a href="classllvm_1_1SignpostEmitter.html#a148a8773530cc668f253db7be740518c">llvm::SignpostEmitter::startTimerInterval</a></div><div class="ttdeci">void startTimerInterval(Timer *T)</div><div class="ttdoc">Begin a signposted interval for the given timer.</div><div class="ttdef"><b>Definition:</b> <a href="Signposts_8cpp_source.html#l00105">Signposts.cpp:105</a></div></div>
-<div class="ttc" id="aclassllvm_1_1SignpostEmitter_html_a3974ad424159d4082da3d76c178d7fb6"><div class="ttname"><a href="classllvm_1_1SignpostEmitter.html#a3974ad424159d4082da3d76c178d7fb6">llvm::SignpostEmitter::SignpostEmitter</a></div><div class="ttdeci">SignpostEmitter()</div><div class="ttdef"><b>Definition:</b> <a href="Signposts_8cpp_source.html#l00083">Signposts.cpp:83</a></div></div>
-<div class="ttc" id="aclassllvm_1_1SignpostEmitter_html_a7f1c4999aa128be520b428e05c9c85a3"><div class="ttname"><a href="classllvm_1_1SignpostEmitter.html#a7f1c4999aa128be520b428e05c9c85a3">llvm::SignpostEmitter::isEnabled</a></div><div class="ttdeci">bool isEnabled() const</div><div class="ttdef"><b>Definition:</b> <a href="Signposts_8cpp_source.html#l00097">Signposts.cpp:97</a></div></div>
-<div class="ttc" id="aclassllvm_1_1SignpostEmitter_html_aeb67bfd11a09bad8e35b4b022e74be50"><div class="ttname"><a href="classllvm_1_1SignpostEmitter.html#aeb67bfd11a09bad8e35b4b022e74be50">llvm::SignpostEmitter::~SignpostEmitter</a></div><div class="ttdeci">~SignpostEmitter()</div><div class="ttdef"><b>Definition:</b> <a href="Signposts_8cpp_source.html#l00091">Signposts.cpp:91</a></div></div>
-<div class="ttc" id="aclassllvm_1_1Timer_html"><div class="ttname"><a href="classllvm_1_1Timer.html">llvm::Timer</a></div><div class="ttdoc">This class is used to track the amount of time spent between invocations of its startTimer()/stopTime...</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8h_source.html#l00076">Timer.h:76</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AllocatorList_8h_source.html#l00023">AllocatorList.h:23</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:23:26 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

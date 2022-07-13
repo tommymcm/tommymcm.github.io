@@ -58,34 +58,61 @@ $(function() {
   <div class="headertitle"><div class="title">ControlHeightReduction.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="ControlHeightReduction_8h_source.html">llvm/Transforms/Instrumentation/ControlHeightReduction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseMap_8h_source.html">llvm/ADT/DenseMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseSet_8h_source.html">llvm/ADT/DenseSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringSet_8h_source.html">llvm/ADT/StringSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BlockFrequencyInfo_8h_source.html">llvm/Analysis/BlockFrequencyInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalsModRef_8h_source.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="OptimizationRemarkEmitter_8h_source.html">llvm/Analysis/OptimizationRemarkEmitter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="RegionInfo_8h_source.html">llvm/Analysis/RegionInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="RegionIterator_8h_source.html">llvm/Analysis/RegionIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MDBuilder_8h_source.html">llvm/IR/MDBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BranchProbability_8h_source.html">llvm/Support/BranchProbability.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MemoryBuffer_8h_source.html">llvm/Support/MemoryBuffer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Utils_8h_source.html">llvm/Transforms/Utils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Cloning_8h_source.html">llvm/Transforms/Utils/Cloning.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueMapper_8h_source.html">llvm/Transforms/Utils/ValueMapper.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Instrumentation/ControlHeightReduction.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringSet.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/BlockFrequencyInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/OptimizationRemarkEmitter.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/RegionInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/RegionIterator.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/IR/MDBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/Support/BranchProbability.h&quot;</code><br />
+<code>#include &quot;llvm/Support/MemoryBuffer.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Cloning.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/ValueMapper.h&quot;</code><br />
 <code>#include &lt;set&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ControlHeightReduction.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ControlHeightReduction_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Instrumentation_2ControlHeightReduction_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Instrumentation_2ControlHeightReduction_8cpp" id="alib_2Transforms_2Instrumentation_2ControlHeightReduction_8cpp">
+<area shape="rect" title=" " alt="" coords="2497,5,2719,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,240,133"/>
+<area shape="rect" title=" " alt="" coords="263,101,430,126"/>
+<area shape="rect" title=" " alt="" coords="455,101,615,126"/>
+<area shape="rect" title=" " alt="" coords="639,101,814,126"/>
+<area shape="rect" title=" " alt="" coords="839,101,996,126"/>
+<area shape="rect" title=" " alt="" coords="1021,93,1238,133"/>
+<area shape="rect" title=" " alt="" coords="1262,93,1453,133"/>
+<area shape="rect" title=" " alt="" coords="1477,93,1675,133"/>
+<area shape="rect" title=" " alt="" coords="1700,93,1919,133"/>
+<area shape="rect" title=" " alt="" coords="1943,101,2139,126"/>
+<area shape="rect" title=" " alt="" coords="2164,101,2383,126"/>
+<area shape="rect" title=" " alt="" coords="2407,101,2623,126"/>
+<area shape="rect" title=" " alt="" coords="2647,101,2758,126"/>
+<area shape="rect" title=" " alt="" coords="2783,101,2943,126"/>
+<area shape="rect" title=" " alt="" coords="2967,101,3110,126"/>
+<area shape="rect" title=" " alt="" coords="3134,101,3285,126"/>
+<area shape="rect" title=" " alt="" coords="3309,101,3544,126"/>
+<area shape="rect" title=" " alt="" coords="3568,101,3781,126"/>
+<area shape="rect" title=" " alt="" coords="3805,101,3979,126"/>
+<area shape="rect" title=" " alt="" coords="4003,93,4165,133"/>
+<area shape="rect" title=" " alt="" coords="4189,93,4350,133"/>
+<area shape="rect" title=" " alt="" coords="4374,93,4535,133"/>
+<area shape="rect" title=" " alt="" coords="4560,101,4603,126"/>
+<area shape="rect" title=" " alt="" coords="4627,101,4701,126"/>
+</map>
 </div>
 </div>
 <p><a href="ControlHeightReduction_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -93,91 +120,90 @@ Include dependency graph for ControlHeightReduction.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ad78e062f62e0d6e453941fb4ca843e4d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG_TYPE</a>&#160;&#160;&#160;&quot;chr&quot;</td></tr>
 <tr class="separator:ad78e062f62e0d6e453941fb4ca843e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a845d59a9cee6653b5c607b317afae153"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a845d59a9cee6653b5c607b317afae153">CHR_DEBUG</a>(<a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>)&#160;&#160;&#160;<a class="el" href="Debug_8h.html#a08efc68d15935eb8889400a46c3749ba">LLVM_DEBUG</a>(<a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>)</td></tr>
+<tr class="memitem:a845d59a9cee6653b5c607b317afae153"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a845d59a9cee6653b5c607b317afae153">CHR_DEBUG</a>(<a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>)&#160;&#160;&#160;LLVM_DEBUG(<a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>)</td></tr>
 <tr class="separator:a845d59a9cee6653b5c607b317afae153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a2089cf78af712b5089f1231e36b267bf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a2089cf78af712b5089f1231e36b267bf">ForceCHR</a> (&quot;force-chr&quot;, cl::init(false), cl::Hidden, cl::desc(&quot;Apply CHR for all functions&quot;))</td></tr>
+<tr class="separator:a2089cf78af712b5089f1231e36b267bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57f2ee0a7cbc01fb662aff201b48030d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a57f2ee0a7cbc01fb662aff201b48030d">CHRBiasThreshold</a> (&quot;chr-bias-threshold&quot;, cl::init(0.99), cl::Hidden, cl::desc(&quot;CHR considers a branch bias greater than this ratio as biased&quot;))</td></tr>
+<tr class="separator:a57f2ee0a7cbc01fb662aff201b48030d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd55136a1fe678f1175c39bd0ed86cd9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#abd55136a1fe678f1175c39bd0ed86cd9">CHRMergeThreshold</a> (&quot;chr-merge-threshold&quot;, cl::init(2), cl::Hidden, cl::desc(&quot;CHR merges a group of <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a> <a class="el" href="LowerSwitch_8cpp.html#ae89fa9ac8d6b6438790275688d562853">branches</a>/selects where <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a> &gt;= this value&quot;))</td></tr>
+<tr class="separator:abd55136a1fe678f1175c39bd0ed86cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13b56e766220ca3a66d89852fa2dafa0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a13b56e766220ca3a66d89852fa2dafa0">CHRModuleList</a> (&quot;chr-module-list&quot;, cl::init(&quot;&quot;), cl::Hidden, cl::desc(&quot;Specify <a class="el" href="RegionPrinter_8cpp.html#a79dce2d3eafaf25bf0df59f56caf9712">file</a> to retrieve the list of modules to apply CHR to&quot;))</td></tr>
+<tr class="separator:a13b56e766220ca3a66d89852fa2dafa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adacbecfeb0cc876bc93ea6f824220dec"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#adacbecfeb0cc876bc93ea6f824220dec">CHRFunctionList</a> (&quot;chr-<a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-list&quot;, cl::init(&quot;&quot;), cl::Hidden, cl::desc(&quot;Specify <a class="el" href="RegionPrinter_8cpp.html#a79dce2d3eafaf25bf0df59f56caf9712">file</a> to retrieve the list of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> to apply CHR to&quot;))</td></tr>
+<tr class="separator:adacbecfeb0cc876bc93ea6f824220dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff85944087fc349e227e8b737179cb3e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#aff85944087fc349e227e8b737179cb3e">parseCHRFilterFiles</a> ()</td></tr>
 <tr class="separator:aff85944087fc349e227e8b737179cb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75f616bb3dd12fff162e4bfc0a4aafa3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a75f616bb3dd12fff162e4bfc0a4aafa3">INITIALIZE_PASS_BEGIN</a> (ControlHeightReductionLegacyPass, &quot;chr&quot;, &quot;Reduce control height in the hot paths&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(ControlHeightReductionLegacyPass</td></tr>
+<tr class="memitem:a75f616bb3dd12fff162e4bfc0a4aafa3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a75f616bb3dd12fff162e4bfc0a4aafa3">INITIALIZE_PASS_BEGIN</a> (ControlHeightReductionLegacyPass, &quot;chr&quot;, &quot;Reduce control height in the hot paths&quot;, false, false) INITIALIZE_PASS_END(ControlHeightReductionLegacyPass</td></tr>
 <tr class="separator:a75f616bb3dd12fff162e4bfc0a4aafa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f8ac6e7a5b51acc2226820842e95107"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> <a class="el" href="Compiler_8h.html#acc1c483f4b4ee2f17bb6643a3b353609">LLVM_ATTRIBUTE_UNUSED</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a1f8ac6e7a5b51acc2226820842e95107">operator&lt;&lt;</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> CHRStats &amp;<a class="el" href="MachineBlockPlacement_8cpp.html#a086f939e29b718dc5a01e4bcfe6af2a1">Stats</a>)</td></tr>
+<tr class="memitem:a1f8ac6e7a5b51acc2226820842e95107"><td class="memItemLeft" align="right" valign="top">static raw_ostream LLVM_ATTRIBUTE_UNUSED &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a1f8ac6e7a5b51acc2226820842e95107">operator&lt;&lt;</a> (raw_ostream &amp;OS, const CHRStats &amp;<a class="el" href="Statistic_8cpp.html#a6508e2501ecaee67af29d564448b43bb">Stats</a>)</td></tr>
 <tr class="separator:a1f8ac6e7a5b51acc2226820842e95107"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23f2407f23e9376551d4fb01221a9bcc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a23f2407f23e9376551d4fb01221a9bcc">operator&lt;&lt;</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> CHRScope &amp;Scope)</td></tr>
+<tr class="memitem:a23f2407f23e9376551d4fb01221a9bcc"><td class="memItemLeft" align="right" valign="top">static raw_ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a23f2407f23e9376551d4fb01221a9bcc">operator&lt;&lt;</a> (raw_ostream &amp;OS, const CHRScope &amp;Scope)</td></tr>
 <tr class="separator:a23f2407f23e9376551d4fb01221a9bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cf6fe605431375e61c307bb1ca5cf41"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a7cf6fe605431375e61c307bb1ca5cf41">shouldApply</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classllvm_1_1ProfileSummaryInfo.html">ProfileSummaryInfo</a> &amp;PSI)</td></tr>
+<tr class="memitem:a7cf6fe605431375e61c307bb1ca5cf41"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a7cf6fe605431375e61c307bb1ca5cf41">shouldApply</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, ProfileSummaryInfo &amp;PSI)</td></tr>
 <tr class="separator:a7cf6fe605431375e61c307bb1ca5cf41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8acf25125313b0e6333bb7fa3f4404f6"><td class="memItemLeft" align="right" valign="top">static void <a class="el" href="Compiler_8h.html#acc1c483f4b4ee2f17bb6643a3b353609">LLVM_ATTRIBUTE_UNUSED</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a8acf25125313b0e6333bb7fa3f4404f6">dumpIR</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *Label, CHRStats *<a class="el" href="MachineBlockPlacement_8cpp.html#a086f939e29b718dc5a01e4bcfe6af2a1">Stats</a>)</td></tr>
+<tr class="memitem:a8acf25125313b0e6333bb7fa3f4404f6"><td class="memItemLeft" align="right" valign="top">static void LLVM_ATTRIBUTE_UNUSED&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a8acf25125313b0e6333bb7fa3f4404f6">dumpIR</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, const char *Label, CHRStats *<a class="el" href="Statistic_8cpp.html#a6508e2501ecaee67af29d564448b43bb">Stats</a>)</td></tr>
 <tr class="separator:a8acf25125313b0e6333bb7fa3f4404f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9216799cee3b3000ce6714aac1c1c7e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#aa9216799cee3b3000ce6714aac1c1c7e">isHoistableInstructionType</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:aa9216799cee3b3000ce6714aac1c1c7e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#aa9216799cee3b3000ce6714aac1c1c7e">isHoistableInstructionType</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="separator:aa9216799cee3b3000ce6714aac1c1c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f3c0ac0dc88d578aba34d48efdd3746"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a3f3c0ac0dc88d578aba34d48efdd3746">isHoistable</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT)</td></tr>
+<tr class="memitem:a3f3c0ac0dc88d578aba34d48efdd3746"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a3f3c0ac0dc88d578aba34d48efdd3746">isHoistable</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, DominatorTree &amp;DT)</td></tr>
 <tr class="separator:a3f3c0ac0dc88d578aba34d48efdd3746"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a511f0c1d84215cf8fdce9b46817a2943"><td class="memItemLeft" align="right" valign="top">static std::set&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a511f0c1d84215cf8fdce9b46817a2943">getBaseValues</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT)</td></tr>
+<tr class="memitem:a511f0c1d84215cf8fdce9b46817a2943"><td class="memItemLeft" align="right" valign="top">static std::set&lt; Value * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a511f0c1d84215cf8fdce9b46817a2943">getBaseValues</a> (Value *V, DominatorTree &amp;DT)</td></tr>
 <tr class="separator:a511f0c1d84215cf8fdce9b46817a2943"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32203e7352f128904822ee859e9ae839"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a32203e7352f128904822ee859e9ae839">checkHoistValue</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *InsertPoint, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; &amp;Unhoistables, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; *HoistStops, <a class="el" href="classllvm_1_1DenseMap.html">DenseMap</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, <a class="el" href="classbool.html">bool</a> &gt; &amp;Visited)</td></tr>
+<tr class="memitem:a32203e7352f128904822ee859e9ae839"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a32203e7352f128904822ee859e9ae839">checkHoistValue</a> (Value *V, Instruction *InsertPoint, DominatorTree &amp;DT, DenseSet&lt; Instruction * &gt; &amp;Unhoistables, DenseSet&lt; Instruction * &gt; *HoistStops, DenseMap&lt; Instruction *, bool &gt; &amp;Visited)</td></tr>
 <tr class="separator:a32203e7352f128904822ee859e9ae839"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6b13348a127529a12aaf664b3582ddb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ae6b13348a127529a12aaf664b3582ddb">checkMDProf</a> (<a class="el" href="classllvm_1_1MDNode.html">MDNode</a> *MD, <a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a> &amp;TrueProb, <a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a> &amp;FalseProb)</td></tr>
+<tr class="memitem:ae6b13348a127529a12aaf664b3582ddb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ae6b13348a127529a12aaf664b3582ddb">checkMDProf</a> (MDNode *MD, BranchProbability &amp;TrueProb, BranchProbability &amp;FalseProb)</td></tr>
 <tr class="separator:ae6b13348a127529a12aaf664b3582ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1d4736e8dfc615fad673c393a757127"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ae1d4736e8dfc615fad673c393a757127">getCHRBiasThreshold</a> ()</td></tr>
+<tr class="memitem:ae1d4736e8dfc615fad673c393a757127"><td class="memItemLeft" align="right" valign="top">static BranchProbability&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ae1d4736e8dfc615fad673c393a757127">getCHRBiasThreshold</a> ()</td></tr>
 <tr class="separator:ae1d4736e8dfc615fad673c393a757127"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5408546ea035fa812e126beb843fdbb7"><td class="memTemplParams" colspan="2">template&lt;typename K , typename S , typename M &gt; </td></tr>
-<tr class="memitem:a5408546ea035fa812e126beb843fdbb7"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a5408546ea035fa812e126beb843fdbb7">checkBias</a> (K *Key, <a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a> TrueProb, <a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a> FalseProb, S &amp;TrueSet, S &amp;FalseSet, M &amp;BiasMap)</td></tr>
+<tr class="memitem:a5408546ea035fa812e126beb843fdbb7"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a5408546ea035fa812e126beb843fdbb7">checkBias</a> (K *Key, BranchProbability TrueProb, BranchProbability FalseProb, S &amp;TrueSet, S &amp;FalseSet, M &amp;BiasMap)</td></tr>
 <tr class="separator:a5408546ea035fa812e126beb843fdbb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af10d0fccdcb58cbd2e3932e630d24dfa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#af10d0fccdcb58cbd2e3932e630d24dfa">checkBiasedBranch</a> (<a class="el" href="classllvm_1_1BranchInst.html">BranchInst</a> *BI, <a class="el" href="classllvm_1_1Region.html">Region</a> *R, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Region.html">Region</a> * &gt; &amp;TrueBiasedRegionsGlobal, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Region.html">Region</a> * &gt; &amp;FalseBiasedRegionsGlobal, <a class="el" href="classllvm_1_1DenseMap.html">DenseMap</a>&lt; <a class="el" href="classllvm_1_1Region.html">Region</a> *, <a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a> &gt; &amp;BranchBiasMap)</td></tr>
+<tr class="memitem:af10d0fccdcb58cbd2e3932e630d24dfa"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#af10d0fccdcb58cbd2e3932e630d24dfa">checkBiasedBranch</a> (BranchInst *BI, Region *R, DenseSet&lt; Region * &gt; &amp;TrueBiasedRegionsGlobal, DenseSet&lt; Region * &gt; &amp;FalseBiasedRegionsGlobal, DenseMap&lt; Region *, BranchProbability &gt; &amp;BranchBiasMap)</td></tr>
 <tr class="separator:af10d0fccdcb58cbd2e3932e630d24dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61bbbc787a1633cdd1cc7d486e6c46f4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a61bbbc787a1633cdd1cc7d486e6c46f4">checkBiasedSelect</a> (<a class="el" href="classllvm_1_1SelectInst.html">SelectInst</a> *<a class="el" href="SIInstrInfo_8cpp.html#a0dfd55eaf0bcb495f09ecf8c55b256b2a6cbe5ff42f143903e1c67abf94613791">SI</a>, <a class="el" href="classllvm_1_1Region.html">Region</a> *R, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1SelectInst.html">SelectInst</a> * &gt; &amp;TrueBiasedSelectsGlobal, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1SelectInst.html">SelectInst</a> * &gt; &amp;FalseBiasedSelectsGlobal, <a class="el" href="classllvm_1_1DenseMap.html">DenseMap</a>&lt; <a class="el" href="classllvm_1_1SelectInst.html">SelectInst</a> *, <a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a> &gt; &amp;SelectBiasMap)</td></tr>
+<tr class="memitem:a61bbbc787a1633cdd1cc7d486e6c46f4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a61bbbc787a1633cdd1cc7d486e6c46f4">checkBiasedSelect</a> (SelectInst *SI, Region *R, DenseSet&lt; SelectInst * &gt; &amp;TrueBiasedSelectsGlobal, DenseSet&lt; SelectInst * &gt; &amp;FalseBiasedSelectsGlobal, DenseMap&lt; SelectInst *, BranchProbability &gt; &amp;SelectBiasMap)</td></tr>
 <tr class="separator:a61bbbc787a1633cdd1cc7d486e6c46f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace82efda93a438644ce877d6975851b7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ace82efda93a438644ce877d6975851b7">getBranchInsertPoint</a> (RegInfo &amp;RI)</td></tr>
+<tr class="memitem:ace82efda93a438644ce877d6975851b7"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ace82efda93a438644ce877d6975851b7">getBranchInsertPoint</a> (RegInfo &amp;RI)</td></tr>
 <tr class="separator:ace82efda93a438644ce877d6975851b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab16ec48b5abcdc5652c65e0ff9510d12"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ab16ec48b5abcdc5652c65e0ff9510d12">getCHRConditionValuesForRegion</a> (RegInfo &amp;RI)</td></tr>
+<tr class="memitem:ab16ec48b5abcdc5652c65e0ff9510d12"><td class="memItemLeft" align="right" valign="top">static DenseSet&lt; Value * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ab16ec48b5abcdc5652c65e0ff9510d12">getCHRConditionValuesForRegion</a> (RegInfo &amp;RI)</td></tr>
 <tr class="separator:ab16ec48b5abcdc5652c65e0ff9510d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bd77853df82f4643859aa72ec33b2c0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a4bd77853df82f4643859aa72ec33b2c0">shouldSplit</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *InsertPoint, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;PrevConditionValues, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;ConditionValues, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; &amp;Unhoistables)</td></tr>
+<tr class="memitem:a4bd77853df82f4643859aa72ec33b2c0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a4bd77853df82f4643859aa72ec33b2c0">shouldSplit</a> (Instruction *InsertPoint, DenseSet&lt; Value * &gt; &amp;PrevConditionValues, DenseSet&lt; Value * &gt; &amp;ConditionValues, DominatorTree &amp;DT, DenseSet&lt; Instruction * &gt; &amp;Unhoistables)</td></tr>
 <tr class="separator:a4bd77853df82f4643859aa72ec33b2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9eb6a3b45c148ae1416c2c8ad15f9b06"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a9eb6a3b45c148ae1416c2c8ad15f9b06">getSelectsInScope</a> (CHRScope *Scope, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; &amp;Output)</td></tr>
+<tr class="memitem:a9eb6a3b45c148ae1416c2c8ad15f9b06"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a9eb6a3b45c148ae1416c2c8ad15f9b06">getSelectsInScope</a> (CHRScope *Scope, DenseSet&lt; Instruction * &gt; &amp;Output)</td></tr>
 <tr class="separator:a9eb6a3b45c148ae1416c2c8ad15f9b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f11f4e5d8f0e7bc1365d24ef97f642d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a6f11f4e5d8f0e7bc1365d24ef97f642d">hasAtLeastTwoBiasedBranches</a> (CHRScope *Scope)</td></tr>
+<tr class="memitem:a6f11f4e5d8f0e7bc1365d24ef97f642d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a6f11f4e5d8f0e7bc1365d24ef97f642d">hasAtLeastTwoBiasedBranches</a> (CHRScope *Scope)</td></tr>
 <tr class="separator:a6f11f4e5d8f0e7bc1365d24ef97f642d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5690950de9415a236218b644814f2ac8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a5690950de9415a236218b644814f2ac8">CHRScopeSorter</a> (CHRScope *Scope1, CHRScope *Scope2)</td></tr>
+<tr class="memitem:a5690950de9415a236218b644814f2ac8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a5690950de9415a236218b644814f2ac8">CHRScopeSorter</a> (CHRScope *Scope1, CHRScope *Scope2)</td></tr>
 <tr class="separator:a5690950de9415a236218b644814f2ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64bba3cf05c8cb1baa848483e7150830"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a64bba3cf05c8cb1baa848483e7150830">hoistValue</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *HoistPoint, <a class="el" href="classllvm_1_1Region.html">Region</a> *R, HoistStopMapTy &amp;HoistStopMap, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; &amp;HoistedSet, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> * &gt; &amp;TrivialPHIs, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT)</td></tr>
+<tr class="memitem:a64bba3cf05c8cb1baa848483e7150830"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a64bba3cf05c8cb1baa848483e7150830">hoistValue</a> (Value *V, Instruction *HoistPoint, Region *R, HoistStopMapTy &amp;HoistStopMap, DenseSet&lt; Instruction * &gt; &amp;HoistedSet, DenseSet&lt; PHINode * &gt; &amp;TrivialPHIs, DominatorTree &amp;DT)</td></tr>
 <tr class="separator:a64bba3cf05c8cb1baa848483e7150830"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa849347ff04d0eca6ce4fc70cada49d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#aa849347ff04d0eca6ce4fc70cada49d5">hoistScopeConditions</a> (CHRScope *Scope, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *HoistPoint, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> * &gt; &amp;TrivialPHIs, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT)</td></tr>
+<tr class="memitem:aa849347ff04d0eca6ce4fc70cada49d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#aa849347ff04d0eca6ce4fc70cada49d5">hoistScopeConditions</a> (CHRScope *Scope, Instruction *HoistPoint, DenseSet&lt; PHINode * &gt; &amp;TrivialPHIs, DominatorTree &amp;DT)</td></tr>
 <tr class="separator:aa849347ff04d0eca6ce4fc70cada49d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acda14ede9da471244980c7fada91a4aa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#acda14ede9da471244980c7fada91a4aa">negateICmpIfUsedByBranchOrSelectOnly</a> (<a class="el" href="classllvm_1_1ICmpInst.html">ICmpInst</a> *ICmp, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *ExcludedUser, CHRScope *Scope)</td></tr>
+<tr class="memitem:acda14ede9da471244980c7fada91a4aa"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#acda14ede9da471244980c7fada91a4aa">negateICmpIfUsedByBranchOrSelectOnly</a> (ICmpInst *ICmp, Instruction *ExcludedUser, CHRScope *Scope)</td></tr>
 <tr class="separator:acda14ede9da471244980c7fada91a4aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a071886a7b42adae6a171e653e04bd216"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a071886a7b42adae6a171e653e04bd216">insertTrivialPHIs</a> (CHRScope *Scope, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *EntryBlock, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *ExitBlock, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> * &gt; &amp;TrivialPHIs)</td></tr>
+<tr class="memitem:a071886a7b42adae6a171e653e04bd216"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a071886a7b42adae6a171e653e04bd216">insertTrivialPHIs</a> (CHRScope *Scope, BasicBlock *EntryBlock, BasicBlock *ExitBlock, DenseSet&lt; PHINode * &gt; &amp;TrivialPHIs)</td></tr>
 <tr class="separator:a071886a7b42adae6a171e653e04bd216"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad90b565f38c7ef3477c8ceb0bef3976d"><td class="memItemLeft" align="right" valign="top">static void <a class="el" href="Compiler_8h.html#acc1c483f4b4ee2f17bb6643a3b353609">LLVM_ATTRIBUTE_UNUSED</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ad90b565f38c7ef3477c8ceb0bef3976d">assertCHRRegionsHaveBiasedBranchOrSelect</a> (CHRScope *Scope)</td></tr>
+<tr class="memitem:ad90b565f38c7ef3477c8ceb0bef3976d"><td class="memItemLeft" align="right" valign="top">static void LLVM_ATTRIBUTE_UNUSED&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ad90b565f38c7ef3477c8ceb0bef3976d">assertCHRRegionsHaveBiasedBranchOrSelect</a> (CHRScope *Scope)</td></tr>
 <tr class="separator:ad90b565f38c7ef3477c8ceb0bef3976d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad36fda9d8203a5374fcb76941423c400"><td class="memItemLeft" align="right" valign="top">static void <a class="el" href="Compiler_8h.html#acc1c483f4b4ee2f17bb6643a3b353609">LLVM_ATTRIBUTE_UNUSED</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ad36fda9d8203a5374fcb76941423c400">assertBranchOrSelectConditionHoisted</a> (CHRScope *Scope, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *PreEntryBlock)</td></tr>
+<tr class="memitem:ad36fda9d8203a5374fcb76941423c400"><td class="memItemLeft" align="right" valign="top">static void LLVM_ATTRIBUTE_UNUSED&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ad36fda9d8203a5374fcb76941423c400">assertBranchOrSelectConditionHoisted</a> (CHRScope *Scope, BasicBlock *PreEntryBlock)</td></tr>
 <tr class="separator:ad36fda9d8203a5374fcb76941423c400"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1b005e1a73fa20d7b1edcdae3e40961"><td class="memItemLeft" align="right" valign="top">static void <a class="el" href="Compiler_8h.html#acc1c483f4b4ee2f17bb6643a3b353609">LLVM_ATTRIBUTE_UNUSED</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ae1b005e1a73fa20d7b1edcdae3e40961">dumpScopes</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; CHRScope * &gt; &amp;Scopes, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *Label)</td></tr>
+<tr class="memitem:ae1b005e1a73fa20d7b1edcdae3e40961"><td class="memItemLeft" align="right" valign="top">static void LLVM_ATTRIBUTE_UNUSED&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ae1b005e1a73fa20d7b1edcdae3e40961">dumpScopes</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; CHRScope * &gt; &amp;Scopes, const char *Label)</td></tr>
 <tr class="separator:ae1b005e1a73fa20d7b1edcdae3e40961"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aedd696d1ab62c80eeafebeba559b46d3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#aedd696d1ab62c80eeafebeba559b46d3">ForceCHR</a> (&quot;force-chr&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Apply CHR <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> all functions&quot;))</td></tr>
-<tr class="separator:aedd696d1ab62c80eeafebeba559b46d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae066b29cb64d272521c4d5468ee7d7e8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ae066b29cb64d272521c4d5468ee7d7e8">CHRBiasThreshold</a> (&quot;chr-bias-threshold&quot;, cl::init(0.99), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;CHR considers a branch bias greater than this ratio as biased&quot;))</td></tr>
-<tr class="separator:ae066b29cb64d272521c4d5468ee7d7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34a9dfdb0c93c1a4a5e9b81994a5c2ca"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a34a9dfdb0c93c1a4a5e9b81994a5c2ca">CHRMergeThreshold</a> (&quot;chr-merge-threshold&quot;, cl::init(2), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;CHR merges a group of <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a> <a class="el" href="ARCBranchFinalize_8cpp.html#a14311558a7445776def2d5bc13161ba3">branches</a>/selects where <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a> &gt;= this value&quot;))</td></tr>
-<tr class="separator:a34a9dfdb0c93c1a4a5e9b81994a5c2ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad38fdfb35b25b5f66b23e5d9195d88b9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#ad38fdfb35b25b5f66b23e5d9195d88b9">CHRModuleList</a> (&quot;chr-module-list&quot;, cl::init(&quot;&quot;), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Specify <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> to retrieve the list of modules to apply CHR to&quot;))</td></tr>
-<tr class="separator:ad38fdfb35b25b5f66b23e5d9195d88b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedb41ca8fa78b0ba33a161d3577c0eed"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#aedb41ca8fa78b0ba33a161d3577c0eed">CHRFunctionList</a> (&quot;chr-<a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-list&quot;, cl::init(&quot;&quot;), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Specify <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> to retrieve the list of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> to apply CHR to&quot;))</td></tr>
-<tr class="separator:aedb41ca8fa78b0ba33a161d3577c0eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5defa49c396dd67771e7f595976e27c7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1StringSet.html">StringSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a5defa49c396dd67771e7f595976e27c7">CHRModules</a></td></tr>
+<tr class="memitem:a5defa49c396dd67771e7f595976e27c7"><td class="memItemLeft" align="right" valign="top">static StringSet&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a5defa49c396dd67771e7f595976e27c7">CHRModules</a></td></tr>
 <tr class="separator:a5defa49c396dd67771e7f595976e27c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a282e11b24a3ab565115e0ed4b68820b7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1StringSet.html">StringSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a282e11b24a3ab565115e0ed4b68820b7">CHRFunctions</a></td></tr>
+<tr class="memitem:a282e11b24a3ab565115e0ed4b68820b7"><td class="memItemLeft" align="right" valign="top">static StringSet&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a282e11b24a3ab565115e0ed4b68820b7">CHRFunctions</a></td></tr>
 <tr class="separator:a282e11b24a3ab565115e0ed4b68820b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a076d07cf7dcaf4222dacada8185c1bd3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControlHeightReduction_8cpp.html#a076d07cf7dcaf4222dacada8185c1bd3">chr</a></td></tr>
 <tr class="separator:a076d07cf7dcaf4222dacada8185c1bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,8 +223,8 @@ Variables</h2></td></tr>
           <td class="memname">#define CHR_DEBUG</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="Debug_8h.html#a08efc68d15935eb8889400a46c3749ba">LLVM_DEBUG</a>(<a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>)</td>
+          <td class="paramname"><a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a></td><td>)</td>
+          <td>&#160;&#160;&#160;LLVM_DEBUG(<a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -234,7 +260,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="Compiler_8h.html#acc1c483f4b4ee2f17bb6643a3b353609">LLVM_ATTRIBUTE_UNUSED</a> assertBranchOrSelectConditionHoisted </td>
+          <td class="memname">static void LLVM_ATTRIBUTE_UNUSED assertBranchOrSelectConditionHoisted </td>
           <td>(</td>
           <td class="paramtype">CHRScope *&#160;</td>
           <td class="paramname"><em>Scope</em>, </td>
@@ -242,7 +268,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>PreEntryBlock</em>&#160;</td>
         </tr>
         <tr>
@@ -260,7 +286,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l01654">1654</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -274,7 +300,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="Compiler_8h.html#acc1c483f4b4ee2f17bb6643a3b353609">LLVM_ATTRIBUTE_UNUSED</a> assertCHRRegionsHaveBiasedBranchOrSelect </td>
+          <td class="memname">static void LLVM_ATTRIBUTE_UNUSED assertCHRRegionsHaveBiasedBranchOrSelect </td>
           <td>(</td>
           <td class="paramtype">CHRScope *&#160;</td>
           <td class="paramname"><em>Scope</em></td><td>)</td>
@@ -290,7 +316,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l01633">1633</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 </div>
 </div>
@@ -306,7 +332,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> checkBias </td>
+          <td class="memname">static bool checkBias </td>
           <td>(</td>
           <td class="paramtype">K *&#160;</td>
           <td class="paramname"><em>Key</em>, </td>
@@ -314,13 +340,13 @@ template&lt;typename K , typename S , typename M &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a>&#160;</td>
+          <td class="paramtype">BranchProbability&#160;</td>
           <td class="paramname"><em>TrueProb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a>&#160;</td>
+          <td class="paramtype">BranchProbability&#160;</td>
           <td class="paramname"><em>FalseProb</em>, </td>
         </tr>
         <tr>
@@ -356,7 +382,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l00633">633</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp_source.html#l00623">getCHRBiasThreshold()</a>, and <a class="el" href="LoopUnswitch_8cpp.html#af2ed775d49ada2eede225b2fae288a9f">Threshold</a>.</p>
+<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp_source.html#l00623">getCHRBiasThreshold()</a>, and <a class="el" href="LoopUnswitch_8cpp.html#a725d39a93d534c431e328d8646709c0c">Threshold()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l00651">checkBiasedBranch()</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00682">checkBiasedSelect()</a>.</p>
 
@@ -372,33 +398,33 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> checkBiasedBranch </td>
+          <td class="memname">static bool checkBiasedBranch </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BranchInst.html">BranchInst</a> *&#160;</td>
+          <td class="paramtype">BranchInst *&#160;</td>
           <td class="paramname"><em>BI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Region.html">Region</a> *&#160;</td>
+          <td class="paramtype">Region *&#160;</td>
           <td class="paramname"><em>R</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Region.html">Region</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; Region * &gt; &amp;&#160;</td>
           <td class="paramname"><em>TrueBiasedRegionsGlobal</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Region.html">Region</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; Region * &gt; &amp;&#160;</td>
           <td class="paramname"><em>FalseBiasedRegionsGlobal</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseMap.html">DenseMap</a>&lt; <a class="el" href="classllvm_1_1Region.html">Region</a> *, <a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseMap&lt; Region *, BranchProbability &gt; &amp;&#160;</td>
           <td class="paramname"><em>BranchBiasMap</em>&#160;</td>
         </tr>
         <tr>
@@ -416,7 +442,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l00651">651</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00633">checkBias()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00600">checkMDProf()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00234">llvm::Instruction::getMetadata()</a>, <a class="el" href="Instructions_8h_source.html#l03058">llvm::BranchInst::getSuccessor()</a>, <a class="el" href="Instructions_8h_source.html#l03044">llvm::BranchInst::isConditional()</a>, <a class="el" href="LLVMContext_8h_source.html#l00077">llvm::LLVMContext::MD_prof</a>, and <a class="el" href="BitVector_8h_source.html#l00940">std::swap()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00633">checkBias()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00600">checkMDProf()</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>.</p>
 
 </div>
 </div>
@@ -430,33 +456,33 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> checkBiasedSelect </td>
+          <td class="memname">static bool checkBiasedSelect </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SelectInst.html">SelectInst</a> *&#160;</td>
+          <td class="paramtype">SelectInst *&#160;</td>
           <td class="paramname"><em>SI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Region.html">Region</a> *&#160;</td>
+          <td class="paramtype">Region *&#160;</td>
           <td class="paramname"><em>R</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1SelectInst.html">SelectInst</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; SelectInst * &gt; &amp;&#160;</td>
           <td class="paramname"><em>TrueBiasedSelectsGlobal</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1SelectInst.html">SelectInst</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; SelectInst * &gt; &amp;&#160;</td>
           <td class="paramname"><em>FalseBiasedSelectsGlobal</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseMap.html">DenseMap</a>&lt; <a class="el" href="classllvm_1_1SelectInst.html">SelectInst</a> *, <a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseMap&lt; SelectInst *, BranchProbability &gt; &amp;&#160;</td>
           <td class="paramname"><em>SelectBiasMap</em>&#160;</td>
         </tr>
         <tr>
@@ -474,7 +500,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l00682">682</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp_source.html#l00633">checkBias()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00600">checkMDProf()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="LLVMContext_8h_source.html#l00077">llvm::LLVMContext::MD_prof</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
+<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp_source.html#l00633">checkBias()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00600">checkMDProf()</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>.</p>
 
 </div>
 </div>
@@ -488,39 +514,39 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> checkHoistValue </td>
+          <td class="memname">static bool checkHoistValue </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>InsertPoint</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
+          <td class="paramtype">DominatorTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; Instruction * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Unhoistables</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; *&#160;</td>
+          <td class="paramtype">DenseSet&lt; Instruction * &gt; *&#160;</td>
           <td class="paramname"><em>HoistStops</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseMap.html">DenseMap</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, <a class="el" href="classbool.html">bool</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseMap&lt; Instruction *, bool &gt; &amp;&#160;</td>
           <td class="paramname"><em>Visited</em>&#160;</td>
         </tr>
         <tr>
@@ -538,7 +564,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l00547">547</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="DenseSet_8h_source.html#l00159">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::begin()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00547">checkHoistValue()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>, <a class="el" href="DenseMap_8h_source.html#l00171">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::count()</a>, <a class="el" href="DenseSet_8h_source.html#l00091">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::count()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="Dominators_8cpp_source.html#l00248">llvm::DominatorTree::dominates()</a>, <a class="el" href="DenseSet_8h_source.html#l00160">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::end()</a>, <a class="el" href="GenericDomTree_8h_source.html#l00328">llvm::DominatorTreeBase&lt; NodeT, IsPostDom &gt;::getNode()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="DenseSet_8h_source.html#l00187">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::insert()</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00504">isHoistable()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00547">checkHoistValue()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00504">isHoistable()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l00547">checkHoistValue()</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l01051">shouldSplit()</a>.</p>
 
@@ -554,21 +580,21 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> checkMDProf </td>
+          <td class="memname">static bool checkMDProf </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1MDNode.html">MDNode</a> *&#160;</td>
+          <td class="paramtype">MDNode *&#160;</td>
           <td class="paramname"><em>MD</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a> &amp;&#160;</td>
+          <td class="paramtype">BranchProbability &amp;&#160;</td>
           <td class="paramname"><em>TrueProb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a> &amp;&#160;</td>
+          <td class="paramtype">BranchProbability &amp;&#160;</td>
           <td class="paramname"><em>FalseProb</em>&#160;</td>
         </tr>
         <tr>
@@ -586,9 +612,209 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l00600">600</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BranchProbability_8cpp_source.html#l00052">llvm::BranchProbability::getBranchProbability()</a>, <a class="el" href="Metadata_8h_source.html#l01074">llvm::MDNode::getNumOperands()</a>, <a class="el" href="Metadata_8h_source.html#l01068">llvm::MDNode::getOperand()</a>, <a class="el" href="Metadata_8cpp_source.html#l00463">llvm::MDString::getString()</a>, <a class="el" href="Constants_8h_source.html#l00137">llvm::ConstantInt::getValue()</a>, and <a class="el" href="APInt_8h_source.html#l01562">llvm::APInt::getZExtValue()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l00651">checkBiasedBranch()</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00682">checkBiasedSelect()</a>.</p>
+
+</div>
+</div>
+<a id="a57f2ee0a7cbc01fb662aff201b48030d" name="a57f2ee0a7cbc01fb662aff201b48030d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57f2ee0a7cbc01fb662aff201b48030d">&#9670;&nbsp;</a></span>CHRBiasThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; double &gt; CHRBiasThreshold </td>
+          <td>(</td>
+          <td class="paramtype">&quot;chr-bias-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(0.99)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;CHR considers a branch bias greater than this ratio as biased&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l00623">getCHRBiasThreshold()</a>.</p>
+
+</div>
+</div>
+<a id="adacbecfeb0cc876bc93ea6f824220dec" name="adacbecfeb0cc876bc93ea6f824220dec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adacbecfeb0cc876bc93ea6f824220dec">&#9670;&nbsp;</a></span>CHRFunctionList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt; CHRFunctionList </td>
+          <td>(</td>
+          <td class="paramtype">&quot;chr-<a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-list&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(&quot;&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Specify <a class="el" href="RegionPrinter_8cpp.html#a79dce2d3eafaf25bf0df59f56caf9712">file</a> to retrieve the list of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> to apply CHR to&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l00068">parseCHRFilterFiles()</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00441">shouldApply()</a>.</p>
+
+</div>
+</div>
+<a id="abd55136a1fe678f1175c39bd0ed86cd9" name="abd55136a1fe678f1175c39bd0ed86cd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd55136a1fe678f1175c39bd0ed86cd9">&#9670;&nbsp;</a></span>CHRMergeThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; CHRMergeThreshold </td>
+          <td>(</td>
+          <td class="paramtype">&quot;chr-merge-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(2)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;CHR merges a group of <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a> <a class="el" href="LowerSwitch_8cpp.html#ae89fa9ac8d6b6438790275688d562853">branches</a>/selects where <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a> &gt;= this value&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l01322">hasAtLeastTwoBiasedBranches()</a>.</p>
+
+</div>
+</div>
+<a id="a13b56e766220ca3a66d89852fa2dafa0" name="a13b56e766220ca3a66d89852fa2dafa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13b56e766220ca3a66d89852fa2dafa0">&#9670;&nbsp;</a></span>CHRModuleList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt; CHRModuleList </td>
+          <td>(</td>
+          <td class="paramtype">&quot;chr-module-list&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(&quot;&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Specify <a class="el" href="RegionPrinter_8cpp.html#a79dce2d3eafaf25bf0df59f56caf9712">file</a> to retrieve the list of modules to apply CHR to&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l00068">parseCHRFilterFiles()</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00441">shouldApply()</a>.</p>
 
 </div>
 </div>
@@ -599,7 +825,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classbool.html">bool</a> CHRScopeSorter </td>
+          <td class="memname">bool CHRScopeSorter </td>
           <td>(</td>
           <td class="paramtype">CHRScope *&#160;</td>
           <td class="paramname"><em>Scope1</em>, </td>
@@ -632,15 +858,15 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="Compiler_8h.html#acc1c483f4b4ee2f17bb6643a3b353609">LLVM_ATTRIBUTE_UNUSED</a> dumpIR </td>
+          <td class="memname">static void LLVM_ATTRIBUTE_UNUSED dumpIR </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>Label</em>, </td>
         </tr>
         <tr>
@@ -664,7 +890,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l00455">455</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MachineBlockPlacement_8cpp_source.html#l03130">Stats</a>.</p>
+<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="Statistic_8cpp.html#a6508e2501ecaee67af29d564448b43bb">Stats()</a>.</p>
 
 </div>
 </div>
@@ -678,7 +904,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="Compiler_8h.html#acc1c483f4b4ee2f17bb6643a3b353609">LLVM_ATTRIBUTE_UNUSED</a> dumpScopes </td>
+          <td class="memname">static void LLVM_ATTRIBUTE_UNUSED dumpScopes </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; CHRScope * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Scopes</em>, </td>
@@ -686,7 +912,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>Label</em>&#160;</td>
         </tr>
         <tr>
@@ -704,7 +930,55 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l01984">1984</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, and <a class="el" href="SmallVector_8h_source.html#l00052">llvm::SmallVectorBase::size()</a>.</p>
+</div>
+</div>
+<a id="a2089cf78af712b5089f1231e36b267bf" name="a2089cf78af712b5089f1231e36b267bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2089cf78af712b5089f1231e36b267bf">&#9670;&nbsp;</a></span>ForceCHR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ForceCHR </td>
+          <td>(</td>
+          <td class="paramtype">&quot;force-chr&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Apply CHR for all functions&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l00441">shouldApply()</a>.</p>
 
 </div>
 </div>
@@ -718,15 +992,15 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::set&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; getBaseValues </td>
+          <td class="memname">static std::set&lt; Value * &gt; getBaseValues </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
+          <td class="paramtype">DominatorTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -760,7 +1034,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * getBranchInsertPoint </td>
+          <td class="memname">static Instruction * getBranchInsertPoint </td>
           <td>(</td>
           <td class="paramtype">RegInfo &amp;&#160;</td>
           <td class="paramname"><em>RI</em></td><td>)</td>
@@ -776,7 +1050,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l00702">702</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="DenseSet_8h_source.html#l00091">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::count()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="DenseSet_8h_source.html#l00187">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::insert()</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -790,7 +1064,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a> getCHRBiasThreshold </td>
+          <td class="memname">static BranchProbability getCHRBiasThreshold </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -805,7 +1079,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l00623">623</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp.html#ae066b29cb64d272521c4d5468ee7d7e8">CHRBiasThreshold</a>, and <a class="el" href="BranchProbability_8cpp_source.html#l00052">llvm::BranchProbability::getBranchProbability()</a>.</p>
+<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp.html#a57f2ee0a7cbc01fb662aff201b48030d">CHRBiasThreshold()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l00633">checkBias()</a>.</p>
 
@@ -821,7 +1095,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; getCHRConditionValuesForRegion </td>
+          <td class="memname">static DenseSet&lt; Value * &gt; getCHRConditionValuesForRegion </td>
           <td>(</td>
           <td class="paramtype">RegInfo &amp;&#160;</td>
           <td class="paramname"><em>RI</em></td><td>)</td>
@@ -836,8 +1110,6 @@ template&lt;typename K , typename S , typename M &gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l01032">1032</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="DenseSet_8h_source.html#l00187">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::insert()</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
 
 </div>
 </div>
@@ -859,7 +1131,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; Instruction * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Output</em>&#160;</td>
         </tr>
         <tr>
@@ -877,7 +1149,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l01113">1113</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp_source.html#l01113">getSelectsInScope()</a>, <a class="el" href="DenseSet_8h_source.html#l00187">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::insert()</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
+<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp_source.html#l01113">getSelectsInScope()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l01113">getSelectsInScope()</a>.</p>
 
@@ -893,7 +1165,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> hasAtLeastTwoBiasedBranches </td>
+          <td class="memname">static bool hasAtLeastTwoBiasedBranches </td>
           <td>(</td>
           <td class="paramtype">CHRScope *&#160;</td>
           <td class="paramname"><em>Scope</em></td><td>)</td>
@@ -909,7 +1181,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l01322">1322</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp.html#a34a9dfdb0c93c1a4a5e9b81994a5c2ca">CHRMergeThreshold</a>.</p>
+<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp.html#abd55136a1fe678f1175c39bd0ed86cd9">CHRMergeThreshold()</a>.</p>
 
 </div>
 </div>
@@ -931,19 +1203,19 @@ template&lt;typename K , typename S , typename M &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>HoistPoint</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; PHINode * &gt; &amp;&#160;</td>
           <td class="paramname"><em>TrivialPHIs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
+          <td class="paramtype">DominatorTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -961,7 +1233,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l01488">1488</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp_source.html#l01440">hoistValue()</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
+<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp_source.html#l01440">hoistValue()</a>.</p>
 
 </div>
 </div>
@@ -977,19 +1249,19 @@ template&lt;typename K , typename S , typename M &gt; </div>
         <tr>
           <td class="memname">static void hoistValue </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>HoistPoint</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Region.html">Region</a> *&#160;</td>
+          <td class="paramtype">Region *&#160;</td>
           <td class="paramname"><em>R</em>, </td>
         </tr>
         <tr>
@@ -1001,19 +1273,19 @@ template&lt;typename K , typename S , typename M &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; Instruction * &gt; &amp;&#160;</td>
           <td class="paramname"><em>HoistedSet</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; PHINode * &gt; &amp;&#160;</td>
           <td class="paramname"><em>TrivialPHIs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
+          <td class="paramtype">DominatorTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -1031,7 +1303,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l01440">1440</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>, <a class="el" href="DenseSet_8h_source.html#l00091">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::count()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="Dominators_8cpp_source.html#l00248">llvm::DominatorTree::dominates()</a>, <a class="el" href="GenericDomTree_8h_source.html#l00328">llvm::DominatorTreeBase&lt; NodeT, IsPostDom &gt;::getNode()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l01440">hoistValue()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="DenseSet_8h_source.html#l00187">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::insert()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00495">isHoistableInstructionType()</a>, and <a class="el" href="ARMSubtarget_8cpp.html#a4d4aec1a60ca09085c2b909af09a8c8b">IT</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l01440">hoistValue()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00495">isHoistableInstructionType()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l01488">hoistScopeConditions()</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l01440">hoistValue()</a>.</p>
 
@@ -1101,19 +1373,19 @@ template&lt;typename K , typename S , typename M &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>EntryBlock</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>ExitBlock</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; PHINode * &gt; &amp;&#160;</td>
           <td class="paramname"><em>TrivialPHIs</em>&#160;</td>
         </tr>
         <tr>
@@ -1131,7 +1403,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l01566">1566</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Instructions_8h_source.html#l02688">llvm::PHINode::addIncoming()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>, <a class="el" href="DenseSet_8h_source.html#l00091">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::count()</a>, <a class="el" href="Instructions_8h_source.html#l02576">llvm::PHINode::Create()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="BasicBlock_8h_source.html#l00280">llvm::BasicBlock::front()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="DenseSet_8h_source.html#l00187">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::insert()</a>, <a class="el" href="Interval_8h_source.html#l00112">llvm::pred_begin()</a>, <a class="el" href="Interval_8h_source.html#l00115">llvm::pred_end()</a>, <a class="el" href="IR_2CFG_8h_source.html#l00124">llvm::predecessors()</a>, <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>, and <a class="el" href="IVUsers_8cpp_source.html#l00051">Users</a>.</p>
+<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="IVUsers_8cpp_source.html#l00051">Users</a>.</p>
 
 </div>
 </div>
@@ -1145,15 +1417,15 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isHoistable </td>
+          <td class="memname">static bool isHoistable </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
+          <td class="paramtype">DominatorTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -1171,7 +1443,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l00504">504</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00495">isHoistableInstructionType()</a>, and <a class="el" href="ValueTracking_8cpp_source.html#l03868">llvm::isSafeToSpeculativelyExecute()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00495">isHoistableInstructionType()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l00547">checkHoistValue()</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00515">getBaseValues()</a>.</p>
 
@@ -1187,9 +1459,9 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isHoistableInstructionType </td>
+          <td class="memname">static bool isHoistableInstructionType </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1219,15 +1491,15 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> negateICmpIfUsedByBranchOrSelectOnly </td>
+          <td class="memname">static bool negateICmpIfUsedByBranchOrSelectOnly </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ICmpInst.html">ICmpInst</a> *&#160;</td>
+          <td class="paramtype">ICmpInst *&#160;</td>
           <td class="paramname"><em>ICmp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>ExcludedUser</em>, </td>
         </tr>
         <tr>
@@ -1251,7 +1523,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l01514">1514</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="InstrTypes_8h_source.html#l00831">llvm::CmpInst::getInversePredicate()</a>, <a class="el" href="InstrTypes_8h_source.html#l00807">llvm::CmpInst::getPredicate()</a>, <a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>, <a class="el" href="InstrTypes_8h_source.html#l00812">llvm::CmpInst::setPredicate()</a>, <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>, and <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 </div>
 </div>
@@ -1265,15 +1537,15 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp; operator&lt;&lt; </td>
+          <td class="memname">static raw_ostream &amp; operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
+          <td class="paramtype">raw_ostream &amp;&#160;</td>
           <td class="paramname"><em>OS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> CHRScope &amp;&#160;</td>
+          <td class="paramtype">const CHRScope &amp;&#160;</td>
           <td class="paramname"><em>Scope</em>&#160;</td>
         </tr>
         <tr>
@@ -1303,15 +1575,15 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> <a class="el" href="Compiler_8h.html#acc1c483f4b4ee2f17bb6643a3b353609">LLVM_ATTRIBUTE_UNUSED</a> &amp; operator&lt;&lt; </td>
+          <td class="memname">static raw_ostream LLVM_ATTRIBUTE_UNUSED &amp; operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
+          <td class="paramtype">raw_ostream &amp;&#160;</td>
           <td class="paramname"><em>OS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> CHRStats &amp;&#160;</td>
+          <td class="paramtype">const CHRStats &amp;&#160;</td>
           <td class="paramname"><em>Stats</em>&#160;</td>
         </tr>
         <tr>
@@ -1329,7 +1601,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l00429">429</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MachineBlockPlacement_8cpp_source.html#l03130">Stats</a>.</p>
+<p class="reference">References <a class="el" href="Statistic_8cpp.html#a6508e2501ecaee67af29d564448b43bb">Stats()</a>.</p>
 
 </div>
 </div>
@@ -1358,9 +1630,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l00068">68</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp.html#aedb41ca8fa78b0ba33a161d3577c0eed">CHRFunctionList</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00066">CHRFunctions</a>, <a class="el" href="ControlHeightReduction_8cpp.html#ad38fdfb35b25b5f66b23e5d9195d88b9">CHRModuleList</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00065">CHRModules</a>, <a class="el" href="raw__ostream_8cpp_source.html#l00853">llvm::errs()</a>, <a class="el" href="MemoryBuffer_8cpp_source.html#l00229">llvm::MemoryBuffer::getFile()</a>, <a class="el" href="StringSet_8h_source.html#l00038">llvm::StringSet&lt; AllocatorTy &gt;::insert()</a>, and <a class="el" href="StringRef_8h_source.html#l00696">llvm::StringRef::split()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l02082">llvm::ControlHeightReductionPass::ControlHeightReductionPass()</a>.</p>
+<p class="reference">References <a class="el" href="ControlHeightReduction_8cpp.html#adacbecfeb0cc876bc93ea6f824220dec">CHRFunctionList()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00066">CHRFunctions</a>, <a class="el" href="ControlHeightReduction_8cpp.html#a13b56e766220ca3a66d89852fa2dafa0">CHRModuleList()</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00065">CHRModules</a>.</p>
 
 </div>
 </div>
@@ -1374,15 +1644,15 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> shouldApply </td>
+          <td class="memname">static bool shouldApply </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ProfileSummaryInfo.html">ProfileSummaryInfo</a> &amp;&#160;</td>
+          <td class="paramtype">ProfileSummaryInfo &amp;&#160;</td>
           <td class="paramname"><em>PSI</em>&#160;</td>
         </tr>
         <tr>
@@ -1400,7 +1670,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l00441">441</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="ControlHeightReduction_8cpp.html#aedb41ca8fa78b0ba33a161d3577c0eed">CHRFunctionList</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00066">CHRFunctions</a>, <a class="el" href="ControlHeightReduction_8cpp.html#ad38fdfb35b25b5f66b23e5d9195d88b9">CHRModuleList</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00065">CHRModules</a>, <a class="el" href="StringMap_8h_source.html#l00358">llvm::StringMap&lt; ValueTy, AllocatorTy &gt;::count()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="ControlHeightReduction_8cpp.html#aedd696d1ab62c80eeafebeba559b46d3">ForceCHR</a>, <a class="el" href="ProfileSummaryInfo_8h_source.html#l00062">llvm::ProfileSummaryInfo::hasProfileSummary()</a>, and <a class="el" href="ProfileSummaryInfo_8cpp_source.html#l00121">llvm::ProfileSummaryInfo::isFunctionEntryHot()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="ControlHeightReduction_8cpp.html#adacbecfeb0cc876bc93ea6f824220dec">CHRFunctionList()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00066">CHRFunctions</a>, <a class="el" href="ControlHeightReduction_8cpp.html#a13b56e766220ca3a66d89852fa2dafa0">CHRModuleList()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00065">CHRModules</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="ControlHeightReduction_8cpp.html#a2089cf78af712b5089f1231e36b267bf">ForceCHR()</a>.</p>
 
 </div>
 </div>
@@ -1414,33 +1684,33 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> shouldSplit </td>
+          <td class="memname">static bool shouldSplit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>InsertPoint</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; Value * &gt; &amp;&#160;</td>
           <td class="paramname"><em>PrevConditionValues</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; Value * &gt; &amp;&#160;</td>
           <td class="paramname"><em>ConditionValues</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
+          <td class="paramtype">DominatorTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; Instruction * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Unhoistables</em>&#160;</td>
         </tr>
         <tr>
@@ -1458,7 +1728,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ControlHeightReduction_8cpp_source.html#l01051">1051</a> of file <a class="el" href="ControlHeightReduction_8cpp_source.html">ControlHeightReduction.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00547">checkHoistValue()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="DenseSet_8h_source.html#l00074">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::empty()</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00515">getBaseValues()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00547">checkHoistValue()</a>, <a class="el" href="ControlHeightReduction_8cpp_source.html#l00044">CHR_DEBUG</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00515">getBaseValues()</a>.</p>
 
 </div>
 </div>
@@ -1479,106 +1749,6 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 </div>
 </div>
-<a id="ae066b29cb64d272521c4d5468ee7d7e8" name="ae066b29cb64d272521c4d5468ee7d7e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae066b29cb64d272521c4d5468ee7d7e8">&#9670;&nbsp;</a></span>CHRBiasThreshold</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; double &gt; CHRBiasThreshold(&quot;chr-bias-threshold&quot;, cl::init(0.99), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;CHR considers a branch bias greater than this ratio as biased&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;chr-bias-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(0.99)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;CHR considers a branch bias greater than this ratio as biased&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l00623">getCHRBiasThreshold()</a>.</p>
-
-</div>
-</div>
-<a id="aedb41ca8fa78b0ba33a161d3577c0eed" name="aedb41ca8fa78b0ba33a161d3577c0eed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedb41ca8fa78b0ba33a161d3577c0eed">&#9670;&nbsp;</a></span>CHRFunctionList</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt; CHRFunctionList(&quot;chr-<a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-list&quot;, cl::init(&quot;&quot;), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Specify <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> to retrieve the list of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> to apply CHR to&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;chr-<a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-list&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(&quot;&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Specify <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> to retrieve the list of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> to apply CHR to&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l00068">parseCHRFilterFiles()</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00441">shouldApply()</a>.</p>
-
-</div>
-</div>
 <a id="a282e11b24a3ab565115e0ed4b68820b7" name="a282e11b24a3ab565115e0ed4b68820b7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a282e11b24a3ab565115e0ed4b68820b7">&#9670;&nbsp;</a></span>CHRFunctions</h2>
 
@@ -1589,7 +1759,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1StringSet.html">StringSet</a> CHRFunctions</td>
+          <td class="memname">StringSet CHRFunctions</td>
         </tr>
       </table>
   </td>
@@ -1605,106 +1775,6 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 </div>
 </div>
-<a id="a34a9dfdb0c93c1a4a5e9b81994a5c2ca" name="a34a9dfdb0c93c1a4a5e9b81994a5c2ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34a9dfdb0c93c1a4a5e9b81994a5c2ca">&#9670;&nbsp;</a></span>CHRMergeThreshold</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; CHRMergeThreshold(&quot;chr-merge-threshold&quot;, cl::init(2), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;CHR merges a group of <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a> <a class="el" href="ARCBranchFinalize_8cpp.html#a14311558a7445776def2d5bc13161ba3">branches</a>/selects where <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a> &gt;= this value&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;chr-merge-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(2)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;CHR merges a group of <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a> <a class="el" href="ARCBranchFinalize_8cpp.html#a14311558a7445776def2d5bc13161ba3">branches</a>/selects where <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a> &gt;= this value&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l01322">hasAtLeastTwoBiasedBranches()</a>.</p>
-
-</div>
-</div>
-<a id="ad38fdfb35b25b5f66b23e5d9195d88b9" name="ad38fdfb35b25b5f66b23e5d9195d88b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad38fdfb35b25b5f66b23e5d9195d88b9">&#9670;&nbsp;</a></span>CHRModuleList</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt; CHRModuleList(&quot;chr-module-list&quot;, cl::init(&quot;&quot;), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Specify <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> to retrieve the list of modules to apply CHR to&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;chr-module-list&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(&quot;&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Specify <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> to retrieve the list of modules to apply CHR to&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l00068">parseCHRFilterFiles()</a>, and <a class="el" href="ControlHeightReduction_8cpp_source.html#l00441">shouldApply()</a>.</p>
-
-</div>
-</div>
 <a id="a5defa49c396dd67771e7f595976e27c7" name="a5defa49c396dd67771e7f595976e27c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5defa49c396dd67771e7f595976e27c7">&#9670;&nbsp;</a></span>CHRModules</h2>
 
@@ -1715,7 +1785,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1StringSet.html">StringSet</a> CHRModules</td>
+          <td class="memname">StringSet CHRModules</td>
         </tr>
       </table>
   </td>
@@ -1747,56 +1817,6 @@ template&lt;typename K , typename S , typename M &gt; </div>
 
 </div>
 </div>
-<a id="aedd696d1ab62c80eeafebeba559b46d3" name="aedd696d1ab62c80eeafebeba559b46d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedd696d1ab62c80eeafebeba559b46d3">&#9670;&nbsp;</a></span>ForceCHR</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ForceCHR(&quot;force-chr&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Apply CHR <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> all functions&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;force-chr&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Apply CHR <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> all functions&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="ControlHeightReduction_8cpp_source.html#l00441">shouldApply()</a>.</p>
-
-</div>
-</div>
 <a id="a3e1829e563ae6bb05ed65833971cd413" name="a3e1829e563ae6bb05ed65833971cd413"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e1829e563ae6bb05ed65833971cd413">&#9670;&nbsp;</a></span>paths</h2>
 
@@ -1816,7 +1836,7 @@ template&lt;typename K , typename S , typename M &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

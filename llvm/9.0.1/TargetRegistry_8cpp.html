@@ -56,28 +56,37 @@ $(function() {
   <div class="headertitle"><div class="title">TargetRegistry.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="TargetRegistry_8h_source.html">llvm/Support/TargetRegistry.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringRef_8h_source.html">llvm/ADT/StringRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Support/TargetRegistry.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TargetRegistry.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="TargetRegistry_8cpp__incl.png" border="0" usemap="#alib_2Support_2TargetRegistry_8cpp" alt=""/></div>
+<map name="alib_2Support_2TargetRegistry_8cpp" id="alib_2Support_2TargetRegistry_8cpp">
+<area shape="rect" title=" " alt="" coords="503,5,718,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,219,104"/>
+<area shape="rect" title=" " alt="" coords="243,79,405,104"/>
+<area shape="rect" title=" " alt="" coords="429,79,587,104"/>
+<area shape="rect" title=" " alt="" coords="611,79,818,104"/>
+<area shape="rect" title=" " alt="" coords="843,79,912,104"/>
+<area shape="rect" title=" " alt="" coords="937,79,999,104"/>
+</map>
 </div>
 </div>
 <p><a href="TargetRegistry_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af1682dd0bdea3ecd4e9c5971ae1643f0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetRegistry_8cpp.html#af1682dd0bdea3ecd4e9c5971ae1643f0">TargetArraySortFn</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> std::pair&lt; <a class="el" href="classllvm_1_1StringRef.html">StringRef</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Target.html">Target</a> * &gt; *LHS, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> std::pair&lt; <a class="el" href="classllvm_1_1StringRef.html">StringRef</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Target.html">Target</a> * &gt; *RHS)</td></tr>
+<tr class="memitem:af1682dd0bdea3ecd4e9c5971ae1643f0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetRegistry_8cpp.html#af1682dd0bdea3ecd4e9c5971ae1643f0">TargetArraySortFn</a> (const std::pair&lt; StringRef, const Target * &gt; *LHS, const std::pair&lt; StringRef, const Target * &gt; *RHS)</td></tr>
 <tr class="separator:af1682dd0bdea3ecd4e9c5971ae1643f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a3f7b8ead5d8f67255b04b0a7b0e87405"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Target.html">Target</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetRegistry_8cpp.html#a3f7b8ead5d8f67255b04b0a7b0e87405">FirstTarget</a> = nullptr</td></tr>
+<tr class="memitem:a3f7b8ead5d8f67255b04b0a7b0e87405"><td class="memItemLeft" align="right" valign="top">static Target *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetRegistry_8cpp.html#a3f7b8ead5d8f67255b04b0a7b0e87405">FirstTarget</a> = nullptr</td></tr>
 <tr class="separator:a3f7b8ead5d8f67255b04b0a7b0e87405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -93,13 +102,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static int TargetArraySortFn </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> std::pair&lt; <a class="el" href="classllvm_1_1StringRef.html">StringRef</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Target.html">Target</a> * &gt; *&#160;</td>
+          <td class="paramtype">const std::pair&lt; StringRef, const Target * &gt; *&#160;</td>
           <td class="paramname"><em>LHS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> std::pair&lt; <a class="el" href="classllvm_1_1StringRef.html">StringRef</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Target.html">Target</a> * &gt; *&#160;</td>
+          <td class="paramtype">const std::pair&lt; StringRef, const Target * &gt; *&#160;</td>
           <td class="paramname"><em>RHS</em>&#160;</td>
         </tr>
         <tr>
@@ -117,8 +126,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="TargetRegistry_8cpp_source.html#l00112">112</a> of file <a class="el" href="TargetRegistry_8cpp_source.html">TargetRegistry.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TargetRegistry_8cpp_source.html#l00117">llvm::TargetRegistry::printRegisteredTargetsForVersion()</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -132,7 +139,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1Target.html">Target</a>* FirstTarget = nullptr</td>
+          <td class="memname">Target* FirstTarget = nullptr</td>
         </tr>
       </table>
   </td>
@@ -144,14 +151,12 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="TargetRegistry_8cpp_source.html#l00018">18</a> of file <a class="el" href="TargetRegistry_8cpp_source.html">TargetRegistry.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="X86ExpandPseudo_8cpp_source.html#l00072">INITIALIZE_PASS()</a>, <a class="el" href="TargetRegistry_8cpp_source.html#l00088">llvm::TargetRegistry::RegisterTarget()</a>, and <a class="el" href="TargetRegistry_8cpp_source.html#l00020">llvm::TargetRegistry::targets()</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:15 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

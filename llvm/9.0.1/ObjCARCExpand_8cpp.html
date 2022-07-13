@@ -60,23 +60,49 @@ $(function() {
 
 <p>This file defines ObjC ARC optimizations.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="lib_2Transforms_2ObjCARC_2ObjCARC_8h_source.html">ObjCARC.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstIterator_8h_source.html">llvm/IR/InstIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassAnalysisSupport_8h_source.html">llvm/PassAnalysisSupport.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassRegistry_8h_source.html">llvm/PassRegistry.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassSupport_8h_source.html">llvm/PassSupport.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="ObjCARC_8h_source.html">ObjCARC.h</a>&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstIterator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/PassAnalysisSupport.h&quot;</code><br />
+<code>#include &quot;llvm/PassRegistry.h&quot;</code><br />
+<code>#include &quot;llvm/PassSupport.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ObjCARCExpand.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ObjCARCExpand_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2ObjCARC_2ObjCARCExpand_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2ObjCARC_2ObjCARCExpand_8cpp" id="alib_2Transforms_2ObjCARC_2ObjCARCExpand_8cpp">
+<area shape="rect" title="This file defines ObjC ARC optimizations." alt="" coords="2743,5,2919,45"/>
+<area shape="rect" href="ObjCARC_8h.html" title="This file defines common definitions/declarations used by the ObjC ARC Optimizer." alt="" coords="1294,93,1386,119"/>
+<area shape="rect" title=" " alt="" coords="2080,174,2235,199"/>
+<area shape="rect" title=" " alt="" coords="2259,174,2355,199"/>
+<area shape="rect" title=" " alt="" coords="2245,93,2384,119"/>
+<area shape="rect" title=" " alt="" coords="2409,93,2562,119"/>
+<area shape="rect" title=" " alt="" coords="2587,93,2747,119"/>
+<area shape="rect" title=" " alt="" coords="2771,93,2891,119"/>
+<area shape="rect" title=" " alt="" coords="2915,93,3117,119"/>
+<area shape="rect" title=" " alt="" coords="3141,93,3289,119"/>
+<area shape="rect" title=" " alt="" coords="3313,93,3460,119"/>
+<area shape="rect" title=" " alt="" coords="3484,93,3655,119"/>
+<area shape="rect" title=" " alt="" coords="3679,93,3841,119"/>
+<area shape="rect" title=" " alt="" coords="3866,93,4073,119"/>
+<area shape="rect" title=" " alt="" coords="787,174,965,199"/>
+<area shape="rect" title=" " alt="" coords="989,174,1203,199"/>
+<area shape="rect" title=" " alt="" coords="1227,167,1453,207"/>
+<area shape="rect" title=" " alt="" coords="1478,167,1674,207"/>
+<area shape="rect" title=" " alt="" coords="1699,174,1869,199"/>
+<area shape="rect" title=" " alt="" coords="1894,167,2055,207"/>
+<area shape="rect" title=" " alt="" coords="5,174,221,199"/>
+<area shape="rect" title=" " alt="" coords="246,174,381,199"/>
+<area shape="rect" title=" " alt="" coords="405,174,537,199"/>
+<area shape="rect" title=" " alt="" coords="561,174,762,199"/>
+</map>
 </div>
 </div>
 <p><a href="ObjCARCExpand_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -84,7 +110,6 @@ Include dependency graph for ObjCARCExpand.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -94,7 +119,7 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aafb14d021f1a59945e5b2817a4f01d33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObjCARCExpand_8cpp.html#aafb14d021f1a59945e5b2817a4f01d33">INITIALIZE_PASS</a> (ObjCARCExpand, &quot;objc-<a class="el" href="group__ARCOpt.html#ga04fff031c5876f97f73173e756d8085e">arc</a>-expand&quot;, &quot;ObjC ARC expansion&quot;, false, false) <a class="el" href="classllvm_1_1Pass.html">Pass</a> *llvm</td></tr>
+<tr class="memitem:aafb14d021f1a59945e5b2817a4f01d33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ObjCARCExpand_8cpp.html#aafb14d021f1a59945e5b2817a4f01d33">INITIALIZE_PASS</a> (ObjCARCExpand, &quot;objc-<a class="el" href="group__ARCOpt.html#ga04fff031c5876f97f73173e756d8085e">arc</a>-expand&quot;, &quot;ObjC ARC expansion&quot;, false, false) <a class="el" href="classPass.html">Pass</a> *llvm</td></tr>
 <tr class="separator:aafb14d021f1a59945e5b2817a4f01d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -174,7 +199,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

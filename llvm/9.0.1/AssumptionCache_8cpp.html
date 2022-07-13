@@ -51,28 +51,27 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">AssumptionCache.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallPtrSet_8h_source.html">llvm/ADT/SmallPtrSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
@@ -80,19 +79,39 @@ $(function() {
 Include dependency graph for AssumptionCache.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="AssumptionCache_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2AssumptionCache_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2AssumptionCache_8cpp" id="alib_2Analysis_2AssumptionCache_8cpp">
+<area shape="rect" title=" " alt="" coords="1723,5,1969,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,196,119"/>
+<area shape="rect" title=" " alt="" coords="221,86,383,111"/>
+<area shape="rect" title=" " alt="" coords="408,86,583,111"/>
+<area shape="rect" title=" " alt="" coords="607,86,781,111"/>
+<area shape="rect" title=" " alt="" coords="806,86,961,111"/>
+<area shape="rect" title=" " alt="" coords="985,86,1123,111"/>
+<area shape="rect" title=" " alt="" coords="1148,86,1299,111"/>
+<area shape="rect" title=" " alt="" coords="1323,86,1476,111"/>
+<area shape="rect" title=" " alt="" coords="1501,86,1661,111"/>
+<area shape="rect" title=" " alt="" coords="1685,86,1828,111"/>
+<area shape="rect" title=" " alt="" coords="1852,86,2021,111"/>
+<area shape="rect" title=" " alt="" coords="2046,86,2217,111"/>
+<area shape="rect" title=" " alt="" coords="2241,86,2337,111"/>
+<area shape="rect" title=" " alt="" coords="2361,86,2531,111"/>
+<area shape="rect" title=" " alt="" coords="2556,86,2771,111"/>
+<area shape="rect" title=" " alt="" coords="2795,86,3006,111"/>
+<area shape="rect" title=" " alt="" coords="3031,86,3237,111"/>
+<area shape="rect" title=" " alt="" coords="3262,86,3347,111"/>
+<area shape="rect" title=" " alt="" coords="3371,86,3441,111"/>
+<area shape="rect" title=" " alt="" coords="3465,86,3525,111"/>
+</map>
 </div>
 </div>
 <p><a href="AssumptionCache_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1a325b18784c92e966293a52fcbd22c2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AssumptionCache_8cpp.html#a1a325b18784c92e966293a52fcbd22c2">findAffectedValues</a> (<a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *CI, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;Affected)</td></tr>
+<tr class="memitem:a5123b2ae0bacf0cf1d13e3fa1d18e970"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AssumptionCache_8cpp.html#a5123b2ae0bacf0cf1d13e3fa1d18e970">VerifyAssumptionCache</a> (&quot;verify-assumption-cache&quot;, cl::Hidden, cl::desc(&quot;Enable verification of assumption cache&quot;), cl::init(false))</td></tr>
+<tr class="separator:a5123b2ae0bacf0cf1d13e3fa1d18e970"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a325b18784c92e966293a52fcbd22c2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AssumptionCache_8cpp.html#a1a325b18784c92e966293a52fcbd22c2">findAffectedValues</a> (CallInst *CI, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;Affected)</td></tr>
 <tr class="separator:a1a325b18784c92e966293a52fcbd22c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a5ecc71b7e7c785643132106db33b1f7f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AssumptionCache_8cpp.html#a5ecc71b7e7c785643132106db33b1f7f">VerifyAssumptionCache</a> (&quot;verify-assumption-cache&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable verification of assumption cache&quot;), cl::init(false))</td></tr>
-<tr class="separator:a5ecc71b7e7c785643132106db33b1f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a1a325b18784c92e966293a52fcbd22c2" name="a1a325b18784c92e966293a52fcbd22c2"></a>
@@ -107,13 +126,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void findAffectedValues </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>CI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Affected</em>&#160;</td>
         </tr>
         <tr>
@@ -131,15 +150,12 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="AssumptionCache_8cpp_source.html#l00056">56</a> of file <a class="el" href="AssumptionCache_8cpp_source.html">AssumptionCache.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="InstrTypes_8h_source.html#l00753">llvm::CmpInst::ICMP_EQ</a>, <a class="el" href="PatternMatch_8h_source.html#l01197">llvm::PatternMatch::m_BitCast()</a>, <a class="el" href="PatternMatch_8h_source.html#l00995">llvm::PatternMatch::m_BitwiseLogic()</a>, <a class="el" href="PatternMatch_8h_source.html#l00081">llvm::PatternMatch::m_ConstantInt()</a>, <a class="el" href="PatternMatch_8h_source.html#l01061">llvm::PatternMatch::m_ICmp()</a>, <a class="el" href="PatternMatch_8h_source.html#l01732">llvm::PatternMatch::m_Not()</a>, <a class="el" href="PatternMatch_8h_source.html#l01203">llvm::PatternMatch::m_PtrToInt()</a>, <a class="el" href="PatternMatch_8h_source.html#l00973">llvm::PatternMatch::m_Shift()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, and <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="AssumptionCache_8cpp_source.html#l00124">llvm::AssumptionCache::unregisterAssumption()</a>, and <a class="el" href="AssumptionCache_8cpp_source.html#l00113">llvm::AssumptionCache::updateAffectedValues()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a5ecc71b7e7c785643132106db33b1f7f" name="a5ecc71b7e7c785643132106db33b1f7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ecc71b7e7c785643132106db33b1f7f">&#9670;&nbsp;</a></span>VerifyAssumptionCache</h2>
+<a id="a5123b2ae0bacf0cf1d13e3fa1d18e970" name="a5123b2ae0bacf0cf1d13e3fa1d18e970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5123b2ae0bacf0cf1d13e3fa1d18e970">&#9670;&nbsp;</a></span>VerifyAssumptionCache()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,7 +164,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; VerifyAssumptionCache(&quot;verify-assumption-cache&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable verification of assumption cache&quot;), cl::init(false)) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; VerifyAssumptionCache </td>
           <td>(</td>
           <td class="paramtype">&quot;verify-assumption-cache&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -162,7 +178,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable verification of assumption cache&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;Enable verification of assumption cache&quot;)&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -184,14 +200,12 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="AssumptionCache_8cpp_source.html#l00267">llvm::AssumptionCacheTracker::verifyAnalysis()</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:11 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

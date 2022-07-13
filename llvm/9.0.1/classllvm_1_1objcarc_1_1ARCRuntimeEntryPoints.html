@@ -66,14 +66,14 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a083983da9f74c1fe8e5f1a5650911405"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1objcarc_1_1ARCRuntimeEntryPoints.html#a083983da9f74c1fe8e5f1a5650911405">ARCRuntimeEntryPoints</a> ()=default</td></tr>
 <tr class="separator:a083983da9f74c1fe8e5f1a5650911405"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad245a22b79f4982f4d74cb74f1c1a3f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1objcarc_1_1ARCRuntimeEntryPoints.html#ad245a22b79f4982f4d74cb74f1c1a3f2">init</a> (<a class="el" href="classllvm_1_1Module.html">Module</a> *M)</td></tr>
+<tr class="memitem:ad245a22b79f4982f4d74cb74f1c1a3f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1objcarc_1_1ARCRuntimeEntryPoints.html#ad245a22b79f4982f4d74cb74f1c1a3f2">init</a> (Module *M)</td></tr>
 <tr class="separator:ad245a22b79f4982f4d74cb74f1c1a3f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99da12f4daa8b16a14bc097f8a31c7e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1objcarc_1_1ARCRuntimeEntryPoints.html#a99da12f4daa8b16a14bc097f8a31c7e3">get</a> (<a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644feb">ARCRuntimeEntryPointKind</a> kind)</td></tr>
+<tr class="memitem:a99da12f4daa8b16a14bc097f8a31c7e3"><td class="memItemLeft" align="right" valign="top">Function *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1objcarc_1_1ARCRuntimeEntryPoints.html#a99da12f4daa8b16a14bc097f8a31c7e3">get</a> (<a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644feb">ARCRuntimeEntryPointKind</a> kind)</td></tr>
 <tr class="separator:a99da12f4daa8b16a14bc097f8a31c7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Declarations for ObjC runtime functions and constants. </p>
-<p >These are initialized lazily to avoid cluttering up the <a class="el" href="classllvm_1_1Module.html" title="A Module instance is used to store all the information related to an LLVM module.">Module</a> with unused declarations. </p>
+<p >These are initialized lazily to avoid cluttering up the Module with unused declarations. </p>
 
 <p class="definition">Definition at line <a class="el" href="ARCRuntimeEntryPoints_8h_source.html#l00055">55</a> of file <a class="el" href="ARCRuntimeEntryPoints_8h_source.html">ARCRuntimeEntryPoints.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -113,7 +113,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1Function.html">Function</a> * llvm::objcarc::ARCRuntimeEntryPoints::get </td>
+          <td class="memname">Function * llvm::objcarc::ARCRuntimeEntryPoints::get </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644feb">ARCRuntimeEntryPointKind</a>&#160;</td>
           <td class="paramname"><em>kind</em></td><td>)</td>
@@ -129,7 +129,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ARCRuntimeEntryPoints_8h_source.html#l00072">72</a> of file <a class="el" href="ARCRuntimeEntryPoints_8h_source.html">ARCRuntimeEntryPoints.h</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644feba61710f61a521b1544f5f7ab5abac843d">llvm::objcarc::Autorelease</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644febac1dbc9b59747323224171927c310917d">llvm::objcarc::AutoreleaseRV</a>, <a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644febab8e7b465df7c5979dc731d06e84ce2cf">llvm::objcarc::Release</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644febaafece4245269582cb2f1009d4fb52047">llvm::objcarc::Retain</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644febabb1c71135b6918c38ba5849bd7831df3">llvm::objcarc::RetainAutorelease</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644feba55348800790dfedea626658bdbae8f6f">llvm::objcarc::RetainAutoreleaseRV</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644febaa5c9c22c7dedc1f8dd1d75b7c04460a9">llvm::objcarc::RetainBlock</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644febaa1226b5450384ce6ea5ed47c317303ee">llvm::objcarc::RetainRV</a>, and <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644feba36fbf2cae591a406af658623583b0dba">llvm::objcarc::StoreStrong</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644feba61710f61a521b1544f5f7ab5abac843d">llvm::objcarc::Autorelease</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644febac1dbc9b59747323224171927c310917d">llvm::objcarc::AutoreleaseRV</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644febab8e7b465df7c5979dc731d06e84ce2cf">llvm::objcarc::Release</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644febaafece4245269582cb2f1009d4fb52047">llvm::objcarc::Retain</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644febabb1c71135b6918c38ba5849bd7831df3">llvm::objcarc::RetainAutorelease</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644feba55348800790dfedea626658bdbae8f6f">llvm::objcarc::RetainAutoreleaseRV</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644febaa5c9c22c7dedc1f8dd1d75b7c04460a9">llvm::objcarc::RetainBlock</a>, <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644febaa1226b5450384ce6ea5ed47c317303ee">llvm::objcarc::RetainRV</a>, and <a class="el" href="namespacellvm_1_1objcarc.html#aa4b95e1b6c59a75f558794b32b644feba36fbf2cae591a406af658623583b0dba">llvm::objcarc::StoreStrong</a>.</p>
 
 </div>
 </div>
@@ -145,7 +145,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void llvm::objcarc::ARCRuntimeEntryPoints::init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> *&#160;</td>
+          <td class="paramtype">Module *&#160;</td>
           <td class="paramname"><em>M</em></td><td>)</td>
           <td></td>
         </tr>
@@ -167,7 +167,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:28:36 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:46 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

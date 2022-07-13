@@ -58,20 +58,33 @@ $(function() {
   <div class="headertitle"><div class="title">LoopDeletion.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="LoopDeletion_8h_source.html">llvm/Transforms/Scalar/LoopDeletion.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalsModRef_8h_source.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopPass_8h_source.html">llvm/Analysis/LoopPass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopPassManager_8h_source.html">llvm/Transforms/Scalar/LoopPassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopUtils_8h_source.html">llvm/Transforms/Utils/LoopUtils.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/LoopDeletion.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LoopPass.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar/LoopPassManager.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/LoopUtils.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LoopDeletion.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="LoopDeletion_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2LoopDeletion_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Scalar_2LoopDeletion_8cpp" id="alib_2Transforms_2Scalar_2LoopDeletion_8cpp">
+<area shape="rect" title=" " alt="" coords="902,5,1061,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,176,133"/>
+<area shape="rect" title=" " alt="" coords="201,101,375,126"/>
+<area shape="rect" title=" " alt="" coords="399,101,550,126"/>
+<area shape="rect" title=" " alt="" coords="574,93,765,133"/>
+<area shape="rect" title=" " alt="" coords="789,101,976,126"/>
+<area shape="rect" title=" " alt="" coords="1000,101,1160,126"/>
+<area shape="rect" title=" " alt="" coords="1184,101,1355,126"/>
+<area shape="rect" title=" " alt="" coords="1379,101,1562,126"/>
+<area shape="rect" title=" " alt="" coords="1587,93,1757,133"/>
+<area shape="rect" title=" " alt="" coords="1782,93,1943,133"/>
+</map>
 </div>
 </div>
 <p><a href="LoopDeletion_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -93,16 +106,16 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a00cf2f3fc831d262cae8b77ac9cd29fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopDeletion_8cpp.html#a00cf2f3fc831d262cae8b77ac9cd29fa">STATISTIC</a> (NumDeleted, &quot;Number of <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> deleted&quot;)</td></tr>
 <tr class="separator:a00cf2f3fc831d262cae8b77ac9cd29fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac26c78ad31f601d01ae5a80d36dd5ea0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopDeletion_8cpp.html#ac26c78ad31f601d01ae5a80d36dd5ea0">isLoopDead</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;ExitingBlocks, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *ExitBlock, <a class="el" href="classbool.html">bool</a> &amp;Changed, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *Preheader)</td></tr>
+<tr class="memitem:ac26c78ad31f601d01ae5a80d36dd5ea0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopDeletion_8cpp.html#ac26c78ad31f601d01ae5a80d36dd5ea0">isLoopDead</a> (Loop *L, ScalarEvolution &amp;SE, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; BasicBlock * &gt; &amp;ExitingBlocks, BasicBlock *ExitBlock, bool &amp;Changed, BasicBlock *Preheader)</td></tr>
 <tr class="memdesc:ac26c78ad31f601d01ae5a80d36dd5ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a loop is dead.  <a href="LoopDeletion_8cpp.html#ac26c78ad31f601d01ae5a80d36dd5ea0">More...</a><br /></td></tr>
 <tr class="separator:ac26c78ad31f601d01ae5a80d36dd5ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e98d2f5872ca6506b6fefbf114deda7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopDeletion_8cpp.html#a7e98d2f5872ca6506b6fefbf114deda7">isLoopNeverExecuted</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> *L)</td></tr>
+<tr class="memitem:a7e98d2f5872ca6506b6fefbf114deda7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopDeletion_8cpp.html#a7e98d2f5872ca6506b6fefbf114deda7">isLoopNeverExecuted</a> (Loop *L)</td></tr>
 <tr class="memdesc:a7e98d2f5872ca6506b6fefbf114deda7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns true if there is no viable path from the entry block to the header of <code>L</code>.  <a href="LoopDeletion_8cpp.html#a7e98d2f5872ca6506b6fefbf114deda7">More...</a><br /></td></tr>
 <tr class="separator:a7e98d2f5872ca6506b6fefbf114deda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4fba9060e92b25afb821ef4bba97ea5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="LoopDeletion_8cpp.html#a0f1c83c3d08d80b12c424962a5e94ce8">LoopDeletionResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopDeletion_8cpp.html#ab4fba9060e92b25afb821ef4bba97ea5">deleteLoopIfDead</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;SE, <a class="el" href="classllvm_1_1LoopInfo.html">LoopInfo</a> &amp;LI)</td></tr>
+<tr class="memitem:ab4fba9060e92b25afb821ef4bba97ea5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="LoopDeletion_8cpp.html#a0f1c83c3d08d80b12c424962a5e94ce8">LoopDeletionResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopDeletion_8cpp.html#ab4fba9060e92b25afb821ef4bba97ea5">deleteLoopIfDead</a> (Loop *L, DominatorTree &amp;DT, ScalarEvolution &amp;SE, LoopInfo &amp;LI)</td></tr>
 <tr class="memdesc:ab4fba9060e92b25afb821ef4bba97ea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a loop if it is dead.  <a href="LoopDeletion_8cpp.html#ab4fba9060e92b25afb821ef4bba97ea5">More...</a><br /></td></tr>
 <tr class="separator:ab4fba9060e92b25afb821ef4bba97ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ef38bc24bf7b655826d64e068041ad7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopDeletion_8cpp.html#a7ef38bc24bf7b655826d64e068041ad7">INITIALIZE_PASS_BEGIN</a> (LoopDeletionLegacyPass, &quot;loop-deletion&quot;, &quot;Delete dead loops&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(LoopDeletionLegacyPass</td></tr>
+<tr class="memitem:a7ef38bc24bf7b655826d64e068041ad7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopDeletion_8cpp.html#a7ef38bc24bf7b655826d64e068041ad7">INITIALIZE_PASS_BEGIN</a> (LoopDeletionLegacyPass, &quot;loop-deletion&quot;, &quot;Delete dead loops&quot;, false, false) INITIALIZE_PASS_END(LoopDeletionLegacyPass</td></tr>
 <tr class="separator:a7ef38bc24bf7b655826d64e068041ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -174,25 +187,25 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="LoopDeletion_8cpp.html#a0f1c83c3d08d80b12c424962a5e94ce8">LoopDeletionResult</a> deleteLoopIfDead </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
+          <td class="paramtype">DominatorTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
+          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
           <td class="paramname"><em>SE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1LoopInfo.html">LoopInfo</a> &amp;&#160;</td>
+          <td class="paramtype">LoopInfo &amp;&#160;</td>
           <td class="paramname"><em>LI</em>&#160;</td>
         </tr>
         <tr>
@@ -215,9 +228,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopDeletion_8cpp_source.html#l00135">135</a> of file <a class="el" href="LoopDeletion_8cpp_source.html">LoopDeletion.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="LoopInfo_8h_source.html#l00144">llvm::LoopBase&lt; BlockT, LoopT &gt;::begin()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="LoopDeletion_8cpp.html#a0f1c83c3d08d80b12c424962a5e94ce8a5fe6005bf6e415c950c011fb65f12b8f">Deleted</a>, <a class="el" href="LoopUtils_8cpp_source.html#l00450">llvm::deleteDeadLoop()</a>, <a class="el" href="LoopInfo_8h_source.html#l00145">llvm::LoopBase&lt; BlockT, LoopT &gt;::end()</a>, <a class="el" href="Constants_8cpp_source.html#l01424">llvm::UndefValue::get()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00034">llvm::LoopBase&lt; BlockT, LoopT &gt;::getExitingBlocks()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00160">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopPreheader()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l06602">llvm::ScalarEvolution::getMaxBackedgeTakenCount()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00131">llvm::LoopBase&lt; BlockT, LoopT &gt;::getUniqueExitBlock()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00085">llvm::LoopBase&lt; BlockT, LoopT &gt;::hasDedicatedExits()</a>, <a class="el" href="LoopInfo_8cpp_source.html#l00409">llvm::Loop::isLCSSAForm()</a>, <a class="el" href="LoopDeletion_8cpp_source.html#l00042">isLoopDead()</a>, <a class="el" href="LoopDeletion_8cpp_source.html#l00093">isLoopNeverExecuted()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="LoopDeletion_8cpp.html#a0f1c83c3d08d80b12c424962a5e94ce8a35e0c8c0b180c95d4e122e55ed62cc64">Modified</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="BasicBlock_8h_source.html#l00324">llvm::BasicBlock::phis()</a>, and <a class="el" href="LoopDeletion_8cpp.html#a0f1c83c3d08d80b12c424962a5e94ce8aac5e6ff0bb9cd22f9f55570e7b318c84">Unmodified</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="LoopDeletion_8cpp_source.html#l00208">llvm::LoopDeletionPass::run()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="LoopDeletion_8cpp.html#a0f1c83c3d08d80b12c424962a5e94ce8a5fe6005bf6e415c950c011fb65f12b8f">Deleted</a>, <a class="el" href="LoopDeletion_8cpp_source.html#l00042">isLoopDead()</a>, <a class="el" href="LoopDeletion_8cpp_source.html#l00093">isLoopNeverExecuted()</a>, <a class="el" href="LoopDeletion_8cpp.html#a0f1c83c3d08d80b12c424962a5e94ce8a35e0c8c0b180c95d4e122e55ed62cc64">Modified</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, and <a class="el" href="LoopDeletion_8cpp.html#a0f1c83c3d08d80b12c424962a5e94ce8aac5e6ff0bb9cd22f9f55570e7b318c84">Unmodified</a>.</p>
 
 </div>
 </div>
@@ -277,39 +288,39 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isLoopDead </td>
+          <td class="memname">static bool isLoopDead </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> &amp;&#160;</td>
+          <td class="paramtype">ScalarEvolution &amp;&#160;</td>
           <td class="paramname"><em>SE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; BasicBlock * &gt; &amp;&#160;</td>
           <td class="paramname"><em>ExitingBlocks</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>ExitBlock</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a> &amp;&#160;</td>
+          <td class="paramtype">bool &amp;&#160;</td>
           <td class="paramname"><em>Changed</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>Preheader</em>&#160;</td>
         </tr>
         <tr>
@@ -330,7 +341,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopDeletion_8cpp_source.html#l00042">42</a> of file <a class="el" href="LoopDeletion_8cpp_source.html">LoopDeletion.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="STLExtras_8h_source.html#l01192">llvm::all_of()</a>, <a class="el" href="STLExtras_8h_source.html#l01199">llvm::any_of()</a>, <a class="el" href="LoopInfo_8h_source.html#l00158">llvm::LoopBase&lt; BlockT, LoopT &gt;::blocks()</a>, <a class="el" href="ScalarEvolution_8h_source.html#l00819">llvm::ScalarEvolution::forgetLoopDispositions()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="ArrayRef_8h_source.html#l00450">llvm::makeArrayRef()</a>, <a class="el" href="LoopInfo_8cpp_source.html#l00071">llvm::Loop::makeLoopInvariant()</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, and <a class="el" href="BasicBlock_8h_source.html#l00324">llvm::BasicBlock::phis()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LoopDeletion_8cpp_source.html#l00135">deleteLoopIfDead()</a>.</p>
 
@@ -346,9 +357,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isLoopNeverExecuted </td>
+          <td class="memname">static bool isLoopNeverExecuted </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em></td><td>)</td>
           <td></td>
         </tr>
@@ -365,7 +376,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopDeletion_8cpp_source.html#l00093">93</a> of file <a class="el" href="LoopDeletion_8cpp_source.html">LoopDeletion.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00160">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopPreheader()</a>, <a class="el" href="IR_2CFG_8h_source.html#l00116">llvm::pred_empty()</a>, <a class="el" href="IR_2CFG_8h_source.html#l00124">llvm::predecessors()</a>, and <a class="el" href="BitVector_8h_source.html#l00940">std::swap()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LoopDeletion_8cpp_source.html#l00135">deleteLoopIfDead()</a>.</p>
 
@@ -451,7 +462,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

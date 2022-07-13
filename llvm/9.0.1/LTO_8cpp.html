@@ -53,59 +53,98 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">LTO.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="LTO_8h_source.html">llvm/LTO/LTO.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BitcodeReader_8h_source.html">llvm/Bitcode/BitcodeReader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BitcodeWriter_8h_source.html">llvm/Bitcode/BitcodeWriter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2CodeGen_2Analysis_8h_source.html">llvm/CodeGen/Analysis.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/LTO/LTO.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Bitcode/BitcodeReader.h&quot;</code><br />
+<code>#include &quot;llvm/Bitcode/BitcodeWriter.h&quot;</code><br />
+<code>#include &quot;llvm/CodeGen/Analysis.h&quot;</code><br />
 <code>#include &quot;llvm/Config/llvm-config.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="AutoUpgrade_8h_source.html">llvm/IR/AutoUpgrade.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DiagnosticPrinter_8h_source.html">llvm/IR/DiagnosticPrinter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LegacyPassManager_8h_source.html">llvm/IR/LegacyPassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Mangler_8h_source.html">llvm/IR/Mangler.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="RemarkStreamer_8h_source.html">llvm/IR/RemarkStreamer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LTOBackend_8h_source.html">llvm/LTO/LTOBackend.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SummaryBasedOptimizations_8h_source.html">llvm/LTO/SummaryBasedOptimizations.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IRMover_8h_source.html">llvm/Linker/IRMover.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IRObjectFile_8h_source.html">llvm/Object/IRObjectFile.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2Error_8h_source.html">llvm/Support/Error.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ManagedStatic_8h_source.html">llvm/Support/ManagedStatic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MemoryBuffer_8h_source.html">llvm/Support/MemoryBuffer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Path_8h_source.html">llvm/Support/Path.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SHA1_8h_source.html">llvm/Support/SHA1.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Support_2SourceMgr_8h_source.html">llvm/Support/SourceMgr.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetRegistry_8h_source.html">llvm/Support/TargetRegistry.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ThreadPool_8h_source.html">llvm/Support/ThreadPool.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Threading_8h_source.html">llvm/Support/Threading.h</a>&quot;</code><br />
+<code>#include &quot;llvm/IR/AutoUpgrade.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DiagnosticPrinter.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LegacyPassManager.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Mangler.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
+<code>#include &quot;llvm/IR/RemarkStreamer.h&quot;</code><br />
+<code>#include &quot;llvm/LTO/LTOBackend.h&quot;</code><br />
+<code>#include &quot;llvm/LTO/SummaryBasedOptimizations.h&quot;</code><br />
+<code>#include &quot;llvm/Linker/IRMover.h&quot;</code><br />
+<code>#include &quot;llvm/Object/IRObjectFile.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Error.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ManagedStatic.h&quot;</code><br />
+<code>#include &quot;llvm/Support/MemoryBuffer.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Path.h&quot;</code><br />
+<code>#include &quot;llvm/Support/SHA1.h&quot;</code><br />
+<code>#include &quot;llvm/Support/SourceMgr.h&quot;</code><br />
+<code>#include &quot;llvm/Support/TargetRegistry.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ThreadPool.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Threading.h&quot;</code><br />
 <code>#include &quot;llvm/Support/VCSRevision.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Target_2TargetMachine_8h_source.html">llvm/Target/TargetMachine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetOptions_8h_source.html">llvm/Target/TargetOptions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2IPO_8h_source.html">llvm/Transforms/IPO.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2IPO_2PassManagerBuilder_8h_source.html">llvm/Transforms/IPO/PassManagerBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="FunctionImportUtils_8h_source.html">llvm/Transforms/Utils/FunctionImportUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SplitModule_8h_source.html">llvm/Transforms/Utils/SplitModule.h</a>&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Target/TargetMachine.h&quot;</code><br />
+<code>#include &quot;llvm/Target/TargetOptions.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO/PassManagerBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/FunctionImportUtils.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/SplitModule.h&quot;</code><br />
 <code>#include &lt;set&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LTO.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="LTO_8cpp__incl.png" border="0" usemap="#alib_2LTO_2LTO_8cpp" alt=""/></div>
+<map name="alib_2LTO_2LTO_8cpp" id="alib_2LTO_2LTO_8cpp">
+<area shape="rect" title=" " alt="" coords="3784,5,3905,31"/>
+<area shape="rect" title=" " alt="" coords="5,86,124,111"/>
+<area shape="rect" title=" " alt="" coords="148,86,299,111"/>
+<area shape="rect" title=" " alt="" coords="323,79,521,119"/>
+<area shape="rect" title=" " alt="" coords="546,79,765,119"/>
+<area shape="rect" title=" " alt="" coords="789,86,1004,111"/>
+<area shape="rect" title=" " alt="" coords="1029,86,1237,111"/>
+<area shape="rect" title=" " alt="" coords="1261,86,1447,111"/>
+<area shape="rect" title=" " alt="" coords="1471,86,1656,111"/>
+<area shape="rect" title=" " alt="" coords="1680,86,1849,111"/>
+<area shape="rect" title=" " alt="" coords="1874,86,2069,111"/>
+<area shape="rect" title=" " alt="" coords="2093,86,2236,111"/>
+<area shape="rect" title=" " alt="" coords="2260,86,2475,111"/>
+<area shape="rect" title=" " alt="" coords="2499,86,2635,111"/>
+<area shape="rect" title=" " alt="" coords="2659,86,2806,111"/>
+<area shape="rect" title=" " alt="" coords="2830,86,3025,111"/>
+<area shape="rect" title=" " alt="" coords="3049,86,3224,111"/>
+<area shape="rect" title=" " alt="" coords="3248,86,3537,111"/>
+<area shape="rect" title=" " alt="" coords="3562,86,3725,111"/>
+<area shape="rect" title=" " alt="" coords="3749,86,3940,111"/>
+<area shape="rect" title=" " alt="" coords="3964,86,4115,111"/>
+<area shape="rect" title=" " alt="" coords="4139,86,4358,111"/>
+<area shape="rect" title=" " alt="" coords="4382,86,4595,111"/>
+<area shape="rect" title=" " alt="" coords="4619,86,4769,111"/>
+<area shape="rect" title=" " alt="" coords="4793,86,4949,111"/>
+<area shape="rect" title=" " alt="" coords="4974,86,5163,111"/>
+<area shape="rect" title=" " alt="" coords="5187,86,5401,111"/>
+<area shape="rect" title=" " alt="" coords="5425,86,5619,111"/>
+<area shape="rect" title=" " alt="" coords="5643,86,5830,111"/>
+<area shape="rect" title=" " alt="" coords="5854,86,6057,111"/>
+<area shape="rect" title=" " alt="" coords="6081,86,6288,111"/>
+<area shape="rect" title=" " alt="" coords="6312,86,6519,111"/>
+<area shape="rect" title=" " alt="" coords="6543,86,6744,111"/>
+<area shape="rect" title=" " alt="" coords="6769,86,6934,111"/>
+<area shape="rect" title=" " alt="" coords="6959,79,7128,119"/>
+<area shape="rect" title=" " alt="" coords="7152,79,7319,119"/>
+<area shape="rect" title=" " alt="" coords="7343,79,7504,119"/>
+<area shape="rect" title=" " alt="" coords="7529,86,7571,111"/>
+</map>
 </div>
 </div>
 <p><a href="LTO_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlto_1_1ThinBackendProc.html">llvm::lto::ThinBackendProc</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlto_1_1ThinBackendProc.html">lto::ThinBackendProc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class defines the interface to the ThinLTO backend.  <a href="classlto_1_1ThinBackendProc.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -116,24 +155,21 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad9155dd9b3e67ca579bb84c623411a56"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTO_8cpp.html#ad9155dd9b3e67ca579bb84c623411a56">thinLTOResolvePrevailingGUID</a> (<a class="el" href="structllvm_1_1ValueInfo.html">ValueInfo</a> <a class="el" href="SIInstrInfo_8cpp.html#a0dfd55eaf0bcb495f09ecf8c55b256b2a97bce951e4585a39601c04d86bb14ffd">VI</a>, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1GlobalValueSummary.html">GlobalValueSummary</a> * &gt; &amp;GlobalInvolvedWithAlias, <a class="el" href="classllvm_1_1function__ref.html">function_ref</a>&lt; <a class="el" href="classbool.html">bool</a>(<a class="el" href="classllvm_1_1GlobalValue.html#a3af0428ec6e48cb2f05c199b7b9f7e07">GlobalValue::GUID</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1GlobalValueSummary.html">GlobalValueSummary</a> *)&gt; isPrevailing, <a class="el" href="classllvm_1_1function__ref.html">function_ref</a>&lt; void(<a class="el" href="classllvm_1_1StringRef.html">StringRef</a>, <a class="el" href="classllvm_1_1GlobalValue.html#a3af0428ec6e48cb2f05c199b7b9f7e07">GlobalValue::GUID</a>, <a class="el" href="classllvm_1_1GlobalValue.html#aedfa75f0c85c4aa85b257f066fbea57c">GlobalValue::LinkageTypes</a>)&gt; recordNewLinkage, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1GlobalValue.html#a3af0428ec6e48cb2f05c199b7b9f7e07">GlobalValue::GUID</a> &gt; &amp;GUIDPreservedSymbols)</td></tr>
+<tr class="memitem:a63994a713db206d2bad534c906c76794"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTO_8cpp.html#a63994a713db206d2bad534c906c76794">DumpThinCGSCCs</a> (&quot;dump-thin-cg-sccs&quot;, cl::init(false), cl::Hidden, cl::desc(&quot;Dump the SCCs in the ThinLTO index's callgraph&quot;))</td></tr>
+<tr class="separator:a63994a713db206d2bad534c906c76794"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc2de691ee2f717c013dfdc7bb4b10ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTO_8cpp.html#acc2de691ee2f717c013dfdc7bb4b10ca">EnableLTOInternalization</a> (&quot;enable-lto-internalization&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, cl::desc(&quot;Enable global value internalization in LTO&quot;))</td></tr>
+<tr class="memdesc:acc2de691ee2f717c013dfdc7bb4b10ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable global value internalization in LTO.  <a href="LTO_8cpp.html#acc2de691ee2f717c013dfdc7bb4b10ca">More...</a><br /></td></tr>
+<tr class="separator:acc2de691ee2f717c013dfdc7bb4b10ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9155dd9b3e67ca579bb84c623411a56"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTO_8cpp.html#ad9155dd9b3e67ca579bb84c623411a56">thinLTOResolvePrevailingGUID</a> (ValueInfo VI, DenseSet&lt; GlobalValueSummary * &gt; &amp;GlobalInvolvedWithAlias, function_ref&lt; bool(GlobalValue::GUID, const GlobalValueSummary *)&gt; isPrevailing, function_ref&lt; void(StringRef, GlobalValue::GUID, GlobalValue::LinkageTypes)&gt; recordNewLinkage, const DenseSet&lt; GlobalValue::GUID &gt; &amp;GUIDPreservedSymbols)</td></tr>
 <tr class="separator:ad9155dd9b3e67ca579bb84c623411a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6778d7a608e817bcd0be206686795a69"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTO_8cpp.html#a6778d7a608e817bcd0be206686795a69">isWeakObjectWithRWAccess</a> (<a class="el" href="classllvm_1_1GlobalValueSummary.html">GlobalValueSummary</a> *GVS)</td></tr>
+<tr class="memitem:a6778d7a608e817bcd0be206686795a69"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTO_8cpp.html#a6778d7a608e817bcd0be206686795a69">isWeakObjectWithRWAccess</a> (GlobalValueSummary *GVS)</td></tr>
 <tr class="separator:a6778d7a608e817bcd0be206686795a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4d4e8cc278e7880c842ab827eb74481"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTO_8cpp.html#ab4d4e8cc278e7880c842ab827eb74481">thinLTOInternalizeAndPromoteGUID</a> (<a class="el" href="namespacellvm.html#a931e86edad8fe4e8fc70a43c224586ee">GlobalValueSummaryList</a> &amp;GVSummaryList, <a class="el" href="classllvm_1_1GlobalValue.html#a3af0428ec6e48cb2f05c199b7b9f7e07">GlobalValue::GUID</a> GUID, <a class="el" href="classllvm_1_1function__ref.html">function_ref</a>&lt; <a class="el" href="classbool.html">bool</a>(<a class="el" href="classllvm_1_1StringRef.html">StringRef</a>, <a class="el" href="classllvm_1_1GlobalValue.html#a3af0428ec6e48cb2f05c199b7b9f7e07">GlobalValue::GUID</a>)&gt; isExported)</td></tr>
+<tr class="memitem:ab4d4e8cc278e7880c842ab827eb74481"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTO_8cpp.html#ab4d4e8cc278e7880c842ab827eb74481">thinLTOInternalizeAndPromoteGUID</a> (GlobalValueSummaryList &amp;GVSummaryList, GlobalValue::GUID GUID, function_ref&lt; bool(StringRef, GlobalValue::GUID)&gt; isExported)</td></tr>
 <tr class="separator:ab4d4e8cc278e7880c842ab827eb74481"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b96fb8bf782a1b498a82682ab8e74c9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTO_8cpp.html#a2b96fb8bf782a1b498a82682ab8e74c9">writeToResolutionFile</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS, <a class="el" href="classllvm_1_1lto_1_1InputFile.html">InputFile</a> *Input, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="structllvm_1_1lto_1_1SymbolResolution.html">SymbolResolution</a> &gt; Res)</td></tr>
+<tr class="memitem:a2b96fb8bf782a1b498a82682ab8e74c9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTO_8cpp.html#a2b96fb8bf782a1b498a82682ab8e74c9">writeToResolutionFile</a> (raw_ostream &amp;OS, InputFile *Input, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; SymbolResolution &gt; Res)</td></tr>
 <tr class="separator:a2b96fb8bf782a1b498a82682ab8e74c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f0167f2ae072a399680c468a9777221"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTO_8cpp.html#a4f0167f2ae072a399680c468a9777221">handleNonPrevailingComdat</a> (<a class="el" href="classllvm_1_1GlobalValue.html">GlobalValue</a> &amp;GV, std::set&lt; <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Comdat.html">Comdat</a> * &gt; &amp;NonPrevailingComdats)</td></tr>
+<tr class="memitem:a4f0167f2ae072a399680c468a9777221"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTO_8cpp.html#a4f0167f2ae072a399680c468a9777221">handleNonPrevailingComdat</a> (GlobalValue &amp;GV, std::set&lt; const Comdat * &gt; &amp;NonPrevailingComdats)</td></tr>
 <tr class="separator:a4f0167f2ae072a399680c468a9777221"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ab2c33ea07546228572b9fc357e8521de"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTO_8cpp.html#ab2c33ea07546228572b9fc357e8521de">DumpThinCGSCCs</a> (&quot;dump-thin-cg-sccs&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Dump the SCCs in the ThinLTO index's callgraph&quot;))</td></tr>
-<tr class="separator:ab2c33ea07546228572b9fc357e8521de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b5c88319de0a10edf15c18978b16efb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTO_8cpp.html#a5b5c88319de0a10edf15c18978b16efb">EnableLTOInternalization</a> (&quot;enable-lto-internalization&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable global value internalization in LTO&quot;))</td></tr>
-<tr class="memdesc:a5b5c88319de0a10edf15c18978b16efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable global value internalization in LTO.  <a href="LTO_8cpp.html#a5b5c88319de0a10edf15c18978b16efb">More...</a><br /></td></tr>
-<tr class="separator:a5b5c88319de0a10edf15c18978b16efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad78e062f62e0d6e453941fb4ca843e4d" name="ad78e062f62e0d6e453941fb4ca843e4d"></a>
@@ -153,8 +189,8 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a4f0167f2ae072a399680c468a9777221" name="a4f0167f2ae072a399680c468a9777221"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f0167f2ae072a399680c468a9777221">&#9670;&nbsp;</a></span>handleNonPrevailingComdat()</h2>
+<a id="a63994a713db206d2bad534c906c76794" name="a63994a713db206d2bad534c906c76794"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63994a713db206d2bad534c906c76794">&#9670;&nbsp;</a></span>DumpThinCGSCCs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,236 +199,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void handleNonPrevailingComdat </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1GlobalValue.html">GlobalValue</a> &amp;&#160;</td>
-          <td class="paramname"><em>GV</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::set&lt; <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Comdat.html">Comdat</a> * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>NonPrevailingComdats</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="LTO_8cpp_source.html#l00631">631</a> of file <a class="el" href="LTO_8cpp_source.html">LTO.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="GlobalValue_8h_source.html#l00049">llvm::GlobalValue::AvailableExternallyLinkage</a>, <a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="Globals_8cpp_source.html#l00171">llvm::GlobalValue::getComdat()</a>, <a class="el" href="GlobalValue_8h_source.html#l00445">llvm::GlobalValue::hasLocalLinkage()</a>, and <a class="el" href="GlobalValue_8h_source.html#l00454">llvm::GlobalValue::setLinkage()</a>.</p>
-
-</div>
-</div>
-<a id="a6778d7a608e817bcd0be206686795a69" name="a6778d7a608e817bcd0be206686795a69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6778d7a608e817bcd0be206686795a69">&#9670;&nbsp;</a></span>isWeakObjectWithRWAccess()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isWeakObjectWithRWAccess </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1GlobalValueSummary.html">GlobalValueSummary</a> *&#160;</td>
-          <td class="paramname"><em>GVS</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="LTO_8cpp_source.html#l00376">376</a> of file <a class="el" href="LTO_8cpp_source.html">LTO.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="ModuleSummaryIndex_8h_source.html#l00482">llvm::GlobalValueSummary::getBaseObject()</a>, <a class="el" href="GlobalValue_8h_source.html#l00051">llvm::GlobalValue::LinkOnceODRLinkage</a>, and <a class="el" href="GlobalValue_8h_source.html#l00053">llvm::GlobalValue::WeakODRLinkage</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="LTO_8cpp_source.html#l00384">thinLTOInternalizeAndPromoteGUID()</a>.</p>
-
-</div>
-</div>
-<a id="ab4d4e8cc278e7880c842ab827eb74481" name="ab4d4e8cc278e7880c842ab827eb74481"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4d4e8cc278e7880c842ab827eb74481">&#9670;&nbsp;</a></span>thinLTOInternalizeAndPromoteGUID()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void thinLTOInternalizeAndPromoteGUID </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#a931e86edad8fe4e8fc70a43c224586ee">GlobalValueSummaryList</a> &amp;&#160;</td>
-          <td class="paramname"><em>GVSummaryList</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1GlobalValue.html#a3af0428ec6e48cb2f05c199b7b9f7e07">GlobalValue::GUID</a>&#160;</td>
-          <td class="paramname"><em>GUID</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1function__ref.html">function_ref</a>&lt; <a class="el" href="classbool.html">bool</a>(<a class="el" href="classllvm_1_1StringRef.html">StringRef</a>, <a class="el" href="classllvm_1_1GlobalValue.html#a3af0428ec6e48cb2f05c199b7b9f7e07">GlobalValue::GUID</a>)&gt;&#160;</td>
-          <td class="paramname"><em>isExported</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="LTO_8cpp_source.html#l00384">384</a> of file <a class="el" href="LTO_8cpp_source.html">LTO.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="GlobalValue_8h_source.html#l00054">llvm::GlobalValue::AppendingLinkage</a>, <a class="el" href="GlobalValue_8h_source.html#l00049">llvm::GlobalValue::AvailableExternallyLinkage</a>, <a class="el" href="LTO_8cpp.html#a5b5c88319de0a10edf15c18978b16efb">EnableLTOInternalization</a>, <a class="el" href="GlobalValue_8h_source.html#l00048">llvm::GlobalValue::ExternalLinkage</a>, <a class="el" href="GlobalValue_8h_source.html#l00055">llvm::GlobalValue::InternalLinkage</a>, <a class="el" href="GlobalValue_8h_source.html#l00330">llvm::GlobalValue::isLocalLinkage()</a>, and <a class="el" href="LTO_8cpp_source.html#l00376">isWeakObjectWithRWAccess()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="LTO_8cpp_source.html#l00411">llvm::thinLTOInternalizeAndPromoteInIndex()</a>.</p>
-
-</div>
-</div>
-<a id="ad9155dd9b3e67ca579bb84c623411a56" name="ad9155dd9b3e67ca579bb84c623411a56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9155dd9b3e67ca579bb84c623411a56">&#9670;&nbsp;</a></span>thinLTOResolvePrevailingGUID()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void thinLTOResolvePrevailingGUID </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1ValueInfo.html">ValueInfo</a>&#160;</td>
-          <td class="paramname"><em>VI</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1GlobalValueSummary.html">GlobalValueSummary</a> * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>GlobalInvolvedWithAlias</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1function__ref.html">function_ref</a>&lt; <a class="el" href="classbool.html">bool</a>(<a class="el" href="classllvm_1_1GlobalValue.html#a3af0428ec6e48cb2f05c199b7b9f7e07">GlobalValue::GUID</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1GlobalValueSummary.html">GlobalValueSummary</a> *)&gt;&#160;</td>
-          <td class="paramname"><em>isPrevailing</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1function__ref.html">function_ref</a>&lt; void(<a class="el" href="classllvm_1_1StringRef.html">StringRef</a>, <a class="el" href="classllvm_1_1GlobalValue.html#a3af0428ec6e48cb2f05c199b7b9f7e07">GlobalValue::GUID</a>, <a class="el" href="classllvm_1_1GlobalValue.html#aedfa75f0c85c4aa85b257f066fbea57c">GlobalValue::LinkageTypes</a>)&gt;&#160;</td>
-          <td class="paramname"><em>recordNewLinkage</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1GlobalValue.html#a3af0428ec6e48cb2f05c199b7b9f7e07">GlobalValue::GUID</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>GUIDPreservedSymbols</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="LTO_8cpp_source.html#l00300">300</a> of file <a class="el" href="LTO_8cpp_source.html">LTO.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="GlobalValue_8h_source.html#l00049">llvm::GlobalValue::AvailableExternallyLinkage</a>, <a class="el" href="DenseSet_8h_source.html#l00091">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::count()</a>, <a class="el" href="GlobalValue_8h_source.html#l00296">llvm::GlobalValue::getWeakLinkage()</a>, <a class="el" href="GlobalValue_8h_source.html#l00321">llvm::GlobalValue::isAppendingLinkage()</a>, <a class="el" href="GlobalValue_8h_source.html#l00309">llvm::GlobalValue::isLinkOnceLinkage()</a>, <a class="el" href="GlobalValue_8h_source.html#l00306">llvm::GlobalValue::isLinkOnceODRLinkage()</a>, <a class="el" href="GlobalValue_8h_source.html#l00330">llvm::GlobalValue::isLocalLinkage()</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06143">VI</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="LTO_8cpp_source.html#l00354">llvm::thinLTOResolvePrevailingInIndex()</a>.</p>
-
-</div>
-</div>
-<a id="a2b96fb8bf782a1b498a82682ab8e74c9" name="a2b96fb8bf782a1b498a82682ab8e74c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b96fb8bf782a1b498a82682ab8e74c9">&#9670;&nbsp;</a></span>writeToResolutionFile()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void writeToResolutionFile </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
-          <td class="paramname"><em>OS</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1lto_1_1InputFile.html">InputFile</a> *&#160;</td>
-          <td class="paramname"><em>Input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="structllvm_1_1lto_1_1SymbolResolution.html">SymbolResolution</a> &gt;&#160;</td>
-          <td class="paramname"><em>Res</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="LTO_8cpp_source.html#l00536">536</a> of file <a class="el" href="LTO_8cpp_source.html">LTO.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="ArrayRef_8h_source.html#l00136">llvm::ArrayRef&lt; T &gt;::begin()</a>, <a class="el" href="ArrayRef_8h_source.html#l00137">llvm::ArrayRef&lt; T &gt;::end()</a>, <a class="el" href="LTO_8h_source.html#l00437">llvm::lto::SymbolResolution::FinalDefinitionInLinkageUnit</a>, <a class="el" href="raw__ostream_8h_source.html#l00141">llvm::raw_ostream::flush()</a>, <a class="el" href="LTO_8cpp_source.html#l00450">llvm::lto::InputFile::getName()</a>, <a class="el" href="LTO_8h_source.html#l00444">llvm::lto::SymbolResolution::LinkerRedefined</a>, <a class="el" href="LTO_8h_source.html#l00433">llvm::lto::SymbolResolution::Prevailing</a>, <a class="el" href="LTO_8h_source.html#l00155">llvm::lto::InputFile::symbols()</a>, and <a class="el" href="LTO_8h_source.html#l00440">llvm::lto::SymbolResolution::VisibleToRegularObj</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="LTO_8cpp_source.html#l00560">llvm::lto::LTO::add()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ab2c33ea07546228572b9fc357e8521de" name="ab2c33ea07546228572b9fc357e8521de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2c33ea07546228572b9fc357e8521de">&#9670;&nbsp;</a></span>DumpThinCGSCCs</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; DumpThinCGSCCs(&quot;dump-thin-cg-sccs&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Dump the SCCs in the ThinLTO index's callgraph&quot;)) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; DumpThinCGSCCs </td>
           <td>(</td>
           <td class="paramtype">&quot;dump-thin-cg-sccs&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -412,7 +219,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Dump the SCCs in the ThinLTO index's callgraph&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;Dump the SCCs in the ThinLTO index's callgraph&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -430,14 +237,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a5b5c88319de0a10edf15c18978b16efb" name="a5b5c88319de0a10edf15c18978b16efb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b5c88319de0a10edf15c18978b16efb">&#9670;&nbsp;</a></span>EnableLTOInternalization</h2>
+<a id="acc2de691ee2f717c013dfdc7bb4b10ca" name="acc2de691ee2f717c013dfdc7bb4b10ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc2de691ee2f717c013dfdc7bb4b10ca">&#9670;&nbsp;</a></span>EnableLTOInternalization()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; EnableLTOInternalization(&quot;enable-lto-internalization&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable global value internalization in LTO&quot;)) </td>
+          <td class="memname"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; EnableLTOInternalization </td>
           <td>(</td>
           <td class="paramtype">&quot;enable-lto-internalization&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -457,7 +264,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable global value internalization in LTO&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;Enable global value internalization in LTO&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -474,10 +281,226 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a4f0167f2ae072a399680c468a9777221" name="a4f0167f2ae072a399680c468a9777221"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f0167f2ae072a399680c468a9777221">&#9670;&nbsp;</a></span>handleNonPrevailingComdat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void handleNonPrevailingComdat </td>
+          <td>(</td>
+          <td class="paramtype">GlobalValue &amp;&#160;</td>
+          <td class="paramname"><em>GV</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::set&lt; const Comdat * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>NonPrevailingComdats</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="LTO_8cpp_source.html#l00631">631</a> of file <a class="el" href="LTO_8cpp_source.html">LTO.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6778d7a608e817bcd0be206686795a69" name="a6778d7a608e817bcd0be206686795a69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6778d7a608e817bcd0be206686795a69">&#9670;&nbsp;</a></span>isWeakObjectWithRWAccess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool isWeakObjectWithRWAccess </td>
+          <td>(</td>
+          <td class="paramtype">GlobalValueSummary *&#160;</td>
+          <td class="paramname"><em>GVS</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="LTO_8cpp_source.html#l00376">376</a> of file <a class="el" href="LTO_8cpp_source.html">LTO.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="LTO_8cpp_source.html#l00384">thinLTOInternalizeAndPromoteGUID()</a>.</p>
+
+</div>
+</div>
+<a id="ab4d4e8cc278e7880c842ab827eb74481" name="ab4d4e8cc278e7880c842ab827eb74481"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4d4e8cc278e7880c842ab827eb74481">&#9670;&nbsp;</a></span>thinLTOInternalizeAndPromoteGUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void thinLTOInternalizeAndPromoteGUID </td>
+          <td>(</td>
+          <td class="paramtype">GlobalValueSummaryList &amp;&#160;</td>
+          <td class="paramname"><em>GVSummaryList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GlobalValue::GUID&#160;</td>
+          <td class="paramname"><em>GUID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">function_ref&lt; bool(StringRef, GlobalValue::GUID)&gt;&#160;</td>
+          <td class="paramname"><em>isExported</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="LTO_8cpp_source.html#l00384">384</a> of file <a class="el" href="LTO_8cpp_source.html">LTO.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="LTO_8cpp.html#acc2de691ee2f717c013dfdc7bb4b10ca">EnableLTOInternalization()</a>, and <a class="el" href="LTO_8cpp_source.html#l00376">isWeakObjectWithRWAccess()</a>.</p>
+
+</div>
+</div>
+<a id="ad9155dd9b3e67ca579bb84c623411a56" name="ad9155dd9b3e67ca579bb84c623411a56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9155dd9b3e67ca579bb84c623411a56">&#9670;&nbsp;</a></span>thinLTOResolvePrevailingGUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void thinLTOResolvePrevailingGUID </td>
+          <td>(</td>
+          <td class="paramtype">ValueInfo&#160;</td>
+          <td class="paramname"><em>VI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DenseSet&lt; GlobalValueSummary * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>GlobalInvolvedWithAlias</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">function_ref&lt; bool(GlobalValue::GUID, const GlobalValueSummary *)&gt;&#160;</td>
+          <td class="paramname"><em>isPrevailing</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">function_ref&lt; void(StringRef, GlobalValue::GUID, GlobalValue::LinkageTypes)&gt;&#160;</td>
+          <td class="paramname"><em>recordNewLinkage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DenseSet&lt; GlobalValue::GUID &gt; &amp;&#160;</td>
+          <td class="paramname"><em>GUIDPreservedSymbols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="LTO_8cpp_source.html#l00300">300</a> of file <a class="el" href="LTO_8cpp_source.html">LTO.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2b96fb8bf782a1b498a82682ab8e74c9" name="a2b96fb8bf782a1b498a82682ab8e74c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b96fb8bf782a1b498a82682ab8e74c9">&#9670;&nbsp;</a></span>writeToResolutionFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void writeToResolutionFile </td>
+          <td>(</td>
+          <td class="paramtype">raw_ostream &amp;&#160;</td>
+          <td class="paramname"><em>OS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InputFile *&#160;</td>
+          <td class="paramname"><em>Input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; SymbolResolution &gt;&#160;</td>
+          <td class="paramname"><em>Res</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="LTO_8cpp_source.html#l00536">536</a> of file <a class="el" href="LTO_8cpp_source.html">LTO.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:15 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

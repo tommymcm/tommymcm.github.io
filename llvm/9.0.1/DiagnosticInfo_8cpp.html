@@ -55,31 +55,31 @@ $(function() {
   <div class="headertitle"><div class="title">DiagnosticInfo.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="DiagnosticInfo_8h_source.html">llvm/IR/DiagnosticInfo.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/IR/DiagnosticInfo.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="LLVMContextImpl_8h_source.html">LLVMContextImpl.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringExtras_8h_source.html">llvm/ADT/StringExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Twine_8h_source.html">llvm/ADT/Twine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="iterator__range_8h_source.html">llvm/ADT/iterator_range.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DebugInfoMetadata_8h_source.html">llvm/IR/DebugInfoMetadata.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DiagnosticPrinter_8h_source.html">llvm/IR/DiagnosticPrinter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalValue_8h_source.html">llvm/IR/GlobalValue.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Path_8h_source.html">llvm/Support/Path.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Regex_8h_source.html">llvm/Support/Regex.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScopedPrinter_8h_source.html">llvm/Support/ScopedPrinter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Twine.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/iterator_range.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DebugInfoMetadata.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DiagnosticPrinter.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/GlobalValue.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Path.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Regex.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ScopedPrinter.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 <code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
@@ -88,13 +88,65 @@ $(function() {
 Include dependency graph for DiagnosticInfo.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="DiagnosticInfo_8cpp__incl.png" border="0" usemap="#alib_2IR_2DiagnosticInfo_8cpp" alt=""/></div>
+<map name="alib_2IR_2DiagnosticInfo_8cpp" id="alib_2IR_2DiagnosticInfo_8cpp">
+<area shape="rect" title=" " alt="" coords="4365,5,4545,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,184,104"/>
+<area shape="rect" href="LLVMContextImpl_8h.html" title=" " alt="" coords="2638,79,2786,104"/>
+<area shape="rect" title=" " alt="" coords="640,225,709,251"/>
+<area shape="rect" title=" " alt="" coords="188,225,247,251"/>
+<area shape="rect" title=" " alt="" coords="3483,225,3632,251"/>
+<area shape="rect" title=" " alt="" coords="3657,225,3829,251"/>
+<area shape="rect" title=" " alt="" coords="462,225,615,251"/>
+<area shape="rect" title=" " alt="" coords="3853,225,4024,251"/>
+<area shape="rect" title=" " alt="" coords="2241,225,2452,251"/>
+<area shape="rect" title=" " alt="" coords="2477,225,2683,251"/>
+<area shape="rect" title=" " alt="" coords="3509,152,3723,177"/>
+<area shape="rect" title=" " alt="" coords="3747,152,3917,177"/>
+<area shape="rect" title=" " alt="" coords="3941,152,4088,177"/>
+<area shape="rect" title=" " alt="" coords="4112,152,4189,177"/>
+<area shape="rect" title=" " alt="" coords="4366,79,4543,104"/>
+<area shape="rect" title=" " alt="" coords="4567,79,4702,104"/>
+<area shape="rect" title=" " alt="" coords="4726,79,4917,104"/>
+<area shape="rect" title=" " alt="" coords="4941,79,5096,104"/>
+<area shape="rect" title=" " alt="" coords="5120,79,5315,104"/>
+<area shape="rect" title=" " alt="" coords="5339,79,5477,104"/>
+<area shape="rect" title=" " alt="" coords="5501,79,5664,104"/>
+<area shape="rect" title=" " alt="" coords="5689,79,5821,104"/>
+<area shape="rect" title=" " alt="" coords="5845,79,5960,104"/>
+<area shape="rect" title=" " alt="" coords="5984,79,6104,104"/>
+<area shape="rect" title=" " alt="" coords="6129,79,6343,104"/>
+<area shape="rect" title=" " alt="" coords="6368,79,6517,104"/>
+<area shape="rect" title=" " alt="" coords="6541,79,6704,104"/>
+<area shape="rect" title=" " alt="" coords="6728,79,6939,104"/>
+<area shape="rect" title=" " alt="" coords="6963,79,7029,104"/>
+<area shape="rect" href="AttributeImpl_8h.html" title="This file defines various helper methods and classes used by LLVMContextImpl for creating and managin..." alt="" coords="461,152,581,177"/>
+<area shape="rect" title=" " alt="" coords="2063,225,2217,251"/>
+<area shape="rect" title=" " alt="" coords="271,225,438,251"/>
+<area shape="rect" title=" " alt="" coords="733,225,891,251"/>
+<area shape="rect" href="ConstantsContext_8h.html" title=" " alt="" coords="2979,152,3130,177"/>
+<area shape="rect" title=" " alt="" coords="2708,225,2900,251"/>
+<area shape="rect" title=" " alt="" coords="2924,225,3084,251"/>
+<area shape="rect" title=" " alt="" coords="3109,225,3259,251"/>
+<area shape="rect" title=" " alt="" coords="3283,225,3458,251"/>
+<area shape="rect" title=" " alt="" coords="809,152,957,177"/>
+<area shape="rect" title=" " alt="" coords="981,152,1113,177"/>
+<area shape="rect" title=" " alt="" coords="1137,152,1303,177"/>
+<area shape="rect" title=" " alt="" coords="1327,152,1481,177"/>
+<area shape="rect" title=" " alt="" coords="1505,152,1668,177"/>
+<area shape="rect" title=" " alt="" coords="1693,152,1867,177"/>
+<area shape="rect" title=" " alt="" coords="1891,152,2055,177"/>
+<area shape="rect" title=" " alt="" coords="2080,152,2277,177"/>
+<area shape="rect" title=" " alt="" coords="2301,152,2496,177"/>
+<area shape="rect" title=" " alt="" coords="2520,152,2701,177"/>
+<area shape="rect" title=" " alt="" coords="2725,152,2904,177"/>
+</map>
 </div>
 </div>
 <p><a href="DiagnosticInfo_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a16f59dd7328e548b6f8e5ce467d36d55"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DiagnosticInfo_8cpp.html#a16f59dd7328e548b6f8e5ce467d36d55">getFirstFunctionBlock</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> *Func)</td></tr>
+<tr class="memitem:a16f59dd7328e548b6f8e5ce467d36d55"><td class="memItemLeft" align="right" valign="top">static const BasicBlock &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DiagnosticInfo_8cpp.html#a16f59dd7328e548b6f8e5ce467d36d55">getFirstFunctionBlock</a> (const Function *Func)</td></tr>
 <tr class="separator:a16f59dd7328e548b6f8e5ce467d36d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -108,9 +160,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> &amp; getFirstFunctionBlock </td>
+          <td class="memname">static const BasicBlock &amp; getFirstFunctionBlock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
+          <td class="paramtype">const Function *&#160;</td>
           <td class="paramname"><em>Func</em></td><td>)</td>
           <td></td>
         </tr>
@@ -124,14 +176,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DiagnosticInfo_8cpp_source.html#l00248">248</a> of file <a class="el" href="DiagnosticInfo_8cpp_source.html">DiagnosticInfo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:15 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -52,30 +52,47 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">TargetTransformInfo.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetTransformInfoImpl_8h_source.html">llvm/Analysis/TargetTransformInfoImpl.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Operator_8h_source.html">llvm/IR/Operator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Analysis_2CFG_8h_source.html">llvm/Analysis/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopIterator_8h_source.html">llvm/Analysis/LoopIterator.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetTransformInfoImpl.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Operator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LoopIterator.h&quot;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TargetTransformInfo.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="TargetTransformInfo_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2TargetTransformInfo_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2TargetTransformInfo_8cpp" id="alib_2Analysis_2TargetTransformInfo_8cpp">
+<area shape="rect" title=" " alt="" coords="1342,5,1549,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,224,133"/>
+<area shape="rect" title=" " alt="" coords="248,93,467,133"/>
+<area shape="rect" title=" " alt="" coords="491,101,626,126"/>
+<area shape="rect" title=" " alt="" coords="650,101,809,126"/>
+<area shape="rect" title=" " alt="" coords="833,101,986,126"/>
+<area shape="rect" title=" " alt="" coords="1011,101,1171,126"/>
+<area shape="rect" title=" " alt="" coords="1195,101,1355,126"/>
+<area shape="rect" title=" " alt="" coords="1379,101,1511,126"/>
+<area shape="rect" title=" " alt="" coords="1535,101,1675,126"/>
+<area shape="rect" title=" " alt="" coords="1700,101,1871,126"/>
+<area shape="rect" title=" " alt="" coords="1895,101,2110,126"/>
+<area shape="rect" title=" " alt="" coords="2135,101,2345,126"/>
+<area shape="rect" title=" " alt="" coords="2369,101,2522,126"/>
+<area shape="rect" title=" " alt="" coords="2546,101,2750,126"/>
+<area shape="rect" title=" " alt="" coords="2774,101,2834,126"/>
+</map>
 </div>
 </div>
 <p><a href="TargetTransformInfo_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -87,23 +104,20 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4dd87fd2ea3bf80c36dfc658c0b311cc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetTransformInfo_8cpp.html#a4dd87fd2ea3bf80c36dfc658c0b311cc">matchPairwiseShuffleMask</a> (<a class="el" href="classllvm_1_1ShuffleVectorInst.html">ShuffleVectorInst</a> *<a class="el" href="SIInstrInfo_8cpp.html#a0dfd55eaf0bcb495f09ecf8c55b256b2a6cbe5ff42f143903e1c67abf94613791">SI</a>, <a class="el" href="classbool.html">bool</a> IsLeft, <a class="el" href="classunsigned.html">unsigned</a> Level)</td></tr>
+<tr class="memitem:a13057ffaf775f945f1d6414c0f1af4ce"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetTransformInfo_8cpp.html#a13057ffaf775f945f1d6414c0f1af4ce">EnableReduxCost</a> (&quot;costmodel-reduxcost&quot;, cl::init(false), cl::Hidden, cl::desc(&quot;Recognize <a class="el" href="StraightLineStrengthReduce_8cpp.html#a7b51b9df5e7db582597e8556087c71ce">reduction</a> patterns.&quot;))</td></tr>
+<tr class="separator:a13057ffaf775f945f1d6414c0f1af4ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dd87fd2ea3bf80c36dfc658c0b311cc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetTransformInfo_8cpp.html#a4dd87fd2ea3bf80c36dfc658c0b311cc">matchPairwiseShuffleMask</a> (ShuffleVectorInst *SI, bool IsLeft, unsigned Level)</td></tr>
 <tr class="separator:a4dd87fd2ea3bf80c36dfc658c0b311cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13017ac0cc966dfee6e7e0426705838f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; ReductionData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetTransformInfo_8cpp.html#a13017ac0cc966dfee6e7e0426705838f">getReductionData</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:a13017ac0cc966dfee6e7e0426705838f"><td class="memItemLeft" align="right" valign="top">static Optional&lt; ReductionData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetTransformInfo_8cpp.html#a13017ac0cc966dfee6e7e0426705838f">getReductionData</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="separator:a13017ac0cc966dfee6e7e0426705838f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88f8675c0c2951fc758710b68b73f5e2"><td class="memItemLeft" align="right" valign="top">static ReductionKind&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetTransformInfo_8cpp.html#a88f8675c0c2951fc758710b68b73f5e2">matchPairwiseReductionAtLevel</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classunsigned.html">unsigned</a> Level, <a class="el" href="classunsigned.html">unsigned</a> NumLevels)</td></tr>
+<tr class="memitem:a88f8675c0c2951fc758710b68b73f5e2"><td class="memItemLeft" align="right" valign="top">static ReductionKind&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetTransformInfo_8cpp.html#a88f8675c0c2951fc758710b68b73f5e2">matchPairwiseReductionAtLevel</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, unsigned Level, unsigned NumLevels)</td></tr>
 <tr class="separator:a88f8675c0c2951fc758710b68b73f5e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4bf6aec8016e5e7724bfcbf29edd26d"><td class="memItemLeft" align="right" valign="top">static ReductionKind&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetTransformInfo_8cpp.html#ac4bf6aec8016e5e7724bfcbf29edd26d">matchPairwiseReduction</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1ExtractElementInst.html">ExtractElementInst</a> *ReduxRoot, <a class="el" href="classunsigned.html">unsigned</a> &amp;Opcode, <a class="el" href="classllvm_1_1Type.html">Type</a> *&amp;Ty)</td></tr>
+<tr class="memitem:ac4bf6aec8016e5e7724bfcbf29edd26d"><td class="memItemLeft" align="right" valign="top">static ReductionKind&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetTransformInfo_8cpp.html#ac4bf6aec8016e5e7724bfcbf29edd26d">matchPairwiseReduction</a> (const ExtractElementInst *ReduxRoot, unsigned &amp;Opcode, Type *&amp;Ty)</td></tr>
 <tr class="separator:ac4bf6aec8016e5e7724bfcbf29edd26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c720a00fec484dd4f84e17ff0bac8a0"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classllvm_1_1ShuffleVectorInst.html">ShuffleVectorInst</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetTransformInfo_8cpp.html#a1c720a00fec484dd4f84e17ff0bac8a0">getShuffleAndOtherOprd</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *L, <a class="el" href="classllvm_1_1Value.html">Value</a> *R)</td></tr>
+<tr class="memitem:a1c720a00fec484dd4f84e17ff0bac8a0"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; Value *, ShuffleVectorInst * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetTransformInfo_8cpp.html#a1c720a00fec484dd4f84e17ff0bac8a0">getShuffleAndOtherOprd</a> (Value *L, Value *R)</td></tr>
 <tr class="separator:a1c720a00fec484dd4f84e17ff0bac8a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0acad7f67d91377a1e1d897239498e1"><td class="memItemLeft" align="right" valign="top">static ReductionKind&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetTransformInfo_8cpp.html#ab0acad7f67d91377a1e1d897239498e1">matchVectorSplittingReduction</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1ExtractElementInst.html">ExtractElementInst</a> *ReduxRoot, <a class="el" href="classunsigned.html">unsigned</a> &amp;Opcode, <a class="el" href="classllvm_1_1Type.html">Type</a> *&amp;Ty)</td></tr>
+<tr class="memitem:ab0acad7f67d91377a1e1d897239498e1"><td class="memItemLeft" align="right" valign="top">static ReductionKind&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetTransformInfo_8cpp.html#ab0acad7f67d91377a1e1d897239498e1">matchVectorSplittingReduction</a> (const ExtractElementInst *ReduxRoot, unsigned &amp;Opcode, Type *&amp;Ty)</td></tr>
 <tr class="separator:ab0acad7f67d91377a1e1d897239498e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a94d88608903a1c51834a383c0af6b862"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TargetTransformInfo_8cpp.html#a94d88608903a1c51834a383c0af6b862">EnableReduxCost</a> (&quot;costmodel-reduxcost&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Recognize <a class="el" href="StraightLineStrengthReduce_8cpp.html#a7b51b9df5e7db582597e8556087c71ce">reduction</a> patterns.&quot;))</td></tr>
-<tr class="separator:a94d88608903a1c51834a383c0af6b862"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad78e062f62e0d6e453941fb4ca843e4d" name="ad78e062f62e0d6e453941fb4ca843e4d"></a>
@@ -123,6 +137,56 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a13057ffaf775f945f1d6414c0f1af4ce" name="a13057ffaf775f945f1d6414c0f1af4ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13057ffaf775f945f1d6414c0f1af4ce">&#9670;&nbsp;</a></span>EnableReduxCost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; EnableReduxCost </td>
+          <td>(</td>
+          <td class="paramtype">&quot;costmodel-reduxcost&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Recognize <a class="el" href="StraightLineStrengthReduce_8cpp.html#a7b51b9df5e7db582597e8556087c71ce">reduction</a> patterns.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="TargetTransformInfo_8cpp_source.html#l00994">matchPairwiseReduction()</a>, and <a class="el" href="TargetTransformInfo_8cpp_source.html#l01059">matchVectorSplittingReduction()</a>.</p>
+
+</div>
+</div>
 <a id="a13017ac0cc966dfee6e7e0426705838f" name="a13017ac0cc966dfee6e7e0426705838f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a13017ac0cc966dfee6e7e0426705838f">&#9670;&nbsp;</a></span>getReductionData()</h2>
 
@@ -133,9 +197,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; ReductionData &gt; getReductionData </td>
+          <td class="memname">static Optional&lt; ReductionData &gt; getReductionData </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -149,7 +213,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="TargetTransformInfo_8cpp_source.html#l00888">888</a> of file <a class="el" href="TargetTransformInfo_8cpp_source.html">TargetTransformInfo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="PatternMatch_8h_source.html#l00073">llvm::PatternMatch::m_BinOp()</a>, <a class="el" href="PatternMatch_8h_source.html#l01432">llvm::PatternMatch::m_OrdFMax()</a>, <a class="el" href="PatternMatch_8h_source.html#l01447">llvm::PatternMatch::m_OrdFMin()</a>, <a class="el" href="PatternMatch_8h_source.html#l01399">llvm::PatternMatch::m_SMax()</a>, <a class="el" href="PatternMatch_8h_source.html#l01405">llvm::PatternMatch::m_SMin()</a>, <a class="el" href="PatternMatch_8h_source.html#l01411">llvm::PatternMatch::m_UMax()</a>, <a class="el" href="PatternMatch_8h_source.html#l01417">llvm::PatternMatch::m_UMin()</a>, <a class="el" href="PatternMatch_8h_source.html#l01463">llvm::PatternMatch::m_UnordFMax()</a>, <a class="el" href="PatternMatch_8h_source.html#l01478">llvm::PatternMatch::m_UnordFMin()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, <a class="el" href="None_8h_source.html#l00023">llvm::None</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="TargetTransformInfo_8cpp_source.html#l00994">matchPairwiseReduction()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00911">matchPairwiseReductionAtLevel()</a>, and <a class="el" href="TargetTransformInfo_8cpp_source.html#l01059">matchVectorSplittingReduction()</a>.</p>
 
@@ -165,15 +229,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::pair&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classllvm_1_1ShuffleVectorInst.html">ShuffleVectorInst</a> * &gt; getShuffleAndOtherOprd </td>
+          <td class="memname">static std::pair&lt; Value *, ShuffleVectorInst * &gt; getShuffleAndOtherOprd </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>R</em>&#160;</td>
         </tr>
         <tr>
@@ -207,19 +271,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static ReductionKind matchPairwiseReduction </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1ExtractElementInst.html">ExtractElementInst</a> *&#160;</td>
+          <td class="paramtype">const ExtractElementInst *&#160;</td>
           <td class="paramname"><em>ReduxRoot</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a> &amp;&#160;</td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
           <td class="paramname"><em>Opcode</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&amp;&#160;</td>
+          <td class="paramtype">Type *&amp;&#160;</td>
           <td class="paramname"><em>Ty</em>&#160;</td>
         </tr>
         <tr>
@@ -237,7 +301,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="TargetTransformInfo_8cpp_source.html#l00994">994</a> of file <a class="el" href="TargetTransformInfo_8cpp_source.html">TargetTransformInfo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="TargetTransformInfo_8cpp.html#a94d88608903a1c51834a383c0af6b862">EnableReduxCost</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00888">getReductionData()</a>, <a class="el" href="classllvm_1_1Type.html#a59f8ff5f972666376282d626e8197d59">llvm::Type::getVectorNumElements()</a>, <a class="el" href="Constants_8h_source.html#l00148">llvm::ConstantInt::getZExtValue()</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>, <a class="el" href="MathExtras_8h_source.html#l00428">llvm::isPowerOf2_32()</a>, <a class="el" href="MathExtras_8h_source.html#l00538">llvm::Log2_32()</a>, and <a class="el" href="TargetTransformInfo_8cpp_source.html#l00911">matchPairwiseReductionAtLevel()</a>.</p>
+<p class="reference">References <a class="el" href="TargetTransformInfo_8cpp.html#a13057ffaf775f945f1d6414c0f1af4ce">EnableReduxCost()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00888">getReductionData()</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>, and <a class="el" href="TargetTransformInfo_8cpp_source.html#l00911">matchPairwiseReductionAtLevel()</a>.</p>
 
 </div>
 </div>
@@ -253,19 +317,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static ReductionKind matchPairwiseReductionAtLevel </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>Level</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>NumLevels</em>&#160;</td>
         </tr>
         <tr>
@@ -283,7 +347,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="TargetTransformInfo_8cpp_source.html#l00911">911</a> of file <a class="el" href="TargetTransformInfo_8cpp_source.html">TargetTransformInfo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00888">getReductionData()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00911">matchPairwiseReductionAtLevel()</a>, and <a class="el" href="TargetTransformInfo_8cpp_source.html#l00843">matchPairwiseShuffleMask()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00888">getReductionData()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00911">matchPairwiseReductionAtLevel()</a>, and <a class="el" href="TargetTransformInfo_8cpp_source.html#l00843">matchPairwiseShuffleMask()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="TargetTransformInfo_8cpp_source.html#l00994">matchPairwiseReduction()</a>, and <a class="el" href="TargetTransformInfo_8cpp_source.html#l00911">matchPairwiseReductionAtLevel()</a>.</p>
 
@@ -299,21 +363,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> matchPairwiseShuffleMask </td>
+          <td class="memname">static bool matchPairwiseShuffleMask </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ShuffleVectorInst.html">ShuffleVectorInst</a> *&#160;</td>
+          <td class="paramtype">ShuffleVectorInst *&#160;</td>
           <td class="paramname"><em>SI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>IsLeft</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>Level</em>&#160;</td>
         </tr>
         <tr>
@@ -331,8 +395,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="TargetTransformInfo_8cpp_source.html#l00843">843</a> of file <a class="el" href="TargetTransformInfo_8cpp_source.html">TargetTransformInfo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="TargetTransformInfo_8cpp_source.html#l00911">matchPairwiseReductionAtLevel()</a>.</p>
 
 </div>
@@ -349,19 +411,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static ReductionKind matchVectorSplittingReduction </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1ExtractElementInst.html">ExtractElementInst</a> *&#160;</td>
+          <td class="paramtype">const ExtractElementInst *&#160;</td>
           <td class="paramname"><em>ReduxRoot</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a> &amp;&#160;</td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
           <td class="paramname"><em>Opcode</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&amp;&#160;</td>
+          <td class="paramtype">Type *&amp;&#160;</td>
           <td class="paramname"><em>Ty</em>&#160;</td>
         </tr>
         <tr>
@@ -379,65 +441,14 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="TargetTransformInfo_8cpp_source.html#l01059">1059</a> of file <a class="el" href="TargetTransformInfo_8cpp_source.html">TargetTransformInfo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="TargetTransformInfo_8cpp.html#a94d88608903a1c51834a383c0af6b862">EnableReduxCost</a>, <a class="el" href="SmallVector_8h_source.html#l00129">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::end()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00888">getReductionData()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l01048">getShuffleAndOtherOprd()</a>, <a class="el" href="Instructions_8cpp_source.html#l01899">llvm::ShuffleVectorInst::getShuffleMask()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="classllvm_1_1Type.html#a59f8ff5f972666376282d626e8197d59">llvm::Type::getVectorNumElements()</a>, <a class="el" href="Constants_8h_source.html#l00148">llvm::ConstantInt::getZExtValue()</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>, and <a class="el" href="MathExtras_8h_source.html#l00428">llvm::isPowerOf2_32()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a94d88608903a1c51834a383c0af6b862" name="a94d88608903a1c51834a383c0af6b862"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94d88608903a1c51834a383c0af6b862">&#9670;&nbsp;</a></span>EnableReduxCost</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; EnableReduxCost(&quot;costmodel-reduxcost&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Recognize <a class="el" href="StraightLineStrengthReduce_8cpp.html#a7b51b9df5e7db582597e8556087c71ce">reduction</a> patterns.&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;costmodel-reduxcost&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Recognize <a class="el" href="StraightLineStrengthReduce_8cpp.html#a7b51b9df5e7db582597e8556087c71ce">reduction</a> patterns.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="TargetTransformInfo_8cpp_source.html#l00994">matchPairwiseReduction()</a>, and <a class="el" href="TargetTransformInfo_8cpp_source.html#l01059">matchVectorSplittingReduction()</a>.</p>
+<p class="reference">References <a class="el" href="TargetTransformInfo_8cpp.html#a13057ffaf775f945f1d6414c0f1af4ce">EnableReduxCost()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00888">getReductionData()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l01048">getShuffleAndOtherOprd()</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:12 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -51,19 +51,18 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">OptBisect.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>This file implements support for a bisecting optimizations based on a command line option.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="OptBisect_8h_source.html">llvm/IR/OptBisect.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringRef_8h_source.html">llvm/ADT/StringRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/IR/OptBisect.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
@@ -71,27 +70,35 @@ $(function() {
 Include dependency graph for OptBisect.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="OptBisect_8cpp__incl.png" border="0" usemap="#alib_2IR_2OptBisect_8cpp" alt=""/></div>
+<map name="alib_2IR_2OptBisect_8cpp" id="alib_2IR_2OptBisect_8cpp">
+<area shape="rect" title="This file implements support for a bisecting optimizations based on a command line option." alt="" coords="628,5,777,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,152,104"/>
+<area shape="rect" title=" " alt="" coords="176,79,333,104"/>
+<area shape="rect" title=" " alt="" coords="357,79,453,104"/>
+<area shape="rect" title=" " alt="" coords="478,79,693,104"/>
+<area shape="rect" title=" " alt="" coords="717,79,923,104"/>
+<area shape="rect" title=" " alt="" coords="948,79,1017,104"/>
+<area shape="rect" title=" " alt="" coords="1041,79,1100,104"/>
+<area shape="rect" title=" " alt="" coords="1124,79,1183,104"/>
+</map>
 </div>
 </div>
 <p><a href="OptBisect_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7450cb8edb7a3eb084e8dc7b13363da2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OptBisect_8cpp.html#a7450cb8edb7a3eb084e8dc7b13363da2">printPassMessage</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1StringRef.html">StringRef</a> &amp;<a class="el" href="AMDGPULibCalls_8cpp.html#ac19c5d82adec186ac56e94115530daa8">Name</a>, int PassNum, <a class="el" href="classllvm_1_1StringRef.html">StringRef</a> TargetDesc, <a class="el" href="classbool.html">bool</a> Running)</td></tr>
+<tr class="memitem:ab41e02d6edaea43bc65a2e8fb335642a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OptBisect_8cpp.html#ab41e02d6edaea43bc65a2e8fb335642a">OptBisectLimit</a> (&quot;opt-bisect-limit&quot;, cl::Hidden, cl::init(std::numeric_limits&lt; int &gt;::max()), cl::Optional, cl::desc(&quot;Maximum <a class="el" href="group__ARCOpt.html#gab062c31556fab4a12873c5e492ed3cd1">optimization</a> to perform&quot;))</td></tr>
+<tr class="separator:ab41e02d6edaea43bc65a2e8fb335642a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7450cb8edb7a3eb084e8dc7b13363da2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OptBisect_8cpp.html#a7450cb8edb7a3eb084e8dc7b13363da2">printPassMessage</a> (const StringRef &amp;Name, int PassNum, StringRef TargetDesc, bool Running)</td></tr>
 <tr class="separator:a7450cb8edb7a3eb084e8dc7b13363da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a0fa5fbf2425aa88cfad4329eb1e80c8b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OptBisect_8cpp.html#a0fa5fbf2425aa88cfad4329eb1e80c8b">OptBisectLimit</a> (&quot;opt-bisect-limit&quot;, cl::Hidden, cl::init(std::numeric_limits&lt; int &gt;::max()), cl::Optional, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Maximum <a class="el" href="HexagonConstExtenders_8cpp.html#a43d54efefb64441d158c7ee76c121c7a">optimization</a> to perform&quot;))</td></tr>
-<tr class="separator:a0fa5fbf2425aa88cfad4329eb1e80c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This file implements support for a bisecting optimizations based on a command line option. </p>
 
 <p class="definition">Definition in file <a class="el" href="OptBisect_8cpp_source.html">OptBisect.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a7450cb8edb7a3eb084e8dc7b13363da2" name="a7450cb8edb7a3eb084e8dc7b13363da2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7450cb8edb7a3eb084e8dc7b13363da2">&#9670;&nbsp;</a></span>printPassMessage()</h2>
+<a id="ab41e02d6edaea43bc65a2e8fb335642a" name="ab41e02d6edaea43bc65a2e8fb335642a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab41e02d6edaea43bc65a2e8fb335642a">&#9670;&nbsp;</a></span>OptBisectLimit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -100,60 +107,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void printPassMessage </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1StringRef.html">StringRef</a> &amp;&#160;</td>
-          <td class="paramname"><em>Name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>PassNum</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StringRef.html">StringRef</a>&#160;</td>
-          <td class="paramname"><em>TargetDesc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
-          <td class="paramname"><em>Running</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="OptBisect_8cpp_source.html#l00035">35</a> of file <a class="el" href="OptBisect_8cpp_source.html">OptBisect.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="raw__ostream_8cpp_source.html#l00853">llvm::errs()</a>, and <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00231">Name</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a0fa5fbf2425aa88cfad4329eb1e80c8b" name="a0fa5fbf2425aa88cfad4329eb1e80c8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fa5fbf2425aa88cfad4329eb1e80c8b">&#9670;&nbsp;</a></span>OptBisectLimit</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; OptBisectLimit(&quot;opt-bisect-limit&quot;, cl::Hidden, cl::init(std::numeric_limits&lt; int &gt;::max()), cl::Optional, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Maximum <a class="el" href="HexagonConstExtenders_8cpp.html#a43d54efefb64441d158c7ee76c121c7a">optimization</a> to perform&quot;)) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; OptBisectLimit </td>
           <td>(</td>
           <td class="paramtype">&quot;opt-bisect-limit&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -179,7 +133,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Maximum <a class="el" href="HexagonConstExtenders_8cpp.html#a43d54efefb64441d158c7ee76c121c7a">optimization</a> to perform&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;Maximum <a class="el" href="group__ARCOpt.html#gab062c31556fab4a12873c5e492ed3cd1">optimization</a> to perform&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -195,14 +149,62 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="OptBisect_8cpp_source.html#l00031">llvm::OptBisect::OptBisect()</a>.</p>
+</div>
+</div>
+<a id="a7450cb8edb7a3eb084e8dc7b13363da2" name="a7450cb8edb7a3eb084e8dc7b13363da2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7450cb8edb7a3eb084e8dc7b13363da2">&#9670;&nbsp;</a></span>printPassMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void printPassMessage </td>
+          <td>(</td>
+          <td class="paramtype">const StringRef &amp;&#160;</td>
+          <td class="paramname"><em>Name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>PassNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">StringRef&#160;</td>
+          <td class="paramname"><em>TargetDesc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>Running</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OptBisect_8cpp_source.html#l00035">35</a> of file <a class="el" href="OptBisect_8cpp_source.html">OptBisect.cpp</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:15 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -55,23 +55,32 @@ $(function() {
   <div class="headertitle"><div class="title">ExtractGV.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="SetVector_8h_source.html">llvm/ADT/SetVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2IPO_8h_source.html">llvm/Transforms/IPO.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/ADT/SetVector.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ExtractGV.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ExtractGV_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2IPO_2ExtractGV_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2IPO_2ExtractGV_8cpp" id="alib_2Transforms_2IPO_2ExtractGV_8cpp">
+<area shape="rect" title=" " alt="" coords="447,5,587,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,164,119"/>
+<area shape="rect" title=" " alt="" coords="188,93,357,119"/>
+<area shape="rect" title=" " alt="" coords="381,93,513,119"/>
+<area shape="rect" title=" " alt="" coords="538,93,634,119"/>
+<area shape="rect" title=" " alt="" coords="658,93,823,119"/>
+<area shape="rect" title=" " alt="" coords="847,93,933,119"/>
+</map>
 </div>
 </div>
 <p><a href="ExtractGV_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aecd7db67c15393462f7d55af64644142"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExtractGV_8cpp.html#aecd7db67c15393462f7d55af64644142">makeVisible</a> (<a class="el" href="classllvm_1_1GlobalValue.html">GlobalValue</a> &amp;GV, <a class="el" href="classbool.html">bool</a> Delete)</td></tr>
+<tr class="memitem:aecd7db67c15393462f7d55af64644142"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExtractGV_8cpp.html#aecd7db67c15393462f7d55af64644142">makeVisible</a> (GlobalValue &amp;GV, bool Delete)</td></tr>
 <tr class="memdesc:aecd7db67c15393462f7d55af64644142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make sure GV is visible from both modules.  <a href="ExtractGV_8cpp.html#aecd7db67c15393462f7d55af64644142">More...</a><br /></td></tr>
 <tr class="separator:aecd7db67c15393462f7d55af64644142"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -88,13 +97,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void makeVisible </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1GlobalValue.html">GlobalValue</a> &amp;&#160;</td>
+          <td class="paramtype">GlobalValue &amp;&#160;</td>
           <td class="paramname"><em>GV</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>Delete</em>&#160;</td>
         </tr>
         <tr>
@@ -115,14 +124,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ExtractGV_8cpp_source.html#l00025">25</a> of file <a class="el" href="ExtractGV_8cpp_source.html">ExtractGV.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="GlobalValue_8h_source.html#l00048">llvm::GlobalValue::ExternalLinkage</a>, <a class="el" href="GlobalValue_8h_source.html#l00460">llvm::GlobalValue::getLinkage()</a>, <a class="el" href="GlobalValue_8h_source.html#l00435">llvm::GlobalValue::hasLinkOnceLinkage()</a>, <a class="el" href="GlobalValue_8h_source.html#l00445">llvm::GlobalValue::hasLocalLinkage()</a>, <a class="el" href="GlobalValue_8h_source.html#l00064">llvm::GlobalValue::HiddenVisibility</a>, <a class="el" href="GlobalValue_8h_source.html#l00370">llvm::GlobalValue::isDiscardableIfUnused()</a>, <a class="el" href="GlobalValue_8h_source.html#l00050">llvm::GlobalValue::LinkOnceAnyLinkage</a>, <a class="el" href="GlobalValue_8h_source.html#l00051">llvm::GlobalValue::LinkOnceODRLinkage</a>, <a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>, <a class="el" href="GlobalValue_8h_source.html#l00454">llvm::GlobalValue::setLinkage()</a>, <a class="el" href="GlobalValue_8h_source.html#l00242">llvm::GlobalValue::setVisibility()</a>, <a class="el" href="GlobalValue_8h_source.html#l00052">llvm::GlobalValue::WeakAnyLinkage</a>, and <a class="el" href="GlobalValue_8h_source.html#l00053">llvm::GlobalValue::WeakODRLinkage</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

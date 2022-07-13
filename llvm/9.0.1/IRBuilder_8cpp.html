@@ -55,24 +55,24 @@ $(function() {
   <div class="headertitle"><div class="title">IRBuilder.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ArrayRef_8h_source.html">llvm/ADT/ArrayRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="None_8h_source.html">llvm/ADT/None.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalValue_8h_source.html">llvm/IR/GlobalValue.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalVariable_8h_source.html">llvm/IR/GlobalVariable.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Operator_8h_source.html">llvm/IR/Operator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statepoint_8h_source.html">llvm/IR/Statepoint.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MathExtras_8h_source.html">llvm/Support/MathExtras.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/None.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/GlobalValue.h&quot;</code><br />
+<code>#include &quot;llvm/IR/GlobalVariable.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Operator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Statepoint.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/MathExtras.h&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -80,26 +80,50 @@ $(function() {
 Include dependency graph for IRBuilder.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="IRBuilder_8cpp__incl.png" border="0" usemap="#alib_2IR_2IRBuilder_8cpp" alt=""/></div>
+<map name="alib_2IR_2IRBuilder_8cpp" id="alib_2IR_2IRBuilder_8cpp">
+<area shape="rect" title=" " alt="" coords="1782,5,1926,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,148,104"/>
+<area shape="rect" title=" " alt="" coords="173,79,327,104"/>
+<area shape="rect" title=" " alt="" coords="352,79,484,104"/>
+<area shape="rect" title=" " alt="" coords="508,79,651,104"/>
+<area shape="rect" title=" " alt="" coords="675,79,825,104"/>
+<area shape="rect" title=" " alt="" coords="849,79,1021,104"/>
+<area shape="rect" title=" " alt="" coords="1046,79,1185,104"/>
+<area shape="rect" title=" " alt="" coords="1209,79,1371,104"/>
+<area shape="rect" title=" " alt="" coords="1395,79,1574,104"/>
+<area shape="rect" title=" " alt="" coords="1598,79,1758,104"/>
+<area shape="rect" title=" " alt="" coords="1783,79,1925,104"/>
+<area shape="rect" title=" " alt="" coords="1949,79,2119,104"/>
+<area shape="rect" title=" " alt="" coords="2143,79,2283,104"/>
+<area shape="rect" title=" " alt="" coords="2307,79,2457,104"/>
+<area shape="rect" title=" " alt="" coords="2482,79,2597,104"/>
+<area shape="rect" title=" " alt="" coords="2621,79,2741,104"/>
+<area shape="rect" title=" " alt="" coords="2765,79,2935,104"/>
+<area shape="rect" title=" " alt="" coords="2959,79,3154,104"/>
+<area shape="rect" title=" " alt="" coords="3178,79,3247,104"/>
+<area shape="rect" title=" " alt="" coords="3271,79,3338,104"/>
+<area shape="rect" title=" " alt="" coords="3363,79,3425,104"/>
+</map>
 </div>
 </div>
 <p><a href="IRBuilder_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8a2b316f88d65997bfee1e4d5926ff3c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IRBuilder_8cpp.html#a8a2b316f88d65997bfee1e4d5926ff3c">createCallHelper</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> *<a class="el" href="AMDGPULibCalls_8cpp.html#a537c835c34f0b44b6ad2696643754390">Callee</a>, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; Ops, <a class="el" href="classllvm_1_1IRBuilderBase.html">IRBuilderBase</a> *Builder, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;<a class="el" href="AMDGPULibCalls_8cpp.html#ac19c5d82adec186ac56e94115530daa8">Name</a>=&quot;&quot;, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *FMFSource=nullptr)</td></tr>
+<tr class="memitem:a8a2b316f88d65997bfee1e4d5926ff3c"><td class="memItemLeft" align="right" valign="top">static CallInst *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IRBuilder_8cpp.html#a8a2b316f88d65997bfee1e4d5926ff3c">createCallHelper</a> (Function *Callee, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; Ops, IRBuilderBase *Builder, const Twine &amp;Name=&quot;&quot;, Instruction *FMFSource=nullptr)</td></tr>
 <tr class="separator:a8a2b316f88d65997bfee1e4d5926ff3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a714e751a1a2fe18b2d3925479819c5b2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1InvokeInst.html">InvokeInst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IRBuilder_8cpp.html#a714e751a1a2fe18b2d3925479819c5b2">createInvokeHelper</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> *Invokee, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *NormalDest, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *UnwindDest, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; Ops, <a class="el" href="classllvm_1_1IRBuilderBase.html">IRBuilderBase</a> *Builder, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;<a class="el" href="AMDGPULibCalls_8cpp.html#ac19c5d82adec186ac56e94115530daa8">Name</a>=&quot;&quot;)</td></tr>
+<tr class="memitem:a714e751a1a2fe18b2d3925479819c5b2"><td class="memItemLeft" align="right" valign="top">static InvokeInst *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IRBuilder_8cpp.html#a714e751a1a2fe18b2d3925479819c5b2">createInvokeHelper</a> (Function *Invokee, BasicBlock *NormalDest, BasicBlock *UnwindDest, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; Ops, IRBuilderBase *Builder, const Twine &amp;Name=&quot;&quot;)</td></tr>
 <tr class="separator:a714e751a1a2fe18b2d3925479819c5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec1b48dc0eed688b63fb5ca61299de7c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IRBuilder_8cpp.html#aec1b48dc0eed688b63fb5ca61299de7c">getReductionIntrinsic</a> (<a class="el" href="classllvm_1_1IRBuilderBase.html">IRBuilderBase</a> *Builder, <a class="el" href="namespacellvm_1_1Intrinsic.html#a2bbee8c5fe6b399c136d84248090178b">Intrinsic::ID</a> ID, <a class="el" href="classllvm_1_1Value.html">Value</a> *Src)</td></tr>
+<tr class="memitem:aec1b48dc0eed688b63fb5ca61299de7c"><td class="memItemLeft" align="right" valign="top">static CallInst *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IRBuilder_8cpp.html#aec1b48dc0eed688b63fb5ca61299de7c">getReductionIntrinsic</a> (IRBuilderBase *Builder, Intrinsic::ID ID, Value *Src)</td></tr>
 <tr class="separator:aec1b48dc0eed688b63fb5ca61299de7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10271873b56151202ddf050236043e8b"><td class="memTemplParams" colspan="2">template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.html#ac16509a75e3d3fc46b9df1726be486ec">T1</a> , typename T2 , typename T3 &gt; </td></tr>
-<tr class="memitem:a10271873b56151202ddf050236043e8b"><td class="memTemplItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="IRBuilder_8cpp.html#a10271873b56151202ddf050236043e8b">getStatepointArgs</a> (<a class="el" href="classllvm_1_1IRBuilderBase.html">IRBuilderBase</a> &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, uint64_t ID, <a class="el" href="classuint32__t.html">uint32_t</a> NumPatchBytes, <a class="el" href="classllvm_1_1Value.html">Value</a> *ActualCallee, <a class="el" href="classuint32__t.html">uint32_t</a> Flags, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T0 &gt; CallArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="Mips16ISelLowering_8cpp.html#ac16509a75e3d3fc46b9df1726be486ec">T1</a> &gt; TransitionArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T2 &gt; DeoptArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T3 &gt; GCArgs)</td></tr>
+<tr class="memitem:a10271873b56151202ddf050236043e8b"><td class="memTemplParams" colspan="2">template&lt;typename T0 , typename T1 , typename T2 , typename T3 &gt; </td></tr>
+<tr class="memitem:a10271873b56151202ddf050236043e8b"><td class="memTemplItemLeft" align="right" valign="top">static std::vector&lt; Value * &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="IRBuilder_8cpp.html#a10271873b56151202ddf050236043e8b">getStatepointArgs</a> (IRBuilderBase &amp;B, uint64_t ID, uint32_t NumPatchBytes, Value *ActualCallee, uint32_t Flags, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T0 &gt; CallArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T1 &gt; TransitionArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T2 &gt; DeoptArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T3 &gt; GCArgs)</td></tr>
 <tr class="separator:a10271873b56151202ddf050236043e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e00af53560bdbfae98c9b52bd3cd35c"><td class="memTemplParams" colspan="2">template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.html#ac16509a75e3d3fc46b9df1726be486ec">T1</a> , typename T2 , typename T3 &gt; </td></tr>
-<tr class="memitem:a0e00af53560bdbfae98c9b52bd3cd35c"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="IRBuilder_8cpp.html#a0e00af53560bdbfae98c9b52bd3cd35c">CreateGCStatepointCallCommon</a> (<a class="el" href="classllvm_1_1IRBuilderBase.html">IRBuilderBase</a> *Builder, uint64_t ID, <a class="el" href="classuint32__t.html">uint32_t</a> NumPatchBytes, <a class="el" href="classllvm_1_1Value.html">Value</a> *ActualCallee, <a class="el" href="classuint32__t.html">uint32_t</a> Flags, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T0 &gt; CallArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="Mips16ISelLowering_8cpp.html#ac16509a75e3d3fc46b9df1726be486ec">T1</a> &gt; TransitionArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T2 &gt; DeoptArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T3 &gt; GCArgs, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;<a class="el" href="AMDGPULibCalls_8cpp.html#ac19c5d82adec186ac56e94115530daa8">Name</a>)</td></tr>
+<tr class="memitem:a0e00af53560bdbfae98c9b52bd3cd35c"><td class="memTemplParams" colspan="2">template&lt;typename T0 , typename T1 , typename T2 , typename T3 &gt; </td></tr>
+<tr class="memitem:a0e00af53560bdbfae98c9b52bd3cd35c"><td class="memTemplItemLeft" align="right" valign="top">static CallInst *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="IRBuilder_8cpp.html#a0e00af53560bdbfae98c9b52bd3cd35c">CreateGCStatepointCallCommon</a> (IRBuilderBase *Builder, uint64_t ID, uint32_t NumPatchBytes, Value *ActualCallee, uint32_t Flags, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T0 &gt; CallArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T1 &gt; TransitionArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T2 &gt; DeoptArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T3 &gt; GCArgs, const Twine &amp;Name)</td></tr>
 <tr class="separator:a0e00af53560bdbfae98c9b52bd3cd35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b6566c74b2ebec0b9bf8f4e087364bd"><td class="memTemplParams" colspan="2">template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.html#ac16509a75e3d3fc46b9df1726be486ec">T1</a> , typename T2 , typename T3 &gt; </td></tr>
-<tr class="memitem:a3b6566c74b2ebec0b9bf8f4e087364bd"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1InvokeInst.html">InvokeInst</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="IRBuilder_8cpp.html#a3b6566c74b2ebec0b9bf8f4e087364bd">CreateGCStatepointInvokeCommon</a> (<a class="el" href="classllvm_1_1IRBuilderBase.html">IRBuilderBase</a> *Builder, uint64_t ID, <a class="el" href="classuint32__t.html">uint32_t</a> NumPatchBytes, <a class="el" href="classllvm_1_1Value.html">Value</a> *ActualInvokee, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *NormalDest, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *UnwindDest, <a class="el" href="classuint32__t.html">uint32_t</a> Flags, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T0 &gt; InvokeArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="Mips16ISelLowering_8cpp.html#ac16509a75e3d3fc46b9df1726be486ec">T1</a> &gt; TransitionArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T2 &gt; DeoptArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T3 &gt; GCArgs, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;<a class="el" href="AMDGPULibCalls_8cpp.html#ac19c5d82adec186ac56e94115530daa8">Name</a>)</td></tr>
+<tr class="memitem:a3b6566c74b2ebec0b9bf8f4e087364bd"><td class="memTemplParams" colspan="2">template&lt;typename T0 , typename T1 , typename T2 , typename T3 &gt; </td></tr>
+<tr class="memitem:a3b6566c74b2ebec0b9bf8f4e087364bd"><td class="memTemplItemLeft" align="right" valign="top">static InvokeInst *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="IRBuilder_8cpp.html#a3b6566c74b2ebec0b9bf8f4e087364bd">CreateGCStatepointInvokeCommon</a> (IRBuilderBase *Builder, uint64_t ID, uint32_t NumPatchBytes, Value *ActualInvokee, BasicBlock *NormalDest, BasicBlock *UnwindDest, uint32_t Flags, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T0 &gt; InvokeArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T1 &gt; TransitionArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T2 &gt; DeoptArgs, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T3 &gt; GCArgs, const Twine &amp;Name)</td></tr>
 <tr class="separator:a3b6566c74b2ebec0b9bf8f4e087364bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -113,33 +137,33 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> * createCallHelper </td>
+          <td class="memname">static CallInst * createCallHelper </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
+          <td class="paramtype">Function *&#160;</td>
           <td class="paramname"><em>Callee</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
           <td class="paramname"><em>Ops</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilderBase.html">IRBuilderBase</a> *&#160;</td>
+          <td class="paramtype">IRBuilderBase *&#160;</td>
           <td class="paramname"><em>Builder</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;&#160;</td>
+          <td class="paramtype">const Twine &amp;&#160;</td>
           <td class="paramname"><em>Name</em> = <code>&quot;&quot;</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>FMFSource</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -157,9 +181,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IRBuilder_8cpp_source.html#l00074">74</a> of file <a class="el" href="IRBuilder_8cpp_source.html">IRBuilder.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00189">llvm::Instruction::copyFastMathFlags()</a>, <a class="el" href="Instructions_8h_source.html#l01437">llvm::CallInst::Create()</a>, <a class="el" href="IRBuilder_8h_source.html#l00126">llvm::IRBuilderBase::GetInsertBlock()</a>, <a class="el" href="IRBuilder_8h_source.html#l00127">llvm::IRBuilderBase::GetInsertPoint()</a>, <a class="el" href="BasicBlock_8h_source.html#l00333">llvm::BasicBlock::getInstList()</a>, <a class="el" href="ilist_8h_source.html#l00226">llvm::iplist_impl&lt; IntrusiveListT, TraitsT &gt;::insert()</a>, <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00231">Name</a>, and <a class="el" href="IRBuilder_8h_source.html#l00163">llvm::IRBuilderBase::SetInstDebugLocation()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="IRBuilder_8cpp_source.html#l00450">llvm::IRBuilderBase::CreateAssumption()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00739">llvm::IRBuilderBase::CreateBinaryIntrinsic()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00196">llvm::IRBuilderBase::CreateElementUnorderedAtomicMemCpy()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00272">llvm::IRBuilderBase::CreateElementUnorderedAtomicMemMove()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00127">llvm::IRBuilderBase::CreateElementUnorderedAtomicMemSet()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00321">llvm::IRBuilderBase::CreateFAddReduce()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00330">llvm::IRBuilderBase::CreateFMulReduce()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00715">llvm::IRBuilderBase::CreateGCRelocate()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00703">llvm::IRBuilderBase::CreateGCResult()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00599">CreateGCStatepointCallCommon()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00748">llvm::IRBuilderBase::CreateIntrinsic()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00430">llvm::IRBuilderBase::CreateInvariantStart()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00414">llvm::IRBuilderBase::CreateLifetimeEnd()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00398">llvm::IRBuilderBase::CreateLifetimeStart()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00158">llvm::IRBuilderBase::CreateMemCpy()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00238">llvm::IRBuilderBase::CreateMemMove()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00100">llvm::IRBuilderBase::CreateMemSet()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00731">llvm::IRBuilderBase::CreateUnaryIntrinsic()</a>, and <a class="el" href="IRBuilder_8cpp_source.html#l00312">getReductionIntrinsic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="IRBuilder_8cpp_source.html#l00599">CreateGCStatepointCallCommon()</a>, and <a class="el" href="IRBuilder_8cpp_source.html#l00312">getReductionIntrinsic()</a>.</p>
 
 </div>
 </div>
@@ -169,15 +191,15 @@ Functions</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.html#ac16509a75e3d3fc46b9df1726be486ec">T1</a> , typename T2 , typename T3 &gt; </div>
+template&lt;typename T0 , typename T1 , typename T2 , typename T3 &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> * CreateGCStatepointCallCommon </td>
+          <td class="memname">static CallInst * CreateGCStatepointCallCommon </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilderBase.html">IRBuilderBase</a> *&#160;</td>
+          <td class="paramtype">IRBuilderBase *&#160;</td>
           <td class="paramname"><em>Builder</em>, </td>
         </tr>
         <tr>
@@ -189,19 +211,19 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>NumPatchBytes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>ActualCallee</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>Flags</em>, </td>
         </tr>
         <tr>
@@ -213,7 +235,7 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="Mips16ISelLowering_8cpp.html#ac16509a75e3d3fc46b9df1726be486ec">T1</a> &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T1 &gt;&#160;</td>
           <td class="paramname"><em>TransitionArgs</em>, </td>
         </tr>
         <tr>
@@ -231,7 +253,7 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;&#160;</td>
+          <td class="paramtype">const Twine &amp;&#160;</td>
           <td class="paramname"><em>Name</em>&#160;</td>
         </tr>
         <tr>
@@ -249,7 +271,7 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
 
 <p class="definition">Definition at line <a class="el" href="IRBuilder_8cpp_source.html#l00599">599</a> of file <a class="el" href="IRBuilder_8cpp_source.html">IRBuilder.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00074">createCallHelper()</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, <a class="el" href="IRBuilder_8h_source.html#l00126">llvm::IRBuilderBase::GetInsertBlock()</a>, <a class="el" href="GlobalValue_8h_source.html#l00575">llvm::GlobalValue::getParent()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00578">getStatepointArgs()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00231">Name</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00074">createCallHelper()</a>, and <a class="el" href="IRBuilder_8cpp_source.html#l00578">getStatepointArgs()</a>.</p>
 
 </div>
 </div>
@@ -259,15 +281,15 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.html#ac16509a75e3d3fc46b9df1726be486ec">T1</a> , typename T2 , typename T3 &gt; </div>
+template&lt;typename T0 , typename T1 , typename T2 , typename T3 &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1InvokeInst.html">InvokeInst</a> * CreateGCStatepointInvokeCommon </td>
+          <td class="memname">static InvokeInst * CreateGCStatepointInvokeCommon </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilderBase.html">IRBuilderBase</a> *&#160;</td>
+          <td class="paramtype">IRBuilderBase *&#160;</td>
           <td class="paramname"><em>Builder</em>, </td>
         </tr>
         <tr>
@@ -279,31 +301,31 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>NumPatchBytes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>ActualInvokee</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>NormalDest</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>UnwindDest</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>Flags</em>, </td>
         </tr>
         <tr>
@@ -315,7 +337,7 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="Mips16ISelLowering_8cpp.html#ac16509a75e3d3fc46b9df1726be486ec">T1</a> &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T1 &gt;&#160;</td>
           <td class="paramname"><em>TransitionArgs</em>, </td>
         </tr>
         <tr>
@@ -333,7 +355,7 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;&#160;</td>
+          <td class="paramtype">const Twine &amp;&#160;</td>
           <td class="paramname"><em>Name</em>&#160;</td>
         </tr>
         <tr>
@@ -351,7 +373,7 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
 
 <p class="definition">Definition at line <a class="el" href="IRBuilder_8cpp_source.html#l00650">650</a> of file <a class="el" href="IRBuilder_8cpp_source.html">IRBuilder.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00086">createInvokeHelper()</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, <a class="el" href="IRBuilder_8h_source.html#l00126">llvm::IRBuilderBase::GetInsertBlock()</a>, <a class="el" href="GlobalValue_8h_source.html#l00575">llvm::GlobalValue::getParent()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00578">getStatepointArgs()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00231">Name</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00086">createInvokeHelper()</a>, and <a class="el" href="IRBuilder_8cpp_source.html#l00578">getStatepointArgs()</a>.</p>
 
 </div>
 </div>
@@ -365,39 +387,39 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1InvokeInst.html">InvokeInst</a> * createInvokeHelper </td>
+          <td class="memname">static InvokeInst * createInvokeHelper </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
+          <td class="paramtype">Function *&#160;</td>
           <td class="paramname"><em>Invokee</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>NormalDest</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>UnwindDest</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
           <td class="paramname"><em>Ops</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilderBase.html">IRBuilderBase</a> *&#160;</td>
+          <td class="paramtype">IRBuilderBase *&#160;</td>
           <td class="paramname"><em>Builder</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;&#160;</td>
+          <td class="paramtype">const Twine &amp;&#160;</td>
           <td class="paramname"><em>Name</em> = <code>&quot;&quot;</code>&#160;</td>
         </tr>
         <tr>
@@ -415,8 +437,6 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
 
 <p class="definition">Definition at line <a class="el" href="IRBuilder_8cpp_source.html#l00086">86</a> of file <a class="el" href="IRBuilder_8cpp_source.html">IRBuilder.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Instructions_8h_source.html#l03699">llvm::InvokeInst::Create()</a>, <a class="el" href="IRBuilder_8h_source.html#l00126">llvm::IRBuilderBase::GetInsertBlock()</a>, <a class="el" href="IRBuilder_8h_source.html#l00127">llvm::IRBuilderBase::GetInsertPoint()</a>, <a class="el" href="BasicBlock_8h_source.html#l00333">llvm::BasicBlock::getInstList()</a>, <a class="el" href="ilist_8h_source.html#l00226">llvm::iplist_impl&lt; IntrusiveListT, TraitsT &gt;::insert()</a>, <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00231">Name</a>, and <a class="el" href="IRBuilder_8h_source.html#l00163">llvm::IRBuilderBase::SetInstDebugLocation()</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="IRBuilder_8cpp_source.html#l00650">CreateGCStatepointInvokeCommon()</a>.</p>
 
 </div>
@@ -431,21 +451,21 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> * getReductionIntrinsic </td>
+          <td class="memname">static CallInst * getReductionIntrinsic </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilderBase.html">IRBuilderBase</a> *&#160;</td>
+          <td class="paramtype">IRBuilderBase *&#160;</td>
           <td class="paramname"><em>Builder</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1Intrinsic.html#a2bbee8c5fe6b399c136d84248090178b">Intrinsic::ID</a>&#160;</td>
+          <td class="paramtype">Intrinsic::ID&#160;</td>
           <td class="paramname"><em>ID</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Src</em>&#160;</td>
         </tr>
         <tr>
@@ -463,9 +483,7 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
 
 <p class="definition">Definition at line <a class="el" href="IRBuilder_8cpp_source.html#l00312">312</a> of file <a class="el" href="IRBuilder_8cpp_source.html">IRBuilder.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="IRBuilder_8cpp_source.html#l00074">createCallHelper()</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, <a class="el" href="IRBuilder_8h_source.html#l00126">llvm::IRBuilderBase::GetInsertBlock()</a>, <a class="el" href="GlobalValue_8h_source.html#l00575">llvm::GlobalValue::getParent()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, and <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="IRBuilder_8cpp_source.html#l00339">llvm::IRBuilderBase::CreateAddReduce()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00349">llvm::IRBuilderBase::CreateAndReduce()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00376">llvm::IRBuilderBase::CreateFPMaxReduce()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00387">llvm::IRBuilderBase::CreateFPMinReduce()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00364">llvm::IRBuilderBase::CreateIntMaxReduce()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00370">llvm::IRBuilderBase::CreateIntMinReduce()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00344">llvm::IRBuilderBase::CreateMulReduce()</a>, <a class="el" href="IRBuilder_8cpp_source.html#l00354">llvm::IRBuilderBase::CreateOrReduce()</a>, and <a class="el" href="IRBuilder_8cpp_source.html#l00359">llvm::IRBuilderBase::CreateXorReduce()</a>.</p>
+<p class="reference">References <a class="el" href="IRBuilder_8cpp_source.html#l00074">createCallHelper()</a>.</p>
 
 </div>
 </div>
@@ -475,15 +493,15 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.html#ac16509a75e3d3fc46b9df1726be486ec">T1</a> , typename T2 , typename T3 &gt; </div>
+template&lt;typename T0 , typename T1 , typename T2 , typename T3 &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::vector&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; getStatepointArgs </td>
+          <td class="memname">static std::vector&lt; Value * &gt; getStatepointArgs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilderBase.html">IRBuilderBase</a> &amp;&#160;</td>
+          <td class="paramtype">IRBuilderBase &amp;&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
@@ -495,19 +513,19 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>NumPatchBytes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>ActualCallee</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>Flags</em>, </td>
         </tr>
         <tr>
@@ -519,7 +537,7 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="Mips16ISelLowering_8cpp.html#ac16509a75e3d3fc46b9df1726be486ec">T1</a> &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; T1 &gt;&#160;</td>
           <td class="paramname"><em>TransitionArgs</em>, </td>
         </tr>
         <tr>
@@ -549,8 +567,6 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
 
 <p class="definition">Definition at line <a class="el" href="IRBuilder_8cpp_source.html#l00578">578</a> of file <a class="el" href="IRBuilder_8cpp_source.html">IRBuilder.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="ArrayRef_8h_source.html#l00136">llvm::ArrayRef&lt; T &gt;::begin()</a>, <a class="el" href="ArrayRef_8h_source.html#l00137">llvm::ArrayRef&lt; T &gt;::end()</a>, and <a class="el" href="ArrayRef_8h_source.html#l00148">llvm::ArrayRef&lt; T &gt;::size()</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="IRBuilder_8cpp_source.html#l00599">CreateGCStatepointCallCommon()</a>, and <a class="el" href="IRBuilder_8cpp_source.html#l00650">CreateGCStatepointInvokeCommon()</a>.</p>
 
 </div>
@@ -558,7 +574,7 @@ template&lt;typename T0 , typename <a class="el" href="Mips16ISelLowering_8cpp.h
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:15 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

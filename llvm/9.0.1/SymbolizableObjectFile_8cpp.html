@@ -56,18 +56,18 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="SymbolizableObjectFile_8h_source.html">SymbolizableObjectFile.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringRef_8h_source.html">llvm/ADT/StringRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Triple_8h_source.html">llvm/ADT/Triple.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BinaryFormat_2COFF_8h_source.html">llvm/BinaryFormat/COFF.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DWARFContext_8h_source.html">llvm/DebugInfo/DWARF/DWARFContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SymbolizableModule_8h_source.html">llvm/DebugInfo/Symbolize/SymbolizableModule.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Object_2COFF_8h_source.html">llvm/Object/COFF.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ObjectFile_8h_source.html">llvm/Object/ObjectFile.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SymbolSize_8h_source.html">llvm/Object/SymbolSize.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DataExtractor_8h_source.html">llvm/Support/DataExtractor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2Error_8h_source.html">llvm/Support/Error.h</a>&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Triple.h&quot;</code><br />
+<code>#include &quot;llvm/BinaryFormat/COFF.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/DWARF/DWARFContext.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/Symbolize/SymbolizableModule.h&quot;</code><br />
+<code>#include &quot;llvm/Object/COFF.h&quot;</code><br />
+<code>#include &quot;llvm/Object/ObjectFile.h&quot;</code><br />
+<code>#include &quot;llvm/Object/SymbolSize.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/DataExtractor.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Error.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
@@ -79,13 +79,39 @@ $(function() {
 Include dependency graph for SymbolizableObjectFile.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="SymbolizableObjectFile_8cpp__incl.png" border="0" usemap="#alib_2DebugInfo_2Symbolize_2SymbolizableObjectFile_8cpp" alt=""/></div>
+<map name="alib_2DebugInfo_2Symbolize_2SymbolizableObjectFile_8cpp" id="alib_2DebugInfo_2Symbolize_2SymbolizableObjectFile_8cpp">
+<area shape="rect" title=" " alt="" coords="1607,5,1814,45"/>
+<area shape="rect" href="SymbolizableObjectFile_8h.html" title=" " alt="" coords="753,101,940,126"/>
+<area shape="rect" title=" " alt="" coords="5,189,163,214"/>
+<area shape="rect" title=" " alt="" coords="187,181,381,221"/>
+<area shape="rect" title=" " alt="" coords="899,189,965,214"/>
+<area shape="rect" title=" " alt="" coords="989,189,1067,214"/>
+<area shape="rect" title=" " alt="" coords="1091,189,1149,214"/>
+<area shape="rect" title=" " alt="" coords="1174,189,1282,214"/>
+<area shape="rect" title=" " alt="" coords="1167,101,1329,126"/>
+<area shape="rect" title=" " alt="" coords="1353,101,1487,126"/>
+<area shape="rect" title=" " alt="" coords="1511,101,1703,126"/>
+<area shape="rect" title=" " alt="" coords="1727,93,1902,133"/>
+<area shape="rect" title=" " alt="" coords="1927,101,2073,126"/>
+<area shape="rect" title=" " alt="" coords="2097,101,2276,126"/>
+<area shape="rect" title=" " alt="" coords="2300,101,2489,126"/>
+<area shape="rect" title=" " alt="" coords="2513,101,2684,126"/>
+<area shape="rect" title=" " alt="" coords="2708,101,2919,126"/>
+<area shape="rect" title=" " alt="" coords="2943,101,3094,126"/>
+<area shape="rect" title=" " alt="" coords="3119,101,3204,126"/>
+<area shape="rect" title=" " alt="" coords="3229,101,3289,126"/>
+<area shape="rect" title=" " alt="" coords="3313,101,3375,126"/>
+<area shape="rect" title=" " alt="" coords="405,189,608,214"/>
+<area shape="rect" title=" " alt="" coords="633,189,799,214"/>
+<area shape="rect" title=" " alt="" coords="824,189,875,214"/>
+</map>
 </div>
 </div>
 <p><a href="SymbolizableObjectFile_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a930c6224cd5c7284df1ac602601884bc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structllvm_1_1DILineInfoSpecifier.html">DILineInfoSpecifier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SymbolizableObjectFile_8cpp.html#a930c6224cd5c7284df1ac602601884bc">getDILineInfoSpecifier</a> (<a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870">FunctionNameKind</a> FNKind)</td></tr>
+<tr class="memitem:a930c6224cd5c7284df1ac602601884bc"><td class="memItemLeft" align="right" valign="top">static DILineInfoSpecifier&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SymbolizableObjectFile_8cpp.html#a930c6224cd5c7284df1ac602601884bc">getDILineInfoSpecifier</a> (<a class="el" href="DWARFContext_8cpp.html#a851d8dd3228578898dd57e2907e6cbeb">FunctionNameKind</a> FNKind)</td></tr>
 <tr class="separator:a930c6224cd5c7284df1ac602601884bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -99,9 +125,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="structllvm_1_1DILineInfoSpecifier.html">DILineInfoSpecifier</a> getDILineInfoSpecifier </td>
+          <td class="memname">static DILineInfoSpecifier getDILineInfoSpecifier </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#aad87d874f7944b5838f7881938d18870">FunctionNameKind</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="DWARFContext_8cpp.html#a851d8dd3228578898dd57e2907e6cbeb">FunctionNameKind</a>&#160;</td>
           <td class="paramname"><em>FNKind</em></td><td>)</td>
           <td></td>
         </tr>
@@ -122,7 +148,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:14 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

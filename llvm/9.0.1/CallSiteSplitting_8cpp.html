@@ -58,21 +58,35 @@ $(function() {
   <div class="headertitle"><div class="title">CallSiteSplitting.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="CallSiteSplitting_8h_source.html">llvm/Transforms/Scalar/CallSiteSplitting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Cloning_8h_source.html">llvm/Transforms/Utils/Cloning.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/CallSiteSplitting.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Cloning.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for CallSiteSplitting.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="CallSiteSplitting_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2CallSiteSplitting_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Scalar_2CallSiteSplitting_8cpp" id="alib_2Transforms_2Scalar_2CallSiteSplitting_8cpp">
+<area shape="rect" title=" " alt="" coords="1029,5,1187,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,176,133"/>
+<area shape="rect" title=" " alt="" coords="201,101,351,126"/>
+<area shape="rect" title=" " alt="" coords="375,93,574,133"/>
+<area shape="rect" title=" " alt="" coords="599,93,817,133"/>
+<area shape="rect" title=" " alt="" coords="842,93,1003,133"/>
+<area shape="rect" title=" " alt="" coords="1028,101,1188,126"/>
+<area shape="rect" title=" " alt="" coords="1212,101,1383,126"/>
+<area shape="rect" title=" " alt="" coords="1407,101,1569,126"/>
+<area shape="rect" title=" " alt="" coords="1594,101,1777,126"/>
+<area shape="rect" title=" " alt="" coords="1801,93,1962,133"/>
+<area shape="rect" title=" " alt="" coords="1986,93,2147,133"/>
+</map>
 </div>
 </div>
 <p><a href="CallSiteSplitting_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -84,61 +98,61 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a11ff2609088447b356b0843149af4cf7"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; <a class="el" href="classllvm_1_1ICmpInst.html">ICmpInst</a> *, <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a11ff2609088447b356b0843149af4cf7">ConditionTy</a></td></tr>
+<tr class="memitem:a11ff2609088447b356b0843149af4cf7"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; ICmpInst *, unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a11ff2609088447b356b0843149af4cf7">ConditionTy</a></td></tr>
 <tr class="separator:a11ff2609088447b356b0843149af4cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53859a822d23cfa2e5c8e662a3abadf7"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classllvm_1_1SmallVector.html">SmallVector</a>&lt; <a class="el" href="CallSiteSplitting_8cpp.html#a11ff2609088447b356b0843149af4cf7">ConditionTy</a>, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a></td></tr>
+<tr class="memitem:a53859a822d23cfa2e5c8e662a3abadf7"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classSmallVector.html">SmallVector</a>&lt; <a class="el" href="CallSiteSplitting_8cpp.html#a11ff2609088447b356b0843149af4cf7">ConditionTy</a>, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a></td></tr>
 <tr class="separator:a53859a822d23cfa2e5c8e662a3abadf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b16c1f3249a4c63a47a6696e2084c4c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a2b16c1f3249a4c63a47a6696e2084c4c">PredsWithCondsTy</a> = <a class="el" href="classllvm_1_1SmallVector.html">SmallVector</a>&lt; std::pair&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a> &gt;, 2 &gt;</td></tr>
+<tr class="memitem:a2b16c1f3249a4c63a47a6696e2084c4c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a2b16c1f3249a4c63a47a6696e2084c4c">PredsWithCondsTy</a> = <a class="el" href="classSmallVector.html">SmallVector</a>&lt; std::pair&lt; BasicBlock *, <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a> &gt;, 2 &gt;</td></tr>
 <tr class="separator:a2b16c1f3249a4c63a47a6696e2084c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a97ccf3c7040ae276f332fea73c165b8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a97ccf3c7040ae276f332fea73c165b8b">STATISTIC</a> (NumCallSiteSplit, &quot;Number of call-site split&quot;)</td></tr>
 <tr class="separator:a97ccf3c7040ae276f332fea73c165b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb5dcaf477a297c19a99fbc681e4bd5a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#adb5dcaf477a297c19a99fbc681e4bd5a">addNonNullAttribute</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS, <a class="el" href="classllvm_1_1Value.html">Value</a> *Op)</td></tr>
+<tr class="memitem:af2d0bfc5cea325f6474964c799b2545a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#af2d0bfc5cea325f6474964c799b2545a">DuplicationThreshold</a> (&quot;callsite-<a class="el" href="CallSiteSplitting_8cpp.html#af862aa2abae546509b31878b6f55327a">splitting</a>-duplication-threshold&quot;, cl::Hidden, cl::desc(&quot;Only allow <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> before a call, <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> &quot; &quot;their cost is below DuplicationThreshold&quot;), cl::init(5))</td></tr>
+<tr class="memdesc:af2d0bfc5cea325f6474964c799b2545a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only allow instructions before a call, if their CodeSize cost is below DuplicationThreshold.  <a href="CallSiteSplitting_8cpp.html#af2d0bfc5cea325f6474964c799b2545a">More...</a><br /></td></tr>
+<tr class="separator:af2d0bfc5cea325f6474964c799b2545a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb5dcaf477a297c19a99fbc681e4bd5a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#adb5dcaf477a297c19a99fbc681e4bd5a">addNonNullAttribute</a> (CallSite CS, Value *Op)</td></tr>
 <tr class="separator:adb5dcaf477a297c19a99fbc681e4bd5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc79e628724fef3f4a1fa20578c888a8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#acc79e628724fef3f4a1fa20578c888a8">setConstantInArgument</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS, <a class="el" href="classllvm_1_1Value.html">Value</a> *Op, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *ConstValue)</td></tr>
+<tr class="memitem:acc79e628724fef3f4a1fa20578c888a8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#acc79e628724fef3f4a1fa20578c888a8">setConstantInArgument</a> (CallSite CS, Value *Op, Constant *ConstValue)</td></tr>
 <tr class="separator:acc79e628724fef3f4a1fa20578c888a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a143a90650a5dde14b2a0a1055ccef841"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a143a90650a5dde14b2a0a1055ccef841">isCondRelevantToAnyCallArgument</a> (<a class="el" href="classllvm_1_1ICmpInst.html">ICmpInst</a> *Cmp, <a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS)</td></tr>
+<tr class="memitem:a143a90650a5dde14b2a0a1055ccef841"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a143a90650a5dde14b2a0a1055ccef841">isCondRelevantToAnyCallArgument</a> (ICmpInst *Cmp, CallSite CS)</td></tr>
 <tr class="separator:a143a90650a5dde14b2a0a1055ccef841"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7ecd41423723f8b2cc29bdda4118611"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#ae7ecd41423723f8b2cc29bdda4118611">recordCondition</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *<a class="el" href="BlockVerifier_8cpp.html#ae45c7d73c0ff5d177b59153ffae77f84">From</a>, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *To, <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a> &amp;Conditions)</td></tr>
+<tr class="memitem:ae7ecd41423723f8b2cc29bdda4118611"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#ae7ecd41423723f8b2cc29bdda4118611">recordCondition</a> (CallSite CS, BasicBlock *From, BasicBlock *To, <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a> &amp;Conditions)</td></tr>
 <tr class="memdesc:ae7ecd41423723f8b2cc29bdda4118611"><td class="mdescLeft">&#160;</td><td class="mdescRight">If From has a conditional jump to To, add the condition to Conditions, if it is relevant to any argument at CS.  <a href="CallSiteSplitting_8cpp.html#ae7ecd41423723f8b2cc29bdda4118611">More...</a><br /></td></tr>
 <tr class="separator:ae7ecd41423723f8b2cc29bdda4118611"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab74e285f28425a7352bf089547aea4b8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#ab74e285f28425a7352bf089547aea4b8">recordConditions</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *Pred, <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a> &amp;Conditions, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *StopAt)</td></tr>
+<tr class="memitem:ab74e285f28425a7352bf089547aea4b8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#ab74e285f28425a7352bf089547aea4b8">recordConditions</a> (CallSite CS, BasicBlock *Pred, <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a> &amp;Conditions, BasicBlock *StopAt)</td></tr>
 <tr class="memdesc:ab74e285f28425a7352bf089547aea4b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Record ICmp conditions relevant to any argument in CS following Pred's single predecessors.  <a href="CallSiteSplitting_8cpp.html#ab74e285f28425a7352bf089547aea4b8">More...</a><br /></td></tr>
 <tr class="separator:ab74e285f28425a7352bf089547aea4b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61f172fcb6ca22fffbe7099fac5a1c68"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a61f172fcb6ca22fffbe7099fac5a1c68">addConditions</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a> &amp;Conditions)</td></tr>
+<tr class="memitem:a61f172fcb6ca22fffbe7099fac5a1c68"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a61f172fcb6ca22fffbe7099fac5a1c68">addConditions</a> (CallSite CS, const <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a> &amp;Conditions)</td></tr>
 <tr class="separator:a61f172fcb6ca22fffbe7099fac5a1c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbfe0838b184a2df083679877c27c27f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1SmallVector.html">SmallVector</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#acbfe0838b184a2df083679877c27c27f">getTwoPredecessors</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB)</td></tr>
+<tr class="memitem:acbfe0838b184a2df083679877c27c27f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classSmallVector.html">SmallVector</a>&lt; BasicBlock *, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#acbfe0838b184a2df083679877c27c27f">getTwoPredecessors</a> (BasicBlock *BB)</td></tr>
 <tr class="separator:acbfe0838b184a2df083679877c27c27f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab15c2bf85da76129165c0309fa826f36"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#ab15c2bf85da76129165c0309fa826f36">canSplitCallSite</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS, <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;TTI)</td></tr>
+<tr class="memitem:ab15c2bf85da76129165c0309fa826f36"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#ab15c2bf85da76129165c0309fa826f36">canSplitCallSite</a> (CallSite CS, TargetTransformInfo &amp;TTI)</td></tr>
 <tr class="separator:ab15c2bf85da76129165c0309fa826f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8851ab02c245b1b95967e9bbac84b713"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a8851ab02c245b1b95967e9bbac84b713">cloneInstForMustTail</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Before, <a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
+<tr class="memitem:a8851ab02c245b1b95967e9bbac84b713"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a8851ab02c245b1b95967e9bbac84b713">cloneInstForMustTail</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, Instruction *Before, Value *V)</td></tr>
 <tr class="separator:a8851ab02c245b1b95967e9bbac84b713"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1548d6cc07c1c5595817e73713d58a23"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a1548d6cc07c1c5595817e73713d58a23">copyMustTailReturn</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *SplitBB, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *CI, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *NewCI)</td></tr>
+<tr class="memitem:a1548d6cc07c1c5595817e73713d58a23"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a1548d6cc07c1c5595817e73713d58a23">copyMustTailReturn</a> (BasicBlock *SplitBB, Instruction *CI, Instruction *NewCI)</td></tr>
 <tr class="memdesc:a1548d6cc07c1c5595817e73713d58a23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy mandatory <code>musttail</code> return sequence that follows original <code>CI</code>, and link it up to <code>NewCI</code> value instead:  <a href="CallSiteSplitting_8cpp.html#a1548d6cc07c1c5595817e73713d58a23">More...</a><br /></td></tr>
 <tr class="separator:a1548d6cc07c1c5595817e73713d58a23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95c62072565cb66c31609650b981196d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a95c62072565cb66c31609650b981196d">splitCallSite</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; std::pair&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a> &gt; &gt; &amp;Preds, <a class="el" href="classllvm_1_1DomTreeUpdater.html">DomTreeUpdater</a> &amp;DTU)</td></tr>
+<tr class="memitem:a95c62072565cb66c31609650b981196d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a95c62072565cb66c31609650b981196d">splitCallSite</a> (CallSite CS, const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; std::pair&lt; BasicBlock *, <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a> &gt; &gt; &amp;Preds, DomTreeUpdater &amp;DTU)</td></tr>
 <tr class="memdesc:a95c62072565cb66c31609650b981196d"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each (predecessor, conditions from predecessors) pair, it will split the basic block containing the call site, hook it up to the predecessor and replace the call instruction with new call instructions, which contain constraints based on the conditions from their predecessors.  <a href="CallSiteSplitting_8cpp.html#a95c62072565cb66c31609650b981196d">More...</a><br /></td></tr>
 <tr class="separator:a95c62072565cb66c31609650b981196d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ce44acc0c6d9202ecea26d8349c9ac0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a9ce44acc0c6d9202ecea26d8349c9ac0">isPredicatedOnPHI</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS)</td></tr>
+<tr class="memitem:a9ce44acc0c6d9202ecea26d8349c9ac0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a9ce44acc0c6d9202ecea26d8349c9ac0">isPredicatedOnPHI</a> (CallSite CS)</td></tr>
 <tr class="separator:a9ce44acc0c6d9202ecea26d8349c9ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cbb14a3a699ee694baa26ac1573465f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CallSiteSplitting_8cpp.html#a2b16c1f3249a4c63a47a6696e2084c4c">PredsWithCondsTy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a3cbb14a3a699ee694baa26ac1573465f">shouldSplitOnPHIPredicatedArgument</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS)</td></tr>
+<tr class="memitem:a3cbb14a3a699ee694baa26ac1573465f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CallSiteSplitting_8cpp.html#a2b16c1f3249a4c63a47a6696e2084c4c">PredsWithCondsTy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a3cbb14a3a699ee694baa26ac1573465f">shouldSplitOnPHIPredicatedArgument</a> (CallSite CS)</td></tr>
 <tr class="separator:a3cbb14a3a699ee694baa26ac1573465f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30b3cb686a4067d676e986c7a9f5c821"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CallSiteSplitting_8cpp.html#a2b16c1f3249a4c63a47a6696e2084c4c">PredsWithCondsTy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a30b3cb686a4067d676e986c7a9f5c821">shouldSplitOnPredicatedArgument</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS, <a class="el" href="classllvm_1_1DomTreeUpdater.html">DomTreeUpdater</a> &amp;DTU)</td></tr>
+<tr class="memitem:a30b3cb686a4067d676e986c7a9f5c821"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CallSiteSplitting_8cpp.html#a2b16c1f3249a4c63a47a6696e2084c4c">PredsWithCondsTy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a30b3cb686a4067d676e986c7a9f5c821">shouldSplitOnPredicatedArgument</a> (CallSite CS, DomTreeUpdater &amp;DTU)</td></tr>
 <tr class="separator:a30b3cb686a4067d676e986c7a9f5c821"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d33de32ae1e5b7e4e761570bfc0683a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a6d33de32ae1e5b7e4e761570bfc0683a">tryToSplitCallSite</a> (<a class="el" href="classllvm_1_1CallSite.html">CallSite</a> CS, <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;TTI, <a class="el" href="classllvm_1_1DomTreeUpdater.html">DomTreeUpdater</a> &amp;DTU)</td></tr>
+<tr class="memitem:a6d33de32ae1e5b7e4e761570bfc0683a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a6d33de32ae1e5b7e4e761570bfc0683a">tryToSplitCallSite</a> (CallSite CS, TargetTransformInfo &amp;TTI, DomTreeUpdater &amp;DTU)</td></tr>
 <tr class="separator:a6d33de32ae1e5b7e4e761570bfc0683a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43988d720b2e37fb0abe3531980dbec8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a43988d720b2e37fb0abe3531980dbec8">doCallSiteSplitting</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI, <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;TTI, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT)</td></tr>
+<tr class="memitem:a43988d720b2e37fb0abe3531980dbec8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a43988d720b2e37fb0abe3531980dbec8">doCallSiteSplitting</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, TargetLibraryInfo &amp;TLI, TargetTransformInfo &amp;TTI, DominatorTree &amp;DT)</td></tr>
 <tr class="separator:a43988d720b2e37fb0abe3531980dbec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a1ce568aab320a4a3063225608b9d61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a9a1ce568aab320a4a3063225608b9d61">INITIALIZE_PASS_BEGIN</a> (CallSiteSplittingLegacyPass, &quot;callsite-splitting&quot;, &quot;Call-site splitting&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(CallSiteSplittingLegacyPass</td></tr>
+<tr class="memitem:a9a1ce568aab320a4a3063225608b9d61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#a9a1ce568aab320a4a3063225608b9d61">INITIALIZE_PASS_BEGIN</a> (CallSiteSplittingLegacyPass, &quot;callsite-splitting&quot;, &quot;Call-site splitting&quot;, false, false) INITIALIZE_PASS_END(CallSiteSplittingLegacyPass</td></tr>
 <tr class="separator:a9a1ce568aab320a4a3063225608b9d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aea4221b7a3bb24064b0b9b39fa24f274"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#aea4221b7a3bb24064b0b9b39fa24f274">DuplicationThreshold</a> (&quot;callsite-<a class="el" href="CallSiteSplitting_8cpp.html#af862aa2abae546509b31878b6f55327a">splitting</a>-duplication-threshold&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Only allow <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> before a call, <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> &quot; &quot;their cost is below DuplicationThreshold&quot;), cl::init(5))</td></tr>
-<tr class="memdesc:aea4221b7a3bb24064b0b9b39fa24f274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only allow instructions before a call, if their CodeSize cost is below DuplicationThreshold.  <a href="CallSiteSplitting_8cpp.html#aea4221b7a3bb24064b0b9b39fa24f274">More...</a><br /></td></tr>
-<tr class="separator:aea4221b7a3bb24064b0b9b39fa24f274"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af862aa2abae546509b31878b6f55327a"><td class="memItemLeft" align="right" valign="top">callsite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#af862aa2abae546509b31878b6f55327a">splitting</a></td></tr>
 <tr class="separator:af862aa2abae546509b31878b6f55327a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4a0cdaeacc0d086f82521095d8ea3ca"><td class="memItemLeft" align="right" valign="top">callsite Call site&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallSiteSplitting_8cpp.html#ac4a0cdaeacc0d086f82521095d8ea3ca">false</a></td></tr>
@@ -169,7 +183,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classllvm_1_1SmallVector.html">SmallVector</a>&lt;<a class="el" href="CallSiteSplitting_8cpp.html#a11ff2609088447b356b0843149af4cf7">ConditionTy</a>, 2&gt; <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a></td>
+          <td class="memname">typedef <a class="el" href="classSmallVector.html">SmallVector</a>&lt;<a class="el" href="CallSiteSplitting_8cpp.html#a11ff2609088447b356b0843149af4cf7">ConditionTy</a>, 2&gt; <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -185,7 +199,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::pair&lt;<a class="el" href="classllvm_1_1ICmpInst.html">ICmpInst</a> *, <a class="el" href="classunsigned.html">unsigned</a>&gt; <a class="el" href="CallSiteSplitting_8cpp.html#a11ff2609088447b356b0843149af4cf7">ConditionTy</a></td>
+          <td class="memname">typedef std::pair&lt;ICmpInst *, unsigned&gt; <a class="el" href="CallSiteSplitting_8cpp.html#a11ff2609088447b356b0843149af4cf7">ConditionTy</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -201,7 +215,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="CallSiteSplitting_8cpp.html#a2b16c1f3249a4c63a47a6696e2084c4c">PredsWithCondsTy</a> =  <a class="el" href="classllvm_1_1SmallVector.html">SmallVector</a>&lt;std::pair&lt;<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a>&gt;, 2&gt;</td>
+          <td class="memname">using <a class="el" href="CallSiteSplitting_8cpp.html#a2b16c1f3249a4c63a47a6696e2084c4c">PredsWithCondsTy</a> =  <a class="el" href="classSmallVector.html">SmallVector</a>&lt;std::pair&lt;BasicBlock *, <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a>&gt;, 2&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -223,13 +237,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void addConditions </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
+          <td class="paramtype">CallSite&#160;</td>
           <td class="paramname"><em>CS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a> &amp;&#160;</td>
           <td class="paramname"><em>Conditions</em>&#160;</td>
         </tr>
         <tr>
@@ -247,7 +261,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00166">166</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CallSiteSplitting_8cpp_source.html#l00086">addNonNullAttribute()</a>, <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Arg</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Constants_8cpp_source.html#l00084">llvm::Constant::isNullValue()</a>, <a class="el" href="Type_8h_source.html#l00223">llvm::Type::isPointerTy()</a>, and <a class="el" href="CallSiteSplitting_8cpp_source.html#l00095">setConstantInArgument()</a>.</p>
+<p class="reference">References <a class="el" href="CallSiteSplitting_8cpp_source.html#l00086">addNonNullAttribute()</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="CallSiteSplitting_8cpp_source.html#l00095">setConstantInArgument()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00304">splitCallSite()</a>.</p>
 
@@ -265,13 +279,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void addNonNullAttribute </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
+          <td class="paramtype">CallSite&#160;</td>
           <td class="paramname"><em>CS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Op</em>&#160;</td>
         </tr>
         <tr>
@@ -289,7 +303,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00086">86</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CallSite_8h_source.html#l00353">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::addParamAttr()</a>, <a class="el" href="CallSite_8h_source.html#l00222">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::args()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00166">addConditions()</a>.</p>
 
@@ -305,15 +319,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> canSplitCallSite </td>
+          <td class="memname">static bool canSplitCallSite </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
+          <td class="paramtype">CallSite&#160;</td>
           <td class="paramname"><em>CS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;&#160;</td>
+          <td class="paramtype">TargetTransformInfo &amp;&#160;</td>
           <td class="paramname"><em>TTI</em>&#160;</td>
         </tr>
         <tr>
@@ -331,7 +345,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00185">185</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="CallSite_8h_source.html#l00526">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::cannotDuplicate()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00371">llvm::BasicBlock::canSplitPredecessors()</a>, <a class="el" href="CallSiteSplitting_8cpp.html#aea4221b7a3bb24064b0b9b39fa24f274">DuplicationThreshold</a>, <a class="el" href="CallSite_8h_source.html#l00096">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getInstruction()</a>, <a class="el" href="TargetTransformInfo_8h_source.html#l00164">llvm::TargetTransformInfo::getInstructionCost()</a>, <a class="el" href="ilist__node_8h_source.html#l00081">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="CallSite_8h_source.html#l00534">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::isConvergent()</a>, <a class="el" href="BasicBlock_8h_source.html#l00406">llvm::BasicBlock::isEHPad()</a>, <a class="el" href="iterator__range_8h_source.html#l00053">llvm::make_range()</a>, <a class="el" href="IR_2CFG_8h_source.html#l00124">llvm::predecessors()</a>, <a class="el" href="SmallVector_8h_source.html#l00052">llvm::SmallVectorBase::size()</a>, and <a class="el" href="TargetTransformInfo_8h_source.html#l00154">llvm::TargetTransformInfo::TCK_CodeSize</a>.</p>
+<p class="reference">References <a class="el" href="CallSiteSplitting_8cpp.html#af2d0bfc5cea325f6474964c799b2545a">DuplicationThreshold()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00492">tryToSplitCallSite()</a>.</p>
 
@@ -347,21 +361,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * cloneInstForMustTail </td>
+          <td class="memname">static Instruction * cloneInstForMustTail </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>Before</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>&#160;</td>
         </tr>
         <tr>
@@ -397,19 +411,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void copyMustTailReturn </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>SplitBB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>CI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>NewCI</em>&#160;</td>
         </tr>
         <tr>
@@ -434,7 +448,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00241">241</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00223">cloneInstForMustTail()</a>, <a class="el" href="ilist__node_8h_source.html#l00081">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="Function_8h_source.html#l00168">llvm::Function::getReturnType()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, and <a class="el" href="Type_8h_source.html#l00140">llvm::Type::isVoidTy()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="CallSiteSplitting_8cpp_source.html#l00223">cloneInstForMustTail()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00304">splitCallSite()</a>.</p>
 
@@ -450,27 +464,27 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> doCallSiteSplitting </td>
+          <td class="memname">static bool doCallSiteSplitting </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
+          <td class="paramtype">TargetLibraryInfo &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;&#160;</td>
+          <td class="paramtype">TargetTransformInfo &amp;&#160;</td>
           <td class="paramname"><em>TTI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
+          <td class="paramtype">DominatorTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -488,9 +502,60 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00508">508</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CallSite_8h_source.html#l00111">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getCalledFunction()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00196">llvm::BasicBlock::getFirstNonPHIOrDbg()</a>, <a class="el" href="ilist__node_8h_source.html#l00081">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Local_8cpp_source.html#l00353">llvm::isInstructionTriviallyDead()</a>, <a class="el" href="CallSite_8h_source.html#l00279">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::isMustTailCall()</a>, and <a class="el" href="CallSiteSplitting_8cpp_source.html#l00492">tryToSplitCallSite()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="CallSiteSplitting_8cpp_source.html#l00492">tryToSplitCallSite()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00585">llvm::CallSiteSplittingPass::run()</a>.</p>
+</div>
+</div>
+<a id="af2d0bfc5cea325f6474964c799b2545a" name="af2d0bfc5cea325f6474964c799b2545a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2d0bfc5cea325f6474964c799b2545a">&#9670;&nbsp;</a></span>DuplicationThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; DuplicationThreshold </td>
+          <td>(</td>
+          <td class="paramtype">&quot;callsite-<a class="el" href="CallSiteSplitting_8cpp.html#af862aa2abae546509b31878b6f55327a">splitting</a>-duplication-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Only allow <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> before a call, <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> &quot; &quot;their cost is below DuplicationThreshold&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(5)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Only allow instructions before a call, if their CodeSize cost is below DuplicationThreshold. </p>
+<p >Those instructions need to be duplicated in all split blocks. </p>
+
+<p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00185">canSplitCallSite()</a>.</p>
 
 </div>
 </div>
@@ -504,9 +569,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1SmallVector.html">SmallVector</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, 2 &gt; getTwoPredecessors </td>
+          <td class="memname">static <a class="el" href="classSmallVector.html">SmallVector</a>&lt; BasicBlock *, 2 &gt; getTwoPredecessors </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>BB</em></td><td>)</td>
           <td></td>
         </tr>
@@ -520,7 +585,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00179">179</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="IR_2CFG_8h_source.html#l00124">llvm::predecessors()</a>, and <a class="el" href="SmallVector_8h_source.html#l00052">llvm::SmallVectorBase::size()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00449">shouldSplitOnPHIPredicatedArgument()</a>, and <a class="el" href="CallSiteSplitting_8cpp_source.html#l00460">shouldSplitOnPredicatedArgument()</a>.</p>
 
@@ -582,15 +647,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isCondRelevantToAnyCallArgument </td>
+          <td class="memname">static bool isCondRelevantToAnyCallArgument </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ICmpInst.html">ICmpInst</a> *&#160;</td>
+          <td class="paramtype">ICmpInst *&#160;</td>
           <td class="paramname"><em>Cmp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
+          <td class="paramtype">CallSite&#160;</td>
           <td class="paramname"><em>CS</em>&#160;</td>
         </tr>
         <tr>
@@ -608,7 +673,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00109">109</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CallSite_8h_source.html#l00584">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::arg_begin()</a>, <a class="el" href="CallSite_8h_source.html#l00588">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::arg_end()</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="CallSite_8h_source.html#l00385">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::paramHasAttr()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00130">recordCondition()</a>.</p>
 
@@ -624,9 +689,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isPredicatedOnPHI </td>
+          <td class="memname">static bool isPredicatedOnPHI </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
+          <td class="paramtype">CallSite&#160;</td>
           <td class="paramname"><em>CS</em></td><td>)</td>
           <td></td>
         </tr>
@@ -640,7 +705,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00419">419</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CallSite_8h_source.html#l00222">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::args()</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00196">llvm::BasicBlock::getFirstNonPHIOrDbg()</a>, <a class="el" href="CallSite_8h_source.html#l00096">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getInstruction()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00449">shouldSplitOnPHIPredicatedArgument()</a>.</p>
 
@@ -658,19 +723,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void recordCondition </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
+          <td class="paramtype">CallSite&#160;</td>
           <td class="paramname"><em>CS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>From</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>To</em>, </td>
         </tr>
         <tr>
@@ -696,7 +761,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00130">130</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BlockVerifier_8cpp_source.html#l00055">From</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00109">isCondRelevantToAnyCallArgument()</a>, <a class="el" href="PatternMatch_8h_source.html#l00089">llvm::PatternMatch::m_Constant()</a>, <a class="el" href="PatternMatch_8h_source.html#l01061">llvm::PatternMatch::m_ICmp()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, and <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>.</p>
+<p class="reference">References <a class="el" href="CallSiteSplitting_8cpp_source.html#l00109">isCondRelevantToAnyCallArgument()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00153">recordConditions()</a>, and <a class="el" href="CallSiteSplitting_8cpp_source.html#l00460">shouldSplitOnPredicatedArgument()</a>.</p>
 
@@ -714,13 +779,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void recordConditions </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
+          <td class="paramtype">CallSite&#160;</td>
           <td class="paramname"><em>CS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>Pred</em>, </td>
         </tr>
         <tr>
@@ -732,7 +797,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>StopAt</em>&#160;</td>
         </tr>
         <tr>
@@ -753,7 +818,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00153">153</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SmallPtrSet_8h_source.html#l00381">llvm::SmallPtrSetImpl&lt; PtrType &gt;::count()</a>, <a class="el" href="BlockVerifier_8cpp_source.html#l00055">From</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00370">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert()</a>, and <a class="el" href="CallSiteSplitting_8cpp_source.html#l00130">recordCondition()</a>.</p>
+<p class="reference">References <a class="el" href="CallSiteSplitting_8cpp_source.html#l00130">recordCondition()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00460">shouldSplitOnPredicatedArgument()</a>.</p>
 
@@ -771,19 +836,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void setConstantInArgument </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
+          <td class="paramtype">CallSite&#160;</td>
           <td class="paramname"><em>CS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Op</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td>
+          <td class="paramtype">Constant *&#160;</td>
           <td class="paramname"><em>ConstValue</em>&#160;</td>
         </tr>
         <tr>
@@ -801,7 +866,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00095">95</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CallSite_8h_source.html#l00222">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::args()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="CallSite_8h_source.html#l00365">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::removeParamAttr()</a>, and <a class="el" href="CallSite_8h_source.html#l00198">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::setArgument()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00166">addConditions()</a>.</p>
 
@@ -819,7 +884,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="CallSiteSplitting_8cpp.html#a2b16c1f3249a4c63a47a6696e2084c4c">PredsWithCondsTy</a> shouldSplitOnPHIPredicatedArgument </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
+          <td class="paramtype">CallSite&#160;</td>
           <td class="paramname"><em>CS</em></td><td>)</td>
           <td></td>
         </tr>
@@ -833,7 +898,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00449">449</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CallSite_8h_source.html#l00096">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getInstruction()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00179">getTwoPredecessors()</a>, and <a class="el" href="CallSiteSplitting_8cpp_source.html#l00419">isPredicatedOnPHI()</a>.</p>
+<p class="reference">References <a class="el" href="CallSiteSplitting_8cpp_source.html#l00179">getTwoPredecessors()</a>, and <a class="el" href="CallSiteSplitting_8cpp_source.html#l00419">isPredicatedOnPHI()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00492">tryToSplitCallSite()</a>.</p>
 
@@ -851,13 +916,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="CallSiteSplitting_8cpp.html#a2b16c1f3249a4c63a47a6696e2084c4c">PredsWithCondsTy</a> shouldSplitOnPredicatedArgument </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
+          <td class="paramtype">CallSite&#160;</td>
           <td class="paramname"><em>CS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DomTreeUpdater.html">DomTreeUpdater</a> &amp;&#160;</td>
+          <td class="paramtype">DomTreeUpdater &amp;&#160;</td>
           <td class="paramname"><em>DTU</em>&#160;</td>
         </tr>
         <tr>
@@ -875,7 +940,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00460">460</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="STLExtras_8h_source.html#l01192">llvm::all_of()</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="DomTreeUpdater_8cpp_source.html#l00303">llvm::DomTreeUpdater::getDomTree()</a>, <a class="el" href="CallSite_8h_source.html#l00096">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getInstruction()</a>, <a class="el" href="GenericDomTree_8h_source.html#l00328">llvm::DominatorTreeBase&lt; NodeT, IsPostDom &gt;::getNode()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00179">getTwoPredecessors()</a>, <a class="el" href="DomTreeUpdater_8h_source.html#l00055">llvm::DomTreeUpdater::hasDomTree()</a>, <a class="el" href="iterator__range_8h_source.html#l00053">llvm::make_range()</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00130">recordCondition()</a>, and <a class="el" href="CallSiteSplitting_8cpp_source.html#l00153">recordConditions()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00179">getTwoPredecessors()</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00130">recordCondition()</a>, and <a class="el" href="CallSiteSplitting_8cpp_source.html#l00153">recordConditions()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00492">tryToSplitCallSite()</a>.</p>
 
@@ -893,19 +958,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void splitCallSite </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
+          <td class="paramtype">CallSite&#160;</td>
           <td class="paramname"><em>CS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; std::pair&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; std::pair&lt; BasicBlock *, <a class="el" href="CallSiteSplitting_8cpp.html#a53859a822d23cfa2e5c8e662a3abadf7">ConditionsTy</a> &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>Preds</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DomTreeUpdater.html">DomTreeUpdater</a> &amp;&#160;</td>
+          <td class="paramtype">DomTreeUpdater &amp;&#160;</td>
           <td class="paramname"><em>DTU</em>&#160;</td>
         </tr>
         <tr>
@@ -931,7 +996,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00304">304</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CallSiteSplitting_8cpp_source.html#l00166">addConditions()</a>, <a class="el" href="Instructions_8h_source.html#l02688">llvm::PHINode::addIncoming()</a>, <a class="el" href="DomTreeUpdater_8cpp_source.html#l00249">llvm::DomTreeUpdater::applyUpdatesPermissive()</a>, <a class="el" href="CallSite_8h_source.html#l00222">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::args()</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00241">copyMustTailReturn()</a>, <a class="el" href="Instructions_8h_source.html#l02576">llvm::PHINode::Create()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="DomTreeUpdater_8cpp_source.html#l00178">llvm::DomTreeUpdater::deleteBB()</a>, <a class="el" href="CloneFunction_8cpp_source.html#l00820">llvm::DuplicateInstructionsInSplitBetween()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00067">llvm::Instruction::eraseFromParent()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00321">llvm::Instruction::getDebugLoc()</a>, <a class="el" href="CallSite_8h_source.html#l00096">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getInstruction()</a>, <a class="el" href="ilist__node_8h_source.html#l00081">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00797">getParent()</a>, <a class="el" href="ilist__node_8h_source.html#l00084">llvm::ilist_node_impl&lt; OptionsT &gt;::getReverseIterator()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00073">llvm::Instruction::insertBefore()</a>, <a class="el" href="CallSite_8h_source.html#l00279">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::isMustTailCall()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="BasicBlock_8h_source.html#l00324">llvm::BasicBlock::phis()</a>, <a class="el" href="IR_2CFG_8h_source.html#l00124">llvm::predecessors()</a>, <a class="el" href="BasicBlock_8h_source.html#l00275">llvm::BasicBlock::rend()</a>, <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>, <a class="el" href="HexagonShuffler_8cpp_source.html#l00221">second</a>, <a class="el" href="CallSite_8h_source.html#l00198">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::setArgument()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00318">llvm::Instruction::setDebugLoc()</a>, <a class="el" href="SmallVector_8h_source.html#l00052">llvm::SmallVectorBase::size()</a>, <a class="el" href="BasicBlockUtils_8cpp_source.html#l00366">llvm::SplitBlock()</a>, and <a class="el" href="Value_8h_source.html#l00322">llvm::Value::use_empty()</a>.</p>
+<p class="reference">References <a class="el" href="CallSiteSplitting_8cpp_source.html#l00166">addConditions()</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00241">copyMustTailReturn()</a>, <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00797">getParent()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00492">tryToSplitCallSite()</a>.</p>
 
@@ -975,21 +1040,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> tryToSplitCallSite </td>
+          <td class="memname">static bool tryToSplitCallSite </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallSite.html">CallSite</a>&#160;</td>
+          <td class="paramtype">CallSite&#160;</td>
           <td class="paramname"><em>CS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;&#160;</td>
+          <td class="paramtype">TargetTransformInfo &amp;&#160;</td>
           <td class="paramname"><em>TTI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DomTreeUpdater.html">DomTreeUpdater</a> &amp;&#160;</td>
+          <td class="paramtype">DomTreeUpdater &amp;&#160;</td>
           <td class="paramname"><em>DTU</em>&#160;</td>
         </tr>
         <tr>
@@ -1007,66 +1072,13 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CallSiteSplitting_8cpp_source.html#l00492">492</a> of file <a class="el" href="CallSiteSplitting_8cpp_source.html">CallSiteSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CallSite_8h_source.html#l00226">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::arg_size()</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00185">canSplitCallSite()</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00449">shouldSplitOnPHIPredicatedArgument()</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00460">shouldSplitOnPredicatedArgument()</a>, and <a class="el" href="CallSiteSplitting_8cpp_source.html#l00304">splitCallSite()</a>.</p>
+<p class="reference">References <a class="el" href="CallSiteSplitting_8cpp_source.html#l00185">canSplitCallSite()</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00449">shouldSplitOnPHIPredicatedArgument()</a>, <a class="el" href="CallSiteSplitting_8cpp_source.html#l00460">shouldSplitOnPredicatedArgument()</a>, and <a class="el" href="CallSiteSplitting_8cpp_source.html#l00304">splitCallSite()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00508">doCallSiteSplitting()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="aea4221b7a3bb24064b0b9b39fa24f274" name="aea4221b7a3bb24064b0b9b39fa24f274"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea4221b7a3bb24064b0b9b39fa24f274">&#9670;&nbsp;</a></span>DuplicationThreshold</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; DuplicationThreshold(&quot;callsite-<a class="el" href="CallSiteSplitting_8cpp.html#af862aa2abae546509b31878b6f55327a">splitting</a>-duplication-threshold&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Only allow <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> before a call, <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> &quot; &quot;their cost is below DuplicationThreshold&quot;), cl::init(5)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;callsite-<a class="el" href="CallSiteSplitting_8cpp.html#af862aa2abae546509b31878b6f55327a">splitting</a>-duplication-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Only allow <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> before a call, <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> &quot; &quot;their cost is below DuplicationThreshold&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(5)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Only allow instructions before a call, if their CodeSize cost is below DuplicationThreshold. </p>
-<p >Those instructions need to be duplicated in all split blocks. </p>
-
-<p class="reference">Referenced by <a class="el" href="CallSiteSplitting_8cpp_source.html#l00185">canSplitCallSite()</a>.</p>
-
-</div>
-</div>
 <a id="ac4a0cdaeacc0d086f82521095d8ea3ca" name="ac4a0cdaeacc0d086f82521095d8ea3ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac4a0cdaeacc0d086f82521095d8ea3ca">&#9670;&nbsp;</a></span>false</h2>
 
@@ -1102,7 +1114,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

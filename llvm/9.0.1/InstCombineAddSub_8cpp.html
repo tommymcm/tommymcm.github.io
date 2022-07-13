@@ -57,30 +57,71 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="InstCombineInternal_8h_source.html">InstCombineInternal.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="APFloat_8h_source.html">llvm/ADT/APFloat.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="APInt_8h_source.html">llvm/ADT/APInt.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstructionSimplify_8h_source.html">llvm/Analysis/InstructionSimplify.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Operator_8h_source.html">llvm/IR/Operator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AlignOf_8h_source.html">llvm/Support/AlignOf.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="KnownBits_8h_source.html">llvm/Support/KnownBits.h</a>&quot;</code><br />
+<code>#include &quot;llvm/ADT/APFloat.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/APInt.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/InstructionSimplify.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Operator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Support/AlignOf.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/KnownBits.h&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for InstCombineAddSub.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="InstCombineAddSub_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2InstCombine_2InstCombineAddSub_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2InstCombine_2InstCombineAddSub_8cpp" id="alib_2Transforms_2InstCombine_2InstCombineAddSub_8cpp">
+<area shape="rect" title=" " alt="" coords="2677,5,2877,45"/>
+<area shape="rect" href="InstCombineInternal_8h.html" title="This file provides internal interfaces used to implement the InstCombine." alt="" coords="2420,93,2587,119"/>
+<area shape="rect" title=" " alt="" coords="5,167,188,207"/>
+<area shape="rect" title=" " alt="" coords="213,174,429,199"/>
+<area shape="rect" title=" " alt="" coords="453,174,596,199"/>
+<area shape="rect" title=" " alt="" coords="621,174,770,199"/>
+<area shape="rect" title=" " alt="" coords="795,174,945,199"/>
+<area shape="rect" title=" " alt="" coords="969,174,1123,199"/>
+<area shape="rect" title=" " alt="" coords="4303,174,4474,199"/>
+<area shape="rect" title=" " alt="" coords="4498,174,4618,199"/>
+<area shape="rect" title=" " alt="" coords="4642,174,4813,199"/>
+<area shape="rect" title=" " alt="" coords="4837,174,5028,199"/>
+<area shape="rect" title=" " alt="" coords="5053,174,5122,199"/>
+<area shape="rect" title=" " alt="" coords="2865,93,3013,119"/>
+<area shape="rect" title=" " alt="" coords="3037,93,3169,119"/>
+<area shape="rect" title=" " alt="" coords="3194,93,3357,119"/>
+<area shape="rect" title=" " alt="" coords="3381,93,3556,119"/>
+<area shape="rect" title=" " alt="" coords="3581,93,3741,119"/>
+<area shape="rect" title=" " alt="" coords="3765,93,3905,119"/>
+<area shape="rect" title=" " alt="" coords="3930,93,4045,119"/>
+<area shape="rect" title=" " alt="" coords="4069,93,4237,119"/>
+<area shape="rect" title=" " alt="" coords="4261,93,4321,119"/>
+<area shape="rect" title=" " alt="" coords="1238,174,1393,199"/>
+<area shape="rect" title=" " alt="" coords="1417,174,1630,199"/>
+<area shape="rect" title=" " alt="" coords="1654,174,1859,199"/>
+<area shape="rect" title=" " alt="" coords="1884,174,2032,199"/>
+<area shape="rect" title=" " alt="" coords="2057,174,2211,199"/>
+<area shape="rect" title=" " alt="" coords="2236,174,2408,199"/>
+<area shape="rect" title=" " alt="" coords="2432,174,2575,199"/>
+<area shape="rect" title=" " alt="" coords="2599,174,2749,199"/>
+<area shape="rect" title=" " alt="" coords="2773,174,2933,199"/>
+<area shape="rect" title=" " alt="" coords="2957,174,3100,199"/>
+<area shape="rect" title=" " alt="" coords="3125,174,3234,199"/>
+<area shape="rect" title=" " alt="" coords="3258,174,3437,199"/>
+<area shape="rect" title=" " alt="" coords="3461,174,3623,199"/>
+<area shape="rect" title=" " alt="" coords="3648,174,3855,199"/>
+<area shape="rect" title=" " alt="" coords="3879,167,4093,207"/>
+<area shape="rect" title=" " alt="" coords="4117,167,4279,207"/>
+<area shape="rect" title=" " alt="" coords="1147,174,1214,199"/>
+</map>
 </div>
 </div>
 <p><a href="InstCombineAddSub_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -92,28 +133,28 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a71945ca56b18be50385fea02d09db49e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#a71945ca56b18be50385fea02d09db49e">checkForNegativeOperand</a> (<a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a71945ca56b18be50385fea02d09db49e"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#a71945ca56b18be50385fea02d09db49e">checkForNegativeOperand</a> (BinaryOperator &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="separator:a71945ca56b18be50385fea02d09db49e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b324b9fcea4493d60035273d9b8e085"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#a8b324b9fcea4493d60035273d9b8e085">foldNoWrapAdd</a> (<a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> &amp;Add, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a8b324b9fcea4493d60035273d9b8e085"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#a8b324b9fcea4493d60035273d9b8e085">foldNoWrapAdd</a> (BinaryOperator &amp;Add, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="memdesc:a8b324b9fcea4493d60035273d9b8e085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapping flags may allow combining constants separated by an extend.  <a href="InstCombineAddSub_8cpp.html#a8b324b9fcea4493d60035273d9b8e085">More...</a><br /></td></tr>
 <tr class="separator:a8b324b9fcea4493d60035273d9b8e085"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a1310e81cd1bccba5e81fe929fb7c87"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#a0a1310e81cd1bccba5e81fe929fb7c87">MatchMul</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *<a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="classllvm_1_1Value.html">Value</a> *&amp;Op, <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;<a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>)</td></tr>
+<tr class="memitem:a0a1310e81cd1bccba5e81fe929fb7c87"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#a0a1310e81cd1bccba5e81fe929fb7c87">MatchMul</a> (Value *E, Value *&amp;Op, APInt &amp;C)</td></tr>
 <tr class="separator:a0a1310e81cd1bccba5e81fe929fb7c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af25a30acf5336afad465652f62291a33"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#af25a30acf5336afad465652f62291a33">MatchRem</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *<a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="classllvm_1_1Value.html">Value</a> *&amp;Op, <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;<a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="classbool.html">bool</a> &amp;IsSigned)</td></tr>
+<tr class="memitem:af25a30acf5336afad465652f62291a33"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#af25a30acf5336afad465652f62291a33">MatchRem</a> (Value *E, Value *&amp;Op, APInt &amp;C, bool &amp;IsSigned)</td></tr>
 <tr class="separator:af25a30acf5336afad465652f62291a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13e47380f530d0f3667a5b22fc47833e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#a13e47380f530d0f3667a5b22fc47833e">MatchDiv</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *<a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="classllvm_1_1Value.html">Value</a> *&amp;Op, <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;<a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="classbool.html">bool</a> IsSigned)</td></tr>
+<tr class="memitem:a13e47380f530d0f3667a5b22fc47833e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#a13e47380f530d0f3667a5b22fc47833e">MatchDiv</a> (Value *E, Value *&amp;Op, APInt &amp;C, bool IsSigned)</td></tr>
 <tr class="separator:a13e47380f530d0f3667a5b22fc47833e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b1f18c3a2433393b6a48cffa8651773"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#a8b1f18c3a2433393b6a48cffa8651773">MulWillOverflow</a> (<a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;C0, <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;C1, <a class="el" href="classbool.html">bool</a> IsSigned)</td></tr>
+<tr class="memitem:a8b1f18c3a2433393b6a48cffa8651773"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#a8b1f18c3a2433393b6a48cffa8651773">MulWillOverflow</a> (APInt &amp;C0, APInt &amp;C1, bool IsSigned)</td></tr>
 <tr class="separator:a8b1f18c3a2433393b6a48cffa8651773"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9ae2e49a0bf8f52cd2bac401c001b6c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#ac9ae2e49a0bf8f52cd2bac401c001b6c">canonicalizeLowbitMask</a> (<a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:ac9ae2e49a0bf8f52cd2bac401c001b6c"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#ac9ae2e49a0bf8f52cd2bac401c001b6c">canonicalizeLowbitMask</a> (BinaryOperator &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="memdesc:ac9ae2e49a0bf8f52cd2bac401c001b6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fold (1 &lt;&lt; NBits) - 1 Into: ~(-(1 &lt;&lt; NBits)) Because a 'not' is better for bit-tracking analysis and other transforms than an 'add'.  <a href="InstCombineAddSub_8cpp.html#ac9ae2e49a0bf8f52cd2bac401c001b6c">More...</a><br /></td></tr>
 <tr class="separator:ac9ae2e49a0bf8f52cd2bac401c001b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1dbc1b5659db932b873f4e0c0e72422"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#ae1dbc1b5659db932b873f4e0c0e72422">foldToUnsignedSaturatedAdd</a> (<a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:ae1dbc1b5659db932b873f4e0c0e72422"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#ae1dbc1b5659db932b873f4e0c0e72422">foldToUnsignedSaturatedAdd</a> (BinaryOperator &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="separator:ae1dbc1b5659db932b873f4e0c0e72422"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00e3a88ec91a20ce25260bfe2ff33bcc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#a00e3a88ec91a20ce25260bfe2ff33bcc">factorizeFAddFSub</a> (<a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a00e3a88ec91a20ce25260bfe2ff33bcc"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#a00e3a88ec91a20ce25260bfe2ff33bcc">factorizeFAddFSub</a> (BinaryOperator &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="memdesc:a00e3a88ec91a20ce25260bfe2ff33bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factor a common operand out of fadd/fsub of fmul/fdiv.  <a href="InstCombineAddSub_8cpp.html#a00e3a88ec91a20ce25260bfe2ff33bcc">More...</a><br /></td></tr>
 <tr class="separator:a00e3a88ec91a20ce25260bfe2ff33bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc35dcf3d65445474e5ec9bba018583f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#acc35dcf3d65445474e5ec9bba018583f">foldFNegIntoConstant</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:acc35dcf3d65445474e5ec9bba018583f"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineAddSub_8cpp.html#acc35dcf3d65445474e5ec9bba018583f">foldFNegIntoConstant</a> (Instruction &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="memdesc:acc35dcf3d65445474e5ec9bba018583f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This eliminates floating-point negation in either 'fneg(X)' or 'fsub(-0.0, X)' form by combining into a constant operand.  <a href="InstCombineAddSub_8cpp.html#acc35dcf3d65445474e5ec9bba018583f">More...</a><br /></td></tr>
 <tr class="separator:acc35dcf3d65445474e5ec9bba018583f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -145,9 +186,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * canonicalizeLowbitMask </td>
+          <td class="memname">static Instruction * canonicalizeLowbitMask </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> &amp;&#160;</td>
+          <td class="paramtype">BinaryOperator &amp;&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
@@ -174,7 +215,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineAddSub_8cpp_source.html#l01060">1060</a> of file <a class="el" href="InstCombineAddSub_8cpp_source.html">InstCombineAddSub.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Instructions_8cpp_source.html#l02407">llvm::BinaryOperator::CreateNot()</a>, <a class="el" href="IRBuilder_8h_source.html#l01207">llvm::IRBuilder&lt; T, Inserter &gt;::CreateShl()</a>, <a class="el" href="Constants_8cpp_source.html#l00328">llvm::Constant::getAllOnesValue()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="PatternMatch_8h_source.html#l00681">llvm::PatternMatch::m_Add()</a>, <a class="el" href="PatternMatch_8h_source.html#l00308">llvm::PatternMatch::m_AllOnes()</a>, <a class="el" href="PatternMatch_8h_source.html#l00354">llvm::PatternMatch::m_One()</a>, <a class="el" href="PatternMatch_8h_source.html#l00061">llvm::PatternMatch::m_OneUse()</a>, <a class="el" href="PatternMatch_8h_source.html#l00814">llvm::PatternMatch::m_Shl()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, and <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineAddSub_8cpp_source.html#l01100">llvm::InstCombiner::visitAdd()</a>.</p>
 
@@ -190,9 +231,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * checkForNegativeOperand </td>
+          <td class="memname">static Value * checkForNegativeOperand </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> &amp;&#160;</td>
+          <td class="paramtype">BinaryOperator &amp;&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
@@ -216,7 +257,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineAddSub_8cpp_source.html#l00769">769</a> of file <a class="el" href="InstCombineAddSub_8cpp_source.html">InstCombineAddSub.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="APInt_8h_source.html#l01631">llvm::APInt::countTrailingZeros()</a>, <a class="el" href="IRBuilder_8h_source.html#l01268">llvm::IRBuilder&lt; T, Inserter &gt;::CreateAnd()</a>, <a class="el" href="IRBuilder_8h_source.html#l01294">llvm::IRBuilder&lt; T, Inserter &gt;::CreateOr()</a>, <a class="el" href="IRBuilder_8h_source.html#l01135">llvm::IRBuilder&lt; T, Inserter &gt;::CreateSub()</a>, <a class="el" href="Value_8h_source.html#l00412">llvm::Value::hasOneUse()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="PatternMatch_8h_source.html#l00681">llvm::PatternMatch::m_Add()</a>, <a class="el" href="PatternMatch_8h_source.html#l00796">llvm::PatternMatch::m_And()</a>, <a class="el" href="PatternMatch_8h_source.html#l00175">llvm::PatternMatch::m_APInt()</a>, <a class="el" href="PatternMatch_8h_source.html#l00354">llvm::PatternMatch::m_One()</a>, <a class="el" href="PatternMatch_8h_source.html#l00802">llvm::PatternMatch::m_Or()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00808">llvm::PatternMatch::m_Xor()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, <a class="el" href="BitVector_8h_source.html#l00940">std::swap()</a>, <a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>, <a class="el" href="OcamlGCPrinter_8cpp.html#a93c84752b140ee7b31646fc34cfa0dc2">Y</a>, and <a class="el" href="namespacellvm.html#aa100a124c9d33561b0950011928aae00a21c2e59531c8710156d34a3c30ac81d5">llvm::Z</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>, and <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineAddSub_8cpp_source.html#l01100">llvm::InstCombiner::visitAdd()</a>.</p>
 
@@ -232,9 +273,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * factorizeFAddFSub </td>
+          <td class="memname">static Instruction * factorizeFAddFSub </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> &amp;&#160;</td>
+          <td class="paramtype">BinaryOperator &amp;&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
@@ -260,7 +301,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineAddSub_8cpp_source.html#l01312">1312</a> of file <a class="el" href="InstCombineAddSub_8cpp_source.html">InstCombineAddSub.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="IRBuilder_8h_source.html#l01346">llvm::IRBuilder&lt; T, Inserter &gt;::CreateFAddFMF()</a>, <a class="el" href="InstrTypes_8h_source.html#l00273">llvm::BinaryOperator::CreateFDivFMF()</a>, <a class="el" href="InstrTypes_8h_source.html#l00268">llvm::BinaryOperator::CreateFMulFMF()</a>, <a class="el" href="IRBuilder_8h_source.html#l01371">llvm::IRBuilder&lt; T, Inserter &gt;::CreateFSubFMF()</a>, <a class="el" href="Instructions_8h_source.html#l00730">llvm::AtomicRMWInst::FAdd</a>, <a class="el" href="Instructions_8h_source.html#l00733">llvm::AtomicRMWInst::FSub</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="PatternMatch_8h_source.html#l00179">llvm::PatternMatch::m_APFloat()</a>, <a class="el" href="PatternMatch_8h_source.html#l01771">llvm::PatternMatch::m_c_FMul()</a>, <a class="el" href="PatternMatch_8h_source.html#l00772">llvm::PatternMatch::m_FDiv()</a>, <a class="el" href="PatternMatch_8h_source.html#l00754">llvm::PatternMatch::m_FMul()</a>, <a class="el" href="PatternMatch_8h_source.html#l00061">llvm::PatternMatch::m_OneUse()</a>, <a class="el" href="PatternMatch_8h_source.html#l00541">llvm::PatternMatch::m_Specific()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, <a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>, <a class="el" href="OcamlGCPrinter_8cpp.html#a93c84752b140ee7b31646fc34cfa0dc2">Y</a>, and <a class="el" href="namespacellvm.html#aa100a124c9d33561b0950011928aae00a21c2e59531c8710156d34a3c30ac81d5">llvm::Z</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>, and <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineAddSub_8cpp_source.html#l01350">llvm::InstCombiner::visitFAdd()</a>, and <a class="el" href="InstCombineAddSub_8cpp_source.html#l01888">llvm::InstCombiner::visitFSub()</a>.</p>
 
@@ -276,9 +317,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * foldFNegIntoConstant </td>
+          <td class="memname">static Instruction * foldFNegIntoConstant </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &amp;&#160;</td>
+          <td class="paramtype">Instruction &amp;&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -294,7 +335,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineAddSub_8cpp_source.html#l01847">1847</a> of file <a class="el" href="InstCombineAddSub_8cpp_source.html">InstCombineAddSub.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="InstrTypes_8h_source.html#l00273">llvm::BinaryOperator::CreateFDivFMF()</a>, <a class="el" href="InstrTypes_8h_source.html#l00268">llvm::BinaryOperator::CreateFMulFMF()</a>, <a class="el" href="Constants_8cpp_source.html#l02216">llvm::ConstantExpr::getFNeg()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="PatternMatch_8h_source.html#l00089">llvm::PatternMatch::m_Constant()</a>, <a class="el" href="PatternMatch_8h_source.html#l00772">llvm::PatternMatch::m_FDiv()</a>, <a class="el" href="PatternMatch_8h_source.html#l00754">llvm::PatternMatch::m_FMul()</a>, <a class="el" href="PatternMatch_8h_source.html#l00736">llvm::PatternMatch::m_FNeg()</a>, <a class="el" href="PatternMatch_8h_source.html#l00061">llvm::PatternMatch::m_OneUse()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, and <a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineAddSub_8cpp_source.html#l01868">llvm::InstCombiner::visitFNeg()</a>, and <a class="el" href="InstCombineAddSub_8cpp_source.html#l01888">llvm::InstCombiner::visitFSub()</a>.</p>
 
@@ -310,9 +351,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * foldNoWrapAdd </td>
+          <td class="memname">static Instruction * foldNoWrapAdd </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> &amp;&#160;</td>
+          <td class="paramtype">BinaryOperator &amp;&#160;</td>
           <td class="paramname"><em>Add</em>, </td>
         </tr>
         <tr>
@@ -338,7 +379,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineAddSub_8cpp_source.html#l00826">826</a> of file <a class="el" href="InstCombineAddSub_8cpp_source.html">InstCombineAddSub.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="IRBuilder_8h_source.html#l01131">llvm::IRBuilder&lt; T, Inserter &gt;::CreateNUWAdd()</a>, <a class="el" href="IRBuilder_8h_source.html#l01882">llvm::IRBuilder&lt; T, Inserter &gt;::CreateSExt()</a>, <a class="el" href="IRBuilder_8h_source.html#l01878">llvm::IRBuilder&lt; T, Inserter &gt;::CreateZExt()</a>, <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="Constants_8cpp_source.html#l02228">llvm::ConstantExpr::getAdd()</a>, <a class="el" href="APInt_8h_source.html#l01508">llvm::APInt::getBitWidth()</a>, <a class="el" href="Constants_8cpp_source.html#l01660">llvm::ConstantExpr::getSExt()</a>, <a class="el" href="Constants_8cpp_source.html#l01674">llvm::ConstantExpr::getZExt()</a>, <a class="el" href="APInt_8h_source.html#l00363">llvm::APInt::isNegative()</a>, <a class="el" href="PatternMatch_8h_source.html#l00175">llvm::PatternMatch::m_APInt()</a>, <a class="el" href="PatternMatch_8h_source.html#l00089">llvm::PatternMatch::m_Constant()</a>, <a class="el" href="PatternMatch_8h_source.html#l00859">llvm::PatternMatch::m_NSWAdd()</a>, <a class="el" href="PatternMatch_8h_source.html#l00892">llvm::PatternMatch::m_NUWAdd()</a>, <a class="el" href="PatternMatch_8h_source.html#l00061">llvm::PatternMatch::m_OneUse()</a>, <a class="el" href="PatternMatch_8h_source.html#l01215">llvm::PatternMatch::m_SExt()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l01221">llvm::PatternMatch::m_ZExt()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, <a class="el" href="APInt_8cpp_source.html#l00836">llvm::APInt::sext()</a>, <a class="el" href="APInt_8h_source.html#l01308">llvm::APInt::sge()</a>, <a class="el" href="APInt_8cpp_source.html#l00813">llvm::APInt::trunc()</a>, and <a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>.</p>
+<p class="reference">References <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineAddSub_8cpp_source.html#l01100">llvm::InstCombiner::visitAdd()</a>.</p>
 
@@ -354,9 +395,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * foldToUnsignedSaturatedAdd </td>
+          <td class="memname">static Instruction * foldToUnsignedSaturatedAdd </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BinaryOperator.html">BinaryOperator</a> &amp;&#160;</td>
+          <td class="paramtype">BinaryOperator &amp;&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -370,7 +411,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineAddSub_8cpp_source.html#l01078">1078</a> of file <a class="el" href="InstCombineAddSub_8cpp_source.html">InstCombineAddSub.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="Instructions_8h_source.html#l01437">llvm::CallInst::Create()</a>, <a class="el" href="IntervalMap_8h_source.html#l00526">llvm::IntervalMapImpl::NodeRef::get()</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="PatternMatch_8h_source.html#l00681">llvm::PatternMatch::m_Add()</a>, <a class="el" href="PatternMatch_8h_source.html#l00175">llvm::PatternMatch::m_APInt()</a>, <a class="el" href="PatternMatch_8h_source.html#l01689">llvm::PatternMatch::m_c_Add()</a>, <a class="el" href="PatternMatch_8h_source.html#l01751">llvm::PatternMatch::m_c_UMin()</a>, <a class="el" href="PatternMatch_8h_source.html#l00554">llvm::PatternMatch::m_Deferred()</a>, <a class="el" href="PatternMatch_8h_source.html#l01732">llvm::PatternMatch::m_Not()</a>, <a class="el" href="PatternMatch_8h_source.html#l01417">llvm::PatternMatch::m_UMin()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, <a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>, and <a class="el" href="OcamlGCPrinter_8cpp.html#a93c84752b140ee7b31646fc34cfa0dc2">Y</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>, and <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineAddSub_8cpp_source.html#l01100">llvm::InstCombiner::visitAdd()</a>.</p>
 
@@ -386,27 +427,27 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> MatchDiv </td>
+          <td class="memname">static bool MatchDiv </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>E</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&amp;&#160;</td>
+          <td class="paramtype">Value *&amp;&#160;</td>
           <td class="paramname"><em>Op</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">APInt &amp;&#160;</td>
           <td class="paramname"><em>C</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>IsSigned</em>&#160;</td>
         </tr>
         <tr>
@@ -424,8 +465,6 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineAddSub_8cpp_source.html#l00991">991</a> of file <a class="el" href="InstCombineAddSub_8cpp_source.html">InstCombineAddSub.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="APInt_8h_source.html#l01508">llvm::APInt::getBitWidth()</a>, <a class="el" href="PatternMatch_8h_source.html#l00175">llvm::PatternMatch::m_APInt()</a>, <a class="el" href="PatternMatch_8h_source.html#l00820">llvm::PatternMatch::m_LShr()</a>, <a class="el" href="PatternMatch_8h_source.html#l00766">llvm::PatternMatch::m_SDiv()</a>, <a class="el" href="PatternMatch_8h_source.html#l00760">llvm::PatternMatch::m_UDiv()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, and <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>.</p>
-
 </div>
 </div>
 <a id="a0a1310e81cd1bccba5e81fe929fb7c87" name="a0a1310e81cd1bccba5e81fe929fb7c87"></a>
@@ -438,21 +477,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> MatchMul </td>
+          <td class="memname">static bool MatchMul </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>E</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&amp;&#160;</td>
+          <td class="paramtype">Value *&amp;&#160;</td>
           <td class="paramname"><em>Op</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">APInt &amp;&#160;</td>
           <td class="paramname"><em>C</em>&#160;</td>
         </tr>
         <tr>
@@ -470,8 +509,6 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineAddSub_8cpp_source.html#l00951">951</a> of file <a class="el" href="InstCombineAddSub_8cpp_source.html">InstCombineAddSub.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="APInt_8h_source.html#l01508">llvm::APInt::getBitWidth()</a>, <a class="el" href="PatternMatch_8h_source.html#l00175">llvm::PatternMatch::m_APInt()</a>, <a class="el" href="PatternMatch_8h_source.html#l00748">llvm::PatternMatch::m_Mul()</a>, <a class="el" href="PatternMatch_8h_source.html#l00814">llvm::PatternMatch::m_Shl()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, and <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>.</p>
-
 </div>
 </div>
 <a id="af25a30acf5336afad465652f62291a33" name="af25a30acf5336afad465652f62291a33"></a>
@@ -484,27 +521,27 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> MatchRem </td>
+          <td class="memname">static bool MatchRem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>E</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&amp;&#160;</td>
+          <td class="paramtype">Value *&amp;&#160;</td>
           <td class="paramname"><em>Op</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">APInt &amp;&#160;</td>
           <td class="paramname"><em>C</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a> &amp;&#160;</td>
+          <td class="paramtype">bool &amp;&#160;</td>
           <td class="paramname"><em>IsSigned</em>&#160;</td>
         </tr>
         <tr>
@@ -522,8 +559,6 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineAddSub_8cpp_source.html#l00969">969</a> of file <a class="el" href="InstCombineAddSub_8cpp_source.html">InstCombineAddSub.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="PatternMatch_8h_source.html#l00796">llvm::PatternMatch::m_And()</a>, <a class="el" href="PatternMatch_8h_source.html#l00175">llvm::PatternMatch::m_APInt()</a>, <a class="el" href="PatternMatch_8h_source.html#l00784">llvm::PatternMatch::m_SRem()</a>, <a class="el" href="PatternMatch_8h_source.html#l00778">llvm::PatternMatch::m_URem()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, and <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>.</p>
-
 </div>
 </div>
 <a id="a8b1f18c3a2433393b6a48cffa8651773" name="a8b1f18c3a2433393b6a48cffa8651773"></a>
@@ -536,21 +571,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> MulWillOverflow </td>
+          <td class="memname">static bool MulWillOverflow </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">APInt &amp;&#160;</td>
           <td class="paramname"><em>C0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">APInt &amp;&#160;</td>
           <td class="paramname"><em>C1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>IsSigned</em>&#160;</td>
         </tr>
         <tr>
@@ -568,14 +603,12 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineAddSub_8cpp_source.html#l01012">1012</a> of file <a class="el" href="InstCombineAddSub_8cpp_source.html">InstCombineAddSub.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="APInt_8cpp_source.html#l01911">llvm::APInt::smul_ov()</a>, and <a class="el" href="APInt_8cpp_source.html#l01921">llvm::APInt::umul_ov()</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

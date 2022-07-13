@@ -61,43 +61,91 @@ $(function() {
 
 <p>This file provides internal interfaces used to implement the InstCombine.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="ArrayRef_8h_source.html">llvm/ADT/ArrayRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstructionSimplify_8h_source.html">llvm/Analysis/InstructionSimplify.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetFolder_8h_source.html">llvm/Analysis/TargetFolder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstVisitor_8h_source.html">llvm/IR/InstVisitor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Use_8h_source.html">llvm/IR/Use.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Compiler_8h_source.html">llvm/Support/Compiler.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="KnownBits_8h_source.html">llvm/Support/KnownBits.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstCombineWorklist_8h_source.html">llvm/Transforms/InstCombine/InstCombineWorklist.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/InstructionSimplify.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetFolder.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstVisitor.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Use.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Compiler.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/KnownBits.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/InstCombine/InstCombineWorklist.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for InstCombineInternal.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="InstCombineInternal_8h__incl.png" border="0" usemap="#alib_2Transforms_2InstCombine_2InstCombineInternal_8h" alt=""/></div>
+<map name="alib_2Transforms_2InstCombine_2InstCombineInternal_8h" id="alib_2Transforms_2InstCombine_2InstCombineInternal_8h">
+<area shape="rect" title="This file provides internal interfaces used to implement the InstCombine." alt="" coords="2572,5,2772,45"/>
+<area shape="rect" title=" " alt="" coords="5,101,160,126"/>
+<area shape="rect" title=" " alt="" coords="184,101,397,126"/>
+<area shape="rect" title=" " alt="" coords="422,93,605,133"/>
+<area shape="rect" title=" " alt="" coords="629,101,835,126"/>
+<area shape="rect" title=" " alt="" coords="859,101,1075,126"/>
+<area shape="rect" title=" " alt="" coords="1099,101,1247,126"/>
+<area shape="rect" title=" " alt="" coords="1272,101,1427,126"/>
+<area shape="rect" title=" " alt="" coords="1451,101,1594,126"/>
+<area shape="rect" title=" " alt="" coords="1619,101,1768,126"/>
+<area shape="rect" title=" " alt="" coords="1793,101,1965,126"/>
+<area shape="rect" title=" " alt="" coords="1989,101,2131,126"/>
+<area shape="rect" title=" " alt="" coords="2156,101,2305,126"/>
+<area shape="rect" title=" " alt="" coords="2330,101,2481,126"/>
+<area shape="rect" title=" " alt="" coords="2505,101,2658,126"/>
+<area shape="rect" title=" " alt="" coords="2683,101,2843,126"/>
+<area shape="rect" title=" " alt="" coords="2867,101,3010,126"/>
+<area shape="rect" title=" " alt="" coords="3035,101,3205,126"/>
+<area shape="rect" title=" " alt="" coords="3229,101,3339,126"/>
+<area shape="rect" title=" " alt="" coords="3363,101,3483,126"/>
+<area shape="rect" title=" " alt="" coords="3507,101,3677,126"/>
+<area shape="rect" title=" " alt="" coords="3701,101,3880,126"/>
+<area shape="rect" title=" " alt="" coords="3904,101,4067,126"/>
+<area shape="rect" title=" " alt="" coords="4091,101,4282,126"/>
+<area shape="rect" title=" " alt="" coords="4306,101,4513,126"/>
+<area shape="rect" title=" " alt="" coords="4537,93,4751,133"/>
+<area shape="rect" title=" " alt="" coords="4775,93,4937,133"/>
+<area shape="rect" title=" " alt="" coords="4961,101,5031,126"/>
+<area shape="rect" title=" " alt="" coords="5055,101,5121,126"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="InstCombineInternal_8h__dep__incl.png" border="0" usemap="#alib_2Transforms_2InstCombine_2InstCombineInternal_8hdep" alt=""/></div>
+<map name="alib_2Transforms_2InstCombine_2InstCombineInternal_8hdep" id="alib_2Transforms_2InstCombine_2InstCombineInternal_8hdep">
+<area shape="rect" title="This file provides internal interfaces used to implement the InstCombine." alt="" coords="1512,5,1712,45"/>
+<area shape="rect" href="InstCombineAddSub_8cpp.html" title=" " alt="" coords="5,93,205,133"/>
+<area shape="rect" href="InstCombineAndOrXor_8cpp.html" title=" " alt="" coords="229,93,429,133"/>
+<area shape="rect" href="InstCombineAtomicRMW_8cpp.html" title=" " alt="" coords="454,93,669,133"/>
+<area shape="rect" href="InstCombineCalls_8cpp.html" title=" " alt="" coords="693,93,893,133"/>
+<area shape="rect" href="InstCombineCasts_8cpp.html" title=" " alt="" coords="917,93,1117,133"/>
+<area shape="rect" href="InstCombineCompares_8cpp.html" title=" " alt="" coords="1142,93,1343,133"/>
+<area shape="rect" href="InstCombineLoadStoreAlloca_8cpp.html" title=" " alt="" coords="1368,93,1608,133"/>
+<area shape="rect" href="InstCombineMulDivRem_8cpp.html" title=" " alt="" coords="1632,93,1843,133"/>
+<area shape="rect" href="InstCombinePHI_8cpp.html" title=" " alt="" coords="1867,93,2067,133"/>
+<area shape="rect" href="InstCombineSelect_8cpp.html" title=" " alt="" coords="2091,93,2291,133"/>
+<area shape="rect" href="InstCombineShifts_8cpp.html" title=" " alt="" coords="2315,93,2515,133"/>
+<area shape="rect" href="InstCombineSimplifyDemanded_8cpp.html" title=" " alt="" coords="2539,93,2797,133"/>
+<area shape="rect" href="InstCombineVectorOps_8cpp.html" title=" " alt="" coords="2822,93,3023,133"/>
+<area shape="rect" href="InstructionCombining_8cpp.html" title=" " alt="" coords="3048,93,3248,133"/>
+</map>
 </div>
 </div>
 <p><a href="InstCombineInternal_8h_source.html">Go to the source code of this file.</a></p>
@@ -111,7 +159,6 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -121,25 +168,25 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7618d7ef63ad3ee589da4e8c4c6e8d35"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a7618d7ef63ad3ee589da4e8c4c6e8d35">llvm::getComplexity</a> (Value *V)</td></tr>
+<tr class="memitem:a7618d7ef63ad3ee589da4e8c4c6e8d35"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a7618d7ef63ad3ee589da4e8c4c6e8d35">llvm::getComplexity</a> (Value *V)</td></tr>
 <tr class="memdesc:a7618d7ef63ad3ee589da4e8c4c6e8d35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign a complexity or rank value to LLVM Values.  <a href="namespacellvm.html#a7618d7ef63ad3ee589da4e8c4c6e8d35">More...</a><br /></td></tr>
 <tr class="separator:a7618d7ef63ad3ee589da4e8c4c6e8d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c4d96e5803a8144abd5ce341a9327ed"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a3c4d96e5803a8144abd5ce341a9327ed">llvm::isCanonicalPredicate</a> (CmpInst::Predicate Pred)</td></tr>
+<tr class="memitem:a3c4d96e5803a8144abd5ce341a9327ed"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a3c4d96e5803a8144abd5ce341a9327ed">llvm::isCanonicalPredicate</a> (CmpInst::Predicate Pred)</td></tr>
 <tr class="memdesc:a3c4d96e5803a8144abd5ce341a9327ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predicate canonicalization reduces the number of patterns that need to be matched by other transforms.  <a href="namespacellvm.html#a3c4d96e5803a8144abd5ce341a9327ed">More...</a><br /></td></tr>
 <tr class="separator:a3c4d96e5803a8144abd5ce341a9327ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac080ed51ec7937e08e23d8f331727cde"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#ac080ed51ec7937e08e23d8f331727cde">llvm::peekThroughBitcast</a> (Value *V, <a class="el" href="classbool.html">bool</a> OneUseOnly=false)</td></tr>
+<tr class="memitem:ac080ed51ec7937e08e23d8f331727cde"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#ac080ed51ec7937e08e23d8f331727cde">llvm::peekThroughBitcast</a> (Value *V, bool OneUseOnly=false)</td></tr>
 <tr class="memdesc:ac080ed51ec7937e08e23d8f331727cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the source operand of a potentially bitcasted value while optionally checking if it has one use.  <a href="namespacellvm.html#ac080ed51ec7937e08e23d8f331727cde">More...</a><br /></td></tr>
 <tr class="separator:ac080ed51ec7937e08e23d8f331727cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81d480f8e646f08c9afa58ae873ff76c"><td class="memItemLeft" align="right" valign="top">static Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a81d480f8e646f08c9afa58ae873ff76c">llvm::AddOne</a> (Constant *<a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>)</td></tr>
-<tr class="memdesc:a81d480f8e646f08c9afa58ae873ff76c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add one to a <a class="el" href="classllvm_1_1Constant.html" title="This is an important base class in LLVM.">Constant</a>.  <a href="namespacellvm.html#a81d480f8e646f08c9afa58ae873ff76c">More...</a><br /></td></tr>
+<tr class="memitem:a81d480f8e646f08c9afa58ae873ff76c"><td class="memItemLeft" align="right" valign="top">static Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a81d480f8e646f08c9afa58ae873ff76c">llvm::AddOne</a> (Constant *C)</td></tr>
+<tr class="memdesc:a81d480f8e646f08c9afa58ae873ff76c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add one to a Constant.  <a href="namespacellvm.html#a81d480f8e646f08c9afa58ae873ff76c">More...</a><br /></td></tr>
 <tr class="separator:a81d480f8e646f08c9afa58ae873ff76c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fef3fe0c025493516bbef8e8669a49c"><td class="memItemLeft" align="right" valign="top">static Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a7fef3fe0c025493516bbef8e8669a49c">llvm::SubOne</a> (Constant *<a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>)</td></tr>
-<tr class="memdesc:a7fef3fe0c025493516bbef8e8669a49c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract one from a <a class="el" href="classllvm_1_1Constant.html" title="This is an important base class in LLVM.">Constant</a>.  <a href="namespacellvm.html#a7fef3fe0c025493516bbef8e8669a49c">More...</a><br /></td></tr>
+<tr class="memitem:a7fef3fe0c025493516bbef8e8669a49c"><td class="memItemLeft" align="right" valign="top">static Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a7fef3fe0c025493516bbef8e8669a49c">llvm::SubOne</a> (Constant *C)</td></tr>
+<tr class="memdesc:a7fef3fe0c025493516bbef8e8669a49c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract one from a Constant.  <a href="namespacellvm.html#a7fef3fe0c025493516bbef8e8669a49c">More...</a><br /></td></tr>
 <tr class="separator:a7fef3fe0c025493516bbef8e8669a49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2566394b209793ffadf766c51ea15c3e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a2566394b209793ffadf766c51ea15c3e">llvm::IsFreeToInvert</a> (Value *V, <a class="el" href="classbool.html">bool</a> WillInvertAllUses)</td></tr>
+<tr class="memitem:a2566394b209793ffadf766c51ea15c3e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a2566394b209793ffadf766c51ea15c3e">llvm::IsFreeToInvert</a> (Value *V, bool WillInvertAllUses)</td></tr>
 <tr class="memdesc:a2566394b209793ffadf766c51ea15c3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the specified value is free to invert (apply ~ to).  <a href="namespacellvm.html#a2566394b209793ffadf766c51ea15c3e">More...</a><br /></td></tr>
 <tr class="separator:a2566394b209793ffadf766c51ea15c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ac068a522fd126a1a084eff54b1ae55"><td class="memItemLeft" align="right" valign="top">static Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a3ac068a522fd126a1a084eff54b1ae55">llvm::getSafeVectorConstantForBinop</a> (BinaryOperator::BinaryOps Opcode, Constant *In, <a class="el" href="classbool.html">bool</a> IsRHSConstant)</td></tr>
+<tr class="memitem:a3ac068a522fd126a1a084eff54b1ae55"><td class="memItemLeft" align="right" valign="top">static Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a3ac068a522fd126a1a084eff54b1ae55">llvm::getSafeVectorConstantForBinop</a> (BinaryOperator::BinaryOps Opcode, Constant *In, bool IsRHSConstant)</td></tr>
 <tr class="memdesc:a3ac068a522fd126a1a084eff54b1ae55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Some binary operators require special handling to avoid poison and undefined behavior.  <a href="namespacellvm.html#a3ac068a522fd126a1a084eff54b1ae55">More...</a><br /></td></tr>
 <tr class="separator:a3ac068a522fd126a1a084eff54b1ae55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -167,7 +214,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

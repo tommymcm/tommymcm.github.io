@@ -55,45 +55,76 @@ $(function() {
   <div class="headertitle"><div class="title">LTOModule.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="LTOModule_8h_source.html">llvm/LTO/legacy/LTOModule.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Triple_8h_source.html">llvm/ADT/Triple.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BitcodeReader_8h_source.html">llvm/Bitcode/BitcodeReader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetSubtargetInfo_8h_source.html">llvm/CodeGen/TargetSubtargetInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Mangler_8h_source.html">llvm/IR/Mangler.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MCExpr_8h_source.html">llvm/MC/MCExpr.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MCInst_8h_source.html">llvm/MC/MCInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MCAsmParser_8h_source.html">llvm/MC/MCParser/MCAsmParser.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MCSection_8h_source.html">llvm/MC/MCSection.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MCSubtargetInfo_8h_source.html">llvm/MC/MCSubtargetInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MCSymbol_8h_source.html">llvm/MC/MCSymbol.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SubtargetFeature_8h_source.html">llvm/MC/SubtargetFeature.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IRObjectFile_8h_source.html">llvm/Object/IRObjectFile.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ObjectFile_8h_source.html">llvm/Object/ObjectFile.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="FileSystem_8h_source.html">llvm/Support/FileSystem.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Host_8h_source.html">llvm/Support/Host.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MemoryBuffer_8h_source.html">llvm/Support/MemoryBuffer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Path_8h_source.html">llvm/Support/Path.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Support_2SourceMgr_8h_source.html">llvm/Support/SourceMgr.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetRegistry_8h_source.html">llvm/Support/TargetRegistry.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetSelect_8h_source.html">llvm/Support/TargetSelect.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetLoweringObjectFile_8h_source.html">llvm/Target/TargetLoweringObjectFile.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalStatus_8h_source.html">llvm/Transforms/Utils/GlobalStatus.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/LTO/legacy/LTOModule.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Triple.h&quot;</code><br />
+<code>#include &quot;llvm/Bitcode/BitcodeReader.h&quot;</code><br />
+<code>#include &quot;llvm/CodeGen/TargetSubtargetInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Mangler.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/MC/MCExpr.h&quot;</code><br />
+<code>#include &quot;llvm/MC/MCInst.h&quot;</code><br />
+<code>#include &quot;llvm/MC/MCParser/MCAsmParser.h&quot;</code><br />
+<code>#include &quot;llvm/MC/MCSection.h&quot;</code><br />
+<code>#include &quot;llvm/MC/MCSubtargetInfo.h&quot;</code><br />
+<code>#include &quot;llvm/MC/MCSymbol.h&quot;</code><br />
+<code>#include &quot;llvm/MC/SubtargetFeature.h&quot;</code><br />
+<code>#include &quot;llvm/Object/IRObjectFile.h&quot;</code><br />
+<code>#include &quot;llvm/Object/ObjectFile.h&quot;</code><br />
+<code>#include &quot;llvm/Support/FileSystem.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Host.h&quot;</code><br />
+<code>#include &quot;llvm/Support/MemoryBuffer.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Path.h&quot;</code><br />
+<code>#include &quot;llvm/Support/SourceMgr.h&quot;</code><br />
+<code>#include &quot;llvm/Support/TargetRegistry.h&quot;</code><br />
+<code>#include &quot;llvm/Support/TargetSelect.h&quot;</code><br />
+<code>#include &quot;llvm/Target/TargetLoweringObjectFile.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/GlobalStatus.h&quot;</code><br />
 <code>#include &lt;system_error&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LTOModule.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="LTOModule_8cpp__incl.png" border="0" usemap="#alib_2LTO_2LTOModule_8cpp" alt=""/></div>
+<map name="alib_2LTO_2LTOModule_8cpp" id="alib_2LTO_2LTOModule_8cpp">
+<area shape="rect" title=" " alt="" coords="2645,5,2815,31"/>
+<area shape="rect" title=" " alt="" coords="5,86,220,111"/>
+<area shape="rect" title=" " alt="" coords="245,86,378,111"/>
+<area shape="rect" title=" " alt="" coords="403,86,617,111"/>
+<area shape="rect" title=" " alt="" coords="642,79,863,119"/>
+<area shape="rect" title=" " alt="" coords="887,86,1037,111"/>
+<area shape="rect" title=" " alt="" coords="1061,86,1231,111"/>
+<area shape="rect" title=" " alt="" coords="1255,86,1391,111"/>
+<area shape="rect" title=" " alt="" coords="1415,86,1562,111"/>
+<area shape="rect" title=" " alt="" coords="1587,86,1719,111"/>
+<area shape="rect" title=" " alt="" coords="1743,86,1885,111"/>
+<area shape="rect" title=" " alt="" coords="1909,86,2047,111"/>
+<area shape="rect" title=" " alt="" coords="2071,86,2317,111"/>
+<area shape="rect" title=" " alt="" coords="2341,86,2503,111"/>
+<area shape="rect" title=" " alt="" coords="2527,86,2728,111"/>
+<area shape="rect" title=" " alt="" coords="2753,86,2915,111"/>
+<area shape="rect" title=" " alt="" coords="2940,86,3144,111"/>
+<area shape="rect" title=" " alt="" coords="3168,86,3359,111"/>
+<area shape="rect" title=" " alt="" coords="3383,86,3562,111"/>
+<area shape="rect" title=" " alt="" coords="3587,86,3780,111"/>
+<area shape="rect" title=" " alt="" coords="3804,86,3955,111"/>
+<area shape="rect" title=" " alt="" coords="3979,86,4193,111"/>
+<area shape="rect" title=" " alt="" coords="4217,86,4366,111"/>
+<area shape="rect" title=" " alt="" coords="4390,86,4579,111"/>
+<area shape="rect" title=" " alt="" coords="4603,86,4817,111"/>
+<area shape="rect" title=" " alt="" coords="4841,86,5043,111"/>
+<area shape="rect" title=" " alt="" coords="5067,79,5265,119"/>
+<area shape="rect" title=" " alt="" coords="5289,79,5451,119"/>
+<area shape="rect" title=" " alt="" coords="5475,86,5583,111"/>
+</map>
 </div>
 </div>
 <p><a href="LTOModule_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afc4790b3e3d093c39ef63dbf4f840b8f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1ErrorOr.html">ErrorOr</a>&lt; std::unique_ptr&lt; <a class="el" href="classllvm_1_1Module.html">Module</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTOModule_8cpp.html#afc4790b3e3d093c39ef63dbf4f840b8f">parseBitcodeFileImpl</a> (<a class="el" href="classllvm_1_1MemoryBufferRef.html">MemoryBufferRef</a> Buffer, <a class="el" href="classllvm_1_1LLVMContext.html">LLVMContext</a> &amp;<a class="el" href="NVVMIntrRange_8cpp.html#afad351d7bf10ac0446b64e7827634e94">Context</a>, <a class="el" href="classbool.html">bool</a> ShouldBeLazy)</td></tr>
+<tr class="memitem:afc4790b3e3d093c39ef63dbf4f840b8f"><td class="memItemLeft" align="right" valign="top">static ErrorOr&lt; std::unique_ptr&lt; Module &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LTOModule_8cpp.html#afc4790b3e3d093c39ef63dbf4f840b8f">parseBitcodeFileImpl</a> (MemoryBufferRef Buffer, LLVMContext &amp;Context, bool ShouldBeLazy)</td></tr>
 <tr class="separator:afc4790b3e3d093c39ef63dbf4f840b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -107,21 +138,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1ErrorOr.html">ErrorOr</a>&lt; std::unique_ptr&lt; <a class="el" href="classllvm_1_1Module.html">Module</a> &gt; &gt; parseBitcodeFileImpl </td>
+          <td class="memname">static ErrorOr&lt; std::unique_ptr&lt; Module &gt; &gt; parseBitcodeFileImpl </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1MemoryBufferRef.html">MemoryBufferRef</a>&#160;</td>
+          <td class="paramtype">MemoryBufferRef&#160;</td>
           <td class="paramname"><em>Buffer</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1LLVMContext.html">LLVMContext</a> &amp;&#160;</td>
+          <td class="paramtype">LLVMContext &amp;&#160;</td>
           <td class="paramname"><em>Context</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>ShouldBeLazy</em>&#160;</td>
         </tr>
         <tr>
@@ -139,14 +170,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LTOModule_8cpp_source.html#l00169">169</a> of file <a class="el" href="LTOModule_8cpp_source.html">LTOModule.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="NVVMIntrRange_8cpp_source.html#l00071">Context</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="LLVMContext_8cpp_source.html#l00258">llvm::LLVMContext::emitError()</a>, <a class="el" href="Testing_2Support_2Error_8cpp_source.html#l00093">llvm::errorToErrorCode()</a>, <a class="el" href="BitcodeReader_8h_source.html#l00041">llvm::expectedToErrorOrAndEmitErrors()</a>, <a class="el" href="IRObjectFile_8cpp_source.html#l00090">llvm::object::IRObjectFile::findBitcodeInMemBuffer()</a>, <a class="el" href="BitcodeReader_8cpp_source.html#l06610">llvm::getLazyBitcodeModule()</a>, <a class="el" href="BitcodeReader_8cpp_source.html#l06636">llvm::parseBitcodeFile()</a>, and <a class="el" href="llvm_2Support_2Error_8h_source.html#l00552">llvm::Expected&lt; T &gt;::takeError()</a>.</p>
+<p class="reference">References <a class="el" href="Error_8cpp_source.html#l00093">llvm::errorToErrorCode()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:15 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

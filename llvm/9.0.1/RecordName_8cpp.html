@@ -56,34 +56,45 @@ $(function() {
   <div class="headertitle"><div class="title">RecordName.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="RecordName_8h_source.html">llvm/DebugInfo/CodeView/RecordName.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallString_8h_source.html">llvm/ADT/SmallString.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CVSymbolVisitor_8h_source.html">llvm/DebugInfo/CodeView/CVSymbolVisitor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CVTypeVisitor_8h_source.html">llvm/DebugInfo/CodeView/CVTypeVisitor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SymbolRecordMapping_8h_source.html">llvm/DebugInfo/CodeView/SymbolRecordMapping.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TypeVisitorCallbacks_8h_source.html">llvm/DebugInfo/CodeView/TypeVisitorCallbacks.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="FormatVariadic_8h_source.html">llvm/Support/FormatVariadic.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/DebugInfo/CodeView/RecordName.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallString.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/CodeView/CVSymbolVisitor.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/CodeView/CVTypeVisitor.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/CodeView/SymbolRecordMapping.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/CodeView/TypeVisitorCallbacks.h&quot;</code><br />
+<code>#include &quot;llvm/Support/FormatVariadic.h&quot;</code><br />
 <code>#include &quot;llvm/DebugInfo/CodeView/CodeViewTypes.def&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for RecordName.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="RecordName_8cpp__incl.png" border="0" usemap="#alib_2DebugInfo_2CodeView_2RecordName_8cpp" alt=""/></div>
+<map name="alib_2DebugInfo_2CodeView_2RecordName_8cpp" id="alib_2DebugInfo_2CodeView_2RecordName_8cpp">
+<area shape="rect" title=" " alt="" coords="746,5,925,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,196,133"/>
+<area shape="rect" title=" " alt="" coords="221,101,394,126"/>
+<area shape="rect" title=" " alt="" coords="419,93,609,133"/>
+<area shape="rect" title=" " alt="" coords="633,93,824,133"/>
+<area shape="rect" title=" " alt="" coords="848,93,1039,133"/>
+<area shape="rect" title=" " alt="" coords="1063,93,1253,133"/>
+<area shape="rect" title=" " alt="" coords="1278,101,1497,126"/>
+<area shape="rect" title=" " alt="" coords="1521,93,1712,133"/>
+</map>
 </div>
 </div>
 <p><a href="RecordName_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a4d11e871152d859e7fb222dc85062939"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RecordName_8cpp.html#a4d11e871152d859e7fb222dc85062939">TYPE_RECORD</a>(<a class="el" href="MCSectionMachO_8cpp.html#acef8933dc7a42bfe29ce8c62e08fe2a8">EnumName</a>,  EnumVal,  <a class="el" href="AMDGPULibCalls_8cpp.html#ac19c5d82adec186ac56e94115530daa8">Name</a>)&#160;&#160;&#160;  <a class="el" href="classllvm_1_1Error.html">Error</a> <a class="el" href="CVSymbolVisitor_8cpp.html#ad5efdd36be98503f918fde701e83b28b">visitKnownRecord</a>(<a class="el" href="namespacellvm_1_1codeview.html#a0a37c98b9d1b08ebc395d36e97668add">CVType</a> &amp;CVR, <a class="el" href="AMDGPULibCalls_8cpp.html#ac19c5d82adec186ac56e94115530daa8">Name</a>##<a class="el" href="classllvm_1_1Record.html">Record</a> &amp;<a class="el" href="classllvm_1_1Record.html">Record</a>) override;</td></tr>
+<tr class="memitem:a4d11e871152d859e7fb222dc85062939"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RecordName_8cpp.html#a4d11e871152d859e7fb222dc85062939">TYPE_RECORD</a>(EnumName,  EnumVal,  Name)&#160;&#160;&#160;  Error <a class="el" href="CVSymbolVisitor_8cpp.html#ad5efdd36be98503f918fde701e83b28b">visitKnownRecord</a>(CVType &amp;CVR, Name##Record &amp;Record) override;</td></tr>
 <tr class="separator:a4d11e871152d859e7fb222dc85062939"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae20667bfca00228293401f73e44819dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RecordName_8cpp.html#ae20667bfca00228293401f73e44819dd">TYPE_RECORD_ALIAS</a>(<a class="el" href="MCSectionMachO_8cpp.html#acef8933dc7a42bfe29ce8c62e08fe2a8">EnumName</a>,  EnumVal,  <a class="el" href="AMDGPULibCalls_8cpp.html#ac19c5d82adec186ac56e94115530daa8">Name</a>,  AliasName)</td></tr>
+<tr class="memitem:ae20667bfca00228293401f73e44819dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RecordName_8cpp.html#ae20667bfca00228293401f73e44819dd">TYPE_RECORD_ALIAS</a>(EnumName,  EnumVal,  Name,  AliasName)</td></tr>
 <tr class="separator:ae20667bfca00228293401f73e44819dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b16f4dbbd88785710796e29d4f4743d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RecordName_8cpp.html#a9b16f4dbbd88785710796e29d4f4743d">MEMBER_RECORD</a>(<a class="el" href="MCSectionMachO_8cpp.html#acef8933dc7a42bfe29ce8c62e08fe2a8">EnumName</a>,  EnumVal,  <a class="el" href="AMDGPULibCalls_8cpp.html#ac19c5d82adec186ac56e94115530daa8">Name</a>)</td></tr>
+<tr class="memitem:a9b16f4dbbd88785710796e29d4f4743d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RecordName_8cpp.html#a9b16f4dbbd88785710796e29d4f4743d">MEMBER_RECORD</a>(EnumName,  EnumVal,  Name)</td></tr>
 <tr class="separator:a9b16f4dbbd88785710796e29d4f4743d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab1946f7c4c985f713fd6b606fd84bd68"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RecordName_8cpp.html#ab1946f7c4c985f713fd6b606fd84bd68">getSymbolNameOffset</a> (<a class="el" href="namespacellvm_1_1codeview.html#ac9ec40377c0de0d9cd25ad8270d6f8f2">CVSymbol</a> Sym)</td></tr>
+<tr class="memitem:ab1946f7c4c985f713fd6b606fd84bd68"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RecordName_8cpp.html#ab1946f7c4c985f713fd6b606fd84bd68">getSymbolNameOffset</a> (CVSymbol Sym)</td></tr>
 <tr class="separator:ab1946f7c4c985f713fd6b606fd84bd68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -97,7 +108,7 @@ Functions</h2></td></tr>
           <td class="memname">#define MEMBER_RECORD</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="MCSectionMachO_8cpp.html#acef8933dc7a42bfe29ce8c62e08fe2a8">EnumName</a>, </td>
+          <td class="paramname">EnumName, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -109,7 +120,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="AMDGPULibCalls_8cpp.html#ac19c5d82adec186ac56e94115530daa8">Name</a>&#160;</td>
+          <td class="paramname">Name&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -133,7 +144,7 @@ Functions</h2></td></tr>
           <td class="memname">#define TYPE_RECORD</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="MCSectionMachO_8cpp.html#acef8933dc7a42bfe29ce8c62e08fe2a8">EnumName</a>, </td>
+          <td class="paramname">EnumName, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -145,12 +156,12 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="AMDGPULibCalls_8cpp.html#ac19c5d82adec186ac56e94115530daa8">Name</a>&#160;</td>
+          <td class="paramname">Name&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;  <a class="el" href="classllvm_1_1Error.html">Error</a> <a class="el" href="CVSymbolVisitor_8cpp.html#ad5efdd36be98503f918fde701e83b28b">visitKnownRecord</a>(<a class="el" href="namespacellvm_1_1codeview.html#a0a37c98b9d1b08ebc395d36e97668add">CVType</a> &amp;CVR, <a class="el" href="AMDGPULibCalls_8cpp.html#ac19c5d82adec186ac56e94115530daa8">Name</a>##<a class="el" href="classllvm_1_1Record.html">Record</a> &amp;<a class="el" href="classllvm_1_1Record.html">Record</a>) override;</td>
+          <td></td><td>&#160;&#160;&#160;  Error <a class="el" href="CVSymbolVisitor_8cpp.html#ad5efdd36be98503f918fde701e83b28b">visitKnownRecord</a>(CVType &amp;CVR, Name##Record &amp;Record) override;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -169,7 +180,7 @@ Functions</h2></td></tr>
           <td class="memname">#define TYPE_RECORD_ALIAS</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="MCSectionMachO_8cpp.html#acef8933dc7a42bfe29ce8c62e08fe2a8">EnumName</a>, </td>
+          <td class="paramname">EnumName, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -181,7 +192,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="AMDGPULibCalls_8cpp.html#ac19c5d82adec186ac56e94115530daa8">Name</a>, </td>
+          <td class="paramname">Name, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -214,7 +225,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static int getSymbolNameOffset </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1codeview.html#ac9ec40377c0de0d9cd25ad8270d6f8f2">CVSymbol</a>&#160;</td>
+          <td class="paramtype">CVSymbol&#160;</td>
           <td class="paramname"><em>Sym</em></td><td>)</td>
           <td></td>
         </tr>
@@ -228,16 +239,12 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RecordName_8cpp_source.html#l00259">259</a> of file <a class="el" href="RecordName_8cpp_source.html">RecordName.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CVRecord_8h_source.html#l00043">llvm::codeview::CVRecord&lt; Kind &gt;::kind()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="RecordName_8cpp_source.html#l00317">llvm::codeview::getSymbolName()</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:14 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

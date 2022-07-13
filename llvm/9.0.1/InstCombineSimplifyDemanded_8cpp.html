@@ -57,15 +57,48 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="InstCombineInternal_8h_source.html">InstCombineInternal.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="KnownBits_8h_source.html">llvm/Support/KnownBits.h</a>&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
+<code>#include &quot;llvm/Support/KnownBits.h&quot;</code><br />
 <code>#include &quot;InstCombineTables.inc&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for InstCombineSimplifyDemanded.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="InstCombineSimplifyDemanded_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2InstCombine_2InstCombineSimplifyDemanded_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2InstCombine_2InstCombineSimplifyDemanded_8cpp" id="alib_2Transforms_2InstCombine_2InstCombineSimplifyDemanded_8cpp">
+<area shape="rect" title=" " alt="" coords="4528,5,4787,45"/>
+<area shape="rect" href="InstCombineInternal_8h.html" title="This file provides internal interfaces used to implement the InstCombine." alt="" coords="2494,93,2661,119"/>
+<area shape="rect" title=" " alt="" coords="5,174,221,199"/>
+<area shape="rect" title=" " alt="" coords="4552,174,4712,199"/>
+<area shape="rect" title=" " alt="" coords="4736,174,4907,199"/>
+<area shape="rect" title=" " alt="" coords="4931,174,5122,199"/>
+<area shape="rect" title=" " alt="" coords="4771,93,4939,119"/>
+<area shape="rect" title=" " alt="" coords="2292,174,2447,199"/>
+<area shape="rect" title=" " alt="" coords="2471,174,2684,199"/>
+<area shape="rect" title=" " alt="" coords="2709,167,2891,207"/>
+<area shape="rect" title=" " alt="" coords="2916,174,3121,199"/>
+<area shape="rect" title=" " alt="" coords="3146,174,3294,199"/>
+<area shape="rect" title=" " alt="" coords="3319,174,3473,199"/>
+<area shape="rect" title=" " alt="" coords="3498,174,3641,199"/>
+<area shape="rect" title=" " alt="" coords="3665,174,3815,199"/>
+<area shape="rect" title=" " alt="" coords="3839,174,4011,199"/>
+<area shape="rect" title=" " alt="" coords="4035,174,4178,199"/>
+<area shape="rect" title=" " alt="" coords="4203,174,4352,199"/>
+<area shape="rect" title=" " alt="" coords="4377,174,4527,199"/>
+<area shape="rect" title=" " alt="" coords="246,174,399,199"/>
+<area shape="rect" title=" " alt="" coords="423,174,566,199"/>
+<area shape="rect" title=" " alt="" coords="591,174,700,199"/>
+<area shape="rect" title=" " alt="" coords="724,174,844,199"/>
+<area shape="rect" title=" " alt="" coords="868,174,1039,199"/>
+<area shape="rect" title=" " alt="" coords="1063,174,1241,199"/>
+<area shape="rect" title=" " alt="" coords="1265,174,1428,199"/>
+<area shape="rect" title=" " alt="" coords="1453,174,1659,199"/>
+<area shape="rect" title=" " alt="" coords="1684,167,1897,207"/>
+<area shape="rect" title=" " alt="" coords="1922,167,2083,207"/>
+<area shape="rect" title=" " alt="" coords="2108,174,2177,199"/>
+<area shape="rect" title=" " alt="" coords="2201,174,2268,199"/>
+</map>
 </div>
 </div>
 <p><a href="InstCombineSimplifyDemanded_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -79,7 +112,7 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a83ba6ab779541297eb331d3a56aa7cdd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineSimplifyDemanded_8cpp.html#a83ba6ab779541297eb331d3a56aa7cdd">ShrinkDemandedConstant</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classunsigned.html">unsigned</a> OpNo, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;Demanded)</td></tr>
+<tr class="memitem:a83ba6ab779541297eb331d3a56aa7cdd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineSimplifyDemanded_8cpp.html#a83ba6ab779541297eb331d3a56aa7cdd">ShrinkDemandedConstant</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, unsigned OpNo, const APInt &amp;Demanded)</td></tr>
 <tr class="memdesc:a83ba6ab779541297eb331d3a56aa7cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check to see if the specified operand of the specified instruction is a constant integer.  <a href="InstCombineSimplifyDemanded_8cpp.html#a83ba6ab779541297eb331d3a56aa7cdd">More...</a><br /></td></tr>
 <tr class="separator:a83ba6ab779541297eb331d3a56aa7cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -127,21 +160,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> ShrinkDemandedConstant </td>
+          <td class="memname">static bool ShrinkDemandedConstant </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>OpNo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">const APInt &amp;&#160;</td>
           <td class="paramname"><em>Demanded</em>&#160;</td>
         </tr>
         <tr>
@@ -162,14 +195,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineSimplifyDemanded_8cpp_source.html#l00039">39</a> of file <a class="el" href="InstCombineSimplifyDemanded_8cpp_source.html">InstCombineSimplifyDemanded.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="PatternMatch_8h_source.html#l00175">llvm::PatternMatch::m_APInt()</a>, and <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

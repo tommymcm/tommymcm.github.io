@@ -56,16 +56,25 @@ $(function() {
   <div class="headertitle"><div class="title">ConstantFold.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="Optional_8h_source.html">llvm/ADT/Optional.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/ADT/Optional.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ConstantFold.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="ConstantFold_8h__incl.png" border="0" usemap="#alib_2IR_2ConstantFold_8h" alt=""/></div>
+<map name="alib_2IR_2ConstantFold_8h" id="alib_2IR_2ConstantFold_8h">
+<area shape="rect" title=" " alt="" coords="5,5,161,31"/>
+<area shape="rect" title=" " alt="" coords="7,79,160,104"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ConstantFold_8h__dep__incl.png" border="0" usemap="#alib_2IR_2ConstantFold_8hdep" alt=""/></div>
+<map name="alib_2IR_2ConstantFold_8hdep" id="alib_2IR_2ConstantFold_8hdep">
+<area shape="rect" title=" " alt="" coords="105,5,261,31"/>
+<area shape="rect" href="ConstantFold_8cpp.html" title=" " alt="" coords="5,79,176,104"/>
+<area shape="rect" href="Constants_8cpp.html" title=" " alt="" coords="201,79,351,104"/>
+</map>
 </div>
 </div>
 <p><a href="ConstantFold_8h_source.html">Go to the source code of this file.</a></p>
@@ -73,44 +82,37 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad797efb6c6fbbb2038d5ed8f8379561f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#ad797efb6c6fbbb2038d5ed8f8379561f">llvm::ConstantFoldCastInstruction</a> (<a class="el" href="classunsigned.html">unsigned</a> opcode, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *V, <a class="el" href="classllvm_1_1Type.html">Type</a> *DestTy)</td></tr>
+<tr class="memitem:ad797efb6c6fbbb2038d5ed8f8379561f"><td class="memItemLeft" align="right" valign="top">Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#ad797efb6c6fbbb2038d5ed8f8379561f">llvm::ConstantFoldCastInstruction</a> (unsigned opcode, Constant *V, Type *DestTy)</td></tr>
 <tr class="separator:ad797efb6c6fbbb2038d5ed8f8379561f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11c89e0918b007ef2cf1d6b03c4b4948"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a11c89e0918b007ef2cf1d6b03c4b4948">llvm::ConstantFoldSelectInstruction</a> (<a class="el" href="classllvm_1_1Constant.html">Constant</a> *Cond, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *V1, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *V2)</td></tr>
-<tr class="memdesc:a11c89e0918b007ef2cf1d6b03c4b4948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to constant fold a select instruction with the specified operands.  <a href="namespacellvm.html#a11c89e0918b007ef2cf1d6b03c4b4948">More...</a><br /></td></tr>
+<tr class="memitem:a11c89e0918b007ef2cf1d6b03c4b4948"><td class="memItemLeft" align="right" valign="top">Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a11c89e0918b007ef2cf1d6b03c4b4948">llvm::ConstantFoldSelectInstruction</a> (Constant *Cond, Constant *V1, Constant *V2)</td></tr>
 <tr class="separator:a11c89e0918b007ef2cf1d6b03c4b4948"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f6c692bb79cca65ae3097ddd4c47e69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a9f6c692bb79cca65ae3097ddd4c47e69">llvm::ConstantFoldExtractElementInstruction</a> (<a class="el" href="classllvm_1_1Constant.html">Constant</a> *Val, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *<a class="el" href="DeadArgumentElimination_8cpp.html#a39a491a969849f634027f20be70a5c57">Idx</a>)</td></tr>
-<tr class="memdesc:a9f6c692bb79cca65ae3097ddd4c47e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to constant fold an extractelement instruction with the specified operands and indices.  <a href="namespacellvm.html#a9f6c692bb79cca65ae3097ddd4c47e69">More...</a><br /></td></tr>
+<tr class="memitem:a9f6c692bb79cca65ae3097ddd4c47e69"><td class="memItemLeft" align="right" valign="top">Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a9f6c692bb79cca65ae3097ddd4c47e69">llvm::ConstantFoldExtractElementInstruction</a> (Constant *Val, Constant *<a class="el" href="DeadArgumentElimination_8cpp.html#a39a491a969849f634027f20be70a5c57">Idx</a>)</td></tr>
 <tr class="separator:a9f6c692bb79cca65ae3097ddd4c47e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bf95d0980fad19452f4c9aca445af3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a7bf95d0980fad19452f4c9aca445af3f">llvm::ConstantFoldInsertElementInstruction</a> (<a class="el" href="classllvm_1_1Constant.html">Constant</a> *Val, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *Elt, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *<a class="el" href="DeadArgumentElimination_8cpp.html#a39a491a969849f634027f20be70a5c57">Idx</a>)</td></tr>
-<tr class="memdesc:a7bf95d0980fad19452f4c9aca445af3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to constant fold an insertelement instruction with the specified operands and indices.  <a href="namespacellvm.html#a7bf95d0980fad19452f4c9aca445af3f">More...</a><br /></td></tr>
+<tr class="memitem:a7bf95d0980fad19452f4c9aca445af3f"><td class="memItemLeft" align="right" valign="top">Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a7bf95d0980fad19452f4c9aca445af3f">llvm::ConstantFoldInsertElementInstruction</a> (Constant *Val, Constant *Elt, Constant *<a class="el" href="DeadArgumentElimination_8cpp.html#a39a491a969849f634027f20be70a5c57">Idx</a>)</td></tr>
 <tr class="separator:a7bf95d0980fad19452f4c9aca445af3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8641b83b0434a1b90b70b130de703953"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a8641b83b0434a1b90b70b130de703953">llvm::ConstantFoldShuffleVectorInstruction</a> (<a class="el" href="classllvm_1_1Constant.html">Constant</a> *V1, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *V2, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *Mask)</td></tr>
-<tr class="memdesc:a8641b83b0434a1b90b70b130de703953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to constant fold a shufflevector instruction with the specified operands and indices.  <a href="namespacellvm.html#a8641b83b0434a1b90b70b130de703953">More...</a><br /></td></tr>
+<tr class="memitem:a8641b83b0434a1b90b70b130de703953"><td class="memItemLeft" align="right" valign="top">Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a8641b83b0434a1b90b70b130de703953">llvm::ConstantFoldShuffleVectorInstruction</a> (Constant *V1, Constant *V2, Constant *Mask)</td></tr>
 <tr class="separator:a8641b83b0434a1b90b70b130de703953"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a557be4c1daf6eb2611b214f927dccee2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a557be4c1daf6eb2611b214f927dccee2">llvm::ConstantFoldExtractValueInstruction</a> (<a class="el" href="classllvm_1_1Constant.html">Constant</a> *Agg, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; Idxs)</td></tr>
-<tr class="memdesc:a557be4c1daf6eb2611b214f927dccee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to constant fold an extractvalue instruction with the specified operands and indices.  <a href="namespacellvm.html#a557be4c1daf6eb2611b214f927dccee2">More...</a><br /></td></tr>
+<tr class="memitem:a557be4c1daf6eb2611b214f927dccee2"><td class="memItemLeft" align="right" valign="top">Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a557be4c1daf6eb2611b214f927dccee2">llvm::ConstantFoldExtractValueInstruction</a> (Constant *Agg, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; unsigned &gt; Idxs)</td></tr>
 <tr class="separator:a557be4c1daf6eb2611b214f927dccee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7fa9b738742521d0a684cec016ef47e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#ad7fa9b738742521d0a684cec016ef47e">llvm::ConstantFoldInsertValueInstruction</a> (<a class="el" href="classllvm_1_1Constant.html">Constant</a> *Agg, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *Val, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; Idxs)</td></tr>
-<tr class="memdesc:ad7fa9b738742521d0a684cec016ef47e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ConstantFoldInsertValueInstruction - Attempt to constant fold an insertvalue instruction with the specified operands and indices.  <a href="namespacellvm.html#ad7fa9b738742521d0a684cec016ef47e">More...</a><br /></td></tr>
+<tr class="memitem:ad7fa9b738742521d0a684cec016ef47e"><td class="memItemLeft" align="right" valign="top">Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#ad7fa9b738742521d0a684cec016ef47e">llvm::ConstantFoldInsertValueInstruction</a> (Constant *Agg, Constant *Val, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; unsigned &gt; Idxs)</td></tr>
 <tr class="separator:ad7fa9b738742521d0a684cec016ef47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c4fe17695dd008139cd08a7d460744e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a2c4fe17695dd008139cd08a7d460744e">llvm::ConstantFoldUnaryInstruction</a> (<a class="el" href="classunsigned.html">unsigned</a> Opcode, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *V)</td></tr>
+<tr class="memitem:a2c4fe17695dd008139cd08a7d460744e"><td class="memItemLeft" align="right" valign="top">Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a2c4fe17695dd008139cd08a7d460744e">llvm::ConstantFoldUnaryInstruction</a> (unsigned Opcode, Constant *V)</td></tr>
 <tr class="separator:a2c4fe17695dd008139cd08a7d460744e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6674e64f01f197cffff55abcc6d2050"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#af6674e64f01f197cffff55abcc6d2050">llvm::ConstantFoldBinaryInstruction</a> (<a class="el" href="classunsigned.html">unsigned</a> Opcode, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *V1, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *V2)</td></tr>
+<tr class="memitem:af6674e64f01f197cffff55abcc6d2050"><td class="memItemLeft" align="right" valign="top">Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#af6674e64f01f197cffff55abcc6d2050">llvm::ConstantFoldBinaryInstruction</a> (unsigned Opcode, Constant *V1, Constant *V2)</td></tr>
 <tr class="separator:af6674e64f01f197cffff55abcc6d2050"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10d499eb3a0f30658bfee30721184015"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a10d499eb3a0f30658bfee30721184015">llvm::ConstantFoldCompareInstruction</a> (<a class="el" href="classunsigned.html">unsigned</a> short predicate, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *C1, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *C2)</td></tr>
+<tr class="memitem:a10d499eb3a0f30658bfee30721184015"><td class="memItemLeft" align="right" valign="top">Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a10d499eb3a0f30658bfee30721184015">llvm::ConstantFoldCompareInstruction</a> (unsigned short predicate, Constant *C1, Constant *C2)</td></tr>
 <tr class="separator:a10d499eb3a0f30658bfee30721184015"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3ac463ee03838850d4c1253d9a4eb14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Constant.html">Constant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#af3ac463ee03838850d4c1253d9a4eb14">llvm::ConstantFoldGetElementPtr</a> (<a class="el" href="classllvm_1_1Type.html">Type</a> *Ty, <a class="el" href="classllvm_1_1Constant.html">Constant</a> *<a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="classbool.html">bool</a> InBounds, <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; InRangeIndex, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; Idxs)</td></tr>
+<tr class="memitem:af3ac463ee03838850d4c1253d9a4eb14"><td class="memItemLeft" align="right" valign="top">Constant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#af3ac463ee03838850d4c1253d9a4eb14">llvm::ConstantFoldGetElementPtr</a> (Type *Ty, Constant *C, bool InBounds, Optional&lt; unsigned &gt; InRangeIndex, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; Idxs)</td></tr>
 <tr class="separator:af3ac463ee03838850d4c1253d9a4eb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:14 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

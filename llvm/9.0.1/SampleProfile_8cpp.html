@@ -58,57 +58,57 @@ $(function() {
   <div class="headertitle"><div class="title">SampleProfile.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="SampleProfile_8h_source.html">llvm/Transforms/IPO/SampleProfile.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ArrayRef_8h_source.html">llvm/ADT/ArrayRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseMap_8h_source.html">llvm/ADT/DenseMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseSet_8h_source.html">llvm/ADT/DenseSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="None_8h_source.html">llvm/ADT/None.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallPtrSet_8h_source.html">llvm/ADT/SmallPtrSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallSet_8h_source.html">llvm/ADT/SmallSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringMap_8h_source.html">llvm/ADT/StringMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringRef_8h_source.html">llvm/ADT/StringRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Twine_8h_source.html">llvm/ADT/Twine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InlineCost_8h_source.html">llvm/Analysis/InlineCost.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="OptimizationRemarkEmitter_8h_source.html">llvm/Analysis/OptimizationRemarkEmitter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PostDominators_8h_source.html">llvm/Analysis/PostDominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DebugInfoMetadata_8h_source.html">llvm/IR/DebugInfoMetadata.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DebugLoc_8h_source.html">llvm/IR/DebugLoc.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DiagnosticInfo_8h_source.html">llvm/IR/DiagnosticInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalValue_8h_source.html">llvm/IR/GlobalValue.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MDBuilder_8h_source.html">llvm/IR/MDBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueSymbolTable_8h_source.html">llvm/IR/ValueSymbolTable.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrProf_8h_source.html">llvm/ProfileData/InstrProf.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SampleProf_8h_source.html">llvm/ProfileData/SampleProf.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SampleProfReader_8h_source.html">llvm/ProfileData/SampleProfReader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ErrorOr_8h_source.html">llvm/Support/ErrorOr.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GenericDomTree_8h_source.html">llvm/Support/GenericDomTree.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2IPO_8h_source.html">llvm/Transforms/IPO.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instrumentation_8h_source.html">llvm/Transforms/Instrumentation.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallPromotionUtils_8h_source.html">llvm/Transforms/Utils/CallPromotionUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Cloning_8h_source.html">llvm/Transforms/Utils/Cloning.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/IPO/SampleProfile.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/None.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Twine.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/InlineCost.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/OptimizationRemarkEmitter.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/PostDominators.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DebugInfoMetadata.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DebugLoc.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DiagnosticInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/GlobalValue.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/MDBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;llvm/IR/ValueSymbolTable.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/ProfileData/InstrProf.h&quot;</code><br />
+<code>#include &quot;llvm/ProfileData/SampleProf.h&quot;</code><br />
+<code>#include &quot;llvm/ProfileData/SampleProfReader.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorOr.h&quot;</code><br />
+<code>#include &quot;llvm/Support/GenericDomTree.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Instrumentation.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/CallPromotionUtils.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Cloning.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
@@ -130,36 +130,36 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ac57dae906fe8ac64efe52571121b0fe1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> = <a class="el" href="classllvm_1_1Function_1_1ProfileCount.html">Function::ProfileCount</a></td></tr>
+<tr class="memitem:ac57dae906fe8ac64efe52571121b0fe1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> = Function::ProfileCount</td></tr>
 <tr class="separator:ac57dae906fe8ac64efe52571121b0fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a95ba8b64ef004899c93cac36a8885420"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a95ba8b64ef004899c93cac36a8885420">callsiteIsHot</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1sampleprof_1_1FunctionSamples.html">FunctionSamples</a> *CallsiteFS, <a class="el" href="classllvm_1_1ProfileSummaryInfo.html">ProfileSummaryInfo</a> *PSI)</td></tr>
+<tr class="memitem:a7135fad79ba2e726ee26114e1486f0ef"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a7135fad79ba2e726ee26114e1486f0ef">SampleProfileFile</a> (&quot;sample-profile-file&quot;, cl::init(&quot;&quot;), cl::value_desc(&quot;filename&quot;), cl::desc(&quot;Profile <a class="el" href="RegionPrinter_8cpp.html#a79dce2d3eafaf25bf0df59f56caf9712">file</a> loaded by -sample-profile&quot;), cl::Hidden)</td></tr>
+<tr class="separator:a7135fad79ba2e726ee26114e1486f0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b2da3a873ff05c43502e3c2df2b041e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a6b2da3a873ff05c43502e3c2df2b041e">SampleProfileRemappingFile</a> (&quot;sample-profile-remapping-file&quot;, cl::init(&quot;&quot;), cl::value_desc(&quot;filename&quot;), cl::desc(&quot;Profile remapping <a class="el" href="RegionPrinter_8cpp.html#a79dce2d3eafaf25bf0df59f56caf9712">file</a> loaded by -sample-profile&quot;), cl::Hidden)</td></tr>
+<tr class="separator:a6b2da3a873ff05c43502e3c2df2b041e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2ffc950f9047cbec66a4f62dc27a2b0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#aa2ffc950f9047cbec66a4f62dc27a2b0">SampleProfileMaxPropagateIterations</a> (&quot;sample-profile-max-<a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a>-iterations&quot;, cl::init(100), cl::desc(&quot;Maximum number of iterations to go through when propagating &quot; &quot;sample block/edge weights through the CFG.&quot;))</td></tr>
+<tr class="separator:aa2ffc950f9047cbec66a4f62dc27a2b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70f54f6917fc126d36fdfe79929e4e07"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a70f54f6917fc126d36fdfe79929e4e07">SampleProfileRecordCoverage</a> (&quot;sample-profile-check-record-coverage&quot;, cl::init(0), cl::value_desc(&quot;N&quot;), cl::desc(&quot;Emit a <a class="el" href="WarnMissedTransforms_8cpp.html#a9f5bae15f5e9c975fac665ccc3c43790">warning</a> <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> less than <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>% of records in the input profile &quot; &quot;are matched to the IR.&quot;))</td></tr>
+<tr class="separator:a70f54f6917fc126d36fdfe79929e4e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac59adbbecd36d99f834317f5b8c0bcf0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#ac59adbbecd36d99f834317f5b8c0bcf0">SampleProfileSampleCoverage</a> (&quot;sample-profile-check-sample-coverage&quot;, cl::init(0), cl::value_desc(&quot;N&quot;), cl::desc(&quot;Emit a <a class="el" href="WarnMissedTransforms_8cpp.html#a9f5bae15f5e9c975fac665ccc3c43790">warning</a> <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> less than <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>% of samples in the input profile &quot; &quot;are matched to the IR.&quot;))</td></tr>
+<tr class="separator:ac59adbbecd36d99f834317f5b8c0bcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56cf37e6a772e714c1db0564bb6407c5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a56cf37e6a772e714c1db0564bb6407c5">NoWarnSampleUnused</a> (&quot;no-warn-sample-unused&quot;, cl::init(false), cl::Hidden, cl::desc(&quot;Use this option to turn off/on warnings about <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> with &quot; &quot;samples but without debug information to <a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a> those samples. &quot;))</td></tr>
+<tr class="separator:a56cf37e6a772e714c1db0564bb6407c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a893720881035b5cff198ce4cba6221ef"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a893720881035b5cff198ce4cba6221ef">ProfileSampleAccurate</a> (&quot;profile-sample-accurate&quot;, cl::Hidden, cl::init(false), cl::desc(&quot;If the sample profile is accurate, we will mark all un-sampled &quot; &quot;callsite and <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> as having 0 samples. Otherwise, treat &quot; &quot;un-sampled callsites and <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> conservatively as unknown. &quot;))</td></tr>
+<tr class="separator:a893720881035b5cff198ce4cba6221ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95ba8b64ef004899c93cac36a8885420"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a95ba8b64ef004899c93cac36a8885420">callsiteIsHot</a> (const FunctionSamples *CallsiteFS, ProfileSummaryInfo *PSI)</td></tr>
 <tr class="memdesc:a95ba8b64ef004899c93cac36a8885420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the given callsite is hot wrt to hot cutoff threshold.  <a href="SampleProfile_8cpp.html#a95ba8b64ef004899c93cac36a8885420">More...</a><br /></td></tr>
 <tr class="separator:a95ba8b64ef004899c93cac36a8885420"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a106951332b60fa728db2c666f13bb2ca"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1SmallVector.html">SmallVector</a>&lt; InstrProfValueData, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a106951332b60fa728db2c666f13bb2ca">SortCallTargets</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1sampleprof_1_1SampleRecord.html#aa9a5c2c87c807a3d2d2547d51aa4fb60">SampleRecord::CallTargetMap</a> &amp;M)</td></tr>
+<tr class="memitem:a106951332b60fa728db2c666f13bb2ca"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classSmallVector.html">SmallVector</a>&lt; InstrProfValueData, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a106951332b60fa728db2c666f13bb2ca">SortCallTargets</a> (const SampleRecord::CallTargetMap &amp;M)</td></tr>
 <tr class="memdesc:a106951332b60fa728db2c666f13bb2ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sorted CallTargetMap <code>M</code> by count in descending order.  <a href="SampleProfile_8cpp.html#a106951332b60fa728db2c666f13bb2ca">More...</a><br /></td></tr>
 <tr class="separator:a106951332b60fa728db2c666f13bb2ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c61d2d479bce8e59a01b4095d381961"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a9c61d2d479bce8e59a01b4095d381961">INITIALIZE_PASS_BEGIN</a> (SampleProfileLoaderLegacyPass, &quot;sample-profile&quot;, &quot;Sample Profile loader&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(SampleProfileLoaderLegacyPass</td></tr>
+<tr class="memitem:a9c61d2d479bce8e59a01b4095d381961"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a9c61d2d479bce8e59a01b4095d381961">INITIALIZE_PASS_BEGIN</a> (SampleProfileLoaderLegacyPass, &quot;sample-profile&quot;, &quot;Sample Profile loader&quot;, false, false) INITIALIZE_PASS_END(SampleProfileLoaderLegacyPass</td></tr>
 <tr class="separator:a9c61d2d479bce8e59a01b4095d381961"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a055c6b7054a94b338830b3da8ecc4023"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a055c6b7054a94b338830b3da8ecc4023">SampleProfileFile</a> (&quot;sample-profile-file&quot;, cl::init(&quot;&quot;), <a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;filename&quot;), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Profile <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> loaded by -sample-profile&quot;), cl::Hidden)</td></tr>
-<tr class="separator:a055c6b7054a94b338830b3da8ecc4023"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8d3791537a44c00b699d28c4d978d82"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#af8d3791537a44c00b699d28c4d978d82">SampleProfileRemappingFile</a> (&quot;sample-profile-remapping-file&quot;, cl::init(&quot;&quot;), <a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;filename&quot;), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Profile remapping <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> loaded by -sample-profile&quot;), cl::Hidden)</td></tr>
-<tr class="separator:af8d3791537a44c00b699d28c4d978d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aade7b2da98de69a3231e8205e9770963"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#aade7b2da98de69a3231e8205e9770963">SampleProfileMaxPropagateIterations</a> (&quot;sample-profile-max-<a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a>-iterations&quot;, cl::init(100), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Maximum number of iterations to go through when propagating &quot; &quot;sample block/edge weights through the CFG.&quot;))</td></tr>
-<tr class="separator:aade7b2da98de69a3231e8205e9770963"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40954848b5b26403e461ce7a190243d4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a40954848b5b26403e461ce7a190243d4">SampleProfileRecordCoverage</a> (&quot;sample-profile-check-record-coverage&quot;, cl::init(0), <a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;N&quot;), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Emit a <a class="el" href="WarnMissedTransforms_8cpp.html#a519a3fb855d7448b0b5a643d6850b2ae">warning</a> <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> <a class="el" href="structllvm_1_1less.html">less</a> than <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>% of records in the input profile &quot; &quot;are matched to the IR.&quot;))</td></tr>
-<tr class="separator:a40954848b5b26403e461ce7a190243d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ac02d9aff84c95f5894d9f7ef8c5e4a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a8ac02d9aff84c95f5894d9f7ef8c5e4a">SampleProfileSampleCoverage</a> (&quot;sample-profile-check-sample-coverage&quot;, cl::init(0), <a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;N&quot;), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Emit a <a class="el" href="WarnMissedTransforms_8cpp.html#a519a3fb855d7448b0b5a643d6850b2ae">warning</a> <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> <a class="el" href="structllvm_1_1less.html">less</a> than <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>% of samples in the input profile &quot; &quot;are matched to the IR.&quot;))</td></tr>
-<tr class="separator:a8ac02d9aff84c95f5894d9f7ef8c5e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0200f3202920f714e0b23c4606a27192"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#a0200f3202920f714e0b23c4606a27192">NoWarnSampleUnused</a> (&quot;no-warn-sample-unused&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Use this option to turn off/on warnings about <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> with &quot; &quot;samples but without <a class="el" href="X86Disassembler_8cpp.html#ae0228f36529f75f692753ef96d725012">debug</a> information to <a class="el" href="Localizer_8cpp.html#a428090a453f41a199ef67fc3f2179fbc">use</a> those samples. &quot;))</td></tr>
-<tr class="separator:a0200f3202920f714e0b23c4606a27192"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af00e1c8a074b97aedd1a2db33dea6753"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#af00e1c8a074b97aedd1a2db33dea6753">ProfileSampleAccurate</a> (&quot;profile-sample-accurate&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;If the sample profile is accurate, we will mark all un-sampled &quot; &quot;callsite and <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> as having 0 samples. Otherwise, treat &quot; &quot;un-sampled callsites and <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> conservatively as unknown. &quot;))</td></tr>
-<tr class="separator:af00e1c8a074b97aedd1a2db33dea6753"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9c03ccea8a95213cc02502d0a8216a2"><td class="memItemLeft" align="right" valign="top">sample&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#ab9c03ccea8a95213cc02502d0a8216a2">profile</a></td></tr>
 <tr class="separator:ab9c03ccea8a95213cc02502d0a8216a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6d0a32738af9bd060dcfe35c6ee4b44"><td class="memItemLeft" align="right" valign="top">sample Sample Profile&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SampleProfile_8cpp.html#aa6d0a32738af9bd060dcfe35c6ee4b44">loader</a></td></tr>
@@ -192,7 +192,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="Function_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> =  <a class="el" href="classllvm_1_1Function_1_1ProfileCount.html">Function::ProfileCount</a></td>
+          <td class="memname">using <a class="el" href="Function_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> =  Function::ProfileCount</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -212,15 +212,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> callsiteIsHot </td>
+          <td class="memname">static bool callsiteIsHot </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1sampleprof_1_1FunctionSamples.html">FunctionSamples</a> *&#160;</td>
+          <td class="paramtype">const FunctionSamples *&#160;</td>
           <td class="paramname"><em>CallsiteFS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ProfileSummaryInfo.html">ProfileSummaryInfo</a> *&#160;</td>
+          <td class="paramtype">ProfileSummaryInfo *&#160;</td>
           <td class="paramname"><em>PSI</em>&#160;</td>
         </tr>
         <tr>
@@ -242,7 +242,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SampleProfile_8cpp_source.html#l00384">384</a> of file <a class="el" href="SampleProfile_8cpp_source.html">SampleProfile.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="SampleProf_8h_source.html#l00320">llvm::sampleprof::FunctionSamples::getTotalSamples()</a>, and <a class="el" href="ProfileSummaryInfo_8cpp_source.html#l00233">llvm::ProfileSummaryInfo::isHotCount()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 </div>
 </div>
@@ -292,6 +292,348 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a56cf37e6a772e714c1db0564bb6407c5" name="a56cf37e6a772e714c1db0564bb6407c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56cf37e6a772e714c1db0564bb6407c5">&#9670;&nbsp;</a></span>NoWarnSampleUnused()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; NoWarnSampleUnused </td>
+          <td>(</td>
+          <td class="paramtype">&quot;no-warn-sample-unused&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Use this option to turn off/on warnings about <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> with &quot; &quot;samples but without debug information to <a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a> those samples. &quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a893720881035b5cff198ce4cba6221ef" name="a893720881035b5cff198ce4cba6221ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a893720881035b5cff198ce4cba6221ef">&#9670;&nbsp;</a></span>ProfileSampleAccurate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ProfileSampleAccurate </td>
+          <td>(</td>
+          <td class="paramtype">&quot;profile-sample-accurate&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;If the sample profile is accurate, we will mark all un-sampled &quot; &quot;callsite and <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> as having 0 samples. Otherwise, treat &quot; &quot;un-sampled callsites and <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> conservatively as unknown. &quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7135fad79ba2e726ee26114e1486f0ef" name="a7135fad79ba2e726ee26114e1486f0ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7135fad79ba2e726ee26114e1486f0ef">&#9670;&nbsp;</a></span>SampleProfileFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt; SampleProfileFile </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sample-profile-file&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(&quot;&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::value_desc(&quot;filename&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Profile <a class="el" href="RegionPrinter_8cpp.html#a79dce2d3eafaf25bf0df59f56caf9712">file</a> loaded by -sample-profile&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa2ffc950f9047cbec66a4f62dc27a2b0" name="aa2ffc950f9047cbec66a4f62dc27a2b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2ffc950f9047cbec66a4f62dc27a2b0">&#9670;&nbsp;</a></span>SampleProfileMaxPropagateIterations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; SampleProfileMaxPropagateIterations </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sample-profile-max-<a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a>-iterations&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(100)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Maximum number of iterations to go through when propagating &quot; &quot;sample block/edge weights through the CFG.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a70f54f6917fc126d36fdfe79929e4e07" name="a70f54f6917fc126d36fdfe79929e4e07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70f54f6917fc126d36fdfe79929e4e07">&#9670;&nbsp;</a></span>SampleProfileRecordCoverage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; SampleProfileRecordCoverage </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sample-profile-check-record-coverage&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(0)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::value_desc(&quot;N&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Emit a <a class="el" href="WarnMissedTransforms_8cpp.html#a9f5bae15f5e9c975fac665ccc3c43790">warning</a> <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> less than <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>% of records in the input profile &quot; &quot;are matched to the IR.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b2da3a873ff05c43502e3c2df2b041e" name="a6b2da3a873ff05c43502e3c2df2b041e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b2da3a873ff05c43502e3c2df2b041e">&#9670;&nbsp;</a></span>SampleProfileRemappingFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt; SampleProfileRemappingFile </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sample-profile-remapping-file&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(&quot;&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::value_desc(&quot;filename&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Profile remapping <a class="el" href="RegionPrinter_8cpp.html#a79dce2d3eafaf25bf0df59f56caf9712">file</a> loaded by -sample-profile&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac59adbbecd36d99f834317f5b8c0bcf0" name="ac59adbbecd36d99f834317f5b8c0bcf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac59adbbecd36d99f834317f5b8c0bcf0">&#9670;&nbsp;</a></span>SampleProfileSampleCoverage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; SampleProfileSampleCoverage </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sample-profile-check-sample-coverage&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(0)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::value_desc(&quot;N&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Emit a <a class="el" href="WarnMissedTransforms_8cpp.html#a9f5bae15f5e9c975fac665ccc3c43790">warning</a> <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> less than <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>% of samples in the input profile &quot; &quot;are matched to the IR.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a106951332b60fa728db2c666f13bb2ca" name="a106951332b60fa728db2c666f13bb2ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a106951332b60fa728db2c666f13bb2ca">&#9670;&nbsp;</a></span>SortCallTargets()</h2>
 
@@ -302,9 +644,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1SmallVector.html">SmallVector</a>&lt; InstrProfValueData, 2 &gt; SortCallTargets </td>
+          <td class="memname">static <a class="el" href="classSmallVector.html">SmallVector</a>&lt; InstrProfValueData, 2 &gt; SortCallTargets </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1sampleprof_1_1SampleRecord.html#aa9a5c2c87c807a3d2d2547d51aa4fb60">SampleRecord::CallTargetMap</a> &amp;&#160;</td>
+          <td class="paramtype">const SampleRecord::CallTargetMap &amp;&#160;</td>
           <td class="paramname"><em>M</em></td><td>)</td>
           <td></td>
         </tr>
@@ -320,7 +662,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SampleProfile_8cpp_source.html#l01222">1222</a> of file <a class="el" href="SampleProfile_8cpp_source.html">SampleProfile.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SampleProf_8h_source.html#l00515">llvm::sampleprof::FunctionSamples::getGUID()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="STLExtras_8h_source.html#l01122">llvm::sort()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -357,54 +699,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a0200f3202920f714e0b23c4606a27192" name="a0200f3202920f714e0b23c4606a27192"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0200f3202920f714e0b23c4606a27192">&#9670;&nbsp;</a></span>NoWarnSampleUnused</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; NoWarnSampleUnused(&quot;no-warn-sample-unused&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Use this option to turn off/on warnings about <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> with &quot; &quot;samples but without <a class="el" href="X86Disassembler_8cpp.html#ae0228f36529f75f692753ef96d725012">debug</a> information to <a class="el" href="Localizer_8cpp.html#a428090a453f41a199ef67fc3f2179fbc">use</a> those samples. &quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;no-warn-sample-unused&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Use this option to turn off/on warnings about <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> with &quot; &quot;samples but without <a class="el" href="X86Disassembler_8cpp.html#ae0228f36529f75f692753ef96d725012">debug</a> information to <a class="el" href="Localizer_8cpp.html#a428090a453f41a199ef67fc3f2179fbc">use</a> those samples. &quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ab9c03ccea8a95213cc02502d0a8216a2" name="ab9c03ccea8a95213cc02502d0a8216a2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9c03ccea8a95213cc02502d0a8216a2">&#9670;&nbsp;</a></span>profile</h2>
 
@@ -421,308 +715,10 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="af00e1c8a074b97aedd1a2db33dea6753" name="af00e1c8a074b97aedd1a2db33dea6753"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af00e1c8a074b97aedd1a2db33dea6753">&#9670;&nbsp;</a></span>ProfileSampleAccurate</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ProfileSampleAccurate(&quot;profile-sample-accurate&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;If the sample profile is accurate, we will mark all un-sampled &quot; &quot;callsite and <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> as having 0 samples. Otherwise, treat &quot; &quot;un-sampled callsites and <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> conservatively as unknown. &quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;profile-sample-accurate&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;If the sample profile is accurate, we will mark all un-sampled &quot; &quot;callsite and <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> as having 0 samples. Otherwise, treat &quot; &quot;un-sampled callsites and <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> conservatively as unknown. &quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a055c6b7054a94b338830b3da8ecc4023" name="a055c6b7054a94b338830b3da8ecc4023"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a055c6b7054a94b338830b3da8ecc4023">&#9670;&nbsp;</a></span>SampleProfileFile</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt; SampleProfileFile(&quot;sample-profile-file&quot;, cl::init(&quot;&quot;), <a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;filename&quot;), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Profile <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> loaded by -sample-profile&quot;), cl::Hidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sample-profile-file&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(&quot;&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;filename&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Profile <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> loaded by -sample-profile&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="SampleProfile_8cpp_source.html#l01684">llvm::SampleProfileLoaderPass::run()</a>.</p>
-
-</div>
-</div>
-<a id="aade7b2da98de69a3231e8205e9770963" name="aade7b2da98de69a3231e8205e9770963"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aade7b2da98de69a3231e8205e9770963">&#9670;&nbsp;</a></span>SampleProfileMaxPropagateIterations</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; SampleProfileMaxPropagateIterations(&quot;sample-profile-max-<a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a>-iterations&quot;, cl::init(100), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Maximum number of iterations to go through when propagating &quot; &quot;sample block/edge weights through the CFG.&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sample-profile-max-<a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a>-iterations&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(100)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Maximum number of iterations to go through when propagating &quot; &quot;sample block/edge weights through the CFG.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a40954848b5b26403e461ce7a190243d4" name="a40954848b5b26403e461ce7a190243d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40954848b5b26403e461ce7a190243d4">&#9670;&nbsp;</a></span>SampleProfileRecordCoverage</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; SampleProfileRecordCoverage(&quot;sample-profile-check-record-coverage&quot;, cl::init(0), <a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;N&quot;), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Emit a <a class="el" href="WarnMissedTransforms_8cpp.html#a519a3fb855d7448b0b5a643d6850b2ae">warning</a> <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> <a class="el" href="structllvm_1_1less.html">less</a> than <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>% of records in the input profile &quot; &quot;are matched to the IR.&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sample-profile-check-record-coverage&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(0)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;N&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Emit a <a class="el" href="WarnMissedTransforms_8cpp.html#a519a3fb855d7448b0b5a643d6850b2ae">warning</a> <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> <a class="el" href="structllvm_1_1less.html">less</a> than <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>% of records in the input profile &quot; &quot;are matched to the IR.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af8d3791537a44c00b699d28c4d978d82" name="af8d3791537a44c00b699d28c4d978d82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8d3791537a44c00b699d28c4d978d82">&#9670;&nbsp;</a></span>SampleProfileRemappingFile</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt; SampleProfileRemappingFile(&quot;sample-profile-remapping-file&quot;, cl::init(&quot;&quot;), <a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;filename&quot;), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Profile remapping <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> loaded by -sample-profile&quot;), cl::Hidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sample-profile-remapping-file&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(&quot;&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;filename&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Profile remapping <a class="el" href="GraphWriter_8h.html#ad62b5ad4352d8d92273fbd506ea803cd">file</a> loaded by -sample-profile&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="SampleProfile_8cpp_source.html#l01684">llvm::SampleProfileLoaderPass::run()</a>.</p>
-
-</div>
-</div>
-<a id="a8ac02d9aff84c95f5894d9f7ef8c5e4a" name="a8ac02d9aff84c95f5894d9f7ef8c5e4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ac02d9aff84c95f5894d9f7ef8c5e4a">&#9670;&nbsp;</a></span>SampleProfileSampleCoverage</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; SampleProfileSampleCoverage(&quot;sample-profile-check-sample-coverage&quot;, cl::init(0), <a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;N&quot;), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Emit a <a class="el" href="WarnMissedTransforms_8cpp.html#a519a3fb855d7448b0b5a643d6850b2ae">warning</a> <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> <a class="el" href="structllvm_1_1less.html">less</a> than <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>% of samples in the input profile &quot; &quot;are matched to the IR.&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sample-profile-check-sample-coverage&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(0)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1value__desc.html">cl::value_desc</a>(&quot;N&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Emit a <a class="el" href="WarnMissedTransforms_8cpp.html#a519a3fb855d7448b0b5a643d6850b2ae">warning</a> <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> <a class="el" href="structllvm_1_1less.html">less</a> than <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>% of samples in the input profile &quot; &quot;are matched to the IR.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

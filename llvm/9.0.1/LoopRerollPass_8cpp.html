@@ -52,55 +52,54 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">LoopRerollPass.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="APInt_8h_source.html">llvm/ADT/APInt.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BitVector_8h_source.html">llvm/ADT/BitVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseMap_8h_source.html">llvm/ADT/DenseMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseSet_8h_source.html">llvm/ADT/DenseSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MapVector_8h_source.html">llvm/ADT/MapVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallPtrSet_8h_source.html">llvm/ADT/SmallPtrSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AliasSetTracker_8h_source.html">llvm/Analysis/AliasSetTracker.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopPass_8h_source.html">llvm/Analysis/LoopPass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScalarEvolution_8h_source.html">llvm/Analysis/ScalarEvolution.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScalarEvolutionExpander_8h_source.html">llvm/Analysis/ScalarEvolutionExpander.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScalarEvolutionExpressions_8h_source.html">llvm/Analysis/ScalarEvolutionExpressions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Use_8h_source.html">llvm/IR/Use.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Utils_8h_source.html">llvm/Transforms/Utils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopUtils_8h_source.html">llvm/Transforms/Utils/LoopUtils.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/ADT/APInt.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/BitVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/MapVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AliasSetTracker.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LoopPass.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScalarEvolution.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScalarEvolutionExpander.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScalarEvolutionExpressions.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Use.h&quot;</code><br />
+<code>#include &quot;llvm/IR/User.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/LoopUtils.h&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
@@ -120,22 +119,19 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a20395412405f5d49af2d754c0709cb41"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopRerollPass_8cpp.html#a20395412405f5d49af2d754c0709cb41">STATISTIC</a> (NumRerolledLoops, &quot;Number of rerolled loops&quot;)</td></tr>
 <tr class="separator:a20395412405f5d49af2d754c0709cb41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdd1c308d66ba7af258967fc57dbdbae"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopRerollPass_8cpp.html#afdd1c308d66ba7af258967fc57dbdbae">hasUsesOutsideLoop</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L)</td></tr>
+<tr class="memitem:a28aa833968a8cf02d4e0056c9ce8ca2c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopRerollPass_8cpp.html#a28aa833968a8cf02d4e0056c9ce8ca2c">NumToleratedFailedMatches</a> (&quot;reroll-num-tolerated-failed-matches&quot;, cl::init(400), cl::Hidden, cl::desc(&quot;The maximum number of failures to tolerate&quot; &quot; during fuzzy matching. (default: 400)&quot;))</td></tr>
+<tr class="separator:a28aa833968a8cf02d4e0056c9ce8ca2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdd1c308d66ba7af258967fc57dbdbae"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopRerollPass_8cpp.html#afdd1c308d66ba7af258967fc57dbdbae">hasUsesOutsideLoop</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, Loop *L)</td></tr>
 <tr class="separator:afdd1c308d66ba7af258967fc57dbdbae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac021da5bef93c90709c35a9432e8de16"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopRerollPass_8cpp.html#ac021da5bef93c90709c35a9432e8de16">isUnorderedLoadStore</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:ac021da5bef93c90709c35a9432e8de16"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopRerollPass_8cpp.html#ac021da5bef93c90709c35a9432e8de16">isUnorderedLoadStore</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="separator:ac021da5bef93c90709c35a9432e8de16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9211b27000f5bea2d1b04cf2756be576"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopRerollPass_8cpp.html#a9211b27000f5bea2d1b04cf2756be576">isSimpleArithmeticOp</a> (<a class="el" href="classllvm_1_1User.html">User</a> *IVU)</td></tr>
+<tr class="memitem:a9211b27000f5bea2d1b04cf2756be576"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopRerollPass_8cpp.html#a9211b27000f5bea2d1b04cf2756be576">isSimpleArithmeticOp</a> (User *IVU)</td></tr>
 <tr class="memdesc:a9211b27000f5bea2d1b04cf2756be576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if IVU is a "simple" arithmetic operation.  <a href="LoopRerollPass_8cpp.html#a9211b27000f5bea2d1b04cf2756be576">More...</a><br /></td></tr>
 <tr class="separator:a9211b27000f5bea2d1b04cf2756be576"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67e39b7ca326a46adc94519433152c70"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopRerollPass_8cpp.html#a67e39b7ca326a46adc94519433152c70">isLoopIncrement</a> (<a class="el" href="classllvm_1_1User.html">User</a> *U, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *IV)</td></tr>
+<tr class="memitem:a67e39b7ca326a46adc94519433152c70"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopRerollPass_8cpp.html#a67e39b7ca326a46adc94519433152c70">isLoopIncrement</a> (User *U, Instruction *IV)</td></tr>
 <tr class="separator:a67e39b7ca326a46adc94519433152c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08c38420231bd0f1e850472cdd79d3fd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopRerollPass_8cpp.html#a08c38420231bd0f1e850472cdd79d3fd">isIgnorableInst</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:a08c38420231bd0f1e850472cdd79d3fd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopRerollPass_8cpp.html#a08c38420231bd0f1e850472cdd79d3fd">isIgnorableInst</a> (const Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="separator:a08c38420231bd0f1e850472cdd79d3fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a1b9d5eb856794951d7f6ab82ab058c3b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopRerollPass_8cpp.html#a1b9d5eb856794951d7f6ab82ab058c3b">NumToleratedFailedMatches</a> (&quot;reroll-num-tolerated-failed-matches&quot;, cl::init(400), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The maximum number of failures to tolerate&quot; &quot; during fuzzy matching. (default: 400)&quot;))</td></tr>
-<tr class="separator:a1b9d5eb856794951d7f6ab82ab058c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad78e062f62e0d6e453941fb4ca843e4d" name="ad78e062f62e0d6e453941fb4ca843e4d"></a>
@@ -165,15 +161,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> hasUsesOutsideLoop </td>
+          <td class="memname">static bool hasUsesOutsideLoop </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em>&#160;</td>
         </tr>
         <tr>
@@ -191,7 +187,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopRerollPass_8cpp_source.html#l00500">500</a> of file <a class="el" href="LoopRerollPass_8cpp_source.html">LoopRerollPass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="LoopInfo_8h_source.html#l00112">llvm::LoopBase&lt; BlockT, LoopT &gt;::contains()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -205,9 +201,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isIgnorableInst </td>
+          <td class="memname">static bool isIgnorableInst </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">const Instruction *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -221,7 +217,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopRerollPass_8cpp_source.html#l01116">1116</a> of file <a class="el" href="LoopRerollPass_8cpp_source.html">LoopRerollPass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="IntrinsicInst_8h_source.html#l00050">llvm::IntrinsicInst::getIntrinsicID()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -235,15 +231,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isLoopIncrement </td>
+          <td class="memname">static bool isLoopIncrement </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1User.html">User</a> *&#160;</td>
+          <td class="paramtype">User *&#160;</td>
           <td class="paramname"><em>U</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>IV</em>&#160;</td>
         </tr>
         <tr>
@@ -261,8 +257,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopRerollPass_8cpp_source.html#l00762">762</a> of file <a class="el" href="LoopRerollPass_8cpp_source.html">LoopRerollPass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InstrTypes_8h_source.html#l00402">llvm::BinaryOperator::getOpcode()</a>, and <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
-
 </div>
 </div>
 <a id="a9211b27000f5bea2d1b04cf2756be576" name="a9211b27000f5bea2d1b04cf2756be576"></a>
@@ -275,9 +269,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isSimpleArithmeticOp </td>
+          <td class="memname">static bool isSimpleArithmeticOp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1User.html">User</a> *&#160;</td>
+          <td class="paramtype">User *&#160;</td>
           <td class="paramname"><em>IVU</em></td><td>)</td>
           <td></td>
         </tr>
@@ -308,9 +302,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isUnorderedLoadStore </td>
+          <td class="memname">static bool isUnorderedLoadStore </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -324,7 +318,55 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopRerollPass_8cpp_source.html#l00729">729</a> of file <a class="el" href="LoopRerollPass_8cpp_source.html">LoopRerollPass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="IRTranslator_8cpp_source.html#l00091">MI</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+
+</div>
+</div>
+<a id="a28aa833968a8cf02d4e0056c9ce8ca2c" name="a28aa833968a8cf02d4e0056c9ce8ca2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28aa833968a8cf02d4e0056c9ce8ca2c">&#9670;&nbsp;</a></span>NumToleratedFailedMatches()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; NumToleratedFailedMatches </td>
+          <td>(</td>
+          <td class="paramtype">&quot;reroll-num-tolerated-failed-matches&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(400)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;The maximum number of failures to tolerate&quot; &quot; during fuzzy matching. (default: 400)&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -356,59 +398,10 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a1b9d5eb856794951d7f6ab82ab058c3b" name="a1b9d5eb856794951d7f6ab82ab058c3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b9d5eb856794951d7f6ab82ab058c3b">&#9670;&nbsp;</a></span>NumToleratedFailedMatches</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; NumToleratedFailedMatches(&quot;reroll-num-tolerated-failed-matches&quot;, cl::init(400), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The maximum number of failures to tolerate&quot; &quot; during fuzzy matching. (default: 400)&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;reroll-num-tolerated-failed-matches&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(400)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The maximum number of failures to tolerate&quot; &quot; during fuzzy matching. (default: 400)&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

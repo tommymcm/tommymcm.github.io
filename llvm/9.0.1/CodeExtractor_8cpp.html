@@ -53,58 +53,57 @@ $(function() {
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">CodeExtractor.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="CodeExtractor_8h_source.html">llvm/Transforms/Utils/CodeExtractor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ArrayRef_8h_source.html">llvm/ADT/ArrayRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseMap_8h_source.html">llvm/ADT/DenseMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Optional_8h_source.html">llvm/ADT/Optional.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SetVector_8h_source.html">llvm/ADT/SetVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallPtrSet_8h_source.html">llvm/ADT/SmallPtrSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BlockFrequencyInfo_8h_source.html">llvm/Analysis/BlockFrequencyInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BlockFrequencyInfoImpl_8h_source.html">llvm/Analysis/BlockFrequencyInfoImpl.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BranchProbabilityInfo_8h_source.html">llvm/Analysis/BranchProbabilityInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalValue_8h_source.html">llvm/IR/GlobalValue.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MDBuilder_8h_source.html">llvm/IR/MDBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Verifier_8h_source.html">llvm/IR/Verifier.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BlockFrequency_8h_source.html">llvm/Support/BlockFrequency.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BranchProbability_8h_source.html">llvm/Support/BranchProbability.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Utils/CodeExtractor.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Optional.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SetVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/BlockFrequencyInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/BlockFrequencyInfoImpl.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/BranchProbabilityInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/GlobalValue.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/MDBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/IR/User.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Verifier.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/BlockFrequency.h&quot;</code><br />
+<code>#include &quot;llvm/Support/BranchProbability.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;iterator&gt;</code><br />
@@ -122,36 +121,33 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ac57dae906fe8ac64efe52571121b0fe1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> = <a class="el" href="classllvm_1_1Function_1_1ProfileCount.html">Function::ProfileCount</a></td></tr>
+<tr class="memitem:ac57dae906fe8ac64efe52571121b0fe1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> = Function::ProfileCount</td></tr>
 <tr class="separator:ac57dae906fe8ac64efe52571121b0fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5a7fe53bda3cbce584280a177a18d5ab"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#a5a7fe53bda3cbce584280a177a18d5ab">isBlockValidForExtraction</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> &amp;BB, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;Result, <a class="el" href="classbool.html">bool</a> AllowVarArgs, <a class="el" href="classbool.html">bool</a> AllowAlloca)</td></tr>
+<tr class="memitem:afefbc8d6fe4c01d6fae4d1a2dd5e41c3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#afefbc8d6fe4c01d6fae4d1a2dd5e41c3">AggregateArgsOpt</a> (&quot;aggregate-extracted-args&quot;, cl::Hidden, cl::desc(&quot;Aggregate arguments to code-extracted functions&quot;))</td></tr>
+<tr class="separator:afefbc8d6fe4c01d6fae4d1a2dd5e41c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a7fe53bda3cbce584280a177a18d5ab"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#a5a7fe53bda3cbce584280a177a18d5ab">isBlockValidForExtraction</a> (const BasicBlock &amp;BB, const SetVector&lt; BasicBlock * &gt; &amp;Result, bool AllowVarArgs, bool AllowAlloca)</td></tr>
 <tr class="memdesc:a5a7fe53bda3cbce584280a177a18d5ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test whether a block is valid for extraction.  <a href="CodeExtractor_8cpp.html#a5a7fe53bda3cbce584280a177a18d5ab">More...</a><br /></td></tr>
 <tr class="separator:a5a7fe53bda3cbce584280a177a18d5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10e1b14fd1da88aad682e5d70ab224bb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#a10e1b14fd1da88aad682e5d70ab224bb">buildExtractionBlockSet</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; BBs, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT, <a class="el" href="classbool.html">bool</a> AllowVarArgs, <a class="el" href="classbool.html">bool</a> AllowAlloca)</td></tr>
+<tr class="memitem:a10e1b14fd1da88aad682e5d70ab224bb"><td class="memItemLeft" align="right" valign="top">static SetVector&lt; BasicBlock * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#a10e1b14fd1da88aad682e5d70ab224bb">buildExtractionBlockSet</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; BasicBlock * &gt; BBs, DominatorTree *DT, bool AllowVarArgs, bool AllowAlloca)</td></tr>
 <tr class="memdesc:a10e1b14fd1da88aad682e5d70ab224bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a set of blocks to extract if the input blocks are viable.  <a href="CodeExtractor_8cpp.html#a10e1b14fd1da88aad682e5d70ab224bb">More...</a><br /></td></tr>
 <tr class="separator:a10e1b14fd1da88aad682e5d70ab224bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b5ed2fba3b0aa877b82ba5d6f4131bf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#a2b5ed2fba3b0aa877b82ba5d6f4131bf">definedInRegion</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;Blocks, <a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
+<tr class="memitem:a2b5ed2fba3b0aa877b82ba5d6f4131bf"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#a2b5ed2fba3b0aa877b82ba5d6f4131bf">definedInRegion</a> (const SetVector&lt; BasicBlock * &gt; &amp;Blocks, Value *V)</td></tr>
 <tr class="memdesc:a2b5ed2fba3b0aa877b82ba5d6f4131bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">definedInRegion - Return true if the specified value is defined in the extracted region.  <a href="CodeExtractor_8cpp.html#a2b5ed2fba3b0aa877b82ba5d6f4131bf">More...</a><br /></td></tr>
 <tr class="separator:a2b5ed2fba3b0aa877b82ba5d6f4131bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dde4d426caa9831108c7520128292e0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#a4dde4d426caa9831108c7520128292e0">definedInCaller</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;Blocks, <a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
+<tr class="memitem:a4dde4d426caa9831108c7520128292e0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#a4dde4d426caa9831108c7520128292e0">definedInCaller</a> (const SetVector&lt; BasicBlock * &gt; &amp;Blocks, Value *V)</td></tr>
 <tr class="memdesc:a4dde4d426caa9831108c7520128292e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">definedInCaller - Return true if the specified value is defined in the function being code extracted, but not in the region being extracted.  <a href="CodeExtractor_8cpp.html#a4dde4d426caa9831108c7520128292e0">More...</a><br /></td></tr>
 <tr class="separator:a4dde4d426caa9831108c7520128292e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8289e5f6e7e557759efb2b1b785c9196"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#a8289e5f6e7e557759efb2b1b785c9196">getCommonExitBlock</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;Blocks)</td></tr>
+<tr class="memitem:a8289e5f6e7e557759efb2b1b785c9196"><td class="memItemLeft" align="right" valign="top">static BasicBlock *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#a8289e5f6e7e557759efb2b1b785c9196">getCommonExitBlock</a> (const SetVector&lt; BasicBlock * &gt; &amp;Blocks)</td></tr>
 <tr class="separator:a8289e5f6e7e557759efb2b1b785c9196"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93144a1eb23283cfa213d7dccb12d683"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#a93144a1eb23283cfa213d7dccb12d683">eraseLifetimeMarkersOnInputs</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;Blocks, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;SunkAllocas, <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;LifetimesStart)</td></tr>
+<tr class="memitem:a93144a1eb23283cfa213d7dccb12d683"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#a93144a1eb23283cfa213d7dccb12d683">eraseLifetimeMarkersOnInputs</a> (const SetVector&lt; BasicBlock * &gt; &amp;Blocks, const SetVector&lt; Value * &gt; &amp;SunkAllocas, SetVector&lt; Value * &gt; &amp;LifetimesStart)</td></tr>
 <tr class="memdesc:a93144a1eb23283cfa213d7dccb12d683"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase lifetime.start markers which reference inputs to the extraction region, and insert the referenced memory into <code>LifetimesStart</code>.  <a href="CodeExtractor_8cpp.html#a93144a1eb23283cfa213d7dccb12d683">More...</a><br /></td></tr>
 <tr class="separator:a93144a1eb23283cfa213d7dccb12d683"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3b43649c18ab9e63c1be61b93dd7031"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#ae3b43649c18ab9e63c1be61b93dd7031">insertLifetimeMarkersSurroundingCall</a> (<a class="el" href="classllvm_1_1Module.html">Module</a> *M, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; LifetimesStart, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; LifetimesEnd, <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *TheCall)</td></tr>
+<tr class="memitem:ae3b43649c18ab9e63c1be61b93dd7031"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#ae3b43649c18ab9e63c1be61b93dd7031">insertLifetimeMarkersSurroundingCall</a> (Module *M, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; LifetimesStart, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; LifetimesEnd, CallInst *TheCall)</td></tr>
 <tr class="memdesc:ae3b43649c18ab9e63c1be61b93dd7031"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert lifetime start/end markers surrounding the call to the new function for objects defined in the caller.  <a href="CodeExtractor_8cpp.html#ae3b43649c18ab9e63c1be61b93dd7031">More...</a><br /></td></tr>
 <tr class="separator:ae3b43649c18ab9e63c1be61b93dd7031"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ab04f4c20d718420071af11662817dbd4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CodeExtractor_8cpp.html#ab04f4c20d718420071af11662817dbd4">AggregateArgsOpt</a> (&quot;aggregate-extracted-args&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Aggregate arguments to code-extracted functions&quot;))</td></tr>
-<tr class="separator:ab04f4c20d718420071af11662817dbd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad78e062f62e0d6e453941fb4ca843e4d" name="ad78e062f62e0d6e453941fb4ca843e4d"></a>
@@ -178,7 +174,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="Function_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> =  <a class="el" href="classllvm_1_1Function_1_1ProfileCount.html">Function::ProfileCount</a></td>
+          <td class="memname">using <a class="el" href="Function_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> =  Function::ProfileCount</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -188,6 +184,48 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="afefbc8d6fe4c01d6fae4d1a2dd5e41c3" name="afefbc8d6fe4c01d6fae4d1a2dd5e41c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afefbc8d6fe4c01d6fae4d1a2dd5e41c3">&#9670;&nbsp;</a></span>AggregateArgsOpt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; AggregateArgsOpt </td>
+          <td>(</td>
+          <td class="paramtype">&quot;aggregate-extracted-args&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Aggregate arguments to code-extracted functions&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a10e1b14fd1da88aad682e5d70ab224bb" name="a10e1b14fd1da88aad682e5d70ab224bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a10e1b14fd1da88aad682e5d70ab224bb">&#9670;&nbsp;</a></span>buildExtractionBlockSet()</h2>
 
@@ -198,27 +236,27 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; buildExtractionBlockSet </td>
+          <td class="memname">static SetVector&lt; BasicBlock * &gt; buildExtractionBlockSet </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; BasicBlock * &gt;&#160;</td>
           <td class="paramname"><em>BBs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
+          <td class="paramtype">DominatorTree *&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>AllowVarArgs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>AllowAlloca</em>&#160;</td>
         </tr>
         <tr>
@@ -238,7 +276,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CodeExtractor_8cpp_source.html#l00196">196</a> of file <a class="el" href="CodeExtractor_8cpp_source.html">CodeExtractor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="ArrayRef_8h_source.html#l00143">llvm::ArrayRef&lt; T &gt;::empty()</a>, <a class="el" href="CodeExtractor_8cpp_source.html#l00085">isBlockValidForExtraction()</a>, <a class="el" href="Dominators_8cpp_source.html#l00299">llvm::DominatorTree::isReachableFromEntry()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>, and <a class="el" href="IR_2CFG_8h_source.html#l00124">llvm::predecessors()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="CodeExtractor_8cpp_source.html#l00085">isBlockValidForExtraction()</a>.</p>
 
 </div>
 </div>
@@ -252,15 +290,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> definedInCaller </td>
+          <td class="memname">static bool definedInCaller </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">const SetVector&lt; BasicBlock * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Blocks</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>&#160;</td>
         </tr>
         <tr>
@@ -281,9 +319,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CodeExtractor_8cpp_source.html#l00277">277</a> of file <a class="el" href="CodeExtractor_8cpp_source.html">CodeExtractor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SetVector_8h_source.html#l00210">llvm::SetVector&lt; T, Vector, Set &gt;::count()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="CodeExtractor_8cpp_source.html#l00540">llvm::CodeExtractor::findInputsOutputs()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -297,15 +333,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> definedInRegion </td>
+          <td class="memname">static bool definedInRegion </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">const SetVector&lt; BasicBlock * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Blocks</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>&#160;</td>
         </tr>
         <tr>
@@ -325,9 +361,9 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CodeExtractor_8cpp_source.html#l00267">267</a> of file <a class="el" href="CodeExtractor_8cpp_source.html">CodeExtractor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SetVector_8h_source.html#l00210">llvm::SetVector&lt; T, Vector, Set &gt;::count()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CodeExtractor_8cpp_source.html#l00924">eraseLifetimeMarkersOnInputs()</a>, <a class="el" href="CodeExtractor_8cpp_source.html#l00460">llvm::CodeExtractor::findAllocas()</a>, and <a class="el" href="CodeExtractor_8cpp_source.html#l00540">llvm::CodeExtractor::findInputsOutputs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CodeExtractor_8cpp_source.html#l00924">eraseLifetimeMarkersOnInputs()</a>.</p>
 
 </div>
 </div>
@@ -343,19 +379,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void eraseLifetimeMarkersOnInputs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">const SetVector&lt; BasicBlock * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Blocks</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">const SetVector&lt; Value * &gt; &amp;&#160;</td>
           <td class="paramname"><em>SunkAllocas</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">SetVector&lt; Value * &gt; &amp;&#160;</td>
           <td class="paramname"><em>LifetimesStart</em>&#160;</td>
         </tr>
         <tr>
@@ -376,9 +412,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CodeExtractor_8cpp_source.html#l00924">924</a> of file <a class="el" href="CodeExtractor_8cpp_source.html">CodeExtractor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SetVector_8h_source.html#l00210">llvm::SetVector&lt; T, Vector, Set &gt;::count()</a>, <a class="el" href="CodeExtractor_8cpp_source.html#l00267">definedInRegion()</a>, <a class="el" href="SetVector_8h_source.html#l00141">llvm::SetVector&lt; T, Vector, Set &gt;::insert()</a>, and <a class="el" href="Value_8cpp_source.html#l00612">llvm::Value::stripInBoundsOffsets()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="CodeExtractor_8cpp_source.html#l01335">llvm::CodeExtractor::extractCodeRegion()</a>.</p>
+<p class="reference">References <a class="el" href="CodeExtractor_8cpp_source.html#l00267">definedInRegion()</a>.</p>
 
 </div>
 </div>
@@ -392,9 +426,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * getCommonExitBlock </td>
+          <td class="memname">static BasicBlock * getCommonExitBlock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">const SetVector&lt; BasicBlock * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Blocks</em></td><td>)</td>
           <td></td>
         </tr>
@@ -407,10 +441,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="CodeExtractor_8cpp_source.html#l00285">285</a> of file <a class="el" href="CodeExtractor_8cpp_source.html">CodeExtractor.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="STLExtras_8h_source.html#l01199">llvm::any_of()</a>, <a class="el" href="SetVector_8h_source.html#l00210">llvm::SetVector&lt; T, Vector, Set &gt;::count()</a>, and <a class="el" href="IR_2CFG_8h_source.html#l00259">llvm::successors()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="CodeExtractor_8cpp_source.html#l00460">llvm::CodeExtractor::findAllocas()</a>.</p>
 
 </div>
 </div>
@@ -426,25 +456,25 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void insertLifetimeMarkersSurroundingCall </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> *&#160;</td>
+          <td class="paramtype">Module *&#160;</td>
           <td class="paramname"><em>M</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
           <td class="paramname"><em>LifetimesStart</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
           <td class="paramname"><em>LifetimesEnd</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>TheCall</em>&#160;</td>
         </tr>
         <tr>
@@ -464,9 +494,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CodeExtractor_8cpp_source.html#l00950">950</a> of file <a class="el" href="CodeExtractor_8cpp_source.html">CodeExtractor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="Instructions_8h_source.html#l01437">llvm::CallInst::Create()</a>, <a class="el" href="Instructions_8cpp_source.html#l02838">llvm::CastInst::CreatePointerCast()</a>, <a class="el" href="ArrayRef_8h_source.html#l00143">llvm::ArrayRef&lt; T &gt;::empty()</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00059">llvm::Instruction::getFunction()</a>, <a class="el" href="Evaluator_8cpp_source.html#l00258">getFunction()</a>, <a class="el" href="IRBuilder_8h_source.html#l00388">llvm::IRBuilderBase::getInt64Ty()</a>, <a class="el" href="classllvm_1_1Type.html#aa9dbd26362b0b38277bca4f8c02fb4f9">llvm::Type::getInt8PtrTy()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="Constants_8cpp_source.html#l00645">llvm::ConstantInt::getSigned()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, and <a class="el" href="IR_2Instruction_8cpp_source.html#l00073">llvm::Instruction::insertBefore()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="CodeExtractor_8cpp_source.html#l01335">llvm::CodeExtractor::extractCodeRegion()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="Evaluator_8cpp_source.html#l00258">getFunction()</a>.</p>
 
 </div>
 </div>
@@ -480,27 +508,27 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isBlockValidForExtraction </td>
+          <td class="memname">static bool isBlockValidForExtraction </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> &amp;&#160;</td>
+          <td class="paramtype">const BasicBlock &amp;&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SetVector.html">SetVector</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">const SetVector&lt; BasicBlock * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Result</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>AllowVarArgs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>AllowAlloca</em>&#160;</td>
         </tr>
         <tr>
@@ -520,59 +548,16 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CodeExtractor_8cpp_source.html#l00085">85</a> of file <a class="el" href="CodeExtractor_8cpp_source.html">CodeExtractor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="SmallVector_8h_source.html#l00055">llvm::SmallVectorBase::empty()</a>, <a class="el" href="BasicBlock_8h_source.html#l00270">llvm::BasicBlock::end()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00797">getParent()</a>, <a class="el" href="BasicBlock_8h_source.html#l00391">llvm::BasicBlock::hasAddressTaken()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00370">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert()</a>, <a class="el" href="User_8h_source.html#l00237">llvm::User::operands()</a>, <a class="el" href="SmallVector_8h_source.html#l00374">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val()</a>, and <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00797">getParent()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CodeExtractor_8cpp_source.html#l00196">buildExtractionBlockSet()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ab04f4c20d718420071af11662817dbd4" name="ab04f4c20d718420071af11662817dbd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab04f4c20d718420071af11662817dbd4">&#9670;&nbsp;</a></span>AggregateArgsOpt</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; AggregateArgsOpt(&quot;aggregate-extracted-args&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Aggregate arguments to code-extracted functions&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;aggregate-extracted-args&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Aggregate arguments to code-extracted functions&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:23 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

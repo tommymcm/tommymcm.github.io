@@ -57,41 +57,41 @@ $(function() {
   <div class="headertitle"><div class="title">IndirectCallPromotion.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="ArrayRef_8h_source.html">llvm/ADT/ArrayRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringRef_8h_source.html">llvm/ADT/StringRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IndirectCallPromotionAnalysis_8h_source.html">llvm/Analysis/IndirectCallPromotionAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IndirectCallVisitor_8h_source.html">llvm/Analysis/IndirectCallVisitor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="OptimizationRemarkEmitter_8h_source.html">llvm/Analysis/OptimizationRemarkEmitter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DiagnosticInfo_8h_source.html">llvm/IR/DiagnosticInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MDBuilder_8h_source.html">llvm/IR/MDBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrProf_8h_source.html">llvm/ProfileData/InstrProf.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2Error_8h_source.html">llvm/Support/Error.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instrumentation_8h_source.html">llvm/Transforms/Instrumentation.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PGOInstrumentation_8h_source.html">llvm/Transforms/Instrumentation/PGOInstrumentation.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallPromotionUtils_8h_source.html">llvm/Transforms/Utils/CallPromotionUtils.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/IndirectCallPromotionAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/IndirectCallVisitor.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/OptimizationRemarkEmitter.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DiagnosticInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/MDBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/ProfileData/InstrProf.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Error.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Instrumentation.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Instrumentation/PGOInstrumentation.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/CallPromotionUtils.h&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
@@ -102,6 +102,50 @@ $(function() {
 Include dependency graph for IndirectCallPromotion.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="IndirectCallPromotion_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Instrumentation_2IndirectCallPromotion_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Instrumentation_2IndirectCallPromotion_8cpp" id="alib_2Transforms_2Instrumentation_2IndirectCallPromotion_8cpp">
+<area shape="rect" title=" " alt="" coords="3753,5,3975,45"/>
+<area shape="rect" title=" " alt="" coords="5,101,160,126"/>
+<area shape="rect" title=" " alt="" coords="184,101,347,126"/>
+<area shape="rect" title=" " alt="" coords="371,101,546,126"/>
+<area shape="rect" title=" " alt="" coords="570,101,721,126"/>
+<area shape="rect" title=" " alt="" coords="745,101,903,126"/>
+<area shape="rect" title=" " alt="" coords="927,93,1115,133"/>
+<area shape="rect" title=" " alt="" coords="1139,93,1327,133"/>
+<area shape="rect" title=" " alt="" coords="1351,93,1550,133"/>
+<area shape="rect" title=" " alt="" coords="1575,93,1793,133"/>
+<area shape="rect" title=" " alt="" coords="1818,101,1966,126"/>
+<area shape="rect" title=" " alt="" coords="1991,101,2145,126"/>
+<area shape="rect" title=" " alt="" coords="2170,101,2305,126"/>
+<area shape="rect" title=" " alt="" coords="2329,101,2501,126"/>
+<area shape="rect" title=" " alt="" coords="2525,101,2704,126"/>
+<area shape="rect" title=" " alt="" coords="2728,101,2867,126"/>
+<area shape="rect" title=" " alt="" coords="2891,101,3034,126"/>
+<area shape="rect" title=" " alt="" coords="3058,101,3209,126"/>
+<area shape="rect" title=" " alt="" coords="3233,101,3386,126"/>
+<area shape="rect" title=" " alt="" coords="3411,101,3571,126"/>
+<area shape="rect" title=" " alt="" coords="3595,101,3765,126"/>
+<area shape="rect" title=" " alt="" coords="3789,101,3939,126"/>
+<area shape="rect" title=" " alt="" coords="3963,101,4133,126"/>
+<area shape="rect" title=" " alt="" coords="4157,101,4272,126"/>
+<area shape="rect" title=" " alt="" coords="4296,101,4416,126"/>
+<area shape="rect" title=" " alt="" coords="4440,101,4536,126"/>
+<area shape="rect" title=" " alt="" coords="4560,101,4757,126"/>
+<area shape="rect" title=" " alt="" coords="4781,101,4952,126"/>
+<area shape="rect" title=" " alt="" coords="4977,101,5191,126"/>
+<area shape="rect" title=" " alt="" coords="5216,101,5379,126"/>
+<area shape="rect" title=" " alt="" coords="5403,101,5554,126"/>
+<area shape="rect" title=" " alt="" coords="5578,101,5785,126"/>
+<area shape="rect" title=" " alt="" coords="5809,101,6055,126"/>
+<area shape="rect" title=" " alt="" coords="6079,93,6313,133"/>
+<area shape="rect" title=" " alt="" coords="6337,93,6498,133"/>
+<area shape="rect" title=" " alt="" coords="6522,93,6683,133"/>
+<area shape="rect" title=" " alt="" coords="6708,101,6777,126"/>
+<area shape="rect" title=" " alt="" coords="6801,101,6868,126"/>
+<area shape="rect" title=" " alt="" coords="6892,101,6969,126"/>
+<area shape="rect" title=" " alt="" coords="6993,101,7052,126"/>
+<area shape="rect" title=" " alt="" coords="7077,101,7137,126"/>
+<area shape="rect" title=" " alt="" coords="7161,101,7223,126"/>
+</map>
 </div>
 </div>
 <p><a href="IndirectCallPromotion_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -117,34 +161,34 @@ Functions</h2></td></tr>
 <tr class="separator:af5e3f5f00c274ae068ebad3cc4b207e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd8cc1e7d17b14b4915f3554511aa2e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#acd8cc1e7d17b14b4915f3554511aa2e8">STATISTIC</a> (NumOfPGOICallsites, &quot;Number of indirect call candidate sites.&quot;)</td></tr>
 <tr class="separator:acd8cc1e7d17b14b4915f3554511aa2e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b0026e097687cc67b5ea32cd489979f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#a2b0026e097687cc67b5ea32cd489979f">INITIALIZE_PASS_BEGIN</a> (PGOIndirectCallPromotionLegacyPass, &quot;pgo-icall-prom&quot;, &quot;Use PGO <a class="el" href="XRayInstrumentation_8cpp.html#a154603d920c7f291eb16bbff268a8f2a">instrumentation</a> profile to promote indirect &quot; &quot;<a class="el" href="AMDGPULibCalls_8cpp.html#a91feb1b5d1a9c4e07149041912f83b42">calls</a> to direct calls.&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(PGOIndirectCallPromotionLegacyPass</td></tr>
+<tr class="memitem:ad9b030bfaad6d6314eedc69506d77816"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#ad9b030bfaad6d6314eedc69506d77816">DisableICP</a> (&quot;disable-icp&quot;, cl::init(false), cl::Hidden, cl::desc(&quot;Disable indirect call promotion&quot;))</td></tr>
+<tr class="separator:ad9b030bfaad6d6314eedc69506d77816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade1dc829606fa047ceb2d50120046377"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#ade1dc829606fa047ceb2d50120046377">ICPCutOff</a> (&quot;icp-cutoff&quot;, cl::init(0), cl::Hidden, cl::ZeroOrMore, cl::desc(&quot;Max number of promotions for this compilation&quot;))</td></tr>
+<tr class="separator:ade1dc829606fa047ceb2d50120046377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedc21c3e59287c45f519df759e22cd72"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#aedc21c3e59287c45f519df759e22cd72">ICPCSSkip</a> (&quot;icp-csskip&quot;, cl::init(0), cl::Hidden, cl::ZeroOrMore, cl::desc(&quot;Skip Callsite up to this number for this compilation&quot;))</td></tr>
+<tr class="separator:aedc21c3e59287c45f519df759e22cd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787c2ec22fafcbff09117fbd3b992c64"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#a787c2ec22fafcbff09117fbd3b992c64">ICPLTOMode</a> (&quot;icp-lto&quot;, cl::init(false), cl::Hidden, cl::desc(&quot;Run indirect-call promotion in LTO &quot; &quot;mode&quot;))</td></tr>
+<tr class="separator:a787c2ec22fafcbff09117fbd3b992c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac46f4d33efee28ec689571a13bf30862"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#ac46f4d33efee28ec689571a13bf30862">ICPSamplePGOMode</a> (&quot;icp-samplepgo&quot;, cl::init(false), cl::Hidden, cl::desc(&quot;Run indirect-call promotion in SamplePGO mode&quot;))</td></tr>
+<tr class="separator:ac46f4d33efee28ec689571a13bf30862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a820192e74ac649aa2fa2ae3510d60691"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#a820192e74ac649aa2fa2ae3510d60691">ICPCallOnly</a> (&quot;icp-call-only&quot;, cl::init(false), cl::Hidden, cl::desc(&quot;Run indirect-call promotion for call <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> &quot; &quot;only&quot;))</td></tr>
+<tr class="separator:a820192e74ac649aa2fa2ae3510d60691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9db749487070e70548b06a1a62116a7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#af9db749487070e70548b06a1a62116a7">ICPInvokeOnly</a> (&quot;icp-invoke-only&quot;, cl::init(false), cl::Hidden, cl::desc(&quot;Run indirect-call promotion for &quot; &quot;invoke instruction only&quot;))</td></tr>
+<tr class="separator:af9db749487070e70548b06a1a62116a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861f4e64805f088ad5ec05213c92d62c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#a861f4e64805f088ad5ec05213c92d62c">ICPDUMPAFTER</a> (&quot;icp-dumpafter&quot;, cl::init(false), cl::Hidden, cl::desc(&quot;Dump <a class="el" href="Lint_8cpp.html#a7fb3c9caadeb0f7fe4828d380158d0f9">IR</a> after transformation happens&quot;))</td></tr>
+<tr class="separator:a861f4e64805f088ad5ec05213c92d62c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0026e097687cc67b5ea32cd489979f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#a2b0026e097687cc67b5ea32cd489979f">INITIALIZE_PASS_BEGIN</a> (PGOIndirectCallPromotionLegacyPass, &quot;pgo-icall-prom&quot;, &quot;Use PGO <a class="el" href="PGOInstrumentation_8cpp.html#adac8189ad0ec3e77037d43c983e85fff">instrumentation</a> profile to promote indirect &quot; &quot;<a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to direct calls.&quot;, false, false) INITIALIZE_PASS_END(PGOIndirectCallPromotionLegacyPass</td></tr>
 <tr class="separator:a2b0026e097687cc67b5ea32cd489979f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0afab406364d2d6ad820ac7e90a3c3ec"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#a0afab406364d2d6ad820ac7e90a3c3ec">promoteIndirectCalls</a> (<a class="el" href="classllvm_1_1Module.html">Module</a> &amp;M, <a class="el" href="classllvm_1_1ProfileSummaryInfo.html">ProfileSummaryInfo</a> *PSI, <a class="el" href="classbool.html">bool</a> InLTO, <a class="el" href="classbool.html">bool</a> SamplePGO, <a class="el" href="namespacellvm.html#a45d5ebd4319006101352c5ee7cc16581">ModuleAnalysisManager</a> *AM=nullptr)</td></tr>
+<tr class="memitem:a0afab406364d2d6ad820ac7e90a3c3ec"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#a0afab406364d2d6ad820ac7e90a3c3ec">promoteIndirectCalls</a> (Module &amp;M, ProfileSummaryInfo *PSI, bool InLTO, bool SamplePGO, ModuleAnalysisManager *AM=nullptr)</td></tr>
 <tr class="separator:a0afab406364d2d6ad820ac7e90a3c3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:add108d06c79d77afe7c82a144bb98ac2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#add108d06c79d77afe7c82a144bb98ac2">DisableICP</a> (&quot;disable-icp&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Disable indirect call promotion&quot;))</td></tr>
-<tr class="separator:add108d06c79d77afe7c82a144bb98ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4219619ff73e2dab6f8be0cb391dfa24"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#a4219619ff73e2dab6f8be0cb391dfa24">ICPCutOff</a> (&quot;icp-cutoff&quot;, cl::init(0), cl::Hidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Max number of promotions <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> this compilation&quot;))</td></tr>
-<tr class="separator:a4219619ff73e2dab6f8be0cb391dfa24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab34eded41059d3a3b2433b02238f0db5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#ab34eded41059d3a3b2433b02238f0db5">ICPCSSkip</a> (&quot;icp-csskip&quot;, cl::init(0), cl::Hidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Skip Callsite up to this number <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> this compilation&quot;))</td></tr>
-<tr class="separator:ab34eded41059d3a3b2433b02238f0db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8c2179fc3a41c8a6c4390e305bb1b85"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#ac8c2179fc3a41c8a6c4390e305bb1b85">ICPLTOMode</a> (&quot;icp-lto&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Run indirect-call promotion in LTO &quot; &quot;mode&quot;))</td></tr>
-<tr class="separator:ac8c2179fc3a41c8a6c4390e305bb1b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff19afa2ff7d107013a854a558edd955"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#aff19afa2ff7d107013a854a558edd955">ICPSamplePGOMode</a> (&quot;icp-samplepgo&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Run indirect-call promotion in SamplePGO mode&quot;))</td></tr>
-<tr class="separator:aff19afa2ff7d107013a854a558edd955"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01e7598cebfab04d8a5a2e58705b4a3a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#a01e7598cebfab04d8a5a2e58705b4a3a">ICPCallOnly</a> (&quot;icp-call-only&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Run indirect-call promotion <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> call <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> &quot; &quot;only&quot;))</td></tr>
-<tr class="separator:a01e7598cebfab04d8a5a2e58705b4a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20eeae8f298bca98595ea218b7315829"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#a20eeae8f298bca98595ea218b7315829">ICPInvokeOnly</a> (&quot;icp-invoke-only&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Run indirect-call promotion <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> &quot; &quot;invoke instruction only&quot;))</td></tr>
-<tr class="separator:a20eeae8f298bca98595ea218b7315829"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f756b832953d5a1443f304efa45bdc3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#a2f756b832953d5a1443f304efa45bdc3">ICPDUMPAFTER</a> (&quot;icp-dumpafter&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Dump <a class="el" href="Lint_8cpp.html#a7fb3c9caadeb0f7fe4828d380158d0f9">IR</a> after transformation happens&quot;))</td></tr>
-<tr class="separator:a2f756b832953d5a1443f304efa45bdc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3617329667b9476eda809bc4af2169f"><td class="memItemLeft" align="right" valign="top">pgo icall&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#ae3617329667b9476eda809bc4af2169f">prom</a></td></tr>
 <tr class="separator:ae3617329667b9476eda809bc4af2169f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a505f61ea2bfe13d570c21b8a0bc6b7"><td class="memItemLeft" align="right" valign="top">pgo icall <a class="el" href="classllvm_1_1Use.html">Use</a> PGO <a class="el" href="XRayInstrumentation_8cpp.html#a154603d920c7f291eb16bbff268a8f2a">instrumentation</a> profile to promote indirect calls to direct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a></td></tr>
+<tr class="memitem:a2a505f61ea2bfe13d570c21b8a0bc6b7"><td class="memItemLeft" align="right" valign="top">pgo icall Use PGO <a class="el" href="PGOInstrumentation_8cpp.html#adac8189ad0ec3e77037d43c983e85fff">instrumentation</a> profile to promote indirect calls to direct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a></td></tr>
 <tr class="separator:a2a505f61ea2bfe13d570c21b8a0bc6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9a5b7e62a37b0c48a2667b4a6cad33b"><td class="memItemLeft" align="right" valign="top">pgo icall <a class="el" href="classllvm_1_1Use.html">Use</a> PGO <a class="el" href="XRayInstrumentation_8cpp.html#a154603d920c7f291eb16bbff268a8f2a">instrumentation</a> profile to promote indirect <a class="el" href="AMDGPULibCalls_8cpp.html#a91feb1b5d1a9c4e07149041912f83b42">calls</a> to direct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#ac9a5b7e62a37b0c48a2667b4a6cad33b">false</a></td></tr>
+<tr class="memitem:ac9a5b7e62a37b0c48a2667b4a6cad33b"><td class="memItemLeft" align="right" valign="top">pgo icall Use PGO <a class="el" href="PGOInstrumentation_8cpp.html#adac8189ad0ec3e77037d43c983e85fff">instrumentation</a> profile to promote indirect <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to direct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndirectCallPromotion_8cpp.html#ac9a5b7e62a37b0c48a2667b4a6cad33b">false</a></td></tr>
 <tr class="separator:ac9a5b7e62a37b0c48a2667b4a6cad33b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -165,6 +209,408 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ad9b030bfaad6d6314eedc69506d77816" name="ad9b030bfaad6d6314eedc69506d77816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9b030bfaad6d6314eedc69506d77816">&#9670;&nbsp;</a></span>DisableICP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; DisableICP </td>
+          <td>(</td>
+          <td class="paramtype">&quot;disable-icp&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Disable indirect call promotion&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="IndirectCallPromotion_8cpp_source.html#l00382">promoteIndirectCalls()</a>.</p>
+
+</div>
+</div>
+<a id="a820192e74ac649aa2fa2ae3510d60691" name="a820192e74ac649aa2fa2ae3510d60691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a820192e74ac649aa2fa2ae3510d60691">&#9670;&nbsp;</a></span>ICPCallOnly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ICPCallOnly </td>
+          <td>(</td>
+          <td class="paramtype">&quot;icp-call-only&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Run indirect-call promotion for call <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> &quot; &quot;only&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aedc21c3e59287c45f519df759e22cd72" name="aedc21c3e59287c45f519df759e22cd72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc21c3e59287c45f519df759e22cd72">&#9670;&nbsp;</a></span>ICPCSSkip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; ICPCSSkip </td>
+          <td>(</td>
+          <td class="paramtype">&quot;icp-csskip&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(0)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ZeroOrMore&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Skip Callsite up to this number for this compilation&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade1dc829606fa047ceb2d50120046377" name="ade1dc829606fa047ceb2d50120046377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade1dc829606fa047ceb2d50120046377">&#9670;&nbsp;</a></span>ICPCutOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; ICPCutOff </td>
+          <td>(</td>
+          <td class="paramtype">&quot;icp-cutoff&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(0)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ZeroOrMore&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Max number of promotions for this compilation&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="IndirectCallPromotion_8cpp_source.html#l00382">promoteIndirectCalls()</a>.</p>
+
+</div>
+</div>
+<a id="a861f4e64805f088ad5ec05213c92d62c" name="a861f4e64805f088ad5ec05213c92d62c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a861f4e64805f088ad5ec05213c92d62c">&#9670;&nbsp;</a></span>ICPDUMPAFTER()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ICPDUMPAFTER </td>
+          <td>(</td>
+          <td class="paramtype">&quot;icp-dumpafter&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Dump <a class="el" href="Lint_8cpp.html#a7fb3c9caadeb0f7fe4828d380158d0f9">IR</a> after transformation happens&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="IndirectCallPromotion_8cpp_source.html#l00382">promoteIndirectCalls()</a>.</p>
+
+</div>
+</div>
+<a id="af9db749487070e70548b06a1a62116a7" name="af9db749487070e70548b06a1a62116a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9db749487070e70548b06a1a62116a7">&#9670;&nbsp;</a></span>ICPInvokeOnly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ICPInvokeOnly </td>
+          <td>(</td>
+          <td class="paramtype">&quot;icp-invoke-only&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Run indirect-call promotion for &quot; &quot;invoke instruction only&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a787c2ec22fafcbff09117fbd3b992c64" name="a787c2ec22fafcbff09117fbd3b992c64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a787c2ec22fafcbff09117fbd3b992c64">&#9670;&nbsp;</a></span>ICPLTOMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ICPLTOMode </td>
+          <td>(</td>
+          <td class="paramtype">&quot;icp-lto&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Run indirect-call promotion in LTO &quot; &quot;mode&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac46f4d33efee28ec689571a13bf30862" name="ac46f4d33efee28ec689571a13bf30862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac46f4d33efee28ec689571a13bf30862">&#9670;&nbsp;</a></span>ICPSamplePGOMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ICPSamplePGOMode </td>
+          <td>(</td>
+          <td class="paramtype">&quot;icp-samplepgo&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Run indirect-call promotion in SamplePGO mode&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2b0026e097687cc67b5ea32cd489979f" name="a2b0026e097687cc67b5ea32cd489979f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b0026e097687cc67b5ea32cd489979f">&#9670;&nbsp;</a></span>INITIALIZE_PASS_BEGIN()</h2>
 
@@ -186,7 +632,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Use PGO <a class="el" href="XRayInstrumentation_8cpp.html#a154603d920c7f291eb16bbff268a8f2a">instrumentation</a> profile to promote indirect &quot; &quot;<a class="el" href="AMDGPULibCalls_8cpp.html#a91feb1b5d1a9c4e07149041912f83b42">calls</a> to direct calls.&quot;&#160;</td>
+          <td class="paramtype">&quot;Use PGO <a class="el" href="PGOInstrumentation_8cpp.html#adac8189ad0ec3e77037d43c983e85fff">instrumentation</a> profile to promote indirect &quot; &quot;<a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to direct calls.&quot;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -221,33 +667,33 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> promoteIndirectCalls </td>
+          <td class="memname">static bool promoteIndirectCalls </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> &amp;&#160;</td>
+          <td class="paramtype">Module &amp;&#160;</td>
           <td class="paramname"><em>M</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ProfileSummaryInfo.html">ProfileSummaryInfo</a> *&#160;</td>
+          <td class="paramtype">ProfileSummaryInfo *&#160;</td>
           <td class="paramname"><em>PSI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>InLTO</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>SamplePGO</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#a45d5ebd4319006101352c5ee7cc16581">ModuleAnalysisManager</a> *&#160;</td>
+          <td class="paramtype">ModuleAnalysisManager *&#160;</td>
           <td class="paramname"><em>AM</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -265,9 +711,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndirectCallPromotion_8cpp_source.html#l00382">382</a> of file <a class="el" href="IndirectCallPromotion_8cpp_source.html">IndirectCallPromotion.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CoverageMappingReader_8cpp_source.html#l00350">llvm::InstrProfSymtab::create()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="IndirectCallPromotion_8cpp.html#add108d06c79d77afe7c82a144bb98ac2">DisableICP</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="IndirectCallPromotion_8cpp.html#a4219619ff73e2dab6f8be0cb391dfa24">ICPCutOff</a>, <a class="el" href="IndirectCallPromotion_8cpp.html#a2f756b832953d5a1443f304efa45bdc3">ICPDUMPAFTER</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, and <a class="el" href="llvm_2Support_2Error_8h_source.html#l00966">llvm::toString()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="IndirectCallPromotion_8cpp_source.html#l00434">llvm::PGOIndirectCallPromotion::run()</a>.</p>
+<p class="reference">References <a class="el" href="IndirectCallPromotion_8cpp.html#ad9b030bfaad6d6314eedc69506d77816">DisableICP()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="IndirectCallPromotion_8cpp.html#ade1dc829606fa047ceb2d50120046377">ICPCutOff()</a>, and <a class="el" href="IndirectCallPromotion_8cpp.html#a861f4e64805f088ad5ec05213c92d62c">ICPDUMPAFTER()</a>.</p>
 
 </div>
 </div>
@@ -335,62 +779,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">pgo icall <a class="el" href="classllvm_1_1Use.html">Use</a> PGO <a class="el" href="XRayInstrumentation_8cpp.html#a154603d920c7f291eb16bbff268a8f2a">instrumentation</a> profile to promote indirect calls to direct calls</td>
+          <td class="memname">pgo icall Use PGO <a class="el" href="PGOInstrumentation_8cpp.html#adac8189ad0ec3e77037d43c983e85fff">instrumentation</a> profile to promote indirect calls to direct calls</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="IndirectCallPromotion_8cpp_source.html#l00157">157</a> of file <a class="el" href="IndirectCallPromotion_8cpp_source.html">IndirectCallPromotion.cpp</a>.</p>
-
-</div>
-</div>
-<a id="add108d06c79d77afe7c82a144bb98ac2" name="add108d06c79d77afe7c82a144bb98ac2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add108d06c79d77afe7c82a144bb98ac2">&#9670;&nbsp;</a></span>DisableICP</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; DisableICP(&quot;disable-icp&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Disable indirect call promotion&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;disable-icp&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Disable indirect call promotion&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="IndirectCallPromotion_8cpp_source.html#l00382">promoteIndirectCalls()</a>.</p>
 
 </div>
 </div>
@@ -401,368 +795,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">pgo icall <a class="el" href="classllvm_1_1Use.html">Use</a> PGO <a class="el" href="XRayInstrumentation_8cpp.html#a154603d920c7f291eb16bbff268a8f2a">instrumentation</a> profile to promote indirect <a class="el" href="AMDGPULibCalls_8cpp.html#a91feb1b5d1a9c4e07149041912f83b42">calls</a> to direct false</td>
+          <td class="memname">pgo icall Use PGO <a class="el" href="PGOInstrumentation_8cpp.html#adac8189ad0ec3e77037d43c983e85fff">instrumentation</a> profile to promote indirect <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to direct false</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="IndirectCallPromotion_8cpp_source.html#l00158">158</a> of file <a class="el" href="IndirectCallPromotion_8cpp_source.html">IndirectCallPromotion.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a01e7598cebfab04d8a5a2e58705b4a3a" name="a01e7598cebfab04d8a5a2e58705b4a3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01e7598cebfab04d8a5a2e58705b4a3a">&#9670;&nbsp;</a></span>ICPCallOnly</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ICPCallOnly(&quot;icp-call-only&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Run indirect-call promotion <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> call <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> &quot; &quot;only&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;icp-call-only&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Run indirect-call promotion <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> call <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> &quot; &quot;only&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab34eded41059d3a3b2433b02238f0db5" name="ab34eded41059d3a3b2433b02238f0db5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab34eded41059d3a3b2433b02238f0db5">&#9670;&nbsp;</a></span>ICPCSSkip</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; ICPCSSkip(&quot;icp-csskip&quot;, cl::init(0), cl::Hidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Skip Callsite up to this number <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> this compilation&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;icp-csskip&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(0)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ZeroOrMore&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Skip Callsite up to this number <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> this compilation&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4219619ff73e2dab6f8be0cb391dfa24" name="a4219619ff73e2dab6f8be0cb391dfa24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4219619ff73e2dab6f8be0cb391dfa24">&#9670;&nbsp;</a></span>ICPCutOff</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; ICPCutOff(&quot;icp-cutoff&quot;, cl::init(0), cl::Hidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Max number of promotions <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> this compilation&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;icp-cutoff&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(0)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ZeroOrMore&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Max number of promotions <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> this compilation&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="IndirectCallPromotion_8cpp_source.html#l00382">promoteIndirectCalls()</a>.</p>
-
-</div>
-</div>
-<a id="a2f756b832953d5a1443f304efa45bdc3" name="a2f756b832953d5a1443f304efa45bdc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f756b832953d5a1443f304efa45bdc3">&#9670;&nbsp;</a></span>ICPDUMPAFTER</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ICPDUMPAFTER(&quot;icp-dumpafter&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Dump <a class="el" href="Lint_8cpp.html#a7fb3c9caadeb0f7fe4828d380158d0f9">IR</a> after transformation happens&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;icp-dumpafter&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Dump <a class="el" href="Lint_8cpp.html#a7fb3c9caadeb0f7fe4828d380158d0f9">IR</a> after transformation happens&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="IndirectCallPromotion_8cpp_source.html#l00382">promoteIndirectCalls()</a>.</p>
-
-</div>
-</div>
-<a id="a20eeae8f298bca98595ea218b7315829" name="a20eeae8f298bca98595ea218b7315829"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20eeae8f298bca98595ea218b7315829">&#9670;&nbsp;</a></span>ICPInvokeOnly</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ICPInvokeOnly(&quot;icp-invoke-only&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Run indirect-call promotion <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> &quot; &quot;invoke instruction only&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;icp-invoke-only&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Run indirect-call promotion <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> &quot; &quot;invoke instruction only&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac8c2179fc3a41c8a6c4390e305bb1b85" name="ac8c2179fc3a41c8a6c4390e305bb1b85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8c2179fc3a41c8a6c4390e305bb1b85">&#9670;&nbsp;</a></span>ICPLTOMode</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ICPLTOMode(&quot;icp-lto&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Run indirect-call promotion in LTO &quot; &quot;mode&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;icp-lto&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Run indirect-call promotion in LTO &quot; &quot;mode&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="IndirectCallPromotion_8cpp_source.html#l00434">llvm::PGOIndirectCallPromotion::run()</a>.</p>
-
-</div>
-</div>
-<a id="aff19afa2ff7d107013a854a558edd955" name="aff19afa2ff7d107013a854a558edd955"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff19afa2ff7d107013a854a558edd955">&#9670;&nbsp;</a></span>ICPSamplePGOMode</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ICPSamplePGOMode(&quot;icp-samplepgo&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Run indirect-call promotion in SamplePGO mode&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;icp-samplepgo&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Run indirect-call promotion in SamplePGO mode&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="IndirectCallPromotion_8cpp_source.html#l00434">llvm::PGOIndirectCallPromotion::run()</a>.</p>
 
 </div>
 </div>
@@ -785,7 +823,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

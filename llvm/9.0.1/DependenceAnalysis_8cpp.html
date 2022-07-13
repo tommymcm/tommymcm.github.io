@@ -57,26 +57,45 @@ $(function() {
   <div class="headertitle"><div class="title">DependenceAnalysis.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="DependenceAnalysis_8h_source.html">llvm/Analysis/DependenceAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScalarEvolution_8h_source.html">llvm/Analysis/ScalarEvolution.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScalarEvolutionExpressions_8h_source.html">llvm/Analysis/ScalarEvolutionExpressions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/DependenceAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScalarEvolution.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScalarEvolutionExpressions.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
 <code>#include &quot;llvm/Config/llvm-config.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstIterator_8h_source.html">llvm/IR/InstIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Operator_8h_source.html">llvm/IR/Operator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;llvm/IR/InstIterator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Operator.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for DependenceAnalysis.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="DependenceAnalysis_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2DependenceAnalysis_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2DependenceAnalysis_8cpp" id="alib_2Analysis_2DependenceAnalysis_8cpp">
+<area shape="rect" title=" " alt="" coords="1611,5,1875,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,200,119"/>
+<area shape="rect" title=" " alt="" coords="224,86,387,111"/>
+<area shape="rect" title=" " alt="" coords="411,86,562,111"/>
+<area shape="rect" title=" " alt="" coords="587,86,800,111"/>
+<area shape="rect" title=" " alt="" coords="825,86,1007,111"/>
+<area shape="rect" title=" " alt="" coords="1032,86,1259,111"/>
+<area shape="rect" title=" " alt="" coords="1283,79,1498,119"/>
+<area shape="rect" title=" " alt="" coords="1523,86,1739,111"/>
+<area shape="rect" title=" " alt="" coords="1763,86,1949,111"/>
+<area shape="rect" title=" " alt="" coords="1973,86,2128,111"/>
+<area shape="rect" title=" " alt="" coords="2153,86,2285,111"/>
+<area shape="rect" title=" " alt="" coords="2309,86,2449,111"/>
+<area shape="rect" title=" " alt="" coords="2473,86,2687,111"/>
+<area shape="rect" title=" " alt="" coords="2712,86,2875,111"/>
+<area shape="rect" title=" " alt="" coords="2899,86,3109,111"/>
+<area shape="rect" title=" " alt="" coords="3134,86,3341,111"/>
+</map>
 </div>
 </div>
 <p><a href="DependenceAnalysis_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -152,42 +171,42 @@ Functions</h2></td></tr>
 <tr class="separator:a787465e49cacdf4a541a46aa0b4c94fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a918aedb7e5248d2d31fa48a390b93851"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a918aedb7e5248d2d31fa48a390b93851">STATISTIC</a> (BanerjeeSuccesses, &quot;Banerjee successes&quot;)</td></tr>
 <tr class="separator:a918aedb7e5248d2d31fa48a390b93851"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a151582df001d28a64091860aed399832"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a151582df001d28a64091860aed399832">INITIALIZE_PASS_BEGIN</a> (<a class="el" href="classllvm_1_1DependenceAnalysisWrapperPass.html">DependenceAnalysisWrapperPass</a>, &quot;da&quot;, &quot;Dependence Analysis&quot;, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(<a class="el" href="classllvm_1_1DependenceAnalysisWrapperPass.html">DependenceAnalysisWrapperPass</a></td></tr>
+<tr class="memitem:a37e5ec2056737f71c851a7e9ec212d85"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a37e5ec2056737f71c851a7e9ec212d85">Delinearize</a> (&quot;da-delinearize&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, cl::ZeroOrMore, cl::desc(&quot;Try to delinearize array references.&quot;))</td></tr>
+<tr class="separator:a37e5ec2056737f71c851a7e9ec212d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab5124c0b4620815a1b5344ef8d374d8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#aab5124c0b4620815a1b5344ef8d374d8">DisableDelinearizationChecks</a> (&quot;da-disable-delinearization-checks&quot;, cl::init(false), cl::Hidden, cl::ZeroOrMore, cl::desc(&quot;Disable checks that try to statically verify validity of &quot; &quot;delinearized subscripts. Enabling this option may result in incorrect &quot; &quot;dependence vectors for languages that allow the subscript of one &quot; &quot;dimension to underflow or overflow into another dimension.&quot;))</td></tr>
+<tr class="separator:aab5124c0b4620815a1b5344ef8d374d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a151582df001d28a64091860aed399832"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a151582df001d28a64091860aed399832">INITIALIZE_PASS_BEGIN</a> (DependenceAnalysisWrapperPass, &quot;da&quot;, &quot;Dependence Analysis&quot;, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) INITIALIZE_PASS_END(DependenceAnalysisWrapperPass</td></tr>
 <tr class="separator:a151582df001d28a64091860aed399832"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd2d2e8383382837147690398f078ea8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#acd2d2e8383382837147690398f078ea8">dumpExampleDependence</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS, <a class="el" href="classllvm_1_1DependenceInfo.html">DependenceInfo</a> *DA)</td></tr>
+<tr class="memitem:acd2d2e8383382837147690398f078ea8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#acd2d2e8383382837147690398f078ea8">dumpExampleDependence</a> (raw_ostream &amp;OS, DependenceInfo *DA)</td></tr>
 <tr class="separator:acd2d2e8383382837147690398f078ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2db8ca9285ff8a18b9eac2d69c05e13"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespacellvm.html#ae1738272abcf2ac638b97e7dc6360cfd">AliasResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#aa2db8ca9285ff8a18b9eac2d69c05e13">underlyingObjectsAlias</a> (<a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *AA, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> &amp;LocA, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> &amp;LocB)</td></tr>
+<tr class="memitem:aa2db8ca9285ff8a18b9eac2d69c05e13"><td class="memItemLeft" align="right" valign="top">static AliasResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#aa2db8ca9285ff8a18b9eac2d69c05e13">underlyingObjectsAlias</a> (AliasAnalysis *AA, const DataLayout &amp;DL, const MemoryLocation &amp;LocA, const MemoryLocation &amp;LocB)</td></tr>
 <tr class="separator:aa2db8ca9285ff8a18b9eac2d69c05e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13ace390c34c56c32bff6c20c4e7c6b5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a13ace390c34c56c32bff6c20c4e7c6b5">isLoadOrStore</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:a13ace390c34c56c32bff6c20c4e7c6b5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a13ace390c34c56c32bff6c20c4e7c6b5">isLoadOrStore</a> (const Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="separator:a13ace390c34c56c32bff6c20c4e7c6b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3932d8d07bd52eacf62adc249ac2f926"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a3932d8d07bd52eacf62adc249ac2f926">findGCD</a> (<a class="el" href="classunsigned.html">unsigned</a> Bits, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;AM, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;BM, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;Delta, <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;<a class="el" href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>, <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;<a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>, <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;<a class="el" href="OcamlGCPrinter_8cpp.html#a93c84752b140ee7b31646fc34cfa0dc2">Y</a>)</td></tr>
+<tr class="memitem:a3932d8d07bd52eacf62adc249ac2f926"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a3932d8d07bd52eacf62adc249ac2f926">findGCD</a> (unsigned Bits, const APInt &amp;AM, const APInt &amp;BM, const APInt &amp;Delta, APInt &amp;<a class="el" href="MD5_8cpp.html#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>, APInt &amp;<a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>, APInt &amp;<a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y</a>)</td></tr>
 <tr class="separator:a3932d8d07bd52eacf62adc249ac2f926"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cd9a82adab8deb6708cc554dd074499"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1APInt.html">APInt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a4cd9a82adab8deb6708cc554dd074499">floorOfQuotient</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;<a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>)</td></tr>
+<tr class="memitem:a4cd9a82adab8deb6708cc554dd074499"><td class="memItemLeft" align="right" valign="top">static APInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a4cd9a82adab8deb6708cc554dd074499">floorOfQuotient</a> (const APInt &amp;A, const APInt &amp;B)</td></tr>
 <tr class="separator:a4cd9a82adab8deb6708cc554dd074499"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ab89a5befb6167f9c5929f544d969eb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1APInt.html">APInt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a4ab89a5befb6167f9c5929f544d969eb">ceilingOfQuotient</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;<a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>)</td></tr>
+<tr class="memitem:a4ab89a5befb6167f9c5929f544d969eb"><td class="memItemLeft" align="right" valign="top">static APInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a4ab89a5befb6167f9c5929f544d969eb">ceilingOfQuotient</a> (const APInt &amp;A, const APInt &amp;B)</td></tr>
 <tr class="separator:a4ab89a5befb6167f9c5929f544d969eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72fd0ad568cdb8366188a989be91dead"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1APInt.html">APInt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a72fd0ad568cdb8366188a989be91dead">maxAPInt</a> (<a class="el" href="classllvm_1_1APInt.html">APInt</a> <a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, <a class="el" href="classllvm_1_1APInt.html">APInt</a> <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>)</td></tr>
+<tr class="memitem:a72fd0ad568cdb8366188a989be91dead"><td class="memItemLeft" align="right" valign="top">static APInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a72fd0ad568cdb8366188a989be91dead">maxAPInt</a> (APInt A, APInt B)</td></tr>
 <tr class="separator:a72fd0ad568cdb8366188a989be91dead"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc009f9014ec7360fd498d4a6a87b646"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1APInt.html">APInt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#abc009f9014ec7360fd498d4a6a87b646">minAPInt</a> (<a class="el" href="classllvm_1_1APInt.html">APInt</a> <a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, <a class="el" href="classllvm_1_1APInt.html">APInt</a> <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>)</td></tr>
+<tr class="memitem:abc009f9014ec7360fd498d4a6a87b646"><td class="memItemLeft" align="right" valign="top">static APInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#abc009f9014ec7360fd498d4a6a87b646">minAPInt</a> (APInt A, APInt B)</td></tr>
 <tr class="separator:abc009f9014ec7360fd498d4a6a87b646"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94c9d9a24e2274adeef93424e27005d3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a94c9d9a24e2274adeef93424e27005d3">isRemainderZero</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEVConstant.html">SCEVConstant</a> *Dividend, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEVConstant.html">SCEVConstant</a> *Divisor)</td></tr>
+<tr class="memitem:a94c9d9a24e2274adeef93424e27005d3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a94c9d9a24e2274adeef93424e27005d3">isRemainderZero</a> (const SCEVConstant *Dividend, const SCEVConstant *Divisor)</td></tr>
 <tr class="separator:a94c9d9a24e2274adeef93424e27005d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40b16e132bc8de3c04624854c1a7d65b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEVConstant.html">SCEVConstant</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a40b16e132bc8de3c04624854c1a7d65b">getConstantPart</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *Expr)</td></tr>
+<tr class="memitem:a40b16e132bc8de3c04624854c1a7d65b"><td class="memItemLeft" align="right" valign="top">static const SCEVConstant *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a40b16e132bc8de3c04624854c1a7d65b">getConstantPart</a> (const SCEV *Expr)</td></tr>
 <tr class="separator:a40b16e132bc8de3c04624854c1a7d65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f932542066a4a9ff8d9368b1871e9d6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a3f932542066a4a9ff8d9368b1871e9d6">dumpSmallBitVector</a> (<a class="el" href="classllvm_1_1SmallBitVector.html">SmallBitVector</a> &amp;BV)</td></tr>
+<tr class="memitem:a3f932542066a4a9ff8d9368b1871e9d6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a3f932542066a4a9ff8d9368b1871e9d6">dumpSmallBitVector</a> (SmallBitVector &amp;BV)</td></tr>
 <tr class="separator:a3f932542066a4a9ff8d9368b1871e9d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aa371b15cedaa657774dcdd557cd94c09"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#aa371b15cedaa657774dcdd557cd94c09">Delinearize</a> (&quot;da-delinearize&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Try to delinearize array references.&quot;))</td></tr>
-<tr class="separator:aa371b15cedaa657774dcdd557cd94c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9452f334dd776575f2476faf5746610"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#ac9452f334dd776575f2476faf5746610">DisableDelinearizationChecks</a> (&quot;da-disable-delinearization-checks&quot;, cl::init(false), cl::Hidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Disable <a class="el" href="ImplicitNullChecks_8cpp.html#a9a4776a2cfc0bcc3774690aef4b43196">checks</a> that try to statically <a class="el" href="PPCCTRLoops_8cpp.html#a593cc2f204f7b2edc16ee222c37c3196">verify</a> validity of &quot; &quot;delinearized subscripts. Enabling this option may result in incorrect &quot; &quot;dependence <a class="el" href="HexagonVectorLoopCarriedReuse_8cpp.html#a3fd4a7024284a5905bb9ffcc1b23761c">vectors</a> <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> languages that allow the subscript of one &quot; &quot;dimension to underflow or overflow into another dimension.&quot;))</td></tr>
-<tr class="separator:ac9452f334dd776575f2476faf5746610"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab01abf84324066bdb4eed4d5bf20f887"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#ab01abf84324066bdb4eed4d5bf20f887">da</a></td></tr>
 <tr class="separator:ab01abf84324066bdb4eed4d5bf20f887"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1527ed6bdd8fa1ecba8016e907253709"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Dependence.html">Dependence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a1527ed6bdd8fa1ecba8016e907253709">Analysis</a></td></tr>
+<tr class="memitem:a1527ed6bdd8fa1ecba8016e907253709"><td class="memItemLeft" align="right" valign="top">Dependence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a1527ed6bdd8fa1ecba8016e907253709">Analysis</a></td></tr>
 <tr class="separator:a1527ed6bdd8fa1ecba8016e907253709"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b22013582efe5fb6748e40833a63f6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Dependence.html">Dependence</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a9b22013582efe5fb6748e40833a63f6f">true</a></td></tr>
+<tr class="memitem:a9b22013582efe5fb6748e40833a63f6f"><td class="memItemLeft" align="right" valign="top">Dependence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DependenceAnalysis_8cpp.html#a9b22013582efe5fb6748e40833a63f6f">true</a></td></tr>
 <tr class="separator:a9b22013582efe5fb6748e40833a63f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -218,15 +237,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1APInt.html">APInt</a> ceilingOfQuotient </td>
+          <td class="memname">static APInt ceilingOfQuotient </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">const APInt &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">const APInt &amp;&#160;</td>
           <td class="paramname"><em>B</em>&#160;</td>
         </tr>
         <tr>
@@ -244,7 +263,113 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DependenceAnalysis_8cpp_source.html#l01452">1452</a> of file <a class="el" href="DependenceAnalysis_8cpp_source.html">DependenceAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, and <a class="el" href="APInt_8cpp_source.html#l01841">llvm::APInt::sdivrem()</a>.</p>
+</div>
+</div>
+<a id="a37e5ec2056737f71c851a7e9ec212d85" name="a37e5ec2056737f71c851a7e9ec212d85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37e5ec2056737f71c851a7e9ec212d85">&#9670;&nbsp;</a></span>Delinearize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; Delinearize </td>
+          <td>(</td>
+          <td class="paramtype">&quot;da-delinearize&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ZeroOrMore&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Try to delinearize array references.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab5124c0b4620815a1b5344ef8d374d8" name="aab5124c0b4620815a1b5344ef8d374d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab5124c0b4620815a1b5344ef8d374d8">&#9670;&nbsp;</a></span>DisableDelinearizationChecks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; DisableDelinearizationChecks </td>
+          <td>(</td>
+          <td class="paramtype">&quot;da-disable-delinearization-checks&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ZeroOrMore&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Disable checks that try to statically verify validity of &quot; &quot;delinearized subscripts. Enabling this option may result in incorrect &quot; &quot;dependence vectors for languages that allow the subscript of one &quot; &quot;dimension to underflow or overflow into another dimension.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -260,13 +385,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void dumpExampleDependence </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
+          <td class="paramtype">raw_ostream &amp;&#160;</td>
           <td class="paramname"><em>OS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DependenceInfo.html">DependenceInfo</a> *&#160;</td>
+          <td class="paramtype">DependenceInfo *&#160;</td>
           <td class="paramname"><em>DA</em>&#160;</td>
         </tr>
         <tr>
@@ -284,9 +409,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DependenceAnalysis_8cpp_source.html#l00172">172</a> of file <a class="el" href="DependenceAnalysis_8cpp_source.html">DependenceAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a9cb3a7d37a9414f3dc2cdca773d6dee6">D</a>, <a class="el" href="DependenceAnalysis_8cpp_source.html#l03405">llvm::DependenceInfo::depends()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="DependenceAnalysis_8h_source.html#l00333">llvm::DependenceInfo::getFunction()</a>, <a class="el" href="DependenceAnalysis_8cpp_source.html#l03832">llvm::DependenceInfo::getSplitIteration()</a>, <a class="el" href="InstIterator_8h_source.html#l00131">llvm::inst_begin()</a>, and <a class="el" href="InstIterator_8h_source.html#l00132">llvm::inst_end()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="DependenceAnalysis_8cpp_source.html#l00199">llvm::DependenceAnalysisWrapperPass::print()</a>, and <a class="el" href="DependenceAnalysis_8cpp_source.html#l00205">llvm::DependenceAnalysisPrinterPass::run()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
 
 </div>
 </div>
@@ -302,7 +425,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void dumpSmallBitVector </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallBitVector.html">SmallBitVector</a> &amp;&#160;</td>
+          <td class="paramtype">SmallBitVector &amp;&#160;</td>
           <td class="paramname"><em>BV</em></td><td>)</td>
           <td></td>
         </tr>
@@ -316,10 +439,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DependenceAnalysis_8cpp_source.html#l03369">3369</a> of file <a class="el" href="DependenceAnalysis_8cpp_source.html">DependenceAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="SmallBitVector_8h_source.html#l00274">llvm::SmallBitVector::find_next()</a>, <a class="el" href="SmallBitVector_8h_source.html#l00180">llvm::SmallBitVector::set_bits()</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06143">VI</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="DependenceAnalysis_8cpp_source.html#l03405">llvm::DependenceInfo::depends()</a>.</p>
-
 </div>
 </div>
 <a id="a3932d8d07bd52eacf62adc249ac2f926" name="a3932d8d07bd52eacf62adc249ac2f926"></a>
@@ -332,45 +451,45 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> findGCD </td>
+          <td class="memname">static bool findGCD </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>Bits</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">const APInt &amp;&#160;</td>
           <td class="paramname"><em>AM</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">const APInt &amp;&#160;</td>
           <td class="paramname"><em>BM</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">const APInt &amp;&#160;</td>
           <td class="paramname"><em>Delta</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">APInt &amp;&#160;</td>
           <td class="paramname"><em>G</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">APInt &amp;&#160;</td>
           <td class="paramname"><em>X</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">APInt &amp;&#160;</td>
           <td class="paramname"><em>Y</em>&#160;</td>
         </tr>
         <tr>
@@ -388,7 +507,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DependenceAnalysis_8cpp_source.html#l01409">1409</a> of file <a class="el" href="DependenceAnalysis_8cpp_source.html">DependenceAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="APInt_8h_source.html#l01799">llvm::APInt::abs()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="MD5_8cpp_source.html#l00056">G</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="APInt_8cpp_source.html#l01595">llvm::APInt::sdiv()</a>, <a class="el" href="APInt_8cpp_source.html#l01841">llvm::APInt::sdivrem()</a>, <a class="el" href="APInt_8h_source.html#l01203">llvm::APInt::slt()</a>, <a class="el" href="APInt_8cpp_source.html#l01687">llvm::APInt::srem()</a>, <a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>, and <a class="el" href="OcamlGCPrinter_8cpp.html#a93c84752b140ee7b31646fc34cfa0dc2">Y</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00056">G</a>, <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>, and <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y()</a>.</p>
 
 </div>
 </div>
@@ -402,15 +521,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1APInt.html">APInt</a> floorOfQuotient </td>
+          <td class="memname">static APInt floorOfQuotient </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">const APInt &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">const APInt &amp;&#160;</td>
           <td class="paramname"><em>B</em>&#160;</td>
         </tr>
         <tr>
@@ -428,8 +547,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DependenceAnalysis_8cpp_source.html#l01439">1439</a> of file <a class="el" href="DependenceAnalysis_8cpp_source.html">DependenceAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, and <a class="el" href="APInt_8cpp_source.html#l01841">llvm::APInt::sdivrem()</a>.</p>
-
 </div>
 </div>
 <a id="a40b16e132bc8de3c04624854c1a7d65b" name="a40b16e132bc8de3c04624854c1a7d65b"></a>
@@ -442,9 +559,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEVConstant.html">SCEVConstant</a> * getConstantPart </td>
+          <td class="memname">static const SCEVConstant * getConstantPart </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&#160;</td>
+          <td class="paramtype">const SCEV *&#160;</td>
           <td class="paramname"><em>Expr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -469,7 +586,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">INITIALIZE_PASS_BEGIN </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DependenceAnalysisWrapperPass.html">DependenceAnalysisWrapperPass</a>&#160;</td>
+          <td class="paramtype">DependenceAnalysisWrapperPass&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -516,9 +633,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isLoadOrStore </td>
+          <td class="memname">static bool isLoadOrStore </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">const Instruction *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -532,9 +649,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DependenceAnalysis_8cpp_source.html#l00677">677</a> of file <a class="el" href="DependenceAnalysis_8cpp_source.html">DependenceAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="DependenceAnalysis_8cpp_source.html#l03405">llvm::DependenceInfo::depends()</a>, and <a class="el" href="DependenceAnalysis_8cpp_source.html#l03832">llvm::DependenceInfo::getSplitIteration()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -548,15 +663,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isRemainderZero </td>
+          <td class="memname">static bool isRemainderZero </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEVConstant.html">SCEVConstant</a> *&#160;</td>
+          <td class="paramtype">const SCEVConstant *&#160;</td>
           <td class="paramname"><em>Dividend</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEVConstant.html">SCEVConstant</a> *&#160;</td>
+          <td class="paramtype">const SCEVConstant *&#160;</td>
           <td class="paramname"><em>Divisor</em>&#160;</td>
         </tr>
         <tr>
@@ -574,8 +689,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DependenceAnalysis_8cpp_source.html#l01663">1663</a> of file <a class="el" href="DependenceAnalysis_8cpp_source.html">DependenceAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00057">llvm::SCEVConstant::getAPInt()</a>, and <a class="el" href="APInt_8cpp_source.html#l01687">llvm::APInt::srem()</a>.</p>
-
 </div>
 </div>
 <a id="a72fd0ad568cdb8366188a989be91dead" name="a72fd0ad568cdb8366188a989be91dead"></a>
@@ -588,15 +701,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1APInt.html">APInt</a> maxAPInt </td>
+          <td class="memname">static APInt maxAPInt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1APInt.html">APInt</a>&#160;</td>
+          <td class="paramtype">APInt&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1APInt.html">APInt</a>&#160;</td>
+          <td class="paramtype">APInt&#160;</td>
           <td class="paramname"><em>B</em>&#160;</td>
         </tr>
         <tr>
@@ -614,8 +727,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DependenceAnalysis_8cpp_source.html#l01467">1467</a> of file <a class="el" href="DependenceAnalysis_8cpp_source.html">DependenceAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, and <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>.</p>
-
 </div>
 </div>
 <a id="abc009f9014ec7360fd498d4a6a87b646" name="abc009f9014ec7360fd498d4a6a87b646"></a>
@@ -628,15 +739,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1APInt.html">APInt</a> minAPInt </td>
+          <td class="memname">static APInt minAPInt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1APInt.html">APInt</a>&#160;</td>
+          <td class="paramtype">APInt&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1APInt.html">APInt</a>&#160;</td>
+          <td class="paramtype">APInt&#160;</td>
           <td class="paramname"><em>B</em>&#160;</td>
         </tr>
         <tr>
@@ -653,8 +764,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="DependenceAnalysis_8cpp_source.html#l01473">1473</a> of file <a class="el" href="DependenceAnalysis_8cpp_source.html">DependenceAnalysis.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, and <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>.</p>
 
 </div>
 </div>
@@ -1564,27 +1673,27 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="namespacellvm.html#ae1738272abcf2ac638b97e7dc6360cfd">AliasResult</a> underlyingObjectsAlias </td>
+          <td class="memname">static AliasResult underlyingObjectsAlias </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *&#160;</td>
+          <td class="paramtype">AliasAnalysis *&#160;</td>
           <td class="paramname"><em>AA</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
+          <td class="paramtype">const DataLayout &amp;&#160;</td>
           <td class="paramname"><em>DL</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> &amp;&#160;</td>
+          <td class="paramtype">const MemoryLocation &amp;&#160;</td>
           <td class="paramname"><em>LocA</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> &amp;&#160;</td>
+          <td class="paramtype">const MemoryLocation &amp;&#160;</td>
           <td class="paramname"><em>LocB</em>&#160;</td>
         </tr>
         <tr>
@@ -1602,10 +1711,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DependenceAnalysis_8cpp_source.html#l00644">644</a> of file <a class="el" href="DependenceAnalysis_8cpp_source.html">DependenceAnalysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MemoryLocation_8h_source.html#l00195">llvm::MemoryLocation::AATags</a>, <a class="el" href="AliasAnalysis_8cpp_source.html#l00104">llvm::AAResults::alias()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l03700">llvm::GetUnderlyingObject()</a>, <a class="el" href="AliasAnalysis_8cpp_source.html#l00880">llvm::isIdentifiedObject()</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00086">llvm::MayAlias</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00090">llvm::MustAlias</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00084">llvm::NoAlias</a>, <a class="el" href="MemoryLocation_8h_source.html#l00182">llvm::MemoryLocation::Ptr</a>, and <a class="el" href="MemoryLocation_8h_source.html#l00101">llvm::LocationSize::unknown()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="DependenceAnalysis_8cpp_source.html#l03405">llvm::DependenceInfo::depends()</a>, and <a class="el" href="DependenceAnalysis_8cpp_source.html#l03832">llvm::DependenceInfo::getSplitIteration()</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -1616,7 +1721,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1Dependence.html">Dependence</a> Analysis</td>
+          <td class="memname">Dependence Analysis</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1641,116 +1746,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aa371b15cedaa657774dcdd557cd94c09" name="aa371b15cedaa657774dcdd557cd94c09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa371b15cedaa657774dcdd557cd94c09">&#9670;&nbsp;</a></span>Delinearize</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; Delinearize(&quot;da-delinearize&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Try to delinearize array references.&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;da-delinearize&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ZeroOrMore&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Try to delinearize array references.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="DependenceAnalysis_8cpp_source.html#l03405">llvm::DependenceInfo::depends()</a>, and <a class="el" href="DependenceAnalysis_8cpp_source.html#l03832">llvm::DependenceInfo::getSplitIteration()</a>.</p>
-
-</div>
-</div>
-<a id="ac9452f334dd776575f2476faf5746610" name="ac9452f334dd776575f2476faf5746610"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9452f334dd776575f2476faf5746610">&#9670;&nbsp;</a></span>DisableDelinearizationChecks</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; DisableDelinearizationChecks(&quot;da-disable-delinearization-checks&quot;, cl::init(false), cl::Hidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>( &quot;Disable <a class="el" href="ImplicitNullChecks_8cpp.html#a9a4776a2cfc0bcc3774690aef4b43196">checks</a> that try to statically <a class="el" href="PPCCTRLoops_8cpp.html#a593cc2f204f7b2edc16ee222c37c3196">verify</a> validity of &quot; &quot;delinearized subscripts. Enabling this option may result in incorrect &quot; &quot;dependence <a class="el" href="HexagonVectorLoopCarriedReuse_8cpp.html#a3fd4a7024284a5905bb9ffcc1b23761c">vectors</a> <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> languages that allow the subscript of one &quot; &quot;dimension to underflow or overflow into another dimension.&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;da-disable-delinearization-checks&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ZeroOrMore&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>( &quot;Disable <a class="el" href="ImplicitNullChecks_8cpp.html#a9a4776a2cfc0bcc3774690aef4b43196">checks</a> that try to statically <a class="el" href="PPCCTRLoops_8cpp.html#a593cc2f204f7b2edc16ee222c37c3196">verify</a> validity of &quot; &quot;delinearized subscripts. Enabling this option may result in incorrect &quot; &quot;dependence <a class="el" href="HexagonVectorLoopCarriedReuse_8cpp.html#a3fd4a7024284a5905bb9ffcc1b23761c">vectors</a> <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> languages that allow the subscript of one &quot; &quot;dimension to underflow or overflow into another dimension.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a9b22013582efe5fb6748e40833a63f6f" name="a9b22013582efe5fb6748e40833a63f6f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b22013582efe5fb6748e40833a63f6f">&#9670;&nbsp;</a></span>true</h2>
 
@@ -1758,7 +1753,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1Dependence.html">Dependence</a> true</td>
+          <td class="memname">Dependence true</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1770,7 +1765,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:12 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

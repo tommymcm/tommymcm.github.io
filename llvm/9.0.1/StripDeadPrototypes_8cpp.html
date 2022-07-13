@@ -56,15 +56,23 @@ $(function() {
   <div class="headertitle"><div class="title">StripDeadPrototypes.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="StripDeadPrototypes_8h_source.html">llvm/Transforms/IPO/StripDeadPrototypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2IPO_8h_source.html">llvm/Transforms/IPO.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/IPO/StripDeadPrototypes.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for StripDeadPrototypes.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="StripDeadPrototypes_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2IPO_2StripDeadPrototypes_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2IPO_2StripDeadPrototypes_8cpp" id="alib_2Transforms_2IPO_2StripDeadPrototypes_8cpp">
+<area shape="rect" title=" " alt="" coords="349,5,535,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,177,133"/>
+<area shape="rect" title=" " alt="" coords="201,101,352,126"/>
+<area shape="rect" title=" " alt="" coords="376,101,508,126"/>
+<area shape="rect" title=" " alt="" coords="533,101,629,126"/>
+<area shape="rect" title=" " alt="" coords="653,101,818,126"/>
+</map>
 </div>
 </div>
 <p><a href="StripDeadPrototypes_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -78,9 +86,9 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ab4ededc6137fb30d6d2496772bc1bbbf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StripDeadPrototypes_8cpp.html#ab4ededc6137fb30d6d2496772bc1bbbf">STATISTIC</a> (NumDeadPrototypes, &quot;Number of dead prototypes removed&quot;)</td></tr>
 <tr class="separator:ab4ededc6137fb30d6d2496772bc1bbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05f8abd307c0d572357fd32e37232e83"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StripDeadPrototypes_8cpp.html#a05f8abd307c0d572357fd32e37232e83">stripDeadPrototypes</a> (<a class="el" href="classllvm_1_1Module.html">Module</a> &amp;M)</td></tr>
+<tr class="memitem:a05f8abd307c0d572357fd32e37232e83"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StripDeadPrototypes_8cpp.html#a05f8abd307c0d572357fd32e37232e83">stripDeadPrototypes</a> (Module &amp;M)</td></tr>
 <tr class="separator:a05f8abd307c0d572357fd32e37232e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3380b53a5d52b076a6c5d158c9661855"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StripDeadPrototypes_8cpp.html#a3380b53a5d52b076a6c5d158c9661855">INITIALIZE_PASS</a> (StripDeadPrototypesLegacyPass, &quot;strip-dead-prototypes&quot;, &quot;Strip Unused <a class="el" href="classllvm_1_1Function.html">Function</a> Prototypes&quot;, false, false) <a class="el" href="classllvm_1_1ModulePass.html">ModulePass</a> *llvm</td></tr>
+<tr class="memitem:a3380b53a5d52b076a6c5d158c9661855"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StripDeadPrototypes_8cpp.html#a3380b53a5d52b076a6c5d158c9661855">INITIALIZE_PASS</a> (StripDeadPrototypesLegacyPass, &quot;strip-dead-prototypes&quot;, &quot;Strip Unused Function Prototypes&quot;, false, false) ModulePass *llvm</td></tr>
 <tr class="separator:a3380b53a5d52b076a6c5d158c9661855"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -122,7 +130,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Strip Unused <a class="el" href="classllvm_1_1Function.html">Function</a> Prototypes&quot;&#160;</td>
+          <td class="paramtype">&quot;Strip Unused Function Prototypes&quot;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -187,9 +195,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> stripDeadPrototypes </td>
+          <td class="memname">static bool stripDeadPrototypes </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> &amp;&#160;</td>
+          <td class="paramtype">Module &amp;&#160;</td>
           <td class="paramname"><em>M</em></td><td>)</td>
           <td></td>
         </tr>
@@ -203,16 +211,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="StripDeadPrototypes_8cpp_source.html#l00028">28</a> of file <a class="el" href="StripDeadPrototypes_8cpp_source.html">StripDeadPrototypes.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="Globals_8cpp_source.html#l00380">llvm::GlobalVariable::eraseFromParent()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Globals_8cpp_source.html#l00227">llvm::GlobalValue::isDeclaration()</a>, and <a class="el" href="Value_8h_source.html#l00322">llvm::Value::use_empty()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="StripDeadPrototypes_8cpp_source.html#l00055">llvm::StripDeadPrototypesPass::run()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

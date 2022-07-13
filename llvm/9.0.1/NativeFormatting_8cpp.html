@@ -55,35 +55,44 @@ $(function() {
   <div class="headertitle"><div class="title">NativeFormatting.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="NativeFormatting_8h_source.html">llvm/Support/NativeFormatting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ArrayRef_8h_source.html">llvm/ADT/ArrayRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallString_8h_source.html">llvm/ADT/SmallString.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringExtras_8h_source.html">llvm/ADT/StringExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Format_8h_source.html">llvm/Support/Format.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Support/NativeFormatting.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallString.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringExtras.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Format.h&quot;</code><br />
 <code>#include &lt;float.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for NativeFormatting.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="NativeFormatting_8cpp__incl.png" border="0" usemap="#alib_2Support_2NativeFormatting_8cpp" alt=""/></div>
+<map name="alib_2Support_2NativeFormatting_8cpp" id="alib_2Support_2NativeFormatting_8cpp">
+<area shape="rect" title=" " alt="" coords="511,5,748,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,240,104"/>
+<area shape="rect" title=" " alt="" coords="264,79,419,104"/>
+<area shape="rect" title=" " alt="" coords="443,79,616,104"/>
+<area shape="rect" title=" " alt="" coords="641,79,818,104"/>
+<area shape="rect" title=" " alt="" coords="842,79,1009,104"/>
+<area shape="rect" title=" " alt="" coords="1033,79,1095,104"/>
+</map>
 </div>
 </div>
 <p><a href="NativeFormatting_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a30359c490796c080d15ae73cac5189ff"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classT.html">T</a> , std::size_t N&gt; </td></tr>
-<tr class="memitem:a30359c490796c080d15ae73cac5189ff"><td class="memTemplItemLeft" align="right" valign="top">static int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="NativeFormatting_8cpp.html#a30359c490796c080d15ae73cac5189ff">format_to_buffer</a> (<a class="el" href="classT.html">T</a> <a class="el" href="classllvm_1_1Value.html">Value</a>, <a class="el" href="classchar.html">char</a>(&amp;Buffer)[<a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>])</td></tr>
+<tr class="memitem:a30359c490796c080d15ae73cac5189ff"><td class="memTemplParams" colspan="2">template&lt;typename T , std::size_t N&gt; </td></tr>
+<tr class="memitem:a30359c490796c080d15ae73cac5189ff"><td class="memTemplItemLeft" align="right" valign="top">static int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="NativeFormatting_8cpp.html#a30359c490796c080d15ae73cac5189ff">format_to_buffer</a> (T Value, char(&amp;Buffer)[<a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>])</td></tr>
 <tr class="separator:a30359c490796c080d15ae73cac5189ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dd06742877ada9717169e974f5f5de2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NativeFormatting_8cpp.html#a8dd06742877ada9717169e974f5f5de2">writeWithCommas</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;S, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classchar.html">char</a> &gt; Buffer)</td></tr>
+<tr class="memitem:a8dd06742877ada9717169e974f5f5de2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NativeFormatting_8cpp.html#a8dd06742877ada9717169e974f5f5de2">writeWithCommas</a> (raw_ostream &amp;S, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; char &gt; Buffer)</td></tr>
 <tr class="separator:a8dd06742877ada9717169e974f5f5de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8462d4d5c5381616faaacedd724215f4"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classT.html">T</a> &gt; </td></tr>
-<tr class="memitem:a8462d4d5c5381616faaacedd724215f4"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="NativeFormatting_8cpp.html#a8462d4d5c5381616faaacedd724215f4">write_unsigned_impl</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;S, <a class="el" href="classT.html">T</a> <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, <a class="el" href="classsize__t.html">size_t</a> MinDigits, <a class="el" href="namespacellvm.html#af83da56920f4f1059b02e07966f9fccf">IntegerStyle</a> Style, <a class="el" href="classbool.html">bool</a> IsNegative)</td></tr>
+<tr class="memitem:a8462d4d5c5381616faaacedd724215f4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8462d4d5c5381616faaacedd724215f4"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="NativeFormatting_8cpp.html#a8462d4d5c5381616faaacedd724215f4">write_unsigned_impl</a> (raw_ostream &amp;S, T <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, size_t MinDigits, IntegerStyle Style, bool IsNegative)</td></tr>
 <tr class="separator:a8462d4d5c5381616faaacedd724215f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18f13e903a98d38abc2b97b0840b04a8"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classT.html">T</a> &gt; </td></tr>
-<tr class="memitem:a18f13e903a98d38abc2b97b0840b04a8"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="NativeFormatting_8cpp.html#a18f13e903a98d38abc2b97b0840b04a8">write_unsigned</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;S, <a class="el" href="classT.html">T</a> <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, <a class="el" href="classsize__t.html">size_t</a> MinDigits, <a class="el" href="namespacellvm.html#af83da56920f4f1059b02e07966f9fccf">IntegerStyle</a> Style, <a class="el" href="classbool.html">bool</a> IsNegative=false)</td></tr>
+<tr class="memitem:a18f13e903a98d38abc2b97b0840b04a8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a18f13e903a98d38abc2b97b0840b04a8"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="NativeFormatting_8cpp.html#a18f13e903a98d38abc2b97b0840b04a8">write_unsigned</a> (raw_ostream &amp;S, T <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, size_t MinDigits, IntegerStyle Style, bool IsNegative=false)</td></tr>
 <tr class="separator:a18f13e903a98d38abc2b97b0840b04a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a486b03efff60127ea29c9ae5bb1b03f7"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classT.html">T</a> &gt; </td></tr>
-<tr class="memitem:a486b03efff60127ea29c9ae5bb1b03f7"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="NativeFormatting_8cpp.html#a486b03efff60127ea29c9ae5bb1b03f7">write_signed</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;S, <a class="el" href="classT.html">T</a> <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, <a class="el" href="classsize__t.html">size_t</a> MinDigits, <a class="el" href="namespacellvm.html#af83da56920f4f1059b02e07966f9fccf">IntegerStyle</a> Style)</td></tr>
+<tr class="memitem:a486b03efff60127ea29c9ae5bb1b03f7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a486b03efff60127ea29c9ae5bb1b03f7"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="NativeFormatting_8cpp.html#a486b03efff60127ea29c9ae5bb1b03f7">write_signed</a> (raw_ostream &amp;S, T <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, size_t MinDigits, IntegerStyle Style)</td></tr>
 <tr class="separator:a486b03efff60127ea29c9ae5bb1b03f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -93,7 +102,7 @@ Functions</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classT.html">T</a> , std::size_t N&gt; </div>
+template&lt;typename T , std::size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -101,13 +110,13 @@ template&lt;typename <a class="el" href="classT.html">T</a> , std::size_t N&gt; 
         <tr>
           <td class="memname">static int format_to_buffer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classT.html">T</a>&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>Value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classchar.html">char</a>(&amp;)&#160;</td>
+          <td class="paramtype">char(&amp;)&#160;</td>
           <td class="paramname"><em>Buffer</em>[N]&#160;</td>
         </tr>
         <tr>
@@ -135,7 +144,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> , std::size_t N&gt; 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -143,25 +152,25 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
         <tr>
           <td class="memname">static void write_signed </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
+          <td class="paramtype">raw_ostream &amp;&#160;</td>
           <td class="paramname"><em>S</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classT.html">T</a>&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>N</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classsize__t.html">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>MinDigits</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#af83da56920f4f1059b02e07966f9fccf">IntegerStyle</a>&#160;</td>
+          <td class="paramtype">IntegerStyle&#160;</td>
           <td class="paramname"><em>Style</em>&#160;</td>
         </tr>
         <tr>
@@ -181,8 +190,6 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 
 <p class="reference">References <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, and <a class="el" href="NativeFormatting_8cpp_source.html#l00077">write_unsigned()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NativeFormatting_8cpp_source.html#l00108">llvm::write_integer()</a>.</p>
-
 </div>
 </div>
 <a id="a18f13e903a98d38abc2b97b0840b04a8" name="a18f13e903a98d38abc2b97b0840b04a8"></a>
@@ -191,7 +198,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -199,31 +206,31 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
         <tr>
           <td class="memname">static void write_unsigned </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
+          <td class="paramtype">raw_ostream &amp;&#160;</td>
           <td class="paramname"><em>S</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classT.html">T</a>&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>N</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classsize__t.html">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>MinDigits</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#af83da56920f4f1059b02e07966f9fccf">IntegerStyle</a>&#160;</td>
+          <td class="paramtype">IntegerStyle&#160;</td>
           <td class="paramname"><em>Style</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>IsNegative</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
@@ -243,7 +250,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 
 <p class="reference">References <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, and <a class="el" href="NativeFormatting_8cpp_source.html#l00051">write_unsigned_impl()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NativeFormatting_8cpp_source.html#l00103">llvm::write_integer()</a>, and <a class="el" href="NativeFormatting_8cpp_source.html#l00088">write_signed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NativeFormatting_8cpp_source.html#l00088">write_signed()</a>.</p>
 
 </div>
 </div>
@@ -253,7 +260,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -261,31 +268,31 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
         <tr>
           <td class="memname">static void write_unsigned_impl </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
+          <td class="paramtype">raw_ostream &amp;&#160;</td>
           <td class="paramname"><em>S</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classT.html">T</a>&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>N</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classsize__t.html">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>MinDigits</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#af83da56920f4f1059b02e07966f9fccf">IntegerStyle</a>&#160;</td>
+          <td class="paramtype">IntegerStyle&#160;</td>
           <td class="paramname"><em>Style</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>IsNegative</em>&#160;</td>
         </tr>
         <tr>
@@ -303,7 +310,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="NativeFormatting_8cpp_source.html#l00051">51</a> of file <a class="el" href="NativeFormatting_8cpp_source.html">NativeFormatting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="NativeFormatting_8cpp_source.html#l00021">format_to_buffer()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, <a class="el" href="raw__ostream_8cpp_source.html#l00203">llvm::raw_ostream::write()</a>, and <a class="el" href="NativeFormatting_8cpp_source.html#l00032">writeWithCommas()</a>.</p>
+<p class="reference">References <a class="el" href="NativeFormatting_8cpp_source.html#l00021">format_to_buffer()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, and <a class="el" href="NativeFormatting_8cpp_source.html#l00032">writeWithCommas()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="NativeFormatting_8cpp_source.html#l00077">write_unsigned()</a>.</p>
 
@@ -321,13 +328,13 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
         <tr>
           <td class="memname">static void writeWithCommas </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;&#160;</td>
+          <td class="paramtype">raw_ostream &amp;&#160;</td>
           <td class="paramname"><em>S</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classchar.html">char</a> &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; char &gt;&#160;</td>
           <td class="paramname"><em>Buffer</em>&#160;</td>
         </tr>
         <tr>
@@ -345,7 +352,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="NativeFormatting_8cpp_source.html#l00032">32</a> of file <a class="el" href="NativeFormatting_8cpp_source.html">NativeFormatting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="ArrayRef_8h_source.html#l00145">llvm::ArrayRef&lt; T &gt;::data()</a>, <a class="el" href="ArrayRef_8h_source.html#l00187">llvm::ArrayRef&lt; T &gt;::drop_front()</a>, <a class="el" href="ArrayRef_8h_source.html#l00143">llvm::ArrayRef&lt; T &gt;::empty()</a>, <a class="el" href="ArrayRef_8h_source.html#l00148">llvm::ArrayRef&lt; T &gt;::size()</a>, <a class="el" href="ArrayRef_8h_source.html#l00211">llvm::ArrayRef&lt; T &gt;::take_front()</a>, and <a class="el" href="raw__ostream_8cpp_source.html#l00203">llvm::raw_ostream::write()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="NativeFormatting_8cpp_source.html#l00051">write_unsigned_impl()</a>.</p>
 
@@ -354,7 +361,7 @@ template&lt;typename <a class="el" href="classT.html">T</a> &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:15 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

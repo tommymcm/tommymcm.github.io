@@ -58,35 +58,35 @@ $(function() {
   <div class="headertitle"><div class="title">VirtualFileSystem.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="VirtualFileSystem_8h_source.html">llvm/Support/VirtualFileSystem.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ArrayRef_8h_source.html">llvm/ADT/ArrayRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseMap_8h_source.html">llvm/ADT/DenseMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrusiveRefCntPtr_8h_source.html">llvm/ADT/IntrusiveRefCntPtr.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="None_8h_source.html">llvm/ADT/None.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Optional_8h_source.html">llvm/ADT/Optional.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallString_8h_source.html">llvm/ADT/SmallString.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringRef_8h_source.html">llvm/ADT/StringRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringSet_8h_source.html">llvm/ADT/StringSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Twine_8h_source.html">llvm/ADT/Twine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="iterator__range_8h_source.html">llvm/ADT/iterator_range.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Support/VirtualFileSystem.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/IntrusiveRefCntPtr.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/None.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Optional.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallString.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Twine.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/iterator_range.h&quot;</code><br />
 <code>#include &quot;llvm/Config/llvm-config.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Chrono_8h_source.html">llvm/Support/Chrono.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Compiler_8h_source.html">llvm/Support/Compiler.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Errc_8h_source.html">llvm/Support/Errc.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ErrorOr_8h_source.html">llvm/Support/ErrorOr.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="FileSystem_8h_source.html">llvm/Support/FileSystem.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MemoryBuffer_8h_source.html">llvm/Support/MemoryBuffer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Path_8h_source.html">llvm/Support/Path.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Process_8h_source.html">llvm/Support/Process.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SMLoc_8h_source.html">llvm/Support/SMLoc.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Support_2SourceMgr_8h_source.html">llvm/Support/SourceMgr.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="YAMLParser_8h_source.html">llvm/Support/YAMLParser.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Chrono.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Compiler.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Errc.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorOr.h&quot;</code><br />
+<code>#include &quot;llvm/Support/FileSystem.h&quot;</code><br />
+<code>#include &quot;llvm/Support/MemoryBuffer.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Path.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Process.h&quot;</code><br />
+<code>#include &quot;llvm/Support/SMLoc.h&quot;</code><br />
+<code>#include &quot;llvm/Support/SourceMgr.h&quot;</code><br />
+<code>#include &quot;llvm/Support/YAMLParser.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
@@ -104,6 +104,51 @@ $(function() {
 Include dependency graph for VirtualFileSystem.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="VirtualFileSystem_8cpp__incl.png" border="0" usemap="#alib_2Support_2VirtualFileSystem_8cpp" alt=""/></div>
+<map name="alib_2Support_2VirtualFileSystem_8cpp" id="alib_2Support_2VirtualFileSystem_8cpp">
+<area shape="rect" title=" " alt="" coords="3897,5,4136,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,180,119"/>
+<area shape="rect" title=" " alt="" coords="205,86,359,111"/>
+<area shape="rect" title=" " alt="" coords="384,86,551,111"/>
+<area shape="rect" title=" " alt="" coords="575,79,762,119"/>
+<area shape="rect" title=" " alt="" coords="787,86,919,111"/>
+<area shape="rect" title=" " alt="" coords="943,86,1096,111"/>
+<area shape="rect" title=" " alt="" coords="1121,86,1283,111"/>
+<area shape="rect" title=" " alt="" coords="1307,86,1481,111"/>
+<area shape="rect" title=" " alt="" coords="1505,86,1680,111"/>
+<area shape="rect" title=" " alt="" coords="1705,86,1862,111"/>
+<area shape="rect" title=" " alt="" coords="1886,86,2043,111"/>
+<area shape="rect" title=" " alt="" coords="2068,86,2203,111"/>
+<area shape="rect" title=" " alt="" coords="2227,86,2417,111"/>
+<area shape="rect" title=" " alt="" coords="2441,86,2627,111"/>
+<area shape="rect" title=" " alt="" coords="2651,86,2822,111"/>
+<area shape="rect" title=" " alt="" coords="2847,86,3013,111"/>
+<area shape="rect" title=" " alt="" coords="3038,86,3217,111"/>
+<area shape="rect" title=" " alt="" coords="3241,86,3403,111"/>
+<area shape="rect" title=" " alt="" coords="3427,86,3574,111"/>
+<area shape="rect" title=" " alt="" coords="3598,86,3809,111"/>
+<area shape="rect" title=" " alt="" coords="3832,86,3999,111"/>
+<area shape="rect" title=" " alt="" coords="4023,86,4216,111"/>
+<area shape="rect" title=" " alt="" coords="4241,86,4454,111"/>
+<area shape="rect" title=" " alt="" coords="4478,86,4627,111"/>
+<area shape="rect" title=" " alt="" coords="4651,86,4822,111"/>
+<area shape="rect" title=" " alt="" coords="4846,86,5009,111"/>
+<area shape="rect" title=" " alt="" coords="5033,86,5222,111"/>
+<area shape="rect" title=" " alt="" coords="5246,86,5441,111"/>
+<area shape="rect" title=" " alt="" coords="5465,86,5672,111"/>
+<area shape="rect" title=" " alt="" coords="5697,86,5782,111"/>
+<area shape="rect" title=" " alt="" coords="5806,86,5873,111"/>
+<area shape="rect" title=" " alt="" coords="5897,86,5966,111"/>
+<area shape="rect" title=" " alt="" coords="5990,86,6057,111"/>
+<area shape="rect" title=" " alt="" coords="6081,86,6152,111"/>
+<area shape="rect" title=" " alt="" coords="6177,86,6235,111"/>
+<area shape="rect" title=" " alt="" coords="6259,86,6310,111"/>
+<area shape="rect" title=" " alt="" coords="6334,86,6411,111"/>
+<area shape="rect" title=" " alt="" coords="6435,86,6499,111"/>
+<area shape="rect" title=" " alt="" coords="6523,86,6582,111"/>
+<area shape="rect" title=" " alt="" coords="6607,86,6715,111"/>
+<area shape="rect" title=" " alt="" coords="6739,86,6799,111"/>
+<area shape="rect" title=" " alt="" coords="6823,86,6885,111"/>
+</map>
 </div>
 </div>
 <p><a href="VirtualFileSystem_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -126,7 +171,6 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacellvm_1_1vfs"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1vfs.html">llvm::vfs</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,15 +187,15 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acb8882be4684bb2548e3a826c27be7f3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VirtualFileSystem_8cpp.html#acb8882be4684bb2548e3a826c27be7f3">isTraversalComponent</a> (<a class="el" href="classllvm_1_1StringRef.html">StringRef</a> Component)</td></tr>
+<tr class="memitem:acb8882be4684bb2548e3a826c27be7f3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VirtualFileSystem_8cpp.html#acb8882be4684bb2548e3a826c27be7f3">isTraversalComponent</a> (StringRef Component)</td></tr>
 <tr class="separator:acb8882be4684bb2548e3a826c27be7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9717df28b0bbc67e6b6acc31f96b97df"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VirtualFileSystem_8cpp.html#a9717df28b0bbc67e6b6acc31f96b97df">pathHasTraversal</a> (<a class="el" href="classllvm_1_1StringRef.html">StringRef</a> Path)</td></tr>
+<tr class="memitem:a9717df28b0bbc67e6b6acc31f96b97df"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VirtualFileSystem_8cpp.html#a9717df28b0bbc67e6b6acc31f96b97df">pathHasTraversal</a> (StringRef Path)</td></tr>
 <tr class="separator:a9717df28b0bbc67e6b6acc31f96b97df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af17bd6c24dab14180610881b8bafb3ee"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1ErrorOr.html">ErrorOr</a>&lt; <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1vfs_1_1detail_1_1InMemoryNode.html">detail::InMemoryNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1vfs.html#af17bd6c24dab14180610881b8bafb3ee">llvm::vfs::lookupInMemoryNode</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1vfs_1_1InMemoryFileSystem.html">InMemoryFileSystem</a> &amp;FS, <a class="el" href="classllvm_1_1vfs_1_1detail_1_1InMemoryDirectory.html">detail::InMemoryDirectory</a> *Dir, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;<a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>)</td></tr>
+<tr class="memitem:af17bd6c24dab14180610881b8bafb3ee"><td class="memItemLeft" align="right" valign="top">static ErrorOr&lt; const <a class="el" href="classllvm_1_1vfs_1_1detail_1_1InMemoryNode.html">detail::InMemoryNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1vfs.html#af17bd6c24dab14180610881b8bafb3ee">llvm::vfs::lookupInMemoryNode</a> (const InMemoryFileSystem &amp;FS, <a class="el" href="classllvm_1_1vfs_1_1detail_1_1InMemoryDirectory.html">detail::InMemoryDirectory</a> *Dir, const Twine &amp;<a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>)</td></tr>
 <tr class="separator:af17bd6c24dab14180610881b8bafb3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc144ea3cbda148e928d3e7a4706dc44"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1vfs_1_1Status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VirtualFileSystem_8cpp.html#adc144ea3cbda148e928d3e7a4706dc44">getRedirectedFileStatus</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;Path, <a class="el" href="classbool.html">bool</a> UseExternalNames, <a class="el" href="classllvm_1_1vfs_1_1Status.html">Status</a> ExternalStatus)</td></tr>
+<tr class="memitem:adc144ea3cbda148e928d3e7a4706dc44"><td class="memItemLeft" align="right" valign="top">static Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VirtualFileSystem_8cpp.html#adc144ea3cbda148e928d3e7a4706dc44">getRedirectedFileStatus</a> (const Twine &amp;Path, bool UseExternalNames, Status ExternalStatus)</td></tr>
 <tr class="separator:adc144ea3cbda148e928d3e7a4706dc44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5193c36762bd45216d0e979c04df5d49"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VirtualFileSystem_8cpp.html#a5193c36762bd45216d0e979c04df5d49">getVFSEntries</a> (<a class="el" href="classllvm_1_1vfs_1_1RedirectingFileSystem_1_1Entry.html">RedirectingFileSystem::Entry</a> *SrcE, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1StringRef.html">StringRef</a> &gt; &amp;Path, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="structllvm_1_1vfs_1_1YAMLVFSEntry.html">YAMLVFSEntry</a> &gt; &amp;Entries)</td></tr>
+<tr class="memitem:a5193c36762bd45216d0e979c04df5d49"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VirtualFileSystem_8cpp.html#a5193c36762bd45216d0e979c04df5d49">getVFSEntries</a> (RedirectingFileSystem::Entry *SrcE, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; StringRef &gt; &amp;Path, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; YAMLVFSEntry &gt; &amp;Entries)</td></tr>
 <tr class="separator:a5193c36762bd45216d0e979c04df5d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -165,21 +209,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1vfs_1_1Status.html">Status</a> getRedirectedFileStatus </td>
+          <td class="memname">static Status getRedirectedFileStatus </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;&#160;</td>
+          <td class="paramtype">const Twine &amp;&#160;</td>
           <td class="paramname"><em>Path</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>UseExternalNames</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1vfs_1_1Status.html">Status</a>&#160;</td>
+          <td class="paramtype">Status&#160;</td>
           <td class="paramname"><em>ExternalStatus</em>&#160;</td>
         </tr>
         <tr>
@@ -197,10 +241,6 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="VirtualFileSystem_8cpp_source.html#l01677">1677</a> of file <a class="el" href="VirtualFileSystem_8cpp_source.html">VirtualFileSystem.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="VirtualFileSystem_8cpp_source.html#l00077">llvm::vfs::Status::copyWithNewName()</a>, and <a class="el" href="VirtualFileSystem_8h_source.html#l00057">llvm::vfs::Status::IsVFSMapped</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="VirtualFileSystem_8cpp_source.html#l01740">llvm::vfs::RedirectingFileSystem::openFileForRead()</a>.</p>
-
 </div>
 </div>
 <a id="a5193c36762bd45216d0e979c04df5d49" name="a5193c36762bd45216d0e979c04df5d49"></a>
@@ -215,19 +255,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void getVFSEntries </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1vfs_1_1RedirectingFileSystem_1_1Entry.html">RedirectingFileSystem::Entry</a> *&#160;</td>
+          <td class="paramtype">RedirectingFileSystem::Entry *&#160;</td>
           <td class="paramname"><em>SrcE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1StringRef.html">StringRef</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; StringRef &gt; &amp;&#160;</td>
           <td class="paramname"><em>Path</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="structllvm_1_1vfs_1_1YAMLVFSEntry.html">YAMLVFSEntry</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; YAMLVFSEntry &gt; &amp;&#160;</td>
           <td class="paramname"><em>Entries</em>&#160;</td>
         </tr>
         <tr>
@@ -245,7 +285,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="VirtualFileSystem_8cpp_source.html#l01801">1801</a> of file <a class="el" href="VirtualFileSystem_8cpp_source.html">VirtualFileSystem.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Path_8cpp_source.html#l00455">llvm::sys::path::append()</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="SmallString_8h_source.html#l00269">llvm::SmallString&lt; InternalLen &gt;::c_str()</a>, <a class="el" href="VirtualFileSystem_8h_source.html#l00575">llvm::vfs::RedirectingFileSystem::EK_Directory</a>, <a class="el" href="VirtualFileSystem_8h_source.html#l00575">llvm::vfs::RedirectingFileSystem::EK_File</a>, <a class="el" href="VirtualFileSystem_8h_source.html#l00587">llvm::vfs::RedirectingFileSystem::Entry::getKind()</a>, <a class="el" href="VirtualFileSystem_8cpp_source.html#l01801">getVFSEntries()</a>, <a class="el" href="iterator__range_8h_source.html#l00053">llvm::make_range()</a>, <a class="el" href="SmallVector_8h_source.html#l00225">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::pop_back()</a>, and <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>.</p>
+<p class="reference">References <a class="el" href="Path_8cpp_source.html#l00417">llvm::sys::path::append()</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="VirtualFileSystem_8cpp_source.html#l01801">getVFSEntries()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="VirtualFileSystem_8cpp_source.html#l01801">getVFSEntries()</a>.</p>
 
@@ -261,9 +301,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isTraversalComponent </td>
+          <td class="memname">static bool isTraversalComponent </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StringRef.html">StringRef</a>&#160;</td>
+          <td class="paramtype">StringRef&#160;</td>
           <td class="paramname"><em>Component</em></td><td>)</td>
           <td></td>
         </tr>
@@ -276,8 +316,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="VirtualFileSystem_8cpp_source.html#l00151">151</a> of file <a class="el" href="VirtualFileSystem_8cpp_source.html">VirtualFileSystem.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="StringRef_8h_source.html#l00160">llvm::StringRef::equals()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="VirtualFileSystem_8cpp_source.html#l00155">pathHasTraversal()</a>.</p>
 
@@ -293,9 +331,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> pathHasTraversal </td>
+          <td class="memname">static bool pathHasTraversal </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StringRef.html">StringRef</a>&#160;</td>
+          <td class="paramtype">StringRef&#160;</td>
           <td class="paramname"><em>Path</em></td><td>)</td>
           <td></td>
         </tr>
@@ -309,16 +347,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="VirtualFileSystem_8cpp_source.html#l00155">155</a> of file <a class="el" href="VirtualFileSystem_8cpp_source.html">VirtualFileSystem.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Path_8cpp_source.html#l00224">llvm::sys::path::begin()</a>, <a class="el" href="Path_8cpp_source.html#l00233">llvm::sys::path::end()</a>, <a class="el" href="VirtualFileSystem_8cpp_source.html#l00151">isTraversalComponent()</a>, and <a class="el" href="iterator__range_8h_source.html#l00053">llvm::make_range()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="VirtualFileSystem_8cpp_source.html#l01851">llvm::vfs::YAMLVFSWriter::addFileMapping()</a>.</p>
+<p class="reference">References <a class="el" href="Path_8cpp_source.html#l00224">llvm::sys::path::begin()</a>, <a class="el" href="Path_8cpp_source.html#l00233">llvm::sys::path::end()</a>, and <a class="el" href="VirtualFileSystem_8cpp_source.html#l00151">isTraversalComponent()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:15 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -53,58 +53,106 @@ $(function() {
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">ThinLTOCodeGenerator.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="ThinLTOCodeGenerator_8h_source.html">llvm/LTO/legacy/ThinLTOCodeGenerator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringExtras_8h_source.html">llvm/ADT/StringExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ModuleSummaryAnalysis_8h_source.html">llvm/Analysis/ModuleSummaryAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BitcodeReader_8h_source.html">llvm/Bitcode/BitcodeReader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BitcodeWriter_8h_source.html">llvm/Bitcode/BitcodeWriter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BitcodeWriterPass_8h_source.html">llvm/Bitcode/BitcodeWriterPass.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/LTO/legacy/ThinLTOCodeGenerator.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringExtras.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ModuleSummaryAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Bitcode/BitcodeReader.h&quot;</code><br />
+<code>#include &quot;llvm/Bitcode/BitcodeWriter.h&quot;</code><br />
+<code>#include &quot;llvm/Bitcode/BitcodeWriterPass.h&quot;</code><br />
 <code>#include &quot;llvm/Config/llvm-config.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2IR_2DebugInfo_8h_source.html">llvm/IR/DebugInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DiagnosticPrinter_8h_source.html">llvm/IR/DiagnosticPrinter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LegacyPassManager_8h_source.html">llvm/IR/LegacyPassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Mangler_8h_source.html">llvm/IR/Mangler.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassTimingInfo_8h_source.html">llvm/IR/PassTimingInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="RemarkStreamer_8h_source.html">llvm/IR/RemarkStreamer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Verifier_8h_source.html">llvm/IR/Verifier.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2IRReader_2IRReader_8h_source.html">llvm/IRReader/IRReader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LTO_8h_source.html">llvm/LTO/LTO.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SummaryBasedOptimizations_8h_source.html">llvm/LTO/SummaryBasedOptimizations.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SubtargetFeature_8h_source.html">llvm/MC/SubtargetFeature.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IRObjectFile_8h_source.html">llvm/Object/IRObjectFile.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CachePruning_8h_source.html">llvm/Support/CachePruning.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2Error_8h_source.html">llvm/Support/Error.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Path_8h_source.html">llvm/Support/Path.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SHA1_8h_source.html">llvm/Support/SHA1.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVectorMemoryBuffer_8h_source.html">llvm/Support/SmallVectorMemoryBuffer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetRegistry_8h_source.html">llvm/Support/TargetRegistry.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ThreadPool_8h_source.html">llvm/Support/ThreadPool.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Threading_8h_source.html">llvm/Support/Threading.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ToolOutputFile_8h_source.html">llvm/Support/ToolOutputFile.h</a>&quot;</code><br />
+<code>#include &quot;llvm/IR/DebugInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DiagnosticPrinter.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LegacyPassManager.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Mangler.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassTimingInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/RemarkStreamer.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Verifier.h&quot;</code><br />
+<code>#include &quot;llvm/IRReader/IRReader.h&quot;</code><br />
+<code>#include &quot;llvm/LTO/LTO.h&quot;</code><br />
+<code>#include &quot;llvm/LTO/SummaryBasedOptimizations.h&quot;</code><br />
+<code>#include &quot;llvm/MC/SubtargetFeature.h&quot;</code><br />
+<code>#include &quot;llvm/Object/IRObjectFile.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CachePruning.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Error.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Path.h&quot;</code><br />
+<code>#include &quot;llvm/Support/SHA1.h&quot;</code><br />
+<code>#include &quot;llvm/Support/SmallVectorMemoryBuffer.h&quot;</code><br />
+<code>#include &quot;llvm/Support/TargetRegistry.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ThreadPool.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Threading.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ToolOutputFile.h&quot;</code><br />
 <code>#include &quot;llvm/Support/VCSRevision.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Target_2TargetMachine_8h_source.html">llvm/Target/TargetMachine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2IPO_8h_source.html">llvm/Transforms/IPO.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="FunctionImport_8h_source.html">llvm/Transforms/IPO/FunctionImport.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Internalize_8h_source.html">llvm/Transforms/IPO/Internalize.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2IPO_2PassManagerBuilder_8h_source.html">llvm/Transforms/IPO/PassManagerBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="include_2llvm_2Transforms_2ObjCARC_8h_source.html">llvm/Transforms/ObjCARC.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="FunctionImportUtils_8h_source.html">llvm/Transforms/Utils/FunctionImportUtils.h</a>&quot;</code><br />
+<code>#include &quot;llvm/Target/TargetMachine.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO/FunctionImport.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO/Internalize.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO/PassManagerBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/ObjCARC.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/FunctionImportUtils.h&quot;</code><br />
 <code>#include &lt;numeric&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ThinLTOCodeGenerator.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ThinLTOCodeGenerator_8cpp__incl.png" border="0" usemap="#alib_2LTO_2ThinLTOCodeGenerator_8cpp" alt=""/></div>
+<map name="alib_2LTO_2ThinLTOCodeGenerator_8cpp" id="alib_2LTO_2ThinLTOCodeGenerator_8cpp">
+<area shape="rect" title=" " alt="" coords="4561,5,4808,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,220,119"/>
+<area shape="rect" title=" " alt="" coords="244,86,395,111"/>
+<area shape="rect" title=" " alt="" coords="419,86,596,111"/>
+<area shape="rect" title=" " alt="" coords="620,79,845,119"/>
+<area shape="rect" title=" " alt="" coords="870,79,1089,119"/>
+<area shape="rect" title=" " alt="" coords="1113,79,1312,119"/>
+<area shape="rect" title=" " alt="" coords="1337,79,1555,119"/>
+<area shape="rect" title=" " alt="" coords="1580,86,1795,111"/>
+<area shape="rect" title=" " alt="" coords="1819,86,2027,111"/>
+<area shape="rect" title=" " alt="" coords="2051,79,2249,119"/>
+<area shape="rect" title=" " alt="" coords="2273,86,2459,111"/>
+<area shape="rect" title=" " alt="" coords="2483,86,2633,111"/>
+<area shape="rect" title=" " alt="" coords="2658,86,2853,111"/>
+<area shape="rect" title=" " alt="" coords="2877,86,3047,111"/>
+<area shape="rect" title=" " alt="" coords="3071,86,3285,111"/>
+<area shape="rect" title=" " alt="" coords="3310,86,3446,111"/>
+<area shape="rect" title=" " alt="" coords="3471,86,3653,111"/>
+<area shape="rect" title=" " alt="" coords="3678,86,3873,111"/>
+<area shape="rect" title=" " alt="" coords="3897,86,4027,111"/>
+<area shape="rect" title=" " alt="" coords="4051,86,4239,111"/>
+<area shape="rect" title=" " alt="" coords="4263,86,4381,111"/>
+<area shape="rect" title=" " alt="" coords="4405,86,4695,111"/>
+<area shape="rect" title=" " alt="" coords="4719,86,4923,111"/>
+<area shape="rect" title=" " alt="" coords="4947,86,5137,111"/>
+<area shape="rect" title=" " alt="" coords="5162,86,5373,111"/>
+<area shape="rect" title=" " alt="" coords="5397,86,5559,111"/>
+<area shape="rect" title=" " alt="" coords="5584,86,5735,111"/>
+<area shape="rect" title=" " alt="" coords="5759,86,5909,111"/>
+<area shape="rect" title=" " alt="" coords="5933,86,6089,111"/>
+<area shape="rect" title=" " alt="" coords="6114,79,6301,119"/>
+<area shape="rect" title=" " alt="" coords="6325,86,6538,111"/>
+<area shape="rect" title=" " alt="" coords="6562,86,6757,111"/>
+<area shape="rect" title=" " alt="" coords="6781,86,6967,111"/>
+<area shape="rect" title=" " alt="" coords="6992,86,7207,111"/>
+<area shape="rect" title=" " alt="" coords="7231,86,7434,111"/>
+<area shape="rect" title=" " alt="" coords="7459,86,7665,111"/>
+<area shape="rect" title=" " alt="" coords="7690,86,7855,111"/>
+<area shape="rect" title=" " alt="" coords="7880,79,8033,119"/>
+<area shape="rect" title=" " alt="" coords="8057,79,8211,119"/>
+<area shape="rect" title=" " alt="" coords="8235,79,8404,119"/>
+<area shape="rect" title=" " alt="" coords="8428,86,8629,111"/>
+<area shape="rect" title=" " alt="" coords="8653,79,8820,119"/>
+<area shape="rect" title=" " alt="" coords="8845,86,8919,111"/>
+<area shape="rect" title=" " alt="" coords="8943,86,9018,111"/>
+</map>
 </div>
 </div>
 <p><a href="ThinLTOCodeGenerator_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -112,7 +160,6 @@ Include dependency graph for ThinLTOCodeGenerator.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -122,10 +169,23 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adce637a784edd8ce99a18fdf2433441a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ThinLTOCodeGenerator_8cpp.html#adce637a784edd8ce99a18fdf2433441a">internalizeAndPromoteInIndex</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1StringMap.html">StringMap</a>&lt; <a class="el" href="classllvm_1_1FunctionImporter.html#aa381b623e03686ba53b9305067f8dcf0">FunctionImporter::ExportSetTy</a> &gt; &amp;ExportLists, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1GlobalValue.html#a3af0428ec6e48cb2f05c199b7b9f7e07">GlobalValue::GUID</a> &gt; &amp;GUIDPreservedSymbols, <a class="el" href="classllvm_1_1ModuleSummaryIndex.html">ModuleSummaryIndex</a> &amp;Index)</td></tr>
+<tr class="memitem:adce637a784edd8ce99a18fdf2433441a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ThinLTOCodeGenerator_8cpp.html#adce637a784edd8ce99a18fdf2433441a">internalizeAndPromoteInIndex</a> (const StringMap&lt; FunctionImporter::ExportSetTy &gt; &amp;ExportLists, const DenseSet&lt; GlobalValue::GUID &gt; &amp;GUIDPreservedSymbols, ModuleSummaryIndex &amp;Index)</td></tr>
 <tr class="separator:adce637a784edd8ce99a18fdf2433441a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15f963c10422e290c1e457a23a3f5866"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ThinLTOCodeGenerator_8cpp.html#a15f963c10422e290c1e457a23a3f5866">computeDeadSymbolsInIndex</a> (<a class="el" href="classllvm_1_1ModuleSummaryIndex.html">ModuleSummaryIndex</a> &amp;Index, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1GlobalValue.html#a3af0428ec6e48cb2f05c199b7b9f7e07">GlobalValue::GUID</a> &gt; &amp;GUIDPreservedSymbols)</td></tr>
+<tr class="memitem:a15f963c10422e290c1e457a23a3f5866"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ThinLTOCodeGenerator_8cpp.html#a15f963c10422e290c1e457a23a3f5866">computeDeadSymbolsInIndex</a> (ModuleSummaryIndex &amp;Index, const DenseSet&lt; GlobalValue::GUID &gt; &amp;GUIDPreservedSymbols)</td></tr>
 <tr class="separator:a15f963c10422e290c1e457a23a3f5866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a9dfd86ca95241f0ca434b0c937d71e83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a9dfd86ca95241f0ca434b0c937d71e83">llvm::LTODiscardValueNames</a></td></tr>
+<tr class="separator:a9dfd86ca95241f0ca434b0c937d71e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a940d65a885171ea6d02e19865ad2eba4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a940d65a885171ea6d02e19865ad2eba4">llvm::RemarksFilename</a></td></tr>
+<tr class="separator:a940d65a885171ea6d02e19865ad2eba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b251817193c4afcfd8c2f41590fe4bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a7b251817193c4afcfd8c2f41590fe4bf">llvm::RemarksPasses</a></td></tr>
+<tr class="separator:a7b251817193c4afcfd8c2f41590fe4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af81e95f3b2e04642767075b585bd3ec6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#af81e95f3b2e04642767075b585bd3ec6">llvm::RemarksWithHotness</a></td></tr>
+<tr class="separator:af81e95f3b2e04642767075b585bd3ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a07ec1a6f7a002154d4a9d416d5d088"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a8a07ec1a6f7a002154d4a9d416d5d088">llvm::RemarksFormat</a></td></tr>
+<tr class="separator:a8a07ec1a6f7a002154d4a9d416d5d088"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad78e062f62e0d6e453941fb4ca843e4d" name="ad78e062f62e0d6e453941fb4ca843e4d"></a>
@@ -157,13 +217,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void computeDeadSymbolsInIndex </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ModuleSummaryIndex.html">ModuleSummaryIndex</a> &amp;&#160;</td>
+          <td class="paramtype">ModuleSummaryIndex &amp;&#160;</td>
           <td class="paramname"><em>Index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1GlobalValue.html#a3af0428ec6e48cb2f05c199b7b9f7e07">GlobalValue::GUID</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const DenseSet&lt; GlobalValue::GUID &gt; &amp;&#160;</td>
           <td class="paramname"><em>GUIDPreservedSymbols</em>&#160;</td>
         </tr>
         <tr>
@@ -181,9 +241,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ThinLTOCodeGenerator_8cpp_source.html#l00590">590</a> of file <a class="el" href="ThinLTOCodeGenerator_8cpp_source.html">ThinLTOCodeGenerator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="FunctionImport_8cpp_source.html#l00846">llvm::computeDeadSymbolsWithConstProp()</a>, <a class="el" href="MD5_8cpp_source.html#l00056">G</a>, and <a class="el" href="namespacellvm.html#ac505d74d262ee1e64d87b07121199e36a88183b946cc5f0e8c96b2e66e1c74a7e">llvm::Unknown</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="ThinLTOCodeGenerator_8cpp_source.html#l00649">llvm::ThinLTOCodeGenerator::crossModuleImport()</a>, <a class="el" href="ThinLTOCodeGenerator_8cpp_source.html#l00715">llvm::ThinLTOCodeGenerator::emitImports()</a>, <a class="el" href="ThinLTOCodeGenerator_8cpp_source.html#l00681">llvm::ThinLTOCodeGenerator::gatherImportedSummariesForModule()</a>, <a class="el" href="ThinLTOCodeGenerator_8cpp_source.html#l00756">llvm::ThinLTOCodeGenerator::internalize()</a>, <a class="el" href="ThinLTOCodeGenerator_8cpp_source.html#l00607">llvm::ThinLTOCodeGenerator::promote()</a>, and <a class="el" href="ThinLTOCodeGenerator_8cpp_source.html#l00856">llvm::ThinLTOCodeGenerator::run()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00056">G</a>.</p>
 
 </div>
 </div>
@@ -199,19 +257,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void internalizeAndPromoteInIndex </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1StringMap.html">StringMap</a>&lt; <a class="el" href="classllvm_1_1FunctionImporter.html#aa381b623e03686ba53b9305067f8dcf0">FunctionImporter::ExportSetTy</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const StringMap&lt; FunctionImporter::ExportSetTy &gt; &amp;&#160;</td>
           <td class="paramname"><em>ExportLists</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1GlobalValue.html#a3af0428ec6e48cb2f05c199b7b9f7e07">GlobalValue::GUID</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const DenseSet&lt; GlobalValue::GUID &gt; &amp;&#160;</td>
           <td class="paramname"><em>GUIDPreservedSymbols</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ModuleSummaryIndex.html">ModuleSummaryIndex</a> &amp;&#160;</td>
+          <td class="paramtype">ModuleSummaryIndex &amp;&#160;</td>
           <td class="paramname"><em>Index</em>&#160;</td>
         </tr>
         <tr>
@@ -229,16 +287,12 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ThinLTOCodeGenerator_8cpp_source.html#l00576">576</a> of file <a class="el" href="ThinLTOCodeGenerator_8cpp_source.html">ThinLTOCodeGenerator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DenseSet_8h_source.html#l00091">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::count()</a>, <a class="el" href="StringMap_8h_source.html#l00317">llvm::StringMap&lt; ValueTy, AllocatorTy &gt;::end()</a>, <a class="el" href="StringMap_8h_source.html#l00332">llvm::StringMap&lt; ValueTy, AllocatorTy &gt;::find()</a>, and <a class="el" href="LTO_8cpp_source.html#l00411">llvm::thinLTOInternalizeAndPromoteInIndex()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="ThinLTOCodeGenerator_8cpp_source.html#l00756">llvm::ThinLTOCodeGenerator::internalize()</a>, <a class="el" href="ThinLTOCodeGenerator_8cpp_source.html#l00607">llvm::ThinLTOCodeGenerator::promote()</a>, and <a class="el" href="ThinLTOCodeGenerator_8cpp_source.html#l00856">llvm::ThinLTOCodeGenerator::run()</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:15 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -61,31 +61,24 @@ $(function() {
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="Line_8h.html">llvm/DebugInfo/CodeView/Line.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;llvm/DebugInfo/CodeView/Line.h&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm.html">llvm</a>;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">using namespace </span>codeview;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classllvm_1_1codeview_1_1LineInfo.html#aec12b0be337a12465a9a2f04b973dca8">   14</a></span><a class="code hl_function" href="classllvm_1_1codeview_1_1LineInfo.html#aec12b0be337a12465a9a2f04b973dca8">LineInfo::LineInfo</a>(<a class="code hl_class" href="classuint32__t.html">uint32_t</a> StartLine, <a class="code hl_class" href="classuint32__t.html">uint32_t</a> EndLine, <span class="keywordtype">bool</span> IsStatement) {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  LineData = StartLine &amp; <a class="code hl_enumvalue" href="classllvm_1_1codeview_1_1LineInfo.html#af30dcde19e4c52ba0de3d03e57bcf35da61aed42c1dcbb41881894d88887dfed4">StartLineMask</a>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_class" href="classuint32__t.html">uint32_t</a> LineDelta = EndLine - StartLine;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  LineData |= (LineDelta &lt;&lt; <a class="code hl_enumvalue" href="classllvm_1_1codeview_1_1LineInfo.html#a164350dd919e257a64fcf7ec8692f2c1af5dfb777e69076c86aa151e8f23a14ca">EndLineDeltaShift</a>) &amp; <a class="code hl_enumvalue" href="classllvm_1_1codeview_1_1LineInfo.html#af30dcde19e4c52ba0de3d03e57bcf35da9ab2a9d1bb235a9d832c179a301ca86e">EndLineDeltaMask</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>LineInfo::LineInfo(uint32_t StartLine, uint32_t EndLine, <span class="keywordtype">bool</span> IsStatement) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  LineData = StartLine &amp; StartLineMask;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  uint32_t LineDelta = EndLine - StartLine;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  LineData |= (LineDelta &lt;&lt; EndLineDeltaShift) &amp; EndLineDeltaMask;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordflow">if</span> (IsStatement) {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    LineData |= <a class="code hl_enumvalue" href="classllvm_1_1codeview_1_1LineInfo.html#af30dcde19e4c52ba0de3d03e57bcf35da1181e4a1a533198a7dc59872a9c1e873">StatementFlag</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    LineData |= StatementFlag;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  }</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
-<div class="ttc" id="aLine_8h_html"><div class="ttname"><a href="Line_8h.html">Line.h</a></div></div>
-<div class="ttc" id="aclassllvm_1_1codeview_1_1LineInfo_html_a164350dd919e257a64fcf7ec8692f2c1af5dfb777e69076c86aa151e8f23a14ca"><div class="ttname"><a href="classllvm_1_1codeview_1_1LineInfo.html#a164350dd919e257a64fcf7ec8692f2c1af5dfb777e69076c86aa151e8f23a14ca">llvm::codeview::LineInfo::EndLineDeltaShift</a></div><div class="ttdeci">@ EndLineDeltaShift</div><div class="ttdef"><b>Definition:</b> <a href="Line_8h_source.html#l00028">Line.h:28</a></div></div>
-<div class="ttc" id="aclassllvm_1_1codeview_1_1LineInfo_html_aec12b0be337a12465a9a2f04b973dca8"><div class="ttname"><a href="classllvm_1_1codeview_1_1LineInfo.html#aec12b0be337a12465a9a2f04b973dca8">llvm::codeview::LineInfo::LineInfo</a></div><div class="ttdeci">LineInfo(uint32_t StartLine, uint32_t EndLine, bool IsStatement)</div><div class="ttdef"><b>Definition:</b> <a href="Line_8cpp_source.html#l00014">Line.cpp:14</a></div></div>
-<div class="ttc" id="aclassllvm_1_1codeview_1_1LineInfo_html_af30dcde19e4c52ba0de3d03e57bcf35da1181e4a1a533198a7dc59872a9c1e873"><div class="ttname"><a href="classllvm_1_1codeview_1_1LineInfo.html#af30dcde19e4c52ba0de3d03e57bcf35da1181e4a1a533198a7dc59872a9c1e873">llvm::codeview::LineInfo::StatementFlag</a></div><div class="ttdeci">@ StatementFlag</div><div class="ttdef"><b>Definition:</b> <a href="Line_8h_source.html#l00034">Line.h:33</a></div></div>
-<div class="ttc" id="aclassllvm_1_1codeview_1_1LineInfo_html_af30dcde19e4c52ba0de3d03e57bcf35da61aed42c1dcbb41881894d88887dfed4"><div class="ttname"><a href="classllvm_1_1codeview_1_1LineInfo.html#af30dcde19e4c52ba0de3d03e57bcf35da61aed42c1dcbb41881894d88887dfed4">llvm::codeview::LineInfo::StartLineMask</a></div><div class="ttdeci">@ StartLineMask</div><div class="ttdef"><b>Definition:</b> <a href="Line_8h_source.html#l00031">Line.h:31</a></div></div>
-<div class="ttc" id="aclassllvm_1_1codeview_1_1LineInfo_html_af30dcde19e4c52ba0de3d03e57bcf35da9ab2a9d1bb235a9d832c179a301ca86e"><div class="ttname"><a href="classllvm_1_1codeview_1_1LineInfo.html#af30dcde19e4c52ba0de3d03e57bcf35da9ab2a9d1bb235a9d832c179a301ca86e">llvm::codeview::LineInfo::EndLineDeltaMask</a></div><div class="ttdeci">@ EndLineDeltaMask</div><div class="ttdef"><b>Definition:</b> <a href="Line_8h_source.html#l00032">Line.h:32</a></div></div>
-<div class="ttc" id="aclassuint32__t_html"><div class="ttname"><a href="classuint32__t.html">uint32_t</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AllocatorList_8h_source.html#l00023">AllocatorList.h:23</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:22:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:35 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

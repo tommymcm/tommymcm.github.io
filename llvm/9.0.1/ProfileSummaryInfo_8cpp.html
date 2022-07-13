@@ -51,45 +51,51 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">ProfileSummaryInfo.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BlockFrequencyInfo_8h_source.html">llvm/Analysis/BlockFrequencyInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ProfileSummary_8h_source.html">llvm/IR/ProfileSummary.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/BlockFrequencyInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/ProfileSummary.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ProfileSummaryInfo.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ProfileSummaryInfo_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2ProfileSummaryInfo_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2ProfileSummaryInfo_8cpp" id="alib_2Analysis_2ProfileSummaryInfo_8cpp">
+<area shape="rect" title=" " alt="" coords="635,5,840,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,224,133"/>
+<area shape="rect" title=" " alt="" coords="249,93,466,133"/>
+<area shape="rect" title=" " alt="" coords="491,101,645,126"/>
+<area shape="rect" title=" " alt="" coords="670,101,805,126"/>
+<area shape="rect" title=" " alt="" coords="829,101,976,126"/>
+<area shape="rect" title=" " alt="" coords="1001,101,1133,126"/>
+<area shape="rect" title=" " alt="" coords="1157,101,1344,126"/>
+</map>
 </div>
 </div>
 <p><a href="ProfileSummaryInfo_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a184c50e01431793c43250f1833ea1332"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1ProfileSummaryEntry.html">ProfileSummaryEntry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ProfileSummaryInfo_8cpp.html#a184c50e01431793c43250f1833ea1332">getEntryForPercentile</a> (<a class="el" href="namespacellvm.html#aa199fd61a7955afcb0c56394725046f1">SummaryEntryVector</a> &amp;DS, uint64_t Percentile)</td></tr>
+<tr class="memitem:a22630fd01c7bf58d8ad66b7cd51997c7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ProfileSummaryInfo_8cpp.html#a22630fd01c7bf58d8ad66b7cd51997c7">ProfileSummaryCutoffHot</a> (&quot;profile-summary-cutoff-hot&quot;, cl::Hidden, cl::init(990000), cl::ZeroOrMore, cl::desc(&quot;A count is hot <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> it exceeds the minimum count to&quot; &quot; reach this percentile of total counts.&quot;))</td></tr>
+<tr class="separator:a22630fd01c7bf58d8ad66b7cd51997c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa16a0800e5bca8b14a865b1d25285cc4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ProfileSummaryInfo_8cpp.html#aa16a0800e5bca8b14a865b1d25285cc4">ProfileSummaryCutoffCold</a> (&quot;profile-summary-cutoff-cold&quot;, cl::Hidden, cl::init(999999), cl::ZeroOrMore, cl::desc(&quot;A count is cold <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> it is below the minimum count&quot; &quot; to reach this percentile of total counts.&quot;))</td></tr>
+<tr class="separator:aa16a0800e5bca8b14a865b1d25285cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f8a968e46d545e46d2fc94780fd28cb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ProfileSummaryInfo_8cpp.html#a5f8a968e46d545e46d2fc94780fd28cb">ProfileSummaryHugeWorkingSetSizeThreshold</a> (&quot;profile-summary-huge-working-set-size-threshold&quot;, cl::Hidden, cl::init(15000), cl::ZeroOrMore, cl::desc(&quot;The code working set size is considered huge <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> the number of&quot; &quot; blocks required to reach the -profile-summary-cutoff-hot&quot; &quot; percentile exceeds this count.&quot;))</td></tr>
+<tr class="separator:a5f8a968e46d545e46d2fc94780fd28cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79b14236c4c506ef5065cf545db03f27"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ProfileSummaryInfo_8cpp.html#a79b14236c4c506ef5065cf545db03f27">ProfileSummaryHotCount</a> (&quot;profile-summary-hot-count&quot;, cl::ReallyHidden, cl::ZeroOrMore, cl::desc(&quot;A fixed hot count that overrides the count derived from&quot; &quot; profile-summary-cutoff-hot&quot;))</td></tr>
+<tr class="separator:a79b14236c4c506ef5065cf545db03f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad015403d8e6b663cb7f6dfc2f4b3dc47"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ProfileSummaryInfo_8cpp.html#ad015403d8e6b663cb7f6dfc2f4b3dc47">ProfileSummaryColdCount</a> (&quot;profile-summary-cold-count&quot;, cl::ReallyHidden, cl::ZeroOrMore, cl::desc(&quot;A fixed cold count that overrides the count derived from&quot; &quot; profile-summary-cutoff-cold&quot;))</td></tr>
+<tr class="separator:ad015403d8e6b663cb7f6dfc2f4b3dc47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a184c50e01431793c43250f1833ea1332"><td class="memItemLeft" align="right" valign="top">static const ProfileSummaryEntry &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ProfileSummaryInfo_8cpp.html#a184c50e01431793c43250f1833ea1332">getEntryForPercentile</a> (SummaryEntryVector &amp;DS, uint64_t Percentile)</td></tr>
 <tr class="separator:a184c50e01431793c43250f1833ea1332"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85b6c88c975bbd4d6dd24d0841154df9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ProfileSummaryInfo_8cpp.html#a85b6c88c975bbd4d6dd24d0841154df9">INITIALIZE_PASS</a> (<a class="el" href="classllvm_1_1ProfileSummaryInfoWrapperPass.html">ProfileSummaryInfoWrapperPass</a>, &quot;profile-summary-info&quot;, &quot;Profile summary info&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) <a class="el" href="classllvm_1_1ProfileSummaryInfoWrapperPass.html">ProfileSummaryInfoWrapperPass</a></td></tr>
+<tr class="memitem:a85b6c88c975bbd4d6dd24d0841154df9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ProfileSummaryInfo_8cpp.html#a85b6c88c975bbd4d6dd24d0841154df9">INITIALIZE_PASS</a> (ProfileSummaryInfoWrapperPass, &quot;profile-summary-info&quot;, &quot;Profile summary info&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) ProfileSummaryInfoWrapperPass</td></tr>
 <tr class="separator:a85b6c88c975bbd4d6dd24d0841154df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ac3e5371cfc586a45623897251b626a80"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ProfileSummaryInfo_8cpp.html#ac3e5371cfc586a45623897251b626a80">ProfileSummaryCutoffHot</a> (&quot;profile-summary-cutoff-hot&quot;, cl::Hidden, cl::init(990000), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A count is hot <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> it exceeds the minimum count to&quot; &quot; reach this percentile of total counts.&quot;))</td></tr>
-<tr class="separator:ac3e5371cfc586a45623897251b626a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a736943d621d4592a84debd63ed0bbf10"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ProfileSummaryInfo_8cpp.html#a736943d621d4592a84debd63ed0bbf10">ProfileSummaryCutoffCold</a> (&quot;profile-summary-cutoff-cold&quot;, cl::Hidden, cl::init(999999), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A count is cold <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> it is below the minimum count&quot; &quot; to reach this percentile of total counts.&quot;))</td></tr>
-<tr class="separator:a736943d621d4592a84debd63ed0bbf10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3fedc42dab4120adda91cd78e27362f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ProfileSummaryInfo_8cpp.html#af3fedc42dab4120adda91cd78e27362f">ProfileSummaryHugeWorkingSetSizeThreshold</a> (&quot;profile-summary-huge-working-set-size-threshold&quot;, cl::Hidden, cl::init(15000), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The code working set size is considered huge <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> the number of&quot; &quot; blocks required to reach the -profile-summary-cutoff-hot&quot; &quot; percentile exceeds this count.&quot;))</td></tr>
-<tr class="separator:af3fedc42dab4120adda91cd78e27362f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24bb201ce810ab9e019a20051ef08908"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ProfileSummaryInfo_8cpp.html#a24bb201ce810ab9e019a20051ef08908">ProfileSummaryHotCount</a> (&quot;profile-summary-hot-count&quot;, cl::ReallyHidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A fixed hot count that overrides the count derived from&quot; &quot; profile-summary-cutoff-hot&quot;))</td></tr>
-<tr class="separator:a24bb201ce810ab9e019a20051ef08908"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af447df4089732152bf3c755a912c3909"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ProfileSummaryInfo_8cpp.html#af447df4089732152bf3c755a912c3909">ProfileSummaryColdCount</a> (&quot;profile-summary-cold-count&quot;, cl::ReallyHidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A fixed cold count that overrides the count derived from&quot; &quot; profile-summary-cutoff-cold&quot;))</td></tr>
-<tr class="separator:af447df4089732152bf3c755a912c3909"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a184c50e01431793c43250f1833ea1332" name="a184c50e01431793c43250f1833ea1332"></a>
@@ -102,9 +108,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1ProfileSummaryEntry.html">ProfileSummaryEntry</a> &amp; getEntryForPercentile </td>
+          <td class="memname">static const ProfileSummaryEntry &amp; getEntryForPercentile </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#aa199fd61a7955afcb0c56394725046f1">SummaryEntryVector</a> &amp;&#160;</td>
+          <td class="paramtype">SummaryEntryVector &amp;&#160;</td>
           <td class="paramname"><em>DS</em>, </td>
         </tr>
         <tr>
@@ -128,7 +134,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ProfileSummaryInfo_8cpp_source.html#l00061">61</a> of file <a class="el" href="ProfileSummaryInfo_8cpp_source.html">ProfileSummaryInfo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="STLExtras_8h_source.html#l01329">llvm::partition_point()</a>, and <a class="el" href="Testing_2Support_2Error_8cpp_source.html#l00139">llvm::report_fatal_error()</a>.</p>
+<p class="reference">References <a class="el" href="Error_8cpp_source.html#l00139">llvm::report_fatal_error()</a>.</p>
 
 </div>
 </div>
@@ -141,7 +147,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">INITIALIZE_PASS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ProfileSummaryInfoWrapperPass.html">ProfileSummaryInfoWrapperPass</a>&#160;</td>
+          <td class="paramtype">ProfileSummaryInfoWrapperPass&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -178,13 +184,10 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ProfileSummaryInfo_8cpp_source.html#l00285">285</a> of file <a class="el" href="ProfileSummaryInfo_8cpp_source.html">ProfileSummaryInfo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="PassRegistry_8cpp_source.html#l00031">llvm::PassRegistry::getPassRegistry()</a>, and <a class="el" href="namespacellvm.html#ab43da862910097fb3e6b4782105eccc4">llvm::initializeProfileSummaryInfoWrapperPassPass()</a>.</p>
-
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="af447df4089732152bf3c755a912c3909" name="af447df4089732152bf3c755a912c3909"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af447df4089732152bf3c755a912c3909">&#9670;&nbsp;</a></span>ProfileSummaryColdCount</h2>
+<a id="ad015403d8e6b663cb7f6dfc2f4b3dc47" name="ad015403d8e6b663cb7f6dfc2f4b3dc47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad015403d8e6b663cb7f6dfc2f4b3dc47">&#9670;&nbsp;</a></span>ProfileSummaryColdCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +196,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; ProfileSummaryColdCount(&quot;profile-summary-cold-count&quot;, cl::ReallyHidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A fixed cold count that overrides the count derived from&quot; &quot; profile-summary-cutoff-cold&quot;)) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; ProfileSummaryColdCount </td>
           <td>(</td>
           <td class="paramtype">&quot;profile-summary-cold-count&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -213,7 +216,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A fixed cold count that overrides the count derived from&quot; &quot; profile-summary-cutoff-cold&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;A fixed cold count that overrides the count derived from&quot; &quot; profile-summary-cutoff-cold&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -231,8 +234,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a736943d621d4592a84debd63ed0bbf10" name="a736943d621d4592a84debd63ed0bbf10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a736943d621d4592a84debd63ed0bbf10">&#9670;&nbsp;</a></span>ProfileSummaryCutoffCold</h2>
+<a id="aa16a0800e5bca8b14a865b1d25285cc4" name="aa16a0800e5bca8b14a865b1d25285cc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa16a0800e5bca8b14a865b1d25285cc4">&#9670;&nbsp;</a></span>ProfileSummaryCutoffCold()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,7 +244,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; ProfileSummaryCutoffCold(&quot;profile-summary-cutoff-cold&quot;, cl::Hidden, cl::init(999999), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A count is cold <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> it is below the minimum count&quot; &quot; to reach this percentile of total counts.&quot;)) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; ProfileSummaryCutoffCold </td>
           <td>(</td>
           <td class="paramtype">&quot;profile-summary-cutoff-cold&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -267,7 +270,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A count is cold <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> it is below the minimum count&quot; &quot; to reach this percentile of total counts.&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;A count is cold <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> it is below the minimum count&quot; &quot; to reach this percentile of total counts.&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -285,8 +288,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ac3e5371cfc586a45623897251b626a80" name="ac3e5371cfc586a45623897251b626a80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3e5371cfc586a45623897251b626a80">&#9670;&nbsp;</a></span>ProfileSummaryCutoffHot</h2>
+<a id="a22630fd01c7bf58d8ad66b7cd51997c7" name="a22630fd01c7bf58d8ad66b7cd51997c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22630fd01c7bf58d8ad66b7cd51997c7">&#9670;&nbsp;</a></span>ProfileSummaryCutoffHot()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -295,7 +298,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; ProfileSummaryCutoffHot(&quot;profile-summary-cutoff-hot&quot;, cl::Hidden, cl::init(990000), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A count is hot <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> it exceeds the minimum count to&quot; &quot; reach this percentile of total counts.&quot;)) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; ProfileSummaryCutoffHot </td>
           <td>(</td>
           <td class="paramtype">&quot;profile-summary-cutoff-hot&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -321,7 +324,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A count is hot <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> it exceeds the minimum count to&quot; &quot; reach this percentile of total counts.&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;A count is hot <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> it exceeds the minimum count to&quot; &quot; reach this percentile of total counts.&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -339,8 +342,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a24bb201ce810ab9e019a20051ef08908" name="a24bb201ce810ab9e019a20051ef08908"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24bb201ce810ab9e019a20051ef08908">&#9670;&nbsp;</a></span>ProfileSummaryHotCount</h2>
+<a id="a79b14236c4c506ef5065cf545db03f27" name="a79b14236c4c506ef5065cf545db03f27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79b14236c4c506ef5065cf545db03f27">&#9670;&nbsp;</a></span>ProfileSummaryHotCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -349,7 +352,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; ProfileSummaryHotCount(&quot;profile-summary-hot-count&quot;, cl::ReallyHidden, cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A fixed hot count that overrides the count derived from&quot; &quot; profile-summary-cutoff-hot&quot;)) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; ProfileSummaryHotCount </td>
           <td>(</td>
           <td class="paramtype">&quot;profile-summary-hot-count&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -369,7 +372,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;A fixed hot count that overrides the count derived from&quot; &quot; profile-summary-cutoff-hot&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;A fixed hot count that overrides the count derived from&quot; &quot; profile-summary-cutoff-hot&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -387,8 +390,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="af3fedc42dab4120adda91cd78e27362f" name="af3fedc42dab4120adda91cd78e27362f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3fedc42dab4120adda91cd78e27362f">&#9670;&nbsp;</a></span>ProfileSummaryHugeWorkingSetSizeThreshold</h2>
+<a id="a5f8a968e46d545e46d2fc94780fd28cb" name="a5f8a968e46d545e46d2fc94780fd28cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f8a968e46d545e46d2fc94780fd28cb">&#9670;&nbsp;</a></span>ProfileSummaryHugeWorkingSetSizeThreshold()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -397,7 +400,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; ProfileSummaryHugeWorkingSetSizeThreshold(&quot;profile-summary-huge-working-set-size-threshold&quot;, cl::Hidden, cl::init(15000), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The code working set size is considered huge <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> the number of&quot; &quot; blocks required to reach the -profile-summary-cutoff-hot&quot; &quot; percentile exceeds this count.&quot;)) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; ProfileSummaryHugeWorkingSetSizeThreshold </td>
           <td>(</td>
           <td class="paramtype">&quot;profile-summary-huge-working-set-size-threshold&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -423,7 +426,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The code working set size is considered huge <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> the number of&quot; &quot; blocks required to reach the -profile-summary-cutoff-hot&quot; &quot; percentile exceeds this count.&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;The code working set size is considered huge <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> the number of&quot; &quot; blocks required to reach the -profile-summary-cutoff-hot&quot; &quot; percentile exceeds this count.&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -444,7 +447,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:12 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

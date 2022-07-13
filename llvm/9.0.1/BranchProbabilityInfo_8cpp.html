@@ -57,32 +57,32 @@ $(function() {
   <div class="headertitle"><div class="title">BranchProbabilityInfo.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="BranchProbabilityInfo_8h_source.html">llvm/Analysis/BranchProbabilityInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PostOrderIterator_8h_source.html">llvm/ADT/PostOrderIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SCCIterator_8h_source.html">llvm/ADT/SCCIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BranchProbability_8h_source.html">llvm/Support/BranchProbability.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/BranchProbabilityInfo.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/PostOrderIterator.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SCCIterator.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/BranchProbability.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;iterator&gt;</code><br />
@@ -91,6 +91,39 @@ $(function() {
 Include dependency graph for BranchProbabilityInfo.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="BranchProbabilityInfo_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2BranchProbabilityInfo_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2BranchProbabilityInfo_8cpp" id="alib_2Analysis_2BranchProbabilityInfo_8cpp">
+<area shape="rect" title=" " alt="" coords="2745,5,2961,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,235,133"/>
+<area shape="rect" title=" " alt="" coords="259,101,469,126"/>
+<area shape="rect" title=" " alt="" coords="493,101,664,126"/>
+<area shape="rect" title=" " alt="" coords="688,101,851,126"/>
+<area shape="rect" title=" " alt="" coords="875,101,1050,126"/>
+<area shape="rect" title=" " alt="" coords="1074,101,1257,126"/>
+<area shape="rect" title=" " alt="" coords="1281,93,1479,133"/>
+<area shape="rect" title=" " alt="" coords="1503,101,1651,126"/>
+<area shape="rect" title=" " alt="" coords="1676,101,1831,126"/>
+<area shape="rect" title=" " alt="" coords="1855,101,1966,126"/>
+<area shape="rect" title=" " alt="" coords="1991,101,2140,126"/>
+<area shape="rect" title=" " alt="" coords="2164,101,2324,126"/>
+<area shape="rect" title=" " alt="" coords="2348,101,2487,126"/>
+<area shape="rect" title=" " alt="" coords="2511,101,2662,126"/>
+<area shape="rect" title=" " alt="" coords="2686,101,2839,126"/>
+<area shape="rect" title=" " alt="" coords="2864,101,3024,126"/>
+<area shape="rect" title=" " alt="" coords="3049,101,3218,126"/>
+<area shape="rect" title=" " alt="" coords="3243,101,3389,126"/>
+<area shape="rect" title=" " alt="" coords="3414,101,3583,126"/>
+<area shape="rect" title=" " alt="" coords="3608,101,3723,126"/>
+<area shape="rect" title=" " alt="" coords="3747,101,3867,126"/>
+<area shape="rect" title=" " alt="" coords="3891,101,3987,126"/>
+<area shape="rect" title=" " alt="" coords="4011,101,4245,126"/>
+<area shape="rect" title=" " alt="" coords="4269,101,4440,126"/>
+<area shape="rect" title=" " alt="" coords="4464,101,4627,126"/>
+<area shape="rect" title=" " alt="" coords="4651,101,4858,126"/>
+<area shape="rect" title=" " alt="" coords="4883,101,4952,126"/>
+<area shape="rect" title=" " alt="" coords="4976,101,5043,126"/>
+<area shape="rect" title=" " alt="" coords="5067,101,5138,126"/>
+<area shape="rect" title=" " alt="" coords="5162,101,5222,126"/>
+</map>
 </div>
 </div>
 <p><a href="BranchProbabilityInfo_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -102,58 +135,58 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2c0db623aadd71d3caf0937e7c830691"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a2c0db623aadd71d3caf0937e7c830691">INITIALIZE_PASS_BEGIN</a> (<a class="el" href="classllvm_1_1BranchProbabilityInfoWrapperPass.html">BranchProbabilityInfoWrapperPass</a>, &quot;branch-prob&quot;, &quot;Branch Probability Analysis&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(<a class="el" href="classllvm_1_1BranchProbabilityInfoWrapperPass.html">BranchProbabilityInfoWrapperPass</a></td></tr>
+<tr class="memitem:aeb99551adbabb913c4e2dcbde974d746"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#aeb99551adbabb913c4e2dcbde974d746">PrintBranchProb</a> (&quot;print-bpi&quot;, cl::init(false), cl::Hidden, cl::desc(&quot;Print the branch probability info.&quot;))</td></tr>
+<tr class="separator:aeb99551adbabb913c4e2dcbde974d746"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06f6c3a22b0373016b6d2f93847fa9a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a06f6c3a22b0373016b6d2f93847fa9a9">PrintBranchProbFuncName</a> (&quot;print-bpi-func-name&quot;, cl::Hidden, cl::desc(&quot;The option to specify the name of the <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> &quot; &quot;whose branch probability <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> is printed.&quot;))</td></tr>
+<tr class="separator:a06f6c3a22b0373016b6d2f93847fa9a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c0db623aadd71d3caf0937e7c830691"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a2c0db623aadd71d3caf0937e7c830691">INITIALIZE_PASS_BEGIN</a> (BranchProbabilityInfoWrapperPass, &quot;branch-prob&quot;, &quot;Branch Probability Analysis&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) INITIALIZE_PASS_END(BranchProbabilityInfoWrapperPass</td></tr>
 <tr class="separator:a2c0db623aadd71d3caf0937e7c830691"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a101f2d119246fba851448e861578aab3"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a101f2d119246fba851448e861578aab3">getSCCNum</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1BranchProbabilityInfo_1_1SccInfo.html">BranchProbabilityInfo::SccInfo</a> &amp;SccI)</td></tr>
+<tr class="memitem:a101f2d119246fba851448e861578aab3"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a101f2d119246fba851448e861578aab3">getSCCNum</a> (const BasicBlock *BB, const BranchProbabilityInfo::SccInfo &amp;SccI)</td></tr>
 <tr class="separator:a101f2d119246fba851448e861578aab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b1cf92395fbd7f51b2b077a2072e2a2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a0b1cf92395fbd7f51b2b077a2072e2a2">isSCCHeader</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB, int SccNum, <a class="el" href="structllvm_1_1BranchProbabilityInfo_1_1SccInfo.html">BranchProbabilityInfo::SccInfo</a> &amp;SccI)</td></tr>
+<tr class="memitem:a0b1cf92395fbd7f51b2b077a2072e2a2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a0b1cf92395fbd7f51b2b077a2072e2a2">isSCCHeader</a> (const BasicBlock *BB, int SccNum, BranchProbabilityInfo::SccInfo &amp;SccI)</td></tr>
 <tr class="separator:a0b1cf92395fbd7f51b2b077a2072e2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade155905429b0a259a1030f418c04ad9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#ade155905429b0a259a1030f418c04ad9">computeUnlikelySuccessors</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB, <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;UnlikelyBlocks)</td></tr>
+<tr class="memitem:ade155905429b0a259a1030f418c04ad9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#ade155905429b0a259a1030f418c04ad9">computeUnlikelySuccessors</a> (const BasicBlock *BB, Loop *L, SmallPtrSetImpl&lt; const BasicBlock * &gt; &amp;UnlikelyBlocks)</td></tr>
 <tr class="separator:ade155905429b0a259a1030f418c04ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:af17aeb0484c720fb1e197adf768961c7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#af17aeb0484c720fb1e197adf768961c7">PrintBranchProb</a> (&quot;print-bpi&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Print the branch probability info.&quot;))</td></tr>
-<tr class="separator:af17aeb0484c720fb1e197adf768961c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4ed89c6d8e92b055e0561a615dcbaf6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#ae4ed89c6d8e92b055e0561a615dcbaf6">PrintBranchProbFuncName</a> (&quot;print-bpi-func-name&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The option to specify the <a class="el" href="PPCLoopPreIncPrep_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a> of the <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> &quot; &quot;whose branch probability <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> is printed.&quot;))</td></tr>
-<tr class="separator:ae4ed89c6d8e92b055e0561a615dcbaf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bd4799263bb66b1eaf06927f08e7b64"><td class="memItemLeft" align="right" valign="top">branch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a2bd4799263bb66b1eaf06927f08e7b64">prob</a></td></tr>
 <tr class="separator:a2bd4799263bb66b1eaf06927f08e7b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dd3f5f985cea603b3f6ea0df17409d5"><td class="memItemLeft" align="right" valign="top">branch Branch Probability&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a7dd3f5f985cea603b3f6ea0df17409d5">Analysis</a></td></tr>
 <tr class="separator:a7dd3f5f985cea603b3f6ea0df17409d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba35dee6889430a15098748f5ef5ec1d"><td class="memItemLeft" align="right" valign="top">branch Branch Probability&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#aba35dee6889430a15098748f5ef5ec1d">false</a></td></tr>
 <tr class="separator:aba35dee6889430a15098748f5ef5ec1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a205d7293fcfbe714464bceef72495dde"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a205d7293fcfbe714464bceef72495dde">LBH_TAKEN_WEIGHT</a> = 124</td></tr>
+<tr class="memitem:a205d7293fcfbe714464bceef72495dde"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a205d7293fcfbe714464bceef72495dde">LBH_TAKEN_WEIGHT</a> = 124</td></tr>
 <tr class="separator:a205d7293fcfbe714464bceef72495dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6c00f8033a3bf9ab5f49143e30d8c52"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#ac6c00f8033a3bf9ab5f49143e30d8c52">LBH_NONTAKEN_WEIGHT</a> = 4</td></tr>
+<tr class="memitem:ac6c00f8033a3bf9ab5f49143e30d8c52"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#ac6c00f8033a3bf9ab5f49143e30d8c52">LBH_NONTAKEN_WEIGHT</a> = 4</td></tr>
 <tr class="separator:ac6c00f8033a3bf9ab5f49143e30d8c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a609495347273fe4ee07518fc9db84567"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a609495347273fe4ee07518fc9db84567">LBH_UNLIKELY_WEIGHT</a> = 62</td></tr>
+<tr class="memitem:a609495347273fe4ee07518fc9db84567"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a609495347273fe4ee07518fc9db84567">LBH_UNLIKELY_WEIGHT</a> = 62</td></tr>
 <tr class="separator:a609495347273fe4ee07518fc9db84567"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafc5237f3585710400d8a15b43ff0e5b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#aafc5237f3585710400d8a15b43ff0e5b">UR_TAKEN_PROB</a> = BranchProbability::getRaw(1)</td></tr>
+<tr class="memitem:aafc5237f3585710400d8a15b43ff0e5b"><td class="memItemLeft" align="right" valign="top">static const BranchProbability&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#aafc5237f3585710400d8a15b43ff0e5b">UR_TAKEN_PROB</a> = BranchProbability::getRaw(1)</td></tr>
 <tr class="memdesc:aafc5237f3585710400d8a15b43ff0e5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unreachable-terminating branch taken probability.  <a href="BranchProbabilityInfo_8cpp.html#aafc5237f3585710400d8a15b43ff0e5b">More...</a><br /></td></tr>
 <tr class="separator:aafc5237f3585710400d8a15b43ff0e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b37f2dac5b873c990787ec20bd7ddbc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a7b37f2dac5b873c990787ec20bd7ddbc">CC_TAKEN_WEIGHT</a> = 4</td></tr>
+<tr class="memitem:a7b37f2dac5b873c990787ec20bd7ddbc"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a7b37f2dac5b873c990787ec20bd7ddbc">CC_TAKEN_WEIGHT</a> = 4</td></tr>
 <tr class="memdesc:a7b37f2dac5b873c990787ec20bd7ddbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Weight for a branch taken going into a cold block.  <a href="BranchProbabilityInfo_8cpp.html#a7b37f2dac5b873c990787ec20bd7ddbc">More...</a><br /></td></tr>
 <tr class="separator:a7b37f2dac5b873c990787ec20bd7ddbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f2e02c345477d369c8cc40b91de111d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a8f2e02c345477d369c8cc40b91de111d">CC_NONTAKEN_WEIGHT</a> = 64</td></tr>
+<tr class="memitem:a8f2e02c345477d369c8cc40b91de111d"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a8f2e02c345477d369c8cc40b91de111d">CC_NONTAKEN_WEIGHT</a> = 64</td></tr>
 <tr class="memdesc:a8f2e02c345477d369c8cc40b91de111d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Weight for a branch not-taken into a cold block.  <a href="BranchProbabilityInfo_8cpp.html#a8f2e02c345477d369c8cc40b91de111d">More...</a><br /></td></tr>
 <tr class="separator:a8f2e02c345477d369c8cc40b91de111d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b89b3ae3e1706f0f437db6621986deb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a6b89b3ae3e1706f0f437db6621986deb">PH_TAKEN_WEIGHT</a> = 20</td></tr>
+<tr class="memitem:a6b89b3ae3e1706f0f437db6621986deb"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a6b89b3ae3e1706f0f437db6621986deb">PH_TAKEN_WEIGHT</a> = 20</td></tr>
 <tr class="separator:a6b89b3ae3e1706f0f437db6621986deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38a9f81723daa4bec614eaba36d40b85"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a38a9f81723daa4bec614eaba36d40b85">PH_NONTAKEN_WEIGHT</a> = 12</td></tr>
+<tr class="memitem:a38a9f81723daa4bec614eaba36d40b85"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a38a9f81723daa4bec614eaba36d40b85">PH_NONTAKEN_WEIGHT</a> = 12</td></tr>
 <tr class="separator:a38a9f81723daa4bec614eaba36d40b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa5928aa2f68d1c15bd7dafa3745b0fa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#aaa5928aa2f68d1c15bd7dafa3745b0fa">ZH_TAKEN_WEIGHT</a> = 20</td></tr>
+<tr class="memitem:aaa5928aa2f68d1c15bd7dafa3745b0fa"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#aaa5928aa2f68d1c15bd7dafa3745b0fa">ZH_TAKEN_WEIGHT</a> = 20</td></tr>
 <tr class="separator:aaa5928aa2f68d1c15bd7dafa3745b0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2486cb22b39b4593d78671702f062b81"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a2486cb22b39b4593d78671702f062b81">ZH_NONTAKEN_WEIGHT</a> = 12</td></tr>
+<tr class="memitem:a2486cb22b39b4593d78671702f062b81"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a2486cb22b39b4593d78671702f062b81">ZH_NONTAKEN_WEIGHT</a> = 12</td></tr>
 <tr class="separator:a2486cb22b39b4593d78671702f062b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16edcd8b45785ee12c576c73fe3218c9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a16edcd8b45785ee12c576c73fe3218c9">FPH_TAKEN_WEIGHT</a> = 20</td></tr>
+<tr class="memitem:a16edcd8b45785ee12c576c73fe3218c9"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a16edcd8b45785ee12c576c73fe3218c9">FPH_TAKEN_WEIGHT</a> = 20</td></tr>
 <tr class="separator:a16edcd8b45785ee12c576c73fe3218c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadf81261b3ac34f57dc2d663bd8c2f4d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#aadf81261b3ac34f57dc2d663bd8c2f4d">FPH_NONTAKEN_WEIGHT</a> = 12</td></tr>
+<tr class="memitem:aadf81261b3ac34f57dc2d663bd8c2f4d"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#aadf81261b3ac34f57dc2d663bd8c2f4d">FPH_NONTAKEN_WEIGHT</a> = 12</td></tr>
 <tr class="separator:aadf81261b3ac34f57dc2d663bd8c2f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cc90164d4e6eebbd370b16f1e9ad148"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a2cc90164d4e6eebbd370b16f1e9ad148">IH_TAKEN_WEIGHT</a> = 1024 * 1024 - 1</td></tr>
+<tr class="memitem:a2cc90164d4e6eebbd370b16f1e9ad148"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#a2cc90164d4e6eebbd370b16f1e9ad148">IH_TAKEN_WEIGHT</a> = 1024 * 1024 - 1</td></tr>
 <tr class="memdesc:a2cc90164d4e6eebbd370b16f1e9ad148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoke-terminating normal branch taken weight.  <a href="BranchProbabilityInfo_8cpp.html#a2cc90164d4e6eebbd370b16f1e9ad148">More...</a><br /></td></tr>
 <tr class="separator:a2cc90164d4e6eebbd370b16f1e9ad148"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad68fbe3b434d549b188cfc96d3b68927"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#ad68fbe3b434d549b188cfc96d3b68927">IH_NONTAKEN_WEIGHT</a> = 1</td></tr>
+<tr class="memitem:ad68fbe3b434d549b188cfc96d3b68927"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BranchProbabilityInfo_8cpp.html#ad68fbe3b434d549b188cfc96d3b68927">IH_NONTAKEN_WEIGHT</a> = 1</td></tr>
 <tr class="memdesc:ad68fbe3b434d549b188cfc96d3b68927"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoke-terminating normal branch not-taken weight.  <a href="BranchProbabilityInfo_8cpp.html#ad68fbe3b434d549b188cfc96d3b68927">More...</a><br /></td></tr>
 <tr class="separator:ad68fbe3b434d549b188cfc96d3b68927"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -187,19 +220,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void computeUnlikelySuccessors </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">const BasicBlock *&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">SmallPtrSetImpl&lt; const BasicBlock * &gt; &amp;&#160;</td>
           <td class="paramname"><em>UnlikelyBlocks</em>&#160;</td>
         </tr>
         <tr>
@@ -217,7 +250,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BranchProbabilityInfo_8cpp_source.html#l00462">462</a> of file <a class="el" href="BranchProbabilityInfo_8cpp_source.html">BranchProbabilityInfo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="SmallVector_8h_source.html#l00166">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::back()</a>, <a class="el" href="LoopInfo_8h_source.html#l00112">llvm::LoopBase&lt; BlockT, LoopT &gt;::contains()</a>, <a class="el" href="SmallVector_8h_source.html#l00055">llvm::SmallVectorBase::empty()</a>, <a class="el" href="IntervalMap_8h_source.html#l00526">llvm::IntervalMapImpl::NodeRef::get()</a>, <a class="el" href="Constants_8cpp_source.html#l01946">llvm::ConstantExpr::getCompare()</a>, <a class="el" href="Instructions_8h_source.html#l03046">llvm::BranchInst::getCondition()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="InstrTypes_8h_source.html#l00807">llvm::CmpInst::getPredicate()</a>, <a class="el" href="Instructions_8h_source.html#l03058">llvm::BranchInst::getSuccessor()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00370">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert()</a>, <a class="el" href="Instructions_8h_source.html#l03044">llvm::BranchInst::isConditional()</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="SmallVector_8h_source.html#l00225">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::pop_back()</a>, <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>, <a class="el" href="STLExtras_8h_source.html#l00273">llvm::reverse()</a>, <a class="el" href="Interval_8h_source.html#l00102">llvm::succ_begin()</a>, and <a class="el" href="Interval_8h_source.html#l00105">llvm::succ_end()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>.</p>
 
 </div>
 </div>
@@ -233,13 +266,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static int getSCCNum </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">const BasicBlock *&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1BranchProbabilityInfo_1_1SccInfo.html">BranchProbabilityInfo::SccInfo</a> &amp;&#160;</td>
+          <td class="paramtype">const BranchProbabilityInfo::SccInfo &amp;&#160;</td>
           <td class="paramname"><em>SccI</em>&#160;</td>
         </tr>
         <tr>
@@ -257,8 +290,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BranchProbabilityInfo_8cpp_source.html#l00426">426</a> of file <a class="el" href="BranchProbabilityInfo_8cpp_source.html">BranchProbabilityInfo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DenseMap_8h_source.html#l00108">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::end()</a>, <a class="el" href="DenseMap_8h_source.html#l00176">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::find()</a>, and <a class="el" href="BranchProbabilityInfo_8h_source.html#l00144">llvm::BranchProbabilityInfo::SccInfo::SccNums</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="BranchProbabilityInfo_8cpp_source.html#l00435">isSCCHeader()</a>.</p>
 
 </div>
@@ -272,7 +303,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">INITIALIZE_PASS_BEGIN </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BranchProbabilityInfoWrapperPass.html">BranchProbabilityInfoWrapperPass</a>&#160;</td>
+          <td class="paramtype">BranchProbabilityInfoWrapperPass&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -319,9 +350,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isSCCHeader </td>
+          <td class="memname">static bool isSCCHeader </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">const BasicBlock *&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
@@ -333,7 +364,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1BranchProbabilityInfo_1_1SccInfo.html">BranchProbabilityInfo::SccInfo</a> &amp;&#160;</td>
+          <td class="paramtype">BranchProbabilityInfo::SccInfo &amp;&#160;</td>
           <td class="paramname"><em>SccI</em>&#160;</td>
         </tr>
         <tr>
@@ -351,7 +382,89 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BranchProbabilityInfo_8cpp_source.html#l00435">435</a> of file <a class="el" href="BranchProbabilityInfo_8cpp_source.html">BranchProbabilityInfo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="STLExtras_8h_source.html#l01199">llvm::any_of()</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BranchProbabilityInfo_8cpp_source.html#l00426">getSCCNum()</a>, <a class="el" href="iterator__range_8h_source.html#l00053">llvm::make_range()</a>, <a class="el" href="Interval_8h_source.html#l00112">llvm::pred_begin()</a>, <a class="el" href="Interval_8h_source.html#l00115">llvm::pred_end()</a>, and <a class="el" href="BranchProbabilityInfo_8h_source.html#l00145">llvm::BranchProbabilityInfo::SccInfo::SccHeaders</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="BranchProbabilityInfo_8cpp_source.html#l00426">getSCCNum()</a>.</p>
+
+</div>
+</div>
+<a id="aeb99551adbabb913c4e2dcbde974d746" name="aeb99551adbabb913c4e2dcbde974d746"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb99551adbabb913c4e2dcbde974d746">&#9670;&nbsp;</a></span>PrintBranchProb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintBranchProb </td>
+          <td>(</td>
+          <td class="paramtype">&quot;print-bpi&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Print the branch probability info.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a06f6c3a22b0373016b6d2f93847fa9a9" name="a06f6c3a22b0373016b6d2f93847fa9a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06f6c3a22b0373016b6d2f93847fa9a9">&#9670;&nbsp;</a></span>PrintBranchProbFuncName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; std::string &gt; PrintBranchProbFuncName </td>
+          <td>(</td>
+          <td class="paramtype">&quot;print-bpi-func-name&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;The option to specify the name of the <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> &quot; &quot;whose branch probability <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> is printed.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -382,7 +495,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a> CC_NONTAKEN_WEIGHT = 64</td>
+          <td class="memname">const uint32_t CC_NONTAKEN_WEIGHT = 64</td>
         </tr>
       </table>
   </td>
@@ -409,7 +522,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a> CC_TAKEN_WEIGHT = 4</td>
+          <td class="memname">const uint32_t CC_TAKEN_WEIGHT = 4</td>
         </tr>
       </table>
   </td>
@@ -452,7 +565,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a> FPH_NONTAKEN_WEIGHT = 12</td>
+          <td class="memname">const uint32_t FPH_NONTAKEN_WEIGHT = 12</td>
         </tr>
       </table>
   </td>
@@ -476,7 +589,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a> FPH_TAKEN_WEIGHT = 20</td>
+          <td class="memname">const uint32_t FPH_TAKEN_WEIGHT = 20</td>
         </tr>
       </table>
   </td>
@@ -500,7 +613,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a> IH_NONTAKEN_WEIGHT = 1</td>
+          <td class="memname">const uint32_t IH_NONTAKEN_WEIGHT = 1</td>
         </tr>
       </table>
   </td>
@@ -527,7 +640,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a> IH_TAKEN_WEIGHT = 1024 * 1024 - 1</td>
+          <td class="memname">const uint32_t IH_TAKEN_WEIGHT = 1024 * 1024 - 1</td>
         </tr>
       </table>
   </td>
@@ -554,7 +667,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a> LBH_NONTAKEN_WEIGHT = 4</td>
+          <td class="memname">const uint32_t LBH_NONTAKEN_WEIGHT = 4</td>
         </tr>
       </table>
   </td>
@@ -578,7 +691,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a> LBH_TAKEN_WEIGHT = 124</td>
+          <td class="memname">const uint32_t LBH_TAKEN_WEIGHT = 124</td>
         </tr>
       </table>
   </td>
@@ -602,7 +715,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a> LBH_UNLIKELY_WEIGHT = 62</td>
+          <td class="memname">const uint32_t LBH_UNLIKELY_WEIGHT = 62</td>
         </tr>
       </table>
   </td>
@@ -626,7 +739,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a> PH_NONTAKEN_WEIGHT = 12</td>
+          <td class="memname">const uint32_t PH_NONTAKEN_WEIGHT = 12</td>
         </tr>
       </table>
   </td>
@@ -650,7 +763,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a> PH_TAKEN_WEIGHT = 20</td>
+          <td class="memname">const uint32_t PH_TAKEN_WEIGHT = 20</td>
         </tr>
       </table>
   </td>
@@ -661,92 +774,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="BranchProbabilityInfo_8cpp_source.html#l00112">112</a> of file <a class="el" href="BranchProbabilityInfo_8cpp_source.html">BranchProbabilityInfo.cpp</a>.</p>
-
-</div>
-</div>
-<a id="af17aeb0484c720fb1e197adf768961c7" name="af17aeb0484c720fb1e197adf768961c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af17aeb0484c720fb1e197adf768961c7">&#9670;&nbsp;</a></span>PrintBranchProb</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintBranchProb(&quot;print-bpi&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Print the branch probability info.&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;print-bpi&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Print the branch probability info.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="BranchProbabilityInfo_8cpp_source.html#l00937">llvm::BranchProbabilityInfo::calculate()</a>.</p>
-
-</div>
-</div>
-<a id="ae4ed89c6d8e92b055e0561a615dcbaf6" name="ae4ed89c6d8e92b055e0561a615dcbaf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4ed89c6d8e92b055e0561a615dcbaf6">&#9670;&nbsp;</a></span>PrintBranchProbFuncName</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; std::string &gt; PrintBranchProbFuncName(&quot;print-bpi-func-name&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The option to specify the <a class="el" href="PPCLoopPreIncPrep_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a> of the <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> &quot; &quot;whose branch probability <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> is printed.&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;print-bpi-func-name&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;The option to specify the <a class="el" href="PPCLoopPreIncPrep_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a> of the <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> &quot; &quot;whose branch probability <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> is printed.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="BranchProbabilityInfo_8cpp_source.html#l00937">llvm::BranchProbabilityInfo::calculate()</a>.</p>
 
 </div>
 </div>
@@ -776,7 +803,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1BranchProbability.html">BranchProbability</a> UR_TAKEN_PROB = BranchProbability::getRaw(1)</td>
+          <td class="memname">const BranchProbability UR_TAKEN_PROB = BranchProbability::getRaw(1)</td>
         </tr>
       </table>
   </td>
@@ -803,7 +830,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a> ZH_NONTAKEN_WEIGHT = 12</td>
+          <td class="memname">const uint32_t ZH_NONTAKEN_WEIGHT = 12</td>
         </tr>
       </table>
   </td>
@@ -827,7 +854,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classuint32__t.html">uint32_t</a> ZH_TAKEN_WEIGHT = 20</td>
+          <td class="memname">const uint32_t ZH_TAKEN_WEIGHT = 20</td>
         </tr>
       </table>
   </td>
@@ -844,7 +871,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:11 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -72,10 +72,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a58eaa1512d1998338ab6f9e8e710a46e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1VPInstruction.html">VPInstruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPlanSlp.html#a58eaa1512d1998338ab6f9e8e710a46e">buildGraph</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1VPValue.html">VPValue</a> * &gt; Operands)</td></tr>
 <tr class="memdesc:a58eaa1512d1998338ab6f9e8e710a46e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to build an SLP tree rooted at <code>Operands</code> and returns a <a class="el" href="classllvm_1_1VPInstruction.html" title="This is a concrete Recipe that models a single VPlan-level instruction.">VPInstruction</a> combining <code>Operands</code>, if they can be combined.  <a href="classllvm_1_1VPlanSlp.html#a58eaa1512d1998338ab6f9e8e710a46e">More...</a><br /></td></tr>
 <tr class="separator:a58eaa1512d1998338ab6f9e8e710a46e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6be6a93033a71e7f0a00fbf78b7a609"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPlanSlp.html#ac6be6a93033a71e7f0a00fbf78b7a609">getWidestBundleBits</a> () <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a></td></tr>
+<tr class="memitem:ac6be6a93033a71e7f0a00fbf78b7a609"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPlanSlp.html#ac6be6a93033a71e7f0a00fbf78b7a609">getWidestBundleBits</a> () const</td></tr>
 <tr class="memdesc:ac6be6a93033a71e7f0a00fbf78b7a609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the width of the widest combined bundle in bits.  <a href="classllvm_1_1VPlanSlp.html#ac6be6a93033a71e7f0a00fbf78b7a609">More...</a><br /></td></tr>
 <tr class="separator:ac6be6a93033a71e7f0a00fbf78b7a609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c7a414d58fd4d3d0e58040d01fea8e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPlanSlp.html#a8c7a414d58fd4d3d0e58040d01fea8e7">isCompletelySLP</a> () <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a></td></tr>
+<tr class="memitem:a8c7a414d58fd4d3d0e58040d01fea8e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPlanSlp.html#a8c7a414d58fd4d3d0e58040d01fea8e7">isCompletelySLP</a> () const</td></tr>
 <tr class="memdesc:a8c7a414d58fd4d3d0e58040d01fea8e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if all visited instruction can be combined.  <a href="classllvm_1_1VPlanSlp.html#a8c7a414d58fd4d3d0e58040d01fea8e7">More...</a><br /></td></tr>
 <tr class="separator:a8c7a414d58fd4d3d0e58040d01fea8e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -170,7 +170,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="VPlanSLP_8cpp_source.html#l00357">357</a> of file <a class="el" href="VPlanSLP_8cpp_source.html">VPlanSLP.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="VPlanSLP_8cpp_source.html#l00170">areCommutative()</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="VPlanSLP_8cpp_source.html#l00357">buildGraph()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="ArrayRef_8h_source.html#l00143">llvm::ArrayRef&lt; T &gt;::empty()</a>, <a class="el" href="VPlanSLP_8cpp_source.html#l00196">getOpcode()</a>, <a class="el" href="VPlanSLP_8cpp_source.html#l00160">getOperands()</a>, <a class="el" href="Optional_8h_source.html#l00255">llvm::Optional&lt; T &gt;::getValue()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>, <a class="el" href="SmallVector_8h_source.html#l00052">llvm::SmallVectorBase::size()</a>, <a class="el" href="VPlan_8h_source.html#l00637">llvm::VPInstruction::SLPLoad</a>, <a class="el" href="VPlan_8h_source.html#l00638">llvm::VPInstruction::SLPStore</a>, <a class="el" href="VPlanValue_8h_source.html#l00100">llvm::VPValue::user_begin()</a>, and <a class="el" href="VPlanValue_8h_source.html#l00102">llvm::VPValue::user_end()</a>.</p>
+<p class="reference">References <a class="el" href="VPlanSLP_8cpp_source.html#l00170">areCommutative()</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="VPlanSLP_8cpp_source.html#l00357">buildGraph()</a>, <a class="el" href="VPlanSLP_8cpp_source.html#l00196">getOpcode()</a>, <a class="el" href="VPlanSLP_8cpp_source.html#l00160">getOperands()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="VPlan_8h_source.html#l00637">llvm::VPInstruction::SLPLoad</a>, <a class="el" href="VPlan_8h_source.html#l00638">llvm::VPInstruction::SLPStore</a>, <a class="el" href="VPlanValue_8h_source.html#l00100">llvm::VPValue::user_begin()</a>, and <a class="el" href="VPlanValue_8h_source.html#l00102">llvm::VPValue::user_end()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="VPlanSLP_8cpp_source.html#l00357">buildGraph()</a>.</p>
 
@@ -186,7 +186,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classunsigned.html">unsigned</a> llvm::VPlanSlp::getWidestBundleBits </td>
+          <td class="memname">unsigned llvm::VPlanSlp::getWidestBundleBits </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -215,7 +215,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classbool.html">bool</a> llvm::VPlanSlp::isCompletelySLP </td>
+          <td class="memname">bool llvm::VPlanSlp::isCompletelySLP </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -241,7 +241,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:28:06 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:46 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

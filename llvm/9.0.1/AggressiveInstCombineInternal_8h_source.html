@@ -70,15 +70,15 @@ $(function() {
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifndef LLVM_LIB_TRANSFORMS_AGGRESSIVEINSTCOMBINE_COMBINEINTERNAL_H</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define LLVM_LIB_TRANSFORMS_AGGRESSIVEINSTCOMBINE_COMBINEINTERNAL_H</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="MapVector_8h.html">llvm/ADT/MapVector.h</a>&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="STLExtras_8h.html">llvm/ADT/STLExtras.h</a>&quot;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="AliasAnalysis_8h.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="BasicAliasAnalysis_8h.html">llvm/Analysis/BasicAliasAnalysis.h</a>&quot;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="ConstantFolding_8h.html">llvm/Analysis/ConstantFolding.h</a>&quot;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="GlobalsModRef_8h.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="TargetLibraryInfo_8h.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="DataLayout_8h.html">llvm/IR/DataLayout.h</a>&quot;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="Pass_8h.html">llvm/Pass.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;llvm/ADT/MapVector.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;llvm/ADT/STLExtras.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;llvm/Analysis/BasicAliasAnalysis.h&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;llvm/Analysis/ConstantFolding.h&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;llvm/IR/DataLayout.h&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;llvm/Pass.h&quot;</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacellvm.html">llvm</a>;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
@@ -100,43 +100,43 @@ $(function() {
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacellvm.html">llvm</a> {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">class </span><a class="code hl_class" href="classllvm_1_1DataLayout.html">DataLayout</a>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">class </span><a class="code hl_class" href="classllvm_1_1DominatorTree.html">DominatorTree</a>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">class </span><a class="code hl_class" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">class </span>DataLayout;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">class </span>DominatorTree;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">class </span>TargetLibraryInfo;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classllvm_1_1TruncInstCombine.html">   52</a></span><span class="keyword">class </span><a class="code hl_class" href="classllvm_1_1TruncInstCombine.html">TruncInstCombine</a> {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_class" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">const</span> <a class="code hl_class" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">const</span> <a class="code hl_class" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  TargetLibraryInfo &amp;TLI;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">const</span> DataLayout &amp;DL;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">const</span> DominatorTree &amp;DT;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"></span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">  /// List of all TruncInst instructions to be processed.</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"></span>  <a class="code hl_class" href="classllvm_1_1SmallVector.html">SmallVector&lt;TruncInst *, 4&gt;</a> Worklist;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"></span>  <a class="code hl_class" href="classSmallVector.html">SmallVector&lt;TruncInst *, 4&gt;</a> Worklist;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"></span> </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">  /// Current processed TruncInst instruction.</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment"></span>  <a class="code hl_class" href="classllvm_1_1TruncInst.html">TruncInst</a> *CurrentTruncInst;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment"></span>  TruncInst *CurrentTruncInst;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment"></span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">  /// Information per each instruction in the expression dag.</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"></span>  <span class="keyword">struct </span><a class="code hl_variable" href="CSEInfo_8cpp.html#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a> {<span class="comment"></span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"></span>  <span class="keyword">struct </span>Info {<span class="comment"></span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">    /// Number of LSBs that are needed to generate a valid expression.</span></div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment"></span>    <span class="keywordtype">unsigned</span> ValidBitWidth = 0;<span class="comment"></span></div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">    /// Minimum number of LSBs needed to generate the ValidBitWidth.</span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment"></span>    <span class="keywordtype">unsigned</span> MinBitWidth = 0;<span class="comment"></span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">    /// The reduced value generated to replace the old instruction.</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment"></span>    <a class="code hl_class" href="classllvm_1_1Value.html">Value</a> *NewValue = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment"></span>    Value *NewValue = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  };<span class="comment"></span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">  /// An ordered map representing expression dag post-dominated by current</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">  /// processed TruncInst. It maps each instruction in the dag to its Info</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">  /// structure. The map is ordered such that each instruction appears before</span></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">  /// all other instructions in the dag that uses it.</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment"></span>  <a class="code hl_class" href="classllvm_1_1MapVector.html">MapVector&lt;Instruction *, Info&gt;</a> InstInfoMap;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment"></span>  MapVector&lt;Instruction *, Info&gt; InstInfoMap;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classllvm_1_1TruncInstCombine.html#ac1cdb10827c6598ab2f564cfe47b929d">   79</a></span>  <a class="code hl_function" href="classllvm_1_1TruncInstCombine.html#ac1cdb10827c6598ab2f564cfe47b929d">TruncInstCombine</a>(<a class="code hl_class" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI, <span class="keyword">const</span> <a class="code hl_class" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL,</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                   <span class="keyword">const</span> <a class="code hl_class" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classllvm_1_1TruncInstCombine.html#ac1cdb10827c6598ab2f564cfe47b929d">   79</a></span>  <a class="code hl_function" href="classllvm_1_1TruncInstCombine.html#ac1cdb10827c6598ab2f564cfe47b929d">TruncInstCombine</a>(TargetLibraryInfo &amp;TLI, <span class="keyword">const</span> DataLayout &amp;DL,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                   <span class="keyword">const</span> DominatorTree &amp;DT)</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      : TLI(TLI), DL(DL), DT(DT), CurrentTruncInst(nullptr) {}</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment"></span> </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">  /// Perform TruncInst pattern optimization on given function.</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classllvm_1_1TruncInstCombine.html#a99c1ed1dae15c10e473d27bf3666c34b">run</a>(<a class="code hl_class" href="classllvm_1_1Function.html">Function</a> &amp;<a class="code hl_define" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classllvm_1_1TruncInstCombine.html#a99c1ed1dae15c10e473d27bf3666c34b">run</a>(Function &amp;<a class="code hl_define" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keyword">private</span>:<span class="comment"></span></div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">  /// Build expression dag dominated by the /p CurrentTruncInst and append it to</span></div>
@@ -158,7 +158,7 @@ $(function() {
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">  /// \return the scalar version of the new type to be used for the reduced</span></div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">  ///         expression dag, or nullptr if the expression dag is not eligible</span></div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">  ///         to be reduced.</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment"></span>  <a class="code hl_class" href="classllvm_1_1Type.html">Type</a> *getBestTruncatedType();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment"></span>  Type *getBestTruncatedType();</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment"></span> </div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">  /// Given a \p V value and a \p SclTy scalar type return the generated reduced</span></div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">  /// value of \p V based on the type \p SclTy.</span></div>
@@ -166,46 +166,28 @@ $(function() {
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">  /// \param V value to be reduced.</span></div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">  /// \param SclTy scalar version of new type to reduce to.</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">  /// \return the new reduced value.</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment"></span>  <a class="code hl_class" href="classllvm_1_1Value.html">Value</a> *getReducedOperand(<a class="code hl_class" href="classllvm_1_1Value.html">Value</a> *V, <a class="code hl_class" href="classllvm_1_1Type.html">Type</a> *SclTy);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment"></span>  Value *getReducedOperand(Value *V, Type *SclTy);</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment"></span> </div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">  /// Create a new expression dag using the reduced /p SclTy type and replace</span></div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">  /// the old expression dag with it. Also erase all instructions in the old</span></div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">  /// dag, except those that are still needed outside the dag.</span></div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">  ///</span></div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">  /// \param SclTy scalar version of new type to reduce expression dag into.</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment"></span>  <span class="keywordtype">void</span> ReduceExpressionDag(<a class="code hl_class" href="classllvm_1_1Type.html">Type</a> *SclTy);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment"></span>  <span class="keywordtype">void</span> ReduceExpressionDag(Type *SclTy);</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>};</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>} <span class="comment">// end namespace llvm.</span></div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aAliasAnalysis_8h_html"><div class="ttname"><a href="AliasAnalysis_8h.html">AliasAnalysis.h</a></div></div>
-<div class="ttc" id="aBasicAliasAnalysis_8h_html"><div class="ttname"><a href="BasicAliasAnalysis_8h.html">BasicAliasAnalysis.h</a></div><div class="ttdoc">This is the interface for LLVM's primary stateless and local alias analysis.</div></div>
-<div class="ttc" id="aCSEInfo_8cpp_html_a75f8a8519c2c9b30e7c06dc5e256fffa"><div class="ttname"><a href="CSEInfo_8cpp.html#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a></div><div class="ttdeci">Analysis containing CSE Info</div><div class="ttdef"><b>Definition:</b> <a href="CSEInfo_8cpp_source.html#l00021">CSEInfo.cpp:21</a></div></div>
-<div class="ttc" id="aConstantFolding_8h_html"><div class="ttname"><a href="ConstantFolding_8h.html">ConstantFolding.h</a></div></div>
-<div class="ttc" id="aDataLayout_8h_html"><div class="ttname"><a href="DataLayout_8h.html">DataLayout.h</a></div></div>
-<div class="ttc" id="aGlobalsModRef_8h_html"><div class="ttname"><a href="GlobalsModRef_8h.html">GlobalsModRef.h</a></div><div class="ttdoc">This is the interface for a simple mod/ref and alias analysis over globals.</div></div>
 <div class="ttc" id="aMD5_8cpp_html_a96d73bbd7af15cb1fc38c3f4a3bd82e9"><div class="ttname"><a href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a></div><div class="ttdeci">#define F(x, y, z)</div><div class="ttdef"><b>Definition:</b> <a href="MD5_8cpp_source.html#l00055">MD5.cpp:55</a></div></div>
-<div class="ttc" id="aMapVector_8h_html"><div class="ttname"><a href="MapVector_8h.html">MapVector.h</a></div></div>
-<div class="ttc" id="aPass_8h_html"><div class="ttname"><a href="Pass_8h.html">Pass.h</a></div></div>
-<div class="ttc" id="aSTLExtras_8h_html"><div class="ttname"><a href="STLExtras_8h.html">STLExtras.h</a></div></div>
-<div class="ttc" id="aTargetLibraryInfo_8h_html"><div class="ttname"><a href="TargetLibraryInfo_8h.html">TargetLibraryInfo.h</a></div></div>
-<div class="ttc" id="aclassllvm_1_1DataLayout_html"><div class="ttname"><a href="classllvm_1_1DataLayout.html">llvm::DataLayout</a></div><div class="ttdoc">A parsed version of the target data layout string in and methods for querying it.</div><div class="ttdef"><b>Definition:</b> <a href="DataLayout_8h_source.html#l00110">DataLayout.h:110</a></div></div>
-<div class="ttc" id="aclassllvm_1_1DominatorTree_html"><div class="ttname"><a href="classllvm_1_1DominatorTree.html">llvm::DominatorTree</a></div><div class="ttdoc">Concrete subclass of DominatorTreeBase that is used to compute a normal dominator tree.</div><div class="ttdef"><b>Definition:</b> <a href="Dominators_8h_source.html#l00144">Dominators.h:144</a></div></div>
-<div class="ttc" id="aclassllvm_1_1Function_html"><div class="ttname"><a href="classllvm_1_1Function.html">llvm::Function</a></div><div class="ttdef"><b>Definition:</b> <a href="Function_8h_source.html#l00059">Function.h:59</a></div></div>
-<div class="ttc" id="aclassllvm_1_1MapVector_html"><div class="ttname"><a href="classllvm_1_1MapVector.html">llvm::MapVector</a></div><div class="ttdoc">This class implements a map that also provides access to all stored values in a deterministic order.</div><div class="ttdef"><b>Definition:</b> <a href="MapVector_8h_source.html#l00037">MapVector.h:37</a></div></div>
-<div class="ttc" id="aclassllvm_1_1SmallVector_html"><div class="ttname"><a href="classllvm_1_1SmallVector.html">llvm::SmallVector</a></div><div class="ttdoc">This is a 'vector' (really, a variable-sized array), optimized for the case when the array is small.</div><div class="ttdef"><b>Definition:</b> <a href="SmallVector_8h_source.html#l00837">SmallVector.h:837</a></div></div>
-<div class="ttc" id="aclassllvm_1_1TargetLibraryInfo_html"><div class="ttname"><a href="classllvm_1_1TargetLibraryInfo.html">llvm::TargetLibraryInfo</a></div><div class="ttdoc">Provides information about what library functions are available for the current target.</div><div class="ttdef"><b>Definition:</b> <a href="TargetLibraryInfo_8h_source.html#l00206">TargetLibraryInfo.h:206</a></div></div>
+<div class="ttc" id="aclassSmallVector_html"><div class="ttname"><a href="classSmallVector.html">SmallVector</a></div></div>
 <div class="ttc" id="aclassllvm_1_1TruncInstCombine_html"><div class="ttname"><a href="classllvm_1_1TruncInstCombine.html">llvm::TruncInstCombine</a></div><div class="ttdef"><b>Definition:</b> <a href="AggressiveInstCombineInternal_8h_source.html#l00052">AggressiveInstCombineInternal.h:52</a></div></div>
 <div class="ttc" id="aclassllvm_1_1TruncInstCombine_html_a99c1ed1dae15c10e473d27bf3666c34b"><div class="ttname"><a href="classllvm_1_1TruncInstCombine.html#a99c1ed1dae15c10e473d27bf3666c34b">llvm::TruncInstCombine::run</a></div><div class="ttdeci">bool run(Function &amp;F)</div><div class="ttdoc">Perform TruncInst pattern optimization on given function.</div><div class="ttdef"><b>Definition:</b> <a href="TruncInstCombine_8cpp_source.html#l00387">TruncInstCombine.cpp:387</a></div></div>
 <div class="ttc" id="aclassllvm_1_1TruncInstCombine_html_ac1cdb10827c6598ab2f564cfe47b929d"><div class="ttname"><a href="classllvm_1_1TruncInstCombine.html#ac1cdb10827c6598ab2f564cfe47b929d">llvm::TruncInstCombine::TruncInstCombine</a></div><div class="ttdeci">TruncInstCombine(TargetLibraryInfo &amp;TLI, const DataLayout &amp;DL, const DominatorTree &amp;DT)</div><div class="ttdef"><b>Definition:</b> <a href="AggressiveInstCombineInternal_8h_source.html#l00079">AggressiveInstCombineInternal.h:79</a></div></div>
-<div class="ttc" id="aclassllvm_1_1TruncInst_html"><div class="ttname"><a href="classllvm_1_1TruncInst.html">llvm::TruncInst</a></div><div class="ttdoc">This class represents a truncation of integer types.</div><div class="ttdef"><b>Definition:</b> <a href="Instructions_8h_source.html#l04711">Instructions.h:4711</a></div></div>
-<div class="ttc" id="aclassllvm_1_1Type_html"><div class="ttname"><a href="classllvm_1_1Type.html">llvm::Type</a></div><div class="ttdoc">The instances of the Type class are immutable: once they are created, they are never changed.</div><div class="ttdef"><b>Definition:</b> <a href="Type_8h_source.html#l00045">Type.h:45</a></div></div>
-<div class="ttc" id="aclassllvm_1_1Value_html"><div class="ttname"><a href="classllvm_1_1Value.html">llvm::Value</a></div><div class="ttdoc">LLVM Value Representation.</div><div class="ttdef"><b>Definition:</b> <a href="Value_8h_source.html#l00072">Value.h:72</a></div></div>
-<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdoc">This class represents lattice values for constants.</div><div class="ttdef"><b>Definition:</b> <a href="AllocatorList_8h_source.html#l00023">AllocatorList.h:23</a></div></div>
+<div class="ttc" id="anamespacellvm_html"><div class="ttname"><a href="namespacellvm.html">llvm</a></div><div class="ttdef"><b>Definition:</b> <a href="AliasAnalysisEvaluator_8cpp_source.html#l00394">AliasAnalysisEvaluator.cpp:394</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:24:30 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

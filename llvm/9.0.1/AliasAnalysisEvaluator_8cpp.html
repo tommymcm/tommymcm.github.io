@@ -58,24 +58,41 @@ $(function() {
   <div class="headertitle"><div class="title">AliasAnalysisEvaluator.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="AliasAnalysisEvaluator_8h_source.html">llvm/Analysis/AliasAnalysisEvaluator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SetVector_8h_source.html">llvm/ADT/SetVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstIterator_8h_source.html">llvm/IR/InstIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/AliasAnalysisEvaluator.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SetVector.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstIterator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for AliasAnalysisEvaluator.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="AliasAnalysisEvaluator_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2AliasAnalysisEvaluator_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2AliasAnalysisEvaluator_8cpp" id="alib_2Analysis_2AliasAnalysisEvaluator_8cpp">
+<area shape="rect" title=" " alt="" coords="1265,5,1453,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,207,133"/>
+<area shape="rect" title=" " alt="" coords="231,101,389,126"/>
+<area shape="rect" title=" " alt="" coords="414,101,627,126"/>
+<area shape="rect" title=" " alt="" coords="651,101,801,126"/>
+<area shape="rect" title=" " alt="" coords="825,101,984,126"/>
+<area shape="rect" title=" " alt="" coords="1008,101,1180,126"/>
+<area shape="rect" title=" " alt="" coords="1205,101,1343,126"/>
+<area shape="rect" title=" " alt="" coords="1367,101,1522,126"/>
+<area shape="rect" title=" " alt="" coords="1546,101,1706,126"/>
+<area shape="rect" title=" " alt="" coords="1731,101,1863,126"/>
+<area shape="rect" title=" " alt="" coords="1887,101,1983,126"/>
+<area shape="rect" title=" " alt="" coords="2008,101,2223,126"/>
+<area shape="rect" title=" " alt="" coords="2247,101,2410,126"/>
+<area shape="rect" title=" " alt="" coords="2435,101,2641,126"/>
+</map>
 </div>
 </div>
 <p><a href="AliasAnalysisEvaluator_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -88,64 +105,99 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac13b6c74cf8720af3843f93ca749dd2a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#ac13b6c74cf8720af3843f93ca749dd2a">PrintResults</a> (<a class="el" href="namespacellvm.html#ae1738272abcf2ac638b97e7dc6360cfd">AliasResult</a> AR, <a class="el" href="classbool.html">bool</a> <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *V1, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *V2, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Module.html">Module</a> *M)</td></tr>
+<tr class="memitem:ad9f587db69173883387face2881b7414"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#ad9f587db69173883387face2881b7414">PrintAll</a> (&quot;print-all-alias-modref-info&quot;, cl::ReallyHidden)</td></tr>
+<tr class="separator:ad9f587db69173883387face2881b7414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b2f6897d439b2d9a69ddf0056e5f7b1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a9b2f6897d439b2d9a69ddf0056e5f7b1">PrintNoAlias</a> (&quot;print-no-aliases&quot;, cl::ReallyHidden)</td></tr>
+<tr class="separator:a9b2f6897d439b2d9a69ddf0056e5f7b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b78f8be8e1af6177f6f61b28da27ba2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a0b78f8be8e1af6177f6f61b28da27ba2">PrintMayAlias</a> (&quot;print-may-aliases&quot;, cl::ReallyHidden)</td></tr>
+<tr class="separator:a0b78f8be8e1af6177f6f61b28da27ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac46c1e7a07e6d4bfad98b72a1d34acfb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#ac46c1e7a07e6d4bfad98b72a1d34acfb">PrintPartialAlias</a> (&quot;print-partial-aliases&quot;, cl::ReallyHidden)</td></tr>
+<tr class="separator:ac46c1e7a07e6d4bfad98b72a1d34acfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0298010a8403d72828752b4d07a0d47b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a0298010a8403d72828752b4d07a0d47b">PrintMustAlias</a> (&quot;print-must-aliases&quot;, cl::ReallyHidden)</td></tr>
+<tr class="separator:a0298010a8403d72828752b4d07a0d47b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5723c472def2111f35d8c001e21fc35b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a5723c472def2111f35d8c001e21fc35b">PrintNoModRef</a> (&quot;print-no-modref&quot;, cl::ReallyHidden)</td></tr>
+<tr class="separator:a5723c472def2111f35d8c001e21fc35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6763d1889b5b5eeae043ebd0ea8cda5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#af6763d1889b5b5eeae043ebd0ea8cda5">PrintRef</a> (&quot;print-ref&quot;, cl::ReallyHidden)</td></tr>
+<tr class="separator:af6763d1889b5b5eeae043ebd0ea8cda5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f0c1015b54a4c7218b4785b5bff1da3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a0f0c1015b54a4c7218b4785b5bff1da3">PrintMod</a> (&quot;print-mod&quot;, cl::ReallyHidden)</td></tr>
+<tr class="separator:a0f0c1015b54a4c7218b4785b5bff1da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3d9053ce202c9e0a5120abda50cab55"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#aa3d9053ce202c9e0a5120abda50cab55">PrintModRef</a> (&quot;print-modref&quot;, cl::ReallyHidden)</td></tr>
+<tr class="separator:aa3d9053ce202c9e0a5120abda50cab55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb1dd9afd709fcf44638808a61856917"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#adb1dd9afd709fcf44638808a61856917">PrintMust</a> (&quot;print-must&quot;, cl::ReallyHidden)</td></tr>
+<tr class="separator:adb1dd9afd709fcf44638808a61856917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51c4081e4092ee966fa4f1ff7bfdd862"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a51c4081e4092ee966fa4f1ff7bfdd862">PrintMustRef</a> (&quot;print-mustref&quot;, cl::ReallyHidden)</td></tr>
+<tr class="separator:a51c4081e4092ee966fa4f1ff7bfdd862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a291cb1747c203bbf95fc1cf5aff8345a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a291cb1747c203bbf95fc1cf5aff8345a">PrintMustMod</a> (&quot;print-mustmod&quot;, cl::ReallyHidden)</td></tr>
+<tr class="separator:a291cb1747c203bbf95fc1cf5aff8345a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3ddffc8d66f53ee4ce2578cde6fc252"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#ac3ddffc8d66f53ee4ce2578cde6fc252">PrintMustModRef</a> (&quot;print-mustmodref&quot;, cl::ReallyHidden)</td></tr>
+<tr class="separator:ac3ddffc8d66f53ee4ce2578cde6fc252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8628bfc417299926549894c2b51171e9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a8628bfc417299926549894c2b51171e9">EvalAAMD</a> (&quot;evaluate-<a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a>-metadata&quot;, cl::ReallyHidden)</td></tr>
+<tr class="separator:a8628bfc417299926549894c2b51171e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac13b6c74cf8720af3843f93ca749dd2a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#ac13b6c74cf8720af3843f93ca749dd2a">PrintResults</a> (AliasResult AR, bool <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, const Value *V1, const Value *V2, const Module *M)</td></tr>
 <tr class="separator:ac13b6c74cf8720af3843f93ca749dd2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff3771eed68a9b62b6a3b03ad047cb3e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#aff3771eed68a9b62b6a3b03ad047cb3e">PrintModRefResults</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *Msg, <a class="el" href="classbool.html">bool</a> <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1Value.html">Value</a> *Ptr, <a class="el" href="classllvm_1_1Module.html">Module</a> *M)</td></tr>
+<tr class="memitem:aff3771eed68a9b62b6a3b03ad047cb3e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#aff3771eed68a9b62b6a3b03ad047cb3e">PrintModRefResults</a> (const char *Msg, bool <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, Value *Ptr, Module *M)</td></tr>
 <tr class="separator:aff3771eed68a9b62b6a3b03ad047cb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a647c1f0dc512dd971527e757d07f698e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a647c1f0dc512dd971527e757d07f698e">PrintModRefResults</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *Msg, <a class="el" href="classbool.html">bool</a> <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *CallA, <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *CallB, <a class="el" href="classllvm_1_1Module.html">Module</a> *M)</td></tr>
+<tr class="memitem:a647c1f0dc512dd971527e757d07f698e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a647c1f0dc512dd971527e757d07f698e">PrintModRefResults</a> (const char *Msg, bool <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, CallBase *CallA, CallBase *CallB, Module *M)</td></tr>
 <tr class="separator:a647c1f0dc512dd971527e757d07f698e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41c97297ae8ed1073613bd01c31f630c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a41c97297ae8ed1073613bd01c31f630c">PrintLoadStoreResults</a> (<a class="el" href="namespacellvm.html#ae1738272abcf2ac638b97e7dc6360cfd">AliasResult</a> AR, <a class="el" href="classbool.html">bool</a> <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *V1, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *V2, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Module.html">Module</a> *M)</td></tr>
+<tr class="memitem:a41c97297ae8ed1073613bd01c31f630c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a41c97297ae8ed1073613bd01c31f630c">PrintLoadStoreResults</a> (AliasResult AR, bool <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, const Value *V1, const Value *V2, const Module *M)</td></tr>
 <tr class="separator:a41c97297ae8ed1073613bd01c31f630c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93632ea7bd61ee1278854aa1d525e39f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a93632ea7bd61ee1278854aa1d525e39f">isInterestingPointer</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
+<tr class="memitem:a93632ea7bd61ee1278854aa1d525e39f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a93632ea7bd61ee1278854aa1d525e39f">isInterestingPointer</a> (Value *V)</td></tr>
 <tr class="separator:a93632ea7bd61ee1278854aa1d525e39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41db4fef7c16bd8266170055cfbdc8be"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a41db4fef7c16bd8266170055cfbdc8be">PrintPercent</a> (int64_t Num, int64_t Sum)</td></tr>
 <tr class="separator:a41db4fef7c16bd8266170055cfbdc8be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a926d852a793911e34bf754056a208fd5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a926d852a793911e34bf754056a208fd5">INITIALIZE_PASS_BEGIN</a> (<a class="el" href="classllvm_1_1AAEvalLegacyPass.html">AAEvalLegacyPass</a>, &quot;aa-eval&quot;, &quot;Exhaustive Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a> Precision Evaluator&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(<a class="el" href="classllvm_1_1AAEvalLegacyPass.html">AAEvalLegacyPass</a></td></tr>
+<tr class="memitem:a926d852a793911e34bf754056a208fd5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a926d852a793911e34bf754056a208fd5">INITIALIZE_PASS_BEGIN</a> (<a class="el" href="classllvm_1_1AAEvalLegacyPass.html">AAEvalLegacyPass</a>, &quot;aa-eval&quot;, &quot;Exhaustive Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a> Precision Evaluator&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) INITIALIZE_PASS_END(<a class="el" href="classllvm_1_1AAEvalLegacyPass.html">AAEvalLegacyPass</a></td></tr>
 <tr class="separator:a926d852a793911e34bf754056a208fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ac4f445cffa57aab47fc9e4ed1c127189"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#ac4f445cffa57aab47fc9e4ed1c127189">PrintAll</a> (&quot;print-all-alias-modref-info&quot;, cl::ReallyHidden)</td></tr>
-<tr class="separator:ac4f445cffa57aab47fc9e4ed1c127189"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83e413802fc09884ee83ef44b9494703"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a83e413802fc09884ee83ef44b9494703">PrintNoAlias</a> (&quot;print-no-aliases&quot;, cl::ReallyHidden)</td></tr>
-<tr class="separator:a83e413802fc09884ee83ef44b9494703"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a918935efc896bf343ed84089647022c3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a918935efc896bf343ed84089647022c3">PrintMayAlias</a> (&quot;print-may-aliases&quot;, cl::ReallyHidden)</td></tr>
-<tr class="separator:a918935efc896bf343ed84089647022c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af836423a84b8985b65fd732b7a56cbc8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#af836423a84b8985b65fd732b7a56cbc8">PrintPartialAlias</a> (&quot;print-partial-aliases&quot;, cl::ReallyHidden)</td></tr>
-<tr class="separator:af836423a84b8985b65fd732b7a56cbc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadf758d9334b634833fd9c49f6773b30"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#aadf758d9334b634833fd9c49f6773b30">PrintMustAlias</a> (&quot;print-must-aliases&quot;, cl::ReallyHidden)</td></tr>
-<tr class="separator:aadf758d9334b634833fd9c49f6773b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8021217431a2219f9ff43f998a9d33c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#af8021217431a2219f9ff43f998a9d33c">PrintNoModRef</a> (&quot;print-no-modref&quot;, cl::ReallyHidden)</td></tr>
-<tr class="separator:af8021217431a2219f9ff43f998a9d33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6451a1c6480d20ddadc050d111ed983e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a6451a1c6480d20ddadc050d111ed983e">PrintRef</a> (&quot;print-ref&quot;, cl::ReallyHidden)</td></tr>
-<tr class="separator:a6451a1c6480d20ddadc050d111ed983e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2196a587bf9a0bee210ab604c8047f6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#aa2196a587bf9a0bee210ab604c8047f6">PrintMod</a> (&quot;print-mod&quot;, cl::ReallyHidden)</td></tr>
-<tr class="separator:aa2196a587bf9a0bee210ab604c8047f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14745f9841678f0ab7a1f05f7c1fdc64"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a14745f9841678f0ab7a1f05f7c1fdc64">PrintModRef</a> (&quot;print-modref&quot;, cl::ReallyHidden)</td></tr>
-<tr class="separator:a14745f9841678f0ab7a1f05f7c1fdc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fbef2dce12d5e83d11356bd4169ed91"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a7fbef2dce12d5e83d11356bd4169ed91">PrintMust</a> (&quot;print-must&quot;, cl::ReallyHidden)</td></tr>
-<tr class="separator:a7fbef2dce12d5e83d11356bd4169ed91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64ac383713b314ade893da0e9d2ebb67"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a64ac383713b314ade893da0e9d2ebb67">PrintMustRef</a> (&quot;print-mustref&quot;, cl::ReallyHidden)</td></tr>
-<tr class="separator:a64ac383713b314ade893da0e9d2ebb67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21427f393d0fc6a187a16b89c758df78"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a21427f393d0fc6a187a16b89c758df78">PrintMustMod</a> (&quot;print-mustmod&quot;, cl::ReallyHidden)</td></tr>
-<tr class="separator:a21427f393d0fc6a187a16b89c758df78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a071e63ef70d8f15c48542680a9751583"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a071e63ef70d8f15c48542680a9751583">PrintMustModRef</a> (&quot;print-mustmodref&quot;, cl::ReallyHidden)</td></tr>
-<tr class="separator:a071e63ef70d8f15c48542680a9751583"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e37e405cf5bed7146325c74979f4735"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a5e37e405cf5bed7146325c74979f4735">EvalAAMD</a> (&quot;evaluate-<a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a>-metadata&quot;, cl::ReallyHidden)</td></tr>
-<tr class="separator:a5e37e405cf5bed7146325c74979f4735"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab27ff339fb7ff562ca0994d73ab477ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#ab27ff339fb7ff562ca0994d73ab477ba">eval</a></td></tr>
-<tr class="separator:ab27ff339fb7ff562ca0994d73ab477ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ea0cc21974423c55c71c3e5253cfe4e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a6ea0cc21974423c55c71c3e5253cfe4e">eval</a></td></tr>
+<tr class="separator:a6ea0cc21974423c55c71c3e5253cfe4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8b296a21110ccf9f34e73e4507dda2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a> Exhaustive Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a> Precision&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#ad8b296a21110ccf9f34e73e4507dda2e">Evaluator</a></td></tr>
 <tr class="separator:ad8b296a21110ccf9f34e73e4507dda2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a6bcbed1c848f56d46bca5634e9ebd0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a> Exhaustive Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a> Precision&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AliasAnalysisEvaluator_8cpp.html#a5a6bcbed1c848f56d46bca5634e9ebd0">false</a></td></tr>
 <tr class="separator:a5a6bcbed1c848f56d46bca5634e9ebd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a8628bfc417299926549894c2b51171e9" name="a8628bfc417299926549894c2b51171e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8628bfc417299926549894c2b51171e9">&#9670;&nbsp;</a></span>EvalAAMD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; EvalAAMD </td>
+          <td>(</td>
+          <td class="paramtype">&quot;evaluate-<a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a>-metadata&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ReallyHidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a926d852a793911e34bf754056a208fd5" name="a926d852a793911e34bf754056a208fd5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a926d852a793911e34bf754056a208fd5">&#9670;&nbsp;</a></span>INITIALIZE_PASS_BEGIN()</h2>
 
@@ -202,9 +254,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isInterestingPointer </td>
+          <td class="memname">static bool isInterestingPointer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
           <td></td>
         </tr>
@@ -218,7 +270,43 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00083">83</a> of file <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html">AliasAnalysisEvaluator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="Type_8h_source.html#l00223">llvm::Type::isPointerTy()</a>.</p>
+</div>
+</div>
+<a id="ad9f587db69173883387face2881b7414" name="ad9f587db69173883387face2881b7414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9f587db69173883387face2881b7414">&#9670;&nbsp;</a></span>PrintAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintAll </td>
+          <td>(</td>
+          <td class="paramtype">&quot;print-all-alias-modref-info&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ReallyHidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00075">PrintLoadStoreResults()</a>, <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00059">PrintModRefResults()</a>, and <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00043">PrintResults()</a>.</p>
 
 </div>
 </div>
@@ -234,31 +322,31 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void PrintLoadStoreResults </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ae1738272abcf2ac638b97e7dc6360cfd">AliasResult</a>&#160;</td>
+          <td class="paramtype">AliasResult&#160;</td>
           <td class="paramname"><em>AR</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>P</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">const Value *&#160;</td>
           <td class="paramname"><em>V1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">const Value *&#160;</td>
           <td class="paramname"><em>V2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Module.html">Module</a> *&#160;</td>
+          <td class="paramtype">const Module *&#160;</td>
           <td class="paramname"><em>M</em>&#160;</td>
         </tr>
         <tr>
@@ -276,7 +364,115 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00075">75</a> of file <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html">AliasAnalysisEvaluator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="raw__ostream_8cpp_source.html#l00853">llvm::errs()</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, and <a class="el" href="AliasAnalysisEvaluator_8cpp.html#ac4f445cffa57aab47fc9e4ed1c127189">PrintAll</a>.</p>
+<p class="reference">References <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, and <a class="el" href="AliasAnalysisEvaluator_8cpp.html#ad9f587db69173883387face2881b7414">PrintAll()</a>.</p>
+
+</div>
+</div>
+<a id="a0b78f8be8e1af6177f6f61b28da27ba2" name="a0b78f8be8e1af6177f6f61b28da27ba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b78f8be8e1af6177f6f61b28da27ba2">&#9670;&nbsp;</a></span>PrintMayAlias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintMayAlias </td>
+          <td>(</td>
+          <td class="paramtype">&quot;print-may-aliases&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ReallyHidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f0c1015b54a4c7218b4785b5bff1da3" name="a0f0c1015b54a4c7218b4785b5bff1da3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f0c1015b54a4c7218b4785b5bff1da3">&#9670;&nbsp;</a></span>PrintMod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintMod </td>
+          <td>(</td>
+          <td class="paramtype">&quot;print-mod&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ReallyHidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa3d9053ce202c9e0a5120abda50cab55" name="aa3d9053ce202c9e0a5120abda50cab55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3d9053ce202c9e0a5120abda50cab55">&#9670;&nbsp;</a></span>PrintModRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintModRef </td>
+          <td>(</td>
+          <td class="paramtype">&quot;print-modref&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ReallyHidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -292,31 +488,31 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void PrintModRefResults </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>Msg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>P</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
+          <td class="paramtype">CallBase *&#160;</td>
           <td class="paramname"><em>CallA</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
+          <td class="paramtype">CallBase *&#160;</td>
           <td class="paramname"><em>CallB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> *&#160;</td>
+          <td class="paramtype">Module *&#160;</td>
           <td class="paramname"><em>M</em>&#160;</td>
         </tr>
         <tr>
@@ -334,7 +530,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00068">68</a> of file <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html">AliasAnalysisEvaluator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="raw__ostream_8cpp_source.html#l00853">llvm::errs()</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, and <a class="el" href="AliasAnalysisEvaluator_8cpp.html#ac4f445cffa57aab47fc9e4ed1c127189">PrintAll</a>.</p>
+<p class="reference">References <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, and <a class="el" href="AliasAnalysisEvaluator_8cpp.html#ad9f587db69173883387face2881b7414">PrintAll()</a>.</p>
 
 </div>
 </div>
@@ -350,31 +546,31 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void PrintModRefResults </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>Msg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>P</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Ptr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> *&#160;</td>
+          <td class="paramtype">Module *&#160;</td>
           <td class="paramname"><em>M</em>&#160;</td>
         </tr>
         <tr>
@@ -392,7 +588,295 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00059">59</a> of file <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html">AliasAnalysisEvaluator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="raw__ostream_8cpp_source.html#l00853">llvm::errs()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="AliasAnalysisEvaluator_8cpp.html#ac4f445cffa57aab47fc9e4ed1c127189">PrintAll</a>, and <a class="el" href="AsmWriter_8cpp_source.html#l04351">llvm::Value::printAsOperand()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, and <a class="el" href="AliasAnalysisEvaluator_8cpp.html#ad9f587db69173883387face2881b7414">PrintAll()</a>.</p>
+
+</div>
+</div>
+<a id="adb1dd9afd709fcf44638808a61856917" name="adb1dd9afd709fcf44638808a61856917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb1dd9afd709fcf44638808a61856917">&#9670;&nbsp;</a></span>PrintMust()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintMust </td>
+          <td>(</td>
+          <td class="paramtype">&quot;print-must&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ReallyHidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0298010a8403d72828752b4d07a0d47b" name="a0298010a8403d72828752b4d07a0d47b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0298010a8403d72828752b4d07a0d47b">&#9670;&nbsp;</a></span>PrintMustAlias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintMustAlias </td>
+          <td>(</td>
+          <td class="paramtype">&quot;print-must-aliases&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ReallyHidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a291cb1747c203bbf95fc1cf5aff8345a" name="a291cb1747c203bbf95fc1cf5aff8345a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a291cb1747c203bbf95fc1cf5aff8345a">&#9670;&nbsp;</a></span>PrintMustMod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintMustMod </td>
+          <td>(</td>
+          <td class="paramtype">&quot;print-mustmod&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ReallyHidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac3ddffc8d66f53ee4ce2578cde6fc252" name="ac3ddffc8d66f53ee4ce2578cde6fc252"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3ddffc8d66f53ee4ce2578cde6fc252">&#9670;&nbsp;</a></span>PrintMustModRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintMustModRef </td>
+          <td>(</td>
+          <td class="paramtype">&quot;print-mustmodref&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ReallyHidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51c4081e4092ee966fa4f1ff7bfdd862" name="a51c4081e4092ee966fa4f1ff7bfdd862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51c4081e4092ee966fa4f1ff7bfdd862">&#9670;&nbsp;</a></span>PrintMustRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintMustRef </td>
+          <td>(</td>
+          <td class="paramtype">&quot;print-mustref&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ReallyHidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b2f6897d439b2d9a69ddf0056e5f7b1" name="a9b2f6897d439b2d9a69ddf0056e5f7b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b2f6897d439b2d9a69ddf0056e5f7b1">&#9670;&nbsp;</a></span>PrintNoAlias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintNoAlias </td>
+          <td>(</td>
+          <td class="paramtype">&quot;print-no-aliases&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ReallyHidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5723c472def2111f35d8c001e21fc35b" name="a5723c472def2111f35d8c001e21fc35b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5723c472def2111f35d8c001e21fc35b">&#9670;&nbsp;</a></span>PrintNoModRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintNoModRef </td>
+          <td>(</td>
+          <td class="paramtype">&quot;print-no-modref&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ReallyHidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac46c1e7a07e6d4bfad98b72a1d34acfb" name="ac46c1e7a07e6d4bfad98b72a1d34acfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac46c1e7a07e6d4bfad98b72a1d34acfb">&#9670;&nbsp;</a></span>PrintPartialAlias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintPartialAlias </td>
+          <td>(</td>
+          <td class="paramtype">&quot;print-partial-aliases&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ReallyHidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -432,14 +916,10 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00328">328</a> of file <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html">AliasAnalysisEvaluator.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="raw__ostream_8cpp_source.html#l00853">llvm::errs()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00333">llvm::AAEvaluator::~AAEvaluator()</a>.</p>
-
 </div>
 </div>
-<a id="ac13b6c74cf8720af3843f93ca749dd2a" name="ac13b6c74cf8720af3843f93ca749dd2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac13b6c74cf8720af3843f93ca749dd2a">&#9670;&nbsp;</a></span>PrintResults()</h2>
+<a id="af6763d1889b5b5eeae043ebd0ea8cda5" name="af6763d1889b5b5eeae043ebd0ea8cda5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6763d1889b5b5eeae043ebd0ea8cda5">&#9670;&nbsp;</a></span>PrintRef()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -448,586 +928,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void PrintResults </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ae1738272abcf2ac638b97e7dc6360cfd">AliasResult</a>&#160;</td>
-          <td class="paramname"><em>AR</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
-          <td class="paramname"><em>P</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
-          <td class="paramname"><em>V1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
-          <td class="paramname"><em>V2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Module.html">Module</a> *&#160;</td>
-          <td class="paramname"><em>M</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00043">43</a> of file <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html">AliasAnalysisEvaluator.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="raw__ostream_8cpp_source.html#l00853">llvm::errs()</a>, <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a class="el" href="AliasAnalysisEvaluator_8cpp.html#ac4f445cffa57aab47fc9e4ed1c127189">PrintAll</a>, <a class="el" href="AsmWriter_8cpp_source.html#l04351">llvm::Value::printAsOperand()</a>, and <a class="el" href="BitVector_8h_source.html#l00940">std::swap()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ab27ff339fb7ff562ca0994d73ab477ba" name="ab27ff339fb7ff562ca0994d73ab477ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab27ff339fb7ff562ca0994d73ab477ba">&#9670;&nbsp;</a></span>eval</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a> eval</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00430">430</a> of file <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html">AliasAnalysisEvaluator.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="GenericDomTreeConstruction_8h_source.html#l00304">llvm::DomTreeBuilder::SemiNCAInfo&lt; DomTreeT &gt;::runSemiNCA()</a>.</p>
-
-</div>
-</div>
-<a id="a5e37e405cf5bed7146325c74979f4735" name="a5e37e405cf5bed7146325c74979f4735"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e37e405cf5bed7146325c74979f4735">&#9670;&nbsp;</a></span>EvalAAMD</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; EvalAAMD(&quot;evaluate-<a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a>-metadata&quot;, cl::ReallyHidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;evaluate-<a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a>-metadata&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ReallyHidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad8b296a21110ccf9f34e73e4507dda2e" name="ad8b296a21110ccf9f34e73e4507dda2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8b296a21110ccf9f34e73e4507dda2e">&#9670;&nbsp;</a></span>Evaluator</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a> Exhaustive Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a> Precision <a class="el" href="classllvm_1_1Evaluator.html">Evaluator</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00431">431</a> of file <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html">AliasAnalysisEvaluator.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a5a6bcbed1c848f56d46bca5634e9ebd0" name="a5a6bcbed1c848f56d46bca5634e9ebd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a6bcbed1c848f56d46bca5634e9ebd0">&#9670;&nbsp;</a></span>false</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a> Exhaustive Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a> Precision false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00431">431</a> of file <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html">AliasAnalysisEvaluator.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ac4f445cffa57aab47fc9e4ed1c127189" name="ac4f445cffa57aab47fc9e4ed1c127189"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4f445cffa57aab47fc9e4ed1c127189">&#9670;&nbsp;</a></span>PrintAll</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintAll(&quot;print-all-alias-modref-info&quot;, cl::ReallyHidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;print-all-alias-modref-info&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ReallyHidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00075">PrintLoadStoreResults()</a>, <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00059">PrintModRefResults()</a>, and <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00043">PrintResults()</a>.</p>
-
-</div>
-</div>
-<a id="a918935efc896bf343ed84089647022c3" name="a918935efc896bf343ed84089647022c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a918935efc896bf343ed84089647022c3">&#9670;&nbsp;</a></span>PrintMayAlias</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintMayAlias(&quot;print-may-aliases&quot;, cl::ReallyHidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;print-may-aliases&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ReallyHidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa2196a587bf9a0bee210ab604c8047f6" name="aa2196a587bf9a0bee210ab604c8047f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2196a587bf9a0bee210ab604c8047f6">&#9670;&nbsp;</a></span>PrintMod</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintMod(&quot;print-mod&quot;, cl::ReallyHidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;print-mod&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ReallyHidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a14745f9841678f0ab7a1f05f7c1fdc64" name="a14745f9841678f0ab7a1f05f7c1fdc64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14745f9841678f0ab7a1f05f7c1fdc64">&#9670;&nbsp;</a></span>PrintModRef</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintModRef(&quot;print-modref&quot;, cl::ReallyHidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;print-modref&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ReallyHidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7fbef2dce12d5e83d11356bd4169ed91" name="a7fbef2dce12d5e83d11356bd4169ed91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fbef2dce12d5e83d11356bd4169ed91">&#9670;&nbsp;</a></span>PrintMust</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintMust(&quot;print-must&quot;, cl::ReallyHidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;print-must&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ReallyHidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aadf758d9334b634833fd9c49f6773b30" name="aadf758d9334b634833fd9c49f6773b30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadf758d9334b634833fd9c49f6773b30">&#9670;&nbsp;</a></span>PrintMustAlias</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintMustAlias(&quot;print-must-aliases&quot;, cl::ReallyHidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;print-must-aliases&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ReallyHidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a21427f393d0fc6a187a16b89c758df78" name="a21427f393d0fc6a187a16b89c758df78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21427f393d0fc6a187a16b89c758df78">&#9670;&nbsp;</a></span>PrintMustMod</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintMustMod(&quot;print-mustmod&quot;, cl::ReallyHidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;print-mustmod&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ReallyHidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a071e63ef70d8f15c48542680a9751583" name="a071e63ef70d8f15c48542680a9751583"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a071e63ef70d8f15c48542680a9751583">&#9670;&nbsp;</a></span>PrintMustModRef</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintMustModRef(&quot;print-mustmodref&quot;, cl::ReallyHidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;print-mustmodref&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ReallyHidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a64ac383713b314ade893da0e9d2ebb67" name="a64ac383713b314ade893da0e9d2ebb67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64ac383713b314ade893da0e9d2ebb67">&#9670;&nbsp;</a></span>PrintMustRef</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintMustRef(&quot;print-mustref&quot;, cl::ReallyHidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;print-mustref&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ReallyHidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a83e413802fc09884ee83ef44b9494703" name="a83e413802fc09884ee83ef44b9494703"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83e413802fc09884ee83ef44b9494703">&#9670;&nbsp;</a></span>PrintNoAlias</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintNoAlias(&quot;print-no-aliases&quot;, cl::ReallyHidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;print-no-aliases&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ReallyHidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af8021217431a2219f9ff43f998a9d33c" name="af8021217431a2219f9ff43f998a9d33c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8021217431a2219f9ff43f998a9d33c">&#9670;&nbsp;</a></span>PrintNoModRef</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintNoModRef(&quot;print-no-modref&quot;, cl::ReallyHidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;print-no-modref&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ReallyHidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af836423a84b8985b65fd732b7a56cbc8" name="af836423a84b8985b65fd732b7a56cbc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af836423a84b8985b65fd732b7a56cbc8">&#9670;&nbsp;</a></span>PrintPartialAlias</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintPartialAlias(&quot;print-partial-aliases&quot;, cl::ReallyHidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;print-partial-aliases&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ReallyHidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6451a1c6480d20ddadc050d111ed983e" name="a6451a1c6480d20ddadc050d111ed983e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6451a1c6480d20ddadc050d111ed983e">&#9670;&nbsp;</a></span>PrintRef</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; PrintRef(&quot;print-ref&quot;, cl::ReallyHidden) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; PrintRef </td>
           <td>(</td>
           <td class="paramtype">&quot;print-ref&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -1053,10 +954,119 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ac13b6c74cf8720af3843f93ca749dd2a" name="ac13b6c74cf8720af3843f93ca749dd2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac13b6c74cf8720af3843f93ca749dd2a">&#9670;&nbsp;</a></span>PrintResults()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PrintResults </td>
+          <td>(</td>
+          <td class="paramtype">AliasResult&#160;</td>
+          <td class="paramname"><em>AR</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Value *&#160;</td>
+          <td class="paramname"><em>V1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Value *&#160;</td>
+          <td class="paramname"><em>V2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Module *&#160;</td>
+          <td class="paramname"><em>M</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00043">43</a> of file <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html">AliasAnalysisEvaluator.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Option_8cpp.html#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, and <a class="el" href="AliasAnalysisEvaluator_8cpp.html#ad9f587db69173883387face2881b7414">PrintAll()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a6ea0cc21974423c55c71c3e5253cfe4e" name="a6ea0cc21974423c55c71c3e5253cfe4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ea0cc21974423c55c71c3e5253cfe4e">&#9670;&nbsp;</a></span>eval</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Expected&lt; uint64_t &gt; FileCheckASTBinop::eval</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00430">430</a> of file <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html">AliasAnalysisEvaluator.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad8b296a21110ccf9f34e73e4507dda2e" name="ad8b296a21110ccf9f34e73e4507dda2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8b296a21110ccf9f34e73e4507dda2e">&#9670;&nbsp;</a></span>Evaluator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a> Exhaustive Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a> Precision Evaluator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00431">431</a> of file <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html">AliasAnalysisEvaluator.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GlobalOpt_8cpp_source.html#l02560">EvaluateStaticConstructor()</a>.</p>
+
+</div>
+</div>
+<a id="a5a6bcbed1c848f56d46bca5634e9ebd0" name="a5a6bcbed1c848f56d46bca5634e9ebd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a6bcbed1c848f56d46bca5634e9ebd0">&#9670;&nbsp;</a></span>false</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AliasAnalysis_8cpp.html#a74b87337454200d4d33f80c4663dc5e5">aa</a> Exhaustive Alias <a class="el" href="BlockFrequencyInfo_8cpp.html#a82e1257a9bb50f34810c5af1c3d3dea4">Analysis</a> Precision false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html#l00431">431</a> of file <a class="el" href="AliasAnalysisEvaluator_8cpp_source.html">AliasAnalysisEvaluator.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:11 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

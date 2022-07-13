@@ -123,7 +123,7 @@ $(function() {
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">/* another structure passed up and down to avoid zillions of parameters */</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">struct </span><a class="code hl_function" href="namespacellvm_1_1PatternMatch.html#a25d956d9e0beadd47ce4bc255dfa811d">match</a> {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">struct </span>match {</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keyword">struct </span><a class="code hl_struct" href="structre__guts.html">re_guts</a> *g;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keywordtype">int</span> eflags;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <a class="code hl_struct" href="structllvm__regmatch__t.html">llvm_regmatch_t</a> *pmatch;  <span class="comment">/* [nsub+1] (0 element unused) */</span></div>
@@ -136,7 +136,7 @@ $(function() {
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <a class="code hl_define" href="regexec_8c.html#aed6ba9caf2dd761b586d2a4556b18a46">states</a> st;    <span class="comment">/* current states */</span></div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <a class="code hl_define" href="regexec_8c.html#aed6ba9caf2dd761b586d2a4556b18a46">states</a> fresh;   <span class="comment">/* states for a fresh start */</span></div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <a class="code hl_define" href="regexec_8c.html#aed6ba9caf2dd761b586d2a4556b18a46">states</a> tmp;   <span class="comment">/* temporary */</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <a class="code hl_define" href="regexec_8c.html#aed6ba9caf2dd761b586d2a4556b18a46">states</a> <a class="code hl_function" href="namespacellvm.html#a824f3e0d9eb261d9345fcc96b36852f5">empty</a>;   <span class="comment">/* empty set of states */</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <a class="code hl_define" href="regexec_8c.html#aed6ba9caf2dd761b586d2a4556b18a46">states</a> empty;   <span class="comment">/* empty set of states */</span></div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">static</span> <span class="keywordtype">int</span> matcher(<span class="keyword">struct</span> <a class="code hl_struct" href="structre__guts.html">re_guts</a> *, <span class="keyword">const</span> <span class="keywordtype">char</span> *, <span class="keywordtype">size_t</span>,</div>
@@ -159,7 +159,7 @@ $(function() {
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#define NONCHAR(c)  ((c) &gt; CHAR_MAX)</span></div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#define NNONCHAR  (CODEMAX-CHAR_MAX)</span></div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">#ifdef REDEBUG</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="ArchiveWriter_8cpp.html#aa9f638c7ae7fdd206a6c60e26bef9751">print</a>(<span class="keyword">struct</span> match *, <span class="keywordtype">char</span> *, <a class="code hl_define" href="regexec_8c.html#aed6ba9caf2dd761b586d2a4556b18a46">states</a>, <span class="keywordtype">int</span>, FILE *);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keyword">static</span> <span class="keywordtype">void</span> print(<span class="keyword">struct</span> match *, <span class="keywordtype">char</span> *, <a class="code hl_define" href="regexec_8c.html#aed6ba9caf2dd761b586d2a4556b18a46">states</a>, <span class="keywordtype">int</span>, FILE *);</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#ifdef REDEBUG</span></div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">static</span> <span class="keywordtype">void</span> at(<span class="keyword">struct</span> match *, <span class="keywordtype">char</span> *, <span class="keywordtype">char</span> *, <span class="keywordtype">char</span> *, <a class="code hl_typedef" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a>, <a class="code hl_typedef" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a>);</div>
@@ -189,8 +189,8 @@ $(function() {
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>{</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *endp;</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keywordtype">size_t</span> i;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keyword">struct </span><a class="code hl_function" href="namespacellvm_1_1PatternMatch.html#a25d956d9e0beadd47ce4bc255dfa811d">match</a> mv;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keyword">struct </span><a class="code hl_function" href="namespacellvm_1_1PatternMatch.html#a25d956d9e0beadd47ce4bc255dfa811d">match</a> *m = &amp;mv;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keyword">struct </span>match mv;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keyword">struct </span>match *m = &amp;mv;</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *dp;</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a> gf = g-&gt;<a class="code hl_variable" href="structre__guts.html#a4287da920739960031eaa2be286a299d">firststate</a>+1; <span class="comment">/* +1 for OEND */</span></div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a> gl = g-&gt;<a class="code hl_variable" href="structre__guts.html#a82caab51fe3d54e88b8015312f2a4e38">laststate</a>;</div>
@@ -204,7 +204,7 @@ $(function() {
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    start = <span class="keywordtype">string</span> + pmatch[0].<a class="code hl_variable" href="structllvm__regmatch__t.html#a6c47f73a7871dbc515faf51ffbbd8491">rm_so</a>;</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    stop = <span class="keywordtype">string</span> + pmatch[0].<a class="code hl_variable" href="structllvm__regmatch__t.html#a091ff0573e03efd3e0034ddc6aaabb87">rm_eo</a>;</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    start = <a class="code hl_enumvalue" href="ItaniumDemangle_8h.html#ae2b0d0345572d6718e219aa76d1d54edab45cffe084dd3d20d928bee85e7b0f21">string</a>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    start = string;</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    stop = start + strlen(start);</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  }</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="keywordflow">if</span> (stop &lt; start)</div>
@@ -225,7 +225,7 @@ $(function() {
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  m-&gt;eflags = eflags;</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  m-&gt;pmatch = NULL;</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  m-&gt;lastpos = NULL;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  m-&gt;offp = <a class="code hl_enumvalue" href="ItaniumDemangle_8h.html#ae2b0d0345572d6718e219aa76d1d54edab45cffe084dd3d20d928bee85e7b0f21">string</a>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  m-&gt;offp = string;</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  m-&gt;beginp = start;</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  m-&gt;endp = stop;</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  <a class="code hl_define" href="regexec_8c.html#a5db6ba9e1c9a83da53632a66469f4d13">STATESETUP</a>(m, 4);</div>
@@ -248,13 +248,13 @@ $(function() {
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>      <span class="keywordflow">break</span>;    <span class="comment">/* no further info needed */</span></div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="comment">/* where? */</span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(m-&gt;coldp != NULL);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(m-&gt;coldp != NULL);</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keywordflow">for</span> (;;) {</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>      NOTE(<span class="stringliteral">&quot;finding start&quot;</span>);</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>      endp = slow(m, m-&gt;coldp, stop, gf, gl);</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      <span class="keywordflow">if</span> (endp != NULL)</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(m-&gt;coldp &lt; m-&gt;endp);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(m-&gt;coldp &lt; m-&gt;endp);</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      m-&gt;coldp++;</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    }</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordflow">if</span> (nmatch == 1 &amp;&amp; !g-&gt;<a class="code hl_variable" href="structre__guts.html#a5ad5002eb8176e56fb2e46bdfed9dda7">backrefs</a>)</div>
@@ -270,7 +270,7 @@ $(function() {
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    }</div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keywordflow">for</span> (i = 1; i &lt;= m-&gt;g-&gt;nsub; i++)</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>      m-&gt;pmatch[i].rm_so = m-&gt;pmatch[i].rm_eo = -1;</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <a class="code hl_function" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> (!g-&gt;<a class="code hl_variable" href="structre__guts.html#a5ad5002eb8176e56fb2e46bdfed9dda7">backrefs</a> &amp;&amp; !(m-&gt;eflags&amp;<a class="code hl_define" href="regex__impl_8h.html#aa5523d1d88d3c94e9d929995bf7c20e0">REG_BACKR</a>)) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> (!g-&gt;<a class="code hl_variable" href="structre__guts.html#a5ad5002eb8176e56fb2e46bdfed9dda7">backrefs</a> &amp;&amp; !(m-&gt;eflags&amp;<a class="code hl_define" href="regex__impl_8h.html#aa5523d1d88d3c94e9d929995bf7c20e0">REG_BACKR</a>)) {</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>      NOTE(<span class="stringliteral">&quot;dissecting&quot;</span>);</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>      dp = dissect(m, m-&gt;coldp, endp, gf, gl);</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    } <span class="keywordflow">else</span> {</div>
@@ -289,8 +289,8 @@ $(function() {
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="comment">/* uh-oh... we couldn&#39;t find a subexpression-level match */</span></div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(g-&gt;<a class="code hl_variable" href="structre__guts.html#a5ad5002eb8176e56fb2e46bdfed9dda7">backrefs</a>);  <span class="comment">/* must be back references doing it */</span></div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(g-&gt;<a class="code hl_variable" href="structre__guts.html#a7fb1c345e0b69262687f9f9bb57882f3">nplus</a> == 0 || m-&gt;lastpos != NULL);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(g-&gt;<a class="code hl_variable" href="structre__guts.html#a5ad5002eb8176e56fb2e46bdfed9dda7">backrefs</a>);  <span class="comment">/* must be back references doing it */</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(g-&gt;<a class="code hl_variable" href="structre__guts.html#a7fb1c345e0b69262687f9f9bb57882f3">nplus</a> == 0 || m-&gt;lastpos != NULL);</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keywordflow">for</span> (;;) {</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>      <span class="keywordflow">if</span> (dp != NULL || endp &lt;= m-&gt;coldp)</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="keywordflow">break</span>;    <span class="comment">/* defeat */</span></div>
@@ -301,14 +301,14 @@ $(function() {
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>      <span class="comment">/* try it on a shorter possibility */</span></div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="preprocessor">#ifndef NDEBUG</span></div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>      <span class="keywordflow">for</span> (i = 1; i &lt;= m-&gt;g-&gt;nsub; i++) {</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(m-&gt;pmatch[i].rm_so == -1);</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(m-&gt;pmatch[i].rm_eo == -1);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(m-&gt;pmatch[i].rm_so == -1);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(m-&gt;pmatch[i].rm_eo == -1);</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>      }</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>      NOTE(<span class="stringliteral">&quot;backoff dissect&quot;</span>);</div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>      dp = backref(m, m-&gt;coldp, endp, gf, gl, (<a class="code hl_typedef" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a>)0, 0);</div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    }</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(dp == NULL || dp == endp);</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(dp == NULL || dp == endp);</div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordflow">if</span> (dp != NULL)   <span class="comment">/* found a shorter one */</span></div>
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
@@ -325,7 +325,7 @@ $(function() {
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    pmatch[0].<a class="code hl_variable" href="structllvm__regmatch__t.html#a091ff0573e03efd3e0034ddc6aaabb87">rm_eo</a> = endp - m-&gt;offp;</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  }</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  <span class="keywordflow">if</span> (nmatch &gt; 1) {</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(m-&gt;pmatch != NULL);</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(m-&gt;pmatch != NULL);</div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="keywordflow">for</span> (i = 1; i &lt; nmatch; i++)</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>      <span class="keywordflow">if</span> (i &lt;= m-&gt;g-&gt;<a class="code hl_variable" href="structre__guts.html#a9c67a9669eca48b8d1ada5577e8d3a2c">nsub</a>)</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        pmatch[i] = m-&gt;pmatch[i];</div>
@@ -383,7 +383,7 @@ $(function() {
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    <span class="comment">/* figure out what it matched */</span></div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    <span class="keywordflow">switch</span> (<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[ss])) {</div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#a434ef202369d0ddf2def41bfeaad210e">OEND</a>:</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(nope);</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(nope);</div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#a54d1c317420932112aa9e171d754811f">OCHAR</a>:</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>      sp++;</div>
@@ -399,7 +399,7 @@ $(function() {
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#ac13f928297b563a52fe41e5fb1cc29a5">OBACK_</a>:</div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#abe00fc485ef6e08c459df2f283fa5d9f">O_BACK</a>:</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(nope);</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(nope);</div>
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>    <span class="comment">/* cases where length of match is hard to find */</span></div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#a5fa9106fa97c3f33abc44db4f2a4f04a">OQUEST_</a>:</div>
@@ -407,14 +407,14 @@ $(function() {
 <div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>      <span class="keywordflow">for</span> (;;) {</div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        <span class="comment">/* how long could this one be? */</span></div>
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        rest = slow(m, sp, stp, ss, es);</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(rest != NULL); <span class="comment">/* it did match */</span></div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(rest != NULL); <span class="comment">/* it did match */</span></div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        <span class="comment">/* could the rest match the rest? */</span></div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        tail = slow(m, rest, stop, es, stopst);</div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        <span class="keywordflow">if</span> (tail == stop)</div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>          <span class="keywordflow">break</span>;    <span class="comment">/* yes! */</span></div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        <span class="comment">/* no -- try a shorter match for this one */</span></div>
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>        stp = rest - 1;</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(stp &gt;= sp);  <span class="comment">/* it did work */</span></div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(stp &gt;= sp);  <span class="comment">/* it did work */</span></div>
 <div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>      }</div>
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>      ssub = ss + 1;</div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>      esub = es - 1;</div>
@@ -422,9 +422,9 @@ $(function() {
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>      <span class="keywordflow">if</span> (slow(m, sp, rest, ssub, esub) != NULL) {</div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        <span class="keyword">const</span> <span class="keywordtype">char</span> *dp = dissect(m, sp, rest, ssub, esub);</div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>        (void)dp; <span class="comment">/* avoid warning if assertions off */</span></div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(dp == rest);</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(dp == rest);</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>      } <span class="keywordflow">else</span>    <span class="comment">/* no */</span></div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(sp == rest);</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(sp == rest);</div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>      sp = rest;</div>
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#a704503a3445b5e1cfc2ba2032f3fefc7">OPLUS_</a>:</div>
@@ -432,14 +432,14 @@ $(function() {
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>      <span class="keywordflow">for</span> (;;) {</div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>        <span class="comment">/* how long could this one be? */</span></div>
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>        rest = slow(m, sp, stp, ss, es);</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(rest != NULL); <span class="comment">/* it did match */</span></div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(rest != NULL); <span class="comment">/* it did match */</span></div>
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        <span class="comment">/* could the rest match the rest? */</span></div>
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>        tail = slow(m, rest, stop, es, stopst);</div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>        <span class="keywordflow">if</span> (tail == stop)</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>          <span class="keywordflow">break</span>;    <span class="comment">/* yes! */</span></div>
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        <span class="comment">/* no -- try a shorter match for this one */</span></div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        stp = rest - 1;</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(stp &gt;= sp);  <span class="comment">/* it did work */</span></div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(stp &gt;= sp);  <span class="comment">/* it did work */</span></div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>      }</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>      ssub = ss + 1;</div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>      esub = es - 1;</div>
@@ -457,12 +457,12 @@ $(function() {
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>        sep = ssp;</div>
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>        ssp = oldssp;</div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>      }</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(sep == rest);  <span class="comment">/* must exhaust substring */</span></div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(slow(m, ssp, sep, ssub, esub) == rest);</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(sep == rest);  <span class="comment">/* must exhaust substring */</span></div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(slow(m, ssp, sep, ssub, esub) == rest);</div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>      {</div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>        <span class="keyword">const</span> <span class="keywordtype">char</span> *dp = dissect(m, ssp, sep, ssub, esub);</div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>        (void)dp; <span class="comment">/* avoid warning if assertions off */</span></div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(dp == sep);</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(dp == sep);</div>
 <div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>      }</div>
 <div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>      sp = rest;</div>
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>      <span class="keywordflow">break</span>;</div>
@@ -471,36 +471,36 @@ $(function() {
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>      <span class="keywordflow">for</span> (;;) {</div>
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        <span class="comment">/* how long could this one be? */</span></div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>        rest = slow(m, sp, stp, ss, es);</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(rest != NULL); <span class="comment">/* it did match */</span></div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(rest != NULL); <span class="comment">/* it did match */</span></div>
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>        <span class="comment">/* could the rest match the rest? */</span></div>
 <div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>        tail = slow(m, rest, stop, es, stopst);</div>
 <div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>        <span class="keywordflow">if</span> (tail == stop)</div>
 <div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>          <span class="keywordflow">break</span>;    <span class="comment">/* yes! */</span></div>
 <div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>        <span class="comment">/* no -- try a shorter match for this one */</span></div>
 <div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>        stp = rest - 1;</div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(stp &gt;= sp);  <span class="comment">/* it did work */</span></div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(stp &gt;= sp);  <span class="comment">/* it did work */</span></div>
 <div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>      }</div>
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>      ssub = ss + 1;</div>
 <div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>      esub = ss + <a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(m-&gt;g-&gt;strip[ss]) - 1;</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#af85671ff22b1810567138bbcba708004">OOR1</a>);</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#af85671ff22b1810567138bbcba708004">OOR1</a>);</div>
 <div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>      <span class="keywordflow">for</span> (;;) {  <span class="comment">/* find first matching branch */</span></div>
 <div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        <span class="keywordflow">if</span> (slow(m, sp, rest, ssub, esub) == rest)</div>
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>          <span class="keywordflow">break</span>;  <span class="comment">/* it matched all of it */</span></div>
 <div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>        <span class="comment">/* that one missed, try next one */</span></div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#af85671ff22b1810567138bbcba708004">OOR1</a>);</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#af85671ff22b1810567138bbcba708004">OOR1</a>);</div>
 <div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        esub++;</div>
-<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>);</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>);</div>
 <div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>        ssub = esub + 1;</div>
 <div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>        esub += <a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(m-&gt;g-&gt;strip[esub]);</div>
 <div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>        <span class="keywordflow">if</span> (<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>)</div>
 <div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>          esub--;</div>
 <div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>          <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#a1c30d83b5b72b81505f486ec816f7f50">O_CH</a>);</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>          <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#a1c30d83b5b72b81505f486ec816f7f50">O_CH</a>);</div>
 <div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>      }</div>
 <div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>      {</div>
 <div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>        <span class="keyword">const</span> <span class="keywordtype">char</span> *dp = dissect(m, sp, rest, ssub, esub);</div>
 <div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>        (void)dp; <span class="comment">/* avoid warning if assertions off */</span></div>
-<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(dp == rest);</div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(dp == rest);</div>
 <div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>      }</div>
 <div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>      sp = rest;</div>
 <div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>      <span class="keywordflow">break</span>;</div>
@@ -509,25 +509,25 @@ $(function() {
 <div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#af85671ff22b1810567138bbcba708004">OOR1</a>:</div>
 <div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>:</div>
 <div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#a1c30d83b5b72b81505f486ec816f7f50">O_CH</a>:</div>
-<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(nope);</div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(nope);</div>
 <div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#a68656a8c7cdec0a5e6112976802801fd">OLPAREN</a>:</div>
 <div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>      i = <a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(m-&gt;g-&gt;strip[ss]);</div>
-<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(0 &lt; i &amp;&amp; i &lt;= m-&gt;g-&gt;<a class="code hl_variable" href="structre__guts.html#a9c67a9669eca48b8d1ada5577e8d3a2c">nsub</a>);</div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(0 &lt; i &amp;&amp; i &lt;= m-&gt;g-&gt;<a class="code hl_variable" href="structre__guts.html#a9c67a9669eca48b8d1ada5577e8d3a2c">nsub</a>);</div>
 <div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>      m-&gt;pmatch[i].rm_so = sp - m-&gt;offp;</div>
 <div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#ad105523f8dbc7a2b1a0f6e98bff80ca4">ORPAREN</a>:</div>
 <div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>      i = <a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(m-&gt;g-&gt;strip[ss]);</div>
-<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(0 &lt; i &amp;&amp; i &lt;= m-&gt;g-&gt;<a class="code hl_variable" href="structre__guts.html#a9c67a9669eca48b8d1ada5577e8d3a2c">nsub</a>);</div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(0 &lt; i &amp;&amp; i &lt;= m-&gt;g-&gt;<a class="code hl_variable" href="structre__guts.html#a9c67a9669eca48b8d1ada5577e8d3a2c">nsub</a>);</div>
 <div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>      m-&gt;pmatch[i].rm_eo = sp - m-&gt;offp;</div>
 <div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>    <span class="keywordflow">default</span>:    <span class="comment">/* uh oh */</span></div>
-<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(nope);</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(nope);</div>
 <div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>    }</div>
 <div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>  }</div>
 <div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span> </div>
-<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>  <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(sp == stop);</div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>  <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(sp == stop);</div>
 <div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>  <span class="keywordflow">return</span>(sp);</div>
 <div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>}</div>
 <div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span> </div>
@@ -615,7 +615,7 @@ $(function() {
 <div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>      ss++;</div>
 <div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>      s = m-&gt;g-&gt;strip[ss];</div>
 <div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>      <span class="keywordflow">do</span> {</div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(s) == <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>);</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(s) == <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>);</div>
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>        ss += <a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s);</div>
 <div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>      } <span class="keywordflow">while</span> (<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(s = m-&gt;g-&gt;strip[ss]) != <a class="code hl_define" href="regex2_8h.html#a1c30d83b5b72b81505f486ec816f7f50">O_CH</a>);</div>
 <div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>      <span class="comment">/* note that the ss++ gets us past the O_CH */</span></div>
@@ -637,14 +637,14 @@ $(function() {
 <div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>  <span class="keywordflow">switch</span> (<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(s)) {</div>
 <div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>  <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#ac13f928297b563a52fe41e5fb1cc29a5">OBACK_</a>:    <span class="comment">/* the vilest depths */</span></div>
 <div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>    i = <a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s);</div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(0 &lt; i &amp;&amp; i &lt;= m-&gt;g-&gt;<a class="code hl_variable" href="structre__guts.html#a9c67a9669eca48b8d1ada5577e8d3a2c">nsub</a>);</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(0 &lt; i &amp;&amp; i &lt;= m-&gt;g-&gt;<a class="code hl_variable" href="structre__guts.html#a9c67a9669eca48b8d1ada5577e8d3a2c">nsub</a>);</div>
 <div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    <span class="keywordflow">if</span> (m-&gt;pmatch[i].rm_eo == -1)</div>
 <div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>      <span class="keywordflow">return</span>(NULL);</div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(m-&gt;pmatch[i].rm_so != -1);</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(m-&gt;pmatch[i].rm_so != -1);</div>
 <div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>    len = m-&gt;pmatch[i].rm_eo - m-&gt;pmatch[i].rm_so;</div>
 <div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>    <span class="keywordflow">if</span> (len == 0 &amp;&amp; rec++ &gt; MAX_RECURSION)</div>
 <div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>      <span class="keywordflow">return</span>(NULL);</div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(stop - m-&gt;beginp &gt;= len);</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(stop - m-&gt;beginp &gt;= len);</div>
 <div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>    <span class="keywordflow">if</span> (sp &gt; stop - len)</div>
 <div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>      <span class="keywordflow">return</span>(NULL); <span class="comment">/* not enough left to match */</span></div>
 <div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>    ssp = m-&gt;offp + m-&gt;pmatch[i].rm_so;</div>
@@ -661,8 +661,8 @@ $(function() {
 <div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>    <span class="keywordflow">return</span>(backref(m, sp, stop, ss+<a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s)+1, stopst, lev, rec));</div>
 <div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>    <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>  <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#a704503a3445b5e1cfc2ba2032f3fefc7">OPLUS_</a>:</div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(m-&gt;lastpos != NULL);</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(lev+1 &lt;= m-&gt;g-&gt;nplus);</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(m-&gt;lastpos != NULL);</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(lev+1 &lt;= m-&gt;g-&gt;nplus);</div>
 <div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>    m-&gt;lastpos[lev+1] = sp;</div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>    <span class="keywordflow">return</span>(backref(m, sp, stop, ss+1, stopst, lev+1, rec));</div>
 <div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>    <span class="keywordflow">break</span>;</div>
@@ -680,7 +680,7 @@ $(function() {
 <div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>  <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#a3540bd5c66f3147b883585e722d658bf">OCH_</a>:    <span class="comment">/* find the right one, if any */</span></div>
 <div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>    ssub = ss + 1;</div>
 <div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>    esub = ss + <a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s) - 1;</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#af85671ff22b1810567138bbcba708004">OOR1</a>);</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#af85671ff22b1810567138bbcba708004">OOR1</a>);</div>
 <div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    <span class="keywordflow">for</span> (;;) {  <span class="comment">/* find first matching branch */</span></div>
 <div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>      dp = backref(m, sp, stop, ssub, esub, lev, rec);</div>
 <div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>      <span class="keywordflow">if</span> (dp != NULL)</div>
@@ -689,18 +689,18 @@ $(function() {
 <div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>      <span class="keywordflow">if</span> (<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#a1c30d83b5b72b81505f486ec816f7f50">O_CH</a>)</div>
 <div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>        <span class="keywordflow">return</span>(NULL); <span class="comment">/* there is none */</span></div>
 <div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>      esub++;</div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>);</div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>);</div>
 <div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>      ssub = esub + 1;</div>
 <div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>      esub += <a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(m-&gt;g-&gt;strip[esub]);</div>
 <div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>      <span class="keywordflow">if</span> (<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>)</div>
 <div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>        esub--;</div>
 <div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>      <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#a1c30d83b5b72b81505f486ec816f7f50">O_CH</a>);</div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(m-&gt;g-&gt;strip[esub]) == <a class="code hl_define" href="regex2_8h.html#a1c30d83b5b72b81505f486ec816f7f50">O_CH</a>);</div>
 <div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>    }</div>
 <div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>    <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>  <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#a68656a8c7cdec0a5e6112976802801fd">OLPAREN</a>:   <span class="comment">/* must undo assignment if rest fails */</span></div>
 <div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>    i = <a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s);</div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(0 &lt; i &amp;&amp; i &lt;= m-&gt;g-&gt;<a class="code hl_variable" href="structre__guts.html#a9c67a9669eca48b8d1ada5577e8d3a2c">nsub</a>);</div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(0 &lt; i &amp;&amp; i &lt;= m-&gt;g-&gt;<a class="code hl_variable" href="structre__guts.html#a9c67a9669eca48b8d1ada5577e8d3a2c">nsub</a>);</div>
 <div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>    offsave = m-&gt;pmatch[i].rm_so;</div>
 <div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>    m-&gt;pmatch[i].rm_so = sp - m-&gt;offp;</div>
 <div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>    dp = backref(m, sp, stop, ss+1, stopst, lev, rec);</div>
@@ -711,7 +711,7 @@ $(function() {
 <div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>    <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>  <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#ad105523f8dbc7a2b1a0f6e98bff80ca4">ORPAREN</a>:   <span class="comment">/* must undo assignment if rest fails */</span></div>
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>    i = <a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s);</div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(0 &lt; i &amp;&amp; i &lt;= m-&gt;g-&gt;<a class="code hl_variable" href="structre__guts.html#a9c67a9669eca48b8d1ada5577e8d3a2c">nsub</a>);</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(0 &lt; i &amp;&amp; i &lt;= m-&gt;g-&gt;<a class="code hl_variable" href="structre__guts.html#a9c67a9669eca48b8d1ada5577e8d3a2c">nsub</a>);</div>
 <div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>    offsave = m-&gt;pmatch[i].rm_eo;</div>
 <div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>    m-&gt;pmatch[i].rm_eo = sp - m-&gt;offp;</div>
 <div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>    dp = backref(m, sp, stop, ss+1, stopst, lev, rec);</div>
@@ -721,12 +721,12 @@ $(function() {
 <div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>    <span class="keywordflow">return</span>(NULL);</div>
 <div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>    <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>  <span class="keywordflow">default</span>:    <span class="comment">/* uh oh */</span></div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(nope);</div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(nope);</div>
 <div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>    <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>  }</div>
 <div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span> </div>
 <div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>  <span class="comment">/* &quot;can&#39;t happen&quot; */</span></div>
-<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>  <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(nope);</div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>  <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(nope);</div>
 <div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>  <span class="comment">/* NOTREACHED */</span></div>
 <div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>        <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>}</div>
@@ -801,14 +801,14 @@ $(function() {
 <div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>    <span class="comment">/* no, we must deal with this character */</span></div>
 <div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>    <a class="code hl_define" href="regexec_8c.html#a08cbbed4826d8ea1e614454dfebda354">ASSIGN</a>(tmp, st);</div>
 <div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>    <a class="code hl_define" href="regexec_8c.html#a08cbbed4826d8ea1e614454dfebda354">ASSIGN</a>(st, fresh);</div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(c != <a class="code hl_define" href="regex2_8h.html#aec78e7a9e90a406a56f859ee456e8eae">OUT</a>);</div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(c != <a class="code hl_define" href="regex2_8h.html#aec78e7a9e90a406a56f859ee456e8eae">OUT</a>);</div>
 <div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>    st = step(m-&gt;g, startst, stopst, tmp, c, st);</div>
 <div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>    SP(<span class="stringliteral">&quot;aft&quot;</span>, st, c);</div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a class="code hl_define" href="regexec_8c.html#ac07acfbb082b04f5bea72998c8976b3c">EQ</a>(step(m-&gt;g, startst, stopst, st, NOTHING, st), st));</div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(<a class="code hl_define" href="regexec_8c.html#ac07acfbb082b04f5bea72998c8976b3c">EQ</a>(step(m-&gt;g, startst, stopst, st, NOTHING, st), st));</div>
 <div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>    p++;</div>
 <div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>  }</div>
 <div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span> </div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>  <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(coldp != NULL);</div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>  <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(coldp != NULL);</div>
 <div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>  m-&gt;coldp = coldp;</div>
 <div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>  <span class="keywordflow">if</span> (<a class="code hl_define" href="regexec_8c.html#afd0ec3820b3e40560b07fc954082b93f">ISSET</a>(st, stopst))</div>
 <div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>    <span class="keywordflow">return</span>(p+1);</div>
@@ -824,7 +824,7 @@ $(function() {
 <div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>     <a class="code hl_typedef" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a> stopst)</div>
 <div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>{</div>
 <div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>  <a class="code hl_define" href="regexec_8c.html#aed6ba9caf2dd761b586d2a4556b18a46">states</a> st = m-&gt;st;</div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>  <a class="code hl_define" href="regexec_8c.html#aed6ba9caf2dd761b586d2a4556b18a46">states</a> <a class="code hl_function" href="namespacellvm.html#a824f3e0d9eb261d9345fcc96b36852f5">empty</a> = m-&gt;empty;</div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>  <a class="code hl_define" href="regexec_8c.html#aed6ba9caf2dd761b586d2a4556b18a46">states</a> empty = m-&gt;empty;</div>
 <div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>  <a class="code hl_define" href="regexec_8c.html#aed6ba9caf2dd761b586d2a4556b18a46">states</a> tmp = m-&gt;tmp;</div>
 <div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *p = start;</div>
 <div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>  <span class="keywordtype">int</span> c = (start == m-&gt;beginp) ? <a class="code hl_define" href="regex2_8h.html#aec78e7a9e90a406a56f859ee456e8eae">OUT</a> : *(start-1);</div>
@@ -886,10 +886,10 @@ $(function() {
 <div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>    <span class="comment">/* no, we must deal with this character */</span></div>
 <div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>    <a class="code hl_define" href="regexec_8c.html#a08cbbed4826d8ea1e614454dfebda354">ASSIGN</a>(tmp, st);</div>
 <div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>    <a class="code hl_define" href="regexec_8c.html#a08cbbed4826d8ea1e614454dfebda354">ASSIGN</a>(st, empty);</div>
-<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(c != <a class="code hl_define" href="regex2_8h.html#aec78e7a9e90a406a56f859ee456e8eae">OUT</a>);</div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(c != <a class="code hl_define" href="regex2_8h.html#aec78e7a9e90a406a56f859ee456e8eae">OUT</a>);</div>
 <div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>    st = step(m-&gt;g, startst, stopst, tmp, c, st);</div>
 <div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>    SP(<span class="stringliteral">&quot;saft&quot;</span>, st, c);</div>
-<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>    <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a class="code hl_define" href="regexec_8c.html#ac07acfbb082b04f5bea72998c8976b3c">EQ</a>(step(m-&gt;g, startst, stopst, st, NOTHING, st), st));</div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>    <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(<a class="code hl_define" href="regexec_8c.html#ac07acfbb082b04f5bea72998c8976b3c">EQ</a>(step(m-&gt;g, startst, stopst, st, NOTHING, st), st));</div>
 <div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>    p++;</div>
 <div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>  }</div>
 <div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span> </div>
@@ -919,11 +919,11 @@ $(function() {
 <div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>    s = g-&gt;<a class="code hl_variable" href="structre__guts.html#a7bcba76727d66246114070d230d3f556">strip</a>[pc];</div>
 <div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>    <span class="keywordflow">switch</span> (<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(s)) {</div>
 <div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#a434ef202369d0ddf2def41bfeaad210e">OEND</a>:</div>
-<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(pc == stop-1);</div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(pc == stop-1);</div>
 <div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#a54d1c317420932112aa9e171d754811f">OCHAR</a>:</div>
 <div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>      <span class="comment">/* only characters can match */</span></div>
-<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!NONCHAR(ch) || ch != (<span class="keywordtype">char</span>)<a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s));</div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(!NONCHAR(ch) || ch != (<span class="keywordtype">char</span>)<a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s));</div>
 <div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>      <span class="keywordflow">if</span> (ch == (<span class="keywordtype">char</span>)<a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s))</div>
 <div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>        <a class="code hl_define" href="regexec_8c.html#a6858ab421e69248b9222432dbac4f18a">FWD</a>(aft, bef, 1);</div>
 <div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>      <span class="keywordflow">break</span>;</div>
@@ -982,7 +982,7 @@ $(function() {
 <div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#a3540bd5c66f3147b883585e722d658bf">OCH_</a>:    <span class="comment">/* mark the first two branches */</span></div>
 <div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>      <a class="code hl_define" href="regexec_8c.html#a6858ab421e69248b9222432dbac4f18a">FWD</a>(aft, aft, 1);</div>
-<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(g-&gt;<a class="code hl_variable" href="structre__guts.html#a7bcba76727d66246114070d230d3f556">strip</a>[pc+<a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s)]) == <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>);</div>
+<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(g-&gt;<a class="code hl_variable" href="structre__guts.html#a7bcba76727d66246114070d230d3f556">strip</a>[pc+<a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s)]) == <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>);</div>
 <div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>      <a class="code hl_define" href="regexec_8c.html#a6858ab421e69248b9222432dbac4f18a">FWD</a>(aft, aft, <a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s));</div>
 <div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#af85671ff22b1810567138bbcba708004">OOR1</a>:    <span class="comment">/* done a branch, find the O_CH */</span></div>
@@ -990,14 +990,14 @@ $(function() {
 <div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span>        <span class="keywordflow">for</span> (look = 1;</div>
 <div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span>            <a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(s = g-&gt;<a class="code hl_variable" href="structre__guts.html#a7bcba76727d66246114070d230d3f556">strip</a>[pc+look]) != <a class="code hl_define" href="regex2_8h.html#a1c30d83b5b72b81505f486ec816f7f50">O_CH</a>;</div>
 <div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span>            look += <a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s))</div>
-<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>          <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(s) == <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>);</div>
+<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>          <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(s) == <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>);</div>
 <div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span>        <a class="code hl_define" href="regexec_8c.html#a6858ab421e69248b9222432dbac4f18a">FWD</a>(aft, aft, look);</div>
 <div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span>      }</div>
 <div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>:    <span class="comment">/* propagate OCH_&#39;s marking */</span></div>
 <div class="line"><a id="l00943" name="l00943"></a><span class="lineno">  943</span>      <a class="code hl_define" href="regexec_8c.html#a6858ab421e69248b9222432dbac4f18a">FWD</a>(aft, aft, 1);</div>
 <div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span>      <span class="keywordflow">if</span> (<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(g-&gt;<a class="code hl_variable" href="structre__guts.html#a7bcba76727d66246114070d230d3f556">strip</a>[pc+<a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s)]) != <a class="code hl_define" href="regex2_8h.html#a1c30d83b5b72b81505f486ec816f7f50">O_CH</a>) {</div>
-<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span>        <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(g-&gt;<a class="code hl_variable" href="structre__guts.html#a7bcba76727d66246114070d230d3f556">strip</a>[pc+<a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s)]) == <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>);</div>
+<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span>        <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(<a class="code hl_define" href="regex2_8h.html#af4408501bd0122c5686327ce657853de">OP</a>(g-&gt;<a class="code hl_variable" href="structre__guts.html#a7bcba76727d66246114070d230d3f556">strip</a>[pc+<a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s)]) == <a class="code hl_define" href="regex2_8h.html#a3af4f4635fa6eb5d9030afce3f795b0f">OOR2</a>);</div>
 <div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span>        <a class="code hl_define" href="regexec_8c.html#a6858ab421e69248b9222432dbac4f18a">FWD</a>(aft, aft, <a class="code hl_define" href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a>(s));</div>
 <div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span>      }</div>
 <div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span>      <span class="keywordflow">break</span>;</div>
@@ -1005,7 +1005,7 @@ $(function() {
 <div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span>      <a class="code hl_define" href="regexec_8c.html#a6858ab421e69248b9222432dbac4f18a">FWD</a>(aft, aft, 1);</div>
 <div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>    <span class="keywordflow">default</span>:    <span class="comment">/* ooooops... */</span></div>
-<div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>      <a class="code hl_function" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(nope);</div>
+<div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>      <a class="code hl_function" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a>(nope);</div>
 <div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>      <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>    }</div>
 <div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>  }</div>
@@ -1018,11 +1018,11 @@ $(function() {
 <div class="line"><a id="l00963" name="l00963"></a><span class="lineno">  963</span><span class="comment"> - print - print a set of states</span></div>
 <div class="line"><a id="l00964" name="l00964"></a><span class="lineno">  964</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00965" name="l00965"></a><span class="lineno">  965</span><span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00966" name="l00966"></a><span class="lineno">  966</span><a class="code hl_function" href="ArchiveWriter_8cpp.html#aa9f638c7ae7fdd206a6c60e26bef9751">print</a>(<span class="keyword">struct</span> match *m, <span class="keywordtype">char</span> *caption, <a class="code hl_define" href="regexec_8c.html#aed6ba9caf2dd761b586d2a4556b18a46">states</a> st, <span class="keywordtype">int</span> ch, FILE *d)</div>
+<div class="line"><a id="l00966" name="l00966"></a><span class="lineno">  966</span>print(<span class="keyword">struct</span> match *m, <span class="keywordtype">char</span> *caption, <a class="code hl_define" href="regexec_8c.html#aed6ba9caf2dd761b586d2a4556b18a46">states</a> st, <span class="keywordtype">int</span> ch, FILE *d)</div>
 <div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span>{</div>
 <div class="line"><a id="l00968" name="l00968"></a><span class="lineno">  968</span>  <span class="keyword">struct </span><a class="code hl_struct" href="structre__guts.html">re_guts</a> *g = m-&gt;g;</div>
 <div class="line"><a id="l00969" name="l00969"></a><span class="lineno">  969</span>  <span class="keywordtype">int</span> i;</div>
-<div class="line"><a id="l00970" name="l00970"></a><span class="lineno">  970</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="HexagonShuffler_8cpp.html#a1672231b4c403877a69e1104ad69e006">first</a> = 1;</div>
+<div class="line"><a id="l00970" name="l00970"></a><span class="lineno">  970</span>  <span class="keywordtype">int</span> first = 1;</div>
 <div class="line"><a id="l00971" name="l00971"></a><span class="lineno">  971</span> </div>
 <div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span>  <span class="keywordflow">if</span> (!(m-&gt;eflags&amp;<a class="code hl_define" href="regex__impl_8h.html#a1cd455037c8cbd9070d089f41a8f6873">REG_TRACE</a>))</div>
 <div class="line"><a id="l00973" name="l00973"></a><span class="lineno">  973</span>    <span class="keywordflow">return</span>;</div>
@@ -1032,8 +1032,8 @@ $(function() {
 <div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span>    (void)fprintf(d, <span class="stringliteral">&quot; %s&quot;</span>, pchar(ch));</div>
 <div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span>  <span class="keywordflow">for</span> (i = 0; i &lt; g-&gt;<a class="code hl_variable" href="structre__guts.html#a89f8b276a6fa5dd73078c137ee9cbac8">nstates</a>; i++)</div>
 <div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="regexec_8c.html#afd0ec3820b3e40560b07fc954082b93f">ISSET</a>(st, i)) {</div>
-<div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span>      (void)fprintf(d, <span class="stringliteral">&quot;%s%d&quot;</span>, (<a class="code hl_variable" href="HexagonShuffler_8cpp.html#a1672231b4c403877a69e1104ad69e006">first</a>) ? <span class="stringliteral">&quot;\t&quot;</span> : <span class="stringliteral">&quot;, &quot;</span>, i);</div>
-<div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span>      <a class="code hl_variable" href="HexagonShuffler_8cpp.html#a1672231b4c403877a69e1104ad69e006">first</a> = 0;</div>
+<div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span>      (void)fprintf(d, <span class="stringliteral">&quot;%s%d&quot;</span>, (first) ? <span class="stringliteral">&quot;\t&quot;</span> : <span class="stringliteral">&quot;, &quot;</span>, i);</div>
+<div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span>      first = 0;</div>
 <div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span>    }</div>
 <div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span>  (void)fprintf(d, <span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span>}</div>
@@ -1068,7 +1068,7 @@ $(function() {
 <div class="line"><a id="l01013" name="l01013"></a><span class="lineno"> 1013</span>{</div>
 <div class="line"><a id="l01014" name="l01014"></a><span class="lineno"> 1014</span>  <span class="keyword">static</span> <span class="keywordtype">char</span> pbuf[10];</div>
 <div class="line"><a id="l01015" name="l01015"></a><span class="lineno"> 1015</span> </div>
-<div class="line"><a id="l01016" name="l01016"></a><span class="lineno"> 1016</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacellvm.html#ac26e7ec95828fe707f6b4d6c6a3bd897">isPrint</a>(ch) || ch == <span class="charliteral">&#39; &#39;</span>)</div>
+<div class="line"><a id="l01016" name="l01016"></a><span class="lineno"> 1016</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacellvm_1_1sys_1_1locale.html#a5c70b7ac5cc4bb58cd22ad49147c29e5">isPrint</a>(ch) || ch == <span class="charliteral">&#39; &#39;</span>)</div>
 <div class="line"><a id="l01017" name="l01017"></a><span class="lineno"> 1017</span>    (void)snprintf(pbuf, <span class="keyword">sizeof</span> pbuf, <span class="stringliteral">&quot;%c&quot;</span>, ch);</div>
 <div class="line"><a id="l01018" name="l01018"></a><span class="lineno"> 1018</span>  <span class="keywordflow">else</span></div>
 <div class="line"><a id="l01019" name="l01019"></a><span class="lineno"> 1019</span>    (<span class="keywordtype">void</span>)snprintf(pbuf, <span class="keyword">sizeof</span> pbuf, <span class="stringliteral">&quot;\\%o&quot;</span>, ch);</div>
@@ -1087,15 +1087,10 @@ $(function() {
 <div class="line"><a id="l01032" name="l01032"></a><span class="lineno"> 1032</span><span class="preprocessor">#undef  at</span></div>
 <div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span><span class="preprocessor">#undef  match</span></div>
 <div class="line"><a id="l01034" name="l01034"></a><span class="lineno"> 1034</span><span class="preprocessor">#undef  nope</span></div>
-<div class="ttc" id="aAArch64AdvSIMDScalarPass_8cpp_html_af411b1dc5e26d5cc2fc0ec5829d00f34"><div class="ttname"><a href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a></div><div class="ttdeci">if(TargetRegisterInfo::isVirtualRegister(Reg)) return MRI -&gt; getRegClass(Reg) -&gt;hasSuperClassEq(&amp;AArch64::GPR64RegClass)</div></div>
-<div class="ttc" id="aArchiveWriter_8cpp_html_aa9f638c7ae7fdd206a6c60e26bef9751"><div class="ttname"><a href="ArchiveWriter_8cpp.html#aa9f638c7ae7fdd206a6c60e26bef9751">print</a></div><div class="ttdeci">static void print(raw_ostream &amp;Out, object::Archive::Kind Kind, T Val)</div><div class="ttdef"><b>Definition:</b> <a href="ArchiveWriter_8cpp_source.html#l00143">ArchiveWriter.cpp:143</a></div></div>
-<div class="ttc" id="aHexagonShuffler_8cpp_html_a1672231b4c403877a69e1104ad69e006"><div class="ttname"><a href="HexagonShuffler_8cpp.html#a1672231b4c403877a69e1104ad69e006">first</a></div><div class="ttdeci">unsigned first</div><div class="ttdef"><b>Definition:</b> <a href="HexagonShuffler_8cpp_source.html#l00220">HexagonShuffler.cpp:220</a></div></div>
-<div class="ttc" id="aItaniumDemangle_8h_html_ae2b0d0345572d6718e219aa76d1d54edab45cffe084dd3d20d928bee85e7b0f21"><div class="ttname"><a href="ItaniumDemangle_8h.html#ae2b0d0345572d6718e219aa76d1d54edab45cffe084dd3d20d928bee85e7b0f21">SpecialSubKind::string</a></div><div class="ttdeci">@ string</div></div>
+<div class="ttc" id="aDeadArgumentElimination_8cpp_html_aa5bfc84fa71b9e3477e24efecb60fae5"><div class="ttname"><a href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert</a></div><div class="ttdeci">assert(!RetTy-&gt;isVoidTy() &amp;&amp;&quot;void type has no subtype&quot;)</div></div>
+<div class="ttc" id="aDeadArgumentElimination_8cpp_html_ac09a30d47dd36dfe05dda91e8d67e92f"><div class="ttname"><a href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a></div><div class="ttdeci">if(StructType *STy=dyn_cast&lt; StructType &gt;(RetTy)) return STy -&gt; getElementType(Idx)</div></div>
 <div class="ttc" id="aMergeICmps_8cpp_html_affd23ab4a2fbb796128b383986b7286f"><div class="ttname"><a href="MergeICmps_8cpp.html#affd23ab4a2fbb796128b383986b7286f">memcmp</a></div><div class="ttdeci">Merge contiguous icmps into a memcmp</div><div class="ttdef"><b>Definition:</b> <a href="MergeICmps_8cpp_source.html#l00928">MergeICmps.cpp:928</a></div></div>
-<div class="ttc" id="aSILowerControlFlow_8cpp_html_a4868c5d81c5ccc98c47aeab6244346a0"><div class="ttname"><a href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert</a></div><div class="ttdeci">assert(ImpDefSCC.getReg()==AMDGPU::SCC &amp;&amp;ImpDefSCC.isDef())</div></div>
-<div class="ttc" id="anamespacellvm_1_1PatternMatch_html_a25d956d9e0beadd47ce4bc255dfa811d"><div class="ttname"><a href="namespacellvm_1_1PatternMatch.html#a25d956d9e0beadd47ce4bc255dfa811d">llvm::PatternMatch::match</a></div><div class="ttdeci">bool match(Val *V, const Pattern &amp;P)</div><div class="ttdef"><b>Definition:</b> <a href="PatternMatch_8h_source.html#l00047">PatternMatch.h:47</a></div></div>
-<div class="ttc" id="anamespacellvm_html_a824f3e0d9eb261d9345fcc96b36852f5"><div class="ttname"><a href="namespacellvm.html#a824f3e0d9eb261d9345fcc96b36852f5">llvm::empty</a></div><div class="ttdeci">constexpr bool empty(const T &amp;RangeOrContainer)</div><div class="ttdoc">Test whether RangeOrContainer is empty. Similar to C++17 std::empty.</div><div class="ttdef"><b>Definition:</b> <a href="STLExtras_8h_source.html#l00209">STLExtras.h:209</a></div></div>
-<div class="ttc" id="anamespacellvm_html_ac26e7ec95828fe707f6b4d6c6a3bd897"><div class="ttname"><a href="namespacellvm.html#ac26e7ec95828fe707f6b4d6c6a3bd897">llvm::isPrint</a></div><div class="ttdeci">bool isPrint(char C)</div><div class="ttdoc">Checks whether character C is printable.</div><div class="ttdef"><b>Definition:</b> <a href="StringExtras_8h_source.html#l00105">StringExtras.h:105</a></div></div>
+<div class="ttc" id="anamespacellvm_1_1sys_1_1locale_html_a5c70b7ac5cc4bb58cd22ad49147c29e5"><div class="ttname"><a href="namespacellvm_1_1sys_1_1locale.html#a5c70b7ac5cc4bb58cd22ad49147c29e5">llvm::sys::locale::isPrint</a></div><div class="ttdeci">bool isPrint(int UCS)</div><div class="ttdef"><b>Definition:</b> <a href="Locale_8cpp_source.html#l00013">Locale.cpp:13</a></div></div>
 <div class="ttc" id="aregex2_8h_html_a06b705baf08297be667616dcfd9b63a6"><div class="ttname"><a href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a></div><div class="ttdeci">unsigned long sop</div><div class="ttdef"><b>Definition:</b> <a href="regex2_8h_source.html#l00068">regex2.h:68</a></div></div>
 <div class="ttc" id="aregex2_8h_html_a0eaed4c74d1e8101dbe98aa9bb336697"><div class="ttname"><a href="regex2_8h.html#a0eaed4c74d1e8101dbe98aa9bb336697">OPND</a></div><div class="ttdeci">#define OPND(n)</div><div class="ttdef"><b>Definition:</b> <a href="regex2_8h_source.html#l00074">regex2.h:74</a></div></div>
 <div class="ttc" id="aregex2_8h_html_a1934207945a1bf71e1355e13cebc601a"><div class="ttname"><a href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a></div><div class="ttdeci">long sopno</div><div class="ttdef"><b>Definition:</b> <a href="regex2_8h_source.html#l00069">regex2.h:69</a></div></div>
@@ -1171,7 +1166,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:23:26 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:38 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -59,16 +59,32 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="CoroInstr_8h_source.html">CoroInstr.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Coroutines_8h_source.html">llvm/Transforms/Coroutines.h</a>&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Coroutines.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for CoroInternal.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="CoroInternal_8h__incl.png" border="0" usemap="#alib_2Transforms_2Coroutines_2CoroInternal_8h" alt=""/></div>
+<map name="alib_2Transforms_2Coroutines_2CoroInternal_8h" id="alib_2Transforms_2Coroutines_2CoroInternal_8h">
+<area shape="rect" title=" " alt="" coords="185,5,373,45"/>
+<area shape="rect" href="CoroInstr_8h.html" title=" " alt="" coords="145,93,237,119"/>
+<area shape="rect" title=" " alt="" coords="261,93,475,119"/>
+<area shape="rect" title=" " alt="" coords="5,167,184,192"/>
+<area shape="rect" title=" " alt="" coords="208,167,368,192"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="CoroInternal_8h__dep__incl.png" border="0" usemap="#alib_2Transforms_2Coroutines_2CoroInternal_8hdep" alt=""/></div>
+<map name="alib_2Transforms_2Coroutines_2CoroInternal_8hdep" id="alib_2Transforms_2Coroutines_2CoroInternal_8hdep">
+<area shape="rect" title=" " alt="" coords="535,5,723,45"/>
+<area shape="rect" href="CoroCleanup_8cpp.html" title=" " alt="" coords="5,93,193,133"/>
+<area shape="rect" href="CoroEarly_8cpp.html" title=" " alt="" coords="217,93,405,133"/>
+<area shape="rect" href="CoroElide_8cpp.html" title=" " alt="" coords="429,93,617,133"/>
+<area shape="rect" href="CoroFrame_8cpp.html" title=" " alt="" coords="641,93,829,133"/>
+<area shape="rect" href="CoroSplit_8cpp.html" title=" " alt="" coords="853,93,1041,133"/>
+<area shape="rect" href="Coroutines_8cpp.html" title=" " alt="" coords="1065,93,1253,133"/>
+</map>
 </div>
 </div>
 <p><a href="CoroInternal_8h_source.html">Go to the source code of this file.</a></p>
@@ -83,7 +99,6 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacellvm_1_1coro"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1coro.html">llvm::coro</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,17 +124,17 @@ Functions</h2></td></tr>
 <tr class="separator:af24263ccb44d8d42fe8df2b944944eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2efd127757cc8ed3c835102faf7fcfc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#ab2efd127757cc8ed3c835102faf7fcfc">llvm::initializeCoroCleanupPass</a> (PassRegistry &amp;)</td></tr>
 <tr class="separator:ab2efd127757cc8ed3c835102faf7fcfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac755c9c0cc4a7017dcb87e6888c31ef5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1coro.html#ac755c9c0cc4a7017dcb87e6888c31ef5">llvm::coro::declaresIntrinsics</a> (<a class="el" href="classllvm_1_1Module.html">Module</a> &amp;M, std::initializer_list&lt; <a class="el" href="classllvm_1_1StringRef.html">StringRef</a> &gt;)</td></tr>
+<tr class="memitem:ac755c9c0cc4a7017dcb87e6888c31ef5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1coro.html#ac755c9c0cc4a7017dcb87e6888c31ef5">llvm::coro::declaresIntrinsics</a> (Module &amp;M, std::initializer_list&lt; StringRef &gt;)</td></tr>
 <tr class="separator:ac755c9c0cc4a7017dcb87e6888c31ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50c76ed339dba248a9b7b255cb9f92ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1coro.html#a50c76ed339dba248a9b7b255cb9f92ed">llvm::coro::replaceAllCoroAllocs</a> (CoroBeginInst *CB, <a class="el" href="classbool.html">bool</a> Replacement)</td></tr>
+<tr class="memitem:a50c76ed339dba248a9b7b255cb9f92ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1coro.html#a50c76ed339dba248a9b7b255cb9f92ed">llvm::coro::replaceAllCoroAllocs</a> (CoroBeginInst *CB, bool Replacement)</td></tr>
 <tr class="separator:a50c76ed339dba248a9b7b255cb9f92ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1527a1b81fc6268ac215f1a81a4111b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1coro.html#a1527a1b81fc6268ac215f1a81a4111b5">llvm::coro::replaceAllCoroFrees</a> (CoroBeginInst *CB, Value *Replacement)</td></tr>
 <tr class="separator:a1527a1b81fc6268ac215f1a81a4111b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf799de7147065c0e7f525e1b6009dde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1coro.html#abf799de7147065c0e7f525e1b6009dde">llvm::coro::replaceCoroFree</a> (<a class="el" href="classllvm_1_1CoroIdInst.html">CoroIdInst</a> *CoroId, <a class="el" href="classbool.html">bool</a> Elide)</td></tr>
+<tr class="memitem:abf799de7147065c0e7f525e1b6009dde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1coro.html#abf799de7147065c0e7f525e1b6009dde">llvm::coro::replaceCoroFree</a> (<a class="el" href="classllvm_1_1CoroIdInst.html">CoroIdInst</a> *CoroId, bool Elide)</td></tr>
 <tr class="separator:abf799de7147065c0e7f525e1b6009dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5afa83874bf2b24b54fc07894df1add"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1coro.html#aa5afa83874bf2b24b54fc07894df1add">llvm::coro::updateCallGraph</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;Caller, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Function.html">Function</a> * &gt; Funcs, <a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;CG, <a class="el" href="classllvm_1_1CallGraphSCC.html">CallGraphSCC</a> &amp;SCC)</td></tr>
+<tr class="memitem:aa5afa83874bf2b24b54fc07894df1add"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1coro.html#aa5afa83874bf2b24b54fc07894df1add">llvm::coro::updateCallGraph</a> (Function &amp;Caller, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Function * &gt; Funcs, CallGraph &amp;CG, CallGraphSCC &amp;SCC)</td></tr>
 <tr class="separator:aa5afa83874bf2b24b54fc07894df1add"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a544025b6e22cfd2eb6015b9ac3f695e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1coro.html#a544025b6e22cfd2eb6015b9ac3f695e2">llvm::coro::buildCoroutineFrame</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, Shape &amp;Shape)</td></tr>
+<tr class="memitem:a544025b6e22cfd2eb6015b9ac3f695e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1coro.html#a544025b6e22cfd2eb6015b9ac3f695e2">llvm::coro::buildCoroutineFrame</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, Shape &amp;Shape)</td></tr>
 <tr class="separator:a544025b6e22cfd2eb6015b9ac3f695e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -190,7 +205,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

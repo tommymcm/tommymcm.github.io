@@ -61,53 +61,99 @@ $(function() {
 
 <p>The goal of hot/cold splitting is to improve the memory locality of code.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="PostOrderIterator_8h_source.html">llvm/ADT/PostOrderIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BlockFrequencyInfo_8h_source.html">llvm/Analysis/BlockFrequencyInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BranchProbabilityInfo_8h_source.html">llvm/Analysis/BranchProbabilityInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Analysis_2CFG_8h_source.html">llvm/Analysis/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="OptimizationRemarkEmitter_8h_source.html">llvm/Analysis/OptimizationRemarkEmitter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PostDominators_8h_source.html">llvm/Analysis/PostDominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DiagnosticInfo_8h_source.html">llvm/IR/DiagnosticInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Use_8h_source.html">llvm/IR/Use.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BlockFrequency_8h_source.html">llvm/Support/BlockFrequency.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BranchProbability_8h_source.html">llvm/Support/BranchProbability.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2IPO_8h_source.html">llvm/Transforms/IPO.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="HotColdSplitting_8h_source.html">llvm/Transforms/IPO/HotColdSplitting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Cloning_8h_source.html">llvm/Transforms/Utils/Cloning.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CodeExtractor_8h_source.html">llvm/Transforms/Utils/CodeExtractor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueMapper_8h_source.html">llvm/Transforms/Utils/ValueMapper.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/ADT/PostOrderIterator.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/BlockFrequencyInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/BranchProbabilityInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/OptimizationRemarkEmitter.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/PostDominators.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DiagnosticInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Use.h&quot;</code><br />
+<code>#include &quot;llvm/IR/User.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/BlockFrequency.h&quot;</code><br />
+<code>#include &quot;llvm/Support/BranchProbability.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO/HotColdSplitting.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Cloning.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/CodeExtractor.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/ValueMapper.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for HotColdSplitting.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="HotColdSplitting_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2IPO_2HotColdSplitting_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2IPO_2HotColdSplitting_8cpp" id="alib_2Transforms_2IPO_2HotColdSplitting_8cpp">
+<area shape="rect" title="The goal of hot/cold splitting is to improve the memory locality of code." alt="" coords="4233,5,4392,45"/>
+<area shape="rect" title=" " alt="" coords="5,101,215,126"/>
+<area shape="rect" title=" " alt="" coords="239,101,413,126"/>
+<area shape="rect" title=" " alt="" coords="437,101,588,126"/>
+<area shape="rect" title=" " alt="" coords="613,101,826,126"/>
+<area shape="rect" title=" " alt="" coords="851,93,1068,133"/>
+<area shape="rect" title=" " alt="" coords="1093,93,1322,133"/>
+<area shape="rect" title=" " alt="" coords="1347,101,1500,126"/>
+<area shape="rect" title=" " alt="" coords="1524,93,1723,133"/>
+<area shape="rect" title=" " alt="" coords="1747,101,1977,126"/>
+<area shape="rect" title=" " alt="" coords="2002,93,2221,133"/>
+<area shape="rect" title=" " alt="" coords="2245,93,2463,133"/>
+<area shape="rect" title=" " alt="" coords="2487,101,2642,126"/>
+<area shape="rect" title=" " alt="" coords="2667,101,2777,126"/>
+<area shape="rect" title=" " alt="" coords="2801,101,2936,126"/>
+<area shape="rect" title=" " alt="" coords="2960,101,3119,126"/>
+<area shape="rect" title=" " alt="" coords="3143,101,3322,126"/>
+<area shape="rect" title=" " alt="" coords="3346,101,3506,126"/>
+<area shape="rect" title=" " alt="" coords="3530,101,3669,126"/>
+<area shape="rect" title=" " alt="" coords="3693,101,3847,126"/>
+<area shape="rect" title=" " alt="" coords="3871,101,4031,126"/>
+<area shape="rect" title=" " alt="" coords="4055,101,4215,126"/>
+<area shape="rect" title=" " alt="" coords="4239,101,4386,126"/>
+<area shape="rect" title=" " alt="" coords="4411,101,4543,126"/>
+<area shape="rect" title=" " alt="" coords="4567,101,4736,126"/>
+<area shape="rect" title=" " alt="" coords="4761,101,4875,126"/>
+<area shape="rect" title=" " alt="" coords="4899,101,5009,126"/>
+<area shape="rect" title=" " alt="" coords="5033,101,5147,126"/>
+<area shape="rect" title=" " alt="" coords="5171,101,5291,126"/>
+<area shape="rect" title=" " alt="" coords="5315,101,5411,126"/>
+<area shape="rect" title=" " alt="" coords="5436,101,5659,126"/>
+<area shape="rect" title=" " alt="" coords="5682,101,5917,126"/>
+<area shape="rect" title=" " alt="" coords="5941,101,6103,126"/>
+<area shape="rect" title=" " alt="" coords="6128,101,6335,126"/>
+<area shape="rect" title=" " alt="" coords="6359,101,6525,126"/>
+<area shape="rect" title=" " alt="" coords="6549,93,6703,133"/>
+<area shape="rect" title=" " alt="" coords="6727,101,6909,126"/>
+<area shape="rect" title=" " alt="" coords="6933,93,7095,133"/>
+<area shape="rect" title=" " alt="" coords="7119,93,7280,133"/>
+<area shape="rect" title=" " alt="" coords="7304,93,7465,133"/>
+<area shape="rect" title=" " alt="" coords="7489,93,7651,133"/>
+<area shape="rect" title=" " alt="" coords="7675,93,7836,133"/>
+<area shape="rect" title=" " alt="" coords="7861,101,7946,126"/>
+<area shape="rect" title=" " alt="" coords="7970,101,8039,126"/>
+</map>
 </div>
 </div>
 <p><a href="HotColdSplitting_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -119,7 +165,7 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a0134180716271c522b7b0e1537ce7d9b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#a0134180716271c522b7b0e1537ce7d9b">BlockTy</a> = std::pair&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, <a class="el" href="classunsigned.html">unsigned</a> &gt;</td></tr>
+<tr class="memitem:a0134180716271c522b7b0e1537ce7d9b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#a0134180716271c522b7b0e1537ce7d9b">BlockTy</a> = std::pair&lt; BasicBlock *, unsigned &gt;</td></tr>
 <tr class="memdesc:a0134180716271c522b7b0e1537ce7d9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pair of (basic block, score).  <a href="HotColdSplitting_8cpp.html#a0134180716271c522b7b0e1537ce7d9b">More...</a><br /></td></tr>
 <tr class="separator:a0134180716271c522b7b0e1537ce7d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -129,21 +175,21 @@ Functions</h2></td></tr>
 <tr class="separator:a13985942ec142a2e100b201437530b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a799e4e6a1be196dbe2684c1ba9cb9d65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#a799e4e6a1be196dbe2684c1ba9cb9d65">STATISTIC</a> (NumColdRegionsOutlined, &quot;Number of cold <a class="el" href="RegionInfo_8cpp.html#a60d9a9654bb13ef250022d9e3ee30f11">regions</a> outlined.&quot;)</td></tr>
 <tr class="separator:a799e4e6a1be196dbe2684c1ba9cb9d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28cab2878990bafab2e91d9f4b1ef7ea"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#a28cab2878990bafab2e91d9f4b1ef7ea">getOutliningBenefit</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; <a class="el" href="classllvm_1_1Region.html">Region</a>, <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;TTI)</td></tr>
+<tr class="memitem:a894b8aa74182c5568108f27549f3570e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#a894b8aa74182c5568108f27549f3570e">EnableStaticAnalyis</a> (&quot;hot-cold-static-analysis&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden)</td></tr>
+<tr class="separator:a894b8aa74182c5568108f27549f3570e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c658b1ccce1191946a88442d08907f1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#a0c658b1ccce1191946a88442d08907f1">SplittingThreshold</a> (&quot;hotcoldsplit-threshold&quot;, cl::init(2), cl::Hidden, cl::desc(&quot;Base penalty for <a class="el" href="CallSiteSplitting_8cpp.html#af862aa2abae546509b31878b6f55327a">splitting</a> cold code (as a &quot; &quot;multiple of TCC_Basic)&quot;))</td></tr>
+<tr class="separator:a0c658b1ccce1191946a88442d08907f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28cab2878990bafab2e91d9f4b1ef7ea"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#a28cab2878990bafab2e91d9f4b1ef7ea">getOutliningBenefit</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; BasicBlock * &gt; Region, TargetTransformInfo &amp;TTI)</td></tr>
 <tr class="memdesc:a28cab2878990bafab2e91d9f4b1ef7ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the benefit score of outlining <code>Region</code>.  <a href="HotColdSplitting_8cpp.html#a28cab2878990bafab2e91d9f4b1ef7ea">More...</a><br /></td></tr>
 <tr class="separator:a28cab2878990bafab2e91d9f4b1ef7ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af13aae7297d317a09ab92d3bfbff0506"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#af13aae7297d317a09ab92d3bfbff0506">getOutliningPenalty</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; <a class="el" href="classllvm_1_1Region.html">Region</a>, <a class="el" href="classunsigned.html">unsigned</a> NumInputs, <a class="el" href="classunsigned.html">unsigned</a> NumOutputs)</td></tr>
+<tr class="memitem:af13aae7297d317a09ab92d3bfbff0506"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#af13aae7297d317a09ab92d3bfbff0506">getOutliningPenalty</a> (<a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; BasicBlock * &gt; Region, unsigned NumInputs, unsigned NumOutputs)</td></tr>
 <tr class="memdesc:af13aae7297d317a09ab92d3bfbff0506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the penalty score for outlining <code>Region</code>.  <a href="HotColdSplitting_8cpp.html#af13aae7297d317a09ab92d3bfbff0506">More...</a><br /></td></tr>
 <tr class="separator:af13aae7297d317a09ab92d3bfbff0506"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a587ca61f69ec77948ba84ac5be826665"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#a587ca61f69ec77948ba84ac5be826665">INITIALIZE_PASS_BEGIN</a> (HotColdSplittingLegacyPass, &quot;hotcoldsplit&quot;, &quot;Hot Cold Splitting&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(HotColdSplittingLegacyPass</td></tr>
+<tr class="memitem:a587ca61f69ec77948ba84ac5be826665"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#a587ca61f69ec77948ba84ac5be826665">INITIALIZE_PASS_BEGIN</a> (HotColdSplittingLegacyPass, &quot;hotcoldsplit&quot;, &quot;Hot Cold Splitting&quot;, false, false) INITIALIZE_PASS_END(HotColdSplittingLegacyPass</td></tr>
 <tr class="separator:a587ca61f69ec77948ba84ac5be826665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:abaa5a723a1e27fb4c3a561ebab8bf448"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#abaa5a723a1e27fb4c3a561ebab8bf448">EnableStaticAnalyis</a> (&quot;hot-cold-static-analysis&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden)</td></tr>
-<tr class="separator:abaa5a723a1e27fb4c3a561ebab8bf448"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4949edc6f7cf42404bd0a360df29a600"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#a4949edc6f7cf42404bd0a360df29a600">SplittingThreshold</a> (&quot;hotcoldsplit-threshold&quot;, cl::init(2), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Base penalty <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> <a class="el" href="CallSiteSplitting_8cpp.html#af862aa2abae546509b31878b6f55327a">splitting</a> cold code (as a &quot; &quot;multiple of TCC_Basic)&quot;))</td></tr>
-<tr class="separator:a4949edc6f7cf42404bd0a360df29a600"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa993646eab090747760238195fe75df0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#aa993646eab090747760238195fe75df0">hotcoldsplit</a></td></tr>
 <tr class="separator:aa993646eab090747760238195fe75df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa974847bdb300a8386aac306cb82c2f"><td class="memItemLeft" align="right" valign="top">Hot Cold&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HotColdSplitting_8cpp.html#afa974847bdb300a8386aac306cb82c2f">Splitting</a></td></tr>
@@ -184,7 +230,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="HotColdSplitting_8cpp.html#a0134180716271c522b7b0e1537ce7d9b">BlockTy</a> =  std::pair&lt;<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, <a class="el" href="classunsigned.html">unsigned</a>&gt;</td>
+          <td class="memname">using <a class="el" href="HotColdSplitting_8cpp.html#a0134180716271c522b7b0e1537ce7d9b">BlockTy</a> =  std::pair&lt;BasicBlock *, unsigned&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -196,6 +242,48 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a894b8aa74182c5568108f27549f3570e" name="a894b8aa74182c5568108f27549f3570e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a894b8aa74182c5568108f27549f3570e">&#9670;&nbsp;</a></span>EnableStaticAnalyis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; EnableStaticAnalyis </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hot-cold-static-analysis&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a28cab2878990bafab2e91d9f4b1ef7ea" name="a28cab2878990bafab2e91d9f4b1ef7ea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a28cab2878990bafab2e91d9f4b1ef7ea">&#9670;&nbsp;</a></span>getOutliningBenefit()</h2>
 
@@ -208,13 +296,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static int getOutliningBenefit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; BasicBlock * &gt;&#160;</td>
           <td class="paramname"><em>Region</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;&#160;</td>
+          <td class="paramtype">TargetTransformInfo &amp;&#160;</td>
           <td class="paramname"><em>TTI</em>&#160;</td>
         </tr>
         <tr>
@@ -234,7 +322,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HotColdSplitting_8cpp_source.html#l00249">249</a> of file <a class="el" href="HotColdSplitting_8cpp_source.html">HotColdSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="TargetTransformInfo_8h_source.html#l00164">llvm::TargetTransformInfo::getInstructionCost()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00094">llvm::BasicBlock::instructionsWithoutDebug()</a>, and <a class="el" href="TargetTransformInfo_8h_source.html#l00154">llvm::TargetTransformInfo::TCK_CodeSize</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -250,19 +338,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static int getOutliningPenalty </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; BasicBlock * &gt;&#160;</td>
           <td class="paramname"><em>Region</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>NumInputs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>NumOutputs</em>&#160;</td>
         </tr>
         <tr>
@@ -282,7 +370,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HotColdSplitting_8cpp_source.html#l00264">264</a> of file <a class="el" href="HotColdSplitting_8cpp_source.html">HotColdSplitting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00091">llvm::SmallPtrSetImplBase::empty()</a>, <a class="el" href="RegionInfo_8h_source.html#l00562">llvm::RegionBase&lt; Tr &gt;::end()</a>, <a class="el" href="STLExtras_8h_source.html#l01213">llvm::find()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00370">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00092">llvm::SmallPtrSetImplBase::size()</a>, <a class="el" href="HotColdSplitting_8cpp.html#a4949edc6f7cf42404bd0a360df29a600">SplittingThreshold</a>, <a class="el" href="IR_2CFG_8h_source.html#l00253">llvm::succ_empty()</a>, <a class="el" href="IR_2CFG_8h_source.html#l00259">llvm::successors()</a>, and <a class="el" href="TargetTransformInfo_8h_source.html#l00198">llvm::TargetTransformInfo::TCC_Basic</a>.</p>
+<p class="reference">References <a class="el" href="HotColdSplitting_8cpp.html#a0c658b1ccce1191946a88442d08907f1">SplittingThreshold()</a>.</p>
 
 </div>
 </div>
@@ -329,6 +417,56 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c658b1ccce1191946a88442d08907f1" name="a0c658b1ccce1191946a88442d08907f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c658b1ccce1191946a88442d08907f1">&#9670;&nbsp;</a></span>SplittingThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; SplittingThreshold </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hotcoldsplit-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(2)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Base penalty for <a class="el" href="CallSiteSplitting_8cpp.html#af862aa2abae546509b31878b6f55327a">splitting</a> cold code (as a &quot; &quot;multiple of TCC_Basic)&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="HotColdSplitting_8cpp_source.html#l00264">getOutliningPenalty()</a>.</p>
 
 </div>
 </div>
@@ -389,48 +527,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="abaa5a723a1e27fb4c3a561ebab8bf448" name="abaa5a723a1e27fb4c3a561ebab8bf448"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abaa5a723a1e27fb4c3a561ebab8bf448">&#9670;&nbsp;</a></span>EnableStaticAnalyis</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; EnableStaticAnalyis(&quot;hot-cold-static-analysis&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hot-cold-static-analysis&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a9a3533d5d5722cdfdd5edecd725ab39d" name="a9a3533d5d5722cdfdd5edecd725ab39d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9a3533d5d5722cdfdd5edecd725ab39d">&#9670;&nbsp;</a></span>false</h2>
 
@@ -479,60 +575,10 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a4949edc6f7cf42404bd0a360df29a600" name="a4949edc6f7cf42404bd0a360df29a600"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4949edc6f7cf42404bd0a360df29a600">&#9670;&nbsp;</a></span>SplittingThreshold</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; SplittingThreshold(&quot;hotcoldsplit-threshold&quot;, cl::init(2), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Base penalty <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> <a class="el" href="CallSiteSplitting_8cpp.html#af862aa2abae546509b31878b6f55327a">splitting</a> cold code (as a &quot; &quot;multiple of TCC_Basic)&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hotcoldsplit-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(2)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Base penalty <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> <a class="el" href="CallSiteSplitting_8cpp.html#af862aa2abae546509b31878b6f55327a">splitting</a> cold code (as a &quot; &quot;multiple of TCC_Basic)&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="HotColdSplitting_8cpp_source.html#l00264">getOutliningPenalty()</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

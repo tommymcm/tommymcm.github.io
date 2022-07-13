@@ -56,36 +56,51 @@ $(function() {
   <div class="headertitle"><div class="title">LoopPass.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="LoopPass_8h_source.html">llvm/Analysis/LoopPass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopAnalysisManager_8h_source.html">llvm/Analysis/LoopAnalysisManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IRPrintingPasses_8h_source.html">llvm/IR/IRPrintingPasses.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="OptBisect_8h_source.html">llvm/IR/OptBisect.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassTimingInfo_8h_source.html">llvm/IR/PassTimingInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Timer_8h_source.html">llvm/Support/Timer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TimeProfiler_8h_source.html">llvm/Support/TimeProfiler.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/LoopPass.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LoopAnalysisManager.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IRPrintingPasses.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/OptBisect.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassTimingInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Timer.h&quot;</code><br />
+<code>#include &quot;llvm/Support/TimeProfiler.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LoopPass.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="LoopPass_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2LoopPass_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2LoopPass_8cpp" id="alib_2Analysis_2LoopPass_8cpp">
+<area shape="rect" title=" " alt="" coords="1103,5,1291,31"/>
+<area shape="rect" title=" " alt="" coords="5,86,192,111"/>
+<area shape="rect" title=" " alt="" coords="216,79,416,119"/>
+<area shape="rect" title=" " alt="" coords="440,86,600,111"/>
+<area shape="rect" title=" " alt="" coords="625,86,815,111"/>
+<area shape="rect" title=" " alt="" coords="839,86,1009,111"/>
+<area shape="rect" title=" " alt="" coords="1033,86,1180,111"/>
+<area shape="rect" title=" " alt="" coords="1205,86,1374,111"/>
+<area shape="rect" title=" " alt="" coords="1398,86,1581,111"/>
+<area shape="rect" title=" " alt="" coords="1605,86,1768,111"/>
+<area shape="rect" title=" " alt="" coords="1793,86,1951,111"/>
+<area shape="rect" title=" " alt="" coords="1975,86,2174,111"/>
+<area shape="rect" title=" " alt="" coords="2198,86,2405,111"/>
+</map>
 </div>
 </div>
 <p><a href="LoopPass_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ad78e062f62e0d6e453941fb4ca843e4d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopPass_8cpp.html#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG_TYPE</a>&#160;&#160;&#160;&quot;loop-<a class="el" href="SafeStack_8cpp.html#af2e69f4ced11d64c4c6b7efa91ac82d0">pass</a>-manager&quot;</td></tr>
+<tr class="memitem:ad78e062f62e0d6e453941fb4ca843e4d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopPass_8cpp.html#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG_TYPE</a>&#160;&#160;&#160;&quot;loop-pass-manager&quot;</td></tr>
 <tr class="separator:ad78e062f62e0d6e453941fb4ca843e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7bf4e13745727358c085cb143db4978f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopPass_8cpp.html#a7bf4e13745727358c085cb143db4978f">addLoopIntoQueue</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, std::deque&lt; <a class="el" href="classllvm_1_1Loop.html">Loop</a> * &gt; &amp;LQ)</td></tr>
+<tr class="memitem:a7bf4e13745727358c085cb143db4978f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopPass_8cpp.html#a7bf4e13745727358c085cb143db4978f">addLoopIntoQueue</a> (Loop *L, std::deque&lt; Loop * &gt; &amp;LQ)</td></tr>
 <tr class="separator:a7bf4e13745727358c085cb143db4978f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7444ae81dcc4b287a54b43cbb8c36077"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopPass_8cpp.html#a7444ae81dcc4b287a54b43cbb8c36077">getDescription</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Loop.html">Loop</a> &amp;L)</td></tr>
+<tr class="memitem:a7444ae81dcc4b287a54b43cbb8c36077"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopPass_8cpp.html#a7444ae81dcc4b287a54b43cbb8c36077">getDescription</a> (const Loop &amp;L)</td></tr>
 <tr class="separator:a7444ae81dcc4b287a54b43cbb8c36077"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -96,7 +111,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DEBUG_TYPE&#160;&#160;&#160;&quot;loop-<a class="el" href="SafeStack_8cpp.html#af2e69f4ced11d64c4c6b7efa91ac82d0">pass</a>-manager&quot;</td>
+          <td class="memname">#define DEBUG_TYPE&#160;&#160;&#160;&quot;loop-pass-manager&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -118,13 +133,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void addLoopIntoQueue </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::deque&lt; <a class="el" href="classllvm_1_1Loop.html">Loop</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">std::deque&lt; Loop * &gt; &amp;&#160;</td>
           <td class="paramname"><em>LQ</em>&#160;</td>
         </tr>
         <tr>
@@ -142,9 +157,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopPass_8cpp_source.html#l00128">128</a> of file <a class="el" href="LoopPass_8cpp_source.html">LoopPass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="LoopPass_8cpp_source.html#l00128">addLoopIntoQueue()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="STLExtras_8h_source.html#l00273">llvm::reverse()</a>.</p>
+<p class="reference">References <a class="el" href="LoopPass_8cpp_source.html#l00128">addLoopIntoQueue()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LoopPass_8cpp_source.html#l00128">addLoopIntoQueue()</a>, and <a class="el" href="LoopPass_8cpp_source.html#l00161">llvm::LPPassManager::runOnFunction()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LoopPass_8cpp_source.html#l00128">addLoopIntoQueue()</a>.</p>
 
 </div>
 </div>
@@ -160,7 +175,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static std::string getDescription </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Loop.html">Loop</a> &amp;&#160;</td>
+          <td class="paramtype">const Loop &amp;&#160;</td>
           <td class="paramname"><em>L</em></td><td>)</td>
           <td></td>
         </tr>
@@ -179,7 +194,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:12 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

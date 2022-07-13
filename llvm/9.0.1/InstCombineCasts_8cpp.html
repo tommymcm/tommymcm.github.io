@@ -57,17 +57,54 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="InstCombineInternal_8h_source.html">InstCombineInternal.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SetVector_8h_source.html">llvm/ADT/SetVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ConstantFolding_8h_source.html">llvm/Analysis/ConstantFolding.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DIBuilder_8h_source.html">llvm/IR/DIBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="KnownBits_8h_source.html">llvm/Support/KnownBits.h</a>&quot;</code><br />
+<code>#include &quot;llvm/ADT/SetVector.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ConstantFolding.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DIBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
+<code>#include &quot;llvm/Support/KnownBits.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for InstCombineCasts.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="InstCombineCasts_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2InstCombine_2InstCombineCasts_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2InstCombine_2InstCombineCasts_8cpp" id="alib_2Transforms_2InstCombine_2InstCombineCasts_8cpp">
+<area shape="rect" title=" " alt="" coords="4999,5,5199,45"/>
+<area shape="rect" href="InstCombineInternal_8h.html" title="This file provides internal interfaces used to implement the InstCombine." alt="" coords="2441,101,2607,126"/>
+<area shape="rect" title=" " alt="" coords="4736,189,4907,214"/>
+<area shape="rect" title=" " alt="" coords="4931,189,5122,214"/>
+<area shape="rect" title=" " alt="" coords="4910,101,5069,126"/>
+<area shape="rect" title=" " alt="" coords="5093,101,5323,126"/>
+<area shape="rect" title=" " alt="" coords="5347,93,5546,133"/>
+<area shape="rect" title=" " alt="" coords="5570,101,5729,126"/>
+<area shape="rect" title=" " alt="" coords="5753,101,5895,126"/>
+<area shape="rect" title=" " alt="" coords="3469,189,3624,214"/>
+<area shape="rect" title=" " alt="" coords="3648,189,3861,214"/>
+<area shape="rect" title=" " alt="" coords="3886,181,4069,221"/>
+<area shape="rect" title=" " alt="" coords="4093,189,4299,214"/>
+<area shape="rect" title=" " alt="" coords="4323,189,4539,214"/>
+<area shape="rect" title=" " alt="" coords="4563,189,4711,214"/>
+<area shape="rect" title=" " alt="" coords="5,189,160,214"/>
+<area shape="rect" title=" " alt="" coords="185,189,327,214"/>
+<area shape="rect" title=" " alt="" coords="352,189,501,214"/>
+<area shape="rect" title=" " alt="" coords="526,189,698,214"/>
+<area shape="rect" title=" " alt="" coords="722,189,865,214"/>
+<area shape="rect" title=" " alt="" coords="889,189,1039,214"/>
+<area shape="rect" title=" " alt="" coords="1063,189,1214,214"/>
+<area shape="rect" title=" " alt="" coords="1238,189,1391,214"/>
+<area shape="rect" title=" " alt="" coords="1416,189,1576,214"/>
+<area shape="rect" title=" " alt="" coords="1601,189,1743,214"/>
+<area shape="rect" title=" " alt="" coords="1768,189,1877,214"/>
+<area shape="rect" title=" " alt="" coords="1901,189,2021,214"/>
+<area shape="rect" title=" " alt="" coords="2045,189,2216,214"/>
+<area shape="rect" title=" " alt="" coords="2240,189,2419,214"/>
+<area shape="rect" title=" " alt="" coords="2443,189,2605,214"/>
+<area shape="rect" title=" " alt="" coords="2630,189,2837,214"/>
+<area shape="rect" title=" " alt="" coords="2861,181,3075,221"/>
+<area shape="rect" title=" " alt="" coords="3099,181,3261,221"/>
+<area shape="rect" title=" " alt="" coords="3285,189,3355,214"/>
+<area shape="rect" title=" " alt="" coords="3379,189,3445,214"/>
+</map>
 </div>
 </div>
 <p><a href="InstCombineCasts_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -79,66 +116,66 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae73936651ef69e57d0c206f9417fcf16"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#ae73936651ef69e57d0c206f9417fcf16">decomposeSimpleLinearExpr</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *Val, <a class="el" href="classunsigned.html">unsigned</a> &amp;Scale, uint64_t &amp;Offset)</td></tr>
+<tr class="memitem:ae73936651ef69e57d0c206f9417fcf16"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#ae73936651ef69e57d0c206f9417fcf16">decomposeSimpleLinearExpr</a> (Value *Val, unsigned &amp;Scale, uint64_t &amp;Offset)</td></tr>
 <tr class="memdesc:ae73936651ef69e57d0c206f9417fcf16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyze 'Val', seeing if it is a simple linear expression.  <a href="InstCombineCasts_8cpp.html#ae73936651ef69e57d0c206f9417fcf16">More...</a><br /></td></tr>
 <tr class="separator:ae73936651ef69e57d0c206f9417fcf16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cad0d942fb5f64b2ec2ce7e7277c492"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a9cad0d942fb5f64b2ec2ce7e7277c492">canAlwaysEvaluateInType</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1Type.html">Type</a> *Ty)</td></tr>
+<tr class="memitem:a9cad0d942fb5f64b2ec2ce7e7277c492"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a9cad0d942fb5f64b2ec2ce7e7277c492">canAlwaysEvaluateInType</a> (Value *V, Type *Ty)</td></tr>
 <tr class="memdesc:a9cad0d942fb5f64b2ec2ce7e7277c492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constants and extensions/truncates from the destination type are always free to be evaluated in that type.  <a href="InstCombineCasts_8cpp.html#a9cad0d942fb5f64b2ec2ce7e7277c492">More...</a><br /></td></tr>
 <tr class="separator:a9cad0d942fb5f64b2ec2ce7e7277c492"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa977254b83ff622718b40f1aa81271f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#aaa977254b83ff622718b40f1aa81271f">canNotEvaluateInType</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1Type.html">Type</a> *Ty)</td></tr>
+<tr class="memitem:aaa977254b83ff622718b40f1aa81271f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#aaa977254b83ff622718b40f1aa81271f">canNotEvaluateInType</a> (Value *V, Type *Ty)</td></tr>
 <tr class="memdesc:aaa977254b83ff622718b40f1aa81271f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter out values that we can not evaluate in the destination type for free.  <a href="InstCombineCasts_8cpp.html#aaa977254b83ff622718b40f1aa81271f">More...</a><br /></td></tr>
 <tr class="separator:aaa977254b83ff622718b40f1aa81271f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee9906a54d656caf0f851a3eb8aab084"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#aee9906a54d656caf0f851a3eb8aab084">canEvaluateTruncated</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1Type.html">Type</a> *Ty, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *CxtI)</td></tr>
+<tr class="memitem:aee9906a54d656caf0f851a3eb8aab084"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#aee9906a54d656caf0f851a3eb8aab084">canEvaluateTruncated</a> (Value *V, Type *Ty, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC, Instruction *CxtI)</td></tr>
 <tr class="memdesc:aee9906a54d656caf0f851a3eb8aab084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if we can evaluate the specified expression tree as type Ty instead of its larger type, and arrive with the same value.  <a href="InstCombineCasts_8cpp.html#aee9906a54d656caf0f851a3eb8aab084">More...</a><br /></td></tr>
 <tr class="separator:aee9906a54d656caf0f851a3eb8aab084"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a1f22ea3362b987efd493d07b449e1c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a5a1f22ea3362b987efd493d07b449e1c">foldVecTruncToExtElt</a> (<a class="el" href="classllvm_1_1TruncInst.html">TruncInst</a> &amp;Trunc, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
+<tr class="memitem:a5a1f22ea3362b987efd493d07b449e1c"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a5a1f22ea3362b987efd493d07b449e1c">foldVecTruncToExtElt</a> (TruncInst &amp;Trunc, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
 <tr class="memdesc:a5a1f22ea3362b987efd493d07b449e1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a vector that is bitcast to an integer, optionally logically right-shifted, and truncated, convert it to an extractelement.  <a href="InstCombineCasts_8cpp.html#a5a1f22ea3362b987efd493d07b449e1c">More...</a><br /></td></tr>
 <tr class="separator:a5a1f22ea3362b987efd493d07b449e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40c4c6660c6d108c0202fd73c28f2834"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a40c4c6660c6d108c0202fd73c28f2834">shrinkSplatShuffle</a> (<a class="el" href="classllvm_1_1TruncInst.html">TruncInst</a> &amp;Trunc, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a40c4c6660c6d108c0202fd73c28f2834"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a40c4c6660c6d108c0202fd73c28f2834">shrinkSplatShuffle</a> (TruncInst &amp;Trunc, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="memdesc:a40c4c6660c6d108c0202fd73c28f2834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to narrow the width of a splat shuffle.  <a href="InstCombineCasts_8cpp.html#a40c4c6660c6d108c0202fd73c28f2834">More...</a><br /></td></tr>
 <tr class="separator:a40c4c6660c6d108c0202fd73c28f2834"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77aac577d89abc9411adfdf918d7d539"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a77aac577d89abc9411adfdf918d7d539">shrinkInsertElt</a> (<a class="el" href="classllvm_1_1CastInst.html">CastInst</a> &amp;Trunc, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a77aac577d89abc9411adfdf918d7d539"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a77aac577d89abc9411adfdf918d7d539">shrinkInsertElt</a> (CastInst &amp;Trunc, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="memdesc:a77aac577d89abc9411adfdf918d7d539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to narrow the width of an insert element.  <a href="InstCombineCasts_8cpp.html#a77aac577d89abc9411adfdf918d7d539">More...</a><br /></td></tr>
 <tr class="separator:a77aac577d89abc9411adfdf918d7d539"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6754bec433359aaef175f5377c6d829"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#ac6754bec433359aaef175f5377c6d829">canEvaluateZExtd</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1Type.html">Type</a> *Ty, <a class="el" href="classunsigned.html">unsigned</a> &amp;BitsToClear, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *CxtI)</td></tr>
+<tr class="memitem:ac6754bec433359aaef175f5377c6d829"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#ac6754bec433359aaef175f5377c6d829">canEvaluateZExtd</a> (Value *V, Type *Ty, unsigned &amp;BitsToClear, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC, Instruction *CxtI)</td></tr>
 <tr class="memdesc:ac6754bec433359aaef175f5377c6d829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if the specified value can be computed in the specified wider type and produce the same low bits.  <a href="InstCombineCasts_8cpp.html#ac6754bec433359aaef175f5377c6d829">More...</a><br /></td></tr>
 <tr class="separator:ac6754bec433359aaef175f5377c6d829"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16e1399c07ad0fea0b83eaea29c1402e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a16e1399c07ad0fea0b83eaea29c1402e">canEvaluateSExtd</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1Type.html">Type</a> *Ty)</td></tr>
+<tr class="memitem:a16e1399c07ad0fea0b83eaea29c1402e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a16e1399c07ad0fea0b83eaea29c1402e">canEvaluateSExtd</a> (Value *V, Type *Ty)</td></tr>
 <tr class="memdesc:a16e1399c07ad0fea0b83eaea29c1402e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if we can take the specified value and return it as type Ty without inserting any new casts and without changing the value of the common low bits.  <a href="InstCombineCasts_8cpp.html#a16e1399c07ad0fea0b83eaea29c1402e">More...</a><br /></td></tr>
 <tr class="separator:a16e1399c07ad0fea0b83eaea29c1402e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68d58b6cb8f56c90aa445f4857a8d430"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a68d58b6cb8f56c90aa445f4857a8d430">fitsInFPType</a> (<a class="el" href="classllvm_1_1ConstantFP.html">ConstantFP</a> *CFP, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1fltSemantics.html">fltSemantics</a> &amp;Sem)</td></tr>
+<tr class="memitem:a68d58b6cb8f56c90aa445f4857a8d430"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a68d58b6cb8f56c90aa445f4857a8d430">fitsInFPType</a> (ConstantFP *CFP, const <a class="el" href="structllvm_1_1fltSemantics.html">fltSemantics</a> &amp;Sem)</td></tr>
 <tr class="memdesc:a68d58b6cb8f56c90aa445f4857a8d430"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a Constant* for the specified floating-point constant if it fits in the specified FP type without changing its value.  <a href="InstCombineCasts_8cpp.html#a68d58b6cb8f56c90aa445f4857a8d430">More...</a><br /></td></tr>
 <tr class="separator:a68d58b6cb8f56c90aa445f4857a8d430"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa482becddf9cf916dc4ec68fd7a5a679"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#aa482becddf9cf916dc4ec68fd7a5a679">shrinkFPConstant</a> (<a class="el" href="classllvm_1_1ConstantFP.html">ConstantFP</a> *CFP)</td></tr>
+<tr class="memitem:aa482becddf9cf916dc4ec68fd7a5a679"><td class="memItemLeft" align="right" valign="top">static Type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#aa482becddf9cf916dc4ec68fd7a5a679">shrinkFPConstant</a> (ConstantFP *CFP)</td></tr>
 <tr class="separator:aa482becddf9cf916dc4ec68fd7a5a679"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdecfd6018030775941d22e75392cb0c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#acdecfd6018030775941d22e75392cb0c">shrinkFPConstantVector</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
+<tr class="memitem:acdecfd6018030775941d22e75392cb0c"><td class="memItemLeft" align="right" valign="top">static Type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#acdecfd6018030775941d22e75392cb0c">shrinkFPConstantVector</a> (Value *V)</td></tr>
 <tr class="separator:acdecfd6018030775941d22e75392cb0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab73ec0e6b4611633546e74ee96cb9e13"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#ab73ec0e6b4611633546e74ee96cb9e13">getMinimumFPType</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
+<tr class="memitem:ab73ec0e6b4611633546e74ee96cb9e13"><td class="memItemLeft" align="right" valign="top">static Type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#ab73ec0e6b4611633546e74ee96cb9e13">getMinimumFPType</a> (Value *V)</td></tr>
 <tr class="memdesc:ab73ec0e6b4611633546e74ee96cb9e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the minimum FP type we can safely truncate to.  <a href="InstCombineCasts_8cpp.html#ab73ec0e6b4611633546e74ee96cb9e13">More...</a><br /></td></tr>
 <tr class="separator:ab73ec0e6b4611633546e74ee96cb9e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e633fc3befdf1461f8027d32da42b9e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a8e633fc3befdf1461f8027d32da42b9e">optimizeVectorResize</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *InVal, <a class="el" href="classVectorType.html">VectorType</a> *DestTy, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
+<tr class="memitem:a8e633fc3befdf1461f8027d32da42b9e"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a8e633fc3befdf1461f8027d32da42b9e">optimizeVectorResize</a> (Value *InVal, VectorType *DestTy, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
 <tr class="memdesc:a8e633fc3befdf1461f8027d32da42b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This input value (which is known to have vector type) is being zero extended or truncated to the specified vector type.  <a href="InstCombineCasts_8cpp.html#a8e633fc3befdf1461f8027d32da42b9e">More...</a><br /></td></tr>
 <tr class="separator:a8e633fc3befdf1461f8027d32da42b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8efab72b40fc7836709221d3e97139c6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a8efab72b40fc7836709221d3e97139c6">isMultipleOfTypeSize</a> (<a class="el" href="classunsigned.html">unsigned</a> <a class="el" href="classllvm_1_1Value.html">Value</a>, <a class="el" href="classllvm_1_1Type.html">Type</a> *Ty)</td></tr>
+<tr class="memitem:a8efab72b40fc7836709221d3e97139c6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a8efab72b40fc7836709221d3e97139c6">isMultipleOfTypeSize</a> (unsigned Value, Type *Ty)</td></tr>
 <tr class="separator:a8efab72b40fc7836709221d3e97139c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8947451998676abcce5452a1a8f5848"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#ac8947451998676abcce5452a1a8f5848">getTypeSizeIndex</a> (<a class="el" href="classunsigned.html">unsigned</a> <a class="el" href="classllvm_1_1Value.html">Value</a>, <a class="el" href="classllvm_1_1Type.html">Type</a> *Ty)</td></tr>
+<tr class="memitem:ac8947451998676abcce5452a1a8f5848"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#ac8947451998676abcce5452a1a8f5848">getTypeSizeIndex</a> (unsigned Value, Type *Ty)</td></tr>
 <tr class="separator:ac8947451998676abcce5452a1a8f5848"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01395be91e03a1a4c5fd713885d8327f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a01395be91e03a1a4c5fd713885d8327f">collectInsertionElements</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classunsigned.html">unsigned</a> Shift, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;Elements, <a class="el" href="classllvm_1_1Type.html">Type</a> *VecEltTy, <a class="el" href="classbool.html">bool</a> <a class="el" href="DAGCombiner_8cpp.html#ab48f0bb5add874f342367b24a321f3a9">isBigEndian</a>)</td></tr>
+<tr class="memitem:a01395be91e03a1a4c5fd713885d8327f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a01395be91e03a1a4c5fd713885d8327f">collectInsertionElements</a> (Value *V, unsigned Shift, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;Elements, Type *VecEltTy, bool isBigEndian)</td></tr>
 <tr class="memdesc:a01395be91e03a1a4c5fd713885d8327f"><td class="mdescLeft">&#160;</td><td class="mdescRight">V is a value which is inserted into a vector of VecEltTy.  <a href="InstCombineCasts_8cpp.html#a01395be91e03a1a4c5fd713885d8327f">More...</a><br /></td></tr>
 <tr class="separator:a01395be91e03a1a4c5fd713885d8327f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0993b7357336ed535315176010a01767"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a0993b7357336ed535315176010a01767">optimizeIntegerToVectorInsertions</a> (<a class="el" href="classllvm_1_1BitCastInst.html">BitCastInst</a> &amp;CI, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
+<tr class="memitem:a0993b7357336ed535315176010a01767"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a0993b7357336ed535315176010a01767">optimizeIntegerToVectorInsertions</a> (BitCastInst &amp;CI, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
 <tr class="memdesc:a0993b7357336ed535315176010a01767"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the input is an 'or' instruction, we may be doing shifts and ors to assemble the elements of the vector manually.  <a href="InstCombineCasts_8cpp.html#a0993b7357336ed535315176010a01767">More...</a><br /></td></tr>
 <tr class="separator:a0993b7357336ed535315176010a01767"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a863ecf1aa1522a3397e2e82a87fcc77b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a863ecf1aa1522a3397e2e82a87fcc77b">canonicalizeBitCastExtElt</a> (<a class="el" href="classllvm_1_1BitCastInst.html">BitCastInst</a> &amp;BitCast, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
+<tr class="memitem:a863ecf1aa1522a3397e2e82a87fcc77b"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a863ecf1aa1522a3397e2e82a87fcc77b">canonicalizeBitCastExtElt</a> (BitCastInst &amp;BitCast, <a class="el" href="classllvm_1_1InstCombiner.html">InstCombiner</a> &amp;IC)</td></tr>
 <tr class="memdesc:a863ecf1aa1522a3397e2e82a87fcc77b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Canonicalize scalar bitcasts of extracted elements into a bitcast of the vector followed by extract element.  <a href="InstCombineCasts_8cpp.html#a863ecf1aa1522a3397e2e82a87fcc77b">More...</a><br /></td></tr>
 <tr class="separator:a863ecf1aa1522a3397e2e82a87fcc77b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6556e45ee27ad333bf33eda6b1f04b8a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a6556e45ee27ad333bf33eda6b1f04b8a">foldBitCastBitwiseLogic</a> (<a class="el" href="classllvm_1_1BitCastInst.html">BitCastInst</a> &amp;BitCast, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a6556e45ee27ad333bf33eda6b1f04b8a"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a6556e45ee27ad333bf33eda6b1f04b8a">foldBitCastBitwiseLogic</a> (BitCastInst &amp;BitCast, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="memdesc:a6556e45ee27ad333bf33eda6b1f04b8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the type of a bitwise logic operation if we can eliminate a bitcast.  <a href="InstCombineCasts_8cpp.html#a6556e45ee27ad333bf33eda6b1f04b8a">More...</a><br /></td></tr>
 <tr class="separator:a6556e45ee27ad333bf33eda6b1f04b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d0fa3868fb321fcd4b5d632028db897"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a5d0fa3868fb321fcd4b5d632028db897">foldBitCastSelect</a> (<a class="el" href="classllvm_1_1BitCastInst.html">BitCastInst</a> &amp;BitCast, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
+<tr class="memitem:a5d0fa3868fb321fcd4b5d632028db897"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a5d0fa3868fb321fcd4b5d632028db897">foldBitCastSelect</a> (BitCastInst &amp;BitCast, <a class="el" href="classllvm_1_1InstCombiner.html#a19c4df37b96c2a73991556b696924584">InstCombiner::BuilderTy</a> &amp;Builder)</td></tr>
 <tr class="memdesc:a5d0fa3868fb321fcd4b5d632028db897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the type of a select if we can eliminate a bitcast.  <a href="InstCombineCasts_8cpp.html#a5d0fa3868fb321fcd4b5d632028db897">More...</a><br /></td></tr>
 <tr class="separator:a5d0fa3868fb321fcd4b5d632028db897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24b18f2c77f69e54841c51bb3d31cad2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a24b18f2c77f69e54841c51bb3d31cad2">hasStoreUsersOnly</a> (<a class="el" href="classllvm_1_1CastInst.html">CastInst</a> &amp;CI)</td></tr>
+<tr class="memitem:a24b18f2c77f69e54841c51bb3d31cad2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InstCombineCasts_8cpp.html#a24b18f2c77f69e54841c51bb3d31cad2">hasStoreUsersOnly</a> (CastInst &amp;CI)</td></tr>
 <tr class="memdesc:a24b18f2c77f69e54841c51bb3d31cad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if all users of CI are StoreInsts.  <a href="InstCombineCasts_8cpp.html#a24b18f2c77f69e54841c51bb3d31cad2">More...</a><br /></td></tr>
 <tr class="separator:a24b18f2c77f69e54841c51bb3d31cad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -170,15 +207,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> canAlwaysEvaluateInType </td>
+          <td class="memname">static bool canAlwaysEvaluateInType </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
+          <td class="paramtype">Type *&#160;</td>
           <td class="paramname"><em>Ty</em>&#160;</td>
         </tr>
         <tr>
@@ -199,7 +236,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l00305">305</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="PatternMatch_8h_source.html#l01209">llvm::PatternMatch::m_Trunc()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l01228">llvm::PatternMatch::m_ZExtOrSExt()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, and <a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>.</p>
+<p class="reference">References <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l01312">canEvaluateSExtd()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00341">canEvaluateTruncated()</a>, and <a class="el" href="InstCombineCasts_8cpp_source.html#l00982">canEvaluateZExtd()</a>.</p>
 
@@ -215,15 +252,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> canEvaluateSExtd </td>
+          <td class="memname">static bool canEvaluateSExtd </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
+          <td class="paramtype">Type *&#160;</td>
           <td class="paramname"><em>Ty</em>&#160;</td>
         </tr>
         <tr>
@@ -245,7 +282,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l01312">1312</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00305">canAlwaysEvaluateInType()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l01312">canEvaluateSExtd()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00318">canNotEvaluateInType()</a>, <a class="el" href="classllvm_1_1Type.html#a766db71cb4bfd7e802ac613ed98fc6b5">llvm::Type::getScalarSizeInBits()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Instructions_8h_source.html#l02624">llvm::PHINode::incoming_values()</a>, <a class="el" href="MCExpr_8h_source.html#l00443">llvm::MCBinaryExpr::Mul</a>, <a class="el" href="MCInstrDesc_8h_source.html#l00132">llvm::MCID::Select</a>, <a class="el" href="CallingConvLower_8h_source.html#l00036">llvm::CCValAssign::SExt</a>, <a class="el" href="Instructions_8h_source.html#l00711">llvm::AtomicRMWInst::Sub</a>, <a class="el" href="Instructions_8h_source.html#l00719">llvm::AtomicRMWInst::Xor</a>, and <a class="el" href="CallingConvLower_8h_source.html#l00037">llvm::CCValAssign::ZExt</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00305">canAlwaysEvaluateInType()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l01312">canEvaluateSExtd()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00318">canNotEvaluateInType()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l01312">canEvaluateSExtd()</a>, and <a class="el" href="InstCombineCasts_8cpp_source.html#l01360">llvm::InstCombiner::visitSExt()</a>.</p>
 
@@ -261,15 +298,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> canEvaluateTruncated </td>
+          <td class="memname">static bool canEvaluateTruncated </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
+          <td class="paramtype">Type *&#160;</td>
           <td class="paramname"><em>Ty</em>, </td>
         </tr>
         <tr>
@@ -281,7 +318,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>CxtI</em>&#160;</td>
         </tr>
         <tr>
@@ -304,7 +341,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l00341">341</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MCExpr_8h_source.html#l00447">llvm::MCBinaryExpr::AShr</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00305">canAlwaysEvaluateInType()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00341">canEvaluateTruncated()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00318">canNotEvaluateInType()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00683">llvm::InstCombiner::ComputeNumSignBits()</a>, <a class="el" href="APInt_8h_source.html#l00623">llvm::APInt::getBitsSetFrom()</a>, <a class="el" href="APInt_8h_source.html#l00481">llvm::APInt::getLimitedValue()</a>, <a class="el" href="classllvm_1_1Type.html#a766db71cb4bfd7e802ac613ed98fc6b5">llvm::Type::getScalarSizeInBits()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Instructions_8h_source.html#l02624">llvm::PHINode::incoming_values()</a>, <a class="el" href="MCExpr_8h_source.html#l00448">llvm::MCBinaryExpr::LShr</a>, <a class="el" href="PatternMatch_8h_source.html#l00175">llvm::PatternMatch::m_APInt()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00678">llvm::InstCombiner::MaskedValueIsZero()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, <a class="el" href="MCExpr_8h_source.html#l00443">llvm::MCBinaryExpr::Mul</a>, <a class="el" href="MCInstrDesc_8h_source.html#l00132">llvm::MCID::Select</a>, <a class="el" href="CallingConvLower_8h_source.html#l00036">llvm::CCValAssign::SExt</a>, <a class="el" href="MCExpr_8h_source.html#l00446">llvm::MCBinaryExpr::Shl</a>, <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>, <a class="el" href="Instructions_8h_source.html#l00711">llvm::AtomicRMWInst::Sub</a>, <a class="el" href="Instructions_8h_source.html#l00719">llvm::AtomicRMWInst::Xor</a>, and <a class="el" href="CallingConvLower_8h_source.html#l00037">llvm::CCValAssign::ZExt</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00305">canAlwaysEvaluateInType()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00341">canEvaluateTruncated()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00318">canNotEvaluateInType()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00683">llvm::InstCombiner::ComputeNumSignBits()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="InstCombineInternal_8h_source.html#l00678">llvm::InstCombiner::MaskedValueIsZero()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l00341">canEvaluateTruncated()</a>, and <a class="el" href="InstCombineCasts_8cpp_source.html#l00684">llvm::InstCombiner::visitTrunc()</a>.</p>
 
@@ -320,21 +357,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> canEvaluateZExtd </td>
+          <td class="memname">static bool canEvaluateZExtd </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
+          <td class="paramtype">Type *&#160;</td>
           <td class="paramname"><em>Ty</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a> &amp;&#160;</td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
           <td class="paramname"><em>BitsToClear</em>, </td>
         </tr>
         <tr>
@@ -346,7 +383,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>CxtI</em>&#160;</td>
         </tr>
         <tr>
@@ -371,7 +408,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l00982">982</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InstCombineCasts_8cpp_source.html#l00305">canAlwaysEvaluateInType()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00982">canEvaluateZExtd()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00318">canNotEvaluateInType()</a>, <a class="el" href="APInt_8h_source.html#l00635">llvm::APInt::getHighBitsSet()</a>, <a class="el" href="Instructions_8h_source.html#l02634">llvm::PHINode::getIncomingValue()</a>, <a class="el" href="Instructions_8h_source.html#l02630">llvm::PHINode::getNumIncomingValues()</a>, <a class="el" href="classllvm_1_1Type.html#a766db71cb4bfd7e802ac613ed98fc6b5">llvm::Type::getScalarSizeInBits()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="APInt_8h_source.html#l01562">llvm::APInt::getZExtValue()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="MCExpr_8h_source.html#l00448">llvm::MCBinaryExpr::LShr</a>, <a class="el" href="PatternMatch_8h_source.html#l00175">llvm::PatternMatch::m_APInt()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00678">llvm::InstCombiner::MaskedValueIsZero()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, <a class="el" href="MCExpr_8h_source.html#l00443">llvm::MCBinaryExpr::Mul</a>, <a class="el" href="MCInstrDesc_8h_source.html#l00132">llvm::MCID::Select</a>, <a class="el" href="CallingConvLower_8h_source.html#l00036">llvm::CCValAssign::SExt</a>, <a class="el" href="MCExpr_8h_source.html#l00446">llvm::MCBinaryExpr::Shl</a>, <a class="el" href="Instructions_8h_source.html#l00711">llvm::AtomicRMWInst::Sub</a>, <a class="el" href="Instructions_8h_source.html#l00719">llvm::AtomicRMWInst::Xor</a>, and <a class="el" href="CallingConvLower_8h_source.html#l00037">llvm::CCValAssign::ZExt</a>.</p>
+<p class="reference">References <a class="el" href="InstCombineCasts_8cpp_source.html#l00305">canAlwaysEvaluateInType()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00982">canEvaluateZExtd()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00318">canNotEvaluateInType()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="InstCombineInternal_8h_source.html#l00678">llvm::InstCombiner::MaskedValueIsZero()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l00982">canEvaluateZExtd()</a>, and <a class="el" href="InstCombineCasts_8cpp_source.html#l01088">llvm::InstCombiner::visitZExt()</a>.</p>
 
@@ -387,15 +424,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> canNotEvaluateInType </td>
+          <td class="memname">static bool canNotEvaluateInType </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
+          <td class="paramtype">Type *&#160;</td>
           <td class="paramname"><em>Ty</em>&#160;</td>
         </tr>
         <tr>
@@ -416,7 +453,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l00318">318</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, and <a class="el" href="Value_8h_source.html#l00412">llvm::Value::hasOneUse()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l01312">canEvaluateSExtd()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l00341">canEvaluateTruncated()</a>, and <a class="el" href="InstCombineCasts_8cpp_source.html#l00982">canEvaluateZExtd()</a>.</p>
 
@@ -432,9 +469,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * canonicalizeBitCastExtElt </td>
+          <td class="memname">static Instruction * canonicalizeBitCastExtElt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BitCastInst.html">BitCastInst</a> &amp;&#160;</td>
+          <td class="paramtype">BitCastInst &amp;&#160;</td>
           <td class="paramname"><em>BitCast</em>, </td>
         </tr>
         <tr>
@@ -461,7 +498,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l02035">2035</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>, <a class="el" href="Instructions_8h_source.html#l01853">llvm::ExtractElementInst::Create()</a>, <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="IntervalMap_8h_source.html#l00526">llvm::IntervalMapImpl::NodeRef::get()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="Type_8cpp_source.html#l00623">llvm::VectorType::isValidElementType()</a>.</p>
+<p class="reference">References <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l02289">llvm::InstCombiner::visitBitCast()</a>.</p>
 
@@ -477,33 +514,33 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> collectInsertionElements </td>
+          <td class="memname">static bool collectInsertionElements </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>Shift</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; Value * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Elements</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
+          <td class="paramtype">Type *&#160;</td>
           <td class="paramname"><em>VecEltTy</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>isBigEndian</em>&#160;</td>
         </tr>
         <tr>
@@ -525,7 +562,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l01897">1897</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l01897">collectInsertionElements()</a>, <a class="el" href="IntervalMap_8h_source.html#l00526">llvm::IntervalMapImpl::NodeRef::get()</a>, <a class="el" href="Constants_8cpp_source.html#l01782">llvm::ConstantExpr::getBitCast()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="Constants_8cpp_source.html#l02306">llvm::ConstantExpr::getLShr()</a>, <a class="el" href="classllvm_1_1Type.html#a9f7cc4a46dedf79fe4c99d60a2706949">llvm::Type::getPrimitiveSizeInBits()</a>, <a class="el" href="Constants_8cpp_source.html#l01646">llvm::ConstantExpr::getTrunc()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l01883">getTypeSizeIndex()</a>, <a class="el" href="Constants_8h_source.html#l00148">llvm::ConstantInt::getZExtValue()</a>, <a class="el" href="Value_8h_source.html#l00412">llvm::Value::hasOneUse()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="DAGCombiner_8cpp_source.html#l06448">isBigEndian()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l01879">isMultipleOfTypeSize()</a>, <a class="el" href="MCExpr_8h_source.html#l00446">llvm::MCBinaryExpr::Shl</a>, <a class="el" href="SmallVector_8h_source.html#l00052">llvm::SmallVectorBase::size()</a>, and <a class="el" href="CallingConvLower_8h_source.html#l00037">llvm::CCValAssign::ZExt</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l01897">collectInsertionElements()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l01883">getTypeSizeIndex()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="InstCombineCasts_8cpp_source.html#l01879">isMultipleOfTypeSize()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l01897">collectInsertionElements()</a>, and <a class="el" href="InstCombineCasts_8cpp_source.html#l02006">optimizeIntegerToVectorInsertions()</a>.</p>
 
@@ -541,15 +578,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * decomposeSimpleLinearExpr </td>
+          <td class="memname">static Value * decomposeSimpleLinearExpr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Val</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a> &amp;&#160;</td>
+          <td class="paramtype">unsigned &amp;&#160;</td>
           <td class="paramname"><em>Scale</em>, </td>
         </tr>
         <tr>
@@ -576,7 +613,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l00030">30</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InstCombineCasts_8cpp_source.html#l00030">decomposeSimpleLinearExpr()</a>, <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Operator_8h_source.html#l00095">llvm::OverflowingBinaryOperator::hasNoSignedWrap()</a>, <a class="el" href="Operator_8h_source.html#l00089">llvm::OverflowingBinaryOperator::hasNoUnsignedWrap()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="InstCombineCasts_8cpp_source.html#l00030">decomposeSimpleLinearExpr()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l00030">decomposeSimpleLinearExpr()</a>.</p>
 
@@ -592,15 +629,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> fitsInFPType </td>
+          <td class="memname">static bool fitsInFPType </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ConstantFP.html">ConstantFP</a> *&#160;</td>
+          <td class="paramtype">ConstantFP *&#160;</td>
           <td class="paramname"><em>CFP</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1fltSemantics.html">fltSemantics</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structllvm_1_1fltSemantics.html">fltSemantics</a> &amp;&#160;</td>
           <td class="paramname"><em>Sem</em>&#160;</td>
         </tr>
         <tr>
@@ -620,7 +657,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l01449">1449</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Constants_8h_source.html#l00302">llvm::ConstantFP::getValueAPF()</a>, and <a class="el" href="APFloat_8h_source.html#l00185">llvm::APFloatBase::rmNearestTiesToEven</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l01456">shrinkFPConstant()</a>.</p>
 
@@ -636,9 +673,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * foldBitCastBitwiseLogic </td>
+          <td class="memname">static Instruction * foldBitCastBitwiseLogic </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BitCastInst.html">BitCastInst</a> &amp;&#160;</td>
+          <td class="paramtype">BitCastInst &amp;&#160;</td>
           <td class="paramname"><em>BitCast</em>, </td>
         </tr>
         <tr>
@@ -664,7 +701,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l02056">2056</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="Instructions_8cpp_source.html#l02337">llvm::BinaryOperator::Create()</a>, <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="Constants_8cpp_source.html#l01782">llvm::ConstantExpr::getBitCast()</a>, <a class="el" href="InstrTypes_8h_source.html#l00402">llvm::BinaryOperator::getOpcode()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00175">llvm::Instruction::isBitwiseLogicOp()</a>, <a class="el" href="Type_8h_source.html#l00202">llvm::Type::isIntOrIntVectorTy()</a>, <a class="el" href="Type_8h_source.html#l00229">llvm::Type::isVectorTy()</a>, <a class="el" href="PatternMatch_8h_source.html#l00073">llvm::PatternMatch::m_BinOp()</a>, <a class="el" href="PatternMatch_8h_source.html#l01197">llvm::PatternMatch::m_BitCast()</a>, <a class="el" href="PatternMatch_8h_source.html#l00089">llvm::PatternMatch::m_Constant()</a>, <a class="el" href="PatternMatch_8h_source.html#l00061">llvm::PatternMatch::m_OneUse()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, and <a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>.</p>
+<p class="reference">References <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l02289">llvm::InstCombiner::visitBitCast()</a>.</p>
 
@@ -680,9 +717,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * foldBitCastSelect </td>
+          <td class="memname">static Instruction * foldBitCastSelect </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BitCastInst.html">BitCastInst</a> &amp;&#160;</td>
+          <td class="paramtype">BitCastInst &amp;&#160;</td>
           <td class="paramname"><em>BitCast</em>, </td>
         </tr>
         <tr>
@@ -708,7 +745,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l02102">2102</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Instructions_8h_source.html#l01740">llvm::SelectInst::Create()</a>, <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="classllvm_1_1Type.html#a59f8ff5f972666376282d626e8197d59">llvm::Type::getVectorNumElements()</a>, <a class="el" href="Type_8h_source.html#l00229">llvm::Type::isVectorTy()</a>, <a class="el" href="PatternMatch_8h_source.html#l01197">llvm::PatternMatch::m_BitCast()</a>, <a class="el" href="PatternMatch_8h_source.html#l00061">llvm::PatternMatch::m_OneUse()</a>, <a class="el" href="PatternMatch_8h_source.html#l01129">llvm::PatternMatch::m_Select()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, and <a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>.</p>
+<p class="reference">References <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l02289">llvm::InstCombiner::visitBitCast()</a>.</p>
 
@@ -724,9 +761,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * foldVecTruncToExtElt </td>
+          <td class="memname">static Instruction * foldVecTruncToExtElt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1TruncInst.html">TruncInst</a> &amp;&#160;</td>
+          <td class="paramtype">TruncInst &amp;&#160;</td>
           <td class="paramname"><em>Trunc</em>, </td>
         </tr>
         <tr>
@@ -753,7 +790,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l00456">456</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>, <a class="el" href="Instructions_8h_source.html#l01853">llvm::ExtractElementInst::Create()</a>, <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="IntervalMap_8h_source.html#l00526">llvm::IntervalMapImpl::NodeRef::get()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00301">llvm::InstCombiner::getDataLayout()</a>, <a class="el" href="IRBuilder_8h_source.html#l00343">llvm::IRBuilderBase::getInt32()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="classllvm_1_1Type.html#a9f7cc4a46dedf79fe4c99d60a2706949">llvm::Type::getPrimitiveSizeInBits()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Constants_8h_source.html#l00148">llvm::ConstantInt::getZExtValue()</a>, <a class="el" href="Value_8h_source.html#l00412">llvm::Value::hasOneUse()</a>, <a class="el" href="DataLayout_8h_source.html#l00233">llvm::DataLayout::isBigEndian()</a>, <a class="el" href="PatternMatch_8h_source.html#l01197">llvm::PatternMatch::m_BitCast()</a>, <a class="el" href="PatternMatch_8h_source.html#l00123">llvm::PatternMatch::m_CombineOr()</a>, <a class="el" href="PatternMatch_8h_source.html#l00081">llvm::PatternMatch::m_ConstantInt()</a>, <a class="el" href="PatternMatch_8h_source.html#l00820">llvm::PatternMatch::m_LShr()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, and <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>.</p>
+<p class="reference">References <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>, and <a class="el" href="InstCombineInternal_8h_source.html#l00301">llvm::InstCombiner::getDataLayout()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l00684">llvm::InstCombiner::visitTrunc()</a>.</p>
 
@@ -769,9 +806,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Type.html">Type</a> * getMinimumFPType </td>
+          <td class="memname">static Type * getMinimumFPType </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
           <td></td>
         </tr>
@@ -787,7 +824,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l01504">1504</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l01456">shrinkFPConstant()</a>, and <a class="el" href="InstCombineCasts_8cpp_source.html#l01476">shrinkFPConstantVector()</a>.</p>
+<p class="reference">References <a class="el" href="InstCombineCasts_8cpp_source.html#l01456">shrinkFPConstant()</a>, and <a class="el" href="InstCombineCasts_8cpp_source.html#l01476">shrinkFPConstantVector()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l01522">llvm::InstCombiner::visitFPTrunc()</a>.</p>
 
@@ -803,15 +840,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classunsigned.html">unsigned</a> getTypeSizeIndex </td>
+          <td class="memname">static unsigned getTypeSizeIndex </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>Value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
+          <td class="paramtype">Type *&#160;</td>
           <td class="paramname"><em>Ty</em>&#160;</td>
         </tr>
         <tr>
@@ -829,8 +866,6 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l01883">1883</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="classllvm_1_1Type.html#a9f7cc4a46dedf79fe4c99d60a2706949">llvm::Type::getPrimitiveSizeInBits()</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l01897">collectInsertionElements()</a>.</p>
 
 </div>
@@ -845,9 +880,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> hasStoreUsersOnly </td>
+          <td class="memname">static bool hasStoreUsersOnly </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CastInst.html">CastInst</a> &amp;&#160;</td>
+          <td class="paramtype">CastInst &amp;&#160;</td>
           <td class="paramname"><em>CI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -863,8 +898,6 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l02146">2146</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
-
 </div>
 </div>
 <a id="a8efab72b40fc7836709221d3e97139c6" name="a8efab72b40fc7836709221d3e97139c6"></a>
@@ -877,15 +910,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isMultipleOfTypeSize </td>
+          <td class="memname">static bool isMultipleOfTypeSize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>Value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Type.html">Type</a> *&#160;</td>
+          <td class="paramtype">Type *&#160;</td>
           <td class="paramname"><em>Ty</em>&#160;</td>
         </tr>
         <tr>
@@ -903,8 +936,6 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l01879">1879</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="classllvm_1_1Type.html#a9f7cc4a46dedf79fe4c99d60a2706949">llvm::Type::getPrimitiveSizeInBits()</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l01897">collectInsertionElements()</a>.</p>
 
 </div>
@@ -919,9 +950,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * optimizeIntegerToVectorInsertions </td>
+          <td class="memname">static Value * optimizeIntegerToVectorInsertions </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BitCastInst.html">BitCastInst</a> &amp;&#160;</td>
+          <td class="paramtype">BitCastInst &amp;&#160;</td>
           <td class="paramname"><em>CI</em>, </td>
         </tr>
         <tr>
@@ -950,7 +981,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l02006">2006</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l01897">collectInsertionElements()</a>, <a class="el" href="IRBuilder_8h_source.html#l02276">llvm::IRBuilder&lt; T, Inserter &gt;::CreateInsertElement()</a>, <a class="el" href="InstCombineInternal_8h_source.html#l00301">llvm::InstCombiner::getDataLayout()</a>, <a class="el" href="IRBuilder_8h_source.html#l00343">llvm::IRBuilderBase::getInt32()</a>, <a class="el" href="Constants_8cpp_source.html#l00274">llvm::Constant::getNullValue()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="DataLayout_8h_source.html#l00233">llvm::DataLayout::isBigEndian()</a>, and <a class="el" href="SmallVector_8h_source.html#l00052">llvm::SmallVectorBase::size()</a>.</p>
+<p class="reference">References <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>, <a class="el" href="InstCombineCasts_8cpp_source.html#l01897">collectInsertionElements()</a>, and <a class="el" href="InstCombineInternal_8h_source.html#l00301">llvm::InstCombiner::getDataLayout()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l02289">llvm::InstCombiner::visitBitCast()</a>.</p>
 
@@ -966,15 +997,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * optimizeVectorResize </td>
+          <td class="memname">static Instruction * optimizeVectorResize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>InVal</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classVectorType.html">VectorType</a> *&#160;</td>
+          <td class="paramtype">VectorType *&#160;</td>
           <td class="paramname"><em>DestTy</em>, </td>
         </tr>
         <tr>
@@ -1002,7 +1033,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l01827">1827</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>, <a class="el" href="IRBuilder_8h_source.html#l01951">llvm::IRBuilder&lt; T, Inserter &gt;::CreateBitCast()</a>, <a class="el" href="IntervalMap_8h_source.html#l00526">llvm::IntervalMapImpl::NodeRef::get()</a>, <a class="el" href="Constants_8cpp_source.html#l00274">llvm::Constant::getNullValue()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>.</p>
+<p class="reference">References <a class="el" href="InstCombineInternal_8h_source.html#l00257">llvm::InstCombiner::Builder</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l02289">llvm::InstCombiner::visitBitCast()</a>.</p>
 
@@ -1018,9 +1049,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Type.html">Type</a> * shrinkFPConstant </td>
+          <td class="memname">static Type * shrinkFPConstant </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ConstantFP.html">ConstantFP</a> *&#160;</td>
+          <td class="paramtype">ConstantFP *&#160;</td>
           <td class="paramname"><em>CFP</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1034,7 +1065,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l01456">1456</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InstCombineCasts_8cpp_source.html#l01449">fitsInFPType()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="IRBuilder_8h_source.html#l00411">llvm::IRBuilderBase::getDoubleTy()</a>, <a class="el" href="IRBuilder_8h_source.html#l00406">llvm::IRBuilderBase::getFloatTy()</a>, <a class="el" href="IRBuilder_8h_source.html#l00401">llvm::IRBuilderBase::getHalfTy()</a>, <a class="el" href="classllvm_1_1Type.html#ae562115097b44479431677bf8992845c">llvm::Type::getPPC_FP128Ty()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="APFloat_8cpp_source.html#l00158">llvm::APFloatBase::IEEEdouble()</a>, <a class="el" href="APFloat_8cpp_source.html#l00152">llvm::APFloatBase::IEEEhalf()</a>, <a class="el" href="APFloat_8cpp_source.html#l00155">llvm::APFloatBase::IEEEsingle()</a>, and <a class="el" href="Type_8h_source.html#l00149">llvm::Type::isDoubleTy()</a>.</p>
+<p class="reference">References <a class="el" href="InstCombineCasts_8cpp_source.html#l01449">fitsInFPType()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l01504">getMinimumFPType()</a>, and <a class="el" href="InstCombineCasts_8cpp_source.html#l01476">shrinkFPConstantVector()</a>.</p>
 
@@ -1050,9 +1081,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Type.html">Type</a> * shrinkFPConstantVector </td>
+          <td class="memname">static Type * shrinkFPConstantVector </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1066,7 +1097,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l01476">1476</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="IntervalMap_8h_source.html#l00526">llvm::IntervalMapImpl::NodeRef::get()</a>, <a class="el" href="classllvm_1_1Type.html#a961d804ef0562711fd89db5f8e4a2a69">llvm::Type::getFPMantissaWidth()</a>, <a class="el" href="classllvm_1_1Type.html#a59f8ff5f972666376282d626e8197d59">llvm::Type::getVectorNumElements()</a>, and <a class="el" href="InstCombineCasts_8cpp_source.html#l01456">shrinkFPConstant()</a>.</p>
+<p class="reference">References <a class="el" href="InstCombineCasts_8cpp_source.html#l01456">shrinkFPConstant()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l01504">getMinimumFPType()</a>.</p>
 
@@ -1082,9 +1113,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * shrinkInsertElt </td>
+          <td class="memname">static Instruction * shrinkInsertElt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CastInst.html">CastInst</a> &amp;&#160;</td>
+          <td class="paramtype">CastInst &amp;&#160;</td>
           <td class="paramname"><em>Trunc</em>, </td>
         </tr>
         <tr>
@@ -1111,7 +1142,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l00657">657</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="Instructions_8h_source.html#l01918">llvm::InsertElementInst::Create()</a>, <a class="el" href="IRBuilder_8h_source.html#l01988">llvm::IRBuilder&lt; T, Inserter &gt;::CreateCast()</a>, <a class="el" href="IntervalMap_8h_source.html#l00526">llvm::IntervalMapImpl::NodeRef::get()</a>, <a class="el" href="InstrTypes_8h_source.html#l00692">llvm::CastInst::getOpcode()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Type_8h_source.html#l00303">llvm::Type::getScalarType()</a>, and <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l01522">llvm::InstCombiner::visitFPTrunc()</a>, and <a class="el" href="InstCombineCasts_8cpp_source.html#l00684">llvm::InstCombiner::visitTrunc()</a>.</p>
 
@@ -1127,9 +1158,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * shrinkSplatShuffle </td>
+          <td class="memname">static Instruction * shrinkSplatShuffle </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1TruncInst.html">TruncInst</a> &amp;&#160;</td>
+          <td class="paramtype">TruncInst &amp;&#160;</td>
           <td class="paramname"><em>Trunc</em>, </td>
         </tr>
         <tr>
@@ -1156,8 +1187,6 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InstCombineCasts_8cpp_source.html#l00637">637</a> of file <a class="el" href="InstCombineCasts_8cpp_source.html">InstCombineCasts.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="IRBuilder_8h_source.html#l01874">llvm::IRBuilder&lt; T, Inserter &gt;::CreateTrunc()</a>, <a class="el" href="IntervalMap_8h_source.html#l00526">llvm::IntervalMapImpl::NodeRef::get()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, and <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="InstCombineCasts_8cpp_source.html#l00684">llvm::InstCombiner::visitTrunc()</a>.</p>
 
 </div>
@@ -1165,7 +1194,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

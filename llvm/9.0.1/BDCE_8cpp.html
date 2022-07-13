@@ -57,23 +57,39 @@ $(function() {
   <div class="headertitle"><div class="title">BDCE.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="BDCE_8h_source.html">llvm/Transforms/Scalar/BDCE.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallPtrSet_8h_source.html">llvm/ADT/SmallPtrSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DemandedBits_8h_source.html">llvm/Analysis/DemandedBits.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalsModRef_8h_source.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstIterator_8h_source.html">llvm/IR/InstIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/BDCE.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/DemandedBits.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstIterator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for BDCE.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="BDCE_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2BDCE_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Scalar_2BDCE_8cpp" id="alib_2Transforms_2Scalar_2BDCE_8cpp">
+<area shape="rect" title=" " alt="" coords="1235,5,1394,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,176,133"/>
+<area shape="rect" title=" " alt="" coords="201,101,375,126"/>
+<area shape="rect" title=" " alt="" coords="399,101,574,126"/>
+<area shape="rect" title=" " alt="" coords="598,101,749,126"/>
+<area shape="rect" title=" " alt="" coords="773,101,995,126"/>
+<area shape="rect" title=" " alt="" coords="1019,93,1210,133"/>
+<area shape="rect" title=" " alt="" coords="1234,93,1395,133"/>
+<area shape="rect" title=" " alt="" coords="1420,101,1575,126"/>
+<area shape="rect" title=" " alt="" coords="1599,101,1759,126"/>
+<area shape="rect" title=" " alt="" coords="1783,101,1879,126"/>
+<area shape="rect" title=" " alt="" coords="1903,101,2065,126"/>
+<area shape="rect" title=" " alt="" coords="2090,101,2297,126"/>
+<area shape="rect" title=" " alt="" coords="2321,101,2503,126"/>
+</map>
 </div>
 </div>
 <p><a href="BDCE_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -85,16 +101,16 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad4b884547fb16dbe289750606534ec27"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDCE_8cpp.html#ad4b884547fb16dbe289750606534ec27">STATISTIC</a> (NumRemoved, &quot;Number of <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> removed (unused)&quot;)</td></tr>
+<tr class="memitem:ad4b884547fb16dbe289750606534ec27"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDCE_8cpp.html#ad4b884547fb16dbe289750606534ec27">STATISTIC</a> (NumRemoved, &quot;Number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> removed (unused)&quot;)</td></tr>
 <tr class="separator:ad4b884547fb16dbe289750606534ec27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adaffcba965219cb57e9ac3d5761d1110"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDCE_8cpp.html#adaffcba965219cb57e9ac3d5761d1110">STATISTIC</a> (NumSimplified, &quot;Number of <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> trivialized (dead <a class="el" href="DemandedBits_8cpp.html#a21225a9e40c621585e23a2fa855f4e83">bits</a>)&quot;)</td></tr>
+<tr class="memitem:adaffcba965219cb57e9ac3d5761d1110"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDCE_8cpp.html#adaffcba965219cb57e9ac3d5761d1110">STATISTIC</a> (NumSimplified, &quot;Number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> trivialized (dead <a class="el" href="DemandedBits_8cpp.html#a21225a9e40c621585e23a2fa855f4e83">bits</a>)&quot;)</td></tr>
 <tr class="separator:adaffcba965219cb57e9ac3d5761d1110"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54ab652f375db02ea7894a5f9a512d15"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDCE_8cpp.html#a54ab652f375db02ea7894a5f9a512d15">clearAssumptionsOfUsers</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1DemandedBits.html">DemandedBits</a> &amp;DB)</td></tr>
+<tr class="memitem:a54ab652f375db02ea7894a5f9a512d15"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDCE_8cpp.html#a54ab652f375db02ea7894a5f9a512d15">clearAssumptionsOfUsers</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, DemandedBits &amp;DB)</td></tr>
 <tr class="memdesc:a54ab652f375db02ea7894a5f9a512d15"><td class="mdescLeft">&#160;</td><td class="mdescRight">If an instruction is trivialized (dead), then the chain of users of that instruction may need to be cleared of assumptions that can no longer be guaranteed correct.  <a href="BDCE_8cpp.html#a54ab652f375db02ea7894a5f9a512d15">More...</a><br /></td></tr>
 <tr class="separator:a54ab652f375db02ea7894a5f9a512d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc600a6141b4b54703a4ead9c72a3012"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDCE_8cpp.html#acc600a6141b4b54703a4ead9c72a3012">bitTrackingDCE</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classllvm_1_1DemandedBits.html">DemandedBits</a> &amp;DB)</td></tr>
+<tr class="memitem:acc600a6141b4b54703a4ead9c72a3012"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDCE_8cpp.html#acc600a6141b4b54703a4ead9c72a3012">bitTrackingDCE</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, DemandedBits &amp;DB)</td></tr>
 <tr class="separator:acc600a6141b4b54703a4ead9c72a3012"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a198edaa9f0a5ef3c76e2562c74d30b9b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDCE_8cpp.html#a198edaa9f0a5ef3c76e2562c74d30b9b">INITIALIZE_PASS_BEGIN</a> (BDCELegacyPass, &quot;bdce&quot;, &quot;Bit-Tracking Dead Code Elimination&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(BDCELegacyPass</td></tr>
+<tr class="memitem:a198edaa9f0a5ef3c76e2562c74d30b9b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BDCE_8cpp.html#a198edaa9f0a5ef3c76e2562c74d30b9b">INITIALIZE_PASS_BEGIN</a> (BDCELegacyPass, &quot;bdce&quot;, &quot;Bit-Tracking Dead Code Elimination&quot;, false, false) INITIALIZE_PASS_END(BDCELegacyPass</td></tr>
 <tr class="separator:a198edaa9f0a5ef3c76e2562c74d30b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -134,15 +150,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> bitTrackingDCE </td>
+          <td class="memname">static bool bitTrackingDCE </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DemandedBits.html">DemandedBits</a> &amp;&#160;</td>
+          <td class="paramtype">DemandedBits &amp;&#160;</td>
           <td class="paramname"><em>DB</em>&#160;</td>
         </tr>
         <tr>
@@ -160,9 +176,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BDCE_8cpp_source.html#l00088">88</a> of file <a class="el" href="BDCE_8cpp_source.html">BDCE.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BDCE_8cpp_source.html#l00039">clearAssumptionsOfUsers()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="DemandedBits_8cpp_source.html#l00419">llvm::DemandedBits::getDemandedBits()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="InstructionSelect_8cpp_source.html#l00049">instructions</a>, <a class="el" href="DemandedBits_8cpp_source.html#l00431">llvm::DemandedBits::isInstructionDead()</a>, <a class="el" href="APInt_8h_source.html#l00405">llvm::APInt::isNullValue()</a>, <a class="el" href="DemandedBits_8cpp_source.html#l00438">llvm::DemandedBits::isUseDead()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>, <a class="el" href="Local_8cpp_source.html#l01624">llvm::salvageDebugInfo()</a>, and <a class="el" href="Local_8cpp_source.html#l00360">llvm::wouldInstructionBeTriviallyDead()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="BDCE_8cpp_source.html#l00143">llvm::BDCEPass::run()</a>.</p>
+<p class="reference">References <a class="el" href="BDCE_8cpp_source.html#l00039">clearAssumptionsOfUsers()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="InstructionCombining_8cpp_source.html#l03614">instructions</a>.</p>
 
 </div>
 </div>
@@ -178,13 +192,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void clearAssumptionsOfUsers </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DemandedBits.html">DemandedBits</a> &amp;&#160;</td>
+          <td class="paramtype">DemandedBits &amp;&#160;</td>
           <td class="paramname"><em>DB</em>&#160;</td>
         </tr>
         <tr>
@@ -204,7 +218,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="BDCE_8cpp_source.html#l00039">39</a> of file <a class="el" href="BDCE_8cpp_source.html">BDCE.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00120">llvm::Instruction::dropPoisonGeneratingFlags()</a>, <a class="el" href="SmallVector_8h_source.html#l00055">llvm::SmallVectorBase::empty()</a>, <a class="el" href="DemandedBits_8cpp_source.html#l00419">llvm::DemandedBits::getDemandedBits()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00370">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert()</a>, <a class="el" href="APInt_8h_source.html#l00395">llvm::APInt::isAllOnesValue()</a>, <a class="el" href="SmallVector_8h_source.html#l00374">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val()</a>, <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>, and <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="BDCE_8cpp_source.html#l00088">bitTrackingDCE()</a>.</p>
 
@@ -271,7 +285,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> removed (unused)&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> removed (unused)&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -299,7 +313,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> trivialized (dead <a class="el" href="DemandedBits_8cpp.html#a21225a9e40c621585e23a2fa855f4e83">bits</a>)&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> trivialized (dead <a class="el" href="DemandedBits_8cpp.html#a21225a9e40c621585e23a2fa855f4e83">bits</a>)&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -364,7 +378,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

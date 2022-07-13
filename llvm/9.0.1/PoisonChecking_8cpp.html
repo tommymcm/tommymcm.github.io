@@ -52,25 +52,37 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">PoisonChecking.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="PoisonChecking_8h_source.html">llvm/Transforms/Instrumentation/PoisonChecking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseMap_8h_source.html">llvm/ADT/DenseMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MemoryBuiltins_8h_source.html">llvm/Analysis/MemoryBuiltins.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstVisitor_8h_source.html">llvm/IR/InstVisitor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Instrumentation/PoisonChecking.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/MemoryBuiltins.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstVisitor.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for PoisonChecking.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="PoisonChecking_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Instrumentation_2PoisonChecking_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Instrumentation_2PoisonChecking_8cpp" id="alib_2Transforms_2Instrumentation_2PoisonChecking_8cpp">
+<area shape="rect" title=" " alt="" coords="982,5,1205,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,240,133"/>
+<area shape="rect" title=" " alt="" coords="263,101,430,126"/>
+<area shape="rect" title=" " alt="" coords="454,101,605,126"/>
+<area shape="rect" title=" " alt="" coords="629,101,859,126"/>
+<area shape="rect" title=" " alt="" coords="883,101,1099,126"/>
+<area shape="rect" title=" " alt="" coords="1123,101,1272,126"/>
+<area shape="rect" title=" " alt="" coords="1296,101,1456,126"/>
+<area shape="rect" title=" " alt="" coords="1481,101,1623,126"/>
+<area shape="rect" title=" " alt="" coords="1648,101,1819,126"/>
+<area shape="rect" title=" " alt="" coords="1843,101,2005,126"/>
+</map>
 </div>
 </div>
 <p><a href="PoisonChecking_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -82,27 +94,24 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adea0e1727b7d23b0ea2d1c0b66e205e4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#adea0e1727b7d23b0ea2d1c0b66e205e4">isConstantFalse</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
+<tr class="memitem:acd598c057488a236768d0c3868c0b779"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#acd598c057488a236768d0c3868c0b779">LocalCheck</a> (&quot;poison-<a class="el" href="BoundsChecking_8cpp.html#aa3457fd2a1e7ae19c2a53d231b99517b">checking</a>-<a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-local&quot;, cl::init(false), cl::desc(&quot;Check that returns are non-poison (for testing)&quot;))</td></tr>
+<tr class="separator:acd598c057488a236768d0c3868c0b779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adea0e1727b7d23b0ea2d1c0b66e205e4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#adea0e1727b7d23b0ea2d1c0b66e205e4">isConstantFalse</a> (Value *V)</td></tr>
 <tr class="separator:adea0e1727b7d23b0ea2d1c0b66e205e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3aa4a8ac0afd2e1e23b5384dec5b4ea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#ae3aa4a8ac0afd2e1e23b5384dec5b4ea">buildOrChain</a> (<a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; Ops)</td></tr>
+<tr class="memitem:ae3aa4a8ac0afd2e1e23b5384dec5b4ea"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#ae3aa4a8ac0afd2e1e23b5384dec5b4ea">buildOrChain</a> (IRBuilder&lt;&gt; &amp;B, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt; Ops)</td></tr>
 <tr class="separator:ae3aa4a8ac0afd2e1e23b5384dec5b4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92337ed3e2e2305c6fc9542c378cf102"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#a92337ed3e2e2305c6fc9542c378cf102">generatePoisonChecksForBinOp</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1SmallVector.html">SmallVector</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, 2 &gt; &amp;Checks)</td></tr>
+<tr class="memitem:a92337ed3e2e2305c6fc9542c378cf102"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#a92337ed3e2e2305c6fc9542c378cf102">generatePoisonChecksForBinOp</a> (Instruction &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classSmallVector.html">SmallVector</a>&lt; Value *, 2 &gt; &amp;Checks)</td></tr>
 <tr class="separator:a92337ed3e2e2305c6fc9542c378cf102"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdaf9177b6af3f306bfc0aca8a5e972a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#abdaf9177b6af3f306bfc0aca8a5e972a">generatePoisonChecks</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:abdaf9177b6af3f306bfc0aca8a5e972a"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#abdaf9177b6af3f306bfc0aca8a5e972a">generatePoisonChecks</a> (Instruction &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="separator:abdaf9177b6af3f306bfc0aca8a5e972a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89fa2691bc24f920846cab2011a16e18"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#a89fa2691bc24f920846cab2011a16e18">getPoisonFor</a> (<a class="el" href="classllvm_1_1DenseMap.html">DenseMap</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;ValToPoison, <a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
+<tr class="memitem:a89fa2691bc24f920846cab2011a16e18"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#a89fa2691bc24f920846cab2011a16e18">getPoisonFor</a> (DenseMap&lt; Value *, Value * &gt; &amp;ValToPoison, Value *V)</td></tr>
 <tr class="separator:a89fa2691bc24f920846cab2011a16e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af78f35b1a699a2a6fcdc88d1c54b4ce5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#af78f35b1a699a2a6fcdc88d1c54b4ce5">CreateAssert</a> (<a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="classllvm_1_1Value.html">Value</a> *Cond)</td></tr>
+<tr class="memitem:af78f35b1a699a2a6fcdc88d1c54b4ce5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#af78f35b1a699a2a6fcdc88d1c54b4ce5">CreateAssert</a> (IRBuilder&lt;&gt; &amp;B, Value *Cond)</td></tr>
 <tr class="separator:af78f35b1a699a2a6fcdc88d1c54b4ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a385c399c6beb514ac97f51b2ad2a6af5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#a385c399c6beb514ac97f51b2ad2a6af5">CreateAssertNot</a> (<a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="classllvm_1_1Value.html">Value</a> *Cond)</td></tr>
+<tr class="memitem:a385c399c6beb514ac97f51b2ad2a6af5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#a385c399c6beb514ac97f51b2ad2a6af5">CreateAssertNot</a> (IRBuilder&lt;&gt; &amp;B, Value *Cond)</td></tr>
 <tr class="separator:a385c399c6beb514ac97f51b2ad2a6af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a702ebb77e7ff7f0a10a1b4690d8ecfc8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#a702ebb77e7ff7f0a10a1b4690d8ecfc8">rewrite</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a702ebb77e7ff7f0a10a1b4690d8ecfc8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#a702ebb77e7ff7f0a10a1b4690d8ecfc8">rewrite</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a702ebb77e7ff7f0a10a1b4690d8ecfc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a908df75f7d358a59ab282bcda02ca284"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PoisonChecking_8cpp.html#a908df75f7d358a59ab282bcda02ca284">LocalCheck</a> (&quot;poison-<a class="el" href="BoundsChecking_8cpp.html#aa3457fd2a1e7ae19c2a53d231b99517b">checking</a>-<a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-local&quot;, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Check that returns are non-poison (<a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> testing)&quot;))</td></tr>
-<tr class="separator:a908df75f7d358a59ab282bcda02ca284"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad78e062f62e0d6e453941fb4ca843e4d" name="ad78e062f62e0d6e453941fb4ca843e4d"></a>
@@ -132,15 +141,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * buildOrChain </td>
+          <td class="memname">static Value * buildOrChain </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; Value * &gt;&#160;</td>
           <td class="paramname"><em>Ops</em>&#160;</td>
         </tr>
         <tr>
@@ -158,7 +167,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PoisonChecking_8cpp_source.html#l00091">91</a> of file <a class="el" href="PoisonChecking_8cpp_source.html">PoisonChecking.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="PoisonChecking_8cpp_source.html#l00084">isConstantFalse()</a>, and <a class="el" href="ArrayRef_8h_source.html#l00148">llvm::ArrayRef&lt; T &gt;::size()</a>.</p>
+<p class="reference">References <a class="el" href="PoisonChecking_8cpp_source.html#l00084">isConstantFalse()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PoisonChecking_8cpp_source.html#l00185">generatePoisonChecks()</a>, and <a class="el" href="PoisonChecking_8cpp_source.html#l00256">rewrite()</a>.</p>
 
@@ -176,13 +185,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void CreateAssert </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Cond</em>&#160;</td>
         </tr>
         <tr>
@@ -200,7 +209,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PoisonChecking_8cpp_source.html#l00237">237</a> of file <a class="el" href="PoisonChecking_8cpp_source.html">PoisonChecking.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="classllvm_1_1Type.html#a3e6fcb043a463460aac86fb01a8ea9db">llvm::Type::getInt1Ty()</a>, and <a class="el" href="classllvm_1_1Type.html#a76b16ba3f021cabcda9ab1319dc7609a">llvm::Type::getVoidTy()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PoisonChecking_8cpp_source.html#l00251">CreateAssertNot()</a>.</p>
 
@@ -218,13 +227,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void CreateAssertNot </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Cond</em>&#160;</td>
         </tr>
         <tr>
@@ -242,7 +251,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PoisonChecking_8cpp_source.html#l00251">251</a> of file <a class="el" href="PoisonChecking_8cpp_source.html">PoisonChecking.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, and <a class="el" href="PoisonChecking_8cpp_source.html#l00237">CreateAssert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="PoisonChecking_8cpp_source.html#l00237">CreateAssert()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PoisonChecking_8cpp_source.html#l00256">rewrite()</a>.</p>
 
@@ -258,9 +267,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * generatePoisonChecks </td>
+          <td class="memname">static Value * generatePoisonChecks </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &amp;&#160;</td>
+          <td class="paramtype">Instruction &amp;&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -274,7 +283,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PoisonChecking_8cpp_source.html#l00185">185</a> of file <a class="el" href="PoisonChecking_8cpp_source.html">PoisonChecking.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="PoisonChecking_8cpp_source.html#l00091">buildOrChain()</a>, <a class="el" href="PoisonChecking_8cpp_source.html#l00105">generatePoisonChecksForBinOp()</a>, <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="classllvm_1_1Type.html#a7d31623fbfe3e7ff0a955dfe0d1acd84">llvm::Type::getVectorIsScalable()</a>, <a class="el" href="classllvm_1_1Type.html#a59f8ff5f972666376282d626e8197d59">llvm::Type::getVectorNumElements()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>, and <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>.</p>
+<p class="reference">References <a class="el" href="PoisonChecking_8cpp_source.html#l00091">buildOrChain()</a>, <a class="el" href="PoisonChecking_8cpp_source.html#l00105">generatePoisonChecksForBinOp()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PoisonChecking_8cpp_source.html#l00256">rewrite()</a>.</p>
 
@@ -292,13 +301,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void generatePoisonChecksForBinOp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &amp;&#160;</td>
+          <td class="paramtype">Instruction &amp;&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVector.html">SmallVector</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, 2 &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classSmallVector.html">SmallVector</a>&lt; Value *, 2 &gt; &amp;&#160;</td>
           <td class="paramname"><em>Checks</em>&#160;</td>
         </tr>
         <tr>
@@ -316,7 +325,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PoisonChecking_8cpp_source.html#l00105">105</a> of file <a class="el" href="PoisonChecking_8cpp_source.html">PoisonChecking.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="classllvm_1_1Type.html#a766db71cb4bfd7e802ac613ed98fc6b5">llvm::Type::getScalarSizeInBits()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PoisonChecking_8cpp_source.html#l00185">generatePoisonChecks()</a>.</p>
 
@@ -332,15 +341,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * getPoisonFor </td>
+          <td class="memname">static Value * getPoisonFor </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseMap.html">DenseMap</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> *, <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseMap&lt; Value *, Value * &gt; &amp;&#160;</td>
           <td class="paramname"><em>ValToPoison</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>&#160;</td>
         </tr>
         <tr>
@@ -358,8 +367,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PoisonChecking_8cpp_source.html#l00223">223</a> of file <a class="el" href="PoisonChecking_8cpp_source.html">PoisonChecking.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DenseMap_8h_source.html#l00108">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::end()</a>, <a class="el" href="DenseMap_8h_source.html#l00176">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::find()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, and <a class="el" href="Constants_8cpp_source.html#l00594">llvm::ConstantInt::getFalse()</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="PoisonChecking_8cpp_source.html#l00256">rewrite()</a>.</p>
 
 </div>
@@ -374,9 +381,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isConstantFalse </td>
+          <td class="memname">static bool isConstantFalse </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
           <td></td>
         </tr>
@@ -390,14 +397,14 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PoisonChecking_8cpp_source.html#l00084">84</a> of file <a class="el" href="PoisonChecking_8cpp_source.html">PoisonChecking.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="Type_8h_source.html#l00196">llvm::Type::isIntegerTy()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PoisonChecking_8cpp_source.html#l00091">buildOrChain()</a>.</p>
 
 </div>
 </div>
-<a id="a702ebb77e7ff7f0a10a1b4690d8ecfc8" name="a702ebb77e7ff7f0a10a1b4690d8ecfc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a702ebb77e7ff7f0a10a1b4690d8ecfc8">&#9670;&nbsp;</a></span>rewrite()</h2>
+<a id="acd598c057488a236768d0c3868c0b779" name="acd598c057488a236768d0c3868c0b779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd598c057488a236768d0c3868c0b779">&#9670;&nbsp;</a></span>LocalCheck()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -406,40 +413,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> rewrite </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
-          <td class="paramname"><em>F</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="PoisonChecking_8cpp_source.html#l00256">256</a> of file <a class="el" href="PoisonChecking_8cpp_source.html">PoisonChecking.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="PoisonChecking_8cpp_source.html#l00091">buildOrChain()</a>, <a class="el" href="DenseMap_8h_source.html#l00171">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::count()</a>, <a class="el" href="Instructions_8h_source.html#l02576">llvm::PHINode::Create()</a>, <a class="el" href="PoisonChecking_8cpp_source.html#l00251">CreateAssertNot()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="PoisonChecking_8cpp_source.html#l00185">generatePoisonChecks()</a>, <a class="el" href="Constants_8cpp_source.html#l01424">llvm::UndefValue::get()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l04348">llvm::getGuaranteedNonFullPoisonOp()</a>, <a class="el" href="classllvm_1_1Type.html#a3e6fcb043a463460aac86fb01a8ea9db">llvm::Type::getInt1Ty()</a>, <a class="el" href="PoisonChecking_8cpp_source.html#l00223">getPoisonFor()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="PoisonChecking_8cpp.html#a908df75f7d358a59ab282bcda02ca284">LocalCheck</a>, <a class="el" href="ValueTracking_8cpp_source.html#l04314">llvm::propagatesFullPoison()</a>, and <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="PoisonChecking_8cpp_source.html#l00316">llvm::PoisonCheckingPass::run()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a908df75f7d358a59ab282bcda02ca284" name="a908df75f7d358a59ab282bcda02ca284"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a908df75f7d358a59ab282bcda02ca284">&#9670;&nbsp;</a></span>LocalCheck</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; LocalCheck(&quot;poison-<a class="el" href="BoundsChecking_8cpp.html#aa3457fd2a1e7ae19c2a53d231b99517b">checking</a>-<a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-local&quot;, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Check that returns are non-poison (<a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> testing)&quot;)) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; LocalCheck </td>
           <td>(</td>
           <td class="paramtype">&quot;poison-<a class="el" href="BoundsChecking_8cpp.html#aa3457fd2a1e7ae19c2a53d231b99517b">checking</a>-<a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-local&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -453,7 +427,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Check that returns are non-poison (<a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> testing)&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;Check that returns are non-poison (for testing)&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -473,10 +447,40 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a702ebb77e7ff7f0a10a1b4690d8ecfc8" name="a702ebb77e7ff7f0a10a1b4690d8ecfc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a702ebb77e7ff7f0a10a1b4690d8ecfc8">&#9670;&nbsp;</a></span>rewrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool rewrite </td>
+          <td>(</td>
+          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PoisonChecking_8cpp_source.html#l00256">256</a> of file <a class="el" href="PoisonChecking_8cpp_source.html">PoisonChecking.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="PoisonChecking_8cpp_source.html#l00091">buildOrChain()</a>, <a class="el" href="PoisonChecking_8cpp_source.html#l00251">CreateAssertNot()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="PoisonChecking_8cpp_source.html#l00185">generatePoisonChecks()</a>, <a class="el" href="PoisonChecking_8cpp_source.html#l00223">getPoisonFor()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="PoisonChecking_8cpp.html#acd598c057488a236768d0c3868c0b779">LocalCheck()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

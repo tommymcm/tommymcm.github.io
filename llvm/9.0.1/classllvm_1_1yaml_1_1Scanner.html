@@ -57,14 +57,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Scans YAML tokens from a <a class="el" href="classllvm_1_1MemoryBuffer.html" title="This interface provides simple read-only access to a block of memory, and provides simple methods for...">MemoryBuffer</a>.  
+<p>Scans YAML tokens from a MemoryBuffer.  
  <a href="classllvm_1_1yaml_1_1Scanner.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a09031fd950bad51b931a2549417ad3f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html#a09031fd950bad51b931a2549417ad3f3">Scanner</a> (<a class="el" href="classllvm_1_1StringRef.html">StringRef</a> Input, <a class="el" href="classllvm_1_1SourceMgr.html">SourceMgr</a> &amp;SM, <a class="el" href="classbool.html">bool</a> ShowColors=<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, std::error_code *EC=nullptr)</td></tr>
+<tr class="memitem:a09031fd950bad51b931a2549417ad3f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html#a09031fd950bad51b931a2549417ad3f3">Scanner</a> (StringRef Input, SourceMgr &amp;SM, bool ShowColors=<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, std::error_code *EC=nullptr)</td></tr>
 <tr class="separator:a09031fd950bad51b931a2549417ad3f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd342945825d1781793fed768a8a0fc1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html#acd342945825d1781793fed768a8a0fc1">Scanner</a> (<a class="el" href="classllvm_1_1MemoryBufferRef.html">MemoryBufferRef</a> Buffer, <a class="el" href="classllvm_1_1SourceMgr.html">SourceMgr</a> &amp;SM_, <a class="el" href="classbool.html">bool</a> ShowColors=<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, std::error_code *EC=nullptr)</td></tr>
+<tr class="memitem:acd342945825d1781793fed768a8a0fc1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html#acd342945825d1781793fed768a8a0fc1">Scanner</a> (MemoryBufferRef Buffer, SourceMgr &amp;SM_, bool ShowColors=<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, std::error_code *EC=nullptr)</td></tr>
 <tr class="separator:acd342945825d1781793fed768a8a0fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab06b97628ff8ed484aac9ebc5306c010"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structllvm_1_1yaml_1_1Token.html">Token</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html#ab06b97628ff8ed484aac9ebc5306c010">peekNext</a> ()</td></tr>
 <tr class="memdesc:ab06b97628ff8ed484aac9ebc5306c010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the next token and return it without popping it.  <a href="classllvm_1_1yaml_1_1Scanner.html#ab06b97628ff8ed484aac9ebc5306c010">More...</a><br /></td></tr>
@@ -72,18 +72,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5876373ad6798a36388fb54b9996bdf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structllvm_1_1yaml_1_1Token.html">Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html#a5876373ad6798a36388fb54b9996bdf0">getNext</a> ()</td></tr>
 <tr class="memdesc:a5876373ad6798a36388fb54b9996bdf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the next token and pop it from the queue.  <a href="classllvm_1_1yaml_1_1Scanner.html#a5876373ad6798a36388fb54b9996bdf0">More...</a><br /></td></tr>
 <tr class="separator:a5876373ad6798a36388fb54b9996bdf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add6a574171f6cdd18d78a2c9b52fa0bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html#add6a574171f6cdd18d78a2c9b52fa0bf">printError</a> (<a class="el" href="classllvm_1_1SMLoc.html">SMLoc</a> Loc, <a class="el" href="classllvm_1_1SourceMgr.html#a346262ff27e71aff626fe6548ef8a777">SourceMgr::DiagKind</a> Kind, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;Message, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1SMRange.html">SMRange</a> &gt; Ranges=<a class="el" href="namespacellvm.html#a6497a581a4f7152729c29a368ac7d7be">None</a>)</td></tr>
+<tr class="memitem:add6a574171f6cdd18d78a2c9b52fa0bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html#add6a574171f6cdd18d78a2c9b52fa0bf">printError</a> (SMLoc Loc, SourceMgr::DiagKind Kind, const Twine &amp;Message, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; SMRange &gt; Ranges=<a class="el" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a>)</td></tr>
 <tr class="separator:add6a574171f6cdd18d78a2c9b52fa0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4406ec44082e06c99c2b7463dbf77b1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html#a4406ec44082e06c99c2b7463dbf77b1c">setError</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;Message, <a class="el" href="classllvm_1_1StringRef.html#a20d37563688a61a452fb26e317e37308">StringRef::iterator</a> Position)</td></tr>
+<tr class="memitem:a4406ec44082e06c99c2b7463dbf77b1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html#a4406ec44082e06c99c2b7463dbf77b1c">setError</a> (const Twine &amp;Message, StringRef::iterator Position)</td></tr>
 <tr class="separator:a4406ec44082e06c99c2b7463dbf77b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a783f72ae68174fac1c1919fafdb633ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html#a783f72ae68174fac1c1919fafdb633ee">setError</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;Message)</td></tr>
+<tr class="memitem:a783f72ae68174fac1c1919fafdb633ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html#a783f72ae68174fac1c1919fafdb633ee">setError</a> (const Twine &amp;Message)</td></tr>
 <tr class="separator:a783f72ae68174fac1c1919fafdb633ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80fc2acfaccf19dc765ccfd19094b706"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html#a80fc2acfaccf19dc765ccfd19094b706">failed</a> ()</td></tr>
+<tr class="memitem:a80fc2acfaccf19dc765ccfd19094b706"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html#a80fc2acfaccf19dc765ccfd19094b706">failed</a> ()</td></tr>
 <tr class="memdesc:a80fc2acfaccf19dc765ccfd19094b706"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if an error occurred while parsing.  <a href="classllvm_1_1yaml_1_1Scanner.html#a80fc2acfaccf19dc765ccfd19094b706">More...</a><br /></td></tr>
 <tr class="separator:a80fc2acfaccf19dc765ccfd19094b706"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Scans YAML tokens from a <a class="el" href="classllvm_1_1MemoryBuffer.html" title="This interface provides simple read-only access to a block of memory, and provides simple methods for...">MemoryBuffer</a>. </p>
+<div class="textblock"><p >Scans YAML tokens from a MemoryBuffer. </p>
 
 <p class="definition">Definition at line <a class="el" href="YAMLParser_8cpp_source.html#l00252">252</a> of file <a class="el" href="YAMLParser_8cpp_source.html">YAMLParser.cpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -96,19 +96,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html">Scanner::Scanner</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StringRef.html">StringRef</a>&#160;</td>
+          <td class="paramtype">StringRef&#160;</td>
           <td class="paramname"><em>Input</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SourceMgr.html">SourceMgr</a> &amp;&#160;</td>
+          <td class="paramtype">SourceMgr &amp;&#160;</td>
           <td class="paramname"><em>SM</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>ShowColors</em> = <code><a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a></code>, </td>
         </tr>
         <tr>
@@ -138,19 +138,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classllvm_1_1yaml_1_1Scanner.html">Scanner::Scanner</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1MemoryBufferRef.html">MemoryBufferRef</a>&#160;</td>
+          <td class="paramtype">MemoryBufferRef&#160;</td>
           <td class="paramname"><em>Buffer</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SourceMgr.html">SourceMgr</a> &amp;&#160;</td>
+          <td class="paramtype">SourceMgr &amp;&#160;</td>
           <td class="paramname"><em>SM_</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>ShowColors</em> = <code><a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a></code>, </td>
         </tr>
         <tr>
@@ -182,7 +182,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classbool.html">bool</a> llvm::yaml::Scanner::failed </td>
+          <td class="memname">bool llvm::yaml::Scanner::failed </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -198,8 +198,6 @@ Public Member Functions</h2></td></tr>
 <p>Returns true if an error occurred while parsing. </p>
 
 <p class="definition">Definition at line <a class="el" href="YAMLParser_8cpp_source.html#l00290">290</a> of file <a class="el" href="YAMLParser_8cpp_source.html">YAMLParser.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="llvm_2Testing_2Support_2Error_8h_source.html#l00147">llvm::Failed()</a>.</p>
 
 </div>
 </div>
@@ -222,9 +220,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="YAMLParser_8cpp_source.html#l00810">810</a> of file <a class="el" href="YAMLParser_8cpp_source.html">YAMLParser.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AllocatorList_8h_source.html#l00166">llvm::AllocatorList&lt; T, AllocatorT &gt;::empty()</a>, <a class="el" href="YAMLParser_8cpp_source.html#l00784">peekNext()</a>, <a class="el" href="AllocatorList_8h_source.html#l00215">llvm::AllocatorList&lt; T, AllocatorT &gt;::pop_front()</a>, and <a class="el" href="AllocatorList_8h_source.html#l00230">llvm::AllocatorList&lt; T, AllocatorT &gt;::resetAlloc()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="YAMLParser_8cpp_source.html#l00593">llvm::yaml::dumpTokens()</a>, and <a class="el" href="YAMLParser_8cpp_source.html#l00677">llvm::yaml::scanTokens()</a>.</p>
+<p class="reference">References <a class="el" href="YAMLParser_8cpp_source.html#l00784">peekNext()</a>.</p>
 
 </div>
 </div>
@@ -247,7 +243,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="YAMLParser_8cpp_source.html#l00784">784</a> of file <a class="el" href="YAMLParser_8cpp_source.html">YAMLParser.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="AllocatorList_8h_source.html#l00169">llvm::AllocatorList&lt; T, AllocatorT &gt;::begin()</a>, <a class="el" href="AllocatorList_8h_source.html#l00213">llvm::AllocatorList&lt; T, AllocatorT &gt;::clear()</a>, <a class="el" href="AllocatorList_8h_source.html#l00166">llvm::AllocatorList&lt; T, AllocatorT &gt;::empty()</a>, <a class="el" href="AllocatorList_8h_source.html#l00183">llvm::AllocatorList&lt; T, AllocatorT &gt;::front()</a>, <a class="el" href="STLExtras_8h_source.html#l01251">llvm::is_contained()</a>, and <a class="el" href="AllocatorList_8h_source.html#l00216">llvm::AllocatorList&lt; T, AllocatorT &gt;::push_back()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="YAMLParser_8cpp_source.html#l00810">getNext()</a>.</p>
 
@@ -265,26 +261,26 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void llvm::yaml::Scanner::printError </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SMLoc.html">SMLoc</a>&#160;</td>
+          <td class="paramtype">SMLoc&#160;</td>
           <td class="paramname"><em>Loc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SourceMgr.html#a346262ff27e71aff626fe6548ef8a777">SourceMgr::DiagKind</a>&#160;</td>
+          <td class="paramtype">SourceMgr::DiagKind&#160;</td>
           <td class="paramname"><em>Kind</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;&#160;</td>
+          <td class="paramtype">const Twine &amp;&#160;</td>
           <td class="paramname"><em>Message</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1SMRange.html">SMRange</a> &gt;&#160;</td>
-          <td class="paramname"><em>Ranges</em> = <code><a class="el" href="namespacellvm.html#a6497a581a4f7152729c29a368ac7d7be">None</a></code>&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; SMRange &gt;&#160;</td>
+          <td class="paramname"><em>Ranges</em> = <code><a class="el" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -301,7 +297,9 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="YAMLParser_8cpp_source.html#l00265">265</a> of file <a class="el" href="YAMLParser_8cpp_source.html">YAMLParser.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="None_8h_source.html#l00023">llvm::None</a>, and <a class="el" href="SourceMgr_8cpp_source.html#l00242">llvm::SourceMgr::PrintMessage()</a>.</p>
+<p class="reference">References <a class="el" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="YAMLParser_8cpp_source.html#l00270">setError()</a>.</p>
 
 </div>
 </div>
@@ -317,7 +315,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void llvm::yaml::Scanner::setError </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;&#160;</td>
+          <td class="paramtype">const Twine &amp;&#160;</td>
           <td class="paramname"><em>Message</em></td><td>)</td>
           <td></td>
         </tr>
@@ -330,6 +328,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="YAMLParser_8cpp_source.html#l00285">285</a> of file <a class="el" href="YAMLParser_8cpp_source.html">YAMLParser.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="YAMLParser_8cpp_source.html#l00270">setError()</a>.</p>
 
 </div>
 </div>
@@ -345,13 +345,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void llvm::yaml::Scanner::setError </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Twine.html">Twine</a> &amp;&#160;</td>
+          <td class="paramtype">const Twine &amp;&#160;</td>
           <td class="paramname"><em>Message</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StringRef.html#a20d37563688a61a452fb26e317e37308">StringRef::iterator</a>&#160;</td>
+          <td class="paramtype">StringRef::iterator&#160;</td>
           <td class="paramname"><em>Position</em>&#160;</td>
         </tr>
         <tr>
@@ -369,7 +369,9 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="YAMLParser_8cpp_source.html#l00270">270</a> of file <a class="el" href="YAMLParser_8cpp_source.html">YAMLParser.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Support_2SourceMgr_8h_source.html#l00044">llvm::SourceMgr::DK_Error</a>, <a class="el" href="llvm_2Testing_2Support_2Error_8h_source.html#l00147">llvm::Failed()</a>, <a class="el" href="SMLoc_8h_source.html#l00036">llvm::SMLoc::getFromPointer()</a>, and <a class="el" href="BitcodeReader_8h_source.html#l00260">llvm::make_error_code()</a>.</p>
+<p class="reference">References <a class="el" href="YAMLParser_8cpp_source.html#l00265">printError()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="YAMLParser_8cpp_source.html#l00285">setError()</a>.</p>
 
 </div>
 </div>
@@ -379,7 +381,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:28:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:46 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

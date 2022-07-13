@@ -55,26 +55,33 @@ $(function() {
   <div class="headertitle"><div class="title">CloneModule.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Cloning_8h_source.html">llvm/Transforms/Utils/Cloning.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueMapper_8h_source.html">llvm/Transforms/Utils/ValueMapper.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Cloning.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/ValueMapper.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for CloneModule.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="CloneModule_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Utils_2CloneModule_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Utils_2CloneModule_8cpp" id="alib_2Transforms_2Utils_2CloneModule_8cpp">
+<area shape="rect" title=" " alt="" coords="360,5,508,45"/>
+<area shape="rect" title=" " alt="" coords="5,101,148,126"/>
+<area shape="rect" title=" " alt="" coords="172,101,344,126"/>
+<area shape="rect" title=" " alt="" coords="368,101,500,126"/>
+<area shape="rect" title=" " alt="" coords="524,93,685,133"/>
+<area shape="rect" title=" " alt="" coords="709,93,871,133"/>
+</map>
 </div>
 </div>
 <p><a href="CloneModule_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a04b8f04da3f1b0bf1c9a2802f73e2d05"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CloneModule_8cpp.html#a04b8f04da3f1b0bf1c9a2802f73e2d05">copyComdat</a> (<a class="el" href="classllvm_1_1GlobalObject.html">GlobalObject</a> *Dst, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1GlobalObject.html">GlobalObject</a> *Src)</td></tr>
+<tr class="memitem:a04b8f04da3f1b0bf1c9a2802f73e2d05"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CloneModule_8cpp.html#a04b8f04da3f1b0bf1c9a2802f73e2d05">copyComdat</a> (GlobalObject *Dst, const GlobalObject *Src)</td></tr>
 <tr class="separator:a04b8f04da3f1b0bf1c9a2802f73e2d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabffdc747c14d77b3eb89500adf4f269b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__LLVMCSupportTypes.html#gad1d1bb5f901c903a0cf09c5a053c9c56">LLVMModuleRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LLVMCCoreModule.html#gabffdc747c14d77b3eb89500adf4f269b">LLVMCloneModule</a> (<a class="el" href="group__LLVMCSupportTypes.html#gad1d1bb5f901c903a0cf09c5a053c9c56">LLVMModuleRef</a> M)</td></tr>
-<tr class="memdesc:gabffdc747c14d77b3eb89500adf4f269b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an exact copy of the specified module.  <a href="group__LLVMCCoreModule.html#gabffdc747c14d77b3eb89500adf4f269b">More...</a><br /></td></tr>
-<tr class="separator:gabffdc747c14d77b3eb89500adf4f269b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abffdc747c14d77b3eb89500adf4f269b"><td class="memItemLeft" align="right" valign="top">LLVMModuleRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CloneModule_8cpp.html#abffdc747c14d77b3eb89500adf4f269b">LLVMCloneModule</a> (LLVMModuleRef M)</td></tr>
+<tr class="separator:abffdc747c14d77b3eb89500adf4f269b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a04b8f04da3f1b0bf1c9a2802f73e2d05" name="a04b8f04da3f1b0bf1c9a2802f73e2d05"></a>
@@ -89,13 +96,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void copyComdat </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1GlobalObject.html">GlobalObject</a> *&#160;</td>
+          <td class="paramtype">GlobalObject *&#160;</td>
           <td class="paramname"><em>Dst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1GlobalObject.html">GlobalObject</a> *&#160;</td>
+          <td class="paramtype">const GlobalObject *&#160;</td>
           <td class="paramname"><em>Src</em>&#160;</td>
         </tr>
         <tr>
@@ -113,16 +120,36 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CloneModule_8cpp_source.html#l00021">21</a> of file <a class="el" href="CloneModule_8cpp_source.html">CloneModule.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DebugCounter_8cpp_source.html#l00056">DC</a>, <a class="el" href="GlobalObject_8h_source.html#l00100">llvm::GlobalObject::getComdat()</a>, <a class="el" href="Module_8cpp_source.html#l00482">llvm::Module::getOrInsertComdat()</a>, <a class="el" href="GlobalValue_8h_source.html#l00575">llvm::GlobalValue::getParent()</a>, and <a class="el" href="GlobalObject_8h_source.html#l00102">llvm::GlobalObject::setComdat()</a>.</p>
+<p class="reference">References <a class="el" href="DebugCounter_8cpp_source.html#l00056">DC</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CloneModule_8cpp_source.html#l00046">llvm::CloneModule()</a>.</p>
+</div>
+</div>
+<a id="abffdc747c14d77b3eb89500adf4f269b" name="abffdc747c14d77b3eb89500adf4f269b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abffdc747c14d77b3eb89500adf4f269b">&#9670;&nbsp;</a></span>LLVMCloneModule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LLVMModuleRef LLVMCloneModule </td>
+          <td>(</td>
+          <td class="paramtype">LLVMModuleRef&#160;</td>
+          <td class="paramname"><em>M</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="CloneModule_8cpp_source.html#l00198">198</a> of file <a class="el" href="CloneModule_8cpp_source.html">CloneModule.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="PassManagerBuilder_8cpp_source.html#l01048">unwrap()</a>, and <a class="el" href="PassManagerBuilder_8cpp_source.html#l01052">wrap()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:23 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

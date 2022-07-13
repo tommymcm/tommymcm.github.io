@@ -57,15 +57,23 @@ $(function() {
   <div class="headertitle"><div class="title">FlattenCFGPass.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for FlattenCFGPass.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="FlattenCFGPass_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2FlattenCFGPass_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Scalar_2FlattenCFGPass_8cpp" id="alib_2Transforms_2Scalar_2FlattenCFGPass_8cpp">
+<area shape="rect" title=" " alt="" coords="405,5,563,45"/>
+<area shape="rect" title=" " alt="" coords="5,101,219,126"/>
+<area shape="rect" title=" " alt="" coords="243,93,405,133"/>
+<area shape="rect" title=" " alt="" coords="429,101,539,126"/>
+<area shape="rect" title=" " alt="" coords="564,101,660,126"/>
+<area shape="rect" title=" " alt="" coords="685,101,867,126"/>
+</map>
 </div>
 </div>
 <p><a href="FlattenCFGPass_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -77,9 +85,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9042511dc0b969b0f654f2d4d6a7a48b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FlattenCFGPass_8cpp.html#a9042511dc0b969b0f654f2d4d6a7a48b">INITIALIZE_PASS_BEGIN</a> (FlattenCFGPass, &quot;flattencfg&quot;, &quot;Flatten the CFG&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(FlattenCFGPass</td></tr>
+<tr class="memitem:a9042511dc0b969b0f654f2d4d6a7a48b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FlattenCFGPass_8cpp.html#a9042511dc0b969b0f654f2d4d6a7a48b">INITIALIZE_PASS_BEGIN</a> (FlattenCFGPass, &quot;flattencfg&quot;, &quot;Flatten the CFG&quot;, false, false) INITIALIZE_PASS_END(FlattenCFGPass</td></tr>
 <tr class="separator:a9042511dc0b969b0f654f2d4d6a7a48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc607753278c37f7aa0eba3e3f75633f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FlattenCFGPass_8cpp.html#acc607753278c37f7aa0eba3e3f75633f">iterativelyFlattenCFG</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *AA)</td></tr>
+<tr class="memitem:acc607753278c37f7aa0eba3e3f75633f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FlattenCFGPass_8cpp.html#acc607753278c37f7aa0eba3e3f75633f">iterativelyFlattenCFG</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, AliasAnalysis *AA)</td></tr>
 <tr class="memdesc:acc607753278c37f7aa0eba3e3f75633f"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterativelyFlattenCFG - Call FlattenCFG on all the blocks in the function, iterating until no more changes are made.  <a href="FlattenCFGPass_8cpp.html#acc607753278c37f7aa0eba3e3f75633f">More...</a><br /></td></tr>
 <tr class="separator:acc607753278c37f7aa0eba3e3f75633f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -166,15 +174,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> iterativelyFlattenCFG </td>
+          <td class="memname">static bool iterativelyFlattenCFG </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *&#160;</td>
+          <td class="paramtype">AliasAnalysis *&#160;</td>
           <td class="paramname"><em>AA</em>&#160;</td>
         </tr>
         <tr>
@@ -194,7 +202,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FlattenCFGPass_8cpp_source.html#l00052">52</a> of file <a class="el" href="FlattenCFGPass_8cpp_source.html">FlattenCFGPass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="FlattenCFG_8cpp_source.html#l00489">llvm::FlattenCFG()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
 
 </div>
 </div>
@@ -250,7 +258,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

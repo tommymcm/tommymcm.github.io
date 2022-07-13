@@ -56,16 +56,25 @@ $(function() {
   <div class="headertitle"><div class="title">PluginLoader.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="PluginLoader_8h_source.html">llvm/Support/PluginLoader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DynamicLibrary_8h_source.html">llvm/Support/DynamicLibrary.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ManagedStatic_8h_source.html">llvm/Support/ManagedStatic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Mutex_8h_source.html">llvm/Support/Mutex.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Support/PluginLoader.h&quot;</code><br />
+<code>#include &quot;llvm/Support/DynamicLibrary.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ManagedStatic.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Mutex.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for PluginLoader.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="PluginLoader_8cpp__incl.png" border="0" usemap="#alib_2Support_2PluginLoader_8cpp" alt=""/></div>
+<map name="alib_2Support_2PluginLoader_8cpp" id="alib_2Support_2PluginLoader_8cpp">
+<area shape="rect" title=" " alt="" coords="593,5,800,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,209,104"/>
+<area shape="rect" title=" " alt="" coords="233,79,456,104"/>
+<area shape="rect" title=" " alt="" coords="481,79,699,104"/>
+<area shape="rect" title=" " alt="" coords="723,79,886,104"/>
+<area shape="rect" title=" " alt="" coords="911,79,1117,104"/>
+<area shape="rect" title=" " alt="" coords="1141,79,1204,104"/>
+</map>
 </div>
 </div>
 <p><a href="PluginLoader_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -77,9 +86,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a0680073093ea1866f1979a02153fea3a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1ManagedStatic.html">ManagedStatic</a>&lt; std::vector&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PluginLoader_8cpp.html#a0680073093ea1866f1979a02153fea3a">Plugins</a></td></tr>
+<tr class="memitem:a0680073093ea1866f1979a02153fea3a"><td class="memItemLeft" align="right" valign="top">static ManagedStatic&lt; std::vector&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PluginLoader_8cpp.html#a0680073093ea1866f1979a02153fea3a">Plugins</a></td></tr>
 <tr class="separator:a0680073093ea1866f1979a02153fea3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d6cc26b38cd424829225ab00cab03f7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1ManagedStatic.html">ManagedStatic</a>&lt; <a class="el" href="classllvm_1_1sys_1_1SmartMutex.html">sys::SmartMutex</a>&lt; <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PluginLoader_8cpp.html#a9d6cc26b38cd424829225ab00cab03f7">PluginsLock</a></td></tr>
+<tr class="memitem:a9d6cc26b38cd424829225ab00cab03f7"><td class="memItemLeft" align="right" valign="top">static ManagedStatic&lt; sys::SmartMutex&lt; <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PluginLoader_8cpp.html#a9d6cc26b38cd424829225ab00cab03f7">PluginsLock</a></td></tr>
 <tr class="separator:a9d6cc26b38cd424829225ab00cab03f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -110,7 +119,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1ManagedStatic.html">ManagedStatic</a>&lt;std::vector&lt;std::string&gt; &gt; Plugins</td>
+          <td class="memname">ManagedStatic&lt;std::vector&lt;std::string&gt; &gt; Plugins</td>
         </tr>
       </table>
   </td>
@@ -121,8 +130,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="PluginLoader_8cpp_source.html#l00022">22</a> of file <a class="el" href="PluginLoader_8cpp_source.html">PluginLoader.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="PluginLoader_8cpp_source.html#l00036">llvm::PluginLoader::getNumPlugins()</a>, <a class="el" href="PluginLoader_8cpp_source.html#l00041">llvm::PluginLoader::getPlugin()</a>, and <a class="el" href="PluginLoader_8cpp_source.html#l00025">llvm::PluginLoader::operator=()</a>.</p>
 
 </div>
 </div>
@@ -136,7 +143,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1ManagedStatic.html">ManagedStatic</a>&lt;<a class="el" href="classllvm_1_1sys_1_1SmartMutex.html">sys::SmartMutex</a>&lt;<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>&gt; &gt; PluginsLock</td>
+          <td class="memname">ManagedStatic&lt;sys::SmartMutex&lt;<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>&gt; &gt; PluginsLock</td>
         </tr>
       </table>
   </td>
@@ -148,14 +155,12 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PluginLoader_8cpp_source.html#l00023">23</a> of file <a class="el" href="PluginLoader_8cpp_source.html">PluginLoader.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PluginLoader_8cpp_source.html#l00036">llvm::PluginLoader::getNumPlugins()</a>, <a class="el" href="PluginLoader_8cpp_source.html#l00041">llvm::PluginLoader::getPlugin()</a>, and <a class="el" href="PluginLoader_8cpp_source.html#l00025">llvm::PluginLoader::operator=()</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:15 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

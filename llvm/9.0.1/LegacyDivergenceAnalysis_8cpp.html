@@ -57,24 +57,41 @@ $(function() {
   <div class="headertitle"><div class="title">LegacyDivergenceAnalysis.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="PostOrderIterator_8h_source.html">llvm/ADT/PostOrderIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Analysis_2CFG_8h_source.html">llvm/Analysis/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DivergenceAnalysis_8h_source.html">llvm/Analysis/DivergenceAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LegacyDivergenceAnalysis_8h_source.html">llvm/Analysis/LegacyDivergenceAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Analysis_2Passes_8h_source.html">llvm/Analysis/Passes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PostDominators_8h_source.html">llvm/Analysis/PostDominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstIterator_8h_source.html">llvm/IR/InstIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/ADT/PostOrderIterator.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/DivergenceAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LegacyDivergenceAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/Passes.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/PostDominators.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstIterator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LegacyDivergenceAnalysis.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="LegacyDivergenceAnalysis_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2LegacyDivergenceAnalysis_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2LegacyDivergenceAnalysis_8cpp" id="alib_2Analysis_2LegacyDivergenceAnalysis_8cpp">
+<area shape="rect" title=" " alt="" coords="1443,5,1665,45"/>
+<area shape="rect" title=" " alt="" coords="5,101,215,126"/>
+<area shape="rect" title=" " alt="" coords="239,101,392,126"/>
+<area shape="rect" title=" " alt="" coords="416,93,604,133"/>
+<area shape="rect" title=" " alt="" coords="629,93,863,133"/>
+<area shape="rect" title=" " alt="" coords="887,101,1058,126"/>
+<area shape="rect" title=" " alt="" coords="1083,101,1313,126"/>
+<area shape="rect" title=" " alt="" coords="1338,93,1557,133"/>
+<area shape="rect" title=" " alt="" coords="1581,101,1741,126"/>
+<area shape="rect" title=" " alt="" coords="1765,101,1919,126"/>
+<area shape="rect" title=" " alt="" coords="1943,101,2103,126"/>
+<area shape="rect" title=" " alt="" coords="2127,101,2247,126"/>
+<area shape="rect" title=" " alt="" coords="2271,101,2434,126"/>
+<area shape="rect" title=" " alt="" coords="2459,101,2665,126"/>
+<area shape="rect" title=" " alt="" coords="2689,101,2752,126"/>
+</map>
 </div>
 </div>
 <p><a href="LegacyDivergenceAnalysis_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -86,13 +103,13 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab0f0a225caa6e4bf6e685e5c44b91c9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LegacyDivergenceAnalysis_8cpp.html#ab0f0a225caa6e4bf6e685e5c44b91c9e">INITIALIZE_PASS_BEGIN</a> (<a class="el" href="classllvm_1_1LegacyDivergenceAnalysis.html">LegacyDivergenceAnalysis</a>, &quot;divergence&quot;, &quot;Legacy Divergence Analysis&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(<a class="el" href="classllvm_1_1LegacyDivergenceAnalysis.html">LegacyDivergenceAnalysis</a></td></tr>
+<tr class="memitem:a61c55b2874a7dbd15b8a973a109fc302"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LegacyDivergenceAnalysis_8cpp.html#a61c55b2874a7dbd15b8a973a109fc302">UseGPUDA</a> (&quot;use-gpu-<a class="el" href="LegacyDivergenceAnalysis_8cpp.html#af8468d23ec9659bd41268d5e13922148">divergence</a>-analysis&quot;, cl::init(false), cl::Hidden, cl::desc(&quot;turn the LegacyDivergenceAnalysis into &quot; &quot;a wrapper for GPUDivergenceAnalysis&quot;))</td></tr>
+<tr class="separator:a61c55b2874a7dbd15b8a973a109fc302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0f0a225caa6e4bf6e685e5c44b91c9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LegacyDivergenceAnalysis_8cpp.html#ab0f0a225caa6e4bf6e685e5c44b91c9e">INITIALIZE_PASS_BEGIN</a> (LegacyDivergenceAnalysis, &quot;divergence&quot;, &quot;Legacy Divergence Analysis&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) INITIALIZE_PASS_END(LegacyDivergenceAnalysis</td></tr>
 <tr class="separator:ab0f0a225caa6e4bf6e685e5c44b91c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ae05a3471fec41e701fedc737e0a853d1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LegacyDivergenceAnalysis_8cpp.html#ae05a3471fec41e701fedc737e0a853d1">UseGPUDA</a> (&quot;use-gpu-<a class="el" href="LegacyDivergenceAnalysis_8cpp.html#af8468d23ec9659bd41268d5e13922148">divergence</a>-analysis&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;turn the <a class="el" href="classllvm_1_1LegacyDivergenceAnalysis.html">LegacyDivergenceAnalysis</a> into &quot; &quot;a <a class="el" href="AMDGPUAliasAnalysis_8cpp.html#ae516ea75555373b0b369a3d1b3cd41e2">wrapper</a> <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> GPUDivergenceAnalysis&quot;))</td></tr>
-<tr class="separator:ae05a3471fec41e701fedc737e0a853d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8468d23ec9659bd41268d5e13922148"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LegacyDivergenceAnalysis_8cpp.html#af8468d23ec9659bd41268d5e13922148">divergence</a></td></tr>
 <tr class="separator:af8468d23ec9659bd41268d5e13922148"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9db0db2a8ec46dd53d9c7a10d0132420"><td class="memItemLeft" align="right" valign="top">Legacy Divergence&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LegacyDivergenceAnalysis_8cpp.html#a9db0db2a8ec46dd53d9c7a10d0132420">Analysis</a></td></tr>
@@ -127,7 +144,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">INITIALIZE_PASS_BEGIN </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1LegacyDivergenceAnalysis.html">LegacyDivergenceAnalysis</a>&#160;</td>
+          <td class="paramtype">LegacyDivergenceAnalysis&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -161,6 +178,56 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a61c55b2874a7dbd15b8a973a109fc302" name="a61c55b2874a7dbd15b8a973a109fc302"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61c55b2874a7dbd15b8a973a109fc302">&#9670;&nbsp;</a></span>UseGPUDA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; UseGPUDA </td>
+          <td>(</td>
+          <td class="paramtype">&quot;use-gpu-<a class="el" href="LegacyDivergenceAnalysis_8cpp.html#af8468d23ec9659bd41268d5e13922148">divergence</a>-analysis&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;turn the LegacyDivergenceAnalysis into &quot; &quot;a wrapper for GPUDivergenceAnalysis&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
 
 </div>
 </div>
@@ -213,60 +280,10 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ae05a3471fec41e701fedc737e0a853d1" name="ae05a3471fec41e701fedc737e0a853d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae05a3471fec41e701fedc737e0a853d1">&#9670;&nbsp;</a></span>UseGPUDA</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; UseGPUDA(&quot;use-gpu-<a class="el" href="LegacyDivergenceAnalysis_8cpp.html#af8468d23ec9659bd41268d5e13922148">divergence</a>-analysis&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;turn the <a class="el" href="classllvm_1_1LegacyDivergenceAnalysis.html">LegacyDivergenceAnalysis</a> into &quot; &quot;a <a class="el" href="AMDGPUAliasAnalysis_8cpp.html#ae516ea75555373b0b369a3d1b3cd41e2">wrapper</a> <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> GPUDivergenceAnalysis&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;use-gpu-<a class="el" href="LegacyDivergenceAnalysis_8cpp.html#af8468d23ec9659bd41268d5e13922148">divergence</a>-analysis&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;turn the <a class="el" href="classllvm_1_1LegacyDivergenceAnalysis.html">LegacyDivergenceAnalysis</a> into &quot; &quot;a <a class="el" href="AMDGPUAliasAnalysis_8cpp.html#ae516ea75555373b0b369a3d1b3cd41e2">wrapper</a> <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> GPUDivergenceAnalysis&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="LegacyDivergenceAnalysis_8cpp_source.html#l00290">llvm::LegacyDivergenceAnalysis::getAnalysisUsage()</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:12 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

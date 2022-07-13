@@ -56,28 +56,42 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="LinkDiagnosticInfo_8h_source.html">LinkDiagnosticInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm-c_2Linker_8h_source.html">llvm-c/Linker.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SetVector_8h_source.html">llvm/ADT/SetVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2IR_2Comdat_8h_source.html">llvm/IR/Comdat.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DiagnosticPrinter_8h_source.html">llvm/IR/DiagnosticPrinter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalValue_8h_source.html">llvm/IR/GlobalValue.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Linker_2Linker_8h_source.html">llvm/Linker/Linker.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2Error_8h_source.html">llvm/Support/Error.h</a>&quot;</code><br />
+<code>#include &quot;llvm-c/Linker.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SetVector.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Comdat.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DiagnosticPrinter.h&quot;</code><br />
+<code>#include &quot;llvm/IR/GlobalValue.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/Linker/Linker.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Error.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LinkModules.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="LinkModules_8cpp__incl.png" border="0" usemap="#alib_2Linker_2LinkModules_8cpp" alt=""/></div>
+<map name="alib_2Linker_2LinkModules_8cpp" id="alib_2Linker_2LinkModules_8cpp">
+<area shape="rect" title=" " alt="" coords="781,5,976,31"/>
+<area shape="rect" href="LinkDiagnosticInfo_8h.html" title=" " alt="" coords="17,79,172,104"/>
+<area shape="rect" title=" " alt="" coords="196,79,313,104"/>
+<area shape="rect" title=" " alt="" coords="338,79,497,104"/>
+<area shape="rect" title=" " alt="" coords="521,79,655,104"/>
+<area shape="rect" title=" " alt="" coords="680,79,875,104"/>
+<area shape="rect" title=" " alt="" coords="899,79,1061,104"/>
+<area shape="rect" title=" " alt="" coords="1086,79,1255,104"/>
+<area shape="rect" title=" " alt="" coords="1279,79,1411,104"/>
+<area shape="rect" title=" " alt="" coords="1435,79,1583,104"/>
+<area shape="rect" title=" " alt="" coords="1607,79,1758,104"/>
+<area shape="rect" title=" " alt="" coords="5,152,184,177"/>
+</map>
 </div>
 </div>
 <p><a href="LinkModules_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5fcaae36a6f1bd89ad8eb9355a6557eb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1GlobalValue.html#a9141f967188383108a69cc1b8ed3c195">GlobalValue::VisibilityTypes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LinkModules_8cpp.html#a5fcaae36a6f1bd89ad8eb9355a6557eb">getMinVisibility</a> (<a class="el" href="classllvm_1_1GlobalValue.html#a9141f967188383108a69cc1b8ed3c195">GlobalValue::VisibilityTypes</a> <a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, <a class="el" href="classllvm_1_1GlobalValue.html#a9141f967188383108a69cc1b8ed3c195">GlobalValue::VisibilityTypes</a> <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>)</td></tr>
+<tr class="memitem:a5fcaae36a6f1bd89ad8eb9355a6557eb"><td class="memItemLeft" align="right" valign="top">static GlobalValue::VisibilityTypes&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LinkModules_8cpp.html#a5fcaae36a6f1bd89ad8eb9355a6557eb">getMinVisibility</a> (GlobalValue::VisibilityTypes A, GlobalValue::VisibilityTypes B)</td></tr>
 <tr class="separator:a5fcaae36a6f1bd89ad8eb9355a6557eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae18bee20a3140da8a2b2ebb8edcf4bed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__LLVMCSupportTypes.html#ga209de0bceb13179a973c6a45211617bd">LLVMBool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LinkModules_8cpp.html#ae18bee20a3140da8a2b2ebb8edcf4bed">LLVMLinkModules2</a> (<a class="el" href="group__LLVMCSupportTypes.html#gad1d1bb5f901c903a0cf09c5a053c9c56">LLVMModuleRef</a> Dest, <a class="el" href="group__LLVMCSupportTypes.html#gad1d1bb5f901c903a0cf09c5a053c9c56">LLVMModuleRef</a> Src)</td></tr>
+<tr class="memitem:ae18bee20a3140da8a2b2ebb8edcf4bed"><td class="memItemLeft" align="right" valign="top">LLVMBool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LinkModules_8cpp.html#ae18bee20a3140da8a2b2ebb8edcf4bed">LLVMLinkModules2</a> (LLVMModuleRef Dest, LLVMModuleRef Src)</td></tr>
 <tr class="separator:ae18bee20a3140da8a2b2ebb8edcf4bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -91,15 +105,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1GlobalValue.html#a9141f967188383108a69cc1b8ed3c195">GlobalValue::VisibilityTypes</a> getMinVisibility </td>
+          <td class="memname">static GlobalValue::VisibilityTypes getMinVisibility </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1GlobalValue.html#a9141f967188383108a69cc1b8ed3c195">GlobalValue::VisibilityTypes</a>&#160;</td>
+          <td class="paramtype">GlobalValue::VisibilityTypes&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1GlobalValue.html#a9141f967188383108a69cc1b8ed3c195">GlobalValue::VisibilityTypes</a>&#160;</td>
+          <td class="paramtype">GlobalValue::VisibilityTypes&#160;</td>
           <td class="paramname"><em>B</em>&#160;</td>
         </tr>
         <tr>
@@ -117,8 +131,6 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LinkModules_8cpp_source.html#l00120">120</a> of file <a class="el" href="LinkModules_8cpp_source.html">LinkModules.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="GlobalValue_8h_source.html#l00063">llvm::GlobalValue::DefaultVisibility</a>, <a class="el" href="GlobalValue_8h_source.html#l00064">llvm::GlobalValue::HiddenVisibility</a>, and <a class="el" href="GlobalValue_8h_source.html#l00065">llvm::GlobalValue::ProtectedVisibility</a>.</p>
-
 </div>
 </div>
 <a id="ae18bee20a3140da8a2b2ebb8edcf4bed" name="ae18bee20a3140da8a2b2ebb8edcf4bed"></a>
@@ -128,15 +140,15 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__LLVMCSupportTypes.html#ga209de0bceb13179a973c6a45211617bd">LLVMBool</a> LLVMLinkModules2 </td>
+          <td class="memname">LLVMBool LLVMLinkModules2 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__LLVMCSupportTypes.html#gad1d1bb5f901c903a0cf09c5a053c9c56">LLVMModuleRef</a>&#160;</td>
+          <td class="paramtype">LLVMModuleRef&#160;</td>
           <td class="paramname"><em>Dest</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__LLVMCSupportTypes.html#gad1d1bb5f901c903a0cf09c5a053c9c56">LLVMModuleRef</a>&#160;</td>
+          <td class="paramtype">LLVMModuleRef&#160;</td>
           <td class="paramname"><em>Src</em>&#160;</td>
         </tr>
         <tr>
@@ -149,14 +161,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LinkModules_8cpp_source.html#l00601">601</a> of file <a class="el" href="LinkModules_8cpp_source.html">LinkModules.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a9cb3a7d37a9414f3dc2cdca773d6dee6">D</a>, <a class="el" href="LinkModules_8cpp_source.html#l00590">llvm::Linker::linkModules()</a>, and <a class="el" href="Attributes_8h_source.html#l00203">llvm::unwrap()</a>.</p>
+<p class="reference">References <a class="el" href="PassManagerBuilder_8cpp_source.html#l01048">unwrap()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:15 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

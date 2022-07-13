@@ -58,7 +58,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>VPlan-based builder utility analogous to <a class="el" href="classllvm_1_1IRBuilder.html" title="This provides a uniform API for creating instructions and inserting them into a basic block: either a...">IRBuilder</a>.  
+<p>VPlan-based builder utility analogous to IRBuilder.  
  <a href="classllvm_1_1VPBuilder.html#details">More...</a></p>
 
 <p><code>#include &quot;<a class="el" href="LoopVectorizationPlanner_8h_source.html">Transforms/Vectorize/LoopVectorizationPlanner.h</a>&quot;</code></p>
@@ -79,9 +79,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abfa6751dfe3a3fb7462d62c3d06f6954"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html#abfa6751dfe3a3fb7462d62c3d06f6954">clearInsertionPoint</a> ()</td></tr>
 <tr class="memdesc:abfa6751dfe3a3fb7462d62c3d06f6954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the insertion point: created instructions will not be inserted into a block.  <a href="classllvm_1_1VPBuilder.html#abfa6751dfe3a3fb7462d62c3d06f6954">More...</a><br /></td></tr>
 <tr class="separator:abfa6751dfe3a3fb7462d62c3d06f6954"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a85632d13a4a34fc9abb885d7d0b550"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1VPBasicBlock.html">VPBasicBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html#a3a85632d13a4a34fc9abb885d7d0b550">getInsertBlock</a> () <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a></td></tr>
+<tr class="memitem:a3a85632d13a4a34fc9abb885d7d0b550"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1VPBasicBlock.html">VPBasicBlock</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html#a3a85632d13a4a34fc9abb885d7d0b550">getInsertBlock</a> () const</td></tr>
 <tr class="separator:a3a85632d13a4a34fc9abb885d7d0b550"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40184db12ba57b6b8ee938a31ce70bbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1VPBasicBlock.html#a2fc75e7b63babbf776ed29cfed87ae65">VPBasicBlock::iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html#a40184db12ba57b6b8ee938a31ce70bbe">getInsertPoint</a> () <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a></td></tr>
+<tr class="memitem:a40184db12ba57b6b8ee938a31ce70bbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1VPBasicBlock.html#a2fc75e7b63babbf776ed29cfed87ae65">VPBasicBlock::iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html#a40184db12ba57b6b8ee938a31ce70bbe">getInsertPoint</a> () const</td></tr>
 <tr class="separator:a40184db12ba57b6b8ee938a31ce70bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d69e480ca633efc5ee10248ab61d318"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html#a1d69e480ca633efc5ee10248ab61d318">restoreIP</a> (<a class="el" href="classllvm_1_1VPBuilder_1_1VPInsertPoint.html">VPInsertPoint</a> IP)</td></tr>
 <tr class="memdesc:a1d69e480ca633efc5ee10248ab61d318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current insert point to a previously-saved location.  <a href="classllvm_1_1VPBuilder.html#a1d69e480ca633efc5ee10248ab61d318">More...</a><br /></td></tr>
@@ -92,13 +92,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a14418c70f1b5c9790db19902eb4429da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html#a14418c70f1b5c9790db19902eb4429da">setInsertPoint</a> (<a class="el" href="classllvm_1_1VPBasicBlock.html">VPBasicBlock</a> *TheBB, <a class="el" href="classllvm_1_1VPBasicBlock.html#a2fc75e7b63babbf776ed29cfed87ae65">VPBasicBlock::iterator</a> IP)</td></tr>
 <tr class="memdesc:a14418c70f1b5c9790db19902eb4429da"><td class="mdescLeft">&#160;</td><td class="mdescRight">This specifies that created instructions should be inserted at the specified point.  <a href="classllvm_1_1VPBuilder.html#a14418c70f1b5c9790db19902eb4429da">More...</a><br /></td></tr>
 <tr class="separator:a14418c70f1b5c9790db19902eb4429da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b38ae1897833dcf866ad592acbab8a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1VPInstruction.html">VPInstruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html#a9b38ae1897833dcf866ad592acbab8a4">insert</a> (<a class="el" href="classllvm_1_1VPInstruction.html">VPInstruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>) <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a></td></tr>
+<tr class="memitem:a9b38ae1897833dcf866ad592acbab8a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1VPInstruction.html">VPInstruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html#a9b38ae1897833dcf866ad592acbab8a4">insert</a> (<a class="el" href="classllvm_1_1VPInstruction.html">VPInstruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>) const</td></tr>
 <tr class="memdesc:a9b38ae1897833dcf866ad592acbab8a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert and return the specified instruction.  <a href="classllvm_1_1VPBuilder.html#a9b38ae1897833dcf866ad592acbab8a4">More...</a><br /></td></tr>
 <tr class="separator:a9b38ae1897833dcf866ad592acbab8a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac76e6f8a1c7d4db2dfe5c729b9a13410"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1VPValue.html">VPValue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html#ac76e6f8a1c7d4db2dfe5c729b9a13410">createNaryOp</a> (<a class="el" href="classunsigned.html">unsigned</a> Opcode, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1VPValue.html">VPValue</a> * &gt; Operands, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Inst=nullptr)</td></tr>
-<tr class="memdesc:ac76e6f8a1c7d4db2dfe5c729b9a13410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an N-ary operation with <code>Opcode</code>, <code>Operands</code> and set <code>Inst</code> as its underlying <a class="el" href="classllvm_1_1Instruction.html">Instruction</a>.  <a href="classllvm_1_1VPBuilder.html#ac76e6f8a1c7d4db2dfe5c729b9a13410">More...</a><br /></td></tr>
+<tr class="memitem:ac76e6f8a1c7d4db2dfe5c729b9a13410"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1VPValue.html">VPValue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html#ac76e6f8a1c7d4db2dfe5c729b9a13410">createNaryOp</a> (unsigned Opcode, <a class="el" href="classllvm_1_1ArrayRef.html">ArrayRef</a>&lt; <a class="el" href="classllvm_1_1VPValue.html">VPValue</a> * &gt; Operands, Instruction *Inst=nullptr)</td></tr>
+<tr class="memdesc:ac76e6f8a1c7d4db2dfe5c729b9a13410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an N-ary operation with <code>Opcode</code>, <code>Operands</code> and set <code>Inst</code> as its underlying Instruction.  <a href="classllvm_1_1VPBuilder.html#ac76e6f8a1c7d4db2dfe5c729b9a13410">More...</a><br /></td></tr>
 <tr class="separator:ac76e6f8a1c7d4db2dfe5c729b9a13410"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32fdc4a379c4212c171fb3637d2972d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1VPValue.html">VPValue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html#a32fdc4a379c4212c171fb3637d2972d6">createNaryOp</a> (<a class="el" href="classunsigned.html">unsigned</a> Opcode, std::initializer_list&lt; <a class="el" href="classllvm_1_1VPValue.html">VPValue</a> * &gt; Operands, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Inst=nullptr)</td></tr>
+<tr class="memitem:a32fdc4a379c4212c171fb3637d2972d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1VPValue.html">VPValue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html#a32fdc4a379c4212c171fb3637d2972d6">createNaryOp</a> (unsigned Opcode, std::initializer_list&lt; <a class="el" href="classllvm_1_1VPValue.html">VPValue</a> * &gt; Operands, Instruction *Inst=nullptr)</td></tr>
 <tr class="separator:a32fdc4a379c4212c171fb3637d2972d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8df27e56ee445a17639b50c969177e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1VPValue.html">VPValue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classllvm_1_1VPBuilder.html#ad8df27e56ee445a17639b50c969177e6">createNot</a> (<a class="el" href="classllvm_1_1VPValue.html">VPValue</a> *Operand)</td></tr>
 <tr class="separator:ad8df27e56ee445a17639b50c969177e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,7 +108,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a439e5324af2cd9012148b4e01b8f4a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >VPlan-based builder utility analogous to <a class="el" href="classllvm_1_1IRBuilder.html" title="This provides a uniform API for creating instructions and inserting them into a basic block: either a...">IRBuilder</a>. </p>
+<div class="textblock"><p >VPlan-based builder utility analogous to IRBuilder. </p>
 
 <p class="definition">Definition at line <a class="el" href="LoopVectorizationPlanner_8h_source.html#l00035">35</a> of file <a class="el" href="LoopVectorizationPlanner_8h_source.html">LoopVectorizationPlanner.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -223,7 +223,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classllvm_1_1VPValue.html">VPValue</a> * llvm::VPBuilder::createNaryOp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>Opcode</em>, </td>
         </tr>
         <tr>
@@ -235,7 +235,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>Inst</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -251,7 +251,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create an N-ary operation with <code>Opcode</code>, <code>Operands</code> and set <code>Inst</code> as its underlying <a class="el" href="classllvm_1_1Instruction.html">Instruction</a>. </p>
+<p>Create an N-ary operation with <code>Opcode</code>, <code>Operands</code> and set <code>Inst</code> as its underlying Instruction. </p>
 
 <p class="definition">Definition at line <a class="el" href="LoopVectorizationPlanner_8h_source.html#l00117">117</a> of file <a class="el" href="LoopVectorizationPlanner_8h_source.html">LoopVectorizationPlanner.h</a>.</p>
 
@@ -273,7 +273,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classllvm_1_1VPValue.html">VPValue</a> * llvm::VPBuilder::createNaryOp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>Opcode</em>, </td>
         </tr>
         <tr>
@@ -285,7 +285,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>Inst</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -527,7 +527,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopVectorizationPlanner_8h_source.html#l00096">96</a> of file <a class="el" href="LoopVectorizationPlanner_8h_source.html">LoopVectorizationPlanner.h</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, and <a class="el" href="VPlan_8h_source.html#l01010">llvm::VPBasicBlock::end()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="VPlan_8h_source.html#l01010">llvm::VPBasicBlock::end()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LoopVectorizationPlanner_8h_source.html#l00087">restoreIP()</a>.</p>
 
@@ -579,7 +579,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:28:06 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:46 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -57,36 +57,36 @@ $(function() {
   <div class="headertitle"><div class="title">ConstantHoisting.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="ConstantHoisting_8h_source.html">llvm/Transforms/Scalar/ConstantHoisting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="APInt_8h_source.html">llvm/ADT/APInt.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseMap_8h_source.html">llvm/ADT/DenseMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="None_8h_source.html">llvm/ADT/None.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Optional_8h_source.html">llvm/ADT/Optional.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallPtrSet_8h_source.html">llvm/ADT/SmallPtrSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BlockFrequencyInfo_8h_source.html">llvm/Analysis/BlockFrequencyInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DebugInfoMetadata_8h_source.html">llvm/IR/DebugInfoMetadata.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BlockFrequency_8h_source.html">llvm/Support/BlockFrequency.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SizeOpts_8h_source.html">llvm/Transforms/Utils/SizeOpts.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/ConstantHoisting.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/APInt.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/None.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Optional.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/BlockFrequencyInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DebugInfoMetadata.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/BlockFrequency.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/SizeOpts.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
@@ -97,6 +97,45 @@ $(function() {
 Include dependency graph for ConstantHoisting.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ConstantHoisting_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2ConstantHoisting_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Scalar_2ConstantHoisting_8cpp" id="alib_2Transforms_2Scalar_2ConstantHoisting_8cpp">
+<area shape="rect" title=" " alt="" coords="3384,5,3549,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,176,133"/>
+<area shape="rect" title=" " alt="" coords="201,101,333,126"/>
+<area shape="rect" title=" " alt="" coords="357,101,523,126"/>
+<area shape="rect" title=" " alt="" coords="547,101,679,126"/>
+<area shape="rect" title=" " alt="" coords="703,101,857,126"/>
+<area shape="rect" title=" " alt="" coords="881,101,1055,126"/>
+<area shape="rect" title=" " alt="" coords="1079,101,1254,126"/>
+<area shape="rect" title=" " alt="" coords="1278,101,1429,126"/>
+<area shape="rect" title=" " alt="" coords="1453,93,1670,133"/>
+<area shape="rect" title=" " alt="" coords="1695,93,1913,133"/>
+<area shape="rect" title=" " alt="" coords="1937,93,2156,133"/>
+<area shape="rect" title=" " alt="" coords="2181,93,2342,133"/>
+<area shape="rect" title=" " alt="" coords="2367,101,2521,126"/>
+<area shape="rect" title=" " alt="" coords="2545,101,2695,126"/>
+<area shape="rect" title=" " alt="" coords="2719,101,2932,126"/>
+<area shape="rect" title=" " alt="" coords="2956,101,3116,126"/>
+<area shape="rect" title=" " alt="" coords="3140,101,3279,126"/>
+<area shape="rect" title=" " alt="" coords="3303,101,3454,126"/>
+<area shape="rect" title=" " alt="" coords="3478,101,3631,126"/>
+<area shape="rect" title=" " alt="" coords="3656,101,3816,126"/>
+<area shape="rect" title=" " alt="" coords="3840,101,4000,126"/>
+<area shape="rect" title=" " alt="" coords="4024,101,4144,126"/>
+<area shape="rect" title=" " alt="" coords="4168,101,4264,126"/>
+<area shape="rect" title=" " alt="" coords="4289,101,4511,126"/>
+<area shape="rect" title=" " alt="" coords="4536,101,4707,126"/>
+<area shape="rect" title=" " alt="" coords="4731,101,4946,126"/>
+<area shape="rect" title=" " alt="" coords="4971,101,5133,126"/>
+<area shape="rect" title=" " alt="" coords="5158,101,5365,126"/>
+<area shape="rect" title=" " alt="" coords="5389,101,5571,126"/>
+<area shape="rect" title=" " alt="" coords="5595,93,5757,133"/>
+<area shape="rect" title=" " alt="" coords="5781,101,5867,126"/>
+<area shape="rect" title=" " alt="" coords="5891,101,5960,126"/>
+<area shape="rect" title=" " alt="" coords="5984,101,6051,126"/>
+<area shape="rect" title=" " alt="" coords="6075,101,6146,126"/>
+<area shape="rect" title=" " alt="" coords="6170,101,6225,126"/>
+<area shape="rect" title=" " alt="" coords="6249,101,6309,126"/>
+</map>
 </div>
 </div>
 <p><a href="ConstantHoisting_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -112,30 +151,30 @@ Functions</h2></td></tr>
 <tr class="separator:a724d47375543e8bdf0e709a20aa72ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad13a4600cad7580b8cd45192d30b42e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#ad13a4600cad7580b8cd45192d30b42e8">STATISTIC</a> (NumConstantsRebased, &quot;Number of constants rebased&quot;)</td></tr>
 <tr class="separator:ad13a4600cad7580b8cd45192d30b42e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93f57b76764f70277aa130c9b4604eac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a93f57b76764f70277aa130c9b4604eac">INITIALIZE_PASS_BEGIN</a> (ConstantHoistingLegacyPass, &quot;consthoist&quot;, &quot;Constant Hoisting&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(ConstantHoistingLegacyPass</td></tr>
+<tr class="memitem:a9d6d17942086110ba280efce3f3f736c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a9d6d17942086110ba280efce3f3f736c">ConstHoistWithBlockFrequency</a> (&quot;consthoist-with-block-frequency&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, cl::desc(&quot;Enable the <a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a> of the block frequency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> to <a class="el" href="LoopStrengthReduce_8cpp.html#a6d827fc34f1b4371a0b7183d3ca5bcac">reduce</a> the &quot; &quot;chance to execute const materialization more frequently than &quot; &quot;without hoisting.&quot;))</td></tr>
+<tr class="separator:a9d6d17942086110ba280efce3f3f736c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d9a95a89b220a8678911a41b220dc4c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a5d9a95a89b220a8678911a41b220dc4c">ConstHoistGEP</a> (&quot;consthoist-gep&quot;, cl::init(false), cl::Hidden, cl::desc(&quot;Try hoisting constant <a class="el" href="SeparateConstOffsetFromGEP_8cpp.html#a589d62ce2ac872ff25beaad782d27235">gep</a> expressions&quot;))</td></tr>
+<tr class="separator:a5d9a95a89b220a8678911a41b220dc4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0daed45aab055b21e7bfccd14d4ed518"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a0daed45aab055b21e7bfccd14d4ed518">MinNumOfDependentToRebase</a> (&quot;consthoist-min-num-to-rebase&quot;, cl::desc(&quot;Do not rebase <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> number of dependent constants of a Base is less &quot; &quot;than this number.&quot;), cl::init(0), cl::Hidden)</td></tr>
+<tr class="separator:a0daed45aab055b21e7bfccd14d4ed518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93f57b76764f70277aa130c9b4604eac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a93f57b76764f70277aa130c9b4604eac">INITIALIZE_PASS_BEGIN</a> (ConstantHoistingLegacyPass, &quot;consthoist&quot;, &quot;Constant Hoisting&quot;, false, false) INITIALIZE_PASS_END(ConstantHoistingLegacyPass</td></tr>
 <tr class="separator:a93f57b76764f70277aa130c9b4604eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d006f1345601d962376a9f2529c05e7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a7d006f1345601d962376a9f2529c05e7">findBestInsertionSet</a> (<a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, <a class="el" href="classllvm_1_1BlockFrequencyInfo.html">BlockFrequencyInfo</a> &amp;BFI, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *<a class="el" href="structllvm_1_1Entry.html">Entry</a>, <a class="el" href="classllvm_1_1SmallPtrSet.html">SmallPtrSet</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, 8 &gt; &amp;BBs)</td></tr>
+<tr class="memitem:a7d006f1345601d962376a9f2529c05e7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a7d006f1345601d962376a9f2529c05e7">findBestInsertionSet</a> (DominatorTree &amp;DT, BlockFrequencyInfo &amp;BFI, BasicBlock *<a class="el" href="structllvm_1_1Entry.html">Entry</a>, SmallPtrSet&lt; BasicBlock *, 8 &gt; &amp;BBs)</td></tr>
 <tr class="memdesc:a7d006f1345601d962376a9f2529c05e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given <code>BBs</code> as input, find another set of BBs which collectively dominates <code>BBs</code> and have the minimal sum of frequencies.  <a href="ConstantHoisting_8cpp.html#a7d006f1345601d962376a9f2529c05e7">More...</a><br /></td></tr>
 <tr class="separator:a7d006f1345601d962376a9f2529c05e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fd0170704df776cdaf4d4d3ee61a34c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classllvm_1_1APInt.html">APInt</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a1fd0170704df776cdaf4d4d3ee61a34c">calculateOffsetDiff</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;V1, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;V2)</td></tr>
+<tr class="memitem:a1fd0170704df776cdaf4d4d3ee61a34c"><td class="memItemLeft" align="right" valign="top">static Optional&lt; APInt &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a1fd0170704df776cdaf4d4d3ee61a34c">calculateOffsetDiff</a> (const APInt &amp;V1, const APInt &amp;V2)</td></tr>
 <tr class="separator:a1fd0170704df776cdaf4d4d3ee61a34c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b724dd85384f743a87c3815aace6037"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a0b724dd85384f743a87c3815aace6037">updateOperand</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Inst, <a class="el" href="classunsigned.html">unsigned</a> <a class="el" href="DeadArgumentElimination_8cpp.html#a39a491a969849f634027f20be70a5c57">Idx</a>, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Mat)</td></tr>
+<tr class="memitem:a0b724dd85384f743a87c3815aace6037"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a0b724dd85384f743a87c3815aace6037">updateOperand</a> (Instruction *Inst, unsigned <a class="el" href="DeadArgumentElimination_8cpp.html#a39a491a969849f634027f20be70a5c57">Idx</a>, Instruction *Mat)</td></tr>
 <tr class="memdesc:a0b724dd85384f743a87c3815aace6037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the operand at Idx in instruction Inst with the result of instruction Mat.  <a href="ConstantHoisting_8cpp.html#a0b724dd85384f743a87c3815aace6037">More...</a><br /></td></tr>
 <tr class="separator:a0b724dd85384f743a87c3815aace6037"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a9c4ebcd4d45c2379b31a41f7cedc6e9d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a9c4ebcd4d45c2379b31a41f7cedc6e9d">ConstHoistWithBlockFrequency</a> (&quot;consthoist-with-block-frequency&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable the <a class="el" href="Localizer_8cpp.html#a428090a453f41a199ef67fc3f2179fbc">use</a> of the block frequency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> to <a class="el" href="LoopStrengthReduce_8cpp.html#a6d827fc34f1b4371a0b7183d3ca5bcac">reduce</a> the &quot; &quot;chance to execute <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> materialization more frequently than &quot; &quot;without hoisting.&quot;))</td></tr>
-<tr class="separator:a9c4ebcd4d45c2379b31a41f7cedc6e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1a80e10fbf75f2aa04423e4ddd89f38"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#aa1a80e10fbf75f2aa04423e4ddd89f38">ConstHoistGEP</a> (&quot;consthoist-gep&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Try hoisting constant <a class="el" href="SeparateConstOffsetFromGEP_8cpp.html#a589d62ce2ac872ff25beaad782d27235">gep</a> expressions&quot;))</td></tr>
-<tr class="separator:aa1a80e10fbf75f2aa04423e4ddd89f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8504256cb558283174fdab27f59296eb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a8504256cb558283174fdab27f59296eb">MinNumOfDependentToRebase</a> (&quot;consthoist-min-num-to-rebase&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Do not rebase <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> number of dependent constants of a Base is <a class="el" href="structllvm_1_1less.html">less</a> &quot; &quot;than this number.&quot;), cl::init(0), cl::Hidden)</td></tr>
-<tr class="separator:a8504256cb558283174fdab27f59296eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab70e43d6443d2e8107cdf0dc2d7874f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#ab70e43d6443d2e8107cdf0dc2d7874f7">consthoist</a></td></tr>
 <tr class="separator:ab70e43d6443d2e8107cdf0dc2d7874f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa31d68a00d95b1fabf45b0595784951d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Constant.html">Constant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#aa31d68a00d95b1fabf45b0595784951d">Hoisting</a></td></tr>
+<tr class="memitem:aa31d68a00d95b1fabf45b0595784951d"><td class="memItemLeft" align="right" valign="top">Constant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#aa31d68a00d95b1fabf45b0595784951d">Hoisting</a></td></tr>
 <tr class="separator:aa31d68a00d95b1fabf45b0595784951d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0751032c486e665eb73692fc29863b82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1Constant.html">Constant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a0751032c486e665eb73692fc29863b82">false</a></td></tr>
+<tr class="memitem:a0751032c486e665eb73692fc29863b82"><td class="memItemLeft" align="right" valign="top">Constant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantHoisting_8cpp.html#a0751032c486e665eb73692fc29863b82">false</a></td></tr>
 <tr class="separator:a0751032c486e665eb73692fc29863b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -166,15 +205,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Optional.html">Optional</a>&lt; <a class="el" href="classllvm_1_1APInt.html">APInt</a> &gt; calculateOffsetDiff </td>
+          <td class="memname">static Optional&lt; APInt &gt; calculateOffsetDiff </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">const APInt &amp;&#160;</td>
           <td class="paramname"><em>V1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APInt.html">APInt</a> &amp;&#160;</td>
+          <td class="paramtype">const APInt &amp;&#160;</td>
           <td class="paramname"><em>V2</em>&#160;</td>
         </tr>
         <tr>
@@ -192,7 +231,103 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ConstantHoisting_8cpp_source.html#l00513">513</a> of file <a class="el" href="ConstantHoisting_8cpp_source.html">ConstantHoisting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="APInt_8h_source.html#l01508">llvm::APInt::getBitWidth()</a>, <a class="el" href="APInt_8h_source.html#l00481">llvm::APInt::getLimitedValue()</a>, and <a class="el" href="None_8h_source.html#l00023">llvm::None</a>.</p>
+<p class="reference">References <a class="el" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a>.</p>
+
+</div>
+</div>
+<a id="a5d9a95a89b220a8678911a41b220dc4c" name="a5d9a95a89b220a8678911a41b220dc4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d9a95a89b220a8678911a41b220dc4c">&#9670;&nbsp;</a></span>ConstHoistGEP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ConstHoistGEP </td>
+          <td>(</td>
+          <td class="paramtype">&quot;consthoist-gep&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Try hoisting constant <a class="el" href="SeparateConstOffsetFromGEP_8cpp.html#a589d62ce2ac872ff25beaad782d27235">gep</a> expressions&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d6d17942086110ba280efce3f3f736c" name="a9d6d17942086110ba280efce3f3f736c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d6d17942086110ba280efce3f3f736c">&#9670;&nbsp;</a></span>ConstHoistWithBlockFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; ConstHoistWithBlockFrequency </td>
+          <td>(</td>
+          <td class="paramtype">&quot;consthoist-with-block-frequency&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Enable the <a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a> of the block frequency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> to <a class="el" href="LoopStrengthReduce_8cpp.html#a6d827fc34f1b4371a0b7183d3ca5bcac">reduce</a> the &quot; &quot;chance to execute const materialization more frequently than &quot; &quot;without hoisting.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -208,25 +343,25 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void findBestInsertionSet </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
+          <td class="paramtype">DominatorTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BlockFrequencyInfo.html">BlockFrequencyInfo</a> &amp;&#160;</td>
+          <td class="paramtype">BlockFrequencyInfo &amp;&#160;</td>
           <td class="paramname"><em>BFI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>Entry</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallPtrSet.html">SmallPtrSet</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *, 8 &gt; &amp;&#160;</td>
+          <td class="paramtype">SmallPtrSet&lt; BasicBlock *, 8 &gt; &amp;&#160;</td>
           <td class="paramname"><em>BBs</em>&#160;</td>
         </tr>
         <tr>
@@ -247,7 +382,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ConstantHoisting_8cpp_source.html#l00205">205</a> of file <a class="el" href="ConstantHoisting_8cpp_source.html">ConstantHoisting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00396">llvm::SmallPtrSetImpl&lt; PtrType &gt;::begin()</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00094">llvm::SmallPtrSetImplBase::clear()</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00381">llvm::SmallPtrSetImpl&lt; PtrType &gt;::count()</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00401">llvm::SmallPtrSetImpl&lt; PtrType &gt;::end()</a>, <a class="el" href="GenericDomTree_8h_source.html#l00081">llvm::DomTreeNodeBase&lt; NodeT &gt;::getBlock()</a>, <a class="el" href="GenericDomTree_8h_source.html#l00085">llvm::DomTreeNodeBase&lt; NodeT &gt;::getChildren()</a>, <a class="el" href="GenericDomTree_8h_source.html#l00082">llvm::DomTreeNodeBase&lt; NodeT &gt;::getIDom()</a>, <a class="el" href="GenericDomTree_8h_source.html#l00328">llvm::DominatorTreeBase&lt; NodeT, IsPostDom &gt;::getNode()</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00370">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert()</a>, <a class="el" href="Dominators_8cpp_source.html#l00299">llvm::DominatorTree::isReachableFromEntry()</a>, <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>, <a class="el" href="SmallVector_8h_source.html#l00133">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::rbegin()</a>, <a class="el" href="SmallVector_8h_source.html#l00135">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::rend()</a>, <a class="el" href="DenseMap_8h_source.html#l00129">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::reserve()</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00092">llvm::SmallPtrSetImplBase::size()</a>, and <a class="el" href="SmallVector_8h_source.html#l00052">llvm::SmallVectorBase::size()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>.</p>
 
 </div>
 </div>
@@ -293,6 +428,54 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0daed45aab055b21e7bfccd14d4ed518" name="a0daed45aab055b21e7bfccd14d4ed518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0daed45aab055b21e7bfccd14d4ed518">&#9670;&nbsp;</a></span>MinNumOfDependentToRebase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; MinNumOfDependentToRebase </td>
+          <td>(</td>
+          <td class="paramtype">&quot;consthoist-min-num-to-rebase&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Do not rebase <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if</a> number of dependent constants of a Base is less &quot; &quot;than this number.&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(0)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -363,21 +546,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> updateOperand </td>
+          <td class="memname">static bool updateOperand </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>Inst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>Idx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>Mat</em>&#160;</td>
         </tr>
         <tr>
@@ -398,7 +581,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ConstantHoisting_8cpp_source.html#l00706">706</a> of file <a class="el" href="ConstantHoisting_8cpp_source.html">ConstantHoisting.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>, and <a class="el" href="User_8h_source.html#l00174">llvm::User::setOperand()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>.</p>
 
 </div>
 </div>
@@ -419,104 +602,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aa1a80e10fbf75f2aa04423e4ddd89f38" name="aa1a80e10fbf75f2aa04423e4ddd89f38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1a80e10fbf75f2aa04423e4ddd89f38">&#9670;&nbsp;</a></span>ConstHoistGEP</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ConstHoistGEP(&quot;consthoist-gep&quot;, cl::init(false), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Try hoisting constant <a class="el" href="SeparateConstOffsetFromGEP_8cpp.html#a589d62ce2ac872ff25beaad782d27235">gep</a> expressions&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;consthoist-gep&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Try hoisting constant <a class="el" href="SeparateConstOffsetFromGEP_8cpp.html#a589d62ce2ac872ff25beaad782d27235">gep</a> expressions&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9c4ebcd4d45c2379b31a41f7cedc6e9d" name="a9c4ebcd4d45c2379b31a41f7cedc6e9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c4ebcd4d45c2379b31a41f7cedc6e9d">&#9670;&nbsp;</a></span>ConstHoistWithBlockFrequency</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; ConstHoistWithBlockFrequency(&quot;consthoist-with-block-frequency&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable the <a class="el" href="Localizer_8cpp.html#a428090a453f41a199ef67fc3f2179fbc">use</a> of the block frequency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> to <a class="el" href="LoopStrengthReduce_8cpp.html#a6d827fc34f1b4371a0b7183d3ca5bcac">reduce</a> the &quot; &quot;chance to execute <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> materialization more frequently than &quot; &quot;without hoisting.&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;consthoist-with-block-frequency&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable the <a class="el" href="Localizer_8cpp.html#a428090a453f41a199ef67fc3f2179fbc">use</a> of the block frequency <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> to <a class="el" href="LoopStrengthReduce_8cpp.html#a6d827fc34f1b4371a0b7183d3ca5bcac">reduce</a> the &quot; &quot;chance to execute <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> materialization more frequently than &quot; &quot;without hoisting.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="ConstantHoisting_8cpp_source.html#l00966">llvm::ConstantHoistingPass::run()</a>.</p>
-
-</div>
-</div>
 <a id="a0751032c486e665eb73692fc29863b82" name="a0751032c486e665eb73692fc29863b82"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0751032c486e665eb73692fc29863b82">&#9670;&nbsp;</a></span>false</h2>
 
@@ -524,7 +609,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1Constant.html">Constant</a> false</td>
+          <td class="memname">Constant false</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -540,7 +625,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1Constant.html">Constant</a> Hoisting</td>
+          <td class="memname">Constant Hoisting</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -549,58 +634,10 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a8504256cb558283174fdab27f59296eb" name="a8504256cb558283174fdab27f59296eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8504256cb558283174fdab27f59296eb">&#9670;&nbsp;</a></span>MinNumOfDependentToRebase</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; MinNumOfDependentToRebase(&quot;consthoist-min-num-to-rebase&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Do not rebase <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> number of dependent constants of a Base is <a class="el" href="structllvm_1_1less.html">less</a> &quot; &quot;than this number.&quot;), cl::init(0), cl::Hidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;consthoist-min-num-to-rebase&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Do not rebase <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if</a> number of dependent constants of a Base is <a class="el" href="structllvm_1_1less.html">less</a> &quot; &quot;than this number.&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(0)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

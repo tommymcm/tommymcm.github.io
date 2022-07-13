@@ -56,46 +56,69 @@ $(function() {
   <div class="headertitle"><div class="title">ThinLTOBitcodeWriter.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="ThinLTOBitcodeWriter_8h_source.html">llvm/Transforms/IPO/ThinLTOBitcodeWriter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicAliasAnalysis_8h_source.html">llvm/Analysis/BasicAliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ModuleSummaryAnalysis_8h_source.html">llvm/Analysis/ModuleSummaryAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TypeMetadataUtils_8h_source.html">llvm/Analysis/TypeMetadataUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BitcodeWriter_8h_source.html">llvm/Bitcode/BitcodeWriter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2IR_2DebugInfo_8h_source.html">llvm/IR/DebugInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ModuleSymbolTable_8h_source.html">llvm/Object/ModuleSymbolTable.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScopedPrinter_8h_source.html">llvm/Support/ScopedPrinter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2IPO_8h_source.html">llvm/Transforms/IPO.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="FunctionAttrs_8h_source.html">llvm/Transforms/IPO/FunctionAttrs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="FunctionImport_8h_source.html">llvm/Transforms/IPO/FunctionImport.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Cloning_8h_source.html">llvm/Transforms/Utils/Cloning.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ModuleUtils_8h_source.html">llvm/Transforms/Utils/ModuleUtils.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/IPO/ThinLTOBitcodeWriter.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/BasicAliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ModuleSummaryAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TypeMetadataUtils.h&quot;</code><br />
+<code>#include &quot;llvm/Bitcode/BitcodeWriter.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DebugInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;llvm/Object/ModuleSymbolTable.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ScopedPrinter.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO/FunctionAttrs.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO/FunctionImport.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Cloning.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/ModuleUtils.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ThinLTOBitcodeWriter.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ThinLTOBitcodeWriter_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2IPO_2ThinLTOBitcodeWriter_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2IPO_2ThinLTOBitcodeWriter_8cpp" id="alib_2Transforms_2IPO_2ThinLTOBitcodeWriter_8cpp">
+<area shape="rect" title=" " alt="" coords="1942,5,2135,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,184,133"/>
+<area shape="rect" title=" " alt="" coords="208,93,389,133"/>
+<area shape="rect" title=" " alt="" coords="414,93,639,133"/>
+<area shape="rect" title=" " alt="" coords="664,93,883,133"/>
+<area shape="rect" title=" " alt="" coords="907,93,1114,133"/>
+<area shape="rect" title=" " alt="" coords="1139,101,1347,126"/>
+<area shape="rect" title=" " alt="" coords="1371,101,1520,126"/>
+<area shape="rect" title=" " alt="" coords="1545,101,1695,126"/>
+<area shape="rect" title=" " alt="" coords="1719,101,1862,126"/>
+<area shape="rect" title=" " alt="" coords="1886,101,2018,126"/>
+<area shape="rect" title=" " alt="" coords="2042,101,2211,126"/>
+<area shape="rect" title=" " alt="" coords="2235,93,2434,133"/>
+<area shape="rect" title=" " alt="" coords="2459,101,2555,126"/>
+<area shape="rect" title=" " alt="" coords="2579,101,2789,126"/>
+<area shape="rect" title=" " alt="" coords="2814,101,3021,126"/>
+<area shape="rect" title=" " alt="" coords="3045,101,3211,126"/>
+<area shape="rect" title=" " alt="" coords="3235,93,3389,133"/>
+<area shape="rect" title=" " alt="" coords="3413,93,3566,133"/>
+<area shape="rect" title=" " alt="" coords="3590,93,3751,133"/>
+<area shape="rect" title=" " alt="" coords="3775,93,3937,133"/>
+</map>
 </div>
 </div>
 <p><a href="ThinLTOBitcodeWriter_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac66f21cd1eddb5f06a0d4bf42f1b8f56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ThinLTOBitcodeWriter_8cpp.html#ac66f21cd1eddb5f06a0d4bf42f1b8f56">INITIALIZE_PASS_BEGIN</a> (WriteThinLTOBitcode, &quot;write-thinlto-bitcode&quot;, &quot;Write ThinLTO Bitcode&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(WriteThinLTOBitcode</td></tr>
+<tr class="memitem:ac66f21cd1eddb5f06a0d4bf42f1b8f56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ThinLTOBitcodeWriter_8cpp.html#ac66f21cd1eddb5f06a0d4bf42f1b8f56">INITIALIZE_PASS_BEGIN</a> (WriteThinLTOBitcode, &quot;write-thinlto-bitcode&quot;, &quot;Write ThinLTO Bitcode&quot;, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) INITIALIZE_PASS_END(WriteThinLTOBitcode</td></tr>
 <tr class="separator:ac66f21cd1eddb5f06a0d4bf42f1b8f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aa2156eb414457b2460cd9854aac2eb09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="RuntimeDyldELF_8cpp.html#a79ab15165c16fbf94d6fd33bd890ea7e">write</a> thinlto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ThinLTOBitcodeWriter_8cpp.html#aa2156eb414457b2460cd9854aac2eb09">bitcode</a></td></tr>
+<tr class="memitem:aa2156eb414457b2460cd9854aac2eb09"><td class="memItemLeft" align="right" valign="top">write thinlto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ThinLTOBitcodeWriter_8cpp.html#aa2156eb414457b2460cd9854aac2eb09">bitcode</a></td></tr>
 <tr class="separator:aa2156eb414457b2460cd9854aac2eb09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f41d457d2841700b4c6785b01d44d51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="RuntimeDyldELF_8cpp.html#a79ab15165c16fbf94d6fd33bd890ea7e">write</a> thinlto Write ThinLTO&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ThinLTOBitcodeWriter_8cpp.html#a6f41d457d2841700b4c6785b01d44d51">Bitcode</a></td></tr>
+<tr class="memitem:a6f41d457d2841700b4c6785b01d44d51"><td class="memItemLeft" align="right" valign="top">write thinlto Write ThinLTO&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ThinLTOBitcodeWriter_8cpp.html#a6f41d457d2841700b4c6785b01d44d51">Bitcode</a></td></tr>
 <tr class="separator:a6f41d457d2841700b4c6785b01d44d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46782e006cdaa0d7b3dfcaae3d5b7a40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="RuntimeDyldELF_8cpp.html#a79ab15165c16fbf94d6fd33bd890ea7e">write</a> thinlto Write ThinLTO&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ThinLTOBitcodeWriter_8cpp.html#a46782e006cdaa0d7b3dfcaae3d5b7a40">false</a></td></tr>
+<tr class="memitem:a46782e006cdaa0d7b3dfcaae3d5b7a40"><td class="memItemLeft" align="right" valign="top">write thinlto Write ThinLTO&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ThinLTOBitcodeWriter_8cpp.html#a46782e006cdaa0d7b3dfcaae3d5b7a40">false</a></td></tr>
 <tr class="separator:a46782e006cdaa0d7b3dfcaae3d5b7a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -153,7 +176,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="RuntimeDyldELF_8cpp.html#a79ab15165c16fbf94d6fd33bd890ea7e">write</a> thinlto bitcode</td>
+          <td class="memname">write thinlto bitcode</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -169,7 +192,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="RuntimeDyldELF_8cpp.html#a79ab15165c16fbf94d6fd33bd890ea7e">write</a> thinlto Write ThinLTO Bitcode</td>
+          <td class="memname">write thinlto Write ThinLTO Bitcode</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -185,7 +208,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="RuntimeDyldELF_8cpp.html#a79ab15165c16fbf94d6fd33bd890ea7e">write</a> thinlto Write ThinLTO false</td>
+          <td class="memname">write thinlto Write ThinLTO false</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -197,7 +220,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

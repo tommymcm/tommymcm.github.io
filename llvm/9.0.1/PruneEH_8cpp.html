@@ -57,25 +57,43 @@ $(function() {
   <div class="headertitle"><div class="title">PruneEH.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="SmallPtrSet_8h_source.html">llvm/ADT/SmallPtrSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallGraph_8h_source.html">llvm/Analysis/CallGraph.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallGraphSCCPass_8h_source.html">llvm/Analysis/CallGraphSCCPass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="EHPersonalities_8h_source.html">llvm/Analysis/EHPersonalities.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InlineAsm_8h_source.html">llvm/IR/InlineAsm.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2IPO_8h_source.html">llvm/Transforms/IPO.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CallGraph.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CallGraphSCCPass.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/EHPersonalities.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InlineAsm.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for PruneEH.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="PruneEH_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2IPO_2PruneEH_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2IPO_2PruneEH_8cpp" id="alib_2Transforms_2IPO_2PruneEH_8cpp">
+<area shape="rect" title=" " alt="" coords="1441,5,1581,45"/>
+<area shape="rect" title=" " alt="" coords="5,101,180,126"/>
+<area shape="rect" title=" " alt="" coords="204,101,355,126"/>
+<area shape="rect" title=" " alt="" coords="379,101,569,126"/>
+<area shape="rect" title=" " alt="" coords="594,101,839,126"/>
+<area shape="rect" title=" " alt="" coords="864,101,1092,126"/>
+<area shape="rect" title=" " alt="" coords="1116,93,1277,133"/>
+<area shape="rect" title=" " alt="" coords="1301,101,1412,126"/>
+<area shape="rect" title=" " alt="" coords="1437,101,1586,126"/>
+<area shape="rect" title=" " alt="" coords="1610,101,1749,126"/>
+<area shape="rect" title=" " alt="" coords="1773,101,1922,126"/>
+<area shape="rect" title=" " alt="" coords="1946,101,2106,126"/>
+<area shape="rect" title=" " alt="" coords="2131,101,2300,126"/>
+<area shape="rect" title=" " alt="" coords="2324,101,2531,126"/>
+<area shape="rect" title=" " alt="" coords="2555,101,2721,126"/>
+<area shape="rect" title=" " alt="" coords="2745,101,2830,126"/>
+</map>
 </div>
 </div>
 <p><a href="PruneEH_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -89,16 +107,16 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ace8ca0c4981c36a7407158dcaa0d2dc1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PruneEH_8cpp.html#ace8ca0c4981c36a7407158dcaa0d2dc1">STATISTIC</a> (NumRemoved, &quot;Number of invokes removed&quot;)</td></tr>
 <tr class="separator:ace8ca0c4981c36a7407158dcaa0d2dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad46619012d6bbab3719bac253ed6228e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PruneEH_8cpp.html#ad46619012d6bbab3719bac253ed6228e">STATISTIC</a> (NumUnreach, &quot;Number of noreturn <a class="el" href="AMDGPULibCalls_8cpp.html#a91feb1b5d1a9c4e07149041912f83b42">calls</a> optimized&quot;)</td></tr>
+<tr class="memitem:ad46619012d6bbab3719bac253ed6228e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PruneEH_8cpp.html#ad46619012d6bbab3719bac253ed6228e">STATISTIC</a> (NumUnreach, &quot;Number of noreturn <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> optimized&quot;)</td></tr>
 <tr class="separator:ad46619012d6bbab3719bac253ed6228e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40d1a99348d5523a7a8ca3b29c4f86aa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PruneEH_8cpp.html#a40d1a99348d5523a7a8ca3b29c4f86aa">SimplifyFunction</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;CG)</td></tr>
+<tr class="memitem:a40d1a99348d5523a7a8ca3b29c4f86aa"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PruneEH_8cpp.html#a40d1a99348d5523a7a8ca3b29c4f86aa">SimplifyFunction</a> (Function *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, CallGraph &amp;CG)</td></tr>
 <tr class="separator:a40d1a99348d5523a7a8ca3b29c4f86aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4886462c76ddb8e299e3e82966ee2d25"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PruneEH_8cpp.html#a4886462c76ddb8e299e3e82966ee2d25">DeleteBasicBlock</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB, <a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;CG)</td></tr>
+<tr class="memitem:a4886462c76ddb8e299e3e82966ee2d25"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PruneEH_8cpp.html#a4886462c76ddb8e299e3e82966ee2d25">DeleteBasicBlock</a> (BasicBlock *BB, CallGraph &amp;CG)</td></tr>
 <tr class="memdesc:a4886462c76ddb8e299e3e82966ee2d25"><td class="mdescLeft">&#160;</td><td class="mdescRight">DeleteBasicBlock - remove the specified basic block from the program, updating the callgraph to reflect any now-obsolete edges due to calls that exist in the BB.  <a href="PruneEH_8cpp.html#a4886462c76ddb8e299e3e82966ee2d25">More...</a><br /></td></tr>
 <tr class="separator:a4886462c76ddb8e299e3e82966ee2d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a347aca6cae85dddc4408229abe8b69a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PruneEH_8cpp.html#a347aca6cae85dddc4408229abe8b69a5">INITIALIZE_PASS_BEGIN</a> (PruneEH, &quot;prune-eh&quot;, &quot;Remove unused exception handling info&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(PruneEH</td></tr>
+<tr class="memitem:a347aca6cae85dddc4408229abe8b69a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PruneEH_8cpp.html#a347aca6cae85dddc4408229abe8b69a5">INITIALIZE_PASS_BEGIN</a> (PruneEH, &quot;prune-eh&quot;, &quot;Remove unused exception handling info&quot;, false, false) INITIALIZE_PASS_END(PruneEH</td></tr>
 <tr class="separator:a347aca6cae85dddc4408229abe8b69a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abab18b3cffe83b3fd2167a6ff8251cb6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PruneEH_8cpp.html#abab18b3cffe83b3fd2167a6ff8251cb6">runImpl</a> (<a class="el" href="classllvm_1_1CallGraphSCC.html">CallGraphSCC</a> &amp;SCC, <a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;CG)</td></tr>
+<tr class="memitem:abab18b3cffe83b3fd2167a6ff8251cb6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PruneEH_8cpp.html#abab18b3cffe83b3fd2167a6ff8251cb6">runImpl</a> (CallGraphSCC &amp;SCC, CallGraph &amp;CG)</td></tr>
 <tr class="separator:abab18b3cffe83b3fd2167a6ff8251cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -136,13 +154,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void DeleteBasicBlock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;&#160;</td>
+          <td class="paramtype">CallGraph &amp;&#160;</td>
           <td class="paramname"><em>CG</em>&#160;</td>
         </tr>
         <tr>
@@ -162,7 +180,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PruneEH_8cpp_source.html#l00231">231</a> of file <a class="el" href="PruneEH_8cpp_source.html">PruneEH.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>, <a class="el" href="Local_8cpp_source.html#l01917">llvm::changeToUnreachable()</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="BasicBlock_8h_source.html#l00270">llvm::BasicBlock::end()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00114">llvm::BasicBlock::eraseFromParent()</a>, <a class="el" href="Constants_8cpp_source.html#l01424">llvm::UndefValue::get()</a>, <a class="el" href="ilist__node_8h_source.html#l00288">llvm::ilist_node_with_parent&lt; NodeTy, ParentTy, Options &gt;::getNextNode()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Function_8cpp_source.html#l01026">llvm::Intrinsic::isLeaf()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00128">llvm::Instruction::isTerminator()</a>, <a class="el" href="IR_2CFG_8h_source.html#l00116">llvm::pred_empty()</a>, <a class="el" href="CallGraph_8cpp_source.html#l00186">llvm::CallGraphNode::removeCallEdgeFor()</a>, <a class="el" href="Interval_8h_source.html#l00102">llvm::succ_begin()</a>, and <a class="el" href="Interval_8h_source.html#l00105">llvm::succ_end()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PruneEH_8cpp_source.html#l00188">SimplifyFunction()</a>.</p>
 
@@ -224,15 +242,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> runImpl </td>
+          <td class="memname">static bool runImpl </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallGraphSCC.html">CallGraphSCC</a> &amp;&#160;</td>
+          <td class="paramtype">CallGraphSCC &amp;&#160;</td>
           <td class="paramname"><em>SCC</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;&#160;</td>
+          <td class="paramtype">CallGraph &amp;&#160;</td>
           <td class="paramname"><em>CG</em>&#160;</td>
         </tr>
         <tr>
@@ -250,7 +268,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PruneEH_8cpp_source.html#l00062">62</a> of file <a class="el" href="PruneEH_8cpp_source.html">PruneEH.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CallGraphSCCPass_8h_source.html#l00108">llvm::CallGraphSCC::begin()</a>, <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00381">llvm::SmallPtrSetImpl&lt; PtrType &gt;::count()</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="CallGraphSCCPass_8h_source.html#l00109">llvm::CallGraphSCC::end()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00370">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00592">llvm::Instruction::mayThrow()</a>, <a class="el" href="namespacellvm_1_1codeview.html#ad25a1310d512e19d2f6318e963dcb30bafa555455b01d6ff32568479afa1f1947">llvm::codeview::Naked</a>, <a class="el" href="ModuleSummaryIndex_8h_source.html#l00549">llvm::FunctionSummary::FFlags::NoInline</a>, and <a class="el" href="PruneEH_8cpp_source.html#l00188">SimplifyFunction()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="PruneEH_8cpp_source.html#l00188">SimplifyFunction()</a>.</p>
 
 </div>
 </div>
@@ -264,15 +282,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> SimplifyFunction </td>
+          <td class="memname">static bool SimplifyFunction </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
+          <td class="paramtype">Function *&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;&#160;</td>
+          <td class="paramtype">CallGraph &amp;&#160;</td>
           <td class="paramname"><em>CG</em>&#160;</td>
         </tr>
         <tr>
@@ -290,7 +308,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PruneEH_8cpp_source.html#l00188">188</a> of file <a class="el" href="PruneEH_8cpp_source.html">PruneEH.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="EHPersonalities_8cpp_source.html#l00069">llvm::canSimplifyInvokeNoUnwind()</a>, <a class="el" href="PruneEH_8cpp_source.html#l00231">DeleteBasicBlock()</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="IR_2CFG_8h_source.html#l00116">llvm::pred_empty()</a>, and <a class="el" href="Local_8cpp_source.html#l02188">llvm::removeUnwindEdge()</a>.</p>
+<p class="reference">References <a class="el" href="PruneEH_8cpp_source.html#l00231">DeleteBasicBlock()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PruneEH_8cpp_source.html#l00062">runImpl()</a>.</p>
 
@@ -339,7 +357,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of noreturn <a class="el" href="AMDGPULibCalls_8cpp.html#a91feb1b5d1a9c4e07149041912f83b42">calls</a> optimized&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of noreturn <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> optimized&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -372,7 +390,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

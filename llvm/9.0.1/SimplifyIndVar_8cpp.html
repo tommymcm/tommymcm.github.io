@@ -57,25 +57,43 @@ $(function() {
   <div class="headertitle"><div class="title">SimplifyIndVar.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="SimplifyIndVar_8h_source.html">llvm/Transforms/Utils/SimplifyIndVar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScalarEvolutionExpander_8h_source.html">llvm/Analysis/ScalarEvolutionExpander.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Utils/SimplifyIndVar.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScalarEvolutionExpander.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for SimplifyIndVar.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="SimplifyIndVar_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Utils_2SimplifyIndVar_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Utils_2SimplifyIndVar_8cpp" id="alib_2Transforms_2Utils_2SimplifyIndVar_8cpp">
+<area shape="rect" title=" " alt="" coords="1387,5,1535,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,167,133"/>
+<area shape="rect" title=" " alt="" coords="191,101,354,126"/>
+<area shape="rect" title=" " alt="" coords="379,101,553,126"/>
+<area shape="rect" title=" " alt="" coords="577,101,728,126"/>
+<area shape="rect" title=" " alt="" coords="752,101,935,126"/>
+<area shape="rect" title=" " alt="" coords="959,93,1173,133"/>
+<area shape="rect" title=" " alt="" coords="1197,101,1356,126"/>
+<area shape="rect" title=" " alt="" coords="1381,101,1541,126"/>
+<area shape="rect" title=" " alt="" coords="1565,101,1708,126"/>
+<area shape="rect" title=" " alt="" coords="1733,101,1893,126"/>
+<area shape="rect" title=" " alt="" coords="1917,101,2077,126"/>
+<area shape="rect" title=" " alt="" coords="2101,101,2271,126"/>
+<area shape="rect" title=" " alt="" coords="2295,101,2458,126"/>
+<area shape="rect" title=" " alt="" coords="2483,101,2689,126"/>
+<area shape="rect" title=" " alt="" coords="2713,93,2875,133"/>
+</map>
 </div>
 </div>
 <p><a href="SimplifyIndVar_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -83,7 +101,6 @@ Include dependency graph for SimplifyIndVar.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -99,29 +116,29 @@ Functions</h2></td></tr>
 <tr class="separator:a958f32850a8811206537c461ff8c4313"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ea320b561fc86b369f98970c8f6c32f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#a9ea320b561fc86b369f98970c8f6c32f">STATISTIC</a> (NumFoldedUser, &quot;Number of IV <a class="el" href="IVUsers_8cpp.html#ac2f338c3f467b3d09613e190d73044a5">users</a> folded into a constant&quot;)</td></tr>
 <tr class="separator:a9ea320b561fc86b369f98970c8f6c32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada12d034147fb82ceac12398af5b97b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#ada12d034147fb82ceac12398af5b97b7">STATISTIC</a> (NumElimRem, &quot;Number of IV <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> <a class="el" href="SIOptimizeExecMasking_8cpp.html#a41f299460d380acb533b0d91dca4d45a">operations</a> eliminated&quot;)</td></tr>
+<tr class="memitem:ada12d034147fb82ceac12398af5b97b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#ada12d034147fb82ceac12398af5b97b7">STATISTIC</a> (NumElimRem, &quot;Number of IV <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> <a class="el" href="Scalarizer_8cpp.html#a16225fc97f8d45afdbb29637c6750d89">operations</a> eliminated&quot;)</td></tr>
 <tr class="separator:ada12d034147fb82ceac12398af5b97b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9528d718152c531b7d0640b108012b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#ae9528d718152c531b7d0640b108012b3">STATISTIC</a> (NumSimplifiedSDiv, &quot;Number of IV signed division <a class="el" href="SIOptimizeExecMasking_8cpp.html#a41f299460d380acb533b0d91dca4d45a">operations</a> converted to <a class="el" href="classunsigned.html">unsigned</a> division&quot;)</td></tr>
+<tr class="memitem:ae9528d718152c531b7d0640b108012b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#ae9528d718152c531b7d0640b108012b3">STATISTIC</a> (NumSimplifiedSDiv, &quot;Number of IV signed division <a class="el" href="Scalarizer_8cpp.html#a16225fc97f8d45afdbb29637c6750d89">operations</a> converted to unsigned division&quot;)</td></tr>
 <tr class="separator:ae9528d718152c531b7d0640b108012b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a919d79e2f8928b438dd1313b4b6ae2ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#a919d79e2f8928b438dd1313b4b6ae2ef">STATISTIC</a> (NumSimplifiedSRem, &quot;Number of IV signed <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> <a class="el" href="SIOptimizeExecMasking_8cpp.html#a41f299460d380acb533b0d91dca4d45a">operations</a> converted to <a class="el" href="classunsigned.html">unsigned</a> remainder&quot;)</td></tr>
+<tr class="memitem:a919d79e2f8928b438dd1313b4b6ae2ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#a919d79e2f8928b438dd1313b4b6ae2ef">STATISTIC</a> (NumSimplifiedSRem, &quot;Number of IV signed <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> <a class="el" href="Scalarizer_8cpp.html#a16225fc97f8d45afdbb29637c6750d89">operations</a> converted to unsigned remainder&quot;)</td></tr>
 <tr class="separator:a919d79e2f8928b438dd1313b4b6ae2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac43dd2255f015cc6a89b9b9cb6e02ab4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#ac43dd2255f015cc6a89b9b9cb6e02ab4">STATISTIC</a> (NumElimCmp, &quot;Number of IV comparisons eliminated&quot;)</td></tr>
 <tr class="separator:ac43dd2255f015cc6a89b9b9cb6e02ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88463f41e6e43a3a9d219f3171bc939b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#a88463f41e6e43a3a9d219f3171bc939b">willNotOverflow</a> (<a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *SE, <a class="el" href="classllvm_1_1Instruction.html#ac26154a24f393f523c87cc5f8239f36c">Instruction::BinaryOps</a> BinOp, <a class="el" href="classbool.html">bool</a> <a class="el" href="NVPTXISelLowering_8cpp.html#ae1a90b5d85643644483b2ca70da4d13faed3fa7a5efe80dad3ea3d86cc14be246">Signed</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *LHS, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *RHS)</td></tr>
+<tr class="memitem:a88463f41e6e43a3a9d219f3171bc939b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#a88463f41e6e43a3a9d219f3171bc939b">willNotOverflow</a> (ScalarEvolution *SE, Instruction::BinaryOps BinOp, bool Signed, const SCEV *LHS, const SCEV *RHS)</td></tr>
 <tr class="separator:a88463f41e6e43a3a9d219f3171bc939b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1869a16772f9088e7536b3488405a066"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#a1869a16772f9088e7536b3488405a066">GetLoopInvariantInsertPosition</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Hint)</td></tr>
+<tr class="memitem:a1869a16772f9088e7536b3488405a066"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#a1869a16772f9088e7536b3488405a066">GetLoopInvariantInsertPosition</a> (Loop *L, Instruction *Hint)</td></tr>
 <tr class="separator:a1869a16772f9088e7536b3488405a066"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a792469fbe5b7107d9e230d2874a8015a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#a792469fbe5b7107d9e230d2874a8015a">pushIVUsers</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Def, <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1SmallPtrSet.html">SmallPtrSet</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, 16 &gt; &amp;Simplified, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; std::pair&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; &gt; &amp;SimpleIVUsers)</td></tr>
+<tr class="memitem:a792469fbe5b7107d9e230d2874a8015a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#a792469fbe5b7107d9e230d2874a8015a">pushIVUsers</a> (Instruction *Def, Loop *L, SmallPtrSet&lt; Instruction *, 16 &gt; &amp;Simplified, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; std::pair&lt; Instruction *, Instruction * &gt; &gt; &amp;SimpleIVUsers)</td></tr>
 <tr class="memdesc:a792469fbe5b7107d9e230d2874a8015a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add all uses of Def to the current IV's worklist.  <a href="SimplifyIndVar_8cpp.html#a792469fbe5b7107d9e230d2874a8015a">More...</a><br /></td></tr>
 <tr class="separator:a792469fbe5b7107d9e230d2874a8015a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e219df8a1368668aa0aac77616a4ce9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#a3e219df8a1368668aa0aac77616a4ce9">isSimpleIVUser</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *SE)</td></tr>
+<tr class="memitem:a3e219df8a1368668aa0aac77616a4ce9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyIndVar_8cpp.html#a3e219df8a1368668aa0aac77616a4ce9">isSimpleIVUser</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, const Loop *L, ScalarEvolution *SE)</td></tr>
 <tr class="memdesc:a3e219df8a1368668aa0aac77616a4ce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if this instruction generates a simple SCEV expression in terms of that IV.  <a href="SimplifyIndVar_8cpp.html#a3e219df8a1368668aa0aac77616a4ce9">More...</a><br /></td></tr>
 <tr class="separator:a3e219df8a1368668aa0aac77616a4ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31c4fc05515d4dbb5261350a6dd3e24c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a31c4fc05515d4dbb5261350a6dd3e24c">llvm::simplifyUsersOfIV</a> (<a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *CurrIV, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *SE, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT, <a class="el" href="classllvm_1_1LoopInfo.html">LoopInfo</a> *LI, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1WeakTrackingVH.html">WeakTrackingVH</a> &gt; &amp;Dead, <a class="el" href="classllvm_1_1SCEVExpander.html">SCEVExpander</a> &amp;Rewriter, <a class="el" href="classllvm_1_1IVVisitor.html">IVVisitor</a> *V=nullptr)</td></tr>
-<tr class="memdesc:a31c4fc05515d4dbb5261350a6dd3e24c"><td class="mdescLeft">&#160;</td><td class="mdescRight">simplifyUsersOfIV - Simplify instructions that use this induction variable by using <a class="el" href="classllvm_1_1ScalarEvolution.html" title="The main scalar evolution driver.">ScalarEvolution</a> to analyze the IV's recurrence.  <a href="namespacellvm.html#a31c4fc05515d4dbb5261350a6dd3e24c">More...</a><br /></td></tr>
-<tr class="separator:a31c4fc05515d4dbb5261350a6dd3e24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a471ab01d9d77c0ae1e78a784f10d0552"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a471ab01d9d77c0ae1e78a784f10d0552">llvm::simplifyLoopIVs</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *SE, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT, <a class="el" href="classllvm_1_1LoopInfo.html">LoopInfo</a> *LI, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1WeakTrackingVH.html">WeakTrackingVH</a> &gt; &amp;Dead)</td></tr>
-<tr class="memdesc:a471ab01d9d77c0ae1e78a784f10d0552"><td class="mdescLeft">&#160;</td><td class="mdescRight">SimplifyLoopIVs - Simplify users of induction variables within this loop.  <a href="namespacellvm.html#a471ab01d9d77c0ae1e78a784f10d0552">More...</a><br /></td></tr>
+<tr class="memitem:aea401000779d8e8dc756c27ea4b920f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#aea401000779d8e8dc756c27ea4b920f8">llvm::simplifyUsersOfIV</a> (PHINode *CurrIV, ScalarEvolution *SE, DominatorTree *DT, LoopInfo *LI, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; WeakTrackingVH &gt; &amp;Dead, SCEVExpander &amp;Rewriter, IVVisitor *V)</td></tr>
+<tr class="memdesc:aea401000779d8e8dc756c27ea4b920f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simplify instructions that use this induction variable by using ScalarEvolution to analyze the IV's recurrence.  <a href="namespacellvm.html#aea401000779d8e8dc756c27ea4b920f8">More...</a><br /></td></tr>
+<tr class="separator:aea401000779d8e8dc756c27ea4b920f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a471ab01d9d77c0ae1e78a784f10d0552"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a471ab01d9d77c0ae1e78a784f10d0552">llvm::simplifyLoopIVs</a> (Loop *L, ScalarEvolution *SE, DominatorTree *DT, LoopInfo *LI, <a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; WeakTrackingVH &gt; &amp;Dead)</td></tr>
+<tr class="memdesc:a471ab01d9d77c0ae1e78a784f10d0552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simplify users of induction variables within this loop.  <a href="namespacellvm.html#a471ab01d9d77c0ae1e78a784f10d0552">More...</a><br /></td></tr>
 <tr class="separator:a471ab01d9d77c0ae1e78a784f10d0552"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -152,15 +169,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * GetLoopInvariantInsertPosition </td>
+          <td class="memname">static Instruction * GetLoopInvariantInsertPosition </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>Hint</em>&#160;</td>
         </tr>
         <tr>
@@ -178,8 +195,6 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyIndVar_8cpp_source.html#l00651">651</a> of file <a class="el" href="SimplifyIndVar_8cpp_source.html">SimplifyIndVar.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="LoopInfoImpl_8h_source.html#l00160">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopPreheader()</a>.</p>
-
 </div>
 </div>
 <a id="a3e219df8a1368668aa0aac77616a4ce9" name="a3e219df8a1368668aa0aac77616a4ce9"></a>
@@ -192,21 +207,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isSimpleIVUser </td>
+          <td class="memname">static bool isSimpleIVUser </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">const Loop *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *&#160;</td>
+          <td class="paramtype">ScalarEvolution *&#160;</td>
           <td class="paramname"><em>SE</em>&#160;</td>
         </tr>
         <tr>
@@ -227,7 +242,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyIndVar_8cpp_source.html#l00825">825</a> of file <a class="el" href="SimplifyIndVar_8cpp_source.html">SimplifyIndVar.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00307">llvm::SCEVAddRecExpr::getLoop()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03895">llvm::ScalarEvolution::getSCEV()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="ScalarEvolution_8cpp_source.html#l03762">llvm::ScalarEvolution::isSCEVable()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -243,25 +258,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void pushIVUsers </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>Def</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallPtrSet.html">SmallPtrSet</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, 16 &gt; &amp;&#160;</td>
+          <td class="paramtype">SmallPtrSet&lt; Instruction *, 16 &gt; &amp;&#160;</td>
           <td class="paramname"><em>Simplified</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; std::pair&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * &gt; &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; std::pair&lt; Instruction *, Instruction * &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>SimpleIVUsers</em>&#160;</td>
         </tr>
         <tr>
@@ -280,8 +295,6 @@ Functions</h2></td></tr>
 <p>Add all uses of Def to the current IV's worklist. </p>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyIndVar_8cpp_source.html#l00791">791</a> of file <a class="el" href="SimplifyIndVar_8cpp_source.html">SimplifyIndVar.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="LoopInfo_8h_source.html#l00112">llvm::LoopBase&lt; BlockT, LoopT &gt;::contains()</a>.</p>
 
 </div>
 </div>
@@ -310,8 +323,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="VirtRegMap_8cpp_source.html#l00222">Rewriter</a>.</p>
 
 </div>
 </div>
@@ -386,7 +397,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of IV <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> <a class="el" href="SIOptimizeExecMasking_8cpp.html#a41f299460d380acb533b0d91dca4d45a">operations</a> eliminated&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of IV <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> <a class="el" href="Scalarizer_8cpp.html#a16225fc97f8d45afdbb29637c6750d89">operations</a> eliminated&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -442,7 +453,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of IV signed division <a class="el" href="SIOptimizeExecMasking_8cpp.html#a41f299460d380acb533b0d91dca4d45a">operations</a> converted to <a class="el" href="classunsigned.html">unsigned</a> division&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of IV signed division <a class="el" href="Scalarizer_8cpp.html#a16225fc97f8d45afdbb29637c6750d89">operations</a> converted to unsigned division&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -470,7 +481,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of IV signed <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> <a class="el" href="SIOptimizeExecMasking_8cpp.html#a41f299460d380acb533b0d91dca4d45a">operations</a> converted to <a class="el" href="classunsigned.html">unsigned</a> remainder&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of IV signed <a class="el" href="DivRemPairs_8cpp.html#acabf5cd140be0dea1a9b4ccae70ea89a">remainder</a> <a class="el" href="Scalarizer_8cpp.html#a16225fc97f8d45afdbb29637c6750d89">operations</a> converted to unsigned remainder&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -493,33 +504,33 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> willNotOverflow </td>
+          <td class="memname">static bool willNotOverflow </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *&#160;</td>
+          <td class="paramtype">ScalarEvolution *&#160;</td>
           <td class="paramname"><em>SE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html#ac26154a24f393f523c87cc5f8239f36c">Instruction::BinaryOps</a>&#160;</td>
+          <td class="paramtype">Instruction::BinaryOps&#160;</td>
           <td class="paramname"><em>BinOp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>Signed</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&#160;</td>
+          <td class="paramtype">const SCEV *&#160;</td>
           <td class="paramname"><em>LHS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&#160;</td>
+          <td class="paramtype">const SCEV *&#160;</td>
           <td class="paramname"><em>RHS</em>&#160;</td>
         </tr>
         <tr>
@@ -537,14 +548,12 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyIndVar_8cpp_source.html#l00405">405</a> of file <a class="el" href="SimplifyIndVar_8cpp_source.html">SimplifyIndVar.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="ScalarEvolution_8h_source.html#l00114">llvm::SCEV::FlagAnyWrap</a>, <a class="el" href="Type_8cpp_source.html#l00239">llvm::IntegerType::get()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l02402">llvm::ScalarEvolution::getAddExpr()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l04000">llvm::ScalarEvolution::getMinusSCEV()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l02903">llvm::ScalarEvolution::getMulExpr()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l01940">llvm::ScalarEvolution::getSignExtendExpr()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00352">llvm::SCEV::getType()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l01634">llvm::ScalarEvolution::getZeroExtendExpr()</a>, <a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>, <a class="el" href="PPCReduceCRLogicals_8cpp_source.html#l00732">Operation</a>, and <a class="el" href="NVPTXISelLowering_8cpp_source.html#l04569">Signed</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:23 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

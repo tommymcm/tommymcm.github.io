@@ -57,30 +57,53 @@ $(function() {
   <div class="headertitle"><div class="title">SimplifyCFGPass.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="SmallPtrSet_8h_source.html">llvm/ADT/SmallPtrSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Analysis_2CFG_8h_source.html">llvm/Analysis/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalsModRef_8h_source.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SimplifyCFG_8h_source.html">llvm/Transforms/Scalar/SimplifyCFG.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar/SimplifyCFG.h&quot;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for SimplifyCFGPass.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="SimplifyCFGPass_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2SimplifyCFGPass_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Scalar_2SimplifyCFGPass_8cpp" id="alib_2Transforms_2Scalar_2SimplifyCFGPass_8cpp">
+<area shape="rect" title=" " alt="" coords="1837,5,1999,45"/>
+<area shape="rect" title=" " alt="" coords="5,101,180,126"/>
+<area shape="rect" title=" " alt="" coords="204,101,379,126"/>
+<area shape="rect" title=" " alt="" coords="403,101,553,126"/>
+<area shape="rect" title=" " alt="" coords="577,93,768,133"/>
+<area shape="rect" title=" " alt="" coords="792,101,945,126"/>
+<area shape="rect" title=" " alt="" coords="969,93,1160,133"/>
+<area shape="rect" title=" " alt="" coords="1185,93,1403,133"/>
+<area shape="rect" title=" " alt="" coords="1428,93,1589,133"/>
+<area shape="rect" title=" " alt="" coords="1613,101,1761,126"/>
+<area shape="rect" title=" " alt="" coords="1785,101,1896,126"/>
+<area shape="rect" title=" " alt="" coords="1921,101,2070,126"/>
+<area shape="rect" title=" " alt="" coords="2095,101,2253,126"/>
+<area shape="rect" title=" " alt="" coords="2278,101,2438,126"/>
+<area shape="rect" title=" " alt="" coords="2462,101,2622,126"/>
+<area shape="rect" title=" " alt="" coords="2647,101,2779,126"/>
+<area shape="rect" title=" " alt="" coords="2803,101,2899,126"/>
+<area shape="rect" title=" " alt="" coords="2924,101,3139,126"/>
+<area shape="rect" title=" " alt="" coords="3163,101,3345,126"/>
+<area shape="rect" title=" " alt="" coords="3370,93,3541,133"/>
+<area shape="rect" title=" " alt="" coords="3565,101,3625,126"/>
+</map>
 </div>
 </div>
 <p><a href="SimplifyCFGPass_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -92,31 +115,31 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aa686df4b92fa5bf2d16768a3cf6820f6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#aa686df4b92fa5bf2d16768a3cf6820f6">UserBonusInstThreshold</a> (&quot;bonus-inst-threshold&quot;, cl::Hidden, cl::init(1), cl::desc(&quot;Control the number of bonus <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> (default = 1)&quot;))</td></tr>
+<tr class="separator:aa686df4b92fa5bf2d16768a3cf6820f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9de2e0fbb0cc567e8b1ffe301f1e32ac"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a9de2e0fbb0cc567e8b1ffe301f1e32ac">UserKeepLoops</a> (&quot;keep-loops&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::desc(&quot;Preserve canonical loop structure (default = <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&quot;))</td></tr>
+<tr class="separator:a9de2e0fbb0cc567e8b1ffe301f1e32ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb70d19f66e73d6df175563c7066a68c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#afb70d19f66e73d6df175563c7066a68c">UserSwitchToLookup</a> (&quot;switch-to-lookup&quot;, cl::Hidden, cl::init(false), cl::desc(&quot;Convert switches to lookup tables (default = false)&quot;))</td></tr>
+<tr class="separator:afb70d19f66e73d6df175563c7066a68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab10704273fd81e254573edbe3e3b4853"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#ab10704273fd81e254573edbe3e3b4853">UserForwardSwitchCond</a> (&quot;forward-switch-cond&quot;, cl::Hidden, cl::init(false), cl::desc(&quot;Forward switch condition to phi ops (default = false)&quot;))</td></tr>
+<tr class="separator:ab10704273fd81e254573edbe3e3b4853"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ee9b3c0a097b7cd2da954c45b6ca570"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a4ee9b3c0a097b7cd2da954c45b6ca570">UserSinkCommonInsts</a> (&quot;sink-common-insts&quot;, cl::Hidden, cl::init(false), cl::desc(&quot;Sink common <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> (default = false)&quot;))</td></tr>
+<tr class="separator:a4ee9b3c0a097b7cd2da954c45b6ca570"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05a3e5cd8706db3de8315986126d0a27"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a05a3e5cd8706db3de8315986126d0a27">STATISTIC</a> (NumSimpl, &quot;Number of blocks simplified&quot;)</td></tr>
 <tr class="separator:a05a3e5cd8706db3de8315986126d0a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a7c5245d801c4bdbde970b12a5e1a7c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a5a7c5245d801c4bdbde970b12a5e1a7c">mergeEmptyReturnBlocks</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a5a7c5245d801c4bdbde970b12a5e1a7c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a5a7c5245d801c4bdbde970b12a5e1a7c">mergeEmptyReturnBlocks</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="memdesc:a5a7c5245d801c4bdbde970b12a5e1a7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">If we have more than one empty (other than phi node) return blocks, merge them together to promote recursive block merging.  <a href="SimplifyCFGPass_8cpp.html#a5a7c5245d801c4bdbde970b12a5e1a7c">More...</a><br /></td></tr>
 <tr class="separator:a5a7c5245d801c4bdbde970b12a5e1a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acae2545055a7e43ce244b45cabac62d0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#acae2545055a7e43ce244b45cabac62d0">iterativelySimplifyCFG</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;TTI, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1SimplifyCFGOptions.html">SimplifyCFGOptions</a> &amp;Options)</td></tr>
+<tr class="memitem:acae2545055a7e43ce244b45cabac62d0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#acae2545055a7e43ce244b45cabac62d0">iterativelySimplifyCFG</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, const TargetTransformInfo &amp;TTI, const SimplifyCFGOptions &amp;Options)</td></tr>
 <tr class="memdesc:acae2545055a7e43ce244b45cabac62d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call SimplifyCFG on all the blocks in the function, iterating until no more changes are made.  <a href="SimplifyCFGPass_8cpp.html#acae2545055a7e43ce244b45cabac62d0">More...</a><br /></td></tr>
 <tr class="separator:acae2545055a7e43ce244b45cabac62d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4de41515070e1e56a087e402d2d9c0ba"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a4de41515070e1e56a087e402d2d9c0ba">simplifyFunctionCFG</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;TTI, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1SimplifyCFGOptions.html">SimplifyCFGOptions</a> &amp;Options)</td></tr>
+<tr class="memitem:a4de41515070e1e56a087e402d2d9c0ba"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a4de41515070e1e56a087e402d2d9c0ba">simplifyFunctionCFG</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, const TargetTransformInfo &amp;TTI, const SimplifyCFGOptions &amp;Options)</td></tr>
 <tr class="separator:a4de41515070e1e56a087e402d2d9c0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36042f95d95c690cd9e423f61d7a3c0c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a36042f95d95c690cd9e423f61d7a3c0c">INITIALIZE_PASS_BEGIN</a> (CFGSimplifyPass, &quot;simplifycfg&quot;, &quot;Simplify the CFG&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(CFGSimplifyPass</td></tr>
+<tr class="memitem:a36042f95d95c690cd9e423f61d7a3c0c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a36042f95d95c690cd9e423f61d7a3c0c">INITIALIZE_PASS_BEGIN</a> (CFGSimplifyPass, &quot;simplifycfg&quot;, &quot;Simplify the CFG&quot;, false, false) INITIALIZE_PASS_END(CFGSimplifyPass</td></tr>
 <tr class="separator:a36042f95d95c690cd9e423f61d7a3c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a28e5f7ba9340e1b7d4efb250b8a841c2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a28e5f7ba9340e1b7d4efb250b8a841c2">UserBonusInstThreshold</a> (&quot;bonus-inst-threshold&quot;, cl::Hidden, cl::init(1), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Control the number of bonus <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> (default = 1)&quot;))</td></tr>
-<tr class="separator:a28e5f7ba9340e1b7d4efb250b8a841c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a559b059b106259c2a80d260aa2fb8ac5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a559b059b106259c2a80d260aa2fb8ac5">UserKeepLoops</a> (&quot;keep-loops&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Preserve canonical loop structure (default = <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&quot;))</td></tr>
-<tr class="separator:a559b059b106259c2a80d260aa2fb8ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47c318b1478e154818ae8f817062f656"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a47c318b1478e154818ae8f817062f656">UserSwitchToLookup</a> (&quot;switch-to-lookup&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Convert switches to <a class="el" href="X86InstrInfo_8cpp.html#a234ab3d411740fe56b4ff061cf9cff4b">lookup</a> tables (default = false)&quot;))</td></tr>
-<tr class="separator:a47c318b1478e154818ae8f817062f656"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae75d7a4f495ac67ac3622b4441863320"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#ae75d7a4f495ac67ac3622b4441863320">UserForwardSwitchCond</a> (&quot;forward-switch-cond&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Forward switch condition to phi <a class="el" href="XRayInstrumentation_8cpp.html#a3d7f8a500f0593da70cb5a39b985840d">ops</a> (default = false)&quot;))</td></tr>
-<tr class="separator:ae75d7a4f495ac67ac3622b4441863320"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f731e69460402890901df460cd0f6dd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a0f731e69460402890901df460cd0f6dd">UserSinkCommonInsts</a> (&quot;sink-common-insts&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Sink common <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> (default = false)&quot;))</td></tr>
-<tr class="separator:a0f731e69460402890901df460cd0f6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7563d1202b03a8d9be338efd0bcbeda3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a7563d1202b03a8d9be338efd0bcbeda3">simplifycfg</a></td></tr>
 <tr class="separator:a7563d1202b03a8d9be338efd0bcbeda3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61e68af804c2ae3d65db158f863679f2"><td class="memItemLeft" align="right" valign="top">Simplify the&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyCFGPass_8cpp.html#a61e68af804c2ae3d65db158f863679f2">CFG</a></td></tr>
@@ -198,21 +221,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> iterativelySimplifyCFG </td>
+          <td class="memname">static bool iterativelySimplifyCFG </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;&#160;</td>
+          <td class="paramtype">const TargetTransformInfo &amp;&#160;</td>
           <td class="paramname"><em>TTI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1SimplifyCFGOptions.html">SimplifyCFGOptions</a> &amp;&#160;</td>
+          <td class="paramtype">const SimplifyCFGOptions &amp;&#160;</td>
           <td class="paramname"><em>Options</em>&#160;</td>
         </tr>
         <tr>
@@ -232,7 +255,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00147">147</a> of file <a class="el" href="SimplifyCFGPass_8cpp_source.html">SimplifyCFGPass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CFG_8cpp_source.html#l00027">llvm::FindFunctionBackedges()</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00370">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert()</a>, <a class="el" href="HexagonShuffler_8cpp_source.html#l00221">second</a>, <a class="el" href="SimplifyCFG_8cpp_source.html#l06076">llvm::simplifyCFG()</a>, and <a class="el" href="SmallVector_8h_source.html#l00052">llvm::SmallVectorBase::size()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="CoroCleanup_8cpp_source.html#l00031">simplifyCFG()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00173">simplifyFunctionCFG()</a>.</p>
 
@@ -248,9 +271,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> mergeEmptyReturnBlocks </td>
+          <td class="memname">static bool mergeEmptyReturnBlocks </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -266,7 +289,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00072">72</a> of file <a class="el" href="SimplifyCFGPass_8cpp_source.html">SimplifyCFGPass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Instructions_8h_source.html#l02688">llvm::PHINode::addIncoming()</a>, <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="Instructions_8h_source.html#l03021">llvm::BranchInst::Create()</a>, <a class="el" href="Instructions_8h_source.html#l02576">llvm::PHINode::Create()</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00114">llvm::BasicBlock::eraseFromParent()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00067">llvm::Instruction::eraseFromParent()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="BasicBlock_8h_source.html#l00280">llvm::BasicBlock::front()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Interval_8h_source.html#l00112">llvm::pred_begin()</a>, <a class="el" href="Interval_8h_source.html#l00115">llvm::pred_end()</a>, <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>, and <a class="el" href="User_8h_source.html#l00174">llvm::User::setOperand()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00173">simplifyFunctionCFG()</a>.</p>
 
@@ -282,21 +305,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> simplifyFunctionCFG </td>
+          <td class="memname">static bool simplifyFunctionCFG </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;&#160;</td>
+          <td class="paramtype">const TargetTransformInfo &amp;&#160;</td>
           <td class="paramname"><em>TTI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1SimplifyCFGOptions.html">SimplifyCFGOptions</a> &amp;&#160;</td>
+          <td class="paramtype">const SimplifyCFGOptions &amp;&#160;</td>
           <td class="paramname"><em>Options</em>&#160;</td>
         </tr>
         <tr>
@@ -314,9 +337,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00173">173</a> of file <a class="el" href="SimplifyCFGPass_8cpp_source.html">SimplifyCFGPass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00147">iterativelySimplifyCFG()</a>, <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00072">mergeEmptyReturnBlocks()</a>, and <a class="el" href="Local_8cpp_source.html#l02228">llvm::removeUnreachableBlocks()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00217">llvm::SimplifyCFGPass::run()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00147">iterativelySimplifyCFG()</a>, and <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00072">mergeEmptyReturnBlocks()</a>.</p>
 
 </div>
 </div>
@@ -344,6 +365,246 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa686df4b92fa5bf2d16768a3cf6820f6" name="aa686df4b92fa5bf2d16768a3cf6820f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa686df4b92fa5bf2d16768a3cf6820f6">&#9670;&nbsp;</a></span>UserBonusInstThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; unsigned &gt; UserBonusInstThreshold </td>
+          <td>(</td>
+          <td class="paramtype">&quot;bonus-inst-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(1)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Control the number of bonus <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> (default = 1)&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab10704273fd81e254573edbe3e3b4853" name="ab10704273fd81e254573edbe3e3b4853"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab10704273fd81e254573edbe3e3b4853">&#9670;&nbsp;</a></span>UserForwardSwitchCond()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; UserForwardSwitchCond </td>
+          <td>(</td>
+          <td class="paramtype">&quot;forward-switch-cond&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Forward switch condition to phi ops (default = false)&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9de2e0fbb0cc567e8b1ffe301f1e32ac" name="a9de2e0fbb0cc567e8b1ffe301f1e32ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9de2e0fbb0cc567e8b1ffe301f1e32ac">&#9670;&nbsp;</a></span>UserKeepLoops()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; UserKeepLoops </td>
+          <td>(</td>
+          <td class="paramtype">&quot;keep-loops&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Preserve canonical loop structure (default = <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ee9b3c0a097b7cd2da954c45b6ca570" name="a4ee9b3c0a097b7cd2da954c45b6ca570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ee9b3c0a097b7cd2da954c45b6ca570">&#9670;&nbsp;</a></span>UserSinkCommonInsts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; UserSinkCommonInsts </td>
+          <td>(</td>
+          <td class="paramtype">&quot;sink-common-insts&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Sink common <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> (default = false)&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afb70d19f66e73d6df175563c7066a68c" name="afb70d19f66e73d6df175563c7066a68c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb70d19f66e73d6df175563c7066a68c">&#9670;&nbsp;</a></span>UserSwitchToLookup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; UserSwitchToLookup </td>
+          <td>(</td>
+          <td class="paramtype">&quot;switch-to-lookup&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Convert switches to lookup tables (default = false)&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -397,260 +658,10 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a28e5f7ba9340e1b7d4efb250b8a841c2" name="a28e5f7ba9340e1b7d4efb250b8a841c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28e5f7ba9340e1b7d4efb250b8a841c2">&#9670;&nbsp;</a></span>UserBonusInstThreshold</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classunsigned.html">unsigned</a> &gt; UserBonusInstThreshold(&quot;bonus-inst-threshold&quot;, cl::Hidden, cl::init(1), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Control the number of bonus <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> (default = 1)&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;bonus-inst-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(1)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Control the number of bonus <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> (default = 1)&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00199">llvm::SimplifyCFGPass::SimplifyCFGPass()</a>.</p>
-
-</div>
-</div>
-<a id="ae75d7a4f495ac67ac3622b4441863320" name="ae75d7a4f495ac67ac3622b4441863320"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae75d7a4f495ac67ac3622b4441863320">&#9670;&nbsp;</a></span>UserForwardSwitchCond</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; UserForwardSwitchCond(&quot;forward-switch-cond&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Forward switch condition to phi <a class="el" href="XRayInstrumentation_8cpp.html#a3d7f8a500f0593da70cb5a39b985840d">ops</a> (default = false)&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;forward-switch-cond&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Forward switch condition to phi <a class="el" href="XRayInstrumentation_8cpp.html#a3d7f8a500f0593da70cb5a39b985840d">ops</a> (default = false)&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00199">llvm::SimplifyCFGPass::SimplifyCFGPass()</a>.</p>
-
-</div>
-</div>
-<a id="a559b059b106259c2a80d260aa2fb8ac5" name="a559b059b106259c2a80d260aa2fb8ac5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a559b059b106259c2a80d260aa2fb8ac5">&#9670;&nbsp;</a></span>UserKeepLoops</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; UserKeepLoops(&quot;keep-loops&quot;, cl::Hidden, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Preserve canonical loop structure (default = <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;keep-loops&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Preserve canonical loop structure (default = <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00199">llvm::SimplifyCFGPass::SimplifyCFGPass()</a>.</p>
-
-</div>
-</div>
-<a id="a0f731e69460402890901df460cd0f6dd" name="a0f731e69460402890901df460cd0f6dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f731e69460402890901df460cd0f6dd">&#9670;&nbsp;</a></span>UserSinkCommonInsts</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; UserSinkCommonInsts(&quot;sink-common-insts&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Sink common <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> (default = false)&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;sink-common-insts&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Sink common <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> (default = false)&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00199">llvm::SimplifyCFGPass::SimplifyCFGPass()</a>.</p>
-
-</div>
-</div>
-<a id="a47c318b1478e154818ae8f817062f656" name="a47c318b1478e154818ae8f817062f656"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47c318b1478e154818ae8f817062f656">&#9670;&nbsp;</a></span>UserSwitchToLookup</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; UserSwitchToLookup(&quot;switch-to-lookup&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Convert switches to <a class="el" href="X86InstrInfo_8cpp.html#a234ab3d411740fe56b4ff061cf9cff4b">lookup</a> tables (default = false)&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;switch-to-lookup&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Convert switches to <a class="el" href="X86InstrInfo_8cpp.html#a234ab3d411740fe56b4ff061cf9cff4b">lookup</a> tables (default = false)&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="SimplifyCFGPass_8cpp_source.html#l00199">llvm::SimplifyCFGPass::SimplifyCFGPass()</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:23 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

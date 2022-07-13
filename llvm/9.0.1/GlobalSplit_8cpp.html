@@ -55,40 +55,64 @@ $(function() {
   <div class="headertitle"><div class="title">GlobalSplit.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="GlobalSplit_8h_source.html">llvm/Transforms/IPO/GlobalSplit.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringExtras_8h_source.html">llvm/ADT/StringExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalValue_8h_source.html">llvm/IR/GlobalValue.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalVariable_8h_source.html">llvm/IR/GlobalVariable.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Operator_8h_source.html">llvm/IR/Operator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2IPO_8h_source.html">llvm/Transforms/IPO.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/IPO/GlobalSplit.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringExtras.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/GlobalValue.h&quot;</code><br />
+<code>#include &quot;llvm/IR/GlobalVariable.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Operator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/IR/User.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO.h&quot;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for GlobalSplit.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="GlobalSplit_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2IPO_2GlobalSplit_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2IPO_2GlobalSplit_8cpp" id="alib_2Transforms_2IPO_2GlobalSplit_8cpp">
+<area shape="rect" title=" " alt="" coords="1841,5,1981,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,159,133"/>
+<area shape="rect" title=" " alt="" coords="183,101,357,126"/>
+<area shape="rect" title=" " alt="" coords="381,101,559,126"/>
+<area shape="rect" title=" " alt="" coords="583,101,725,126"/>
+<area shape="rect" title=" " alt="" coords="750,101,899,126"/>
+<area shape="rect" title=" " alt="" coords="924,101,1083,126"/>
+<area shape="rect" title=" " alt="" coords="1107,101,1246,126"/>
+<area shape="rect" title=" " alt="" coords="1270,101,1433,126"/>
+<area shape="rect" title=" " alt="" coords="1457,101,1635,126"/>
+<area shape="rect" title=" " alt="" coords="1660,101,1803,126"/>
+<area shape="rect" title=" " alt="" coords="1827,101,1996,126"/>
+<area shape="rect" title=" " alt="" coords="2021,101,2167,126"/>
+<area shape="rect" title=" " alt="" coords="2192,101,2324,126"/>
+<area shape="rect" title=" " alt="" coords="2348,101,2488,126"/>
+<area shape="rect" title=" " alt="" coords="2513,101,2627,126"/>
+<area shape="rect" title=" " alt="" coords="2652,101,2765,126"/>
+<area shape="rect" title=" " alt="" coords="2790,101,2886,126"/>
+<area shape="rect" title=" " alt="" coords="2910,101,3081,126"/>
+<area shape="rect" title=" " alt="" coords="3105,101,3270,126"/>
+<area shape="rect" title=" " alt="" coords="3294,101,3361,126"/>
+<area shape="rect" title=" " alt="" coords="3385,101,3448,126"/>
+</map>
 </div>
 </div>
 <p><a href="GlobalSplit_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa0b982cd11d8eef0277074095aca3b43"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GlobalSplit_8cpp.html#aa0b982cd11d8eef0277074095aca3b43">splitGlobal</a> (<a class="el" href="classllvm_1_1GlobalVariable.html">GlobalVariable</a> &amp;GV)</td></tr>
+<tr class="memitem:aa0b982cd11d8eef0277074095aca3b43"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GlobalSplit_8cpp.html#aa0b982cd11d8eef0277074095aca3b43">splitGlobal</a> (GlobalVariable &amp;GV)</td></tr>
 <tr class="separator:aa0b982cd11d8eef0277074095aca3b43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93898976321fdcdb6827b4885b0d435c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GlobalSplit_8cpp.html#a93898976321fdcdb6827b4885b0d435c">splitGlobals</a> (<a class="el" href="classllvm_1_1Module.html">Module</a> &amp;M)</td></tr>
+<tr class="memitem:a93898976321fdcdb6827b4885b0d435c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GlobalSplit_8cpp.html#a93898976321fdcdb6827b4885b0d435c">splitGlobals</a> (Module &amp;M)</td></tr>
 <tr class="separator:a93898976321fdcdb6827b4885b0d435c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -102,9 +126,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> splitGlobal </td>
+          <td class="memname">static bool splitGlobal </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1GlobalVariable.html">GlobalVariable</a> &amp;&#160;</td>
+          <td class="paramtype">GlobalVariable &amp;&#160;</td>
           <td class="paramname"><em>GV</em></td><td>)</td>
           <td></td>
         </tr>
@@ -118,7 +142,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GlobalSplit_8cpp_source.html#l00040">40</a> of file <a class="el" href="GlobalSplit_8cpp_source.html">GlobalSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Globals_8cpp_source.html#l00380">llvm::GlobalVariable::eraseFromParent()</a>, <a class="el" href="HexagonCommonGEP_8cpp_source.html#l00170">GEP</a>, <a class="el" href="Metadata_8h_source.html#l01165">llvm::MDNode::get()</a>, <a class="el" href="Constants_8cpp_source.html#l01424">llvm::UndefValue::get()</a>, <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="Module_8cpp_source.html#l00369">llvm::Module::getDataLayout()</a>, <a class="el" href="DataLayout_8h_source.html#l00584">llvm::StructLayout::getElementOffset()</a>, <a class="el" href="Constants_8h_source.html#l01153">llvm::ConstantExpr::getGetElementPtr()</a>, <a class="el" href="GlobalVariable_8h_source.html#l00136">llvm::GlobalVariable::getInitializer()</a>, <a class="el" href="Evaluator_8cpp_source.html#l00205">getInitializer()</a>, <a class="el" href="classllvm_1_1Type.html#ac0690fc781a93e3208e8048355f0e9a6">llvm::Type::getInt32Ty()</a>, <a class="el" href="Metadata_8cpp_source.html#l01440">llvm::GlobalObject::getMetadata()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="GlobalValue_8h_source.html#l00575">llvm::GlobalValue::getParent()</a>, <a class="el" href="DataLayout_8h_source.html#l00570">llvm::StructLayout::getSizeInBytes()</a>, <a class="el" href="DataLayout_8cpp_source.html#l00604">llvm::DataLayout::getStructLayout()</a>, <a class="el" href="GlobalValue_8h_source.html#l00277">llvm::GlobalValue::getType()</a>, <a class="el" href="WebAssemblyMCInstLower_8cpp_source.html#l00167">getType()</a>, <a class="el" href="GlobalValue_8h_source.html#l00445">llvm::GlobalValue::hasLocalLinkage()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="NVVMIntrRange_8cpp_source.html#l00072">Int32Ty</a>, <a class="el" href="GlobalVariable_8h_source.html#l00153">llvm::GlobalVariable::isConstant()</a>, <a class="el" href="LLVMContext_8h_source.html#l00094">llvm::LLVMContext::MD_type</a>, <a class="el" href="GlobalValue_8h_source.html#l00056">llvm::GlobalValue::PrivateLinkage</a>, <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>, <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>, <a class="el" href="Value_8h_source.html#l00322">llvm::Value::use_empty()</a>, <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>, and <a class="el" href="StringExtras_8h_source.html#l00223">llvm::utostr()</a>.</p>
+<p class="reference">References <a class="el" href="Evaluator_8cpp_source.html#l00205">getInitializer()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="GlobalSplit_8cpp_source.html#l00140">splitGlobals()</a>.</p>
 
@@ -134,9 +158,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> splitGlobals </td>
+          <td class="memname">static bool splitGlobals </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> &amp;&#160;</td>
+          <td class="paramtype">Module &amp;&#160;</td>
           <td class="paramname"><em>M</em></td><td>)</td>
           <td></td>
         </tr>
@@ -150,16 +174,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GlobalSplit_8cpp_source.html#l00140">140</a> of file <a class="el" href="GlobalSplit_8cpp_source.html">GlobalSplit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Function_8cpp_source.html#l00637">llvm::Intrinsic::getName()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="GlobalSplit_8cpp_source.html#l00040">splitGlobal()</a>, and <a class="el" href="Value_8h_source.html#l00322">llvm::Value::use_empty()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="GlobalSplit_8cpp_source.html#l00188">llvm::GlobalSplitPass::run()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="GlobalSplit_8cpp_source.html#l00040">splitGlobal()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

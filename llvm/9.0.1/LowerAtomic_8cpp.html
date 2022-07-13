@@ -56,15 +56,23 @@ $(function() {
   <div class="headertitle"><div class="title">LowerAtomic.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="LowerAtomic_8h_source.html">llvm/Transforms/Scalar/LowerAtomic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/LowerAtomic.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LowerAtomic.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="LowerAtomic_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2LowerAtomic_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Scalar_2LowerAtomic_8cpp" id="alib_2Transforms_2Scalar_2LowerAtomic_8cpp">
+<area shape="rect" title=" " alt="" coords="355,5,514,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,176,133"/>
+<area shape="rect" title=" " alt="" coords="200,101,339,126"/>
+<area shape="rect" title=" " alt="" coords="363,101,506,126"/>
+<area shape="rect" title=" " alt="" coords="531,101,627,126"/>
+<area shape="rect" title=" " alt="" coords="651,101,834,126"/>
+</map>
 </div>
 </div>
 <p><a href="LowerAtomic_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -76,21 +84,21 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2b5c8771e0cc8646b57ded45c63ab516"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#a2b5c8771e0cc8646b57ded45c63ab516">LowerAtomicCmpXchgInst</a> (<a class="el" href="classllvm_1_1AtomicCmpXchgInst.html">AtomicCmpXchgInst</a> *CXI)</td></tr>
+<tr class="memitem:a2b5c8771e0cc8646b57ded45c63ab516"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#a2b5c8771e0cc8646b57ded45c63ab516">LowerAtomicCmpXchgInst</a> (AtomicCmpXchgInst *CXI)</td></tr>
 <tr class="separator:a2b5c8771e0cc8646b57ded45c63ab516"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accabb74146593269ab10d8cfa8cec5a7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#accabb74146593269ab10d8cfa8cec5a7">LowerAtomicRMWInst</a> (<a class="el" href="classllvm_1_1AtomicRMWInst.html">AtomicRMWInst</a> *RMWI)</td></tr>
+<tr class="memitem:accabb74146593269ab10d8cfa8cec5a7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#accabb74146593269ab10d8cfa8cec5a7">LowerAtomicRMWInst</a> (AtomicRMWInst *RMWI)</td></tr>
 <tr class="separator:accabb74146593269ab10d8cfa8cec5a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71a9a2cc77be9409f284b570894f16d2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#a71a9a2cc77be9409f284b570894f16d2">LowerFenceInst</a> (<a class="el" href="classllvm_1_1FenceInst.html">FenceInst</a> *FI)</td></tr>
+<tr class="memitem:a71a9a2cc77be9409f284b570894f16d2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#a71a9a2cc77be9409f284b570894f16d2">LowerFenceInst</a> (FenceInst *FI)</td></tr>
 <tr class="separator:a71a9a2cc77be9409f284b570894f16d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a533cef247257a2fdcfbf3caed9edded6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#a533cef247257a2fdcfbf3caed9edded6">LowerLoadInst</a> (<a class="el" href="classllvm_1_1LoadInst.html">LoadInst</a> *LI)</td></tr>
+<tr class="memitem:a533cef247257a2fdcfbf3caed9edded6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#a533cef247257a2fdcfbf3caed9edded6">LowerLoadInst</a> (LoadInst *LI)</td></tr>
 <tr class="separator:a533cef247257a2fdcfbf3caed9edded6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23409a4a384c75050e75b5e947f91a61"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#a23409a4a384c75050e75b5e947f91a61">LowerStoreInst</a> (<a class="el" href="classllvm_1_1StoreInst.html">StoreInst</a> *<a class="el" href="SIInstrInfo_8cpp.html#a0dfd55eaf0bcb495f09ecf8c55b256b2a6cbe5ff42f143903e1c67abf94613791">SI</a>)</td></tr>
+<tr class="memitem:a23409a4a384c75050e75b5e947f91a61"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#a23409a4a384c75050e75b5e947f91a61">LowerStoreInst</a> (StoreInst *SI)</td></tr>
 <tr class="separator:a23409a4a384c75050e75b5e947f91a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a759f3cb86e19ef2f5125333912b44c86"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#a759f3cb86e19ef2f5125333912b44c86">runOnBasicBlock</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> &amp;BB)</td></tr>
+<tr class="memitem:a759f3cb86e19ef2f5125333912b44c86"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#a759f3cb86e19ef2f5125333912b44c86">runOnBasicBlock</a> (BasicBlock &amp;BB)</td></tr>
 <tr class="separator:a759f3cb86e19ef2f5125333912b44c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9befb5dcd86ec6c00305c12900c29df1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#a9befb5dcd86ec6c00305c12900c29df1">lowerAtomics</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a9befb5dcd86ec6c00305c12900c29df1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#a9befb5dcd86ec6c00305c12900c29df1">lowerAtomics</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a9befb5dcd86ec6c00305c12900c29df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac84015070137dea2760f1d8a713e62ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#ac84015070137dea2760f1d8a713e62ae">INITIALIZE_PASS</a> (LowerAtomicLegacyPass, &quot;loweratomic&quot;, &quot;Lower atomic <a class="el" href="ExpandReductions_8cpp.html#ace88fa97ca66c96745aed4ee1018c6db">intrinsics</a> to non-atomic form&quot;, false, false) <a class="el" href="classllvm_1_1Pass.html">Pass</a> *llvm</td></tr>
+<tr class="memitem:ac84015070137dea2760f1d8a713e62ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerAtomic_8cpp.html#ac84015070137dea2760f1d8a713e62ae">INITIALIZE_PASS</a> (LowerAtomicLegacyPass, &quot;loweratomic&quot;, &quot;Lower atomic intrinsics to non-atomic form&quot;, false, false) <a class="el" href="classPass.html">Pass</a> *llvm</td></tr>
 <tr class="separator:ac84015070137dea2760f1d8a713e62ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -132,7 +140,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Lower atomic <a class="el" href="ExpandReductions_8cpp.html#ace88fa97ca66c96745aed4ee1018c6db">intrinsics</a> to non-atomic form&quot;&#160;</td>
+          <td class="paramtype">&quot;Lower atomic intrinsics to non-atomic form&quot;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -169,9 +177,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> LowerAtomicCmpXchgInst </td>
+          <td class="memname">static bool LowerAtomicCmpXchgInst </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1AtomicCmpXchgInst.html">AtomicCmpXchgInst</a> *&#160;</td>
+          <td class="paramtype">AtomicCmpXchgInst *&#160;</td>
           <td class="paramname"><em>CXI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -184,8 +192,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="LowerAtomic_8cpp_source.html#l00023">23</a> of file <a class="el" href="LowerAtomic_8cpp_source.html">LowerAtomic.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="IRBuilder_8h_source.html#l02058">llvm::IRBuilder&lt; T, Inserter &gt;::CreateICmpEQ()</a>, <a class="el" href="IRBuilder_8h_source.html#l02313">llvm::IRBuilder&lt; T, Inserter &gt;::CreateInsertValue()</a>, <a class="el" href="IRBuilder_8h_source.html#l01576">llvm::IRBuilder&lt; T, Inserter &gt;::CreateLoad()</a>, <a class="el" href="IRBuilder_8h_source.html#l02241">llvm::IRBuilder&lt; T, Inserter &gt;::CreateSelect()</a>, <a class="el" href="IRBuilder_8h_source.html#l01605">llvm::IRBuilder&lt; T, Inserter &gt;::CreateStore()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00067">llvm::Instruction::eraseFromParent()</a>, <a class="el" href="Constants_8cpp_source.html#l01424">llvm::UndefValue::get()</a>, <a class="el" href="Instructions_8h_source.html#l00623">llvm::AtomicCmpXchgInst::getCompareOperand()</a>, <a class="el" href="Instructions_8h_source.html#l00626">llvm::AtomicCmpXchgInst::getNewValOperand()</a>, <a class="el" href="Instructions_8h_source.html#l00619">llvm::AtomicCmpXchgInst::getPointerOperand()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LowerAtomic_8cpp_source.html#l00117">runOnBasicBlock()</a>.</p>
 
@@ -201,9 +207,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> LowerAtomicRMWInst </td>
+          <td class="memname">static bool LowerAtomicRMWInst </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1AtomicRMWInst.html">AtomicRMWInst</a> *&#160;</td>
+          <td class="paramtype">AtomicRMWInst *&#160;</td>
           <td class="paramname"><em>RMWI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -216,8 +222,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="LowerAtomic_8cpp_source.html#l00042">42</a> of file <a class="el" href="LowerAtomic_8cpp_source.html">LowerAtomic.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Instructions_8h_source.html#l00709">llvm::AtomicRMWInst::Add</a>, <a class="el" href="Instructions_8h_source.html#l00713">llvm::AtomicRMWInst::And</a>, <a class="el" href="IRBuilder_8h_source.html#l01118">llvm::IRBuilder&lt; T, Inserter &gt;::CreateAdd()</a>, <a class="el" href="IRBuilder_8h_source.html#l01268">llvm::IRBuilder&lt; T, Inserter &gt;::CreateAnd()</a>, <a class="el" href="IRBuilder_8h_source.html#l01333">llvm::IRBuilder&lt; T, Inserter &gt;::CreateFAdd()</a>, <a class="el" href="IRBuilder_8h_source.html#l01358">llvm::IRBuilder&lt; T, Inserter &gt;::CreateFSub()</a>, <a class="el" href="IRBuilder_8h_source.html#l02090">llvm::IRBuilder&lt; T, Inserter &gt;::CreateICmpSLT()</a>, <a class="el" href="IRBuilder_8h_source.html#l02074">llvm::IRBuilder&lt; T, Inserter &gt;::CreateICmpULT()</a>, <a class="el" href="IRBuilder_8h_source.html#l01576">llvm::IRBuilder&lt; T, Inserter &gt;::CreateLoad()</a>, <a class="el" href="IRBuilder_8h_source.html#l01524">llvm::IRBuilder&lt; T, Inserter &gt;::CreateNot()</a>, <a class="el" href="IRBuilder_8h_source.html#l01294">llvm::IRBuilder&lt; T, Inserter &gt;::CreateOr()</a>, <a class="el" href="IRBuilder_8h_source.html#l02241">llvm::IRBuilder&lt; T, Inserter &gt;::CreateSelect()</a>, <a class="el" href="IRBuilder_8h_source.html#l01605">llvm::IRBuilder&lt; T, Inserter &gt;::CreateStore()</a>, <a class="el" href="IRBuilder_8h_source.html#l01135">llvm::IRBuilder&lt; T, Inserter &gt;::CreateSub()</a>, <a class="el" href="IRBuilder_8h_source.html#l01320">llvm::IRBuilder&lt; T, Inserter &gt;::CreateXor()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00067">llvm::Instruction::eraseFromParent()</a>, <a class="el" href="Instructions_8h_source.html#l00730">llvm::AtomicRMWInst::FAdd</a>, <a class="el" href="Instructions_8h_source.html#l00733">llvm::AtomicRMWInst::FSub</a>, <a class="el" href="Instructions_8h_source.html#l00752">llvm::AtomicRMWInst::getOperation()</a>, <a class="el" href="Instructions_8h_source.html#l00813">llvm::AtomicRMWInst::getPointerOperand()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Instructions_8h_source.html#l00817">llvm::AtomicRMWInst::getValOperand()</a>, <a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>, <a class="el" href="Instructions_8h_source.html#l00721">llvm::AtomicRMWInst::Max</a>, <a class="el" href="Instructions_8h_source.html#l00723">llvm::AtomicRMWInst::Min</a>, <a class="el" href="Instructions_8h_source.html#l00715">llvm::AtomicRMWInst::Nand</a>, <a class="el" href="Instructions_8h_source.html#l00717">llvm::AtomicRMWInst::Or</a>, <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>, <a class="el" href="Instructions_8h_source.html#l00711">llvm::AtomicRMWInst::Sub</a>, <a class="el" href="Instructions_8h_source.html#l00725">llvm::AtomicRMWInst::UMax</a>, <a class="el" href="Instructions_8h_source.html#l00727">llvm::AtomicRMWInst::UMin</a>, <a class="el" href="Instructions_8h_source.html#l00707">llvm::AtomicRMWInst::Xchg</a>, and <a class="el" href="Instructions_8h_source.html#l00719">llvm::AtomicRMWInst::Xor</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LowerAtomic_8cpp_source.html#l00117">runOnBasicBlock()</a>.</p>
 
@@ -233,9 +237,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> lowerAtomics </td>
+          <td class="memname">static bool lowerAtomics </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -251,8 +255,6 @@ Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="LowerAtomic_8cpp_source.html#l00117">runOnBasicBlock()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LowerAtomic_8cpp_source.html#l00146">llvm::LowerAtomicPass::run()</a>.</p>
-
 </div>
 </div>
 <a id="a71a9a2cc77be9409f284b570894f16d2" name="a71a9a2cc77be9409f284b570894f16d2"></a>
@@ -265,9 +267,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> LowerFenceInst </td>
+          <td class="memname">static bool LowerFenceInst </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1FenceInst.html">FenceInst</a> *&#160;</td>
+          <td class="paramtype">FenceInst *&#160;</td>
           <td class="paramname"><em>FI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -280,8 +282,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="LowerAtomic_8cpp_source.html#l00102">102</a> of file <a class="el" href="LowerAtomic_8cpp_source.html">LowerAtomic.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="IR_2Instruction_8cpp_source.html#l00067">llvm::Instruction::eraseFromParent()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LowerAtomic_8cpp_source.html#l00117">runOnBasicBlock()</a>.</p>
 
@@ -297,9 +297,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> LowerLoadInst </td>
+          <td class="memname">static bool LowerLoadInst </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1LoadInst.html">LoadInst</a> *&#160;</td>
+          <td class="paramtype">LoadInst *&#160;</td>
           <td class="paramname"><em>LI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -312,8 +312,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="LowerAtomic_8cpp_source.html#l00107">107</a> of file <a class="el" href="LowerAtomic_8cpp_source.html">LowerAtomic.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="namespacellvm.html#abf74b2f0dbae96f4708d3e407b36df02a56a57d29a3f9dda8671b4d6490a94b08">llvm::NotAtomic</a>, and <a class="el" href="Instructions_8h_source.html#l00270">llvm::LoadInst::setAtomic()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LowerAtomic_8cpp_source.html#l00117">runOnBasicBlock()</a>.</p>
 
@@ -329,9 +327,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> LowerStoreInst </td>
+          <td class="memname">static bool LowerStoreInst </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StoreInst.html">StoreInst</a> *&#160;</td>
+          <td class="paramtype">StoreInst *&#160;</td>
           <td class="paramname"><em>SI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -344,8 +342,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="LowerAtomic_8cpp_source.html#l00112">112</a> of file <a class="el" href="LowerAtomic_8cpp_source.html">LowerAtomic.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="namespacellvm.html#abf74b2f0dbae96f4708d3e407b36df02a56a57d29a3f9dda8671b4d6490a94b08">llvm::NotAtomic</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LowerAtomic_8cpp_source.html#l00117">runOnBasicBlock()</a>.</p>
 
@@ -361,9 +357,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> runOnBasicBlock </td>
+          <td class="memname">static bool runOnBasicBlock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> &amp;&#160;</td>
+          <td class="paramtype">BasicBlock &amp;&#160;</td>
           <td class="paramname"><em>BB</em></td><td>)</td>
           <td></td>
         </tr>
@@ -377,7 +373,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LowerAtomic_8cpp_source.html#l00117">117</a> of file <a class="el" href="LowerAtomic_8cpp_source.html">LowerAtomic.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="BasicBlock_8h_source.html#l00270">llvm::BasicBlock::end()</a>, <a class="el" href="LowerAtomic_8cpp_source.html#l00023">LowerAtomicCmpXchgInst()</a>, <a class="el" href="LowerAtomic_8cpp_source.html#l00042">LowerAtomicRMWInst()</a>, <a class="el" href="LowerAtomic_8cpp_source.html#l00102">LowerFenceInst()</a>, <a class="el" href="LowerAtomic_8cpp_source.html#l00107">LowerLoadInst()</a>, <a class="el" href="LowerAtomic_8cpp_source.html#l00112">LowerStoreInst()</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
+<p class="reference">References <a class="el" href="LowerAtomic_8cpp_source.html#l00023">LowerAtomicCmpXchgInst()</a>, <a class="el" href="LowerAtomic_8cpp_source.html#l00042">LowerAtomicRMWInst()</a>, <a class="el" href="LowerAtomic_8cpp_source.html#l00102">LowerFenceInst()</a>, <a class="el" href="LowerAtomic_8cpp_source.html#l00107">LowerLoadInst()</a>, and <a class="el" href="LowerAtomic_8cpp_source.html#l00112">LowerStoreInst()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LowerAtomic_8cpp_source.html#l00138">lowerAtomics()</a>.</p>
 
@@ -386,7 +382,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:23 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

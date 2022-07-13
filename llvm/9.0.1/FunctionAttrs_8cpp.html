@@ -62,50 +62,50 @@ $(function() {
 
 <p>This file implements interprocedural passes which walk the call-graph deducing and/or propagating function attributes.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="FunctionAttrs_8h_source.html">llvm/Transforms/IPO/FunctionAttrs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SCCIterator_8h_source.html">llvm/ADT/SCCIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SetVector_8h_source.html">llvm/ADT/SetVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallPtrSet_8h_source.html">llvm/ADT/SmallPtrSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicAliasAnalysis_8h_source.html">llvm/Analysis/BasicAliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CGSCCPassManager_8h_source.html">llvm/Analysis/CGSCCPassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallGraph_8h_source.html">llvm/Analysis/CallGraph.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallGraphSCCPass_8h_source.html">llvm/Analysis/CallGraphSCCPass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CaptureTracking_8h_source.html">llvm/Analysis/CaptureTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LazyCallGraph_8h_source.html">llvm/Analysis/LazyCallGraph.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MemoryBuiltins_8h_source.html">llvm/Analysis/MemoryBuiltins.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MemoryLocation_8h_source.html">llvm/Analysis/MemoryLocation.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Attributes_8h_source.html">llvm/IR/Attributes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstIterator_8h_source.html">llvm/IR/InstIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Use_8h_source.html">llvm/IR/Use.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Compiler_8h_source.html">llvm/Support/Compiler.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2IPO_8h_source.html">llvm/Transforms/IPO.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/IPO/FunctionAttrs.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SCCIterator.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SetVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/BasicAliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CGSCCPassManager.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CallGraph.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CallGraphSCCPass.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CaptureTracking.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LazyCallGraph.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/MemoryBuiltins.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/MemoryLocation.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Attributes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstIterator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Use.h&quot;</code><br />
+<code>#include &quot;llvm/IR/User.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Compiler.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/IPO.h&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;iterator&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
@@ -114,6 +114,57 @@ $(function() {
 Include dependency graph for FunctionAttrs.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="FunctionAttrs_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2IPO_2FunctionAttrs_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2IPO_2FunctionAttrs_8cpp" id="alib_2Transforms_2IPO_2FunctionAttrs_8cpp">
+<area shape="rect" title="This file implements interprocedural passes which walk the call&#45;graph deducing and/or propagating fun..." alt="" coords="4936,5,5076,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,159,133"/>
+<area shape="rect" title=" " alt="" coords="183,101,354,126"/>
+<area shape="rect" title=" " alt="" coords="378,101,541,126"/>
+<area shape="rect" title=" " alt="" coords="565,101,724,126"/>
+<area shape="rect" title=" " alt="" coords="748,101,923,126"/>
+<area shape="rect" title=" " alt="" coords="947,101,1121,126"/>
+<area shape="rect" title=" " alt="" coords="1145,101,1296,126"/>
+<area shape="rect" title=" " alt="" coords="1321,101,1534,126"/>
+<area shape="rect" title=" " alt="" coords="1559,93,1749,133"/>
+<area shape="rect" title=" " alt="" coords="1774,93,1955,133"/>
+<area shape="rect" title=" " alt="" coords="1979,101,2235,126"/>
+<area shape="rect" title=" " alt="" coords="2260,101,2451,126"/>
+<area shape="rect" title=" " alt="" coords="2475,101,2721,126"/>
+<area shape="rect" title=" " alt="" coords="2745,101,2976,126"/>
+<area shape="rect" title=" " alt="" coords="3000,101,3220,126"/>
+<area shape="rect" title=" " alt="" coords="3245,101,3474,126"/>
+<area shape="rect" title=" " alt="" coords="3498,101,3733,126"/>
+<area shape="rect" title=" " alt="" coords="3757,101,3973,126"/>
+<area shape="rect" title=" " alt="" coords="3997,101,4145,126"/>
+<area shape="rect" title=" " alt="" coords="4169,101,4317,126"/>
+<area shape="rect" title=" " alt="" coords="4342,101,4497,126"/>
+<area shape="rect" title=" " alt="" coords="4521,101,4656,126"/>
+<area shape="rect" title=" " alt="" coords="4680,101,4823,126"/>
+<area shape="rect" title=" " alt="" coords="4847,101,4997,126"/>
+<area shape="rect" title=" " alt="" coords="5021,101,5159,126"/>
+<area shape="rect" title=" " alt="" coords="5183,101,5338,126"/>
+<area shape="rect" title=" " alt="" coords="5363,101,5513,126"/>
+<area shape="rect" title=" " alt="" coords="5537,101,5691,126"/>
+<area shape="rect" title=" " alt="" coords="5715,101,5875,126"/>
+<area shape="rect" title=" " alt="" coords="5899,101,6059,126"/>
+<area shape="rect" title=" " alt="" coords="6083,101,6230,126"/>
+<area shape="rect" title=" " alt="" coords="6255,101,6424,126"/>
+<area shape="rect" title=" " alt="" coords="6449,101,6563,126"/>
+<area shape="rect" title=" " alt="" coords="6587,101,6697,126"/>
+<area shape="rect" title=" " alt="" coords="6721,101,6835,126"/>
+<area shape="rect" title=" " alt="" coords="6859,101,6979,126"/>
+<area shape="rect" title=" " alt="" coords="7003,101,7099,126"/>
+<area shape="rect" title=" " alt="" coords="7123,101,7294,126"/>
+<area shape="rect" title=" " alt="" coords="7319,101,7533,126"/>
+<area shape="rect" title=" " alt="" coords="7558,101,7737,126"/>
+<area shape="rect" title=" " alt="" coords="7761,101,7923,126"/>
+<area shape="rect" title=" " alt="" coords="7947,101,8158,126"/>
+<area shape="rect" title=" " alt="" coords="8183,101,8389,126"/>
+<area shape="rect" title=" " alt="" coords="8414,101,8579,126"/>
+<area shape="rect" title=" " alt="" coords="8603,101,8673,126"/>
+<area shape="rect" title=" " alt="" coords="8697,101,8768,126"/>
+<area shape="rect" title=" " alt="" coords="8793,101,8843,126"/>
+<area shape="rect" title=" " alt="" coords="8868,101,8931,126"/>
+</map>
 </div>
 </div>
 <p><a href="FunctionAttrs_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -128,7 +179,6 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -138,11 +188,11 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a03af0aed8c6f6f41646fb66108e5c7ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a03af0aed8c6f6f41646fb66108e5c7ef">STATISTIC</a> (NumReadNone, &quot;Number of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> marked readnone&quot;)</td></tr>
+<tr class="memitem:a03af0aed8c6f6f41646fb66108e5c7ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a03af0aed8c6f6f41646fb66108e5c7ef">STATISTIC</a> (NumReadNone, &quot;Number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> marked readnone&quot;)</td></tr>
 <tr class="separator:a03af0aed8c6f6f41646fb66108e5c7ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34813f901d3d1d23d6b429c66d1e07a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a34813f901d3d1d23d6b429c66d1e07a2">STATISTIC</a> (NumReadOnly, &quot;Number of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> marked readonly&quot;)</td></tr>
+<tr class="memitem:a34813f901d3d1d23d6b429c66d1e07a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a34813f901d3d1d23d6b429c66d1e07a2">STATISTIC</a> (NumReadOnly, &quot;Number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> marked readonly&quot;)</td></tr>
 <tr class="separator:a34813f901d3d1d23d6b429c66d1e07a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43c5a0104586ef5302b58cce102f46c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a43c5a0104586ef5302b58cce102f46c4">STATISTIC</a> (NumWriteOnly, &quot;Number of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> marked writeonly&quot;)</td></tr>
+<tr class="memitem:a43c5a0104586ef5302b58cce102f46c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a43c5a0104586ef5302b58cce102f46c4">STATISTIC</a> (NumWriteOnly, &quot;Number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> marked writeonly&quot;)</td></tr>
 <tr class="separator:a43c5a0104586ef5302b58cce102f46c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9a982653b0db1c860425a64c936de9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ad9a982653b0db1c860425a64c936de9c">STATISTIC</a> (NumNoCapture, &quot;Number of arguments marked nocapture&quot;)</td></tr>
 <tr class="separator:ad9a982653b0db1c860425a64c936de9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,89 +206,89 @@ Functions</h2></td></tr>
 <tr class="separator:af5f7ba351d0f1eaea7ed4a74f41523be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a077bfe01ac125951a10b303832e81113"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a077bfe01ac125951a10b303832e81113">STATISTIC</a> (NumNonNullReturn, &quot;Number of <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> returns marked nonnull&quot;)</td></tr>
 <tr class="separator:a077bfe01ac125951a10b303832e81113"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5cef675e85dd5441d49e1de0aa63190"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#aa5cef675e85dd5441d49e1de0aa63190">STATISTIC</a> (NumNoRecurse, &quot;Number of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> marked as norecurse&quot;)</td></tr>
+<tr class="memitem:aa5cef675e85dd5441d49e1de0aa63190"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#aa5cef675e85dd5441d49e1de0aa63190">STATISTIC</a> (NumNoRecurse, &quot;Number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> marked as norecurse&quot;)</td></tr>
 <tr class="separator:aa5cef675e85dd5441d49e1de0aa63190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6308b1c941b133e1558d3861ef41602"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#aa6308b1c941b133e1558d3861ef41602">STATISTIC</a> (NumNoUnwind, &quot;Number of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> marked as nounwind&quot;)</td></tr>
+<tr class="memitem:aa6308b1c941b133e1558d3861ef41602"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#aa6308b1c941b133e1558d3861ef41602">STATISTIC</a> (NumNoUnwind, &quot;Number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> marked as nounwind&quot;)</td></tr>
 <tr class="separator:aa6308b1c941b133e1558d3861ef41602"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae84352bed7eac7d2370af887caf52c21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ae84352bed7eac7d2370af887caf52c21">STATISTIC</a> (NumNoFree, &quot;Number of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> marked as nofree&quot;)</td></tr>
+<tr class="memitem:ae84352bed7eac7d2370af887caf52c21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ae84352bed7eac7d2370af887caf52c21">STATISTIC</a> (NumNoFree, &quot;Number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> marked as nofree&quot;)</td></tr>
 <tr class="separator:ae84352bed7eac7d2370af887caf52c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfee01c5843dd1dfec2fa79c724dd938"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespacellvm.html#a4b55bc5c9e91417e620c0d07ac99434a">MemoryAccessKind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#adfee01c5843dd1dfec2fa79c724dd938">checkFunctionMemoryAccess</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classbool.html">bool</a> ThisBody, <a class="el" href="classllvm_1_1AAResults.html">AAResults</a> &amp;AAR, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;SCCNodes)</td></tr>
+<tr class="memitem:a08c0ce3bab3624304c3c5f0325a4e133"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a08c0ce3bab3624304c3c5f0325a4e133">EnableNonnullArgPropagation</a> (&quot;enable-nonnull-arg-prop&quot;, cl::Hidden, cl::desc(&quot;Try to <a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a> nonnull argument <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> from callsites to &quot; &quot;caller functions.&quot;))</td></tr>
+<tr class="separator:a08c0ce3bab3624304c3c5f0325a4e133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea3e2d03ce1b96ccaf34eaebd9bfa586"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#aea3e2d03ce1b96ccaf34eaebd9bfa586">DisableNoUnwindInference</a> (&quot;disable-nounwind-inference&quot;, cl::Hidden, cl::desc(&quot;Stop inferring nounwind attribute during <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-attrs pass&quot;))</td></tr>
+<tr class="separator:aea3e2d03ce1b96ccaf34eaebd9bfa586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add68dea0801b0486a184ed81e13ce5af"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#add68dea0801b0486a184ed81e13ce5af">DisableNoFreeInference</a> (&quot;disable-nofree-inference&quot;, cl::Hidden, cl::desc(&quot;Stop inferring nofree attribute during <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-attrs pass&quot;))</td></tr>
+<tr class="separator:add68dea0801b0486a184ed81e13ce5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfee01c5843dd1dfec2fa79c724dd938"><td class="memItemLeft" align="right" valign="top">static MemoryAccessKind&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#adfee01c5843dd1dfec2fa79c724dd938">checkFunctionMemoryAccess</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, bool ThisBody, AAResults &amp;AAR, const SCCNodeSet &amp;SCCNodes)</td></tr>
 <tr class="memdesc:adfee01c5843dd1dfec2fa79c724dd938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the memory access attribute for function F using AAR for AA results, where SCCNodes is the current SCC.  <a href="FunctionAttrs_8cpp.html#adfee01c5843dd1dfec2fa79c724dd938">More...</a><br /></td></tr>
 <tr class="separator:adfee01c5843dd1dfec2fa79c724dd938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96f8173e0c278bcbf4eb874961d4ffeb"><td class="memTemplParams" colspan="2">template&lt;typename AARGetterT &gt; </td></tr>
-<tr class="memitem:a96f8173e0c278bcbf4eb874961d4ffeb"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a96f8173e0c278bcbf4eb874961d4ffeb">addReadAttrs</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;SCCNodes, AARGetterT &amp;&amp;AARGetter)</td></tr>
+<tr class="memitem:a96f8173e0c278bcbf4eb874961d4ffeb"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a96f8173e0c278bcbf4eb874961d4ffeb">addReadAttrs</a> (const SCCNodeSet &amp;SCCNodes, AARGetterT &amp;&amp;AARGetter)</td></tr>
 <tr class="memdesc:a96f8173e0c278bcbf4eb874961d4ffeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deduce readonly/readnone attributes for the SCC.  <a href="FunctionAttrs_8cpp.html#a96f8173e0c278bcbf4eb874961d4ffeb">More...</a><br /></td></tr>
 <tr class="separator:a96f8173e0c278bcbf4eb874961d4ffeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90a5c56bff3505fefd63cc621677be65"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Attribute.html#aab7ee4b8fd1d3e7e4cea87868855e60e">Attribute::AttrKind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a90a5c56bff3505fefd63cc621677be65">determinePointerReadAttrs</a> (<a class="el" href="classllvm_1_1Argument.html">Argument</a> *<a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SmallPtrSet.html">SmallPtrSet</a>&lt; <a class="el" href="classllvm_1_1Argument.html">Argument</a> *, 8 &gt; &amp;SCCNodes)</td></tr>
-<tr class="memdesc:a90a5c56bff3505fefd63cc621677be65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="namespacellvm.html#a6497a581a4f7152729c29a368ac7d7be">Attribute::None</a>, <a class="el" href="structllvm_1_1ValueInfo.html#abd77e960e027775355bc73c4ccd38e69ad183438de4dedcf7526785ad7b79464e">Attribute::ReadOnly</a> or <a class="el" href="structllvm_1_1FunctionSummary_1_1FFlags.html#aad73b3ba152f751834bf9a7a02a61cd9">Attribute::ReadNone</a>.  <a href="FunctionAttrs_8cpp.html#a90a5c56bff3505fefd63cc621677be65">More...</a><br /></td></tr>
+<tr class="memitem:a90a5c56bff3505fefd63cc621677be65"><td class="memItemLeft" align="right" valign="top">static Attribute::AttrKind&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a90a5c56bff3505fefd63cc621677be65">determinePointerReadAttrs</a> (Argument *A, const SmallPtrSet&lt; Argument *, 8 &gt; &amp;SCCNodes)</td></tr>
+<tr class="memdesc:a90a5c56bff3505fefd63cc621677be65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns Attribute::None, Attribute::ReadOnly or Attribute::ReadNone.  <a href="FunctionAttrs_8cpp.html#a90a5c56bff3505fefd63cc621677be65">More...</a><br /></td></tr>
 <tr class="separator:a90a5c56bff3505fefd63cc621677be65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1ec425dd334bccf03685b79284bc0a8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ac1ec425dd334bccf03685b79284bc0a8">addArgumentReturnedAttrs</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;SCCNodes)</td></tr>
+<tr class="memitem:ac1ec425dd334bccf03685b79284bc0a8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ac1ec425dd334bccf03685b79284bc0a8">addArgumentReturnedAttrs</a> (const SCCNodeSet &amp;SCCNodes)</td></tr>
 <tr class="memdesc:ac1ec425dd334bccf03685b79284bc0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deduce returned attributes for the SCC.  <a href="FunctionAttrs_8cpp.html#ac1ec425dd334bccf03685b79284bc0a8">More...</a><br /></td></tr>
 <tr class="separator:ac1ec425dd334bccf03685b79284bc0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35c66c8d7328637260a03faa73269783"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a35c66c8d7328637260a03faa73269783">addArgumentAttrsFromCallsites</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a35c66c8d7328637260a03faa73269783"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a35c66c8d7328637260a03faa73269783">addArgumentAttrsFromCallsites</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="memdesc:a35c66c8d7328637260a03faa73269783"><td class="mdescLeft">&#160;</td><td class="mdescRight">If a callsite has arguments that are also arguments to the parent function, try to propagate attributes from the callsite's arguments to the parent's arguments.  <a href="FunctionAttrs_8cpp.html#a35c66c8d7328637260a03faa73269783">More...</a><br /></td></tr>
 <tr class="separator:a35c66c8d7328637260a03faa73269783"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9be4394f5b56ba57cb443c4cb7fffea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ae9be4394f5b56ba57cb443c4cb7fffea">addArgumentAttrs</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;SCCNodes)</td></tr>
+<tr class="memitem:ae9be4394f5b56ba57cb443c4cb7fffea"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ae9be4394f5b56ba57cb443c4cb7fffea">addArgumentAttrs</a> (const SCCNodeSet &amp;SCCNodes)</td></tr>
 <tr class="memdesc:ae9be4394f5b56ba57cb443c4cb7fffea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deduce nocapture attributes for the SCC.  <a href="FunctionAttrs_8cpp.html#ae9be4394f5b56ba57cb443c4cb7fffea">More...</a><br /></td></tr>
 <tr class="separator:ae9be4394f5b56ba57cb443c4cb7fffea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46f0bc39f45a99f997c4f124c505fb50"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a46f0bc39f45a99f997c4f124c505fb50">isFunctionMallocLike</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;SCCNodes)</td></tr>
+<tr class="memitem:a46f0bc39f45a99f997c4f124c505fb50"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a46f0bc39f45a99f997c4f124c505fb50">isFunctionMallocLike</a> (Function *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, const SCCNodeSet &amp;SCCNodes)</td></tr>
 <tr class="memdesc:a46f0bc39f45a99f997c4f124c505fb50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether a function is "malloc-like".  <a href="FunctionAttrs_8cpp.html#a46f0bc39f45a99f997c4f124c505fb50">More...</a><br /></td></tr>
 <tr class="separator:a46f0bc39f45a99f997c4f124c505fb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31fea8c01fd0f3f99639417363da7626"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a31fea8c01fd0f3f99639417363da7626">addNoAliasAttrs</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;SCCNodes)</td></tr>
+<tr class="memitem:a31fea8c01fd0f3f99639417363da7626"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a31fea8c01fd0f3f99639417363da7626">addNoAliasAttrs</a> (const SCCNodeSet &amp;SCCNodes)</td></tr>
 <tr class="memdesc:a31fea8c01fd0f3f99639417363da7626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deduce noalias attributes for the SCC.  <a href="FunctionAttrs_8cpp.html#a31fea8c01fd0f3f99639417363da7626">More...</a><br /></td></tr>
 <tr class="separator:a31fea8c01fd0f3f99639417363da7626"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ec948ba8709fe1041a2ec4a79cb6e4b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a9ec948ba8709fe1041a2ec4a79cb6e4b">isReturnNonNull</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;SCCNodes, <a class="el" href="classbool.html">bool</a> &amp;Speculative)</td></tr>
+<tr class="memitem:a9ec948ba8709fe1041a2ec4a79cb6e4b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a9ec948ba8709fe1041a2ec4a79cb6e4b">isReturnNonNull</a> (Function *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, const SCCNodeSet &amp;SCCNodes, bool &amp;Speculative)</td></tr>
 <tr class="memdesc:a9ec948ba8709fe1041a2ec4a79cb6e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether this function is known to not return null.  <a href="FunctionAttrs_8cpp.html#a9ec948ba8709fe1041a2ec4a79cb6e4b">More...</a><br /></td></tr>
 <tr class="separator:a9ec948ba8709fe1041a2ec4a79cb6e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb6e8d67cb28ff7ce0478a6768616acc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#aeb6e8d67cb28ff7ce0478a6768616acc">addNonNullAttrs</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;SCCNodes)</td></tr>
+<tr class="memitem:aeb6e8d67cb28ff7ce0478a6768616acc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#aeb6e8d67cb28ff7ce0478a6768616acc">addNonNullAttrs</a> (const SCCNodeSet &amp;SCCNodes)</td></tr>
 <tr class="memdesc:aeb6e8d67cb28ff7ce0478a6768616acc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deduce nonnull attributes for the SCC.  <a href="FunctionAttrs_8cpp.html#aeb6e8d67cb28ff7ce0478a6768616acc">More...</a><br /></td></tr>
 <tr class="separator:aeb6e8d67cb28ff7ce0478a6768616acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae64bb5b78cd6a7e4568e355e6422f6f4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ae64bb5b78cd6a7e4568e355e6422f6f4">InstrBreaksNonConvergent</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;SCCNodes)</td></tr>
+<tr class="memitem:ae64bb5b78cd6a7e4568e355e6422f6f4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ae64bb5b78cd6a7e4568e355e6422f6f4">InstrBreaksNonConvergent</a> (Instruction &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, const SCCNodeSet &amp;SCCNodes)</td></tr>
 <tr class="memdesc:ae64bb5b78cd6a7e4568e355e6422f6f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for non-Convergent inference predicate InstrBreaksAttribute.  <a href="FunctionAttrs_8cpp.html#ae64bb5b78cd6a7e4568e355e6422f6f4">More...</a><br /></td></tr>
 <tr class="separator:ae64bb5b78cd6a7e4568e355e6422f6f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bb91dc842aaadf750a9ce52b00c8f59"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a8bb91dc842aaadf750a9ce52b00c8f59">InstrBreaksNonThrowing</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;SCCNodes)</td></tr>
+<tr class="memitem:a8bb91dc842aaadf750a9ce52b00c8f59"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a8bb91dc842aaadf750a9ce52b00c8f59">InstrBreaksNonThrowing</a> (Instruction &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, const SCCNodeSet &amp;SCCNodes)</td></tr>
 <tr class="memdesc:a8bb91dc842aaadf750a9ce52b00c8f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for NoUnwind inference predicate InstrBreaksAttribute.  <a href="FunctionAttrs_8cpp.html#a8bb91dc842aaadf750a9ce52b00c8f59">More...</a><br /></td></tr>
 <tr class="separator:a8bb91dc842aaadf750a9ce52b00c8f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abed91fefcc041268a8f52d7db0be4fce"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#abed91fefcc041268a8f52d7db0be4fce">InstrBreaksNoFree</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;SCCNodes)</td></tr>
+<tr class="memitem:abed91fefcc041268a8f52d7db0be4fce"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#abed91fefcc041268a8f52d7db0be4fce">InstrBreaksNoFree</a> (Instruction &amp;<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, const SCCNodeSet &amp;SCCNodes)</td></tr>
 <tr class="memdesc:abed91fefcc041268a8f52d7db0be4fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for NoFree inference predicate InstrBreaksAttribute.  <a href="FunctionAttrs_8cpp.html#abed91fefcc041268a8f52d7db0be4fce">More...</a><br /></td></tr>
 <tr class="separator:abed91fefcc041268a8f52d7db0be4fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a136bb87dfe36aa45b8a7470c7212d9ff"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a136bb87dfe36aa45b8a7470c7212d9ff">inferAttrsFromFunctionBodies</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;SCCNodes)</td></tr>
+<tr class="memitem:a136bb87dfe36aa45b8a7470c7212d9ff"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a136bb87dfe36aa45b8a7470c7212d9ff">inferAttrsFromFunctionBodies</a> (const SCCNodeSet &amp;SCCNodes)</td></tr>
 <tr class="memdesc:a136bb87dfe36aa45b8a7470c7212d9ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infer attributes from all functions in the SCC by scanning every instruction for compliance to the attribute assumptions.  <a href="FunctionAttrs_8cpp.html#a136bb87dfe36aa45b8a7470c7212d9ff">More...</a><br /></td></tr>
 <tr class="separator:a136bb87dfe36aa45b8a7470c7212d9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bb4c8da3b4fe2aea6743dab64eed9f5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a6bb4c8da3b4fe2aea6743dab64eed9f5">setDoesNotRecurse</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a6bb4c8da3b4fe2aea6743dab64eed9f5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a6bb4c8da3b4fe2aea6743dab64eed9f5">setDoesNotRecurse</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a6bb4c8da3b4fe2aea6743dab64eed9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adca22bea9436253cdfb82953679f8e71"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#adca22bea9436253cdfb82953679f8e71">addNoRecurseAttrs</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;SCCNodes)</td></tr>
+<tr class="memitem:adca22bea9436253cdfb82953679f8e71"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#adca22bea9436253cdfb82953679f8e71">addNoRecurseAttrs</a> (const SCCNodeSet &amp;SCCNodes)</td></tr>
 <tr class="separator:adca22bea9436253cdfb82953679f8e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2742b352eab0d8e685787be3d51490a"><td class="memTemplParams" colspan="2">template&lt;typename AARGetterT &gt; </td></tr>
-<tr class="memitem:af2742b352eab0d8e685787be3d51490a"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#af2742b352eab0d8e685787be3d51490a">deriveAttrsInPostOrder</a> (SCCNodeSet &amp;SCCNodes, AARGetterT &amp;&amp;AARGetter, <a class="el" href="classbool.html">bool</a> HasUnknownCall)</td></tr>
+<tr class="memitem:af2742b352eab0d8e685787be3d51490a"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#af2742b352eab0d8e685787be3d51490a">deriveAttrsInPostOrder</a> (SCCNodeSet &amp;SCCNodes, AARGetterT &amp;&amp;AARGetter, bool HasUnknownCall)</td></tr>
 <tr class="separator:af2742b352eab0d8e685787be3d51490a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac199687ce146f86b6e30289c335a1f35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ac199687ce146f86b6e30289c335a1f35">INITIALIZE_PASS_BEGIN</a> (PostOrderFunctionAttrsLegacyPass, &quot;functionattrs&quot;, &quot;Deduce <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> attributes&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(PostOrderFunctionAttrsLegacyPass</td></tr>
+<tr class="memitem:ac199687ce146f86b6e30289c335a1f35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ac199687ce146f86b6e30289c335a1f35">INITIALIZE_PASS_BEGIN</a> (PostOrderFunctionAttrsLegacyPass, &quot;functionattrs&quot;, &quot;Deduce <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> attributes&quot;, false, false) INITIALIZE_PASS_END(PostOrderFunctionAttrsLegacyPass</td></tr>
 <tr class="separator:ac199687ce146f86b6e30289c335a1f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62c6882e8be05d55fb7e7f743f43d902"><td class="memTemplParams" colspan="2">template&lt;typename AARGetterT &gt; </td></tr>
-<tr class="memitem:a62c6882e8be05d55fb7e7f743f43d902"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a62c6882e8be05d55fb7e7f743f43d902">runImpl</a> (<a class="el" href="classllvm_1_1CallGraphSCC.html">CallGraphSCC</a> &amp;SCC, AARGetterT AARGetter)</td></tr>
+<tr class="memitem:a62c6882e8be05d55fb7e7f743f43d902"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a62c6882e8be05d55fb7e7f743f43d902">runImpl</a> (CallGraphSCC &amp;SCC, AARGetterT AARGetter)</td></tr>
 <tr class="separator:a62c6882e8be05d55fb7e7f743f43d902"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad12a72519d9f7423303b60d80209d1a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ad12a72519d9f7423303b60d80209d1a9">INITIALIZE_PASS_BEGIN</a> (ReversePostOrderFunctionAttrsLegacyPass, &quot;rpo-functionattrs&quot;, &quot;Deduce <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> in RPO&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(ReversePostOrderFunctionAttrsLegacyPass</td></tr>
+<tr class="memitem:ad12a72519d9f7423303b60d80209d1a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ad12a72519d9f7423303b60d80209d1a9">INITIALIZE_PASS_BEGIN</a> (ReversePostOrderFunctionAttrsLegacyPass, &quot;rpo-functionattrs&quot;, &quot;Deduce <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> in RPO&quot;, false, false) INITIALIZE_PASS_END(ReversePostOrderFunctionAttrsLegacyPass</td></tr>
 <tr class="separator:ad12a72519d9f7423303b60d80209d1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad449dfa0d6d2308ee93fa07b5a1e1e0a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ad449dfa0d6d2308ee93fa07b5a1e1e0a">addNoRecurseAttrsTopDown</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:ad449dfa0d6d2308ee93fa07b5a1e1e0a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ad449dfa0d6d2308ee93fa07b5a1e1e0a">addNoRecurseAttrsTopDown</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:ad449dfa0d6d2308ee93fa07b5a1e1e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5b9a3c158cef21021422a403c098991"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ab5b9a3c158cef21021422a403c098991">deduceFunctionAttributeInRPO</a> (<a class="el" href="classllvm_1_1Module.html">Module</a> &amp;M, <a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;CG)</td></tr>
+<tr class="memitem:ab5b9a3c158cef21021422a403c098991"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#ab5b9a3c158cef21021422a403c098991">deduceFunctionAttributeInRPO</a> (Module &amp;M, CallGraph &amp;CG)</td></tr>
 <tr class="separator:ab5b9a3c158cef21021422a403c098991"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a8a2572985a1840211e3d7e6cfaa57b3b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a8a2572985a1840211e3d7e6cfaa57b3b">EnableNonnullArgPropagation</a> (&quot;enable-nonnull-arg-prop&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Try to <a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a> nonnull argument <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> from callsites to &quot; &quot;caller functions.&quot;))</td></tr>
-<tr class="separator:a8a2572985a1840211e3d7e6cfaa57b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a632b50748b590af37b65d12b47af9127"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a632b50748b590af37b65d12b47af9127">DisableNoUnwindInference</a> (&quot;disable-nounwind-inference&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Stop inferring nounwind attribute during <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-attrs pass&quot;))</td></tr>
-<tr class="separator:a632b50748b590af37b65d12b47af9127"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13c91c044158d54cf6be89ca538f4443"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a13c91c044158d54cf6be89ca538f4443">DisableNoFreeInference</a> (&quot;disable-nofree-inference&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Stop inferring nofree attribute during <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-attrs pass&quot;))</td></tr>
-<tr class="separator:a13c91c044158d54cf6be89ca538f4443"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af87603697324ceda1e6d6d3644c0daaf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#af87603697324ceda1e6d6d3644c0daaf">functionattrs</a></td></tr>
 <tr class="separator:af87603697324ceda1e6d6d3644c0daaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07522de877d8a6f09f42438dab01a434"><td class="memItemLeft" align="right" valign="top">Deduce <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a07522de877d8a6f09f42438dab01a434">attributes</a></td></tr>
 <tr class="separator:a07522de877d8a6f09f42438dab01a434"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68255d6b8ae90097f6d891af7e7130c7"><td class="memItemLeft" align="right" valign="top">Deduce <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a68255d6b8ae90097f6d891af7e7130c7">false</a></td></tr>
 <tr class="separator:a68255d6b8ae90097f6d891af7e7130c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c3ef6d8a9f47719ad6612301e8e84f8"><td class="memItemLeft" align="right" valign="top">rpo Deduce <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> in&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a3c3ef6d8a9f47719ad6612301e8e84f8">RPO</a></td></tr>
+<tr class="memitem:a3c3ef6d8a9f47719ad6612301e8e84f8"><td class="memItemLeft" align="right" valign="top">rpo Deduce <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> in&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FunctionAttrs_8cpp.html#a3c3ef6d8a9f47719ad6612301e8e84f8">RPO</a></td></tr>
 <tr class="separator:a3c3ef6d8a9f47719ad6612301e8e84f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -273,9 +323,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> addArgumentAttrs </td>
+          <td class="memname">static bool addArgumentAttrs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;&#160;</td>
+          <td class="paramtype">const SCCNodeSet &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em></td><td>)</td>
           <td></td>
         </tr>
@@ -291,7 +341,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l00668">668</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l00628">addArgumentAttrsFromCallsites()</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00381">llvm::SmallPtrSetImpl&lt; PtrType &gt;::count()</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l00448">determinePointerReadAttrs()</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00370">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert()</a>, <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, <a class="el" href="None_8h_source.html#l00023">llvm::None</a>, <a class="el" href="CaptureTracking_8cpp_source.html#l00158">llvm::PointerMayBeCaptured()</a>, <a class="el" href="ModuleSummaryIndex_8h_source.html#l00543">llvm::FunctionSummary::FFlags::ReadNone</a>, <a class="el" href="ModuleSummaryIndex_8h_source.html#l00165">llvm::ValueInfo::ReadOnly</a>, <a class="el" href="SCCIterator_8h_source.html#l00225">llvm::scc_begin()</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00658">Uses</a>.</p>
+<p class="reference">References <a class="el" href="FunctionAttrs_8cpp_source.html#l00628">addArgumentAttrsFromCallsites()</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l00448">determinePointerReadAttrs()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00658">Uses</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01376">deriveAttrsInPostOrder()</a>.</p>
 
@@ -307,9 +357,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> addArgumentAttrsFromCallsites </td>
+          <td class="memname">static bool addArgumentAttrsFromCallsites </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -326,7 +376,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l00628">628</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="FunctionAttrs_8cpp.html#a8a2572985a1840211e3d7e6cfaa57b3b">EnableNonnullArgPropagation</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="ValueTracking_8cpp_source.html#l04223">llvm::isGuaranteedToTransferExecutionToSuccessor()</a>.</p>
+<p class="reference">References <a class="el" href="FunctionAttrs_8cpp.html#a08c0ce3bab3624304c3c5f0325a4e133">EnableNonnullArgPropagation()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l00668">addArgumentAttrs()</a>.</p>
 
@@ -342,9 +392,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> addArgumentReturnedAttrs </td>
+          <td class="memname">static bool addArgumentReturnedAttrs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;&#160;</td>
+          <td class="paramtype">const SCCNodeSet &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em></td><td>)</td>
           <td></td>
         </tr>
@@ -360,7 +410,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l00575">575</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, <a class="el" href="STLExtras_8h_source.html#l01199">llvm::any_of()</a>, <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Arg</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01376">deriveAttrsInPostOrder()</a>.</p>
 
@@ -376,9 +426,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> addNoAliasAttrs </td>
+          <td class="memname">static bool addNoAliasAttrs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;&#160;</td>
+          <td class="paramtype">const SCCNodeSet &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em></td><td>)</td>
           <td></td>
         </tr>
@@ -410,9 +460,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> addNonNullAttrs </td>
+          <td class="memname">static bool addNonNullAttrs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;&#160;</td>
+          <td class="paramtype">const SCCNodeSet &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em></td><td>)</td>
           <td></td>
         </tr>
@@ -428,7 +478,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l01027">1027</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l00961">isReturnNonNull()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, and <a class="el" href="Attributes_8h_source.html#l00339">llvm::AttributeList::ReturnIndex</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="FunctionAttrs_8cpp_source.html#l00961">isReturnNonNull()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01376">deriveAttrsInPostOrder()</a>.</p>
 
@@ -444,9 +494,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> addNoRecurseAttrs </td>
+          <td class="memname">static bool addNoRecurseAttrs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;&#160;</td>
+          <td class="paramtype">const SCCNodeSet &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em></td><td>)</td>
           <td></td>
         </tr>
@@ -460,7 +510,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l01346">1346</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="FunctionAttrs_8cpp_source.html#l01338">setDoesNotRecurse()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="FunctionAttrs_8cpp_source.html#l01338">setDoesNotRecurse()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01376">deriveAttrsInPostOrder()</a>.</p>
 
@@ -476,9 +526,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> addNoRecurseAttrsTopDown </td>
+          <td class="memname">static bool addNoRecurseAttrsTopDown </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -492,7 +542,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l01547">1547</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="Function_8h_source.html#l00577">llvm::Function::doesNotRecurse()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="CallSite_8h_source.html#l00101">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getParent()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="FunctionAttrs_8cpp_source.html#l01338">setDoesNotRecurse()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="FunctionAttrs_8cpp_source.html#l01338">setDoesNotRecurse()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01576">deduceFunctionAttributeInRPO()</a>.</p>
 
@@ -510,9 +560,9 @@ template&lt;typename AARGetterT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> addReadAttrs </td>
+          <td class="memname">static bool addReadAttrs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;&#160;</td>
+          <td class="paramtype">const SCCNodeSet &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em>, </td>
         </tr>
         <tr>
@@ -538,7 +588,7 @@ template&lt;typename AARGetterT &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l00236">236</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="FunctionAttrs_8cpp_source.html#l00111">checkFunctionMemoryAccess()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="FunctionAttrs_8h_source.html#l00034">llvm::MAK_MayWrite</a>, <a class="el" href="FunctionAttrs_8h_source.html#l00032">llvm::MAK_ReadNone</a>, <a class="el" href="FunctionAttrs_8h_source.html#l00033">llvm::MAK_ReadOnly</a>, <a class="el" href="FunctionAttrs_8h_source.html#l00035">llvm::MAK_WriteOnly</a>, <a class="el" href="ModuleSummaryIndex_8h_source.html#l00543">llvm::FunctionSummary::FFlags::ReadNone</a>, <a class="el" href="ModuleSummaryIndex_8h_source.html#l00165">llvm::ValueInfo::ReadOnly</a>, and <a class="el" href="ModuleSummaryIndex_8h_source.html#l00165">llvm::ValueInfo::WriteOnly</a>.</p>
+<p class="reference">References <a class="el" href="FunctionAttrs_8cpp_source.html#l00111">checkFunctionMemoryAccess()</a>, and <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01376">deriveAttrsInPostOrder()</a>.</p>
 
@@ -554,27 +604,27 @@ template&lt;typename AARGetterT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="namespacellvm.html#a4b55bc5c9e91417e620c0d07ac99434a">MemoryAccessKind</a> checkFunctionMemoryAccess </td>
+          <td class="memname">static MemoryAccessKind checkFunctionMemoryAccess </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>ThisBody</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1AAResults.html">AAResults</a> &amp;&#160;</td>
+          <td class="paramtype">AAResults &amp;&#160;</td>
           <td class="paramname"><em>AAR</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;&#160;</td>
+          <td class="paramtype">const SCCNodeSet &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em>&#160;</td>
         </tr>
         <tr>
@@ -595,9 +645,9 @@ template&lt;typename AARGetterT &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l00111">111</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Arg</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00285">llvm::createModRefInfo()</a>, <a class="el" href="CallSite_8h_source.html#l00475">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::doesNotReadMemory()</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00222">llvm::FMRB_DoesNotAccessMemory</a>, <a class="el" href="MemoryLocation_8cpp_source.html#l00034">llvm::MemoryLocation::get()</a>, <a class="el" href="AliasAnalysis_8cpp_source.html#l00382">llvm::AAResults::getModRefBehavior()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="InstIterator_8h_source.html#l00131">llvm::inst_begin()</a>, <a class="el" href="InstIterator_8h_source.html#l00132">llvm::inst_end()</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00150">llvm::isModSet()</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00139">llvm::isNoModRef()</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00153">llvm::isRefSet()</a>, <a class="el" href="FunctionAttrs_8h_source.html#l00034">llvm::MAK_MayWrite</a>, <a class="el" href="FunctionAttrs_8h_source.html#l00032">llvm::MAK_ReadNone</a>, <a class="el" href="FunctionAttrs_8h_source.html#l00033">llvm::MAK_ReadOnly</a>, <a class="el" href="FunctionAttrs_8h_source.html#l00035">llvm::MAK_WriteOnly</a>, <a class="el" href="AArch64AdvSIMDScalarPass_8cpp_source.html#l00105">MRI</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00490">llvm::AAResults::onlyAccessesArgPointees()</a>, <a class="el" href="Function_8cpp_source.html#l00169">llvm::Argument::onlyReadsMemory()</a>, <a class="el" href="AliasAnalysis_8cpp_source.html#l00120">llvm::AAResults::pointsToConstantMemory()</a>, <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>, <a class="el" href="MemoryLocation_8h_source.html#l00101">llvm::LocationSize::unknown()</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06143">VI</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l00236">addReadAttrs()</a>, and <a class="el" href="FunctionAttrs_8cpp_source.html#l00229">llvm::computeFunctionBodyMemoryAccess()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l00236">addReadAttrs()</a>.</p>
 
 </div>
 </div>
@@ -611,15 +661,15 @@ template&lt;typename AARGetterT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> deduceFunctionAttributeInRPO </td>
+          <td class="memname">static bool deduceFunctionAttributeInRPO </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> &amp;&#160;</td>
+          <td class="paramtype">Module &amp;&#160;</td>
           <td class="paramname"><em>M</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallGraph.html">CallGraph</a> &amp;&#160;</td>
+          <td class="paramtype">CallGraph &amp;&#160;</td>
           <td class="paramname"><em>CG</em>&#160;</td>
         </tr>
         <tr>
@@ -637,9 +687,7 @@ template&lt;typename AARGetterT &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l01576">1576</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="FunctionAttrs_8cpp_source.html#l01547">addNoRecurseAttrsTopDown()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>, <a class="el" href="STLExtras_8h_source.html#l00273">llvm::reverse()</a>, and <a class="el" href="SCCIterator_8h_source.html#l00225">llvm::scc_begin()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01612">llvm::ReversePostOrderFunctionAttrsPass::run()</a>.</p>
+<p class="reference">References <a class="el" href="FunctionAttrs_8cpp_source.html#l01547">addNoRecurseAttrsTopDown()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -655,7 +703,7 @@ template&lt;typename AARGetterT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> deriveAttrsInPostOrder </td>
+          <td class="memname">static bool deriveAttrsInPostOrder </td>
           <td>(</td>
           <td class="paramtype">SCCNodeSet &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em>, </td>
@@ -669,7 +717,7 @@ template&lt;typename AARGetterT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>HasUnknownCall</em>&#160;</td>
         </tr>
         <tr>
@@ -689,7 +737,7 @@ template&lt;typename AARGetterT &gt; </div>
 
 <p class="reference">References <a class="el" href="FunctionAttrs_8cpp_source.html#l00668">addArgumentAttrs()</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l00575">addArgumentReturnedAttrs()</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l00917">addNoAliasAttrs()</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l01027">addNonNullAttrs()</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l01346">addNoRecurseAttrs()</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l00236">addReadAttrs()</a>, and <a class="el" href="FunctionAttrs_8cpp_source.html#l01265">inferAttrsFromFunctionBodies()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01401">llvm::PostOrderFunctionAttrsPass::run()</a>, and <a class="el" href="FunctionAttrs_8cpp_source.html#l01484">runImpl()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01484">runImpl()</a>.</p>
 
 </div>
 </div>
@@ -703,15 +751,15 @@ template&lt;typename AARGetterT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Attribute.html#aab7ee4b8fd1d3e7e4cea87868855e60e">Attribute::AttrKind</a> determinePointerReadAttrs </td>
+          <td class="memname">static Attribute::AttrKind determinePointerReadAttrs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Argument.html">Argument</a> *&#160;</td>
+          <td class="paramtype">Argument *&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SmallPtrSet.html">SmallPtrSet</a>&lt; <a class="el" href="classllvm_1_1Argument.html">Argument</a> *, 8 &gt; &amp;&#160;</td>
+          <td class="paramtype">const SmallPtrSet&lt; Argument *, 8 &gt; &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em>&#160;</td>
         </tr>
         <tr>
@@ -727,13 +775,145 @@ template&lt;typename AARGetterT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns <a class="el" href="namespacellvm.html#a6497a581a4f7152729c29a368ac7d7be">Attribute::None</a>, <a class="el" href="structllvm_1_1ValueInfo.html#abd77e960e027775355bc73c4ccd38e69ad183438de4dedcf7526785ad7b79464e">Attribute::ReadOnly</a> or <a class="el" href="structllvm_1_1FunctionSummary_1_1FFlags.html#aad73b3ba152f751834bf9a7a02a61cd9">Attribute::ReadNone</a>. </p>
+<p>Returns Attribute::None, Attribute::ReadOnly or Attribute::ReadNone. </p>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l00448">448</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a3545a9491d4dcf823feb79f6eb37e3ee">A</a>, <a class="el" href="CallSite_8h_source.html#l00584">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::arg_begin()</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="LazyCallGraph_8h_source.html#l00138">llvm::LazyCallGraph::Edge::Call</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00381">llvm::SmallPtrSetImpl&lt; PtrType &gt;::count()</a>, <a class="el" href="CallSite_8h_source.html#l00267">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::data_operands_size()</a>, <a class="el" href="CallSite_8h_source.html#l00459">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::doesNotAccessMemory()</a>, <a class="el" href="CallSite_8h_source.html#l00602">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::doesNotCapture()</a>, <a class="el" href="SmallVector_8h_source.html#l00055">llvm::SmallVectorBase::empty()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CallSite_8h_source.html#l00111">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getCalledFunction()</a>, <a class="el" href="CallSite_8h_source.html#l00303">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getNumArgOperands()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00370">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert()</a>, <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l00317">isVolatile()</a>, <a class="el" href="None_8h_source.html#l00023">llvm::None</a>, <a class="el" href="CallSite_8h_source.html#l00467">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::onlyReadsMemory()</a>, <a class="el" href="SmallVector_8h_source.html#l00374">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val()</a>, <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>, <a class="el" href="ModuleSummaryIndex_8h_source.html#l00543">llvm::FunctionSummary::FFlags::ReadNone</a>, <a class="el" href="ModuleSummaryIndex_8h_source.html#l00165">llvm::ValueInfo::ReadOnly</a>, and <a class="el" href="MCInstrDesc_8h_source.html#l00132">llvm::MCID::Select</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l00317">isVolatile()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l00668">addArgumentAttrs()</a>.</p>
+
+</div>
+</div>
+<a id="add68dea0801b0486a184ed81e13ce5af" name="add68dea0801b0486a184ed81e13ce5af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add68dea0801b0486a184ed81e13ce5af">&#9670;&nbsp;</a></span>DisableNoFreeInference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; DisableNoFreeInference </td>
+          <td>(</td>
+          <td class="paramtype">&quot;disable-nofree-inference&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Stop inferring nofree attribute during <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-attrs pass&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01265">inferAttrsFromFunctionBodies()</a>.</p>
+
+</div>
+</div>
+<a id="aea3e2d03ce1b96ccaf34eaebd9bfa586" name="aea3e2d03ce1b96ccaf34eaebd9bfa586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea3e2d03ce1b96ccaf34eaebd9bfa586">&#9670;&nbsp;</a></span>DisableNoUnwindInference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; DisableNoUnwindInference </td>
+          <td>(</td>
+          <td class="paramtype">&quot;disable-nounwind-inference&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Stop inferring nounwind attribute during <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-attrs pass&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01265">inferAttrsFromFunctionBodies()</a>.</p>
+
+</div>
+</div>
+<a id="a08c0ce3bab3624304c3c5f0325a4e133" name="a08c0ce3bab3624304c3c5f0325a4e133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08c0ce3bab3624304c3c5f0325a4e133">&#9670;&nbsp;</a></span>EnableNonnullArgPropagation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; EnableNonnullArgPropagation </td>
+          <td>(</td>
+          <td class="paramtype">&quot;enable-nonnull-arg-prop&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Try to <a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a> nonnull argument <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> from callsites to &quot; &quot;caller functions.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l00628">addArgumentAttrsFromCallsites()</a>.</p>
 
 </div>
 </div>
@@ -747,9 +927,9 @@ template&lt;typename AARGetterT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> inferAttrsFromFunctionBodies </td>
+          <td class="memname">static bool inferAttrsFromFunctionBodies </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;&#160;</td>
+          <td class="paramtype">const SCCNodeSet &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em></td><td>)</td>
           <td></td>
         </tr>
@@ -770,7 +950,7 @@ template&lt;typename AARGetterT &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l01265">1265</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MCInstrDesc_8h_source.html#l00152">llvm::MCID::Convergent</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="FunctionAttrs_8cpp.html#a13c91c044158d54cf6be89ca538f4443">DisableNoFreeInference</a>, <a class="el" href="FunctionAttrs_8cpp.html#a632b50748b590af37b65d12b47af9127">DisableNoUnwindInference</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l01240">InstrBreaksNoFree()</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l01215">InstrBreaksNonConvergent()</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l01224">InstrBreaksNonThrowing()</a>, and <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>.</p>
+<p class="reference">References <a class="el" href="FunctionAttrs_8cpp.html#add68dea0801b0486a184ed81e13ce5af">DisableNoFreeInference()</a>, <a class="el" href="FunctionAttrs_8cpp.html#aea3e2d03ce1b96ccaf34eaebd9bfa586">DisableNoUnwindInference()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l01240">InstrBreaksNoFree()</a>, <a class="el" href="FunctionAttrs_8cpp_source.html#l01215">InstrBreaksNonConvergent()</a>, and <a class="el" href="FunctionAttrs_8cpp_source.html#l01224">InstrBreaksNonThrowing()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01376">deriveAttrsInPostOrder()</a>.</p>
 
@@ -843,7 +1023,7 @@ template&lt;typename AARGetterT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Deduce <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> in RPO&quot;&#160;</td>
+          <td class="paramtype">&quot;Deduce <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> in RPO&quot;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -878,15 +1058,15 @@ template&lt;typename AARGetterT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> InstrBreaksNoFree </td>
+          <td class="memname">static bool InstrBreaksNoFree </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &amp;&#160;</td>
+          <td class="paramtype">Instruction &amp;&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;&#160;</td>
+          <td class="paramtype">const SCCNodeSet &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em>&#160;</td>
         </tr>
         <tr>
@@ -906,7 +1086,7 @@ template&lt;typename AARGetterT &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l01240">1240</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>, <a class="el" href="CallSite_8h_source.html#l00111">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getCalledFunction()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01265">inferAttrsFromFunctionBodies()</a>.</p>
 
@@ -922,15 +1102,15 @@ template&lt;typename AARGetterT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> InstrBreaksNonConvergent </td>
+          <td class="memname">static bool InstrBreaksNonConvergent </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &amp;&#160;</td>
+          <td class="paramtype">Instruction &amp;&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;&#160;</td>
+          <td class="paramtype">const SCCNodeSet &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em>&#160;</td>
         </tr>
         <tr>
@@ -950,7 +1130,7 @@ template&lt;typename AARGetterT &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l01215">1215</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CallSite_8h_source.html#l00111">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getCalledFunction()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="CallSite_8h_source.html#l00534">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::isConvergent()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01265">inferAttrsFromFunctionBodies()</a>.</p>
 
@@ -966,15 +1146,15 @@ template&lt;typename AARGetterT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> InstrBreaksNonThrowing </td>
+          <td class="memname">static bool InstrBreaksNonThrowing </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> &amp;&#160;</td>
+          <td class="paramtype">Instruction &amp;&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;&#160;</td>
+          <td class="paramtype">const SCCNodeSet &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em>&#160;</td>
         </tr>
         <tr>
@@ -994,7 +1174,7 @@ template&lt;typename AARGetterT &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l01224">1224</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01265">inferAttrsFromFunctionBodies()</a>.</p>
 
@@ -1010,15 +1190,15 @@ template&lt;typename AARGetterT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isFunctionMallocLike </td>
+          <td class="memname">static bool isFunctionMallocLike </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
+          <td class="paramtype">Function *&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;&#160;</td>
+          <td class="paramtype">const SCCNodeSet &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em>&#160;</td>
         </tr>
         <tr>
@@ -1039,7 +1219,7 @@ template&lt;typename AARGetterT &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l00853">853</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="LazyCallGraph_8h_source.html#l00138">llvm::LazyCallGraph::Edge::Call</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CallSite_8h_source.html#l00111">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getCalledFunction()</a>, <a class="el" href="CallSite_8h_source.html#l00380">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::hasRetAttr()</a>, <a class="el" href="Instructions_8h_source.html#l02624">llvm::PHINode::incoming_values()</a>, <a class="el" href="SetVector_8h_source.html#l00141">llvm::SetVector&lt; T, Vector, Set &gt;::insert()</a>, <a class="el" href="Compiler_8h_source.html#l00250">LLVM_FALLTHROUGH</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00084">llvm::NoAlias</a>, <a class="el" href="CaptureTracking_8cpp_source.html#l00158">llvm::PointerMayBeCaptured()</a>, <a class="el" href="MCInstrDesc_8h_source.html#l00132">llvm::MCID::Select</a>, <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>, and <a class="el" href="SetVector_8h_source.html#l00077">llvm::SetVector&lt; T, Vector, Set &gt;::size()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l00917">addNoAliasAttrs()</a>.</p>
 
@@ -1055,21 +1235,21 @@ template&lt;typename AARGetterT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isReturnNonNull </td>
+          <td class="memname">static bool isReturnNonNull </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
+          <td class="paramtype">Function *&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> SCCNodeSet &amp;&#160;</td>
+          <td class="paramtype">const SCCNodeSet &amp;&#160;</td>
           <td class="paramname"><em>SCCNodes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a> &amp;&#160;</td>
+          <td class="paramtype">bool &amp;&#160;</td>
           <td class="paramname"><em>Speculative</em>&#160;</td>
         </tr>
         <tr>
@@ -1091,7 +1271,7 @@ template&lt;typename AARGetterT &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l00961">961</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="LazyCallGraph_8h_source.html#l00138">llvm::LazyCallGraph::Edge::Call</a>, <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="CallSite_8h_source.html#l00111">llvm::CallSiteBase&lt; FunTy, BBTy, ValTy, UserTy, UseTy, InstrTy, CallTy, InvokeTy, CallBrTy, IterTy &gt;::getCalledFunction()</a>, <a class="el" href="Instructions_8h_source.html#l02634">llvm::PHINode::getIncomingValue()</a>, <a class="el" href="Instructions_8h_source.html#l02630">llvm::PHINode::getNumIncomingValues()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00125">llvm::Instruction::getOpcode()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="SetVector_8h_source.html#l00141">llvm::SetVector&lt; T, Vector, Set &gt;::insert()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l00238">llvm::isKnownNonZero()</a>, <a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>, <a class="el" href="MCInstrDesc_8h_source.html#l00132">llvm::MCID::Select</a>, <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>, and <a class="el" href="SetVector_8h_source.html#l00077">llvm::SetVector&lt; T, Vector, Set &gt;::size()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="ValueTracking_8cpp_source.html#l01993">isKnownNonZero()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01027">addNonNullAttrs()</a>.</p>
 
@@ -1109,9 +1289,9 @@ template&lt;typename AARGetterT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> runImpl </td>
+          <td class="memname">static bool runImpl </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallGraphSCC.html">CallGraphSCC</a> &amp;&#160;</td>
+          <td class="paramtype">CallGraphSCC &amp;&#160;</td>
           <td class="paramname"><em>SCC</em>, </td>
         </tr>
         <tr>
@@ -1135,7 +1315,7 @@ template&lt;typename AARGetterT &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="FunctionAttrs_8cpp_source.html#l01484">1484</a> of file <a class="el" href="FunctionAttrs_8cpp_source.html">FunctionAttrs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="FunctionAttrs_8cpp_source.html#l01376">deriveAttrsInPostOrder()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="namespacellvm_1_1codeview.html#ad25a1310d512e19d2f6318e963dcb30bafa555455b01d6ff32568479afa1f1947">llvm::codeview::Naked</a>.</p>
+<p class="reference">References <a class="el" href="FunctionAttrs_8cpp_source.html#l01376">deriveAttrsInPostOrder()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -1149,9 +1329,9 @@ template&lt;typename AARGetterT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> setDoesNotRecurse </td>
+          <td class="memname">static bool setDoesNotRecurse </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1242,7 +1422,7 @@ template&lt;typename AARGetterT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> marked as nofree&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> marked as nofree&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1298,7 +1478,7 @@ template&lt;typename AARGetterT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> marked as norecurse&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> marked as norecurse&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1326,7 +1506,7 @@ template&lt;typename AARGetterT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> marked as nounwind&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> marked as nounwind&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1354,7 +1534,7 @@ template&lt;typename AARGetterT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> marked readnone&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> marked readnone&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1410,7 +1590,7 @@ template&lt;typename AARGetterT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> marked readonly&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> marked readonly&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1494,7 +1674,7 @@ template&lt;typename AARGetterT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> marked writeonly&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> marked writeonly&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1524,138 +1704,6 @@ template&lt;typename AARGetterT &gt; </div>
 
 </div>
 </div>
-<a id="a13c91c044158d54cf6be89ca538f4443" name="a13c91c044158d54cf6be89ca538f4443"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13c91c044158d54cf6be89ca538f4443">&#9670;&nbsp;</a></span>DisableNoFreeInference</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; DisableNoFreeInference(&quot;disable-nofree-inference&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Stop inferring nofree attribute during <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-attrs pass&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;disable-nofree-inference&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Stop inferring nofree attribute during <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-attrs pass&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01265">inferAttrsFromFunctionBodies()</a>.</p>
-
-</div>
-</div>
-<a id="a632b50748b590af37b65d12b47af9127" name="a632b50748b590af37b65d12b47af9127"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a632b50748b590af37b65d12b47af9127">&#9670;&nbsp;</a></span>DisableNoUnwindInference</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; DisableNoUnwindInference(&quot;disable-nounwind-inference&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Stop inferring nounwind attribute during <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-attrs pass&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;disable-nounwind-inference&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Stop inferring nounwind attribute during <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a>-attrs pass&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l01265">inferAttrsFromFunctionBodies()</a>.</p>
-
-</div>
-</div>
-<a id="a8a2572985a1840211e3d7e6cfaa57b3b" name="a8a2572985a1840211e3d7e6cfaa57b3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a2572985a1840211e3d7e6cfaa57b3b">&#9670;&nbsp;</a></span>EnableNonnullArgPropagation</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; EnableNonnullArgPropagation(&quot;enable-nonnull-arg-prop&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Try to <a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a> nonnull argument <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> from callsites to &quot; &quot;caller functions.&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;enable-nonnull-arg-prop&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Try to <a class="el" href="CFLAndersAliasAnalysis_8cpp.html#a94abfb8f8f0716f9a5bdc2ffae3750e9">propagate</a> nonnull argument <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> from callsites to &quot; &quot;caller functions.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="FunctionAttrs_8cpp_source.html#l00628">addArgumentAttrsFromCallsites()</a>.</p>
-
-</div>
-</div>
 <a id="a68255d6b8ae90097f6d891af7e7130c7" name="a68255d6b8ae90097f6d891af7e7130c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68255d6b8ae90097f6d891af7e7130c7">&#9670;&nbsp;</a></span>false</h2>
 
@@ -1663,7 +1711,7 @@ template&lt;typename AARGetterT &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rpo Deduce <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> in false</td>
+          <td class="memname">rpo Deduce <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> in false</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1695,7 +1743,7 @@ template&lt;typename AARGetterT &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rpo Deduce <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="Attributor_8cpp.html#a585f917d72b821b6041dfff8afc26cfc">attributes</a> in RPO</td>
+          <td class="memname">rpo Deduce <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="Attributor_8cpp.html#ad84a22c0ca79437f4ec14e006f34e8ed">attributes</a> in RPO</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1707,7 +1755,7 @@ template&lt;typename AARGetterT &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

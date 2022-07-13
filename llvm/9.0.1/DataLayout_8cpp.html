@@ -56,20 +56,20 @@ $(function() {
   <div class="headertitle"><div class="title">DataLayout.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseMap_8h_source.html">llvm/ADT/DenseMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringRef_8h_source.html">llvm/ADT/StringRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Triple_8h_source.html">llvm/ADT/Triple.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GetElementPtrTypeIterator_8h_source.html">llvm/IR/GetElementPtrTypeIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalVariable_8h_source.html">llvm/IR/GlobalVariable.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MathExtras_8h_source.html">llvm/Support/MathExtras.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Triple.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/GetElementPtrTypeIterator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/GlobalVariable.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
+<code>#include &quot;llvm/Support/MathExtras.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
@@ -80,27 +80,50 @@ $(function() {
 Include dependency graph for DataLayout.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="DataLayout_8cpp__incl.png" border="0" usemap="#alib_2IR_2DataLayout_8cpp" alt=""/></div>
+<map name="alib_2IR_2DataLayout_8cpp" id="alib_2IR_2DataLayout_8cpp">
+<area shape="rect" title=" " alt="" coords="1717,5,1879,31"/>
+<area shape="rect" title=" " alt="" coords="5,86,164,111"/>
+<area shape="rect" title=" " alt="" coords="188,86,355,111"/>
+<area shape="rect" title=" " alt="" coords="379,86,537,111"/>
+<area shape="rect" title=" " alt="" coords="561,86,694,111"/>
+<area shape="rect" title=" " alt="" coords="718,86,867,111"/>
+<area shape="rect" title=" " alt="" coords="892,86,1064,111"/>
+<area shape="rect" title=" " alt="" coords="1089,79,1286,119"/>
+<area shape="rect" title=" " alt="" coords="1310,86,1489,111"/>
+<area shape="rect" title=" " alt="" coords="1513,86,1645,111"/>
+<area shape="rect" title=" " alt="" coords="1670,86,1785,111"/>
+<area shape="rect" title=" " alt="" coords="1809,86,1929,111"/>
+<area shape="rect" title=" " alt="" coords="1953,86,2123,111"/>
+<area shape="rect" title=" " alt="" coords="2147,86,2358,111"/>
+<area shape="rect" title=" " alt="" coords="2382,86,2577,111"/>
+<area shape="rect" title=" " alt="" coords="2601,86,2686,111"/>
+<area shape="rect" title=" " alt="" coords="2710,86,2779,111"/>
+<area shape="rect" title=" " alt="" coords="2803,86,2870,111"/>
+<area shape="rect" title=" " alt="" coords="2895,86,2960,111"/>
+<area shape="rect" title=" " alt="" coords="2984,86,3039,111"/>
+<area shape="rect" title=" " alt="" coords="3063,86,3123,111"/>
+</map>
 </div>
 </div>
 <p><a href="DataLayout_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6b47338b4f2d1d20185f211f8edcb331"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; <a class="el" href="classllvm_1_1StringRef.html">StringRef</a>, <a class="el" href="classllvm_1_1StringRef.html">StringRef</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataLayout_8cpp.html#a6b47338b4f2d1d20185f211f8edcb331">split</a> (<a class="el" href="classllvm_1_1StringRef.html">StringRef</a> Str, <a class="el" href="classchar.html">char</a> Separator)</td></tr>
+<tr class="memitem:a6b47338b4f2d1d20185f211f8edcb331"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; StringRef, StringRef &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataLayout_8cpp.html#a6b47338b4f2d1d20185f211f8edcb331">split</a> (StringRef Str, char Separator)</td></tr>
 <tr class="memdesc:a6b47338b4f2d1d20185f211f8edcb331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checked version of split, to ensure mandatory subparts.  <a href="DataLayout_8cpp.html#a6b47338b4f2d1d20185f211f8edcb331">More...</a><br /></td></tr>
 <tr class="separator:a6b47338b4f2d1d20185f211f8edcb331"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a406ef61736451dc84607c2749caa56f3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataLayout_8cpp.html#a406ef61736451dc84607c2749caa56f3">getInt</a> (<a class="el" href="classllvm_1_1StringRef.html">StringRef</a> R)</td></tr>
+<tr class="memitem:a406ef61736451dc84607c2749caa56f3"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataLayout_8cpp.html#a406ef61736451dc84607c2749caa56f3">getInt</a> (StringRef R)</td></tr>
 <tr class="memdesc:a406ef61736451dc84607c2749caa56f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an unsigned integer, including error checks.  <a href="DataLayout_8cpp.html#a406ef61736451dc84607c2749caa56f3">More...</a><br /></td></tr>
 <tr class="separator:a406ef61736451dc84607c2749caa56f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7b8eef6935b842422d4d05ab834ded3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataLayout_8cpp.html#ac7b8eef6935b842422d4d05ab834ded3">inBytes</a> (<a class="el" href="classunsigned.html">unsigned</a> Bits)</td></tr>
+<tr class="memitem:ac7b8eef6935b842422d4d05ab834ded3"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataLayout_8cpp.html#ac7b8eef6935b842422d4d05ab834ded3">inBytes</a> (unsigned Bits)</td></tr>
 <tr class="memdesc:ac7b8eef6935b842422d4d05ab834ded3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert bits into bytes. Assert if not a byte width multiple.  <a href="DataLayout_8cpp.html#ac7b8eef6935b842422d4d05ab834ded3">More...</a><br /></td></tr>
 <tr class="separator:ac7b8eef6935b842422d4d05ab834ded3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bd8372460a72cab8cbb74b616db6880"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataLayout_8cpp.html#a2bd8372460a72cab8cbb74b616db6880">getAddrSpace</a> (<a class="el" href="classllvm_1_1StringRef.html">StringRef</a> R)</td></tr>
+<tr class="memitem:a2bd8372460a72cab8cbb74b616db6880"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataLayout_8cpp.html#a2bd8372460a72cab8cbb74b616db6880">getAddrSpace</a> (StringRef R)</td></tr>
 <tr class="separator:a2bd8372460a72cab8cbb74b616db6880"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a18f98e2f0a37c32764fd875f782c1547"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1LayoutAlignElem.html">LayoutAlignElem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataLayout_8cpp.html#a18f98e2f0a37c32764fd875f782c1547">DefaultAlignments</a> []</td></tr>
+<tr class="memitem:a18f98e2f0a37c32764fd875f782c1547"><td class="memItemLeft" align="right" valign="top">static const LayoutAlignElem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataLayout_8cpp.html#a18f98e2f0a37c32764fd875f782c1547">DefaultAlignments</a> []</td></tr>
 <tr class="separator:a18f98e2f0a37c32764fd875f782c1547"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -114,9 +137,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classunsigned.html">unsigned</a> getAddrSpace </td>
+          <td class="memname">static unsigned getAddrSpace </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StringRef.html">StringRef</a>&#160;</td>
+          <td class="paramtype">StringRef&#160;</td>
           <td class="paramname"><em>R</em></td><td>)</td>
           <td></td>
         </tr>
@@ -130,9 +153,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DataLayout_8cpp_source.html#l00229">229</a> of file <a class="el" href="DataLayout_8cpp_source.html">DataLayout.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DataLayout_8cpp_source.html#l00214">getInt()</a>, and <a class="el" href="Testing_2Support_2Error_8cpp_source.html#l00139">llvm::report_fatal_error()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="SelectionDAG_8cpp_source.html#l00472">AddNodeIDCustom()</a>.</p>
+<p class="reference">References <a class="el" href="DataLayout_8cpp_source.html#l00214">getInt()</a>, and <a class="el" href="Error_8cpp_source.html#l00139">llvm::report_fatal_error()</a>.</p>
 
 </div>
 </div>
@@ -146,9 +167,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classunsigned.html">unsigned</a> getInt </td>
+          <td class="memname">static unsigned getInt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StringRef.html">StringRef</a>&#160;</td>
+          <td class="paramtype">StringRef&#160;</td>
           <td class="paramname"><em>R</em></td><td>)</td>
           <td></td>
         </tr>
@@ -164,7 +185,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DataLayout_8cpp_source.html#l00214">214</a> of file <a class="el" href="DataLayout_8cpp_source.html">DataLayout.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SymbolRecordMapping_8cpp_source.html#l00014">error</a>, and <a class="el" href="Testing_2Support_2Error_8cpp_source.html#l00139">llvm::report_fatal_error()</a>.</p>
+<p class="reference">References <a class="el" href="SymbolRecordMapping_8cpp_source.html#l00014">error</a>, and <a class="el" href="Error_8cpp_source.html#l00139">llvm::report_fatal_error()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DataLayout_8cpp_source.html#l00229">getAddrSpace()</a>.</p>
 
@@ -180,9 +201,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classunsigned.html">unsigned</a> inBytes </td>
+          <td class="memname">static unsigned inBytes </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>Bits</em></td><td>)</td>
           <td></td>
         </tr>
@@ -198,7 +219,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DataLayout_8cpp_source.html#l00223">223</a> of file <a class="el" href="DataLayout_8cpp_source.html">DataLayout.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Testing_2Support_2Error_8cpp_source.html#l00139">llvm::report_fatal_error()</a>.</p>
+<p class="reference">References <a class="el" href="Error_8cpp_source.html#l00139">llvm::report_fatal_error()</a>.</p>
 
 </div>
 </div>
@@ -212,15 +233,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::pair&lt; <a class="el" href="classllvm_1_1StringRef.html">StringRef</a>, <a class="el" href="classllvm_1_1StringRef.html">StringRef</a> &gt; split </td>
+          <td class="memname">static std::pair&lt; StringRef, StringRef &gt; split </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StringRef.html">StringRef</a>&#160;</td>
+          <td class="paramtype">StringRef&#160;</td>
           <td class="paramname"><em>Str</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classchar.html">char</a>&#160;</td>
+          <td class="paramtype">char&#160;</td>
           <td class="paramname"><em>Separator</em>&#160;</td>
         </tr>
         <tr>
@@ -240,7 +261,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DataLayout_8cpp_source.html#l00203">203</a> of file <a class="el" href="DataLayout_8cpp_source.html">DataLayout.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="StringRef_8h_source.html#l00126">llvm::StringRef::empty()</a>, <a class="el" href="Testing_2Support_2Error_8cpp_source.html#l00139">llvm::report_fatal_error()</a>, and <a class="el" href="StringRef_8h_source.html#l00696">llvm::StringRef::split()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="Error_8cpp_source.html#l00139">llvm::report_fatal_error()</a>.</p>
 
 </div>
 </div>
@@ -255,7 +276,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1LayoutAlignElem.html">LayoutAlignElem</a> DefaultAlignments[]</td>
+          <td class="memname">const LayoutAlignElem DefaultAlignments[]</td>
         </tr>
       </table>
   </td>
@@ -265,34 +286,28 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">  { <a class="code hl_enumvalue" href="namespacellvm.html#af4d28164715255c7fe0cd96322745525aa3350ab6469bfd229c75720de2c850fe">INTEGER_ALIGN</a>, 1, 1, 1 },    </div>
-<div class="line">  { <a class="code hl_enumvalue" href="namespacellvm.html#af4d28164715255c7fe0cd96322745525aa3350ab6469bfd229c75720de2c850fe">INTEGER_ALIGN</a>, 8, 1, 1 },    </div>
-<div class="line">  { <a class="code hl_enumvalue" href="namespacellvm.html#af4d28164715255c7fe0cd96322745525aa3350ab6469bfd229c75720de2c850fe">INTEGER_ALIGN</a>, 16, 2, 2 },   </div>
-<div class="line">  { <a class="code hl_enumvalue" href="namespacellvm.html#af4d28164715255c7fe0cd96322745525aa3350ab6469bfd229c75720de2c850fe">INTEGER_ALIGN</a>, 32, 4, 4 },   </div>
-<div class="line">  { <a class="code hl_enumvalue" href="namespacellvm.html#af4d28164715255c7fe0cd96322745525aa3350ab6469bfd229c75720de2c850fe">INTEGER_ALIGN</a>, 64, 4, 8 },   </div>
-<div class="line">  { <a class="code hl_enumvalue" href="namespacellvm.html#af4d28164715255c7fe0cd96322745525a10ebae2167814fa48b573a0cb7cd9700">FLOAT_ALIGN</a>, 16, 2, 2 },     </div>
-<div class="line">  { <a class="code hl_enumvalue" href="namespacellvm.html#af4d28164715255c7fe0cd96322745525a10ebae2167814fa48b573a0cb7cd9700">FLOAT_ALIGN</a>, 32, 4, 4 },     </div>
-<div class="line">  { <a class="code hl_enumvalue" href="namespacellvm.html#af4d28164715255c7fe0cd96322745525a10ebae2167814fa48b573a0cb7cd9700">FLOAT_ALIGN</a>, 64, 8, 8 },     </div>
-<div class="line">  { <a class="code hl_enumvalue" href="namespacellvm.html#af4d28164715255c7fe0cd96322745525a10ebae2167814fa48b573a0cb7cd9700">FLOAT_ALIGN</a>, 128, 16, 16 },  </div>
-<div class="line">  { <a class="code hl_enumvalue" href="namespacellvm.html#af4d28164715255c7fe0cd96322745525a431322ee70d72b80bb88755593e7b811">VECTOR_ALIGN</a>, 64, 8, 8 },    </div>
-<div class="line">  { <a class="code hl_enumvalue" href="namespacellvm.html#af4d28164715255c7fe0cd96322745525a431322ee70d72b80bb88755593e7b811">VECTOR_ALIGN</a>, 128, 16, 16 }, </div>
-<div class="line">  { <a class="code hl_enumvalue" href="namespacellvm.html#af4d28164715255c7fe0cd96322745525ac9479f48500c93e97046cb777f657f74">AGGREGATE_ALIGN</a>, 0, 0, 8 }   </div>
+<div class="line">  { INTEGER_ALIGN, 1, 1, 1 },    </div>
+<div class="line">  { INTEGER_ALIGN, 8, 1, 1 },    </div>
+<div class="line">  { INTEGER_ALIGN, 16, 2, 2 },   </div>
+<div class="line">  { INTEGER_ALIGN, 32, 4, 4 },   </div>
+<div class="line">  { INTEGER_ALIGN, 64, 4, 8 },   </div>
+<div class="line">  { FLOAT_ALIGN, 16, 2, 2 },     </div>
+<div class="line">  { FLOAT_ALIGN, 32, 4, 4 },     </div>
+<div class="line">  { FLOAT_ALIGN, 64, 8, 8 },     </div>
+<div class="line">  { FLOAT_ALIGN, 128, 16, 16 },  </div>
+<div class="line">  { VECTOR_ALIGN, 64, 8, 8 },    </div>
+<div class="line">  { VECTOR_ALIGN, 128, 16, 16 }, </div>
+<div class="line">  { AGGREGATE_ALIGN, 0, 0, 8 }   </div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacellvm_html_af4d28164715255c7fe0cd96322745525a10ebae2167814fa48b573a0cb7cd9700"><div class="ttname"><a href="namespacellvm.html#af4d28164715255c7fe0cd96322745525a10ebae2167814fa48b573a0cb7cd9700">llvm::FLOAT_ALIGN</a></div><div class="ttdeci">@ FLOAT_ALIGN</div><div class="ttdef"><b>Definition:</b> <a href="DataLayout_8h_source.html#l00054">DataLayout.h:54</a></div></div>
-<div class="ttc" id="anamespacellvm_html_af4d28164715255c7fe0cd96322745525a431322ee70d72b80bb88755593e7b811"><div class="ttname"><a href="namespacellvm.html#af4d28164715255c7fe0cd96322745525a431322ee70d72b80bb88755593e7b811">llvm::VECTOR_ALIGN</a></div><div class="ttdeci">@ VECTOR_ALIGN</div><div class="ttdef"><b>Definition:</b> <a href="DataLayout_8h_source.html#l00053">DataLayout.h:53</a></div></div>
-<div class="ttc" id="anamespacellvm_html_af4d28164715255c7fe0cd96322745525aa3350ab6469bfd229c75720de2c850fe"><div class="ttname"><a href="namespacellvm.html#af4d28164715255c7fe0cd96322745525aa3350ab6469bfd229c75720de2c850fe">llvm::INTEGER_ALIGN</a></div><div class="ttdeci">@ INTEGER_ALIGN</div><div class="ttdef"><b>Definition:</b> <a href="DataLayout_8h_source.html#l00052">DataLayout.h:52</a></div></div>
-<div class="ttc" id="anamespacellvm_html_af4d28164715255c7fe0cd96322745525ac9479f48500c93e97046cb777f657f74"><div class="ttname"><a href="namespacellvm.html#af4d28164715255c7fe0cd96322745525ac9479f48500c93e97046cb777f657f74">llvm::AGGREGATE_ALIGN</a></div><div class="ttdeci">@ AGGREGATE_ALIGN</div><div class="ttdef"><b>Definition:</b> <a href="DataLayout_8h_source.html#l00056">DataLayout.h:55</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="DataLayout_8cpp_source.html#l00164">164</a> of file <a class="el" href="DataLayout_8cpp_source.html">DataLayout.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="DataLayout_8cpp_source.html#l00179">llvm::DataLayout::reset()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:14 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

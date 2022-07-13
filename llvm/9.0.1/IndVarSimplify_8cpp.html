@@ -58,64 +58,64 @@ $(function() {
   <div class="headertitle"><div class="title">IndVarSimplify.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="IndVarSimplify_8h_source.html">llvm/Transforms/Scalar/IndVarSimplify.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="APFloat_8h_source.html">llvm/ADT/APFloat.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="APInt_8h_source.html">llvm/ADT/APInt.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ArrayRef_8h_source.html">llvm/ADT/ArrayRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseMap_8h_source.html">llvm/ADT/DenseMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="None_8h_source.html">llvm/ADT/None.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Optional_8h_source.html">llvm/ADT/Optional.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallSet_8h_source.html">llvm/ADT/SmallSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallPtrSet_8h_source.html">llvm/ADT/SmallPtrSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="iterator__range_8h_source.html">llvm/ADT/iterator_range.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopPass_8h_source.html">llvm/Analysis/LoopPass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScalarEvolution_8h_source.html">llvm/Analysis/ScalarEvolution.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScalarEvolutionExpander_8h_source.html">llvm/Analysis/ScalarEvolutionExpander.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScalarEvolutionExpressions_8h_source.html">llvm/Analysis/ScalarEvolutionExpressions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ConstantRange_8h_source.html">llvm/IR/ConstantRange.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DerivedTypes_8h_source.html">llvm/IR/DerivedTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Operator_8h_source.html">llvm/IR/Operator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Use_8h_source.html">llvm/IR/Use.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="User_8h_source.html">llvm/IR/User.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueHandle_8h_source.html">llvm/IR/ValueHandle.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Compiler_8h_source.html">llvm/Support/Compiler.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MathExtras_8h_source.html">llvm/Support/MathExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopPassManager_8h_source.html">llvm/Transforms/Scalar/LoopPassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopUtils_8h_source.html">llvm/Transforms/Utils/LoopUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SimplifyIndVar_8h_source.html">llvm/Transforms/Utils/SimplifyIndVar.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/IndVarSimplify.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/APFloat.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/APInt.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/None.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Optional.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/iterator_range.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LoopPass.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScalarEvolution.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScalarEvolutionExpander.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScalarEvolutionExpressions.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
+<code>#include &quot;llvm/IR/ConstantRange.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DerivedTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Operator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Use.h&quot;</code><br />
+<code>#include &quot;llvm/IR/User.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/IR/ValueHandle.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Compiler.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
+<code>#include &quot;llvm/Support/MathExtras.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar/LoopPassManager.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/LoopUtils.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/SimplifyIndVar.h&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
@@ -148,61 +148,61 @@ Functions</h2></td></tr>
 <tr class="separator:a30f8e488a4a345e5dfeef7bcae2e3c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c26e913bb0fe2a47bb5c9bfb627eecb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a5c26e913bb0fe2a47bb5c9bfb627eecb">STATISTIC</a> (NumElimIV, &quot;Number of congruent IVs eliminated&quot;)</td></tr>
 <tr class="separator:a5c26e913bb0fe2a47bb5c9bfb627eecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a995c9f54308d436b9046a8741b149671"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a995c9f54308d436b9046a8741b149671">getInsertPointForUses</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="classllvm_1_1User.html">User</a>, <a class="el" href="classllvm_1_1Value.html">Value</a> *Def, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT, <a class="el" href="classllvm_1_1LoopInfo.html">LoopInfo</a> *LI)</td></tr>
+<tr class="memitem:ad5b5f70e6dcb925511a4cd69926b20a1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#ad5b5f70e6dcb925511a4cd69926b20a1">VerifyIndvars</a> (&quot;verify-indvars&quot;, cl::Hidden, cl::desc(&quot;Verify the ScalarEvolution result after running indvars&quot;))</td></tr>
+<tr class="separator:ad5b5f70e6dcb925511a4cd69926b20a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d614666882e4b3482366c7c157e744b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; <a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47b">ReplaceExitVal</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a8d614666882e4b3482366c7c157e744b">ReplaceExitValue</a> (&quot;replexitval&quot;, cl::Hidden, cl::init(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba13b3c637647fd5375f5933d5d9290906">OnlyCheapRepl</a>), cl::desc(&quot;Choose the strategy to <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value in IndVarSimplify&quot;), <a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">cl::values</a>(clEnumValN(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba4e8e695fe511d9881db833d780a41b12">NeverRepl</a>, &quot;never&quot;, &quot;never <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value&quot;), clEnumValN(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba13b3c637647fd5375f5933d5d9290906">OnlyCheapRepl</a>, &quot;cheap&quot;, &quot;only <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value when the cost is cheap&quot;), clEnumValN(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47baeee659489f4f569d7a7fd436f61805a3">NoHardUse</a>, &quot;noharduse&quot;, &quot;only <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit <a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">values</a> when loop def likely dead&quot;), clEnumValN(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba612021dbba09f3bf4216e0447bd6a0b4">AlwaysRepl</a>, &quot;always&quot;, &quot;always <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value whenever possible&quot;)))</td></tr>
+<tr class="separator:a8d614666882e4b3482366c7c157e744b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a686b90525d2921ad0e5ca5e627b90f38"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a686b90525d2921ad0e5ca5e627b90f38">UsePostIncrementRanges</a> (&quot;indvars-post-increment-ranges&quot;, cl::Hidden, cl::desc(&quot;Use post increment control-dependent ranges in IndVarSimplify&quot;), cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
+<tr class="separator:a686b90525d2921ad0e5ca5e627b90f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2338ffda93bcf699abc152aa0dda273"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#aa2338ffda93bcf699abc152aa0dda273">DisableLFTR</a> (&quot;disable-lftr&quot;, cl::Hidden, cl::init(false), cl::desc(&quot;Disable Linear Function Test Replace optimization&quot;))</td></tr>
+<tr class="separator:aa2338ffda93bcf699abc152aa0dda273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a995c9f54308d436b9046a8741b149671"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a995c9f54308d436b9046a8741b149671">getInsertPointForUses</a> (Instruction *User, Value *Def, DominatorTree *DT, LoopInfo *LI)</td></tr>
 <tr class="memdesc:a995c9f54308d436b9046a8741b149671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the insertion point for this user.  <a href="IndVarSimplify_8cpp.html#a995c9f54308d436b9046a8741b149671">More...</a><br /></td></tr>
 <tr class="separator:a995c9f54308d436b9046a8741b149671"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af945460922a5750a0d075b6344608e27"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#af945460922a5750a0d075b6344608e27">ConvertToSInt</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APFloat.html">APFloat</a> &amp;APF, int64_t &amp;IntVal)</td></tr>
+<tr class="memitem:af945460922a5750a0d075b6344608e27"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#af945460922a5750a0d075b6344608e27">ConvertToSInt</a> (const APFloat &amp;APF, int64_t &amp;IntVal)</td></tr>
 <tr class="memdesc:af945460922a5750a0d075b6344608e27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert APF to an integer, if possible.  <a href="IndVarSimplify_8cpp.html#af945460922a5750a0d075b6344608e27">More...</a><br /></td></tr>
 <tr class="separator:af945460922a5750a0d075b6344608e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57aff0646c7151c4158d839c386332cc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a57aff0646c7151c4158d839c386332cc">visitIVCast</a> (<a class="el" href="classllvm_1_1CastInst.html">CastInst</a> *Cast, WideIVInfo &amp;WI, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *SE, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> *TTI)</td></tr>
+<tr class="memitem:a57aff0646c7151c4158d839c386332cc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a57aff0646c7151c4158d839c386332cc">visitIVCast</a> (CastInst *Cast, WideIVInfo &amp;WI, ScalarEvolution *SE, const TargetTransformInfo *TTI)</td></tr>
 <tr class="memdesc:a57aff0646c7151c4158d839c386332cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update information about the induction variable that is extended by this sign or zero extend operation.  <a href="IndVarSimplify_8cpp.html#a57aff0646c7151c4158d839c386332cc">More...</a><br /></td></tr>
 <tr class="separator:a57aff0646c7151c4158d839c386332cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff6e6e805327b3e4185c7f71d96e5e1d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#aff6e6e805327b3e4185c7f71d96e5e1d">truncateIVUse</a> (NarrowIVDefUse DU, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT, <a class="el" href="classllvm_1_1LoopInfo.html">LoopInfo</a> *LI)</td></tr>
+<tr class="memitem:aff6e6e805327b3e4185c7f71d96e5e1d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#aff6e6e805327b3e4185c7f71d96e5e1d">truncateIVUse</a> (NarrowIVDefUse DU, DominatorTree *DT, LoopInfo *LI)</td></tr>
 <tr class="memdesc:aff6e6e805327b3e4185c7f71d96e5e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This IV user cannot be widened.  <a href="IndVarSimplify_8cpp.html#aff6e6e805327b3e4185c7f71d96e5e1d">More...</a><br /></td></tr>
 <tr class="separator:aff6e6e805327b3e4185c7f71d96e5e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8fbf8890afc93e88d19a28877c13fad"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#ab8fbf8890afc93e88d19a28877c13fad">getLoopPhiForCounter</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *IncV, <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L)</td></tr>
+<tr class="memitem:ab8fbf8890afc93e88d19a28877c13fad"><td class="memItemLeft" align="right" valign="top">static PHINode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#ab8fbf8890afc93e88d19a28877c13fad">getLoopPhiForCounter</a> (Value *IncV, Loop *L)</td></tr>
 <tr class="memdesc:ab8fbf8890afc93e88d19a28877c13fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an Value which is hoped to be part of an add recurance in the given loop, return the associated Phi node if so.  <a href="IndVarSimplify_8cpp.html#ab8fbf8890afc93e88d19a28877c13fad">More...</a><br /></td></tr>
 <tr class="separator:ab8fbf8890afc93e88d19a28877c13fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23d78b7d4dbea0ecc84dc55313ad1f25"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a23d78b7d4dbea0ecc84dc55313ad1f25">isLoopExitTestBasedOn</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *ExitingBB)</td></tr>
+<tr class="memitem:a23d78b7d4dbea0ecc84dc55313ad1f25"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a23d78b7d4dbea0ecc84dc55313ad1f25">isLoopExitTestBasedOn</a> (Value *V, BasicBlock *ExitingBB)</td></tr>
 <tr class="memdesc:a23d78b7d4dbea0ecc84dc55313ad1f25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the current loop exit test is based on this value.  <a href="IndVarSimplify_8cpp.html#a23d78b7d4dbea0ecc84dc55313ad1f25">More...</a><br /></td></tr>
 <tr class="separator:a23d78b7d4dbea0ecc84dc55313ad1f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a2f2b3d9153487f51dae119c07f8461"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a6a2f2b3d9153487f51dae119c07f8461">needsLFTR</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *ExitingBB)</td></tr>
+<tr class="memitem:a6a2f2b3d9153487f51dae119c07f8461"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a6a2f2b3d9153487f51dae119c07f8461">needsLFTR</a> (Loop *L, BasicBlock *ExitingBB)</td></tr>
 <tr class="memdesc:a6a2f2b3d9153487f51dae119c07f8461"><td class="mdescLeft">&#160;</td><td class="mdescRight">linearFunctionTestReplace policy.  <a href="IndVarSimplify_8cpp.html#a6a2f2b3d9153487f51dae119c07f8461">More...</a><br /></td></tr>
 <tr class="separator:a6a2f2b3d9153487f51dae119c07f8461"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cb5e1d50dfe26e03b62eb20263a79dd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a2cb5e1d50dfe26e03b62eb20263a79dd">mustExecuteUBIfPoisonOnPathTo</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Root, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *OnPathTo, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT)</td></tr>
+<tr class="memitem:a2cb5e1d50dfe26e03b62eb20263a79dd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a2cb5e1d50dfe26e03b62eb20263a79dd">mustExecuteUBIfPoisonOnPathTo</a> (Instruction *Root, Instruction *OnPathTo, DominatorTree *DT)</td></tr>
 <tr class="memdesc:a2cb5e1d50dfe26e03b62eb20263a79dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if undefined behavior would provable be executed on the path to OnPathTo if Root produced a posion result.  <a href="IndVarSimplify_8cpp.html#a2cb5e1d50dfe26e03b62eb20263a79dd">More...</a><br /></td></tr>
 <tr class="separator:a2cb5e1d50dfe26e03b62eb20263a79dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9504a92a00083831f812fb8317b1d9a0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a9504a92a00083831f812fb8317b1d9a0">hasConcreteDefImpl</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;Visited, <a class="el" href="classunsigned.html">unsigned</a> Depth)</td></tr>
+<tr class="memitem:a9504a92a00083831f812fb8317b1d9a0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a9504a92a00083831f812fb8317b1d9a0">hasConcreteDefImpl</a> (Value *V, SmallPtrSetImpl&lt; Value * &gt; &amp;Visited, unsigned Depth)</td></tr>
 <tr class="memdesc:a9504a92a00083831f812fb8317b1d9a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursive helper for <a class="el" href="IndVarSimplify_8cpp.html#a9cc6c5ed9edaa15e526e2a5ad24d1413" title="Return true if the given value is concrete.">hasConcreteDef()</a>.  <a href="IndVarSimplify_8cpp.html#a9504a92a00083831f812fb8317b1d9a0">More...</a><br /></td></tr>
 <tr class="separator:a9504a92a00083831f812fb8317b1d9a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cc6c5ed9edaa15e526e2a5ad24d1413"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a9cc6c5ed9edaa15e526e2a5ad24d1413">hasConcreteDef</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
+<tr class="memitem:a9cc6c5ed9edaa15e526e2a5ad24d1413"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a9cc6c5ed9edaa15e526e2a5ad24d1413">hasConcreteDef</a> (Value *V)</td></tr>
 <tr class="memdesc:a9cc6c5ed9edaa15e526e2a5ad24d1413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the given value is concrete.  <a href="IndVarSimplify_8cpp.html#a9cc6c5ed9edaa15e526e2a5ad24d1413">More...</a><br /></td></tr>
 <tr class="separator:a9cc6c5ed9edaa15e526e2a5ad24d1413"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a861b0a771b2125e6e9affb1b6f7a2003"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a861b0a771b2125e6e9affb1b6f7a2003">AlmostDeadIV</a> (<a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *Phi, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *LatchBlock, <a class="el" href="classllvm_1_1Value.html">Value</a> *Cond)</td></tr>
+<tr class="memitem:a861b0a771b2125e6e9affb1b6f7a2003"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a861b0a771b2125e6e9affb1b6f7a2003">AlmostDeadIV</a> (PHINode *Phi, BasicBlock *LatchBlock, Value *Cond)</td></tr>
 <tr class="memdesc:a861b0a771b2125e6e9affb1b6f7a2003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if this IV has any uses other than the (soon to be rewritten) loop exit test.  <a href="IndVarSimplify_8cpp.html#a861b0a771b2125e6e9affb1b6f7a2003">More...</a><br /></td></tr>
 <tr class="separator:a861b0a771b2125e6e9affb1b6f7a2003"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7803cd22b4405090d0cb0b87d697a612"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a7803cd22b4405090d0cb0b87d697a612">isLoopCounter</a> (<a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *Phi, <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *SE)</td></tr>
+<tr class="memitem:a7803cd22b4405090d0cb0b87d697a612"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a7803cd22b4405090d0cb0b87d697a612">isLoopCounter</a> (PHINode *Phi, Loop *L, ScalarEvolution *SE)</td></tr>
 <tr class="memdesc:a7803cd22b4405090d0cb0b87d697a612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the given phi is a "counter" in L.  <a href="IndVarSimplify_8cpp.html#a7803cd22b4405090d0cb0b87d697a612">More...</a><br /></td></tr>
 <tr class="separator:a7803cd22b4405090d0cb0b87d697a612"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc183a6edc37f305ee9ca5ff0bc33a6e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#adc183a6edc37f305ee9ca5ff0bc33a6e">FindLoopCounter</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *ExitingBB, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *BECount, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *SE, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT)</td></tr>
+<tr class="memitem:adc183a6edc37f305ee9ca5ff0bc33a6e"><td class="memItemLeft" align="right" valign="top">static PHINode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#adc183a6edc37f305ee9ca5ff0bc33a6e">FindLoopCounter</a> (Loop *L, BasicBlock *ExitingBB, const SCEV *BECount, ScalarEvolution *SE, DominatorTree *DT)</td></tr>
 <tr class="memdesc:adc183a6edc37f305ee9ca5ff0bc33a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search the loop header for a loop counter (anadd rec w/step of one) suitable for use by LFTR.  <a href="IndVarSimplify_8cpp.html#adc183a6edc37f305ee9ca5ff0bc33a6e">More...</a><br /></td></tr>
 <tr class="separator:adc183a6edc37f305ee9ca5ff0bc33a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14bc7872374f530d4ed193d9921825c5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a14bc7872374f530d4ed193d9921825c5">genLoopLimit</a> (<a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *IndVar, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *ExitingBB, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *ExitCount, <a class="el" href="classbool.html">bool</a> UsePostInc, <a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1SCEVExpander.html">SCEVExpander</a> &amp;Rewriter, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *SE)</td></tr>
+<tr class="memitem:a14bc7872374f530d4ed193d9921825c5"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a14bc7872374f530d4ed193d9921825c5">genLoopLimit</a> (PHINode *IndVar, BasicBlock *ExitingBB, const SCEV *ExitCount, bool UsePostInc, Loop *L, SCEVExpander &amp;Rewriter, ScalarEvolution *SE)</td></tr>
 <tr class="memdesc:a14bc7872374f530d4ed193d9921825c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert an IR expression which computes the value held by the IV IndVar (which must be an loop counter w/unit stride) after the backedge of loop L is taken ExitCount times.  <a href="IndVarSimplify_8cpp.html#a14bc7872374f530d4ed193d9921825c5">More...</a><br /></td></tr>
 <tr class="separator:a14bc7872374f530d4ed193d9921825c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a756db6e21f86b2be90fd87e747c94d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a6a756db6e21f86b2be90fd87e747c94d">INITIALIZE_PASS_BEGIN</a> (IndVarSimplifyLegacyPass, &quot;indvars&quot;, &quot;Induction Variable Simplification&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(IndVarSimplifyLegacyPass</td></tr>
+<tr class="memitem:a6a756db6e21f86b2be90fd87e747c94d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a6a756db6e21f86b2be90fd87e747c94d">INITIALIZE_PASS_BEGIN</a> (IndVarSimplifyLegacyPass, &quot;indvars&quot;, &quot;Induction Variable Simplification&quot;, false, false) INITIALIZE_PASS_END(IndVarSimplifyLegacyPass</td></tr>
 <tr class="separator:a6a756db6e21f86b2be90fd87e747c94d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a0857d8646cbb786ccd78a6f3362817fd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a0857d8646cbb786ccd78a6f3362817fd">VerifyIndvars</a> (&quot;verify-indvars&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Verify the <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> result after running indvars&quot;))</td></tr>
-<tr class="separator:a0857d8646cbb786ccd78a6f3362817fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdf1297fdd8e909949462e279e8840ff"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47b">ReplaceExitVal</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#acdf1297fdd8e909949462e279e8840ff">ReplaceExitValue</a> (&quot;replexitval&quot;, cl::Hidden, cl::init(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba13b3c637647fd5375f5933d5d9290906">OnlyCheapRepl</a>), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Choose the strategy to <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value in IndVarSimplify&quot;), <a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">cl::values</a>(<a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba4e8e695fe511d9881db833d780a41b12">NeverRepl</a>, &quot;never&quot;, &quot;never <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba13b3c637647fd5375f5933d5d9290906">OnlyCheapRepl</a>, &quot;cheap&quot;, &quot;only <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value when the cost is cheap&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47baeee659489f4f569d7a7fd436f61805a3">NoHardUse</a>, &quot;noharduse&quot;, &quot;only <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit <a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">values</a> when loop def likely dead&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba612021dbba09f3bf4216e0447bd6a0b4">AlwaysRepl</a>, &quot;always&quot;, &quot;always <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value whenever possible&quot;)))</td></tr>
-<tr class="separator:acdf1297fdd8e909949462e279e8840ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accc15a102c8ad5b2f46c6b23ca331f4c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#accc15a102c8ad5b2f46c6b23ca331f4c">UsePostIncrementRanges</a> (&quot;indvars-post-increment-ranges&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Use post increment control-dependent ranges in IndVarSimplify&quot;), cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>))</td></tr>
-<tr class="separator:accc15a102c8ad5b2f46c6b23ca331f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fa311ace7bbfa6e7713cf18baa65f8e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a1fa311ace7bbfa6e7713cf18baa65f8e">DisableLFTR</a> (&quot;disable-lftr&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Disable Linear <a class="el" href="classllvm_1_1Function.html">Function</a> Test Replace optimization&quot;))</td></tr>
-<tr class="separator:a1fa311ace7bbfa6e7713cf18baa65f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a566d8ea0c046e39ce95437e5c8390b8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#a566d8ea0c046e39ce95437e5c8390b8f">indvars</a></td></tr>
 <tr class="separator:a566d8ea0c046e39ce95437e5c8390b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5371a4f4e29460339200c446c423284"><td class="memItemLeft" align="right" valign="top">Induction Variable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IndVarSimplify_8cpp.html#ab5371a4f4e29460339200c446c423284">Simplification</a></td></tr>
@@ -261,21 +261,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> AlmostDeadIV </td>
+          <td class="memname">static bool AlmostDeadIV </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *&#160;</td>
+          <td class="paramtype">PHINode *&#160;</td>
           <td class="paramname"><em>Phi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>LatchBlock</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Cond</em>&#160;</td>
         </tr>
         <tr>
@@ -295,8 +295,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndVarSimplify_8cpp_source.html#l02179">2179</a> of file <a class="el" href="IndVarSimplify_8cpp_source.html">IndVarSimplify.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Instructions_8h_source.html#l02716">llvm::PHINode::getBasicBlockIndex()</a>, <a class="el" href="Instructions_8h_source.html#l02634">llvm::PHINode::getIncomingValue()</a>, and <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="IndVarSimplify_8cpp_source.html#l02222">FindLoopCounter()</a>.</p>
 
 </div>
@@ -311,9 +309,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> ConvertToSInt </td>
+          <td class="memname">static bool ConvertToSInt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1APFloat.html">APFloat</a> &amp;&#160;</td>
+          <td class="paramtype">const APFloat &amp;&#160;</td>
           <td class="paramname"><em>APF</em>, </td>
         </tr>
         <tr>
@@ -339,7 +337,53 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndVarSimplify_8cpp_source.html#l00279">279</a> of file <a class="el" href="IndVarSimplify_8cpp_source.html">IndVarSimplify.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="APFloat_8h_source.html#l01079">llvm::APFloat::convertToInteger()</a>, and <a class="el" href="ArrayRef_8h_source.html#l00502">llvm::makeMutableArrayRef()</a>.</p>
+</div>
+</div>
+<a id="aa2338ffda93bcf699abc152aa0dda273" name="aa2338ffda93bcf699abc152aa0dda273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2338ffda93bcf699abc152aa0dda273">&#9670;&nbsp;</a></span>DisableLFTR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; DisableLFTR </td>
+          <td>(</td>
+          <td class="paramtype">&quot;disable-lftr&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Disable Linear Function Test Replace optimization&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -353,33 +397,33 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> * FindLoopCounter </td>
+          <td class="memname">static PHINode * FindLoopCounter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>ExitingBB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&#160;</td>
+          <td class="paramtype">const SCEV *&#160;</td>
           <td class="paramname"><em>BECount</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *&#160;</td>
+          <td class="paramtype">ScalarEvolution *&#160;</td>
           <td class="paramname"><em>SE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
+          <td class="paramtype">DominatorTree *&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -401,7 +445,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndVarSimplify_8cpp_source.html#l02222">2222</a> of file <a class="el" href="IndVarSimplify_8cpp_source.html">IndVarSimplify.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="IndVarSimplify_8cpp_source.html#l02179">AlmostDeadIV()</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="Module_8cpp_source.html#l00369">llvm::Module::getDataLayout()</a>, <a class="el" href="LoopInfo_8h_source.html#l00102">llvm::LoopBase&lt; BlockT, LoopT &gt;::getHeader()</a>, <a class="el" href="Instructions_8h_source.html#l02723">llvm::PHINode::getIncomingValueForBlock()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00211">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopLatch()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00133">llvm::BasicBlock::getModule()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03895">llvm::ScalarEvolution::getSCEV()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00352">llvm::SCEV::getType()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03769">llvm::ScalarEvolution::getTypeSizeInBits()</a>, <a class="el" href="IndVarSimplify_8cpp_source.html#l02171">hasConcreteDef()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Type_8h_source.html#l00196">llvm::Type::isIntegerTy()</a>, <a class="el" href="DataLayout_8h_source.html#l00254">llvm::DataLayout::isLegalInteger()</a>, <a class="el" href="IndVarSimplify_8cpp_source.html#l02194">isLoopCounter()</a>, <a class="el" href="IndVarSimplify_8cpp_source.html#l02033">isLoopExitTestBasedOn()</a>, <a class="el" href="Type_8h_source.html#l00223">llvm::Type::isPointerTy()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00379">llvm::SCEV::isZero()</a>, and <a class="el" href="IndVarSimplify_8cpp_source.html#l02100">mustExecuteUBIfPoisonOnPathTo()</a>.</p>
+<p class="reference">References <a class="el" href="IndVarSimplify_8cpp_source.html#l02179">AlmostDeadIV()</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="IndVarSimplify_8cpp_source.html#l02171">hasConcreteDef()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="IndVarSimplify_8cpp_source.html#l02194">isLoopCounter()</a>, <a class="el" href="IndVarSimplify_8cpp_source.html#l02033">isLoopExitTestBasedOn()</a>, and <a class="el" href="IndVarSimplify_8cpp_source.html#l02100">mustExecuteUBIfPoisonOnPathTo()</a>.</p>
 
 </div>
 </div>
@@ -415,45 +459,45 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * genLoopLimit </td>
+          <td class="memname">static Value * genLoopLimit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *&#160;</td>
+          <td class="paramtype">PHINode *&#160;</td>
           <td class="paramname"><em>IndVar</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>ExitingBB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1SCEV.html">SCEV</a> *&#160;</td>
+          <td class="paramtype">const SCEV *&#160;</td>
           <td class="paramname"><em>ExitCount</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>UsePostInc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SCEVExpander.html">SCEVExpander</a> &amp;&#160;</td>
+          <td class="paramtype">SCEVExpander &amp;&#160;</td>
           <td class="paramname"><em>Rewriter</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *&#160;</td>
+          <td class="paramtype">ScalarEvolution *&#160;</td>
           <td class="paramname"><em>SE</em>&#160;</td>
         </tr>
         <tr>
@@ -473,7 +517,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndVarSimplify_8cpp_source.html#l02306">2306</a> of file <a class="el" href="IndVarSimplify_8cpp_source.html">IndVarSimplify.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l02402">llvm::ScalarEvolution::getAddExpr()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03779">llvm::ScalarEvolution::getEffectiveSCEVType()</a>, <a class="el" href="ScalarEvolution_8h_source.html#l00618">llvm::ScalarEvolution::getOne()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03895">llvm::ScalarEvolution::getSCEV()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03715">llvm::ScalarEvolution::getSizeOfExpr()</a>, <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00306">llvm::SCEVAddRecExpr::getStart()</a>, <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00313">llvm::SCEVAddRecExpr::getStepRecurrence()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l01250">llvm::ScalarEvolution::getTruncateExpr()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l04039">llvm::ScalarEvolution::getTruncateOrZeroExtend()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00352">llvm::SCEV::getType()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03769">llvm::ScalarEvolution::getTypeSizeInBits()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l01634">llvm::ScalarEvolution::getZeroExtendExpr()</a>, <a class="el" href="IndVarSimplify_8cpp_source.html#l02194">isLoopCounter()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l11668">llvm::ScalarEvolution::isLoopInvariant()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00385">llvm::SCEV::isOne()</a>, <a class="el" href="Type_8h_source.html#l00223">llvm::Type::isPointerTy()</a>, and <a class="el" href="VirtRegMap_8cpp_source.html#l00222">Rewriter</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="IndVarSimplify_8cpp_source.html#l02194">isLoopCounter()</a>.</p>
 
 </div>
 </div>
@@ -487,27 +531,27 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * getInsertPointForUses </td>
+          <td class="memname">static Instruction * getInsertPointForUses </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>User</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Def</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
+          <td class="paramtype">DominatorTree *&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1LoopInfo.html">LoopInfo</a> *&#160;</td>
+          <td class="paramtype">LoopInfo *&#160;</td>
           <td class="paramname"><em>LI</em>&#160;</td>
         </tr>
         <tr>
@@ -528,7 +572,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndVarSimplify_8cpp_source.html#l00229">229</a> of file <a class="el" href="IndVarSimplify_8cpp_source.html">IndVarSimplify.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="Dominators_8cpp_source.html#l00248">llvm::DominatorTree::dominates()</a>, <a class="el" href="GenericDomTree_8h_source.html#l00445">llvm::DominatorTreeBase&lt; NodeT, IsPostDom &gt;::findNearestCommonDominator()</a>, <a class="el" href="Instructions_8h_source.html#l02654">llvm::PHINode::getIncomingBlock()</a>, <a class="el" href="Instructions_8h_source.html#l02634">llvm::PHINode::getIncomingValue()</a>, <a class="el" href="LoopInfo_8h_source.html#l00897">llvm::LoopInfoBase&lt; BlockT, LoopT &gt;::getLoopFor()</a>, <a class="el" href="Instructions_8h_source.html#l02630">llvm::PHINode::getNumIncomingValues()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="Dominators_8cpp_source.html#l00299">llvm::DominatorTree::isReachableFromEntry()</a>, and <a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="IndVarSimplify_8cpp_source.html#l01318">truncateIVUse()</a>.</p>
 
@@ -544,15 +588,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1PHINode.html">PHINode</a> * getLoopPhiForCounter </td>
+          <td class="memname">static PHINode * getLoopPhiForCounter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>IncV</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em>&#160;</td>
         </tr>
         <tr>
@@ -574,8 +618,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndVarSimplify_8cpp_source.html#l01995">1995</a> of file <a class="el" href="IndVarSimplify_8cpp_source.html">IndVarSimplify.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="LoopInfo_8h_source.html#l00102">llvm::LoopBase&lt; BlockT, LoopT &gt;::getHeader()</a>, <a class="el" href="User_8h_source.html#l00191">llvm::User::getNumOperands()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00125">llvm::Instruction::getOpcode()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="LoopInfo_8cpp_source.html#l00061">llvm::Loop::isLoopInvariant()</a>, and <a class="el" href="Compiler_8h_source.html#l00250">LLVM_FALLTHROUGH</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="IndVarSimplify_8cpp_source.html#l02194">isLoopCounter()</a>, and <a class="el" href="IndVarSimplify_8cpp_source.html#l02046">needsLFTR()</a>.</p>
 
 </div>
@@ -590,9 +632,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> hasConcreteDef </td>
+          <td class="memname">static bool hasConcreteDef </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
           <td></td>
         </tr>
@@ -610,7 +652,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndVarSimplify_8cpp_source.html#l02171">2171</a> of file <a class="el" href="IndVarSimplify_8cpp_source.html">IndVarSimplify.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="IndVarSimplify_8cpp_source.html#l02138">hasConcreteDefImpl()</a>, and <a class="el" href="SmallPtrSet_8h_source.html#l00370">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert()</a>.</p>
+<p class="reference">References <a class="el" href="IndVarSimplify_8cpp_source.html#l02138">hasConcreteDefImpl()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="IndVarSimplify_8cpp_source.html#l02222">FindLoopCounter()</a>.</p>
 
@@ -626,21 +668,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> hasConcreteDefImpl </td>
+          <td class="memname">static bool hasConcreteDefImpl </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallPtrSetImpl.html">SmallPtrSetImpl</a>&lt; <a class="el" href="classllvm_1_1Value.html">Value</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">SmallPtrSetImpl&lt; Value * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Visited</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>Depth</em>&#160;</td>
         </tr>
         <tr>
@@ -661,7 +703,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndVarSimplify_8cpp_source.html#l02138">2138</a> of file <a class="el" href="IndVarSimplify_8cpp_source.html">IndVarSimplify.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SIMachineScheduler_8h_source.html#l00036">llvm::Depth</a>, <a class="el" href="IndVarSimplify_8cpp_source.html#l02138">hasConcreteDefImpl()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="SmallPtrSet_8h_source.html#l00370">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert()</a>.</p>
+<p class="reference">References <a class="el" href="IndVarSimplify_8cpp_source.html#l02138">hasConcreteDefImpl()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="IndVarSimplify_8cpp_source.html#l02171">hasConcreteDef()</a>, and <a class="el" href="IndVarSimplify_8cpp_source.html#l02138">hasConcreteDefImpl()</a>.</p>
 
@@ -723,21 +765,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isLoopCounter </td>
+          <td class="memname">static bool isLoopCounter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1PHINode.html">PHINode</a> *&#160;</td>
+          <td class="paramtype">PHINode *&#160;</td>
           <td class="paramname"><em>Phi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *&#160;</td>
+          <td class="paramtype">ScalarEvolution *&#160;</td>
           <td class="paramname"><em>SE</em>&#160;</td>
         </tr>
         <tr>
@@ -758,7 +800,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndVarSimplify_8cpp_source.html#l02194">2194</a> of file <a class="el" href="IndVarSimplify_8cpp_source.html">IndVarSimplify.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="Instructions_8h_source.html#l02716">llvm::PHINode::getBasicBlockIndex()</a>, <a class="el" href="LoopInfo_8h_source.html#l00102">llvm::LoopBase&lt; BlockT, LoopT &gt;::getHeader()</a>, <a class="el" href="Instructions_8h_source.html#l02634">llvm::PHINode::getIncomingValue()</a>, <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00307">llvm::SCEVAddRecExpr::getLoop()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00211">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopLatch()</a>, <a class="el" href="IndVarSimplify_8cpp_source.html#l01995">getLoopPhiForCounter()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03895">llvm::ScalarEvolution::getSCEV()</a>, <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00313">llvm::SCEVAddRecExpr::getStepRecurrence()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="ScalarEvolutionExpressions_8h_source.html#l00322">llvm::SCEVAddRecExpr::isAffine()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l00385">llvm::SCEV::isOne()</a>, and <a class="el" href="ScalarEvolution_8cpp_source.html#l03762">llvm::ScalarEvolution::isSCEVable()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="IndVarSimplify_8cpp_source.html#l01995">getLoopPhiForCounter()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="IndVarSimplify_8cpp_source.html#l02222">FindLoopCounter()</a>, and <a class="el" href="IndVarSimplify_8cpp_source.html#l02306">genLoopLimit()</a>.</p>
 
@@ -774,15 +816,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isLoopExitTestBasedOn </td>
+          <td class="memname">static bool isLoopExitTestBasedOn </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>ExitingBB</em>&#160;</td>
         </tr>
         <tr>
@@ -803,8 +845,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndVarSimplify_8cpp_source.html#l02033">2033</a> of file <a class="el" href="IndVarSimplify_8cpp_source.html">IndVarSimplify.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Instructions_8h_source.html#l03046">llvm::BranchInst::getCondition()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, and <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="IndVarSimplify_8cpp_source.html#l02222">FindLoopCounter()</a>.</p>
 
 </div>
@@ -819,21 +859,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> mustExecuteUBIfPoisonOnPathTo </td>
+          <td class="memname">static bool mustExecuteUBIfPoisonOnPathTo </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>Root</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>OnPathTo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
+          <td class="paramtype">DominatorTree *&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -855,7 +895,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndVarSimplify_8cpp_source.html#l02100">2100</a> of file <a class="el" href="IndVarSimplify_8cpp_source.html">IndVarSimplify.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Dominators_8cpp_source.html#l00248">llvm::DominatorTree::dominates()</a>, <a class="el" href="SmallVector_8h_source.html#l00055">llvm::SmallVectorBase::empty()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="SmallSet_8h_source.html#l00180">llvm::SmallSet&lt; T, N, C &gt;::insert()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l04377">llvm::mustTriggerUB()</a>, <a class="el" href="SmallVector_8h_source.html#l00374">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l04314">llvm::propagatesFullPoison()</a>, and <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="IndVarSimplify_8cpp_source.html#l02222">FindLoopCounter()</a>.</p>
 
@@ -871,15 +911,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> needsLFTR </td>
+          <td class="memname">static bool needsLFTR </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>ExitingBB</em>&#160;</td>
         </tr>
         <tr>
@@ -900,7 +940,61 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndVarSimplify_8cpp_source.html#l02046">2046</a> of file <a class="el" href="IndVarSimplify_8cpp_source.html">IndVarSimplify.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="Instructions_8h_source.html#l02716">llvm::PHINode::getBasicBlockIndex()</a>, <a class="el" href="Instructions_8h_source.html#l03046">llvm::BranchInst::getCondition()</a>, <a class="el" href="Instructions_8h_source.html#l02634">llvm::PHINode::getIncomingValue()</a>, <a class="el" href="LoopInfoImpl_8h_source.html#l00211">llvm::LoopBase&lt; BlockT, LoopT &gt;::getLoopLatch()</a>, <a class="el" href="IndVarSimplify_8cpp_source.html#l01995">getLoopPhiForCounter()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>, <a class="el" href="LoopInfo_8cpp_source.html#l00061">llvm::Loop::isLoopInvariant()</a>, and <a class="el" href="BitVector_8h_source.html#l00940">std::swap()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="IndVarSimplify_8cpp_source.html#l01995">getLoopPhiForCounter()</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00342">Idx</a>.</p>
+
+</div>
+</div>
+<a id="a8d614666882e4b3482366c7c157e744b" name="a8d614666882e4b3482366c7c157e744b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d614666882e4b3482366c7c157e744b">&#9670;&nbsp;</a></span>ReplaceExitValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; <a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47b">ReplaceExitVal</a> &gt; ReplaceExitValue </td>
+          <td>(</td>
+          <td class="paramtype">&quot;replexitval&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba13b3c637647fd5375f5933d5d9290906">OnlyCheapRepl</a>)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Choose the strategy to <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value in IndVarSimplify&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">cl::values</a>(clEnumValN(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba4e8e695fe511d9881db833d780a41b12">NeverRepl</a>, &quot;never&quot;, &quot;never <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value&quot;), clEnumValN(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba13b3c637647fd5375f5933d5d9290906">OnlyCheapRepl</a>, &quot;cheap&quot;, &quot;only <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value when the cost is cheap&quot;), clEnumValN(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47baeee659489f4f569d7a7fd436f61805a3">NoHardUse</a>, &quot;noharduse&quot;, &quot;only <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit <a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">values</a> when loop def likely dead&quot;), clEnumValN(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba612021dbba09f3bf4216e0447bd6a0b4">AlwaysRepl</a>, &quot;always&quot;, &quot;always <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value whenever possible&quot;))&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1062,13 +1156,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
+          <td class="paramtype">DominatorTree *&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1LoopInfo.html">LoopInfo</a> *&#160;</td>
+          <td class="paramtype">LoopInfo *&#160;</td>
           <td class="paramname"><em>LI</em>&#160;</td>
         </tr>
         <tr>
@@ -1089,7 +1183,97 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndVarSimplify_8cpp_source.html#l01318">1318</a> of file <a class="el" href="IndVarSimplify_8cpp_source.html">IndVarSimplify.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="IRBuilder_8h_source.html#l01874">llvm::IRBuilder&lt; T, Inserter &gt;::CreateTrunc()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="IndVarSimplify_8cpp_source.html#l00229">getInsertPointForUses()</a>, and <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>.</p>
+<p class="reference">References <a class="el" href="IndVarSimplify_8cpp_source.html#l00229">getInsertPointForUses()</a>.</p>
+
+</div>
+</div>
+<a id="a686b90525d2921ad0e5ca5e627b90f38" name="a686b90525d2921ad0e5ca5e627b90f38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a686b90525d2921ad0e5ca5e627b90f38">&#9670;&nbsp;</a></span>UsePostIncrementRanges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; UsePostIncrementRanges </td>
+          <td>(</td>
+          <td class="paramtype">&quot;indvars-post-increment-ranges&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Use post increment control-dependent ranges in IndVarSimplify&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5b5f70e6dcb925511a4cd69926b20a1" name="ad5b5f70e6dcb925511a4cd69926b20a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b5f70e6dcb925511a4cd69926b20a1">&#9670;&nbsp;</a></span>VerifyIndvars()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; VerifyIndvars </td>
+          <td>(</td>
+          <td class="paramtype">&quot;verify-indvars&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Verify the ScalarEvolution result after running indvars&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1105,7 +1289,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void visitIVCast </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CastInst.html">CastInst</a> *&#160;</td>
+          <td class="paramtype">CastInst *&#160;</td>
           <td class="paramname"><em>Cast</em>, </td>
         </tr>
         <tr>
@@ -1117,13 +1301,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *&#160;</td>
+          <td class="paramtype">ScalarEvolution *&#160;</td>
           <td class="paramname"><em>SE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> *&#160;</td>
+          <td class="paramtype">const TargetTransformInfo *&#160;</td>
           <td class="paramname"><em>TTI</em>&#160;</td>
         </tr>
         <tr>
@@ -1144,59 +1328,9 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IndVarSimplify_8cpp_source.html#l00868">868</a> of file <a class="el" href="IndVarSimplify_8cpp_source.html">IndVarSimplify.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="TargetTransformInfo_8cpp_source.html#l00578">llvm::TargetTransformInfo::getArithmeticInstrCost()</a>, <a class="el" href="Module_8cpp_source.html#l00369">llvm::Module::getDataLayout()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03779">llvm::ScalarEvolution::getEffectiveSCEVType()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00055">llvm::Instruction::getModule()</a>, <a class="el" href="InstrTypes_8h_source.html#l00692">llvm::CastInst::getOpcode()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03769">llvm::ScalarEvolution::getTypeSizeInBits()</a>, and <a class="el" href="DataLayout_8h_source.html#l00254">llvm::DataLayout::isLegalInteger()</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a1fa311ace7bbfa6e7713cf18baa65f8e" name="a1fa311ace7bbfa6e7713cf18baa65f8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1fa311ace7bbfa6e7713cf18baa65f8e">&#9670;&nbsp;</a></span>DisableLFTR</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; DisableLFTR(&quot;disable-lftr&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Disable Linear <a class="el" href="classllvm_1_1Function.html">Function</a> Test Replace optimization&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;disable-lftr&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Disable Linear <a class="el" href="classllvm_1_1Function.html">Function</a> Test Replace optimization&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a29415dc488ced924246223037589dc9f" name="a29415dc488ced924246223037589dc9f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a29415dc488ced924246223037589dc9f">&#9670;&nbsp;</a></span>false</h2>
 
@@ -1229,60 +1363,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="acdf1297fdd8e909949462e279e8840ff" name="acdf1297fdd8e909949462e279e8840ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdf1297fdd8e909949462e279e8840ff">&#9670;&nbsp;</a></span>ReplaceExitValue</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47b">ReplaceExitVal</a> &gt; ReplaceExitValue(&quot;replexitval&quot;, cl::Hidden, cl::init(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba13b3c637647fd5375f5933d5d9290906">OnlyCheapRepl</a>), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Choose the strategy to <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value in IndVarSimplify&quot;), <a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">cl::values</a>(<a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba4e8e695fe511d9881db833d780a41b12">NeverRepl</a>, &quot;never&quot;, &quot;never <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba13b3c637647fd5375f5933d5d9290906">OnlyCheapRepl</a>, &quot;cheap&quot;, &quot;only <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value when the cost is cheap&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47baeee659489f4f569d7a7fd436f61805a3">NoHardUse</a>, &quot;noharduse&quot;, &quot;only <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit <a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">values</a> when loop def likely dead&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba612021dbba09f3bf4216e0447bd6a0b4">AlwaysRepl</a>, &quot;always&quot;, &quot;always <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value whenever possible&quot;))) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;replexitval&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba13b3c637647fd5375f5933d5d9290906">OnlyCheapRepl</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Choose the strategy to <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value in IndVarSimplify&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">cl::values</a>(<a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba4e8e695fe511d9881db833d780a41b12">NeverRepl</a>, &quot;never&quot;, &quot;never <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba13b3c637647fd5375f5933d5d9290906">OnlyCheapRepl</a>, &quot;cheap&quot;, &quot;only <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value when the cost is cheap&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47baeee659489f4f569d7a7fd436f61805a3">NoHardUse</a>, &quot;noharduse&quot;, &quot;only <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit <a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">values</a> when loop def likely dead&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="IndVarSimplify_8cpp.html#a2e8e53e531c6b745959a590c0b87c47ba612021dbba09f3bf4216e0447bd6a0b4">AlwaysRepl</a>, &quot;always&quot;, &quot;always <a class="el" href="ConstantMerge_8cpp.html#acf172e841018fd16e65771f5ade0b297">replace</a> exit value whenever possible&quot;))&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ab5371a4f4e29460339200c446c423284" name="ab5371a4f4e29460339200c446c423284"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab5371a4f4e29460339200c446c423284">&#9670;&nbsp;</a></span>Simplification</h2>
 
@@ -1299,100 +1379,10 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="accc15a102c8ad5b2f46c6b23ca331f4c" name="accc15a102c8ad5b2f46c6b23ca331f4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accc15a102c8ad5b2f46c6b23ca331f4c">&#9670;&nbsp;</a></span>UsePostIncrementRanges</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; UsePostIncrementRanges(&quot;indvars-post-increment-ranges&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Use post increment control-dependent ranges in IndVarSimplify&quot;), cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;indvars-post-increment-ranges&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Use post increment control-dependent ranges in IndVarSimplify&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0857d8646cbb786ccd78a6f3362817fd" name="a0857d8646cbb786ccd78a6f3362817fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0857d8646cbb786ccd78a6f3362817fd">&#9670;&nbsp;</a></span>VerifyIndvars</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; VerifyIndvars(&quot;verify-indvars&quot;, cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Verify the <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> result after running indvars&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;verify-indvars&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Verify the <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> result after running indvars&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

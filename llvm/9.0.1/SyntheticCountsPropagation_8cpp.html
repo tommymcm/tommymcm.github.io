@@ -53,29 +53,45 @@ $(function() {
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">SyntheticCountsPropagation.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="SyntheticCountsPropagation_8h_source.html">llvm/Transforms/IPO/SyntheticCountsPropagation.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseSet_8h_source.html">llvm/ADT/DenseSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BlockFrequencyInfo_8h_source.html">llvm/Analysis/BlockFrequencyInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallGraph_8h_source.html">llvm/Analysis/CallGraph.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SyntheticCountsUtils_8h_source.html">llvm/Analysis/SyntheticCountsUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/IPO/SyntheticCountsPropagation.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/BlockFrequencyInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CallGraph.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/SyntheticCountsUtils.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for SyntheticCountsPropagation.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="SyntheticCountsPropagation_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2IPO_2SyntheticCountsPropagation_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2IPO_2SyntheticCountsPropagation_8cpp" id="alib_2Transforms_2IPO_2SyntheticCountsPropagation_8cpp">
+<area shape="rect" title=" " alt="" coords="1414,5,1651,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,228,133"/>
+<area shape="rect" title=" " alt="" coords="251,101,411,126"/>
+<area shape="rect" title=" " alt="" coords="435,101,598,126"/>
+<area shape="rect" title=" " alt="" coords="623,93,840,133"/>
+<area shape="rect" title=" " alt="" coords="864,101,1055,126"/>
+<area shape="rect" title=" " alt="" coords="1079,93,1298,133"/>
+<area shape="rect" title=" " alt="" coords="1323,93,1543,133"/>
+<area shape="rect" title=" " alt="" coords="1567,101,1701,126"/>
+<area shape="rect" title=" " alt="" coords="1726,101,1865,126"/>
+<area shape="rect" title=" " alt="" coords="1889,101,2049,126"/>
+<area shape="rect" title=" " alt="" coords="2073,101,2205,126"/>
+<area shape="rect" title=" " alt="" coords="2229,101,2444,126"/>
+<area shape="rect" title=" " alt="" coords="2469,101,2631,126"/>
+<area shape="rect" title=" " alt="" coords="2656,101,2863,126"/>
+</map>
 </div>
 </div>
 <p><a href="SyntheticCountsPropagation_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -87,27 +103,24 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a49c1e422196c0091065074ac15fb6ba3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SyntheticCountsPropagation_8cpp.html#a49c1e422196c0091065074ac15fb6ba3">Scaled64</a> = <a class="el" href="classllvm_1_1ScaledNumber.html">ScaledNumber</a>&lt; uint64_t &gt;</td></tr>
+<tr class="memitem:a49c1e422196c0091065074ac15fb6ba3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SyntheticCountsPropagation_8cpp.html#a49c1e422196c0091065074ac15fb6ba3">Scaled64</a> = ScaledNumber&lt; uint64_t &gt;</td></tr>
 <tr class="separator:a49c1e422196c0091065074ac15fb6ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac57dae906fe8ac64efe52571121b0fe1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SyntheticCountsPropagation_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> = <a class="el" href="classllvm_1_1Function_1_1ProfileCount.html">Function::ProfileCount</a></td></tr>
+<tr class="memitem:ac57dae906fe8ac64efe52571121b0fe1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SyntheticCountsPropagation_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> = Function::ProfileCount</td></tr>
 <tr class="separator:ac57dae906fe8ac64efe52571121b0fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a97a76ca7dbed52ee821c134b667e30ff"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SyntheticCountsPropagation_8cpp.html#a97a76ca7dbed52ee821c134b667e30ff">initializeCounts</a> (<a class="el" href="classllvm_1_1Module.html">Module</a> &amp;M, <a class="el" href="classllvm_1_1function__ref.html">function_ref</a>&lt; void(<a class="el" href="classllvm_1_1Function.html">Function</a> *, uint64_t)&gt; SetCount)</td></tr>
+<tr class="memitem:a006b9446dc1217a744e8b9125c54f3de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SyntheticCountsPropagation_8cpp.html#a006b9446dc1217a744e8b9125c54f3de">InitialSyntheticCount</a> (&quot;initial-synthetic-count&quot;, cl::Hidden, cl::init(10), cl::ZeroOrMore, cl::desc(&quot;Initial value of synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count.&quot;))</td></tr>
+<tr class="memdesc:a006b9446dc1217a744e8b9125c54f3de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial synthetic count assigned to functions.  <a href="SyntheticCountsPropagation_8cpp.html#a006b9446dc1217a744e8b9125c54f3de">More...</a><br /></td></tr>
+<tr class="separator:a006b9446dc1217a744e8b9125c54f3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e3f5fd16066a5f6e754e97e2dd5435"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SyntheticCountsPropagation_8cpp.html#ab3e3f5fd16066a5f6e754e97e2dd5435">InlineSyntheticCount</a> (&quot;inline-synthetic-count&quot;, cl::Hidden, cl::init(15), cl::ZeroOrMore, cl::desc(&quot;Initial synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count for <a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a> functions.&quot;))</td></tr>
+<tr class="memdesc:ab3e3f5fd16066a5f6e754e97e2dd5435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial synthetic count assigned to inline functions.  <a href="SyntheticCountsPropagation_8cpp.html#ab3e3f5fd16066a5f6e754e97e2dd5435">More...</a><br /></td></tr>
+<tr class="separator:ab3e3f5fd16066a5f6e754e97e2dd5435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a2fce630d7880983a14a048f573511d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SyntheticCountsPropagation_8cpp.html#a4a2fce630d7880983a14a048f573511d">ColdSyntheticCount</a> (&quot;cold-synthetic-count&quot;, cl::Hidden, cl::init(5), cl::ZeroOrMore, cl::desc(&quot;Initial synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count for cold functions.&quot;))</td></tr>
+<tr class="memdesc:a4a2fce630d7880983a14a048f573511d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial synthetic count assigned to cold functions.  <a href="SyntheticCountsPropagation_8cpp.html#a4a2fce630d7880983a14a048f573511d">More...</a><br /></td></tr>
+<tr class="separator:a4a2fce630d7880983a14a048f573511d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a76ca7dbed52ee821c134b667e30ff"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SyntheticCountsPropagation_8cpp.html#a97a76ca7dbed52ee821c134b667e30ff">initializeCounts</a> (Module &amp;M, function_ref&lt; void(Function *, uint64_t)&gt; SetCount)</td></tr>
 <tr class="separator:a97a76ca7dbed52ee821c134b667e30ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:af21b4c1c6b9d9e36d8d15e6b8e4de861"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SyntheticCountsPropagation_8cpp.html#af21b4c1c6b9d9e36d8d15e6b8e4de861">InitialSyntheticCount</a> (&quot;initial-synthetic-count&quot;, cl::Hidden, cl::init(10), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Initial value of synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count.&quot;))</td></tr>
-<tr class="memdesc:af21b4c1c6b9d9e36d8d15e6b8e4de861"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial synthetic count assigned to functions.  <a href="SyntheticCountsPropagation_8cpp.html#af21b4c1c6b9d9e36d8d15e6b8e4de861">More...</a><br /></td></tr>
-<tr class="separator:af21b4c1c6b9d9e36d8d15e6b8e4de861"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6c8f78d51433b3edc29946ddaad4d82"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SyntheticCountsPropagation_8cpp.html#ac6c8f78d51433b3edc29946ddaad4d82">InlineSyntheticCount</a> (&quot;inline-synthetic-count&quot;, cl::Hidden, cl::init(15), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Initial synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> functions.&quot;))</td></tr>
-<tr class="memdesc:ac6c8f78d51433b3edc29946ddaad4d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial synthetic count assigned to inline functions.  <a href="SyntheticCountsPropagation_8cpp.html#ac6c8f78d51433b3edc29946ddaad4d82">More...</a><br /></td></tr>
-<tr class="separator:ac6c8f78d51433b3edc29946ddaad4d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0708e067e1d0964fd3147caa11547e75"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SyntheticCountsPropagation_8cpp.html#a0708e067e1d0964fd3147caa11547e75">ColdSyntheticCount</a> (&quot;cold-synthetic-count&quot;, cl::Hidden, cl::init(5), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Initial synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> cold functions.&quot;))</td></tr>
-<tr class="memdesc:a0708e067e1d0964fd3147caa11547e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial synthetic count assigned to cold functions.  <a href="SyntheticCountsPropagation_8cpp.html#a0708e067e1d0964fd3147caa11547e75">More...</a><br /></td></tr>
-<tr class="separator:a0708e067e1d0964fd3147caa11547e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad78e062f62e0d6e453941fb4ca843e4d" name="ad78e062f62e0d6e453941fb4ca843e4d"></a>
@@ -134,7 +147,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="Function_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> =  <a class="el" href="classllvm_1_1Function_1_1ProfileCount.html">Function::ProfileCount</a></td>
+          <td class="memname">using <a class="el" href="Function_8cpp.html#ac57dae906fe8ac64efe52571121b0fe1">ProfileCount</a> =  Function::ProfileCount</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -150,7 +163,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="SyntheticCountsPropagation_8cpp.html#a49c1e422196c0091065074ac15fb6ba3">Scaled64</a> =  <a class="el" href="classllvm_1_1ScaledNumber.html">ScaledNumber</a>&lt;uint64_t&gt;</td>
+          <td class="memname">using <a class="el" href="SyntheticCountsPropagation_8cpp.html#a49c1e422196c0091065074ac15fb6ba3">Scaled64</a> =  ScaledNumber&lt;uint64_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -160,8 +173,8 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a97a76ca7dbed52ee821c134b667e30ff" name="a97a76ca7dbed52ee821c134b667e30ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97a76ca7dbed52ee821c134b667e30ff">&#9670;&nbsp;</a></span>initializeCounts()</h2>
+<a id="a4a2fce630d7880983a14a048f573511d" name="a4a2fce630d7880983a14a048f573511d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a2fce630d7880983a14a048f573511d">&#9670;&nbsp;</a></span>ColdSyntheticCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,48 +183,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void initializeCounts </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> &amp;&#160;</td>
-          <td class="paramname"><em>M</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1function__ref.html">function_ref</a>&lt; void(<a class="el" href="classllvm_1_1Function.html">Function</a> *, uint64_t)&gt;&#160;</td>
-          <td class="paramname"><em>SetCount</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="SyntheticCountsPropagation_8cpp_source.html#l00066">66</a> of file <a class="el" href="SyntheticCountsPropagation_8cpp_source.html">SyntheticCountsPropagation.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="CallingConv_8h_source.html#l00048">llvm::CallingConv::Cold</a>, <a class="el" href="SyntheticCountsPropagation_8cpp.html#a0708e067e1d0964fd3147caa11547e75">ColdSyntheticCount</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="SyntheticCountsPropagation_8cpp.html#af21b4c1c6b9d9e36d8d15e6b8e4de861">InitialSyntheticCount</a>, <a class="el" href="SyntheticCountsPropagation_8cpp.html#ac6c8f78d51433b3edc29946ddaad4d82">InlineSyntheticCount</a>, and <a class="el" href="ModuleSummaryIndex_8h_source.html#l00549">llvm::FunctionSummary::FFlags::NoInline</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a0708e067e1d0964fd3147caa11547e75" name="a0708e067e1d0964fd3147caa11547e75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0708e067e1d0964fd3147caa11547e75">&#9670;&nbsp;</a></span>ColdSyntheticCount</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; ColdSyntheticCount(&quot;cold-synthetic-count&quot;, cl::Hidden, cl::init(5), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Initial synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> cold functions.&quot;)) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; ColdSyntheticCount </td>
           <td>(</td>
           <td class="paramtype">&quot;cold-synthetic-count&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -237,7 +209,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Initial synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> cold functions.&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;Initial synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count for cold functions.&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -259,14 +231,54 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="af21b4c1c6b9d9e36d8d15e6b8e4de861" name="af21b4c1c6b9d9e36d8d15e6b8e4de861"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af21b4c1c6b9d9e36d8d15e6b8e4de861">&#9670;&nbsp;</a></span>InitialSyntheticCount</h2>
+<a id="a97a76ca7dbed52ee821c134b667e30ff" name="a97a76ca7dbed52ee821c134b667e30ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97a76ca7dbed52ee821c134b667e30ff">&#9670;&nbsp;</a></span>initializeCounts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void initializeCounts </td>
+          <td>(</td>
+          <td class="paramtype">Module &amp;&#160;</td>
+          <td class="paramname"><em>M</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">function_ref&lt; void(Function *, uint64_t)&gt;&#160;</td>
+          <td class="paramname"><em>SetCount</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SyntheticCountsPropagation_8cpp_source.html#l00066">66</a> of file <a class="el" href="SyntheticCountsPropagation_8cpp_source.html">SyntheticCountsPropagation.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="SyntheticCountsPropagation_8cpp.html#a4a2fce630d7880983a14a048f573511d">ColdSyntheticCount()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="SummaryBasedOptimizations_8cpp.html#abda6b54f5b080040b396e2d4db8e70ea">InitialSyntheticCount</a>, and <a class="el" href="SyntheticCountsPropagation_8cpp.html#ab3e3f5fd16066a5f6e754e97e2dd5435">InlineSyntheticCount()</a>.</p>
+
+</div>
+</div>
+<a id="a006b9446dc1217a744e8b9125c54f3de" name="a006b9446dc1217a744e8b9125c54f3de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a006b9446dc1217a744e8b9125c54f3de">&#9670;&nbsp;</a></span>InitialSyntheticCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; InitialSyntheticCount(&quot;initial-synthetic-count&quot;, cl::Hidden, cl::init(10), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Initial value of synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count.&quot;)) </td>
+          <td class="memname"><a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; InitialSyntheticCount </td>
           <td>(</td>
           <td class="paramtype">&quot;initial-synthetic-count&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -292,7 +304,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Initial value of synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count.&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;Initial value of synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count.&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -305,12 +317,10 @@ Variables</h2></td></tr>
 
 <p>Initial synthetic count assigned to functions. </p>
 
-<p class="reference">Referenced by <a class="el" href="SyntheticCountsPropagation_8cpp_source.html#l00066">initializeCounts()</a>.</p>
-
 </div>
 </div>
-<a id="ac6c8f78d51433b3edc29946ddaad4d82" name="ac6c8f78d51433b3edc29946ddaad4d82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6c8f78d51433b3edc29946ddaad4d82">&#9670;&nbsp;</a></span>InlineSyntheticCount</h2>
+<a id="ab3e3f5fd16066a5f6e754e97e2dd5435" name="ab3e3f5fd16066a5f6e754e97e2dd5435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e3f5fd16066a5f6e754e97e2dd5435">&#9670;&nbsp;</a></span>InlineSyntheticCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -319,7 +329,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; InlineSyntheticCount(&quot;inline-synthetic-count&quot;, cl::Hidden, cl::init(15), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Initial synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> functions.&quot;)) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; InlineSyntheticCount </td>
           <td>(</td>
           <td class="paramtype">&quot;inline-synthetic-count&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -345,7 +355,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Initial synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> functions.&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;Initial synthetic <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> count for <a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a> functions.&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -370,7 +380,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

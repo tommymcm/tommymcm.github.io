@@ -58,23 +58,32 @@ $(function() {
   <div class="headertitle"><div class="title">StackSafetyAnalysis.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="StackSafetyAnalysis_8h_source.html">llvm/Analysis/StackSafetyAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScalarEvolutionExpressions_8h_source.html">llvm/Analysis/ScalarEvolutionExpressions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstIterator_8h_source.html">llvm/IR/InstIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/StackSafetyAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScalarEvolutionExpressions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstIterator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for StackSafetyAnalysis.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="StackSafetyAnalysis_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2StackSafetyAnalysis_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2StackSafetyAnalysis_8cpp" id="alib_2Analysis_2StackSafetyAnalysis_8cpp">
+<area shape="rect" title=" " alt="" coords="523,5,701,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,197,133"/>
+<area shape="rect" title=" " alt="" coords="222,93,437,133"/>
+<area shape="rect" title=" " alt="" coords="461,101,595,126"/>
+<area shape="rect" title=" " alt="" coords="620,101,775,126"/>
+<area shape="rect" title=" " alt="" coords="799,101,959,126"/>
+<area shape="rect" title=" " alt="" coords="983,101,1190,126"/>
+</map>
 </div>
 </div>
 <p><a href="StackSafetyAnalysis_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStackSafetyInfo_1_1FunctionInfo.html">llvm::StackSafetyInfo::FunctionInfo</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStackSafetyInfo_1_1FunctionInfo.html">StackSafetyInfo::FunctionInfo</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes uses of allocas and parameters inside of a single function.  <a href="structStackSafetyInfo_1_1FunctionInfo.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -85,22 +94,22 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a829968fc829797e399d7bd2bc94226e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StackSafetyAnalysis_8cpp.html#a829968fc829797e399d7bd2bc94226e2">INITIALIZE_PASS_BEGIN</a> (<a class="el" href="classllvm_1_1StackSafetyInfoWrapperPass.html">StackSafetyInfoWrapperPass</a>, <a class="el" href="StackSafetyAnalysis_8cpp.html#a88ede7a1553571c36da6f5684f41eb60">LocalPassArg</a>, <a class="el" href="StackSafetyAnalysis_8cpp.html#aa023fa1e4be73a57ff270636ab314e7a">LocalPassName</a>, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(<a class="el" href="classllvm_1_1StackSafetyInfoWrapperPass.html">StackSafetyInfoWrapperPass</a></td></tr>
+<tr class="memitem:ad6982885feb8290f3b918db040180443"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StackSafetyAnalysis_8cpp.html#ad6982885feb8290f3b918db040180443">StackSafetyMaxIterations</a> (&quot;stack-safety-max-iterations&quot;, cl::init(20), cl::Hidden)</td></tr>
+<tr class="separator:ad6982885feb8290f3b918db040180443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a829968fc829797e399d7bd2bc94226e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StackSafetyAnalysis_8cpp.html#a829968fc829797e399d7bd2bc94226e2">INITIALIZE_PASS_BEGIN</a> (StackSafetyInfoWrapperPass, <a class="el" href="StackSafetyAnalysis_8cpp.html#a88ede7a1553571c36da6f5684f41eb60">LocalPassArg</a>, <a class="el" href="StackSafetyAnalysis_8cpp.html#aa023fa1e4be73a57ff270636ab314e7a">LocalPassName</a>, false, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) INITIALIZE_PASS_END(StackSafetyInfoWrapperPass</td></tr>
 <tr class="separator:a829968fc829797e399d7bd2bc94226e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5b9ff2fc8a1e7a27e47165925b010bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StackSafetyAnalysis_8cpp.html#ad5b9ff2fc8a1e7a27e47165925b010bc">INITIALIZE_PASS_BEGIN</a> (<a class="el" href="classllvm_1_1StackSafetyGlobalInfoWrapperPass.html">StackSafetyGlobalInfoWrapperPass</a>, <a class="el" href="BlockFrequencyInfoImpl_8h.html#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG_TYPE</a>, <a class="el" href="StackSafetyAnalysis_8cpp.html#aac0791b61fce569b6da3b77db9f11e07">GlobalPassName</a>, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(<a class="el" href="classllvm_1_1StackSafetyGlobalInfoWrapperPass.html">StackSafetyGlobalInfoWrapperPass</a></td></tr>
+<tr class="memitem:ad5b9ff2fc8a1e7a27e47165925b010bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StackSafetyAnalysis_8cpp.html#ad5b9ff2fc8a1e7a27e47165925b010bc">INITIALIZE_PASS_BEGIN</a> (StackSafetyGlobalInfoWrapperPass, <a class="el" href="BasicAliasAnalysis_8cpp.html#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG_TYPE</a>, <a class="el" href="StackSafetyAnalysis_8cpp.html#aac0791b61fce569b6da3b77db9f11e07">GlobalPassName</a>, false, false) INITIALIZE_PASS_END(StackSafetyGlobalInfoWrapperPass</td></tr>
 <tr class="separator:ad5b9ff2fc8a1e7a27e47165925b010bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ab071971eaa93ac555e9141aa72a2427c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StackSafetyAnalysis_8cpp.html#ab071971eaa93ac555e9141aa72a2427c">StackSafetyMaxIterations</a> (&quot;stack-safety-max-iterations&quot;, cl::init(20), cl::Hidden)</td></tr>
-<tr class="separator:ab071971eaa93ac555e9141aa72a2427c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88ede7a1553571c36da6f5684f41eb60"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StackSafetyAnalysis_8cpp.html#a88ede7a1553571c36da6f5684f41eb60">LocalPassArg</a> [] = &quot;stack-safety-local&quot;</td></tr>
+<tr class="memitem:a88ede7a1553571c36da6f5684f41eb60"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StackSafetyAnalysis_8cpp.html#a88ede7a1553571c36da6f5684f41eb60">LocalPassArg</a> [] = &quot;stack-safety-local&quot;</td></tr>
 <tr class="separator:a88ede7a1553571c36da6f5684f41eb60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa023fa1e4be73a57ff270636ab314e7a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StackSafetyAnalysis_8cpp.html#aa023fa1e4be73a57ff270636ab314e7a">LocalPassName</a> [] = &quot;Stack Safety Local Analysis&quot;</td></tr>
+<tr class="memitem:aa023fa1e4be73a57ff270636ab314e7a"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StackSafetyAnalysis_8cpp.html#aa023fa1e4be73a57ff270636ab314e7a">LocalPassName</a> [] = &quot;Stack Safety Local Analysis&quot;</td></tr>
 <tr class="separator:aa023fa1e4be73a57ff270636ab314e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6c865df784842196d411c1466b01686"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StackSafetyAnalysis_8cpp.html#ae6c865df784842196d411c1466b01686">false</a></td></tr>
 <tr class="separator:ae6c865df784842196d411c1466b01686"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac0791b61fce569b6da3b77db9f11e07"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a> <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StackSafetyAnalysis_8cpp.html#aac0791b61fce569b6da3b77db9f11e07">GlobalPassName</a> [] = &quot;Stack Safety Analysis&quot;</td></tr>
+<tr class="memitem:aac0791b61fce569b6da3b77db9f11e07"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a> const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StackSafetyAnalysis_8cpp.html#aac0791b61fce569b6da3b77db9f11e07">GlobalPassName</a> [] = &quot;Stack Safety Analysis&quot;</td></tr>
 <tr class="separator:aac0791b61fce569b6da3b77db9f11e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a030569d5a541b6110f2ae1b6a3413a58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StackSafetyAnalysis_8cpp.html#a030569d5a541b6110f2ae1b6a3413a58">DEBUG_TYPE</a></td></tr>
 <tr class="separator:a030569d5a541b6110f2ae1b6a3413a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,13 +141,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">INITIALIZE_PASS_BEGIN </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StackSafetyGlobalInfoWrapperPass.html">StackSafetyGlobalInfoWrapperPass</a>&#160;</td>
+          <td class="paramtype">StackSafetyGlobalInfoWrapperPass&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="BlockFrequencyInfoImpl_8h.html#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG_TYPE</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="BasicAliasAnalysis_8cpp.html#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG_TYPE</a>&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -178,7 +187,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">INITIALIZE_PASS_BEGIN </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StackSafetyInfoWrapperPass.html">StackSafetyInfoWrapperPass</a>&#160;</td>
+          <td class="paramtype">StackSafetyInfoWrapperPass&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -211,6 +220,48 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad6982885feb8290f3b918db040180443" name="ad6982885feb8290f3b918db040180443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6982885feb8290f3b918db040180443">&#9670;&nbsp;</a></span>StackSafetyMaxIterations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; StackSafetyMaxIterations </td>
+          <td>(</td>
+          <td class="paramtype">&quot;stack-safety-max-iterations&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(20)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -320,52 +371,10 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab071971eaa93ac555e9141aa72a2427c" name="ab071971eaa93ac555e9141aa72a2427c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab071971eaa93ac555e9141aa72a2427c">&#9670;&nbsp;</a></span>StackSafetyMaxIterations</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; StackSafetyMaxIterations(&quot;stack-safety-max-iterations&quot;, cl::init(20), cl::Hidden) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;stack-safety-max-iterations&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(20)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:12 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

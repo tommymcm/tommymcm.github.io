@@ -58,49 +58,49 @@ $(function() {
   <div class="headertitle"><div class="title">DeadStoreElimination.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="DeadStoreElimination_8h_source.html">llvm/Transforms/Scalar/DeadStoreElimination.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="APInt_8h_source.html">llvm/ADT/APInt.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseMap_8h_source.html">llvm/ADT/DenseMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SetVector_8h_source.html">llvm/ADT/SetVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallPtrSet_8h_source.html">llvm/ADT/SmallPtrSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringRef_8h_source.html">llvm/ADT/StringRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AliasAnalysis_8h_source.html">llvm/Analysis/AliasAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CaptureTracking_8h_source.html">llvm/Analysis/CaptureTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalsModRef_8h_source.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MemoryBuiltins_8h_source.html">llvm/Analysis/MemoryBuiltins.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MemoryDependenceAnalysis_8h_source.html">llvm/Analysis/MemoryDependenceAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MemoryLocation_8h_source.html">llvm/Analysis/MemoryLocation.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="OrderedBasicBlock_8h_source.html">llvm/Analysis/OrderedBasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Argument_8h_source.html">llvm/IR/Argument.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallSite_8h_source.html">llvm/IR/CallSite.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constant_8h_source.html">llvm/IR/Constant.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2Instruction_8h_source.html">llvm/IR/Instruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Value_8h_source.html">llvm/IR/Value.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Casting_8h_source.html">llvm/Support/Casting.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html">llvm/Support/ErrorHandling.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MathExtras_8h_source.html">llvm/Support/MathExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/DeadStoreElimination.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/APInt.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SetVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringRef.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AliasAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CaptureTracking.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/MemoryBuiltins.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/MemoryDependenceAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/MemoryLocation.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/OrderedBasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Argument.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/CallSite.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constant.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instruction.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Value.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Casting.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ErrorHandling.h&quot;</code><br />
+<code>#include &quot;llvm/Support/MathExtras.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
@@ -120,91 +120,91 @@ Macros</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:a3600ad65816babbe5ecb3b9d82997374"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a3600ad65816babbe5ecb3b9d82997374">OverlapIntervalsTy</a> = std::map&lt; int64_t, int64_t &gt;</td></tr>
 <tr class="separator:a3600ad65816babbe5ecb3b9d82997374"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e1af7835f27dc4a15c94320884797e9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> = <a class="el" href="classllvm_1_1DenseMap.html">DenseMap</a>&lt; <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, <a class="el" href="DeadStoreElimination_8cpp.html#a3600ad65816babbe5ecb3b9d82997374">OverlapIntervalsTy</a> &gt;</td></tr>
+<tr class="memitem:a7e1af7835f27dc4a15c94320884797e9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> = DenseMap&lt; Instruction *, <a class="el" href="DeadStoreElimination_8cpp.html#a3600ad65816babbe5ecb3b9d82997374">OverlapIntervalsTy</a> &gt;</td></tr>
 <tr class="separator:a7e1af7835f27dc4a15c94320884797e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af6938dfa1f7bd25cd1b5fb1f95632514"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#af6938dfa1f7bd25cd1b5fb1f95632514">STATISTIC</a> (NumRedundantStores, &quot;Number of redundant <a class="el" href="HexagonStoreWidening_8cpp.html#a7d2c711a42f51c1f7b3ce3f8f560fa74">stores</a> deleted&quot;)</td></tr>
+<tr class="memitem:af6938dfa1f7bd25cd1b5fb1f95632514"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#af6938dfa1f7bd25cd1b5fb1f95632514">STATISTIC</a> (NumRedundantStores, &quot;Number of redundant stores deleted&quot;)</td></tr>
 <tr class="separator:af6938dfa1f7bd25cd1b5fb1f95632514"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39c3840d71c11a4f89792d20f87514e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a39c3840d71c11a4f89792d20f87514e9">STATISTIC</a> (NumFastStores, &quot;Number of <a class="el" href="HexagonStoreWidening_8cpp.html#a7d2c711a42f51c1f7b3ce3f8f560fa74">stores</a> deleted&quot;)</td></tr>
+<tr class="memitem:a39c3840d71c11a4f89792d20f87514e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a39c3840d71c11a4f89792d20f87514e9">STATISTIC</a> (NumFastStores, &quot;Number of stores deleted&quot;)</td></tr>
 <tr class="separator:a39c3840d71c11a4f89792d20f87514e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea45b4441d897ae45e897fc57d0e8359"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#aea45b4441d897ae45e897fc57d0e8359">STATISTIC</a> (NumFastOther, &quot;Number of other instrs removed&quot;)</td></tr>
 <tr class="separator:aea45b4441d897ae45e897fc57d0e8359"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e199cd7aefc1384d87fd0f32553c6ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a5e199cd7aefc1384d87fd0f32553c6ff">STATISTIC</a> (NumCompletePartials, &quot;Number of <a class="el" href="HexagonStoreWidening_8cpp.html#a7d2c711a42f51c1f7b3ce3f8f560fa74">stores</a> dead by later partials&quot;)</td></tr>
+<tr class="memitem:a5e199cd7aefc1384d87fd0f32553c6ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a5e199cd7aefc1384d87fd0f32553c6ff">STATISTIC</a> (NumCompletePartials, &quot;Number of stores dead by later partials&quot;)</td></tr>
 <tr class="separator:a5e199cd7aefc1384d87fd0f32553c6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf5e0c0212c8fef88282b065e9f3e4f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#abf5e0c0212c8fef88282b065e9f3e4f8">STATISTIC</a> (NumModifiedStores, &quot;Number of <a class="el" href="HexagonStoreWidening_8cpp.html#a7d2c711a42f51c1f7b3ce3f8f560fa74">stores</a> modified&quot;)</td></tr>
+<tr class="memitem:abf5e0c0212c8fef88282b065e9f3e4f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#abf5e0c0212c8fef88282b065e9f3e4f8">STATISTIC</a> (NumModifiedStores, &quot;Number of stores modified&quot;)</td></tr>
 <tr class="separator:abf5e0c0212c8fef88282b065e9f3e4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a402237a3e08be45537c9c53f4a240b80"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a402237a3e08be45537c9c53f4a240b80">deleteDeadInstruction</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="classllvm_1_1BasicBlock.html#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> *BBI, <a class="el" href="classllvm_1_1MemoryDependenceResults.html">MemoryDependenceResults</a> &amp;MD, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI, <a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> &amp;IOL, <a class="el" href="classllvm_1_1OrderedBasicBlock.html">OrderedBasicBlock</a> &amp;OBB, <a class="el" href="classllvm_1_1SmallSetVector.html">SmallSetVector</a>&lt; <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *, 16 &gt; *ValueSet=nullptr)</td></tr>
+<tr class="memitem:a39cf19d7de0655cda4d83e4f06ab5c08"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a39cf19d7de0655cda4d83e4f06ab5c08">EnablePartialOverwriteTracking</a> (&quot;enable-<a class="el" href="DeadStoreElimination_8cpp.html#a484eb01f288c94b669164f297b65e12e">dse</a>-partial-overwrite-tracking&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, cl::desc(&quot;Enable partial-overwrite tracking in DSE&quot;))</td></tr>
+<tr class="separator:a39cf19d7de0655cda4d83e4f06ab5c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5641021cfebf72c80ae3788bb469b13b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a5641021cfebf72c80ae3788bb469b13b">EnablePartialStoreMerging</a> (&quot;enable-<a class="el" href="DeadStoreElimination_8cpp.html#a484eb01f288c94b669164f297b65e12e">dse</a>-partial-store-merging&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, cl::desc(&quot;Enable partial store merging in DSE&quot;))</td></tr>
+<tr class="separator:a5641021cfebf72c80ae3788bb469b13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a402237a3e08be45537c9c53f4a240b80"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a402237a3e08be45537c9c53f4a240b80">deleteDeadInstruction</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, BasicBlock::iterator *BBI, MemoryDependenceResults &amp;MD, const TargetLibraryInfo &amp;TLI, <a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> &amp;IOL, OrderedBasicBlock &amp;OBB, SmallSetVector&lt; const Value *, 16 &gt; *ValueSet=nullptr)</td></tr>
 <tr class="memdesc:a402237a3e08be45537c9c53f4a240b80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete this instruction.  <a href="DeadStoreElimination_8cpp.html#a402237a3e08be45537c9c53f4a240b80">More...</a><br /></td></tr>
 <tr class="separator:a402237a3e08be45537c9c53f4a240b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83b72a8835b06a4f34d712bc2c1e3dc2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a83b72a8835b06a4f34d712bc2c1e3dc2">hasAnalyzableMemoryWrite</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI)</td></tr>
+<tr class="memitem:a83b72a8835b06a4f34d712bc2c1e3dc2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a83b72a8835b06a4f34d712bc2c1e3dc2">hasAnalyzableMemoryWrite</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>, const TargetLibraryInfo &amp;TLI)</td></tr>
 <tr class="memdesc:a83b72a8835b06a4f34d712bc2c1e3dc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does this instruction write some memory? This only returns true for things that we can analyze with other helpers below.  <a href="DeadStoreElimination_8cpp.html#a83b72a8835b06a4f34d712bc2c1e3dc2">More...</a><br /></td></tr>
 <tr class="separator:a83b72a8835b06a4f34d712bc2c1e3dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7df518d94242b45a4206cb7770d9ba5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#ad7df518d94242b45a4206cb7770d9ba5">getLocForWrite</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Inst)</td></tr>
+<tr class="memitem:ad7df518d94242b45a4206cb7770d9ba5"><td class="memItemLeft" align="right" valign="top">static MemoryLocation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#ad7df518d94242b45a4206cb7770d9ba5">getLocForWrite</a> (Instruction *Inst)</td></tr>
 <tr class="memdesc:ad7df518d94242b45a4206cb7770d9ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a Location stored to by the specified instruction.  <a href="DeadStoreElimination_8cpp.html#ad7df518d94242b45a4206cb7770d9ba5">More...</a><br /></td></tr>
 <tr class="separator:ad7df518d94242b45a4206cb7770d9ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86af590fb2832a682e357f0d3f7046fe"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a86af590fb2832a682e357f0d3f7046fe">getLocForRead</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Inst, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI)</td></tr>
+<tr class="memitem:a86af590fb2832a682e357f0d3f7046fe"><td class="memItemLeft" align="right" valign="top">static MemoryLocation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a86af590fb2832a682e357f0d3f7046fe">getLocForRead</a> (Instruction *Inst, const TargetLibraryInfo &amp;TLI)</td></tr>
 <tr class="memdesc:a86af590fb2832a682e357f0d3f7046fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the location read by the specified "hasAnalyzableMemoryWrite" instruction if any.  <a href="DeadStoreElimination_8cpp.html#a86af590fb2832a682e357f0d3f7046fe">More...</a><br /></td></tr>
 <tr class="separator:a86af590fb2832a682e357f0d3f7046fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a586c20ef578b9c947aaf22cf220f98da"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a586c20ef578b9c947aaf22cf220f98da">isRemovable</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:a586c20ef578b9c947aaf22cf220f98da"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a586c20ef578b9c947aaf22cf220f98da">isRemovable</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="memdesc:a586c20ef578b9c947aaf22cf220f98da"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the value of this instruction and the memory it writes to is unused, may we delete this instruction?  <a href="DeadStoreElimination_8cpp.html#a586c20ef578b9c947aaf22cf220f98da">More...</a><br /></td></tr>
 <tr class="separator:a586c20ef578b9c947aaf22cf220f98da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22ea60ab91b41bc2071c4074382e3051"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a22ea60ab91b41bc2071c4074382e3051">isShortenableAtTheEnd</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:a22ea60ab91b41bc2071c4074382e3051"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a22ea60ab91b41bc2071c4074382e3051">isShortenableAtTheEnd</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="memdesc:a22ea60ab91b41bc2071c4074382e3051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the end of this instruction can be safely shortened in length.  <a href="DeadStoreElimination_8cpp.html#a22ea60ab91b41bc2071c4074382e3051">More...</a><br /></td></tr>
 <tr class="separator:a22ea60ab91b41bc2071c4074382e3051"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a471b94aa7b3f758cd9d2e33ecd0520f4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a471b94aa7b3f758cd9d2e33ecd0520f4">isShortenableAtTheBeginning</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:a471b94aa7b3f758cd9d2e33ecd0520f4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a471b94aa7b3f758cd9d2e33ecd0520f4">isShortenableAtTheBeginning</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="memdesc:a471b94aa7b3f758cd9d2e33ecd0520f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the beginning of this instruction can be safely shortened in length.  <a href="DeadStoreElimination_8cpp.html#a471b94aa7b3f758cd9d2e33ecd0520f4">More...</a><br /></td></tr>
 <tr class="separator:a471b94aa7b3f758cd9d2e33ecd0520f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2436470f033e40a16a3b4274a8e8563f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a2436470f033e40a16a3b4274a8e8563f">getStoredPointerOperand</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
+<tr class="memitem:a2436470f033e40a16a3b4274a8e8563f"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a2436470f033e40a16a3b4274a8e8563f">getStoredPointerOperand</a> (Instruction *<a class="el" href="MD5_8cpp.html#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</td></tr>
 <tr class="memdesc:a2436470f033e40a16a3b4274a8e8563f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the pointer that is being written to.  <a href="DeadStoreElimination_8cpp.html#a2436470f033e40a16a3b4274a8e8563f">More...</a><br /></td></tr>
 <tr class="separator:a2436470f033e40a16a3b4274a8e8563f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d600c27cf21c25d25048d9a2d6b888e"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a6d600c27cf21c25d25048d9a2d6b888e">getPointerSize</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a6d600c27cf21c25d25048d9a2d6b888e"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a6d600c27cf21c25d25048d9a2d6b888e">getPointerSize</a> (const Value *V, const DataLayout &amp;DL, const TargetLibraryInfo &amp;TLI, const Function *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a6d600c27cf21c25d25048d9a2d6b888e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b3c5ab92b2ccdf53baa5899f0018d6c"><td class="memItemLeft" align="right" valign="top">static OverwriteResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a9b3c5ab92b2ccdf53baa5899f0018d6c">isOverwrite</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> &amp;Later, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> &amp;Earlier, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI, int64_t &amp;EarlierOff, int64_t &amp;LaterOff, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *DepWrite, <a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> &amp;IOL, <a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> &amp;AA, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a9b3c5ab92b2ccdf53baa5899f0018d6c"><td class="memItemLeft" align="right" valign="top">static OverwriteResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a9b3c5ab92b2ccdf53baa5899f0018d6c">isOverwrite</a> (const MemoryLocation &amp;Later, const MemoryLocation &amp;Earlier, const DataLayout &amp;DL, const TargetLibraryInfo &amp;TLI, int64_t &amp;EarlierOff, int64_t &amp;LaterOff, Instruction *DepWrite, <a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> &amp;IOL, AliasAnalysis &amp;AA, const Function *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="memdesc:a9b3c5ab92b2ccdf53baa5899f0018d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return 'OW_Complete' if a store to the 'Later' location completely overwrites a store to the 'Earlier' location, 'OW_End' if the end of the 'Earlier' location is completely overwritten by 'Later', 'OW_Begin' if the beginning of the 'Earlier' location is overwritten by 'Later'.  <a href="DeadStoreElimination_8cpp.html#a9b3c5ab92b2ccdf53baa5899f0018d6c">More...</a><br /></td></tr>
 <tr class="separator:a9b3c5ab92b2ccdf53baa5899f0018d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a670324e9ded5d92805ddae2d6f3b9cf0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a670324e9ded5d92805ddae2d6f3b9cf0">isPossibleSelfRead</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Inst, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> &amp;InstStoreLoc, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *DepWrite, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI, <a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> &amp;AA)</td></tr>
+<tr class="memitem:a670324e9ded5d92805ddae2d6f3b9cf0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a670324e9ded5d92805ddae2d6f3b9cf0">isPossibleSelfRead</a> (Instruction *Inst, const MemoryLocation &amp;InstStoreLoc, Instruction *DepWrite, const TargetLibraryInfo &amp;TLI, AliasAnalysis &amp;AA)</td></tr>
 <tr class="memdesc:a670324e9ded5d92805ddae2d6f3b9cf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">If 'Inst' might be a self read (i.e.  <a href="DeadStoreElimination_8cpp.html#a670324e9ded5d92805ddae2d6f3b9cf0">More...</a><br /></td></tr>
 <tr class="separator:a670324e9ded5d92805ddae2d6f3b9cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71bb527222efaf644e263b62591cff9d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a71bb527222efaf644e263b62591cff9d">memoryIsNotModifiedBetween</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *FirstI, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *SecondI, <a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *AA)</td></tr>
+<tr class="memitem:a71bb527222efaf644e263b62591cff9d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a71bb527222efaf644e263b62591cff9d">memoryIsNotModifiedBetween</a> (Instruction *FirstI, Instruction *SecondI, AliasAnalysis *AA)</td></tr>
 <tr class="memdesc:a71bb527222efaf644e263b62591cff9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the memory which is accessed by the second instruction is not modified between the first and the second instruction.  <a href="DeadStoreElimination_8cpp.html#a71bb527222efaf644e263b62591cff9d">More...</a><br /></td></tr>
 <tr class="separator:a71bb527222efaf644e263b62591cff9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40a7ee6cdeb5da6b18f4696eb4a06a14"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a40a7ee6cdeb5da6b18f4696eb4a06a14">findUnconditionalPreds</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;Blocks, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *BB, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT)</td></tr>
+<tr class="memitem:a40a7ee6cdeb5da6b18f4696eb4a06a14"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a40a7ee6cdeb5da6b18f4696eb4a06a14">findUnconditionalPreds</a> (<a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; BasicBlock * &gt; &amp;Blocks, BasicBlock *BB, DominatorTree *DT)</td></tr>
 <tr class="memdesc:a40a7ee6cdeb5da6b18f4696eb4a06a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find all blocks that will unconditionally lead to the block BB and append them to F.  <a href="DeadStoreElimination_8cpp.html#a40a7ee6cdeb5da6b18f4696eb4a06a14">More...</a><br /></td></tr>
 <tr class="separator:a40a7ee6cdeb5da6b18f4696eb4a06a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34dd3657190e6a373b44ceed56efaa18"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a34dd3657190e6a373b44ceed56efaa18">handleFree</a> (<a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *AA, <a class="el" href="classllvm_1_1MemoryDependenceResults.html">MemoryDependenceResults</a> *MD, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *TLI, <a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> &amp;IOL, <a class="el" href="classllvm_1_1OrderedBasicBlock.html">OrderedBasicBlock</a> &amp;OBB)</td></tr>
+<tr class="memitem:a34dd3657190e6a373b44ceed56efaa18"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a34dd3657190e6a373b44ceed56efaa18">handleFree</a> (CallInst *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, AliasAnalysis *AA, MemoryDependenceResults *MD, DominatorTree *DT, const TargetLibraryInfo *TLI, <a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> &amp;IOL, OrderedBasicBlock &amp;OBB)</td></tr>
 <tr class="memdesc:a34dd3657190e6a373b44ceed56efaa18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle frees of entire structures whose dependency is a store to a field of that structure.  <a href="DeadStoreElimination_8cpp.html#a34dd3657190e6a373b44ceed56efaa18">More...</a><br /></td></tr>
 <tr class="separator:a34dd3657190e6a373b44ceed56efaa18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47a69bef6fb92311b789154729cfeff4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a47a69bef6fb92311b789154729cfeff4">removeAccessedObjects</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> &amp;LoadedLoc, <a class="el" href="classllvm_1_1SmallSetVector.html">SmallSetVector</a>&lt; <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *, 16 &gt; &amp;DeadStackObjects, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL, <a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *AA, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *TLI, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a47a69bef6fb92311b789154729cfeff4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a47a69bef6fb92311b789154729cfeff4">removeAccessedObjects</a> (const MemoryLocation &amp;LoadedLoc, SmallSetVector&lt; const Value *, 16 &gt; &amp;DeadStackObjects, const DataLayout &amp;DL, AliasAnalysis *AA, const TargetLibraryInfo *TLI, const Function *<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="memdesc:a47a69bef6fb92311b789154729cfeff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check to see if the specified location may alias any of the stack objects in the DeadStackObjects set.  <a href="DeadStoreElimination_8cpp.html#a47a69bef6fb92311b789154729cfeff4">More...</a><br /></td></tr>
 <tr class="separator:a47a69bef6fb92311b789154729cfeff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd7813973c7ec661d882985c7ec34806"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#acd7813973c7ec661d882985c7ec34806">handleEndBlock</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> &amp;BB, <a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *AA, <a class="el" href="classllvm_1_1MemoryDependenceResults.html">MemoryDependenceResults</a> *MD, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *TLI, <a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> &amp;IOL, <a class="el" href="classllvm_1_1OrderedBasicBlock.html">OrderedBasicBlock</a> &amp;OBB)</td></tr>
+<tr class="memitem:acd7813973c7ec661d882985c7ec34806"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#acd7813973c7ec661d882985c7ec34806">handleEndBlock</a> (BasicBlock &amp;BB, AliasAnalysis *AA, MemoryDependenceResults *MD, const TargetLibraryInfo *TLI, <a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> &amp;IOL, OrderedBasicBlock &amp;OBB)</td></tr>
 <tr class="memdesc:acd7813973c7ec661d882985c7ec34806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove dead stores to stack-allocated locations in the function end block.  <a href="DeadStoreElimination_8cpp.html#acd7813973c7ec661d882985c7ec34806">More...</a><br /></td></tr>
 <tr class="separator:acd7813973c7ec661d882985c7ec34806"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a206737124f64fcac785db52bc02c80d8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a206737124f64fcac785db52bc02c80d8">tryToShorten</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *EarlierWrite, int64_t &amp;EarlierOffset, int64_t &amp;EarlierSize, int64_t LaterOffset, int64_t LaterSize, <a class="el" href="classbool.html">bool</a> IsOverwriteEnd)</td></tr>
+<tr class="memitem:a206737124f64fcac785db52bc02c80d8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a206737124f64fcac785db52bc02c80d8">tryToShorten</a> (Instruction *EarlierWrite, int64_t &amp;EarlierOffset, int64_t &amp;EarlierSize, int64_t LaterOffset, int64_t LaterSize, bool IsOverwriteEnd)</td></tr>
 <tr class="separator:a206737124f64fcac785db52bc02c80d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a167431adf68b56d90cd6fb69b67b77bf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a167431adf68b56d90cd6fb69b67b77bf">tryToShortenEnd</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *EarlierWrite, <a class="el" href="DeadStoreElimination_8cpp.html#a3600ad65816babbe5ecb3b9d82997374">OverlapIntervalsTy</a> &amp;<a class="el" href="classllvm_1_1IntervalMap.html">IntervalMap</a>, int64_t &amp;EarlierStart, int64_t &amp;EarlierSize)</td></tr>
+<tr class="memitem:a167431adf68b56d90cd6fb69b67b77bf"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a167431adf68b56d90cd6fb69b67b77bf">tryToShortenEnd</a> (Instruction *EarlierWrite, <a class="el" href="DeadStoreElimination_8cpp.html#a3600ad65816babbe5ecb3b9d82997374">OverlapIntervalsTy</a> &amp;IntervalMap, int64_t &amp;EarlierStart, int64_t &amp;EarlierSize)</td></tr>
 <tr class="separator:a167431adf68b56d90cd6fb69b67b77bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f3a846dbda3548bcf99de60bb1bc6ab"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a9f3a846dbda3548bcf99de60bb1bc6ab">tryToShortenBegin</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *EarlierWrite, <a class="el" href="DeadStoreElimination_8cpp.html#a3600ad65816babbe5ecb3b9d82997374">OverlapIntervalsTy</a> &amp;<a class="el" href="classllvm_1_1IntervalMap.html">IntervalMap</a>, int64_t &amp;EarlierStart, int64_t &amp;EarlierSize)</td></tr>
+<tr class="memitem:a9f3a846dbda3548bcf99de60bb1bc6ab"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a9f3a846dbda3548bcf99de60bb1bc6ab">tryToShortenBegin</a> (Instruction *EarlierWrite, <a class="el" href="DeadStoreElimination_8cpp.html#a3600ad65816babbe5ecb3b9d82997374">OverlapIntervalsTy</a> &amp;IntervalMap, int64_t &amp;EarlierStart, int64_t &amp;EarlierSize)</td></tr>
 <tr class="separator:a9f3a846dbda3548bcf99de60bb1bc6ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cc046d2298efd10cd454f2eb39ed058"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a3cc046d2298efd10cd454f2eb39ed058">removePartiallyOverlappedStores</a> (<a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *AA, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL, <a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> &amp;IOL)</td></tr>
+<tr class="memitem:a3cc046d2298efd10cd454f2eb39ed058"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a3cc046d2298efd10cd454f2eb39ed058">removePartiallyOverlappedStores</a> (AliasAnalysis *AA, const DataLayout &amp;DL, <a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> &amp;IOL)</td></tr>
 <tr class="separator:a3cc046d2298efd10cd454f2eb39ed058"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ab7ca31c3747ac569362b77f1fbeb71"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a9ab7ca31c3747ac569362b77f1fbeb71">eliminateNoopStore</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Inst, <a class="el" href="classllvm_1_1BasicBlock.html#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> &amp;BBI, <a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *AA, <a class="el" href="classllvm_1_1MemoryDependenceResults.html">MemoryDependenceResults</a> *MD, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *TLI, <a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> &amp;IOL, <a class="el" href="classllvm_1_1OrderedBasicBlock.html">OrderedBasicBlock</a> &amp;OBB)</td></tr>
+<tr class="memitem:a9ab7ca31c3747ac569362b77f1fbeb71"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a9ab7ca31c3747ac569362b77f1fbeb71">eliminateNoopStore</a> (Instruction *Inst, BasicBlock::iterator &amp;BBI, AliasAnalysis *AA, MemoryDependenceResults *MD, const DataLayout &amp;DL, const TargetLibraryInfo *TLI, <a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> &amp;IOL, OrderedBasicBlock &amp;OBB)</td></tr>
 <tr class="separator:a9ab7ca31c3747ac569362b77f1fbeb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fcb9cbcaf70e6ea78f49877d26de2e3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a1fcb9cbcaf70e6ea78f49877d26de2e3">eliminateDeadStores</a> (<a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> &amp;BB, <a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *AA, <a class="el" href="classllvm_1_1MemoryDependenceResults.html">MemoryDependenceResults</a> *MD, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *TLI)</td></tr>
+<tr class="memitem:a1fcb9cbcaf70e6ea78f49877d26de2e3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a1fcb9cbcaf70e6ea78f49877d26de2e3">eliminateDeadStores</a> (BasicBlock &amp;BB, AliasAnalysis *AA, MemoryDependenceResults *MD, DominatorTree *DT, const TargetLibraryInfo *TLI)</td></tr>
 <tr class="separator:a1fcb9cbcaf70e6ea78f49877d26de2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2573338450301025d3841161e9fd1da"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#af2573338450301025d3841161e9fd1da">eliminateDeadStores</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *AA, <a class="el" href="classllvm_1_1MemoryDependenceResults.html">MemoryDependenceResults</a> *MD, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *DT, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *TLI)</td></tr>
+<tr class="memitem:af2573338450301025d3841161e9fd1da"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#af2573338450301025d3841161e9fd1da">eliminateDeadStores</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, AliasAnalysis *AA, MemoryDependenceResults *MD, DominatorTree *DT, const TargetLibraryInfo *TLI)</td></tr>
 <tr class="separator:af2573338450301025d3841161e9fd1da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac52e96172674fb064ce0a12a7e0d4936"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#ac52e96172674fb064ce0a12a7e0d4936">INITIALIZE_PASS_BEGIN</a> (DSELegacyPass, &quot;dse&quot;, &quot;Dead Store Elimination&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(DSELegacyPass</td></tr>
+<tr class="memitem:ac52e96172674fb064ce0a12a7e0d4936"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#ac52e96172674fb064ce0a12a7e0d4936">INITIALIZE_PASS_BEGIN</a> (DSELegacyPass, &quot;dse&quot;, &quot;Dead Store Elimination&quot;, false, false) INITIALIZE_PASS_END(DSELegacyPass</td></tr>
 <tr class="separator:ac52e96172674fb064ce0a12a7e0d4936"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aa416458fa5e88c85398778cb9cb0077e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#aa416458fa5e88c85398778cb9cb0077e">EnablePartialOverwriteTracking</a> (&quot;enable-<a class="el" href="DeadStoreElimination_8cpp.html#a484eb01f288c94b669164f297b65e12e">dse</a>-partial-overwrite-tracking&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable partial-overwrite tracking in DSE&quot;))</td></tr>
-<tr class="separator:aa416458fa5e88c85398778cb9cb0077e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30df40b902c979f5cf5e4a1576fdd0bf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a30df40b902c979f5cf5e4a1576fdd0bf">EnablePartialStoreMerging</a> (&quot;enable-<a class="el" href="DeadStoreElimination_8cpp.html#a484eb01f288c94b669164f297b65e12e">dse</a>-partial-store-merging&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable partial store merging in DSE&quot;))</td></tr>
-<tr class="separator:a30df40b902c979f5cf5e4a1576fdd0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a484eb01f288c94b669164f297b65e12e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a484eb01f288c94b669164f297b65e12e">dse</a></td></tr>
 <tr class="separator:a484eb01f288c94b669164f297b65e12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c5b9f42dd28963a8dde0514c41ea25e"><td class="memItemLeft" align="right" valign="top">Dead Store&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DeadStoreElimination_8cpp.html#a0c5b9f42dd28963a8dde0514c41ea25e">Elimination</a></td></tr>
@@ -237,7 +237,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> =  <a class="el" href="classllvm_1_1DenseMap.html">DenseMap</a>&lt;<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *, <a class="el" href="DeadStoreElimination_8cpp.html#a3600ad65816babbe5ecb3b9d82997374">OverlapIntervalsTy</a>&gt;</td>
+          <td class="memname">using <a class="el" href="DeadStoreElimination_8cpp.html#a7e1af7835f27dc4a15c94320884797e9">InstOverlapIntervalsTy</a> =  DenseMap&lt;Instruction *, <a class="el" href="DeadStoreElimination_8cpp.html#a3600ad65816babbe5ecb3b9d82997374">OverlapIntervalsTy</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -275,25 +275,25 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void deleteDeadInstruction </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> *&#160;</td>
+          <td class="paramtype">BasicBlock::iterator *&#160;</td>
           <td class="paramname"><em>BBI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1MemoryDependenceResults.html">MemoryDependenceResults</a> &amp;&#160;</td>
+          <td class="paramtype">MemoryDependenceResults &amp;&#160;</td>
           <td class="paramname"><em>MD</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
@@ -305,13 +305,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1OrderedBasicBlock.html">OrderedBasicBlock</a> &amp;&#160;</td>
+          <td class="paramtype">OrderedBasicBlock &amp;&#160;</td>
           <td class="paramname"><em>OBB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallSetVector.html">SmallSetVector</a>&lt; <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *, 16 &gt; *&#160;</td>
+          <td class="paramtype">SmallSetVector&lt; const Value *, 16 &gt; *&#160;</td>
           <td class="paramname"><em>ValueSet</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -332,7 +332,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00099">99</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SmallVector_8h_source.html#l00055">llvm::SmallVectorBase::empty()</a>, <a class="el" href="DenseMap_8h_source.html#l00298">llvm::DenseMapBase&lt; DerivedT, KeyT, ValueT, KeyInfoT, BucketT &gt;::erase()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00067">llvm::Instruction::eraseFromParent()</a>, <a class="el" href="OrderedBasicBlock_8cpp_source.html#l00089">llvm::OrderedBasicBlock::eraseInstruction()</a>, <a class="el" href="ilist__node_8h_source.html#l00081">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator()</a>, <a class="el" href="User_8h_source.html#l00191">llvm::User::getNumOperands()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Local_8cpp_source.html#l00353">llvm::isInstructionTriviallyDead()</a>, <a class="el" href="HexagonBitTracker_8cpp.html#a0ee73ba17c3a2cb54752905e99d77357">op</a>, <a class="el" href="SmallVector_8h_source.html#l00374">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val()</a>, <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>, <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l01541">llvm::MemoryDependenceResults::removeInstruction()</a>, <a class="el" href="Local_8cpp_source.html#l01624">llvm::salvageDebugInfo()</a>, and <a class="el" href="User_8h_source.html#l00174">llvm::User::setOperand()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l01026">eliminateNoopStore()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00747">handleEndBlock()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00656">handleFree()</a>.</p>
 
@@ -348,33 +348,33 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> eliminateDeadStores </td>
+          <td class="memname">static bool eliminateDeadStores </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> &amp;&#160;</td>
+          <td class="paramtype">BasicBlock &amp;&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *&#160;</td>
+          <td class="paramtype">AliasAnalysis *&#160;</td>
           <td class="paramname"><em>AA</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1MemoryDependenceResults.html">MemoryDependenceResults</a> *&#160;</td>
+          <td class="paramtype">MemoryDependenceResults *&#160;</td>
           <td class="paramname"><em>MD</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
+          <td class="paramtype">DominatorTree *&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo *&#160;</td>
           <td class="paramname"><em>TLI</em>&#160;</td>
         </tr>
         <tr>
@@ -392,9 +392,9 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">1073</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00099">deleteDeadInstruction()</a>, <a class="el" href="OrderedBasicBlock_8cpp_source.html#l00066">llvm::OrderedBasicBlock::dominates()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l01026">eliminateNoopStore()</a>, <a class="el" href="DeadStoreElimination_8cpp.html#aa416458fa5e88c85398778cb9cb0077e">EnablePartialOverwriteTracking</a>, <a class="el" href="DeadStoreElimination_8cpp.html#a30df40b902c979f5cf5e4a1576fdd0bf">EnablePartialStoreMerging</a>, <a class="el" href="BasicBlock_8h_source.html#l00270">llvm::BasicBlock::end()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="BasicBlock_8h_source.html#l00280">llvm::BasicBlock::front()</a>, <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="APInt_8h_source.html#l00606">llvm::APInt::getBitsSet()</a>, <a class="el" href="APInt_8h_source.html#l01508">llvm::APInt::getBitWidth()</a>, <a class="el" href="Module_8cpp_source.html#l00369">llvm::Module::getDataLayout()</a>, <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l01809">llvm::MemoryDependenceResults::getDefaultBlockScanLimit()</a>, <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l00714">llvm::MemoryDependenceResults::getDependency()</a>, <a class="el" href="MemoryDependenceAnalysis_8h_source.html#l00177">llvm::MemDepResult::getInst()</a>, <a class="el" href="ilist__node_8h_source.html#l00081">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00189">getLocForWrite()</a>, <a class="el" href="AliasAnalysis_8cpp_source.html#l00176">llvm::AAResults::getModRefInfo()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00133">llvm::BasicBlock::getModule()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00644">llvm::Instruction::getNumSuccessors()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l00327">llvm::MemoryDependenceResults::getPointerDependencyFrom()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l03700">llvm::GetUnderlyingObject()</a>, <a class="el" href="MemoryLocation_8h_source.html#l00126">llvm::LocationSize::getValue()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00747">handleEndBlock()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00656">handleFree()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00151">hasAnalyzableMemoryWrite()</a>, <a class="el" href="MemoryBuiltins_8cpp_source.html#l00261">llvm::isAllocLikeFn()</a>, <a class="el" href="DataLayout_8h_source.html#l00233">llvm::DataLayout::isBigEndian()</a>, <a class="el" href="MemoryDependenceAnalysis_8h_source.html#l00151">llvm::MemDepResult::isClobber()</a>, <a class="el" href="MemoryDependenceAnalysis_8h_source.html#l00155">llvm::MemDepResult::isDef()</a>, <a class="el" href="MemoryBuiltins_8cpp_source.html#l00423">llvm::isFreeCall()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00342">isOverwrite()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00539">isPossibleSelfRead()</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00153">llvm::isRefSet()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00234">isRemovable()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00295">isShortenableAtTheBeginning()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00270">isShortenableAtTheEnd()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00592">llvm::Instruction::mayThrow()</a>, <a class="el" href="LLVMContext_8h_source.html#l00082">llvm::LLVMContext::MD_alias_scope</a>, <a class="el" href="LLVMContext_8h_source.html#l00075">llvm::LLVMContext::MD_dbg</a>, <a class="el" href="LLVMContext_8h_source.html#l00083">llvm::LLVMContext::MD_noalias</a>, <a class="el" href="LLVMContext_8h_source.html#l00084">llvm::LLVMContext::MD_nontemporal</a>, <a class="el" href="LLVMContext_8h_source.html#l00076">llvm::LLVMContext::MD_tbaa</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00585">memoryIsNotModifiedBetween()</a>, <a class="el" href="Options_8cpp_source.html#l00030">OR</a>, <a class="el" href="CaptureTracking_8cpp_source.html#l00158">llvm::PointerMayBeCaptured()</a>, <a class="el" href="MemoryLocation_8h_source.html#l00182">llvm::MemoryLocation::Ptr</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l01002">removePartiallyOverlappedStores()</a>, <a class="el" href="OrderedBasicBlock_8cpp_source.html#l00101">llvm::OrderedBasicBlock::replaceInstruction()</a>, <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>, <a class="el" href="MemoryLocation_8h_source.html#l00191">llvm::MemoryLocation::Size</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00904">tryToShorten()</a>, <a class="el" href="DataLayout_8h_source.html#l00460">llvm::DataLayout::typeSizeEqualsStoreSize()</a>, and <a class="el" href="APInt_8cpp_source.html#l00860">llvm::APInt::zext()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00099">deleteDeadInstruction()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l01026">eliminateNoopStore()</a>, <a class="el" href="DeadStoreElimination_8cpp.html#a39cf19d7de0655cda4d83e4f06ab5c08">EnablePartialOverwriteTracking()</a>, <a class="el" href="DeadStoreElimination_8cpp.html#a5641021cfebf72c80ae3788bb469b13b">EnablePartialStoreMerging()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00189">getLocForWrite()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00747">handleEndBlock()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00656">handleFree()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00151">hasAnalyzableMemoryWrite()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00342">isOverwrite()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00539">isPossibleSelfRead()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00234">isRemovable()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00295">isShortenableAtTheBeginning()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00270">isShortenableAtTheEnd()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00585">memoryIsNotModifiedBetween()</a>, <a class="el" href="Options_8cpp_source.html#l00030">OR</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l01002">removePartiallyOverlappedStores()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00904">tryToShorten()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01312">eliminateDeadStores()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l01328">llvm::DSEPass::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01312">eliminateDeadStores()</a>.</p>
 
 </div>
 </div>
@@ -408,33 +408,33 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> eliminateDeadStores </td>
+          <td class="memname">static bool eliminateDeadStores </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *&#160;</td>
+          <td class="paramtype">AliasAnalysis *&#160;</td>
           <td class="paramname"><em>AA</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1MemoryDependenceResults.html">MemoryDependenceResults</a> *&#160;</td>
+          <td class="paramtype">MemoryDependenceResults *&#160;</td>
           <td class="paramname"><em>MD</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
+          <td class="paramtype">DominatorTree *&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo *&#160;</td>
           <td class="paramname"><em>TLI</em>&#160;</td>
         </tr>
         <tr>
@@ -452,7 +452,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l01312">1312</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="Dominators_8cpp_source.html#l00299">llvm::DominatorTree::isReachableFromEntry()</a>.</p>
+<p class="reference">References <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>, and <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
 
 </div>
 </div>
@@ -466,39 +466,39 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> eliminateNoopStore </td>
+          <td class="memname">static bool eliminateNoopStore </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>Inst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> &amp;&#160;</td>
+          <td class="paramtype">BasicBlock::iterator &amp;&#160;</td>
           <td class="paramname"><em>BBI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *&#160;</td>
+          <td class="paramtype">AliasAnalysis *&#160;</td>
           <td class="paramname"><em>AA</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1MemoryDependenceResults.html">MemoryDependenceResults</a> *&#160;</td>
+          <td class="paramtype">MemoryDependenceResults *&#160;</td>
           <td class="paramname"><em>MD</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
+          <td class="paramtype">const DataLayout &amp;&#160;</td>
           <td class="paramname"><em>DL</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo *&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
@@ -510,7 +510,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1OrderedBasicBlock.html">OrderedBasicBlock</a> &amp;&#160;</td>
+          <td class="paramtype">OrderedBasicBlock &amp;&#160;</td>
           <td class="paramname"><em>OBB</em>&#160;</td>
         </tr>
         <tr>
@@ -528,9 +528,109 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l01026">1026</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00099">deleteDeadInstruction()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l03700">llvm::GetUnderlyingObject()</a>, <a class="el" href="MemoryBuiltins_8cpp_source.html#l00246">llvm::isCallocLikeFn()</a>, <a class="el" href="Constants_8cpp_source.html#l00084">llvm::Constant::isNullValue()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00234">isRemovable()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00585">memoryIsNotModifiedBetween()</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
+<p class="reference">References <a class="el" href="DeadStoreElimination_8cpp_source.html#l00099">deleteDeadInstruction()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00234">isRemovable()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00585">memoryIsNotModifiedBetween()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>.</p>
+
+</div>
+</div>
+<a id="a39cf19d7de0655cda4d83e4f06ab5c08" name="a39cf19d7de0655cda4d83e4f06ab5c08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39cf19d7de0655cda4d83e4f06ab5c08">&#9670;&nbsp;</a></span>EnablePartialOverwriteTracking()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; EnablePartialOverwriteTracking </td>
+          <td>(</td>
+          <td class="paramtype">&quot;enable-<a class="el" href="DeadStoreElimination_8cpp.html#a484eb01f288c94b669164f297b65e12e">dse</a>-partial-overwrite-tracking&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Enable partial-overwrite tracking in DSE&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00342">isOverwrite()</a>.</p>
+
+</div>
+</div>
+<a id="a5641021cfebf72c80ae3788bb469b13b" name="a5641021cfebf72c80ae3788bb469b13b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5641021cfebf72c80ae3788bb469b13b">&#9670;&nbsp;</a></span>EnablePartialStoreMerging()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; EnablePartialStoreMerging </td>
+          <td>(</td>
+          <td class="paramtype">&quot;enable-<a class="el" href="DeadStoreElimination_8cpp.html#a484eb01f288c94b669164f297b65e12e">dse</a>-partial-store-merging&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Enable partial store merging in DSE&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00342">isOverwrite()</a>.</p>
 
 </div>
 </div>
@@ -546,19 +646,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void findUnconditionalPreds </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classllvm_1_1SmallVectorImpl.html">SmallVectorImpl</a>&lt; BasicBlock * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Blocks</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
+          <td class="paramtype">DominatorTree *&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -578,7 +678,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00640">640</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00644">llvm::Instruction::getNumSuccessors()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="Dominators_8cpp_source.html#l00299">llvm::DominatorTree::isReachableFromEntry()</a>, <a class="el" href="Interval_8h_source.html#l00112">llvm::pred_begin()</a>, <a class="el" href="Interval_8h_source.html#l00115">llvm::pred_end()</a>, and <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l00656">handleFree()</a>.</p>
 
@@ -594,15 +694,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> getLocForRead </td>
+          <td class="memname">static MemoryLocation getLocForRead </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>Inst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>&#160;</td>
         </tr>
         <tr>
@@ -622,7 +722,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00221">221</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="MemoryLocation_8cpp_source.html#l00085">llvm::MemoryLocation::getForSource()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00151">hasAnalyzableMemoryWrite()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00151">hasAnalyzableMemoryWrite()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l00539">isPossibleSelfRead()</a>.</p>
 
@@ -638,9 +738,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> getLocForWrite </td>
+          <td class="memname">static MemoryLocation getLocForWrite </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>Inst</em></td><td>)</td>
           <td></td>
         </tr>
@@ -656,8 +756,6 @@ Variables</h2></td></tr>
 <p >If isRemovable returns true, this function and getLocForRead completely describe the memory operations for this instruction. </p>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00189">189</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="MemoryLocation_8cpp_source.html#l00034">llvm::MemoryLocation::get()</a>, <a class="el" href="MemoryLocation_8cpp_source.html#l00106">llvm::MemoryLocation::getForDest()</a>, <a class="el" href="IRTranslator_8cpp_source.html#l00091">MI</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00302">getStoredPointerOperand()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l01002">removePartiallyOverlappedStores()</a>.</p>
 
@@ -675,25 +773,25 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static uint64_t getPointerSize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">const Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
+          <td class="paramtype">const DataLayout &amp;&#160;</td>
           <td class="paramname"><em>DL</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
+          <td class="paramtype">const Function *&#160;</td>
           <td class="paramname"><em>F</em>&#160;</td>
         </tr>
         <tr>
@@ -711,7 +809,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00311">311</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="MemoryBuiltins_8cpp_source.html#l00452">llvm::getObjectSize()</a>, <a class="el" href="MemoryBuiltins_8h_source.html#l00182">llvm::ObjectSizeOpts::NullIsUnknownSize</a>, <a class="el" href="Function_8cpp_source.html#l01523">llvm::NullPointerIsDefined()</a>, <a class="el" href="Profile_8cpp_source.html#l00046">Size</a>, and <a class="el" href="MemoryLocation_8h_source.html#l00179">llvm::MemoryLocation::UnknownSize</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="BasicAliasAnalysis_8cpp_source.html#l00180">getObjectSize()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l00747">handleEndBlock()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00342">isOverwrite()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00715">removeAccessedObjects()</a>.</p>
 
@@ -727,9 +825,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * getStoredPointerOperand </td>
+          <td class="memname">static Value * getStoredPointerOperand </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -745,7 +843,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00302">302</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00189">getLocForWrite()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="MemoryLocation_8h_source.html#l00182">llvm::MemoryLocation::Ptr</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00189">getLocForWrite()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l00747">handleEndBlock()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00656">handleFree()</a>.</p>
 
@@ -761,27 +859,27 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> handleEndBlock </td>
+          <td class="memname">static bool handleEndBlock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> &amp;&#160;</td>
+          <td class="paramtype">BasicBlock &amp;&#160;</td>
           <td class="paramname"><em>BB</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *&#160;</td>
+          <td class="paramtype">AliasAnalysis *&#160;</td>
           <td class="paramname"><em>AA</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1MemoryDependenceResults.html">MemoryDependenceResults</a> *&#160;</td>
+          <td class="paramtype">MemoryDependenceResults *&#160;</td>
           <td class="paramname"><em>MD</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo *&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
@@ -793,7 +891,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1OrderedBasicBlock.html">OrderedBasicBlock</a> &amp;&#160;</td>
+          <td class="paramtype">OrderedBasicBlock &amp;&#160;</td>
           <td class="paramname"><em>OBB</em>&#160;</td>
         </tr>
         <tr>
@@ -814,7 +912,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00747">747</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Function_8h_source.html#l00713">llvm::Function::args()</a>, <a class="el" href="SmallVector_8h_source.html#l00127">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::begin()</a>, <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="SetVector_8h_source.html#l00210">llvm::SetVector&lt; T, Vector, Set &gt;::count()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00099">deleteDeadInstruction()</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00430">llvm::AAResults::doesNotAccessMemory()</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="SetVector_8h_source.html#l00072">llvm::SetVector&lt; T, Vector, Set &gt;::empty()</a>, <a class="el" href="SmallVector_8h_source.html#l00129">llvm::SmallVectorTemplateCommon&lt; T, typename &gt;::end()</a>, <a class="el" href="BasicBlock_8h_source.html#l00270">llvm::BasicBlock::end()</a>, <a class="el" href="Function_8h_source.html#l00687">llvm::Function::front()</a>, <a class="el" href="MemoryLocation_8cpp_source.html#l00034">llvm::MemoryLocation::get()</a>, <a class="el" href="Module_8cpp_source.html#l00369">llvm::Module::getDataLayout()</a>, <a class="el" href="AliasAnalysis_8cpp_source.html#l00176">llvm::AAResults::getModRefInfo()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00133">llvm::BasicBlock::getModule()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00311">getPointerSize()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00302">getStoredPointerOperand()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l03749">llvm::GetUnderlyingObjects()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00151">hasAnalyzableMemoryWrite()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="SetVector_8h_source.html#l00141">llvm::SetVector&lt; T, Vector, Set &gt;::insert()</a>, <a class="el" href="MemoryBuiltins_8cpp_source.html#l00261">llvm::isAllocLikeFn()</a>, <a class="el" href="Local_8cpp_source.html#l00353">llvm::isInstructionTriviallyDead()</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00153">llvm::isRefSet()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00234">isRemovable()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="CaptureTracking_8cpp_source.html#l00158">llvm::PointerMayBeCaptured()</a>, <a class="el" href="SetVector_8h_source.html#l00157">llvm::SetVector&lt; T, Vector, Set &gt;::remove()</a>, <a class="el" href="SetVector_8h_source.html#l00199">llvm::SetVector&lt; T, Vector, Set &gt;::remove_if()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00715">removeAccessedObjects()</a>.</p>
+<p class="reference">References <a class="el" href="DeadStoreElimination_8cpp_source.html#l00099">deleteDeadInstruction()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00311">getPointerSize()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00302">getStoredPointerOperand()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00151">hasAnalyzableMemoryWrite()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00234">isRemovable()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00715">removeAccessedObjects()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>.</p>
 
@@ -830,33 +928,33 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> handleFree </td>
+          <td class="memname">static bool handleFree </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *&#160;</td>
+          <td class="paramtype">AliasAnalysis *&#160;</td>
           <td class="paramname"><em>AA</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1MemoryDependenceResults.html">MemoryDependenceResults</a> *&#160;</td>
+          <td class="paramtype">MemoryDependenceResults *&#160;</td>
           <td class="paramname"><em>MD</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> *&#160;</td>
+          <td class="paramtype">DominatorTree *&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo *&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
@@ -868,7 +966,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1OrderedBasicBlock.html">OrderedBasicBlock</a> &amp;&#160;</td>
+          <td class="paramtype">OrderedBasicBlock &amp;&#160;</td>
           <td class="paramname"><em>OBB</em>&#160;</td>
         </tr>
         <tr>
@@ -888,7 +986,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00656">656</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00099">deleteDeadInstruction()</a>, <a class="el" href="SmallVector_8h_source.html#l00055">llvm::SmallVectorBase::empty()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00640">findUnconditionalPreds()</a>, <a class="el" href="MemoryDependenceAnalysis_8h_source.html#l00177">llvm::MemDepResult::getInst()</a>, <a class="el" href="ilist__node_8h_source.html#l00081">llvm::ilist_node_impl&lt; OptionsT &gt;::getIterator()</a>, <a class="el" href="MemoryDependenceAnalysis_8cpp_source.html#l00327">llvm::MemoryDependenceResults::getPointerDependencyFrom()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00302">getStoredPointerOperand()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l03700">llvm::GetUnderlyingObject()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00151">hasAnalyzableMemoryWrite()</a>, <a class="el" href="MemoryDependenceAnalysis_8h_source.html#l00151">llvm::MemDepResult::isClobber()</a>, <a class="el" href="MemoryDependenceAnalysis_8h_source.html#l00155">llvm::MemDepResult::isDef()</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00381">llvm::AAResults::isMustAlias()</a>, <a class="el" href="MemoryDependenceAnalysis_8h_source.html#l00159">llvm::MemDepResult::isNonLocal()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00234">isRemovable()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="SmallVector_8h_source.html#l00374">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val()</a>, and <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>.</p>
+<p class="reference">References <a class="el" href="DeadStoreElimination_8cpp_source.html#l00099">deleteDeadInstruction()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00640">findUnconditionalPreds()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00302">getStoredPointerOperand()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00151">hasAnalyzableMemoryWrite()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00234">isRemovable()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>.</p>
 
@@ -904,15 +1002,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> hasAnalyzableMemoryWrite </td>
+          <td class="memname">static bool hasAnalyzableMemoryWrite </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>&#160;</td>
         </tr>
         <tr>
@@ -932,7 +1030,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00151">151</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="TargetLibraryInfo_8h_source.html#l00292">llvm::TargetLibraryInfo::getName()</a>, <a class="el" href="TargetLibraryInfo_8h_source.html#l00247">llvm::TargetLibraryInfo::has()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00221">getLocForRead()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00747">handleEndBlock()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00656">handleFree()</a>.</p>
 
@@ -996,25 +1094,25 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static OverwriteResult isOverwrite </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> &amp;&#160;</td>
+          <td class="paramtype">const MemoryLocation &amp;&#160;</td>
           <td class="paramname"><em>Later</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> &amp;&#160;</td>
+          <td class="paramtype">const MemoryLocation &amp;&#160;</td>
           <td class="paramname"><em>Earlier</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
+          <td class="paramtype">const DataLayout &amp;&#160;</td>
           <td class="paramname"><em>DL</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
@@ -1032,7 +1130,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>DepWrite</em>, </td>
         </tr>
         <tr>
@@ -1044,13 +1142,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> &amp;&#160;</td>
+          <td class="paramtype">AliasAnalysis &amp;&#160;</td>
           <td class="paramname"><em>AA</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
+          <td class="paramtype">const Function *&#160;</td>
           <td class="paramname"><em>F</em>&#160;</td>
         </tr>
         <tr>
@@ -1071,7 +1169,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00342">342</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="DeadStoreElimination_8cpp.html#aa416458fa5e88c85398778cb9cb0077e">EnablePartialOverwriteTracking</a>, <a class="el" href="DeadStoreElimination_8cpp.html#a30df40b902c979f5cf5e4a1576fdd0bf">EnablePartialStoreMerging</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="ValueTracking_8h_source.html#l00244">llvm::GetPointerBaseWithConstantOffset()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00311">getPointerSize()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l03700">llvm::GetUnderlyingObject()</a>, <a class="el" href="MemoryLocation_8h_source.html#l00126">llvm::LocationSize::getValue()</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00381">llvm::AAResults::isMustAlias()</a>, <a class="el" href="MemoryLocation_8h_source.html#l00133">llvm::LocationSize::isPrecise()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, <a class="el" href="MemoryLocation_8h_source.html#l00182">llvm::MemoryLocation::Ptr</a>, <a class="el" href="MemoryLocation_8h_source.html#l00191">llvm::MemoryLocation::Size</a>, <a class="el" href="Value_8cpp_source.html#l00535">llvm::Value::stripPointerCasts()</a>, and <a class="el" href="MemoryLocation_8h_source.html#l00179">llvm::MemoryLocation::UnknownSize</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="DeadStoreElimination_8cpp.html#a39cf19d7de0655cda4d83e4f06ab5c08">EnablePartialOverwriteTracking()</a>, <a class="el" href="DeadStoreElimination_8cpp.html#a5641021cfebf72c80ae3788bb469b13b">EnablePartialStoreMerging()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00311">getPointerSize()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>.</p>
 
@@ -1087,33 +1185,33 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isPossibleSelfRead </td>
+          <td class="memname">static bool isPossibleSelfRead </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>Inst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> &amp;&#160;</td>
+          <td class="paramtype">const MemoryLocation &amp;&#160;</td>
           <td class="paramname"><em>InstStoreLoc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>DepWrite</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> &amp;&#160;</td>
+          <td class="paramtype">AliasAnalysis &amp;&#160;</td>
           <td class="paramname"><em>AA</em>&#160;</td>
         </tr>
         <tr>
@@ -1137,7 +1235,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00539">539</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="DeadStoreElimination_8cpp_source.html#l00221">getLocForRead()</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00381">llvm::AAResults::isMustAlias()</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00364">llvm::AAResults::isNoAlias()</a>, and <a class="el" href="MemoryLocation_8h_source.html#l00182">llvm::MemoryLocation::Ptr</a>.</p>
+<p class="reference">References <a class="el" href="DeadStoreElimination_8cpp_source.html#l00221">getLocForRead()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>.</p>
 
@@ -1153,9 +1251,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isRemovable </td>
+          <td class="memname">static bool isRemovable </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1171,7 +1269,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00234">234</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l01026">eliminateNoopStore()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00747">handleEndBlock()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00656">handleFree()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l01002">removePartiallyOverlappedStores()</a>.</p>
 
@@ -1187,9 +1285,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isShortenableAtTheBeginning </td>
+          <td class="memname">static bool isShortenableAtTheBeginning </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1221,9 +1319,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isShortenableAtTheEnd </td>
+          <td class="memname">static bool isShortenableAtTheEnd </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>I</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1255,21 +1353,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> memoryIsNotModifiedBetween </td>
+          <td class="memname">static bool memoryIsNotModifiedBetween </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>FirstI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>SecondI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *&#160;</td>
+          <td class="paramtype">AliasAnalysis *&#160;</td>
           <td class="paramname"><em>AA</em>&#160;</td>
         </tr>
         <tr>
@@ -1290,7 +1388,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00585">585</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="SmallVector_8h_source.html#l00055">llvm::SmallVectorBase::empty()</a>, <a class="el" href="MemoryLocation_8cpp_source.html#l00034">llvm::MemoryLocation::get()</a>, <a class="el" href="Function_8h_source.html#l00664">llvm::Function::getEntryBlock()</a>, <a class="el" href="AliasAnalysis_8cpp_source.html#l00176">llvm::AAResults::getModRefInfo()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="SmallPtrSet_8h_source.html#l00370">llvm::SmallPtrSetImpl&lt; PtrType &gt;::insert()</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00150">llvm::isModSet()</a>, <a class="el" href="SmallVector_8h_source.html#l00374">llvm::SmallVectorImpl&lt; T &gt;::pop_back_val()</a>, <a class="el" href="Interval_8h_source.html#l00112">llvm::pred_begin()</a>, <a class="el" href="Interval_8h_source.html#l00115">llvm::pred_end()</a>, and <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l01026">eliminateNoopStore()</a>.</p>
 
@@ -1308,37 +1406,37 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void removeAccessedObjects </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1MemoryLocation.html">MemoryLocation</a> &amp;&#160;</td>
+          <td class="paramtype">const MemoryLocation &amp;&#160;</td>
           <td class="paramname"><em>LoadedLoc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SmallSetVector.html">SmallSetVector</a>&lt; <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Value.html">Value</a> *, 16 &gt; &amp;&#160;</td>
+          <td class="paramtype">SmallSetVector&lt; const Value *, 16 &gt; &amp;&#160;</td>
           <td class="paramname"><em>DeadStackObjects</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
+          <td class="paramtype">const DataLayout &amp;&#160;</td>
           <td class="paramname"><em>DL</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *&#160;</td>
+          <td class="paramtype">AliasAnalysis *&#160;</td>
           <td class="paramname"><em>AA</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo *&#160;</td>
           <td class="paramname"><em>TLI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
+          <td class="paramtype">const Function *&#160;</td>
           <td class="paramname"><em>F</em>&#160;</td>
         </tr>
         <tr>
@@ -1359,7 +1457,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00715">715</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00311">getPointerSize()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l03700">llvm::GetUnderlyingObject()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, <a class="el" href="AliasAnalysis_8h_source.html#l00364">llvm::AAResults::isNoAlias()</a>, <a class="el" href="MemoryLocation_8h_source.html#l00182">llvm::MemoryLocation::Ptr</a>, <a class="el" href="SetVector_8h_source.html#l00157">llvm::SetVector&lt; T, Vector, Set &gt;::remove()</a>, and <a class="el" href="SetVector_8h_source.html#l00199">llvm::SetVector&lt; T, Vector, Set &gt;::remove_if()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00311">getPointerSize()</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l00747">handleEndBlock()</a>.</p>
 
@@ -1375,15 +1473,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> removePartiallyOverlappedStores </td>
+          <td class="memname">static bool removePartiallyOverlappedStores </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ac90ac8b51451918499fc89d1d7add259">AliasAnalysis</a> *&#160;</td>
+          <td class="paramtype">AliasAnalysis *&#160;</td>
           <td class="paramname"><em>AA</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
+          <td class="paramtype">const DataLayout &amp;&#160;</td>
           <td class="paramname"><em>DL</em>, </td>
         </tr>
         <tr>
@@ -1407,7 +1505,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l01002">1002</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="IntervalMap_8h_source.html#l01054">llvm::IntervalMap&lt; KeyT, ValT, N, Traits &gt;::empty()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00189">getLocForWrite()</a>, <a class="el" href="ValueTracking_8h_source.html#l00244">llvm::GetPointerBaseWithConstantOffset()</a>, <a class="el" href="MemoryLocation_8h_source.html#l00126">llvm::LocationSize::getValue()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00234">isRemovable()</a>, <a class="el" href="MemoryLocation_8h_source.html#l00182">llvm::MemoryLocation::Ptr</a>, <a class="el" href="MemoryLocation_8h_source.html#l00191">llvm::MemoryLocation::Size</a>, <a class="el" href="Value_8cpp_source.html#l00535">llvm::Value::stripPointerCasts()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00980">tryToShortenBegin()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00959">tryToShortenEnd()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00189">getLocForWrite()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00234">isRemovable()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00980">tryToShortenBegin()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00959">tryToShortenEnd()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>.</p>
 
@@ -1428,7 +1526,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="HexagonStoreWidening_8cpp.html#a7d2c711a42f51c1f7b3ce3f8f560fa74">stores</a> dead by later partials&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of stores dead by later partials&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1484,7 +1582,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="HexagonStoreWidening_8cpp.html#a7d2c711a42f51c1f7b3ce3f8f560fa74">stores</a> deleted&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of stores deleted&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1512,7 +1610,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="HexagonStoreWidening_8cpp.html#a7d2c711a42f51c1f7b3ce3f8f560fa74">stores</a> modified&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of stores modified&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1540,7 +1638,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of redundant <a class="el" href="HexagonStoreWidening_8cpp.html#a7d2c711a42f51c1f7b3ce3f8f560fa74">stores</a> deleted&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of redundant stores deleted&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1563,9 +1661,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> tryToShorten </td>
+          <td class="memname">static bool tryToShorten </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>EarlierWrite</em>, </td>
         </tr>
         <tr>
@@ -1595,7 +1693,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>IsOverwriteEnd</em>&#160;</td>
         </tr>
         <tr>
@@ -1613,8 +1711,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00904">904</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Instructions_8h_source.html#l00935">llvm::GetElementPtrInst::CreateInBounds()</a>, <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="MathExtras_8h_source.html#l00433">llvm::isPowerOf2_64()</a>, <a class="el" href="Debug_8h_source.html#l00122">LLVM_DEBUG</a>, and <a class="el" href="IR_2Instruction_8h_source.html#l00318">llvm::Instruction::setDebugLoc()</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00980">tryToShortenBegin()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00959">tryToShortenEnd()</a>.</p>
 
 </div>
@@ -1629,9 +1725,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> tryToShortenBegin </td>
+          <td class="memname">static bool tryToShortenBegin </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>EarlierWrite</em>, </td>
         </tr>
         <tr>
@@ -1667,7 +1763,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00980">980</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="IntervalMap_8h_source.html#l01099">llvm::IntervalMap&lt; KeyT, ValT, N, Traits &gt;::begin()</a>, <a class="el" href="IntervalMap_8h_source.html#l01054">llvm::IntervalMap&lt; KeyT, ValT, N, Traits &gt;::empty()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00295">isShortenableAtTheBeginning()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00904">tryToShorten()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00295">isShortenableAtTheBeginning()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00904">tryToShorten()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01002">removePartiallyOverlappedStores()</a>.</p>
 
@@ -1683,9 +1779,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> tryToShortenEnd </td>
+          <td class="memname">static bool tryToShortenEnd </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>EarlierWrite</em>, </td>
         </tr>
         <tr>
@@ -1721,7 +1817,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DeadStoreElimination_8cpp_source.html#l00959">959</a> of file <a class="el" href="DeadStoreElimination_8cpp_source.html">DeadStoreElimination.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="IntervalMap_8h_source.html#l01054">llvm::IntervalMap&lt; KeyT, ValT, N, Traits &gt;::empty()</a>, <a class="el" href="IntervalMap_8h_source.html#l01111">llvm::IntervalMap&lt; KeyT, ValT, N, Traits &gt;::end()</a>, <a class="el" href="DeadStoreElimination_8cpp_source.html#l00270">isShortenableAtTheEnd()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00904">tryToShorten()</a>.</p>
+<p class="reference">References <a class="el" href="DeadStoreElimination_8cpp_source.html#l00270">isShortenableAtTheEnd()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00904">tryToShorten()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01002">removePartiallyOverlappedStores()</a>.</p>
 
@@ -1760,106 +1856,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aa416458fa5e88c85398778cb9cb0077e" name="aa416458fa5e88c85398778cb9cb0077e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa416458fa5e88c85398778cb9cb0077e">&#9670;&nbsp;</a></span>EnablePartialOverwriteTracking</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; EnablePartialOverwriteTracking(&quot;enable-<a class="el" href="DeadStoreElimination_8cpp.html#a484eb01f288c94b669164f297b65e12e">dse</a>-partial-overwrite-tracking&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable partial-overwrite tracking in DSE&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;enable-<a class="el" href="DeadStoreElimination_8cpp.html#a484eb01f288c94b669164f297b65e12e">dse</a>-partial-overwrite-tracking&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable partial-overwrite tracking in DSE&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00342">isOverwrite()</a>.</p>
-
-</div>
-</div>
-<a id="a30df40b902c979f5cf5e4a1576fdd0bf" name="a30df40b902c979f5cf5e4a1576fdd0bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30df40b902c979f5cf5e4a1576fdd0bf">&#9670;&nbsp;</a></span>EnablePartialStoreMerging</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; EnablePartialStoreMerging(&quot;enable-<a class="el" href="DeadStoreElimination_8cpp.html#a484eb01f288c94b669164f297b65e12e">dse</a>-partial-store-merging&quot;, cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable partial store merging in DSE&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;enable-<a class="el" href="DeadStoreElimination_8cpp.html#a484eb01f288c94b669164f297b65e12e">dse</a>-partial-store-merging&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable partial store merging in DSE&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="DeadStoreElimination_8cpp_source.html#l01073">eliminateDeadStores()</a>, and <a class="el" href="DeadStoreElimination_8cpp_source.html#l00342">isOverwrite()</a>.</p>
-
-</div>
-</div>
 <a id="a24007733370feeb30526b489b19ba7e3" name="a24007733370feeb30526b489b19ba7e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24007733370feeb30526b489b19ba7e3">&#9670;&nbsp;</a></span>false</h2>
 
@@ -1879,7 +1875,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

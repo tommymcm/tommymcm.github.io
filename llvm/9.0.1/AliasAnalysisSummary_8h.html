@@ -62,20 +62,36 @@ $(function() {
 
 <p>This file defines various utility types and functions useful to summary-based alias analysis.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="DenseMapInfo_8h_source.html">llvm/ADT/DenseMapInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Optional_8h_source.html">llvm/ADT/Optional.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstrTypes_8h_source.html">llvm/IR/InstrTypes.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/ADT/DenseMapInfo.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Optional.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstrTypes.h&quot;</code><br />
 <code>#include &lt;bitset&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for AliasAnalysisSummary.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="AliasAnalysisSummary_8h__incl.png" border="0" usemap="#alib_2Analysis_2AliasAnalysisSummary_8h" alt=""/></div>
+<map name="alib_2Analysis_2AliasAnalysisSummary_8h" id="alib_2Analysis_2AliasAnalysisSummary_8h">
+<area shape="rect" title="This file defines various utility types and functions useful to summary&#45;based alias analysis." alt="" coords="393,5,581,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,197,119"/>
+<area shape="rect" title=" " alt="" coords="222,93,375,119"/>
+<area shape="rect" title=" " alt="" coords="399,93,574,119"/>
+<area shape="rect" title=" " alt="" coords="598,93,749,119"/>
+<area shape="rect" title=" " alt="" coords="773,93,832,119"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="AliasAnalysisSummary_8h__dep__incl.png" border="0" usemap="#alib_2Analysis_2AliasAnalysisSummary_8hdep" alt=""/></div>
+<map name="alib_2Analysis_2AliasAnalysisSummary_8hdep" id="alib_2Analysis_2AliasAnalysisSummary_8hdep">
+<area shape="rect" title="This file defines various utility types and functions useful to summary&#45;based alias analysis." alt="" coords="263,5,451,45"/>
+<area shape="rect" href="AliasAnalysisSummary_8cpp.html" title=" " alt="" coords="5,93,193,133"/>
+<area shape="rect" href="CFLAndersAliasAnalysis_8cpp.html" title=" " alt="" coords="142,181,345,221"/>
+<area shape="rect" href="CFLGraph_8h.html" title="This file defines CFLGraph, an auxiliary data structure used by CFL&#45;based alias analysis." alt="" coords="269,101,445,126"/>
+<area shape="rect" href="CFLSteensAliasAnalysis_8cpp.html" title=" " alt="" coords="381,181,583,221"/>
+<area shape="rect" href="StratifiedSets_8h.html" title=" " alt="" coords="519,101,719,126"/>
+</map>
 </div>
 </div>
 <p><a href="AliasAnalysisSummary_8h_source.html">Go to the source code of this file.</a></p>
@@ -109,7 +125,6 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacellvm_1_1cflaa"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html">llvm::cflaa</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,67 +143,67 @@ Functions</h2></td></tr>
 <tr class="memitem:a93ac2647c65d742f49f425c12d09e369"><td class="memItemLeft" align="right" valign="top">AliasAttrs&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a93ac2647c65d742f49f425c12d09e369">llvm::cflaa::getAttrUnknown</a> ()</td></tr>
 <tr class="memdesc:a93ac2647c65d742f49f425c12d09e369"><td class="mdescLeft">&#160;</td><td class="mdescRight">AttrUnknown represent whether the said pointer comes from a source not known to alias analyses (such as opaque memory or an integer cast).  <a href="namespacellvm_1_1cflaa.html#a93ac2647c65d742f49f425c12d09e369">More...</a><br /></td></tr>
 <tr class="separator:a93ac2647c65d742f49f425c12d09e369"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2aa1a05256242c081e3726304b70f6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#aa2aa1a05256242c081e3726304b70f6e">llvm::cflaa::hasUnknownAttr</a> (AliasAttrs Attr)</td></tr>
+<tr class="memitem:aa2aa1a05256242c081e3726304b70f6e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#aa2aa1a05256242c081e3726304b70f6e">llvm::cflaa::hasUnknownAttr</a> (AliasAttrs Attr)</td></tr>
 <tr class="separator:aa2aa1a05256242c081e3726304b70f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1445ced2dbdc84575544fadcd36ce6d2"><td class="memItemLeft" align="right" valign="top">AliasAttrs&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a1445ced2dbdc84575544fadcd36ce6d2">llvm::cflaa::getAttrCaller</a> ()</td></tr>
 <tr class="memdesc:a1445ced2dbdc84575544fadcd36ce6d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">AttrCaller represent whether the said pointer comes from a source not known to the current function but known to the caller.  <a href="namespacellvm_1_1cflaa.html#a1445ced2dbdc84575544fadcd36ce6d2">More...</a><br /></td></tr>
 <tr class="separator:a1445ced2dbdc84575544fadcd36ce6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66769f5414bc1cd208d3cd53324420d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a66769f5414bc1cd208d3cd53324420d4">llvm::cflaa::hasCallerAttr</a> (AliasAttrs Attr)</td></tr>
+<tr class="memitem:a66769f5414bc1cd208d3cd53324420d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a66769f5414bc1cd208d3cd53324420d4">llvm::cflaa::hasCallerAttr</a> (AliasAttrs Attr)</td></tr>
 <tr class="separator:a66769f5414bc1cd208d3cd53324420d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e4efb6c788c93d256df6e42401bc140"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a0e4efb6c788c93d256df6e42401bc140">llvm::cflaa::hasUnknownOrCallerAttr</a> (AliasAttrs Attr)</td></tr>
+<tr class="memitem:a0e4efb6c788c93d256df6e42401bc140"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a0e4efb6c788c93d256df6e42401bc140">llvm::cflaa::hasUnknownOrCallerAttr</a> (AliasAttrs Attr)</td></tr>
 <tr class="separator:a0e4efb6c788c93d256df6e42401bc140"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab67b0ef56e96b5072e9529cc89e183e8"><td class="memItemLeft" align="right" valign="top">AliasAttrs&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#ab67b0ef56e96b5072e9529cc89e183e8">llvm::cflaa::getAttrEscaped</a> ()</td></tr>
 <tr class="memdesc:ab67b0ef56e96b5072e9529cc89e183e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">AttrEscaped represent whether the said pointer comes from a known source but escapes to the unknown world (e.g.  <a href="namespacellvm_1_1cflaa.html#ab67b0ef56e96b5072e9529cc89e183e8">More...</a><br /></td></tr>
 <tr class="separator:ab67b0ef56e96b5072e9529cc89e183e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2743b88dfa5041b6694eee588730fb7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a2743b88dfa5041b6694eee588730fb7f">llvm::cflaa::hasEscapedAttr</a> (AliasAttrs Attr)</td></tr>
+<tr class="memitem:a2743b88dfa5041b6694eee588730fb7f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a2743b88dfa5041b6694eee588730fb7f">llvm::cflaa::hasEscapedAttr</a> (AliasAttrs Attr)</td></tr>
 <tr class="separator:a2743b88dfa5041b6694eee588730fb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c27f51dc17c4ff91f8a73cd27d5b07f"><td class="memItemLeft" align="right" valign="top">AliasAttrs&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a6c27f51dc17c4ff91f8a73cd27d5b07f">llvm::cflaa::getGlobalOrArgAttrFromValue</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> Value &amp;)</td></tr>
+<tr class="memitem:a6c27f51dc17c4ff91f8a73cd27d5b07f"><td class="memItemLeft" align="right" valign="top">AliasAttrs&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a6c27f51dc17c4ff91f8a73cd27d5b07f">llvm::cflaa::getGlobalOrArgAttrFromValue</a> (const Value &amp;)</td></tr>
 <tr class="memdesc:a6c27f51dc17c4ff91f8a73cd27d5b07f"><td class="mdescLeft">&#160;</td><td class="mdescRight">AttrGlobal represent whether the said pointer is a global value.  <a href="namespacellvm_1_1cflaa.html#a6c27f51dc17c4ff91f8a73cd27d5b07f">More...</a><br /></td></tr>
 <tr class="separator:a6c27f51dc17c4ff91f8a73cd27d5b07f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87f5be02ffe6830bef7bc6e8ef00b95a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a87f5be02ffe6830bef7bc6e8ef00b95a">llvm::cflaa::isGlobalOrArgAttr</a> (AliasAttrs Attr)</td></tr>
+<tr class="memitem:a87f5be02ffe6830bef7bc6e8ef00b95a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a87f5be02ffe6830bef7bc6e8ef00b95a">llvm::cflaa::isGlobalOrArgAttr</a> (AliasAttrs Attr)</td></tr>
 <tr class="separator:a87f5be02ffe6830bef7bc6e8ef00b95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d70c05566f96e53a29d039389127f7a"><td class="memItemLeft" align="right" valign="top">AliasAttrs&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a0d70c05566f96e53a29d039389127f7a">llvm::cflaa::getExternallyVisibleAttrs</a> (AliasAttrs)</td></tr>
 <tr class="memdesc:a0d70c05566f96e53a29d039389127f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an AliasAttrs, return a new AliasAttrs that only contains attributes meaningful to the caller.  <a href="namespacellvm_1_1cflaa.html#a0d70c05566f96e53a29d039389127f7a">More...</a><br /></td></tr>
 <tr class="separator:a0d70c05566f96e53a29d039389127f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f79082219ebb9e8afc0570394c78f78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a7f79082219ebb9e8afc0570394c78f78">llvm::cflaa::operator==</a> (InterfaceValue LHS, InterfaceValue RHS)</td></tr>
+<tr class="memitem:a7f79082219ebb9e8afc0570394c78f78"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a7f79082219ebb9e8afc0570394c78f78">llvm::cflaa::operator==</a> (InterfaceValue LHS, InterfaceValue RHS)</td></tr>
 <tr class="separator:a7f79082219ebb9e8afc0570394c78f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37cefd4fc9a6acf0a3dd191e70ea60f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a37cefd4fc9a6acf0a3dd191e70ea60f8">llvm::cflaa::operator!=</a> (InterfaceValue LHS, InterfaceValue RHS)</td></tr>
+<tr class="memitem:a37cefd4fc9a6acf0a3dd191e70ea60f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a37cefd4fc9a6acf0a3dd191e70ea60f8">llvm::cflaa::operator!=</a> (InterfaceValue LHS, InterfaceValue RHS)</td></tr>
 <tr class="separator:a37cefd4fc9a6acf0a3dd191e70ea60f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ea34688a86afe19565e64013d70a104"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a6ea34688a86afe19565e64013d70a104">llvm::cflaa::operator&lt;</a> (InterfaceValue LHS, InterfaceValue RHS)</td></tr>
+<tr class="memitem:a6ea34688a86afe19565e64013d70a104"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a6ea34688a86afe19565e64013d70a104">llvm::cflaa::operator&lt;</a> (InterfaceValue LHS, InterfaceValue RHS)</td></tr>
 <tr class="separator:a6ea34688a86afe19565e64013d70a104"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a850329666d43e15e8be357d413878caa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a850329666d43e15e8be357d413878caa">llvm::cflaa::operator&gt;</a> (InterfaceValue LHS, InterfaceValue RHS)</td></tr>
+<tr class="memitem:a850329666d43e15e8be357d413878caa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a850329666d43e15e8be357d413878caa">llvm::cflaa::operator&gt;</a> (InterfaceValue LHS, InterfaceValue RHS)</td></tr>
 <tr class="separator:a850329666d43e15e8be357d413878caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5aa3f3b05b96944e5135dcc0f9437595"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a5aa3f3b05b96944e5135dcc0f9437595">llvm::cflaa::operator&lt;=</a> (InterfaceValue LHS, InterfaceValue RHS)</td></tr>
+<tr class="memitem:a5aa3f3b05b96944e5135dcc0f9437595"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a5aa3f3b05b96944e5135dcc0f9437595">llvm::cflaa::operator&lt;=</a> (InterfaceValue LHS, InterfaceValue RHS)</td></tr>
 <tr class="separator:a5aa3f3b05b96944e5135dcc0f9437595"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa03a740702ad5e00fdc8a2d8792d43e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#aa03a740702ad5e00fdc8a2d8792d43e4">llvm::cflaa::operator&gt;=</a> (InterfaceValue LHS, InterfaceValue RHS)</td></tr>
+<tr class="memitem:aa03a740702ad5e00fdc8a2d8792d43e4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#aa03a740702ad5e00fdc8a2d8792d43e4">llvm::cflaa::operator&gt;=</a> (InterfaceValue LHS, InterfaceValue RHS)</td></tr>
 <tr class="separator:aa03a740702ad5e00fdc8a2d8792d43e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16f6a448f4dd2cb66aab0adabf8d9c6d"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a16f6a448f4dd2cb66aab0adabf8d9c6d">llvm::cflaa::addOffset</a> (int64_t LHS, int64_t RHS)</td></tr>
 <tr class="separator:a16f6a448f4dd2cb66aab0adabf8d9c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad163c940076c049f0e60df6ec5917d7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#ad163c940076c049f0e60df6ec5917d7a">llvm::cflaa::operator==</a> (ExternalRelation LHS, ExternalRelation RHS)</td></tr>
+<tr class="memitem:ad163c940076c049f0e60df6ec5917d7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#ad163c940076c049f0e60df6ec5917d7a">llvm::cflaa::operator==</a> (ExternalRelation LHS, ExternalRelation RHS)</td></tr>
 <tr class="separator:ad163c940076c049f0e60df6ec5917d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03e3b6c6ccb1e8b0a8ca631d9a20414a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a03e3b6c6ccb1e8b0a8ca631d9a20414a">llvm::cflaa::operator!=</a> (ExternalRelation LHS, ExternalRelation RHS)</td></tr>
+<tr class="memitem:a03e3b6c6ccb1e8b0a8ca631d9a20414a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a03e3b6c6ccb1e8b0a8ca631d9a20414a">llvm::cflaa::operator!=</a> (ExternalRelation LHS, ExternalRelation RHS)</td></tr>
 <tr class="separator:a03e3b6c6ccb1e8b0a8ca631d9a20414a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a237f889b582e63e2e3b410007a359e88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a237f889b582e63e2e3b410007a359e88">llvm::cflaa::operator&lt;</a> (ExternalRelation LHS, ExternalRelation RHS)</td></tr>
+<tr class="memitem:a237f889b582e63e2e3b410007a359e88"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a237f889b582e63e2e3b410007a359e88">llvm::cflaa::operator&lt;</a> (ExternalRelation LHS, ExternalRelation RHS)</td></tr>
 <tr class="separator:a237f889b582e63e2e3b410007a359e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6cd7945e76850ba3d3ea3bb9b963464"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#ad6cd7945e76850ba3d3ea3bb9b963464">llvm::cflaa::operator&gt;</a> (ExternalRelation LHS, ExternalRelation RHS)</td></tr>
+<tr class="memitem:ad6cd7945e76850ba3d3ea3bb9b963464"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#ad6cd7945e76850ba3d3ea3bb9b963464">llvm::cflaa::operator&gt;</a> (ExternalRelation LHS, ExternalRelation RHS)</td></tr>
 <tr class="separator:ad6cd7945e76850ba3d3ea3bb9b963464"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa32697cb878b1e831e9b66bbf723bb5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#aa32697cb878b1e831e9b66bbf723bb5e">llvm::cflaa::operator&lt;=</a> (ExternalRelation LHS, ExternalRelation RHS)</td></tr>
+<tr class="memitem:aa32697cb878b1e831e9b66bbf723bb5e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#aa32697cb878b1e831e9b66bbf723bb5e">llvm::cflaa::operator&lt;=</a> (ExternalRelation LHS, ExternalRelation RHS)</td></tr>
 <tr class="separator:aa32697cb878b1e831e9b66bbf723bb5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2686b047dfc6f32e857e4aabd64f7d25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a2686b047dfc6f32e857e4aabd64f7d25">llvm::cflaa::operator&gt;=</a> (ExternalRelation LHS, ExternalRelation RHS)</td></tr>
+<tr class="memitem:a2686b047dfc6f32e857e4aabd64f7d25"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a2686b047dfc6f32e857e4aabd64f7d25">llvm::cflaa::operator&gt;=</a> (ExternalRelation LHS, ExternalRelation RHS)</td></tr>
 <tr class="separator:a2686b047dfc6f32e857e4aabd64f7d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26a5d4b4bf34e73aa7bd3cfa5fa4d2b4"><td class="memItemLeft" align="right" valign="top">Optional&lt; InstantiatedValue &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a26a5d4b4bf34e73aa7bd3cfa5fa4d2b4">llvm::cflaa::instantiateInterfaceValue</a> (InterfaceValue IValue, CallBase &amp;Call)</td></tr>
 <tr class="separator:a26a5d4b4bf34e73aa7bd3cfa5fa4d2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b96ea88e1a88ae3f74d180ce7dc616d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a1b96ea88e1a88ae3f74d180ce7dc616d">llvm::cflaa::operator==</a> (InstantiatedValue LHS, InstantiatedValue RHS)</td></tr>
+<tr class="memitem:a1b96ea88e1a88ae3f74d180ce7dc616d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a1b96ea88e1a88ae3f74d180ce7dc616d">llvm::cflaa::operator==</a> (InstantiatedValue LHS, InstantiatedValue RHS)</td></tr>
 <tr class="separator:a1b96ea88e1a88ae3f74d180ce7dc616d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bc26fbf85e5dab47c2c9d747b05292e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a7bc26fbf85e5dab47c2c9d747b05292e">llvm::cflaa::operator!=</a> (InstantiatedValue LHS, InstantiatedValue RHS)</td></tr>
+<tr class="memitem:a7bc26fbf85e5dab47c2c9d747b05292e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a7bc26fbf85e5dab47c2c9d747b05292e">llvm::cflaa::operator!=</a> (InstantiatedValue LHS, InstantiatedValue RHS)</td></tr>
 <tr class="separator:a7bc26fbf85e5dab47c2c9d747b05292e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ff4139aa1d6a2b2638e4e3011d5d85a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a8ff4139aa1d6a2b2638e4e3011d5d85a">llvm::cflaa::operator&lt;</a> (InstantiatedValue LHS, InstantiatedValue RHS)</td></tr>
+<tr class="memitem:a8ff4139aa1d6a2b2638e4e3011d5d85a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a8ff4139aa1d6a2b2638e4e3011d5d85a">llvm::cflaa::operator&lt;</a> (InstantiatedValue LHS, InstantiatedValue RHS)</td></tr>
 <tr class="separator:a8ff4139aa1d6a2b2638e4e3011d5d85a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad546d587570a7dedb8576ee097e39ea9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#ad546d587570a7dedb8576ee097e39ea9">llvm::cflaa::operator&gt;</a> (InstantiatedValue LHS, InstantiatedValue RHS)</td></tr>
+<tr class="memitem:ad546d587570a7dedb8576ee097e39ea9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#ad546d587570a7dedb8576ee097e39ea9">llvm::cflaa::operator&gt;</a> (InstantiatedValue LHS, InstantiatedValue RHS)</td></tr>
 <tr class="separator:ad546d587570a7dedb8576ee097e39ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa54c47167198e5b705cb8e2a4f8aa00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#afa54c47167198e5b705cb8e2a4f8aa00">llvm::cflaa::operator&lt;=</a> (InstantiatedValue LHS, InstantiatedValue RHS)</td></tr>
+<tr class="memitem:afa54c47167198e5b705cb8e2a4f8aa00"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#afa54c47167198e5b705cb8e2a4f8aa00">llvm::cflaa::operator&lt;=</a> (InstantiatedValue LHS, InstantiatedValue RHS)</td></tr>
 <tr class="separator:afa54c47167198e5b705cb8e2a4f8aa00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa325f9361b1a4d0b1a30ff2ed30a8745"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#aa325f9361b1a4d0b1a30ff2ed30a8745">llvm::cflaa::operator&gt;=</a> (InstantiatedValue LHS, InstantiatedValue RHS)</td></tr>
+<tr class="memitem:aa325f9361b1a4d0b1a30ff2ed30a8745"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#aa325f9361b1a4d0b1a30ff2ed30a8745">llvm::cflaa::operator&gt;=</a> (InstantiatedValue LHS, InstantiatedValue RHS)</td></tr>
 <tr class="separator:aa325f9361b1a4d0b1a30ff2ed30a8745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90b636eb8add3f4b00c65b08b3b74188"><td class="memItemLeft" align="right" valign="top">Optional&lt; InstantiatedRelation &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a90b636eb8add3f4b00c65b08b3b74188">llvm::cflaa::instantiateExternalRelation</a> (ExternalRelation ERelation, CallBase &amp;Call)</td></tr>
 <tr class="separator:a90b636eb8add3f4b00c65b08b3b74188"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,13 +212,13 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a87729fb888472fcad760cb75153b5866"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a87729fb888472fcad760cb75153b5866">llvm::cflaa::NumAliasAttrs</a> = 32</td></tr>
+<tr class="memitem:a87729fb888472fcad760cb75153b5866"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#a87729fb888472fcad760cb75153b5866">llvm::cflaa::NumAliasAttrs</a> = 32</td></tr>
 <tr class="memdesc:a87729fb888472fcad760cb75153b5866"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of attributes that AliasAttr should contain.  <a href="namespacellvm_1_1cflaa.html#a87729fb888472fcad760cb75153b5866">More...</a><br /></td></tr>
 <tr class="separator:a87729fb888472fcad760cb75153b5866"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab39c958c46631dc4ee2fa01a840d1fff"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classunsigned.html">unsigned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#ab39c958c46631dc4ee2fa01a840d1fff">llvm::cflaa::MaxSupportedArgsInSummary</a> = 50</td></tr>
+<tr class="memitem:ab39c958c46631dc4ee2fa01a840d1fff"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#ab39c958c46631dc4ee2fa01a840d1fff">llvm::cflaa::MaxSupportedArgsInSummary</a> = 50</td></tr>
 <tr class="memdesc:ab39c958c46631dc4ee2fa01a840d1fff"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of arguments we can put into a summary.  <a href="namespacellvm_1_1cflaa.html#ab39c958c46631dc4ee2fa01a840d1fff">More...</a><br /></td></tr>
 <tr class="separator:ab39c958c46631dc4ee2fa01a840d1fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9a9df6cc8e3a1e4d3e91bf0ae01913a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#aa9a9df6cc8e3a1e4d3e91bf0ae01913a">llvm::cflaa::UnknownOffset</a> = <a class="el" href="llvm-c_2DataTypes_8h.html#ad0d744f05898e32d01f73f8af3cd2071">INT64_MAX</a></td></tr>
+<tr class="memitem:aa9a9df6cc8e3a1e4d3e91bf0ae01913a"><td class="memItemLeft" align="right" valign="top">static const int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm_1_1cflaa.html#aa9a9df6cc8e3a1e4d3e91bf0ae01913a">llvm::cflaa::UnknownOffset</a> = INT64_MAX</td></tr>
 <tr class="separator:aa9a9df6cc8e3a1e4d3e91bf0ae01913a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -216,7 +231,7 @@ Variables</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:11 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

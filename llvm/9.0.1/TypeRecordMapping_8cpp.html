@@ -56,23 +56,27 @@ $(function() {
   <div class="headertitle"><div class="title">TypeRecordMapping.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="TypeRecordMapping_8h_source.html">llvm/DebugInfo/CodeView/TypeRecordMapping.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/DebugInfo/CodeView/TypeRecordMapping.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TypeRecordMapping.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="TypeRecordMapping_8cpp__incl.png" border="0" usemap="#alib_2DebugInfo_2CodeView_2TypeRecordMapping_8cpp" alt=""/></div>
+<map name="alib_2DebugInfo_2CodeView_2TypeRecordMapping_8cpp" id="alib_2DebugInfo_2CodeView_2TypeRecordMapping_8cpp">
+<area shape="rect" title=" " alt="" coords="9,5,193,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,196,133"/>
+</map>
 </div>
 </div>
 <p><a href="TypeRecordMapping_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a9cdf893c7d17e47fa1ed8bebf92a5da4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeRecordMapping_8cpp.html#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a>(<a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>)</td></tr>
+<tr class="memitem:a9cdf893c7d17e47fa1ed8bebf92a5da4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeRecordMapping_8cpp.html#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a>(<a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>)</td></tr>
 <tr class="separator:a9cdf893c7d17e47fa1ed8bebf92a5da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aee6196bb67ae710bbbd44101ea42fc62"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Error.html">Error</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeRecordMapping_8cpp.html#aee6196bb67ae710bbbd44101ea42fc62">mapNameAndUniqueName</a> (<a class="el" href="classllvm_1_1codeview_1_1CodeViewRecordIO.html">CodeViewRecordIO</a> &amp;IO, <a class="el" href="classllvm_1_1StringRef.html">StringRef</a> &amp;<a class="el" href="AMDGPULibCalls_8cpp.html#ac19c5d82adec186ac56e94115530daa8">Name</a>, <a class="el" href="classllvm_1_1StringRef.html">StringRef</a> &amp;UniqueName, <a class="el" href="classbool.html">bool</a> HasUniqueName)</td></tr>
+<tr class="memitem:aee6196bb67ae710bbbd44101ea42fc62"><td class="memItemLeft" align="right" valign="top">static Error&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeRecordMapping_8cpp.html#aee6196bb67ae710bbbd44101ea42fc62">mapNameAndUniqueName</a> (CodeViewRecordIO &amp;IO, StringRef &amp;Name, StringRef &amp;UniqueName, bool HasUniqueName)</td></tr>
 <tr class="separator:aee6196bb67ae710bbbd44101ea42fc62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -86,15 +90,14 @@ Functions</h2></td></tr>
           <td class="memname">#define error</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a></td><td>)</td>
+          <td class="paramname"><a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">if</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a> = <a class="code hl_variable" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>)                                                             \</div>
-<div class="line">    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>;</div>
-<div class="ttc" id="aErlangGCPrinter_8cpp_html_a7ad930f7345a8faa5e6132305e2a6f49"><div class="ttname"><a href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a></div><div class="ttdeci">static GCMetadataPrinterRegistry::Add&lt; ErlangGCPrinter &gt; X(&quot;erlang&quot;, &quot;erlang-compatible garbage collector&quot;)</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">llvm::codeview::CompileSym2Flags::EC</a></div><div class="ttdeci">@ EC</div></div>
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">if</span> (<span class="keyword">auto</span> EC = <a class="code hl_function" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a>)                                                             \</div>
+<div class="line">    <span class="keywordflow">return</span> EC;</div>
+<div class="ttc" id="aHello_8cpp_html_a5e1a2e7ef3f32b337808eafe48a5b6ac"><div class="ttname"><a href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X</a></div><div class="ttdeci">static RegisterPass&lt; Hello &gt; X(&quot;hello&quot;, &quot;Hello World Pass&quot;)</div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="TypeRecordMapping_8cpp_source.html#l00014">14</a> of file <a class="el" href="TypeRecordMapping_8cpp_source.html">TypeRecordMapping.cpp</a>.</p>
 
@@ -111,27 +114,27 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Error.html">Error</a> mapNameAndUniqueName </td>
+          <td class="memname">static Error mapNameAndUniqueName </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1codeview_1_1CodeViewRecordIO.html">CodeViewRecordIO</a> &amp;&#160;</td>
+          <td class="paramtype">CodeViewRecordIO &amp;&#160;</td>
           <td class="paramname"><em>IO</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StringRef.html">StringRef</a> &amp;&#160;</td>
+          <td class="paramtype">StringRef &amp;&#160;</td>
           <td class="paramname"><em>Name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StringRef.html">StringRef</a> &amp;&#160;</td>
+          <td class="paramtype">StringRef &amp;&#160;</td>
           <td class="paramname"><em>UniqueName</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>HasUniqueName</em>&#160;</td>
         </tr>
         <tr>
@@ -149,14 +152,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="TypeRecordMapping_8cpp_source.html#l00046">46</a> of file <a class="el" href="TypeRecordMapping_8cpp_source.html">TypeRecordMapping.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="StringRef_8h_source.html#l00628">llvm::StringRef::drop_back()</a>, <a class="el" href="TypeRecordMapping_8cpp_source.html#l00014">error</a>, <a class="el" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa1d847ff214177f9339928f7be873cd38">llvm::codeview::HasUniqueName</a>, <a class="el" href="CodeViewRecordIO_8h_source.html#l00071">llvm::codeview::CodeViewRecordIO::isWriting()</a>, <a class="el" href="CodeViewRecordIO_8cpp_source.html#l00200">llvm::codeview::CodeViewRecordIO::mapStringZ()</a>, <a class="el" href="CodeViewRecordIO_8cpp_source.html#l00057">llvm::codeview::CodeViewRecordIO::maxFieldLength()</a>, <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00231">Name</a>, <a class="el" href="StringRef_8h_source.html#l00130">llvm::StringRef::size()</a>, <a class="el" href="llvm_2Support_2Error_8h_source.html#l00326">llvm::Error::success()</a>, and <a class="el" href="StringRef_8h_source.html#l00587">llvm::StringRef::take_front()</a>.</p>
+<p class="reference">References <a class="el" href="TypeRecordMapping_8cpp_source.html#l00014">error</a>, and <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:14 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

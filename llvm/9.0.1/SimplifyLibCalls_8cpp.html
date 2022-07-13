@@ -51,101 +51,126 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">SimplifyLibCalls.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="SimplifyLibCalls_8h_source.html">llvm/Transforms/Utils/SimplifyLibCalls.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="APSInt_8h_source.html">llvm/ADT/APSInt.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallString_8h_source.html">llvm/ADT/SmallString.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringMap_8h_source.html">llvm/ADT/StringMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Triple_8h_source.html">llvm/ADT/Triple.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BlockFrequencyInfo_8h_source.html">llvm/Analysis/BlockFrequencyInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ConstantFolding_8h_source.html">llvm/Analysis/ConstantFolding.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="OptimizationRemarkEmitter_8h_source.html">llvm/Analysis/OptimizationRemarkEmitter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CaptureTracking_8h_source.html">llvm/Analysis/CaptureTracking.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Loads_8h_source.html">llvm/Analysis/Loads.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IRBuilder_8h_source.html">llvm/IR/IRBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="KnownBits_8h_source.html">llvm/Support/KnownBits.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BuildLibCalls_8h_source.html">llvm/Transforms/Utils/BuildLibCalls.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SizeOpts_8h_source.html">llvm/Transforms/Utils/SizeOpts.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Utils/SimplifyLibCalls.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/APSInt.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallString.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/StringMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Triple.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/BlockFrequencyInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ConstantFolding.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/OptimizationRemarkEmitter.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CaptureTracking.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/Loads.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IRBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/KnownBits.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/BuildLibCalls.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/SizeOpts.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for SimplifyLibCalls.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="SimplifyLibCalls_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Utils_2SimplifyLibCalls_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Utils_2SimplifyLibCalls_8cpp" id="alib_2Transforms_2Utils_2SimplifyLibCalls_8cpp">
+<area shape="rect" title=" " alt="" coords="2659,5,2817,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,167,133"/>
+<area shape="rect" title=" " alt="" coords="191,101,331,126"/>
+<area shape="rect" title=" " alt="" coords="355,101,529,126"/>
+<area shape="rect" title=" " alt="" coords="553,101,717,126"/>
+<area shape="rect" title=" " alt="" coords="742,101,875,126"/>
+<area shape="rect" title=" " alt="" coords="900,93,1117,133"/>
+<area shape="rect" title=" " alt="" coords="1141,101,1372,126"/>
+<area shape="rect" title=" " alt="" coords="1396,93,1595,133"/>
+<area shape="rect" title=" " alt="" coords="1619,93,1838,133"/>
+<area shape="rect" title=" " alt="" coords="1863,93,2061,133"/>
+<area shape="rect" title=" " alt="" coords="2085,93,2247,133"/>
+<area shape="rect" title=" " alt="" coords="2271,101,2487,126"/>
+<area shape="rect" title=" " alt="" coords="2512,101,2743,126"/>
+<area shape="rect" title=" " alt="" coords="2767,101,2931,126"/>
+<area shape="rect" title=" " alt="" coords="2955,101,3113,126"/>
+<area shape="rect" title=" " alt="" coords="3138,101,3277,126"/>
+<area shape="rect" title=" " alt="" coords="3301,101,3444,126"/>
+<area shape="rect" title=" " alt="" coords="3469,101,3629,126"/>
+<area shape="rect" title=" " alt="" coords="3653,101,3796,126"/>
+<area shape="rect" title=" " alt="" coords="3820,101,3989,126"/>
+<area shape="rect" title=" " alt="" coords="4013,101,4145,126"/>
+<area shape="rect" title=" " alt="" coords="4170,101,4341,126"/>
+<area shape="rect" title=" " alt="" coords="4365,101,4580,126"/>
+<area shape="rect" title=" " alt="" coords="4604,101,4795,126"/>
+<area shape="rect" title=" " alt="" coords="4819,93,4980,133"/>
+<area shape="rect" title=" " alt="" coords="5004,93,5165,133"/>
+</map>
 </div>
 </div>
 <p><a href="SimplifyLibCalls_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a613c1a46385c58d54da4ac29ec17994c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a613c1a46385c58d54da4ac29ec17994c">ignoreCallingConv</a> (<a class="el" href="namespacellvm.html#ae892389bbc6029d8c9dbd2b4f83b2169">LibFunc</a> Func)</td></tr>
+<tr class="memitem:a5a69839f65bd1e2316ede3580a3f21a4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a5a69839f65bd1e2316ede3580a3f21a4">EnableUnsafeFPShrink</a> (&quot;enable-double-float-shrink&quot;, cl::Hidden, cl::init(false), cl::desc(&quot;Enable unsafe double to float &quot; &quot;shrinking for math lib calls&quot;))</td></tr>
+<tr class="separator:a5a69839f65bd1e2316ede3580a3f21a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a613c1a46385c58d54da4ac29ec17994c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a613c1a46385c58d54da4ac29ec17994c">ignoreCallingConv</a> (LibFunc Func)</td></tr>
 <tr class="separator:a613c1a46385c58d54da4ac29ec17994c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8f1b69beb3674ac2c6557d8600f9b83"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#ae8f1b69beb3674ac2c6557d8600f9b83">isCallingConvCCompatible</a> (<a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *CI)</td></tr>
+<tr class="memitem:ae8f1b69beb3674ac2c6557d8600f9b83"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#ae8f1b69beb3674ac2c6557d8600f9b83">isCallingConvCCompatible</a> (CallInst *CI)</td></tr>
 <tr class="separator:ae8f1b69beb3674ac2c6557d8600f9b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a095a10eac0b263743eb5086a581e4020"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a095a10eac0b263743eb5086a581e4020">isOnlyUsedInEqualityComparison</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1Value.html">Value</a> *With)</td></tr>
+<tr class="memitem:a095a10eac0b263743eb5086a581e4020"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a095a10eac0b263743eb5086a581e4020">isOnlyUsedInEqualityComparison</a> (Value *V, Value *With)</td></tr>
 <tr class="memdesc:a095a10eac0b263743eb5086a581e4020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if it is only used in equality comparisons with With.  <a href="SimplifyLibCalls_8cpp.html#a095a10eac0b263743eb5086a581e4020">More...</a><br /></td></tr>
 <tr class="separator:a095a10eac0b263743eb5086a581e4020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae56877b571bfd107841dabb130c9f2ca"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#ae56877b571bfd107841dabb130c9f2ca">callHasFloatingPointArgument</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *CI)</td></tr>
+<tr class="memitem:ae56877b571bfd107841dabb130c9f2ca"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#ae56877b571bfd107841dabb130c9f2ca">callHasFloatingPointArgument</a> (const CallInst *CI)</td></tr>
 <tr class="separator:ae56877b571bfd107841dabb130c9f2ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae817e73e41b3b26068e6b8a50cd447af"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#ae817e73e41b3b26068e6b8a50cd447af">callHasFP128Argument</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *CI)</td></tr>
+<tr class="memitem:ae817e73e41b3b26068e6b8a50cd447af"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#ae817e73e41b3b26068e6b8a50cd447af">callHasFP128Argument</a> (const CallInst *CI)</td></tr>
 <tr class="separator:ae817e73e41b3b26068e6b8a50cd447af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54096108f49d99a9b89c67d921bfe77c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a54096108f49d99a9b89c67d921bfe77c">convertStrToNumber</a> (<a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *CI, <a class="el" href="classllvm_1_1StringRef.html">StringRef</a> &amp;Str, int64_t Base)</td></tr>
+<tr class="memitem:a54096108f49d99a9b89c67d921bfe77c"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a54096108f49d99a9b89c67d921bfe77c">convertStrToNumber</a> (CallInst *CI, StringRef &amp;Str, int64_t Base)</td></tr>
 <tr class="separator:a54096108f49d99a9b89c67d921bfe77c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac447aac689532f2878676c8b6ffc9a9d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#ac447aac689532f2878676c8b6ffc9a9d">isLocallyOpenedFile</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *File, <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *CI, <a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *TLI)</td></tr>
+<tr class="memitem:ac447aac689532f2878676c8b6ffc9a9d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#ac447aac689532f2878676c8b6ffc9a9d">isLocallyOpenedFile</a> (Value *File, CallInst *CI, IRBuilder&lt;&gt; &amp;B, const TargetLibraryInfo *TLI)</td></tr>
 <tr class="separator:ac447aac689532f2878676c8b6ffc9a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfa827b083d21f99d75f9e3e08205fee"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#adfa827b083d21f99d75f9e3e08205fee">isOnlyUsedInComparisonWithZero</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V)</td></tr>
+<tr class="memitem:adfa827b083d21f99d75f9e3e08205fee"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#adfa827b083d21f99d75f9e3e08205fee">isOnlyUsedInComparisonWithZero</a> (Value *V)</td></tr>
 <tr class="separator:adfa827b083d21f99d75f9e3e08205fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24ff4e69025be7564b19025b93cac8d9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a24ff4e69025be7564b19025b93cac8d9">canTransformToMemCmp</a> (<a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *CI, <a class="el" href="classllvm_1_1Value.html">Value</a> *Str, uint64_t Len, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL)</td></tr>
+<tr class="memitem:a24ff4e69025be7564b19025b93cac8d9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a24ff4e69025be7564b19025b93cac8d9">canTransformToMemCmp</a> (CallInst *CI, Value *Str, uint64_t Len, const DataLayout &amp;DL)</td></tr>
 <tr class="separator:a24ff4e69025be7564b19025b93cac8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a721339362b88d47bcb73daa24a5d0fc1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a721339362b88d47bcb73daa24a5d0fc1">optimizeMemCmpConstantSize</a> (<a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *CI, <a class="el" href="classllvm_1_1Value.html">Value</a> *LHS, <a class="el" href="classllvm_1_1Value.html">Value</a> *RHS, uint64_t Len, <a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;DL)</td></tr>
+<tr class="memitem:a721339362b88d47bcb73daa24a5d0fc1"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a721339362b88d47bcb73daa24a5d0fc1">optimizeMemCmpConstantSize</a> (CallInst *CI, Value *LHS, Value *RHS, uint64_t Len, IRBuilder&lt;&gt; &amp;B, const DataLayout &amp;DL)</td></tr>
 <tr class="separator:a721339362b88d47bcb73daa24a5d0fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc44ddb20d79395f7fed312b08137985"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#abc44ddb20d79395f7fed312b08137985">replaceUnaryCall</a> (<a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *CI, <a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="namespacellvm_1_1Intrinsic.html#a2bbee8c5fe6b399c136d84248090178b">Intrinsic::ID</a> IID)</td></tr>
+<tr class="memitem:abc44ddb20d79395f7fed312b08137985"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#abc44ddb20d79395f7fed312b08137985">replaceUnaryCall</a> (CallInst *CI, IRBuilder&lt;&gt; &amp;B, Intrinsic::ID IID)</td></tr>
 <tr class="separator:abc44ddb20d79395f7fed312b08137985"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a815e93bbea2fb7ef5a1c01f8d9de441f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a815e93bbea2fb7ef5a1c01f8d9de441f">valueHasFloatPrecision</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *Val)</td></tr>
+<tr class="memitem:a815e93bbea2fb7ef5a1c01f8d9de441f"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a815e93bbea2fb7ef5a1c01f8d9de441f">valueHasFloatPrecision</a> (Value *Val)</td></tr>
 <tr class="memdesc:a815e93bbea2fb7ef5a1c01f8d9de441f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a variant of Val with float type.  <a href="SimplifyLibCalls_8cpp.html#a815e93bbea2fb7ef5a1c01f8d9de441f">More...</a><br /></td></tr>
 <tr class="separator:a815e93bbea2fb7ef5a1c01f8d9de441f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a458a44ee18927cd60d366df14be05f1d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a458a44ee18927cd60d366df14be05f1d">optimizeDoubleFP</a> (<a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *CI, <a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="classbool.html">bool</a> <a class="el" href="PPCReduceCRLogicals_8cpp.html#a2f97198e249f3b493a0abed59c1de605">isBinary</a>, <a class="el" href="classbool.html">bool</a> isPrecise=false)</td></tr>
+<tr class="memitem:a458a44ee18927cd60d366df14be05f1d"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a458a44ee18927cd60d366df14be05f1d">optimizeDoubleFP</a> (CallInst *CI, IRBuilder&lt;&gt; &amp;B, bool isBinary, bool isPrecise=false)</td></tr>
 <tr class="memdesc:a458a44ee18927cd60d366df14be05f1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shrink double -&gt; float functions.  <a href="SimplifyLibCalls_8cpp.html#a458a44ee18927cd60d366df14be05f1d">More...</a><br /></td></tr>
 <tr class="separator:a458a44ee18927cd60d366df14be05f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf566000f5b619b986e22818b458a2b8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#aaf566000f5b619b986e22818b458a2b8">optimizeUnaryDoubleFP</a> (<a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *CI, <a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="classbool.html">bool</a> isPrecise=false)</td></tr>
+<tr class="memitem:aaf566000f5b619b986e22818b458a2b8"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#aaf566000f5b619b986e22818b458a2b8">optimizeUnaryDoubleFP</a> (CallInst *CI, IRBuilder&lt;&gt; &amp;B, bool isPrecise=false)</td></tr>
 <tr class="memdesc:aaf566000f5b619b986e22818b458a2b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shrink double -&gt; float for unary functions.  <a href="SimplifyLibCalls_8cpp.html#aaf566000f5b619b986e22818b458a2b8">More...</a><br /></td></tr>
 <tr class="separator:aaf566000f5b619b986e22818b458a2b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af237b0e2369c88dad983890a6dc07c65"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#af237b0e2369c88dad983890a6dc07c65">optimizeBinaryDoubleFP</a> (<a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *CI, <a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="classbool.html">bool</a> isPrecise=false)</td></tr>
+<tr class="memitem:af237b0e2369c88dad983890a6dc07c65"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#af237b0e2369c88dad983890a6dc07c65">optimizeBinaryDoubleFP</a> (CallInst *CI, IRBuilder&lt;&gt; &amp;B, bool isPrecise=false)</td></tr>
 <tr class="memdesc:af237b0e2369c88dad983890a6dc07c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shrink double -&gt; float for binary functions.  <a href="SimplifyLibCalls_8cpp.html#af237b0e2369c88dad983890a6dc07c65">More...</a><br /></td></tr>
 <tr class="separator:af237b0e2369c88dad983890a6dc07c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68653f063e40d49c950ac8fabe547003"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a68653f063e40d49c950ac8fabe547003">optimizeTrigReflections</a> (<a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *Call, <a class="el" href="namespacellvm.html#ae892389bbc6029d8c9dbd2b4f83b2169">LibFunc</a> Func, <a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>)</td></tr>
+<tr class="memitem:a68653f063e40d49c950ac8fabe547003"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a68653f063e40d49c950ac8fabe547003">optimizeTrigReflections</a> (CallInst *Call, LibFunc Func, IRBuilder&lt;&gt; &amp;B)</td></tr>
 <tr class="separator:a68653f063e40d49c950ac8fabe547003"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6895242b3b3a3f60c937a08fafabb935"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a6895242b3b3a3f60c937a08fafabb935">getPow</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *InnerChain[33], <a class="el" href="classunsigned.html">unsigned</a> Exp, <a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>)</td></tr>
+<tr class="memitem:a6895242b3b3a3f60c937a08fafabb935"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a6895242b3b3a3f60c937a08fafabb935">getPow</a> (Value *InnerChain[33], unsigned Exp, IRBuilder&lt;&gt; &amp;B)</td></tr>
 <tr class="separator:a6895242b3b3a3f60c937a08fafabb935"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a8fc7f13c23b424e9bb60e2fe207c27"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a9a8fc7f13c23b424e9bb60e2fe207c27">getSqrtCall</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *V, <a class="el" href="classllvm_1_1AttributeList.html">AttributeList</a> Attrs, <a class="el" href="classbool.html">bool</a> NoErrno, <a class="el" href="classllvm_1_1Module.html">Module</a> *M, <a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *TLI)</td></tr>
+<tr class="memitem:a9a8fc7f13c23b424e9bb60e2fe207c27"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a9a8fc7f13c23b424e9bb60e2fe207c27">getSqrtCall</a> (Value *V, AttributeList Attrs, bool NoErrno, Module *M, IRBuilder&lt;&gt; &amp;B, const TargetLibraryInfo *TLI)</td></tr>
 <tr class="separator:a9a8fc7f13c23b424e9bb60e2fe207c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c62addfbb4f6f8c6bbc1179526cd020"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a9c62addfbb4f6f8c6bbc1179526cd020">createPowWithIntegerExponent</a> (<a class="el" href="classllvm_1_1Value.html">Value</a> *Base, <a class="el" href="classllvm_1_1Value.html">Value</a> *Expo, <a class="el" href="classllvm_1_1Module.html">Module</a> *M, <a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>)</td></tr>
+<tr class="memitem:a9c62addfbb4f6f8c6bbc1179526cd020"><td class="memItemLeft" align="right" valign="top">static Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a9c62addfbb4f6f8c6bbc1179526cd020">createPowWithIntegerExponent</a> (Value *Base, Value *Expo, Module *M, IRBuilder&lt;&gt; &amp;B)</td></tr>
 <tr class="separator:a9c62addfbb4f6f8c6bbc1179526cd020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad633d6152693e0c1dd402507ac156289"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#ad633d6152693e0c1dd402507ac156289">isTrigLibCall</a> (<a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *CI)</td></tr>
+<tr class="memitem:ad633d6152693e0c1dd402507ac156289"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#ad633d6152693e0c1dd402507ac156289">isTrigLibCall</a> (CallInst *CI)</td></tr>
 <tr class="separator:ad633d6152693e0c1dd402507ac156289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12f12b42178be06923749f1f8c8e7527"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a12f12b42178be06923749f1f8c8e7527">insertSinCosCall</a> (<a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;<a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="classllvm_1_1Function.html">Function</a> *OrigCallee, <a class="el" href="classllvm_1_1Value.html">Value</a> *<a class="el" href="AMDGPULibCalls_8cpp.html#afecf1cc1292b07f57d343c0f4d682044">Arg</a>, <a class="el" href="classbool.html">bool</a> UseFloat, <a class="el" href="classllvm_1_1Value.html">Value</a> *&amp;Sin, <a class="el" href="classllvm_1_1Value.html">Value</a> *&amp;Cos, <a class="el" href="classllvm_1_1Value.html">Value</a> *&amp;SinCos)</td></tr>
+<tr class="memitem:a12f12b42178be06923749f1f8c8e7527"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a12f12b42178be06923749f1f8c8e7527">insertSinCosCall</a> (IRBuilder&lt;&gt; &amp;B, Function *OrigCallee, Value *Arg, bool UseFloat, Value *&amp;Sin, Value *&amp;Cos, Value *&amp;SinCos)</td></tr>
 <tr class="separator:a12f12b42178be06923749f1f8c8e7527"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a766df1ea3c4bf3cbc8586f310562034f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a766df1ea3c4bf3cbc8586f310562034f">isReportingError</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> *<a class="el" href="AMDGPULibCalls_8cpp.html#a537c835c34f0b44b6ad2696643754390">Callee</a>, <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *CI, int StreamArg)</td></tr>
+<tr class="memitem:a766df1ea3c4bf3cbc8586f310562034f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#a766df1ea3c4bf3cbc8586f310562034f">isReportingError</a> (Function *Callee, CallInst *CI, int StreamArg)</td></tr>
 <tr class="separator:a766df1ea3c4bf3cbc8586f310562034f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:af84dd5a2e2f1d4af4d3223f0320821de"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimplifyLibCalls_8cpp.html#af84dd5a2e2f1d4af4d3223f0320821de">EnableUnsafeFPShrink</a> (&quot;enable-double-float-shrink&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable unsafe double to float &quot; &quot;shrinking <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> math lib calls&quot;))</td></tr>
-<tr class="separator:af84dd5a2e2f1d4af4d3223f0320821de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae56877b571bfd107841dabb130c9f2ca" name="ae56877b571bfd107841dabb130c9f2ca"></a>
@@ -158,9 +183,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> callHasFloatingPointArgument </td>
+          <td class="memname">static bool callHasFloatingPointArgument </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">const CallInst *&#160;</td>
           <td class="paramname"><em>CI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -174,8 +199,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l00104">104</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="STLExtras_8h_source.html#l01199">llvm::any_of()</a>, and <a class="el" href="User_8h_source.html#l00237">llvm::User::operands()</a>.</p>
-
 </div>
 </div>
 <a id="ae817e73e41b3b26068e6b8a50cd447af" name="ae817e73e41b3b26068e6b8a50cd447af"></a>
@@ -188,9 +211,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> callHasFP128Argument </td>
+          <td class="memname">static bool callHasFP128Argument </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">const CallInst *&#160;</td>
           <td class="paramname"><em>CI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -204,8 +227,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l00110">110</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="STLExtras_8h_source.html#l01199">llvm::any_of()</a>, and <a class="el" href="User_8h_source.html#l00237">llvm::User::operands()</a>.</p>
-
 </div>
 </div>
 <a id="a24ff4e69025be7564b19025b93cac8d9" name="a24ff4e69025be7564b19025b93cac8d9"></a>
@@ -218,15 +239,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> canTransformToMemCmp </td>
+          <td class="memname">static bool canTransformToMemCmp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>CI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Str</em>, </td>
         </tr>
         <tr>
@@ -238,7 +259,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
+          <td class="paramtype">const DataLayout &amp;&#160;</td>
           <td class="paramname"><em>DL</em>&#160;</td>
         </tr>
         <tr>
@@ -256,7 +277,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l00175">175</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="IR_2Instruction_8cpp_source.html#l00059">llvm::Instruction::getFunction()</a>, <a class="el" href="Function_8h_source.html#l00323">llvm::Function::hasFnAttribute()</a>, <a class="el" href="Loads_8cpp_source.html#l00128">llvm::isDereferenceableAndAlignedPointer()</a>, and <a class="el" href="SimplifyLibCalls_8cpp_source.html#l00163">isOnlyUsedInComparisonWithZero()</a>.</p>
+<p class="reference">References <a class="el" href="Loads_8cpp_source.html#l00053">isDereferenceableAndAlignedPointer()</a>, and <a class="el" href="SimplifyLibCalls_8cpp_source.html#l00163">isOnlyUsedInComparisonWithZero()</a>.</p>
 
 </div>
 </div>
@@ -270,15 +291,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * convertStrToNumber </td>
+          <td class="memname">static Value * convertStrToNumber </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>CI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StringRef.html">StringRef</a> &amp;&#160;</td>
+          <td class="paramtype">StringRef &amp;&#160;</td>
           <td class="paramname"><em>Str</em>, </td>
         </tr>
         <tr>
@@ -302,8 +323,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l00116">116</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="classllvm_1_1Type.html#a9f7cc4a46dedf79fe4c99d60a2706949">llvm::Type::getPrimitiveSizeInBits()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="MathExtras_8h_source.html#l00397">llvm::isIntN()</a>, and <a class="el" href="StringRef_8h_source.html#l00218">llvm::StringRef::str()</a>.</p>
-
 </div>
 </div>
 <a id="a9c62addfbb4f6f8c6bbc1179526cd020" name="a9c62addfbb4f6f8c6bbc1179526cd020"></a>
@@ -316,27 +335,27 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * createPowWithIntegerExponent </td>
+          <td class="memname">static Value * createPowWithIntegerExponent </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Base</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Expo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> *&#160;</td>
+          <td class="paramtype">Module *&#160;</td>
           <td class="paramname"><em>M</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>B</em>&#160;</td>
         </tr>
         <tr>
@@ -354,7 +373,55 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01436">1436</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, and <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
+
+</div>
+</div>
+<a id="a5a69839f65bd1e2316ede3580a3f21a4" name="a5a69839f65bd1e2316ede3580a3f21a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a69839f65bd1e2316ede3580a3f21a4">&#9670;&nbsp;</a></span>EnableUnsafeFPShrink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; EnableUnsafeFPShrink </td>
+          <td>(</td>
+          <td class="paramtype">&quot;enable-double-float-shrink&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Enable unsafe double to float &quot; &quot;shrinking for math lib calls&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -368,21 +435,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * getPow </td>
+          <td class="memname">static Value * getPow </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>InnerChain</em>[33], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>Exp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>B</em>&#160;</td>
         </tr>
         <tr>
@@ -400,7 +467,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01212">1212</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, and <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01212">getPow()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01212">getPow()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01212">getPow()</a>.</p>
 
@@ -416,39 +483,39 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * getSqrtCall </td>
+          <td class="memname">static Value * getSqrtCall </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1AttributeList.html">AttributeList</a>&#160;</td>
+          <td class="paramtype">AttributeList&#160;</td>
           <td class="paramname"><em>Attrs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>NoErrno</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Module.html">Module</a> *&#160;</td>
+          <td class="paramtype">Module *&#160;</td>
           <td class="paramname"><em>M</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo *&#160;</td>
           <td class="paramname"><em>TLI</em>&#160;</td>
         </tr>
         <tr>
@@ -466,8 +533,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01376">1376</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="BuildLibCalls_8cpp_source.html#l01035">llvm::emitUnaryFloatFnCall()</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="BuildLibCalls_8cpp_source.html#l00763">llvm::hasUnaryFloatFn()</a>.</p>
-
 </div>
 </div>
 <a id="a613c1a46385c58d54da4ac29ec17994c" name="a613c1a46385c58d54da4ac29ec17994c"></a>
@@ -480,9 +545,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> ignoreCallingConv </td>
+          <td class="memname">static bool ignoreCallingConv </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ae892389bbc6029d8c9dbd2b4f83b2169">LibFunc</a>&#160;</td>
+          <td class="paramtype">LibFunc&#160;</td>
           <td class="paramname"><em>Func</em></td><td>)</td>
           <td></td>
         </tr>
@@ -495,8 +560,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l00055">55</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="SimplifyLibCalls_8cpp_source.html#l03089">llvm::FortifiedLibCallSimplifier::optimizeCall()</a>, and <a class="el" href="SimplifyLibCalls_8cpp_source.html#l02689">llvm::LibCallSimplifier::optimizeCall()</a>.</p>
 
 </div>
 </div>
@@ -512,43 +575,43 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void insertSinCosCall </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
+          <td class="paramtype">Function *&#160;</td>
           <td class="paramname"><em>OrigCallee</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Arg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>UseFloat</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&amp;&#160;</td>
+          <td class="paramtype">Value *&amp;&#160;</td>
           <td class="paramname"><em>Sin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&amp;&#160;</td>
+          <td class="paramtype">Value *&amp;&#160;</td>
           <td class="paramname"><em>Cos</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&amp;&#160;</td>
+          <td class="paramtype">Value *&amp;&#160;</td>
           <td class="paramname"><em>SinCos</em>&#160;</td>
         </tr>
         <tr>
@@ -566,7 +629,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01798">1798</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Arg</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>, <a class="el" href="IntervalMap_8h_source.html#l00526">llvm::IntervalMapImpl::NodeRef::get()</a>, <a class="el" href="Function_8h_source.html#l00223">llvm::Function::getAttributes()</a>, <a class="el" href="GlobalValue_8h_source.html#l00575">llvm::GlobalValue::getParent()</a>, <a class="el" href="Module_8h_source.html#l00240">llvm::Module::getTargetTriple()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="Type_8h_source.html#l00217">llvm::Type::isStructTy()</a>, <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00231">Name</a>, <a class="el" href="Triple_8h_source.html#l00078">llvm::Triple::x86</a>, and <a class="el" href="Triple_8h_source.html#l00079">llvm::Triple::x86_64</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 </div>
 </div>
@@ -580,9 +643,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isCallingConvCCompatible </td>
+          <td class="memname">static bool isCallingConvCCompatible </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>CI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -596,10 +659,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l00060">60</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="CallingConv_8h_source.html#l00099">llvm::CallingConv::ARM_AAPCS</a>, <a class="el" href="CallingConv_8h_source.html#l00102">llvm::CallingConv::ARM_AAPCS_VFP</a>, <a class="el" href="CallingConv_8h_source.html#l00095">llvm::CallingConv::ARM_APCS</a>, <a class="el" href="CallingConv_8h_source.html#l00034">llvm::CallingConv::C</a>, <a class="el" href="InstrTypes_8h_source.html#l01344">llvm::CallBase::getCallingConv()</a>, <a class="el" href="InstrTypes_8h_source.html#l01144">llvm::CallBase::getFunctionType()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00055">llvm::Instruction::getModule()</a>, <a class="el" href="Module_8h_source.html#l00240">llvm::Module::getTargetTriple()</a>, and <a class="el" href="Triple_8h_source.html#l00462">llvm::Triple::isiOS()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="SimplifyLibCalls_8cpp_source.html#l03089">llvm::FortifiedLibCallSimplifier::optimizeCall()</a>, and <a class="el" href="SimplifyLibCalls_8cpp_source.html#l02689">llvm::LibCallSimplifier::optimizeCall()</a>.</p>
-
 </div>
 </div>
 <a id="ac447aac689532f2878676c8b6ffc9a9d" name="ac447aac689532f2878676c8b6ffc9a9d"></a>
@@ -612,27 +671,27 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isLocallyOpenedFile </td>
+          <td class="memname">static bool isLocallyOpenedFile </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>File</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>CI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> *&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo *&#160;</td>
           <td class="paramname"><em>TLI</em>&#160;</td>
         </tr>
         <tr>
@@ -650,8 +709,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l00141">141</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InstrTypes_8h_source.html#l01287">llvm::CallBase::getCalledFunction()</a>, <a class="el" href="TargetLibraryInfo_8h_source.html#l00231">llvm::TargetLibraryInfo::getLibFunc()</a>, <a class="el" href="TargetLibraryInfo_8h_source.html#l00247">llvm::TargetLibraryInfo::has()</a>, <a class="el" href="BuildLibCalls_8cpp_source.html#l00139">llvm::inferLibFuncAttributes()</a>, and <a class="el" href="CaptureTracking_8cpp_source.html#l00158">llvm::PointerMayBeCaptured()</a>.</p>
-
 </div>
 </div>
 <a id="adfa827b083d21f99d75f9e3e08205fee" name="adfa827b083d21f99d75f9e3e08205fee"></a>
@@ -664,9 +721,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isOnlyUsedInComparisonWithZero </td>
+          <td class="memname">static bool isOnlyUsedInComparisonWithZero </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em></td><td>)</td>
           <td></td>
         </tr>
@@ -679,8 +736,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l00163">163</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, and <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="SimplifyLibCalls_8cpp_source.html#l00175">canTransformToMemCmp()</a>.</p>
 
@@ -696,15 +751,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isOnlyUsedInEqualityComparison </td>
+          <td class="memname">static bool isOnlyUsedInEqualityComparison </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>V</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>With</em>&#160;</td>
         </tr>
         <tr>
@@ -724,8 +779,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l00093">93</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>.</p>
-
 </div>
 </div>
 <a id="a766df1ea3c4bf3cbc8586f310562034f" name="a766df1ea3c4bf3cbc8586f310562034f"></a>
@@ -738,15 +791,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isReportingError </td>
+          <td class="memname">static bool isReportingError </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
+          <td class="paramtype">Function *&#160;</td>
           <td class="paramname"><em>Callee</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>CI</em>, </td>
         </tr>
         <tr>
@@ -770,8 +823,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l02033">2033</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="InstrTypes_8h_source.html#l01239">llvm::CallBase::getNumArgOperands()</a>, <a class="el" href="Instructions_8h_source.html#l00284">llvm::LoadInst::getPointerOperand()</a>, and <a class="el" href="Globals_8cpp_source.html#l00227">llvm::GlobalValue::isDeclaration()</a>.</p>
-
 </div>
 </div>
 <a id="ad633d6152693e0c1dd402507ac156289" name="ad633d6152693e0c1dd402507ac156289"></a>
@@ -784,9 +835,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isTrigLibCall </td>
+          <td class="memname">static bool isTrigLibCall </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>CI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -800,8 +851,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01790">1790</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InstrTypes_8h_source.html#l01373">llvm::CallBase::hasFnAttr()</a>, and <a class="el" href="ModuleSummaryIndex_8h_source.html#l00543">llvm::FunctionSummary::FFlags::ReadNone</a>.</p>
-
 </div>
 </div>
 <a id="af237b0e2369c88dad983890a6dc07c65" name="af237b0e2369c88dad983890a6dc07c65"></a>
@@ -814,21 +863,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * optimizeBinaryDoubleFP </td>
+          <td class="memname">static Value * optimizeBinaryDoubleFP </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>CI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>isPrecise</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
@@ -848,7 +897,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01143">1143</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, and <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01076">optimizeDoubleFP()</a>.</p>
+<p class="reference">References <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01076">optimizeDoubleFP()</a>.</p>
 
 </div>
 </div>
@@ -862,27 +911,27 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * optimizeDoubleFP </td>
+          <td class="memname">static Value * optimizeDoubleFP </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>CI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>isBinary</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>isPrecise</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
@@ -902,7 +951,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01076">1076</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="StringRef_8h_source.html#l00141">llvm::StringRef::back()</a>, <a class="el" href="BuildLibCalls_8cpp_source.html#l01054">llvm::emitBinaryFloatFnCall()</a>, <a class="el" href="BuildLibCalls_8cpp_source.html#l01035">llvm::emitUnaryFloatFnCall()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="Function_8h_source.html#l00223">llvm::Function::getAttributes()</a>, <a class="el" href="InstrTypes_8h_source.html#l01287">llvm::CallBase::getCalledFunction()</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00234">llvm::Instruction::getFastMathFlags()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00059">llvm::Instruction::getFunction()</a>, <a class="el" href="Function_8h_source.html#l00193">llvm::Function::getIntrinsicID()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00055">llvm::Instruction::getModule()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="PPCReduceCRLogicals_8cpp_source.html#l00252">isBinary()</a>, <a class="el" href="Type_8h_source.html#l00149">llvm::Type::isDoubleTy()</a>, <a class="el" href="Type_8h_source.html#l00146">llvm::Type::isFloatTy()</a>, <a class="el" href="Function_8h_source.html#l00198">llvm::Function::isIntrinsic()</a>, <a class="el" href="StringRef_8h_source.html#l00130">llvm::StringRef::size()</a>, <a class="el" href="StringRef_8h_source.html#l00256">llvm::StringRef::startswith()</a>, <a class="el" href="Value_8h_source.html#l00399">llvm::Value::users()</a>, and <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01058">valueHasFloatPrecision()</a>.</p>
+<p class="reference">References <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01058">valueHasFloatPrecision()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01143">optimizeBinaryDoubleFP()</a>, and <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01137">optimizeUnaryDoubleFP()</a>.</p>
 
@@ -918,21 +967,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * optimizeMemCmpConstantSize </td>
+          <td class="memname">static Value * optimizeMemCmpConstantSize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>CI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>LHS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>RHS</em>, </td>
         </tr>
         <tr>
@@ -944,13 +993,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DataLayout.html">DataLayout</a> &amp;&#160;</td>
+          <td class="paramtype">const DataLayout &amp;&#160;</td>
           <td class="paramname"><em>DL</em>&#160;</td>
         </tr>
         <tr>
@@ -968,7 +1017,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l00844">844</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="BuildLibCalls_8cpp_source.html#l00798">llvm::castToCStr()</a>, <a class="el" href="ConstantFolding_8cpp_source.html#l00603">llvm::ConstantFoldLoadFromConstPtr()</a>, <a class="el" href="StringRef_8h_source.html#l00122">llvm::StringRef::data()</a>, <a class="el" href="IntervalMap_8h_source.html#l00526">llvm::IntervalMapImpl::NodeRef::get()</a>, <a class="el" href="Constants_8cpp_source.html#l01782">llvm::ConstantExpr::getBitCast()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l03542">llvm::getConstantStringInfo()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="Transforms_2Utils_2Local_8h_source.html#l00267">llvm::getKnownAlignment()</a>, <a class="el" href="Constants_8cpp_source.html#l00274">llvm::Constant::getNullValue()</a>, <a class="el" href="classllvm_1_1Type.html#a5ab2d0b0f0b8ceec3b907184e7567197">llvm::Type::getPointerAddressSpace()</a>, <a class="el" href="classllvm_1_1Type.html#a2821cb7434bee7b1ab850758f9a57bb4">llvm::Type::getPointerTo()</a>, <a class="el" href="DataLayout_8cpp_source.html#l00756">llvm::DataLayout::getPrefTypeAlignment()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, <a class="el" href="DataLayout_8h_source.html#l00254">llvm::DataLayout::isLegalInteger()</a>, <a class="el" href="ValueTracking_8cpp_source.html#l00213">llvm::isOnlyUsedInZeroEqualityComparison()</a>, <a class="el" href="MergeICmps_8cpp_source.html#l00928">memcmp</a>, and <a class="el" href="StringRef_8h_source.html#l00130">llvm::StringRef::size()</a>.</p>
+<p class="reference">References <a class="el" href="MergeICmps_8cpp_source.html#l00928">memcmp</a>.</p>
 
 </div>
 </div>
@@ -982,21 +1031,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * optimizeTrigReflections </td>
+          <td class="memname">static Value * optimizeTrigReflections </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>Call</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm.html#ae892389bbc6029d8c9dbd2b4f83b2169">LibFunc</a>&#160;</td>
+          <td class="paramtype">LibFunc&#160;</td>
           <td class="paramname"><em>Func</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>B</em>&#160;</td>
         </tr>
         <tr>
@@ -1014,7 +1063,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01177">1177</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="PatternMatch_8h_source.html#l00736">llvm::PatternMatch::m_FNeg()</a>, <a class="el" href="PatternMatch_8h_source.html#l00061">llvm::PatternMatch::m_OneUse()</a>, <a class="el" href="PatternMatch_8h_source.html#l00070">llvm::PatternMatch::m_Value()</a>, <a class="el" href="PatternMatch_8h_source.html#l00047">llvm::PatternMatch::match()</a>, and <a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>.</p>
+<p class="reference">References <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>.</p>
 
 </div>
 </div>
@@ -1028,21 +1077,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * optimizeUnaryDoubleFP </td>
+          <td class="memname">static Value * optimizeUnaryDoubleFP </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>CI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>isPrecise</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
@@ -1062,7 +1111,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01137">1137</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, and <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01076">optimizeDoubleFP()</a>.</p>
+<p class="reference">References <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01076">optimizeDoubleFP()</a>.</p>
 
 </div>
 </div>
@@ -1076,21 +1125,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * replaceUnaryCall </td>
+          <td class="memname">static Value * replaceUnaryCall </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>CI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1IRBuilder.html">IRBuilder</a>&lt;&gt; &amp;&#160;</td>
+          <td class="paramtype">IRBuilder&lt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1Intrinsic.html#a2bbee8c5fe6b399c136d84248090178b">Intrinsic::ID</a>&#160;</td>
+          <td class="paramtype">Intrinsic::ID&#160;</td>
           <td class="paramname"><em>IID</em>&#160;</td>
         </tr>
         <tr>
@@ -1108,7 +1157,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01040">1040</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a11d755651840a5529d15260aacde92f3">B</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00234">llvm::Instruction::getFastMathFlags()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00055">llvm::Instruction::getModule()</a>, <a class="el" href="Value_8h_source.html#l00244">llvm::Value::getType()</a>, and <a class="el" href="Value_8cpp_source.html#l00291">llvm::Value::takeName()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
 
 </div>
 </div>
@@ -1122,9 +1171,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Value.html">Value</a> * valueHasFloatPrecision </td>
+          <td class="memname">static Value * valueHasFloatPrecision </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Value.html">Value</a> *&#160;</td>
+          <td class="paramtype">Value *&#160;</td>
           <td class="paramname"><em>Val</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1141,67 +1190,16 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01058">1058</a> of file <a class="el" href="SimplifyLibCalls_8cpp_source.html">SimplifyLibCalls.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="IntervalMap_8h_source.html#l00526">llvm::IntervalMapImpl::NodeRef::get()</a>, <a class="el" href="APFloat_8cpp_source.html#l00155">llvm::APFloatBase::IEEEsingle()</a>, and <a class="el" href="APFloat_8h_source.html#l00185">llvm::APFloatBase::rmNearestTiesToEven</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="SimplifyLibCalls_8cpp_source.html#l01076">optimizeDoubleFP()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="af84dd5a2e2f1d4af4d3223f0320821de" name="af84dd5a2e2f1d4af4d3223f0320821de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af84dd5a2e2f1d4af4d3223f0320821de">&#9670;&nbsp;</a></span>EnableUnsafeFPShrink</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; EnableUnsafeFPShrink(&quot;enable-double-float-shrink&quot;, cl::Hidden, cl::init(false), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable unsafe double to float &quot; &quot;shrinking <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> math lib calls&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;enable-double-float-shrink&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable unsafe double to float &quot; &quot;shrinking <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> math lib calls&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="SimplifyLibCalls_8cpp_source.html#l02689">llvm::LibCallSimplifier::optimizeCall()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:23 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

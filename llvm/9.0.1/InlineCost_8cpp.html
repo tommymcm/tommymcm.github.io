@@ -52,43 +52,73 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">InlineCost.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="InlineCost_8h_source.html">llvm/Analysis/InlineCost.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="STLExtras_8h_source.html">llvm/ADT/STLExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SetVector_8h_source.html">llvm/ADT/SetVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallPtrSet_8h_source.html">llvm/ADT/SmallPtrSet.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AssumptionCache_8h_source.html">llvm/Analysis/AssumptionCache.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BlockFrequencyInfo_8h_source.html">llvm/Analysis/BlockFrequencyInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CodeMetrics_8h_source.html">llvm/Analysis/CodeMetrics.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ConstantFolding_8h_source.html">llvm/Analysis/ConstantFolding.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Analysis_2CFG_8h_source.html">llvm/Analysis/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstructionSimplify_8h_source.html">llvm/Analysis/InstructionSimplify.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ProfileSummaryInfo_8h_source.html">llvm/Analysis/ProfileSummaryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ValueTracking_8h_source.html">llvm/Analysis/ValueTracking.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/InlineCost.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/STLExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SetVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/AssumptionCache.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/BlockFrequencyInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CodeMetrics.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ConstantFolding.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/InstructionSimplify.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ProfileSummaryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ValueTracking.h&quot;</code><br />
 <code>#include &quot;llvm/Config/llvm-config.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallingConv_8h_source.html">llvm/IR/CallingConv.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DataLayout_8h_source.html">llvm/IR/DataLayout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GetElementPtrTypeIterator_8h_source.html">llvm/IR/GetElementPtrTypeIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalAlias_8h_source.html">llvm/IR/GlobalAlias.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="InstVisitor_8h_source.html">llvm/IR/InstVisitor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Operator_8h_source.html">llvm/IR/Operator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PatternMatch_8h_source.html">llvm/IR/PatternMatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;llvm/IR/CallingConv.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DataLayout.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/GetElementPtrTypeIterator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/GlobalAlias.h&quot;</code><br />
+<code>#include &quot;llvm/IR/InstVisitor.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Operator.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PatternMatch.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for InlineCost.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="InlineCost_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2InlineCost_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2InlineCost_8cpp" id="alib_2Analysis_2InlineCost_8cpp">
+<area shape="rect" title=" " alt="" coords="2829,5,3023,31"/>
+<area shape="rect" title=" " alt="" coords="5,86,196,111"/>
+<area shape="rect" title=" " alt="" coords="221,86,383,111"/>
+<area shape="rect" title=" " alt="" coords="408,86,567,111"/>
+<area shape="rect" title=" " alt="" coords="591,86,765,111"/>
+<area shape="rect" title=" " alt="" coords="789,86,964,111"/>
+<area shape="rect" title=" " alt="" coords="988,86,1139,111"/>
+<area shape="rect" title=" " alt="" coords="1163,79,1353,119"/>
+<area shape="rect" title=" " alt="" coords="1377,79,1595,119"/>
+<area shape="rect" title=" " alt="" coords="1619,86,1825,111"/>
+<area shape="rect" title=" " alt="" coords="1849,86,2080,111"/>
+<area shape="rect" title=" " alt="" coords="2104,86,2257,111"/>
+<area shape="rect" title=" " alt="" coords="2281,79,2464,119"/>
+<area shape="rect" title=" " alt="" coords="2488,86,2671,111"/>
+<area shape="rect" title=" " alt="" coords="2695,79,2914,119"/>
+<area shape="rect" title=" " alt="" coords="2938,79,3157,119"/>
+<area shape="rect" title=" " alt="" coords="3181,86,3397,111"/>
+<area shape="rect" title=" " alt="" coords="3421,86,3607,111"/>
+<area shape="rect" title=" " alt="" coords="3631,86,3792,111"/>
+<area shape="rect" title=" " alt="" coords="3816,86,3975,111"/>
+<area shape="rect" title=" " alt="" coords="3999,86,4159,111"/>
+<area shape="rect" title=" " alt="" coords="4183,79,4381,119"/>
+<area shape="rect" title=" " alt="" coords="4405,86,4564,111"/>
+<area shape="rect" title=" " alt="" coords="4589,86,4738,111"/>
+<area shape="rect" title=" " alt="" coords="4762,86,4922,111"/>
+<area shape="rect" title=" " alt="" coords="4947,86,5087,111"/>
+<area shape="rect" title=" " alt="" coords="5111,86,5282,111"/>
+<area shape="rect" title=" " alt="" coords="5306,86,5469,111"/>
+<area shape="rect" title=" " alt="" coords="5493,86,5700,111"/>
+</map>
 </div>
 </div>
 <p><a href="InlineCost_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -104,32 +134,29 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a904dc9affee79ae89721870b1be403ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a904dc9affee79ae89721870b1be403ba">STATISTIC</a> (NumCallsAnalyzed, &quot;Number of call sites analyzed&quot;)</td></tr>
 <tr class="separator:a904dc9affee79ae89721870b1be403ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a825e0b91ed69daae71f5c918082ee2e1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a825e0b91ed69daae71f5c918082ee2e1">functionsHaveCompatibleAttributes</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> *Caller, <a class="el" href="classllvm_1_1Function.html">Function</a> *<a class="el" href="AMDGPULibCalls_8cpp.html#a537c835c34f0b44b6ad2696643754390">Callee</a>, <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;TTI)</td></tr>
+<tr class="memitem:aae274f2e177c66ffc42fb440750dcd9b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#aae274f2e177c66ffc42fb440750dcd9b">InlineThreshold</a> (&quot;inline-threshold&quot;, cl::Hidden, cl::init(225), cl::ZeroOrMore, cl::desc(&quot;Control the amount of inlining to perform (default = 225)&quot;))</td></tr>
+<tr class="separator:aae274f2e177c66ffc42fb440750dcd9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fea13a4ac33c82a80df799eae483b8c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a7fea13a4ac33c82a80df799eae483b8c">HintThreshold</a> (&quot;inlinehint-threshold&quot;, cl::Hidden, cl::init(325), cl::ZeroOrMore, cl::desc(&quot;Threshold for inlining <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> with <a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a> hint&quot;))</td></tr>
+<tr class="separator:a7fea13a4ac33c82a80df799eae483b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cc868e142b7fbd7abfb282b6de47825"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a6cc868e142b7fbd7abfb282b6de47825">ColdCallSiteThreshold</a> (&quot;inline-cold-callsite-threshold&quot;, cl::Hidden, cl::init(45), cl::ZeroOrMore, cl::desc(&quot;Threshold for inlining cold callsites&quot;))</td></tr>
+<tr class="separator:a6cc868e142b7fbd7abfb282b6de47825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdea7c83637ecd2bb0cab7c0968514a4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#afdea7c83637ecd2bb0cab7c0968514a4">ColdThreshold</a> (&quot;inlinecold-threshold&quot;, cl::Hidden, cl::init(45), cl::ZeroOrMore, cl::desc(&quot;Threshold for inlining <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> with cold attribute&quot;))</td></tr>
+<tr class="separator:afdea7c83637ecd2bb0cab7c0968514a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8a445732ed5874bcc429e39a6f827c1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#ae8a445732ed5874bcc429e39a6f827c1">HotCallSiteThreshold</a> (&quot;hot-callsite-threshold&quot;, cl::Hidden, cl::init(3000), cl::ZeroOrMore, cl::desc(&quot;Threshold for hot callsites &quot;))</td></tr>
+<tr class="separator:ae8a445732ed5874bcc429e39a6f827c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cea7c9974f1b27403d23b5160883a31"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a0cea7c9974f1b27403d23b5160883a31">LocallyHotCallSiteThreshold</a> (&quot;locally-hot-callsite-threshold&quot;, cl::Hidden, cl::init(525), cl::ZeroOrMore, cl::desc(&quot;Threshold for locally hot callsites &quot;))</td></tr>
+<tr class="separator:a0cea7c9974f1b27403d23b5160883a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af482637aeaadf12f5a1c663cb3394d62"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#af482637aeaadf12f5a1c663cb3394d62">ColdCallSiteRelFreq</a> (&quot;cold-callsite-rel-freq&quot;, cl::Hidden, cl::init(2), cl::ZeroOrMore, cl::desc(&quot;Maximum block frequency, expressed as a percentage of caller's &quot; &quot;<a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> frequency, for a callsite to be cold in the absence of &quot; &quot;profile information.&quot;))</td></tr>
+<tr class="separator:af482637aeaadf12f5a1c663cb3394d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1994610a9ef8bc994faa9027f861aac6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a1994610a9ef8bc994faa9027f861aac6">HotCallSiteRelFreq</a> (&quot;hot-callsite-rel-freq&quot;, cl::Hidden, cl::init(60), cl::ZeroOrMore, cl::desc(&quot;Minimum block frequency, expressed as a multiple of caller's &quot; &quot;<a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> frequency, for a callsite to be hot in the absence of &quot; &quot;profile information.&quot;))</td></tr>
+<tr class="separator:a1994610a9ef8bc994faa9027f861aac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23ca92296c3da100939650febb7f9681"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a23ca92296c3da100939650febb7f9681">OptComputeFullInlineCost</a> (&quot;inline-cost-full&quot;, cl::Hidden, cl::init(false), cl::ZeroOrMore, cl::desc(&quot;Compute the full <a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a> cost of a call site even when the cost &quot; &quot;exceeds the threshold.&quot;))</td></tr>
+<tr class="separator:a23ca92296c3da100939650febb7f9681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a825e0b91ed69daae71f5c918082ee2e1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a825e0b91ed69daae71f5c918082ee2e1">functionsHaveCompatibleAttributes</a> (Function *Caller, Function *Callee, TargetTransformInfo &amp;TTI)</td></tr>
 <tr class="memdesc:a825e0b91ed69daae71f5c918082ee2e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test that there are no attribute conflicts between Caller and Callee that prevent inlining.  <a href="InlineCost_8cpp.html#a825e0b91ed69daae71f5c918082ee2e1">More...</a><br /></td></tr>
 <tr class="separator:a825e0b91ed69daae71f5c918082ee2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63865cbea27abfbcf52660f46ef822b5"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a63865cbea27abfbcf52660f46ef822b5">computeThresholdFromOptLevels</a> (<a class="el" href="classunsigned.html">unsigned</a> OptLevel, <a class="el" href="classunsigned.html">unsigned</a> SizeOptLevel)</td></tr>
+<tr class="memitem:a63865cbea27abfbcf52660f46ef822b5"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a63865cbea27abfbcf52660f46ef822b5">computeThresholdFromOptLevels</a> (unsigned OptLevel, unsigned SizeOptLevel)</td></tr>
 <tr class="separator:a63865cbea27abfbcf52660f46ef822b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:abb3935da2bfeb2dfce29ee9674656689"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#abb3935da2bfeb2dfce29ee9674656689">InlineThreshold</a> (&quot;inline-threshold&quot;, cl::Hidden, cl::init(225), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Control the amount of inlining to perform (default = 225)&quot;))</td></tr>
-<tr class="separator:abb3935da2bfeb2dfce29ee9674656689"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b41268b061fc747bdebd4e43d0a5474"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a5b41268b061fc747bdebd4e43d0a5474">HintThreshold</a> (&quot;inlinehint-threshold&quot;, cl::Hidden, cl::init(325), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> inlining <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> with <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> hint&quot;))</td></tr>
-<tr class="separator:a5b41268b061fc747bdebd4e43d0a5474"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f180cfbfc38d6fc1f4f322e74edcf70"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a7f180cfbfc38d6fc1f4f322e74edcf70">ColdCallSiteThreshold</a> (&quot;inline-cold-callsite-threshold&quot;, cl::Hidden, cl::init(45), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> inlining cold callsites&quot;))</td></tr>
-<tr class="separator:a7f180cfbfc38d6fc1f4f322e74edcf70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d8727f64008d3c2d558e261d3b38705"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a2d8727f64008d3c2d558e261d3b38705">ColdThreshold</a> (&quot;inlinecold-threshold&quot;, cl::Hidden, cl::init(45), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> inlining <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> with cold attribute&quot;))</td></tr>
-<tr class="separator:a2d8727f64008d3c2d558e261d3b38705"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3e616864fee5fb1d76d30560357f8db"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#ac3e616864fee5fb1d76d30560357f8db">HotCallSiteThreshold</a> (&quot;hot-callsite-threshold&quot;, cl::Hidden, cl::init(3000), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> hot callsites &quot;))</td></tr>
-<tr class="separator:ac3e616864fee5fb1d76d30560357f8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a973f5987450ce0f1c64595b42480ad07"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a973f5987450ce0f1c64595b42480ad07">LocallyHotCallSiteThreshold</a> (&quot;locally-hot-callsite-threshold&quot;, cl::Hidden, cl::init(525), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> locally hot callsites &quot;))</td></tr>
-<tr class="separator:a973f5987450ce0f1c64595b42480ad07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3de61aa66805cdddfdf99840213af9ab"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a3de61aa66805cdddfdf99840213af9ab">ColdCallSiteRelFreq</a> (&quot;cold-callsite-rel-freq&quot;, cl::Hidden, cl::init(2), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Maximum block frequency, expressed as a percentage of caller's &quot; &quot;<a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> frequency, <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> a callsite to be cold in the absence of &quot; &quot;profile information.&quot;))</td></tr>
-<tr class="separator:a3de61aa66805cdddfdf99840213af9ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dd6572be951dbb35559e20ebbfd41cc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a7dd6572be951dbb35559e20ebbfd41cc">HotCallSiteRelFreq</a> (&quot;hot-callsite-rel-freq&quot;, cl::Hidden, cl::init(60), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Minimum block frequency, expressed as a multiple of caller's &quot; &quot;<a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> frequency, <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> a callsite to be hot in the absence of &quot; &quot;profile information.&quot;))</td></tr>
-<tr class="separator:a7dd6572be951dbb35559e20ebbfd41cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c866f8c04d147f3b14bb60963c506ff"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InlineCost_8cpp.html#a2c866f8c04d147f3b14bb60963c506ff">OptComputeFullInlineCost</a> (&quot;inline-cost-full&quot;, cl::Hidden, cl::init(false), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Compute the full <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> cost of a call site even when the cost &quot; &quot;exceeds the threshold.&quot;))</td></tr>
-<tr class="separator:a2c866f8c04d147f3b14bb60963c506ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ab2134ebaeaea50d7cf9be53c567777eb" name="ab2134ebaeaea50d7cf9be53c567777eb"></a>
@@ -167,6 +194,168 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="af482637aeaadf12f5a1c663cb3394d62" name="af482637aeaadf12f5a1c663cb3394d62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af482637aeaadf12f5a1c663cb3394d62">&#9670;&nbsp;</a></span>ColdCallSiteRelFreq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; ColdCallSiteRelFreq </td>
+          <td>(</td>
+          <td class="paramtype">&quot;cold-callsite-rel-freq&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(2)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ZeroOrMore&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Maximum block frequency, expressed as a percentage of caller's &quot; &quot;<a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> frequency, for a callsite to be cold in the absence of &quot; &quot;profile information.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6cc868e142b7fbd7abfb282b6de47825" name="a6cc868e142b7fbd7abfb282b6de47825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cc868e142b7fbd7abfb282b6de47825">&#9670;&nbsp;</a></span>ColdCallSiteThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; ColdCallSiteThreshold </td>
+          <td>(</td>
+          <td class="paramtype">&quot;inline-cold-callsite-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(45)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ZeroOrMore&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Threshold for inlining cold callsites&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afdea7c83637ecd2bb0cab7c0968514a4" name="afdea7c83637ecd2bb0cab7c0968514a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdea7c83637ecd2bb0cab7c0968514a4">&#9670;&nbsp;</a></span>ColdThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; ColdThreshold </td>
+          <td>(</td>
+          <td class="paramtype">&quot;inlinecold-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(45)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ZeroOrMore&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Threshold for inlining <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> with cold attribute&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a63865cbea27abfbcf52660f46ef822b5" name="a63865cbea27abfbcf52660f46ef822b5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a63865cbea27abfbcf52660f46ef822b5">&#9670;&nbsp;</a></span>computeThresholdFromOptLevels()</h2>
 
@@ -179,13 +368,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static int computeThresholdFromOptLevels </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>OptLevel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classunsigned.html">unsigned</a>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>SizeOptLevel</em>&#160;</td>
         </tr>
         <tr>
@@ -203,9 +392,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineCost_8cpp_source.html#l02214">2214</a> of file <a class="el" href="InlineCost_8cpp_source.html">InlineCost.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="InlineCost_8cpp.html#abb3935da2bfeb2dfce29ee9674656689">InlineThreshold</a>, <a class="el" href="InlineCost_8h_source.html#l00040">llvm::InlineConstants::OptAggressiveThreshold</a>, <a class="el" href="InlineCost_8h_source.html#l00037">llvm::InlineConstants::OptMinSizeThreshold</a>, and <a class="el" href="InlineCost_8h_source.html#l00034">llvm::InlineConstants::OptSizeThreshold</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="InlineCost_8cpp_source.html#l02225">llvm::getInlineParams()</a>.</p>
+<p class="reference">References <a class="el" href="InlineCost_8cpp.html#aae274f2e177c66ffc42fb440750dcd9b">InlineThreshold()</a>.</p>
 
 </div>
 </div>
@@ -219,21 +406,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> functionsHaveCompatibleAttributes </td>
+          <td class="memname">static bool functionsHaveCompatibleAttributes </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
+          <td class="paramtype">Function *&#160;</td>
           <td class="paramname"><em>Caller</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> *&#160;</td>
+          <td class="paramtype">Function *&#160;</td>
           <td class="paramname"><em>Callee</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;&#160;</td>
+          <td class="paramtype">TargetTransformInfo &amp;&#160;</td>
           <td class="paramname"><em>TTI</em>&#160;</td>
         </tr>
         <tr>
@@ -253,9 +440,331 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InlineCost_8cpp_source.html#l01974">1974</a> of file <a class="el" href="InlineCost_8cpp_source.html">InlineCost.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Attributes_8cpp_source.html#l01852">llvm::AttributeFuncs::areInlineCompatible()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00767">llvm::TargetTransformInfo::areInlineCompatible()</a>, and <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Callee</a>.</p>
+</div>
+</div>
+<a id="a7fea13a4ac33c82a80df799eae483b8c" name="a7fea13a4ac33c82a80df799eae483b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fea13a4ac33c82a80df799eae483b8c">&#9670;&nbsp;</a></span>HintThreshold()</h2>
 
-<p class="reference">Referenced by <a class="el" href="InlineCost_8cpp_source.html#l02023">llvm::getInlineCost()</a>.</p>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; HintThreshold </td>
+          <td>(</td>
+          <td class="paramtype">&quot;inlinehint-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(325)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ZeroOrMore&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Threshold for inlining <a class="el" href="AlwaysInliner_8cpp.html#a2d8a8f47affac13913c407ee9714d994">functions</a> with <a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a> hint&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1994610a9ef8bc994faa9027f861aac6" name="a1994610a9ef8bc994faa9027f861aac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1994610a9ef8bc994faa9027f861aac6">&#9670;&nbsp;</a></span>HotCallSiteRelFreq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; HotCallSiteRelFreq </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hot-callsite-rel-freq&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(60)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ZeroOrMore&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Minimum block frequency, expressed as a multiple of caller's &quot; &quot;<a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> frequency, for a callsite to be hot in the absence of &quot; &quot;profile information.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae8a445732ed5874bcc429e39a6f827c1" name="ae8a445732ed5874bcc429e39a6f827c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8a445732ed5874bcc429e39a6f827c1">&#9670;&nbsp;</a></span>HotCallSiteThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; HotCallSiteThreshold </td>
+          <td>(</td>
+          <td class="paramtype">&quot;hot-callsite-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(3000)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ZeroOrMore&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Threshold for hot callsites &quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aae274f2e177c66ffc42fb440750dcd9b" name="aae274f2e177c66ffc42fb440750dcd9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae274f2e177c66ffc42fb440750dcd9b">&#9670;&nbsp;</a></span>InlineThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; InlineThreshold </td>
+          <td>(</td>
+          <td class="paramtype">&quot;inline-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(225)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ZeroOrMore&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Control the amount of inlining to perform (default = 225)&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="InlineCost_8cpp_source.html#l02214">computeThresholdFromOptLevels()</a>.</p>
+
+</div>
+</div>
+<a id="a0cea7c9974f1b27403d23b5160883a31" name="a0cea7c9974f1b27403d23b5160883a31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cea7c9974f1b27403d23b5160883a31">&#9670;&nbsp;</a></span>LocallyHotCallSiteThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; LocallyHotCallSiteThreshold </td>
+          <td>(</td>
+          <td class="paramtype">&quot;locally-hot-callsite-threshold&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(525)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ZeroOrMore&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Threshold for locally hot callsites &quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a23ca92296c3da100939650febb7f9681" name="a23ca92296c3da100939650febb7f9681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23ca92296c3da100939650febb7f9681">&#9670;&nbsp;</a></span>OptComputeFullInlineCost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; OptComputeFullInlineCost </td>
+          <td>(</td>
+          <td class="paramtype">&quot;inline-cost-full&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ZeroOrMore&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Compute the full <a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a> cost of a call site even when the cost &quot; &quot;exceeds the threshold.&quot;)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -287,509 +796,10 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a3de61aa66805cdddfdf99840213af9ab" name="a3de61aa66805cdddfdf99840213af9ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3de61aa66805cdddfdf99840213af9ab">&#9670;&nbsp;</a></span>ColdCallSiteRelFreq</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; ColdCallSiteRelFreq(&quot;cold-callsite-rel-freq&quot;, cl::Hidden, cl::init(2), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Maximum block frequency, expressed as a percentage of caller's &quot; &quot;<a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> frequency, <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> a callsite to be cold in the absence of &quot; &quot;profile information.&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;cold-callsite-rel-freq&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(2)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ZeroOrMore&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Maximum block frequency, expressed as a percentage of caller's &quot; &quot;<a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> frequency, <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> a callsite to be cold in the absence of &quot; &quot;profile information.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7f180cfbfc38d6fc1f4f322e74edcf70" name="a7f180cfbfc38d6fc1f4f322e74edcf70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f180cfbfc38d6fc1f4f322e74edcf70">&#9670;&nbsp;</a></span>ColdCallSiteThreshold</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; ColdCallSiteThreshold(&quot;inline-cold-callsite-threshold&quot;, cl::Hidden, cl::init(45), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> inlining cold callsites&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;inline-cold-callsite-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(45)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ZeroOrMore&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> inlining cold callsites&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="InlineCost_8cpp_source.html#l02156">llvm::getInlineParams()</a>.</p>
-
-</div>
-</div>
-<a id="a2d8727f64008d3c2d558e261d3b38705" name="a2d8727f64008d3c2d558e261d3b38705"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d8727f64008d3c2d558e261d3b38705">&#9670;&nbsp;</a></span>ColdThreshold</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; ColdThreshold(&quot;inlinecold-threshold&quot;, cl::Hidden, cl::init(45), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> inlining <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> with cold attribute&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;inlinecold-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(45)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ZeroOrMore&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> inlining <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> with cold attribute&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="InlineCost_8cpp_source.html#l02156">llvm::getInlineParams()</a>.</p>
-
-</div>
-</div>
-<a id="a5b41268b061fc747bdebd4e43d0a5474" name="a5b41268b061fc747bdebd4e43d0a5474"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b41268b061fc747bdebd4e43d0a5474">&#9670;&nbsp;</a></span>HintThreshold</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; HintThreshold(&quot;inlinehint-threshold&quot;, cl::Hidden, cl::init(325), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> inlining <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> with <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> hint&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;inlinehint-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(325)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ZeroOrMore&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> inlining <a class="el" href="AMDGPUPropagateAttributes_8cpp.html#a89aee22a588785ca0c0755b95871b79e">functions</a> with <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> hint&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="InlineCost_8cpp_source.html#l02156">llvm::getInlineParams()</a>.</p>
-
-</div>
-</div>
-<a id="a7dd6572be951dbb35559e20ebbfd41cc" name="a7dd6572be951dbb35559e20ebbfd41cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7dd6572be951dbb35559e20ebbfd41cc">&#9670;&nbsp;</a></span>HotCallSiteRelFreq</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; HotCallSiteRelFreq(&quot;hot-callsite-rel-freq&quot;, cl::Hidden, cl::init(60), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Minimum block frequency, expressed as a multiple of caller's &quot; &quot;<a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> frequency, <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> a callsite to be hot in the absence of &quot; &quot;profile information.&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hot-callsite-rel-freq&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(60)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ZeroOrMore&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Minimum block frequency, expressed as a multiple of caller's &quot; &quot;<a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> frequency, <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> a callsite to be hot in the absence of &quot; &quot;profile information.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac3e616864fee5fb1d76d30560357f8db" name="ac3e616864fee5fb1d76d30560357f8db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3e616864fee5fb1d76d30560357f8db">&#9670;&nbsp;</a></span>HotCallSiteThreshold</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; HotCallSiteThreshold(&quot;hot-callsite-threshold&quot;, cl::Hidden, cl::init(3000), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> hot callsites &quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;hot-callsite-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(3000)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ZeroOrMore&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> hot callsites &quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="InlineCost_8cpp_source.html#l02156">llvm::getInlineParams()</a>.</p>
-
-</div>
-</div>
-<a id="abb3935da2bfeb2dfce29ee9674656689" name="abb3935da2bfeb2dfce29ee9674656689"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb3935da2bfeb2dfce29ee9674656689">&#9670;&nbsp;</a></span>InlineThreshold</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; InlineThreshold(&quot;inline-threshold&quot;, cl::Hidden, cl::init(225), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Control the amount of inlining to perform (default = 225)&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;inline-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(225)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ZeroOrMore&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Control the amount of inlining to perform (default = 225)&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="InlineCost_8cpp_source.html#l02214">computeThresholdFromOptLevels()</a>, and <a class="el" href="InlineCost_8cpp_source.html#l02156">llvm::getInlineParams()</a>.</p>
-
-</div>
-</div>
-<a id="a973f5987450ce0f1c64595b42480ad07" name="a973f5987450ce0f1c64595b42480ad07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a973f5987450ce0f1c64595b42480ad07">&#9670;&nbsp;</a></span>LocallyHotCallSiteThreshold</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; LocallyHotCallSiteThreshold(&quot;locally-hot-callsite-threshold&quot;, cl::Hidden, cl::init(525), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> locally hot callsites &quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;locally-hot-callsite-threshold&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(525)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ZeroOrMore&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Threshold <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> locally hot callsites &quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="InlineCost_8cpp_source.html#l02156">llvm::getInlineParams()</a>.</p>
-
-</div>
-</div>
-<a id="a2c866f8c04d147f3b14bb60963c506ff" name="a2c866f8c04d147f3b14bb60963c506ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c866f8c04d147f3b14bb60963c506ff">&#9670;&nbsp;</a></span>OptComputeFullInlineCost</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; OptComputeFullInlineCost(&quot;inline-cost-full&quot;, cl::Hidden, cl::init(false), cl::ZeroOrMore, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Compute the full <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> cost of a call site even when the cost &quot; &quot;exceeds the threshold.&quot;)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;inline-cost-full&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ZeroOrMore&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Compute the full <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> cost of a call site even when the cost &quot; &quot;exceeds the threshold.&quot;)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:12 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -55,28 +55,42 @@ $(function() {
   <div class="headertitle"><div class="title">DbiStreamBuilder.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="DbiStreamBuilder_8h_source.html">llvm/DebugInfo/PDB/Native/DbiStreamBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ArrayRef_8h_source.html">llvm/ADT/ArrayRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BinaryFormat_2COFF_8h_source.html">llvm/BinaryFormat/COFF.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DebugFrameDataSubsection_8h_source.html">llvm/DebugInfo/CodeView/DebugFrameDataSubsection.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MSFBuilder_8h_source.html">llvm/DebugInfo/MSF/MSFBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MappedBlockStream_8h_source.html">llvm/DebugInfo/MSF/MappedBlockStream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DbiModuleDescriptorBuilder_8h_source.html">llvm/DebugInfo/PDB/Native/DbiModuleDescriptorBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DbiStream_8h_source.html">llvm/DebugInfo/PDB/Native/DbiStream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="RawError_8h_source.html">llvm/DebugInfo/PDB/Native/RawError.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Object_2COFF_8h_source.html">llvm/Object/COFF.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BinaryStreamWriter_8h_source.html">llvm/Support/BinaryStreamWriter.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/DebugInfo/PDB/Native/DbiStreamBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
+<code>#include &quot;llvm/BinaryFormat/COFF.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/CodeView/DebugFrameDataSubsection.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/MSF/MSFBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/MSF/MappedBlockStream.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/PDB/Native/DbiModuleDescriptorBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/PDB/Native/DbiStream.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/PDB/Native/RawError.h&quot;</code><br />
+<code>#include &quot;llvm/Object/COFF.h&quot;</code><br />
+<code>#include &quot;llvm/Support/BinaryStreamWriter.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for DbiStreamBuilder.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="DbiStreamBuilder_8cpp__incl.png" border="0" usemap="#alib_2DebugInfo_2PDB_2Native_2DbiStreamBuilder_8cpp" alt=""/></div>
+<map name="alib_2DebugInfo_2PDB_2Native_2DbiStreamBuilder_8cpp" id="alib_2DebugInfo_2PDB_2Native_2DbiStreamBuilder_8cpp">
+<area shape="rect" title=" " alt="" coords="1041,5,1227,45"/>
+<area shape="rect" title=" " alt="" coords="5,101,204,141"/>
+<area shape="rect" title=" " alt="" coords="227,108,382,133"/>
+<area shape="rect" title=" " alt="" coords="406,108,598,133"/>
+<area shape="rect" title=" " alt="" coords="623,101,845,141"/>
+<area shape="rect" title=" " alt="" coords="869,101,1023,141"/>
+<area shape="rect" title=" " alt="" coords="1047,101,1221,141"/>
+<area shape="rect" title=" " alt="" coords="1245,93,1455,148"/>
+<area shape="rect" title=" " alt="" coords="1479,101,1634,141"/>
+<area shape="rect" title=" " alt="" coords="1659,101,1812,141"/>
+<area shape="rect" title=" " alt="" coords="1837,108,1983,133"/>
+<area shape="rect" title=" " alt="" coords="2008,101,2207,141"/>
+</map>
 </div>
 </div>
 <p><a href="DbiStreamBuilder_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4eb9f50c54774f850a82d2e4e5deed58"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DbiStreamBuilder_8cpp.html#a4eb9f50c54774f850a82d2e4e5deed58">toSecMapFlags</a> (<a class="el" href="classuint32__t.html">uint32_t</a> Flags)</td></tr>
+<tr class="memitem:a4eb9f50c54774f850a82d2e4e5deed58"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DbiStreamBuilder_8cpp.html#a4eb9f50c54774f850a82d2e4e5deed58">toSecMapFlags</a> (uint32_t Flags)</td></tr>
 <tr class="separator:a4eb9f50c54774f850a82d2e4e5deed58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -92,7 +106,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static uint16_t toSecMapFlags </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classuint32__t.html">uint32_t</a>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>Flags</em></td><td>)</td>
           <td></td>
         </tr>
@@ -106,16 +120,12 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DbiStreamBuilder_8cpp_source.html#l00332">332</a> of file <a class="el" href="DbiStreamBuilder_8cpp_source.html">DbiStreamBuilder.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="namespacellvm_1_1pdb.html#a39ee700138913a49bc90faf2c1db0b9ba12640bca518ac6f51d59d626f72a51f2">llvm::pdb::AddressIs32Bit</a>, <a class="el" href="namespacellvm_1_1pdb.html#a39ee700138913a49bc90faf2c1db0b9ba40cd014b7b6251e3a22e6a45a73a64e1">llvm::pdb::Execute</a>, <a class="el" href="BinaryFormat_2COFF_8h_source.html#l00297">llvm::COFF::IMAGE_SCN_MEM_16BIT</a>, <a class="el" href="BinaryFormat_2COFF_8h_source.html#l00319">llvm::COFF::IMAGE_SCN_MEM_EXECUTE</a>, <a class="el" href="BinaryFormat_2COFF_8h_source.html#l00320">llvm::COFF::IMAGE_SCN_MEM_READ</a>, <a class="el" href="BinaryFormat_2COFF_8h_source.html#l00321">llvm::COFF::IMAGE_SCN_MEM_WRITE</a>, <a class="el" href="namespacellvm_1_1pdb.html#a39ee700138913a49bc90faf2c1db0b9bab2865e8fee77da79e0b04f082effd84d">llvm::pdb::IsSelector</a>, <a class="el" href="namespacellvm_1_1pdb.html#a39ee700138913a49bc90faf2c1db0b9ba7a1a5f3e79fdc91edf2f5ead9d66abb4">llvm::pdb::Read</a>, and <a class="el" href="namespacellvm_1_1pdb.html#a39ee700138913a49bc90faf2c1db0b9ba1129c0e4d43f2d121652a7302712cff6">llvm::pdb::Write</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="DbiStreamBuilder_8cpp_source.html#l00356">llvm::pdb::DbiStreamBuilder::createSectionMap()</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:14 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -55,31 +55,38 @@ $(function() {
   <div class="headertitle"><div class="title">PDBExtras.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="PDBExtras_8h_source.html">llvm/DebugInfo/PDB/PDBExtras.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ArrayRef_8h_source.html">llvm/ADT/ArrayRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/DebugInfo/PDB/PDBExtras.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/ArrayRef.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 <code>#include &quot;llvm/DebugInfo/CodeView/CodeViewRegisters.def&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for PDBExtras.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="PDBExtras_8cpp__incl.png" border="0" usemap="#alib_2DebugInfo_2PDB_2PDBExtras_8cpp" alt=""/></div>
+<map name="alib_2DebugInfo_2PDB_2PDBExtras_8cpp" id="alib_2DebugInfo_2PDB_2PDBExtras_8cpp">
+<area shape="rect" title=" " alt="" coords="244,5,483,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,159,119"/>
+<area shape="rect" title=" " alt="" coords="183,86,338,111"/>
+<area shape="rect" title=" " alt="" coords="363,86,569,111"/>
+<area shape="rect" title=" " alt="" coords="593,79,784,119"/>
+</map>
 </div>
 </div>
 <p><a href="PDBExtras_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aec95b8ea23a4368890d912be4df14966"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PDBExtras_8cpp.html#aec95b8ea23a4368890d912be4df14966">CASE_OUTPUT_ENUM_CLASS_STR</a>(Class,  <a class="el" href="classllvm_1_1Value.html">Value</a>,  Str,  Stream)</td></tr>
+<tr class="memitem:aec95b8ea23a4368890d912be4df14966"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PDBExtras_8cpp.html#aec95b8ea23a4368890d912be4df14966">CASE_OUTPUT_ENUM_CLASS_STR</a>(Class,  Value,  Str,  Stream)</td></tr>
 <tr class="separator:aec95b8ea23a4368890d912be4df14966"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab472b4a9ebd411959cadb807f98f43aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PDBExtras_8cpp.html#ab472b4a9ebd411959cadb807f98f43aa">CASE_OUTPUT_ENUM_CLASS_NAME</a>(Class,  <a class="el" href="classllvm_1_1Value.html">Value</a>,  Stream)&#160;&#160;&#160;  <a class="el" href="PDBExtras_8cpp.html#aec95b8ea23a4368890d912be4df14966">CASE_OUTPUT_ENUM_CLASS_STR</a>(Class, <a class="el" href="classllvm_1_1Value.html">Value</a>, #<a class="el" href="classllvm_1_1Value.html">Value</a>, Stream)</td></tr>
+<tr class="memitem:ab472b4a9ebd411959cadb807f98f43aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PDBExtras_8cpp.html#ab472b4a9ebd411959cadb807f98f43aa">CASE_OUTPUT_ENUM_CLASS_NAME</a>(Class,  Value,  Stream)&#160;&#160;&#160;  <a class="el" href="PDBExtras_8cpp.html#aec95b8ea23a4368890d912be4df14966">CASE_OUTPUT_ENUM_CLASS_STR</a>(Class, Value, #Value, Stream)</td></tr>
 <tr class="separator:ab472b4a9ebd411959cadb807f98f43aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2309a310b8c7faa5fc48303f7f8b94e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PDBExtras_8cpp.html#a2309a310b8c7faa5fc48303f7f8b94e4">CV_REGISTERS_ARM64</a></td></tr>
 <tr class="separator:a2309a310b8c7faa5fc48303f7f8b94e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a1cb1ef009501bd19178fbb688059eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PDBExtras_8cpp.html#a1a1cb1ef009501bd19178fbb688059eb">CV_REGISTER</a>(<a class="el" href="PPCLoopPreIncPrep_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>,  val)</td></tr>
+<tr class="memitem:a1a1cb1ef009501bd19178fbb688059eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PDBExtras_8cpp.html#a1a1cb1ef009501bd19178fbb688059eb">CV_REGISTER</a>(name,  val)</td></tr>
 <tr class="separator:a1a1cb1ef009501bd19178fbb688059eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae16e28a1116e73952916b766d2cf5bdd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PDBExtras_8cpp.html#ae16e28a1116e73952916b766d2cf5bdd">CV_REGISTERS_X86</a></td></tr>
 <tr class="separator:ae16e28a1116e73952916b766d2cf5bdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a1cb1ef009501bd19178fbb688059eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PDBExtras_8cpp.html#a1a1cb1ef009501bd19178fbb688059eb">CV_REGISTER</a>(<a class="el" href="PPCLoopPreIncPrep_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>,  val)</td></tr>
+<tr class="memitem:a1a1cb1ef009501bd19178fbb688059eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PDBExtras_8cpp.html#a1a1cb1ef009501bd19178fbb688059eb">CV_REGISTER</a>(name,  val)</td></tr>
 <tr class="separator:a1a1cb1ef009501bd19178fbb688059eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -99,7 +106,7 @@ Macros</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="classllvm_1_1Value.html">Value</a>, </td>
+          <td class="paramname">Value, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -110,7 +117,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;  <a class="el" href="PDBExtras_8cpp.html#aec95b8ea23a4368890d912be4df14966">CASE_OUTPUT_ENUM_CLASS_STR</a>(Class, <a class="el" href="classllvm_1_1Value.html">Value</a>, #<a class="el" href="classllvm_1_1Value.html">Value</a>, Stream)</td>
+          <td></td><td>&#160;&#160;&#160;  <a class="el" href="PDBExtras_8cpp.html#aec95b8ea23a4368890d912be4df14966">CASE_OUTPUT_ENUM_CLASS_STR</a>(Class, Value, #Value, Stream)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -135,7 +142,7 @@ Macros</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="classllvm_1_1Value.html">Value</a>, </td>
+          <td class="paramname">Value, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -174,7 +181,7 @@ Macros</h2></td></tr>
           <td class="memname">#define CV_REGISTER</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="PPCLoopPreIncPrep_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, </td>
+          <td class="paramname">name, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -190,9 +197,8 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">case</span> codeview::RegisterId::name:                                             \</div>
-<div class="line">    OS &lt;&lt; #<a class="code hl_variable" href="PPCLoopPreIncPrep_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>;                                                               \</div>
+<div class="line">    OS &lt;&lt; #name;                                                               \</div>
 <div class="line">    <span class="keywordflow">return</span> OS;</div>
-<div class="ttc" id="aPPCLoopPreIncPrep_8cpp_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="PPCLoopPreIncPrep_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a></div><div class="ttdeci">static const char * name</div><div class="ttdef"><b>Definition:</b> <a href="PPCLoopPreIncPrep_8cpp_source.html#l00108">PPCLoopPreIncPrep.cpp:108</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -206,7 +212,7 @@ Macros</h2></td></tr>
           <td class="memname">#define CV_REGISTER</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="PPCLoopPreIncPrep_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, </td>
+          <td class="paramname">name, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -222,7 +228,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">case</span> codeview::RegisterId::name:                                             \</div>
-<div class="line">    OS &lt;&lt; #<a class="code hl_variable" href="PPCLoopPreIncPrep_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>;                                                               \</div>
+<div class="line">    OS &lt;&lt; #name;                                                               \</div>
 <div class="line">    <span class="keywordflow">return</span> OS;</div>
 </div><!-- fragment -->
 </div>
@@ -258,7 +264,7 @@ Macros</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:14 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

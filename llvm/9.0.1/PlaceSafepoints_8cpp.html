@@ -57,26 +57,45 @@ $(function() {
   <div class="headertitle"><div class="title">PlaceSafepoints.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SetVector_8h_source.html">llvm/ADT/SetVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Analysis_2CFG_8h_source.html">llvm/Analysis/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScalarEvolution_8h_source.html">llvm/Analysis/ScalarEvolution.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetLibraryInfo_8h_source.html">llvm/Analysis/TargetLibraryInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Transforms_2Utils_2Local_8h_source.html">llvm/Transforms/Utils/Local.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IntrinsicInst_8h_source.html">llvm/IR/IntrinsicInst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LegacyPassManager_8h_source.html">llvm/IR/LegacyPassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statepoint_8h_source.html">llvm/IR/Statepoint.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Cloning_8h_source.html">llvm/Transforms/Utils/Cloning.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SetVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScalarEvolution.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetLibraryInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Local.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/IntrinsicInst.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LegacyPassManager.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Statepoint.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/Cloning.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for PlaceSafepoints.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="PlaceSafepoints_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2PlaceSafepoints_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Scalar_2PlaceSafepoints_8cpp" id="alib_2Transforms_2Scalar_2PlaceSafepoints_8cpp">
+<area shape="rect" title=" " alt="" coords="1414,5,1573,45"/>
+<area shape="rect" title=" " alt="" coords="5,101,101,126"/>
+<area shape="rect" title=" " alt="" coords="126,101,285,126"/>
+<area shape="rect" title=" " alt="" coords="309,101,459,126"/>
+<area shape="rect" title=" " alt="" coords="483,101,637,126"/>
+<area shape="rect" title=" " alt="" coords="661,101,888,126"/>
+<area shape="rect" title=" " alt="" coords="913,93,1111,133"/>
+<area shape="rect" title=" " alt="" coords="1135,93,1297,133"/>
+<area shape="rect" title=" " alt="" coords="1321,101,1481,126"/>
+<area shape="rect" title=" " alt="" coords="1505,101,1665,126"/>
+<area shape="rect" title=" " alt="" coords="1690,101,1905,126"/>
+<area shape="rect" title=" " alt="" coords="1929,101,2079,126"/>
+<area shape="rect" title=" " alt="" coords="2103,101,2318,126"/>
+<area shape="rect" title=" " alt="" coords="2343,101,2505,126"/>
+<area shape="rect" title=" " alt="" coords="2530,101,2713,126"/>
+<area shape="rect" title=" " alt="" coords="2737,93,2898,133"/>
+<area shape="rect" title=" " alt="" coords="2922,93,3083,133"/>
+</map>
 </div>
 </div>
 <p><a href="PlaceSafepoints_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -92,61 +111,61 @@ Functions</h2></td></tr>
 <tr class="separator:a382f84ef1b61ce7798e971d73d497a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcb0b2d1bcb7c38b5e3ef700e2653adf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#adcb0b2d1bcb7c38b5e3ef700e2653adf">STATISTIC</a> (NumBackedgeSafepoints, &quot;Number of backedge <a class="el" href="PlaceSafepoints_8cpp.html#ae18fd29bd3983963ebc7076104d82c3e">safepoints</a> inserted&quot;)</td></tr>
 <tr class="separator:adcb0b2d1bcb7c38b5e3ef700e2653adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acede0fd61d2e0d5d0202850570a38084"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#acede0fd61d2e0d5d0202850570a38084">STATISTIC</a> (CallInLoop, &quot;Number of <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> without <a class="el" href="PlaceSafepoints_8cpp.html#ae18fd29bd3983963ebc7076104d82c3e">safepoints</a> due to <a class="el" href="AMDGPULibCalls_8cpp.html#a91feb1b5d1a9c4e07149041912f83b42">calls</a> in loop&quot;)</td></tr>
+<tr class="memitem:acede0fd61d2e0d5d0202850570a38084"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#acede0fd61d2e0d5d0202850570a38084">STATISTIC</a> (CallInLoop, &quot;Number of <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> without <a class="el" href="PlaceSafepoints_8cpp.html#ae18fd29bd3983963ebc7076104d82c3e">safepoints</a> due to <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> in loop&quot;)</td></tr>
 <tr class="separator:acede0fd61d2e0d5d0202850570a38084"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a361b194e1c4dba3d4e157838ec64c19f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a361b194e1c4dba3d4e157838ec64c19f">STATISTIC</a> (FiniteExecution, &quot;Number of <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> without <a class="el" href="PlaceSafepoints_8cpp.html#ae18fd29bd3983963ebc7076104d82c3e">safepoints</a> finite execution&quot;)</td></tr>
 <tr class="separator:a361b194e1c4dba3d4e157838ec64c19f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a98793f564d1eb27533846241e7eba2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a1a98793f564d1eb27533846241e7eba2">InsertSafepointPoll</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *InsertBefore, std::vector&lt; <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> * &gt; &amp;ParsePointsNeeded, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI)</td></tr>
+<tr class="memitem:ae2d35fa615ab1ff5472705275e25006d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#ae2d35fa615ab1ff5472705275e25006d">AllBackedges</a> (&quot;spp-all-backedges&quot;, cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:ae2d35fa615ab1ff5472705275e25006d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19a8c02b7d170c026b47ad40291527a3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a19a8c02b7d170c026b47ad40291527a3">CountedLoopTripWidth</a> (&quot;spp-counted-loop-trip-width&quot;, cl::Hidden, cl::init(32))</td></tr>
+<tr class="memdesc:a19a8c02b7d170c026b47ad40291527a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">How narrow does the trip count of a loop have to be to have to be considered "counted"? Counted loops do not get safepoints at backedges.  <a href="PlaceSafepoints_8cpp.html#a19a8c02b7d170c026b47ad40291527a3">More...</a><br /></td></tr>
+<tr class="separator:a19a8c02b7d170c026b47ad40291527a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e325820235d58fff55d7d27700f90bd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a4e325820235d58fff55d7d27700f90bd">SplitBackedge</a> (&quot;spp-<a class="el" href="CoroSplit_8cpp.html#a5b2c0184be868c2d4c37d5e56961c5e7">split</a>-backedge&quot;, cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a4e325820235d58fff55d7d27700f90bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e89713fbe371ec3075e59f8dbba5dab"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a9e89713fbe371ec3075e59f8dbba5dab">NoEntry</a> (&quot;spp-no-entry&quot;, cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:a9e89713fbe371ec3075e59f8dbba5dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab661161beb8274ac7da41c5a8ac33083"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#ab661161beb8274ac7da41c5a8ac33083">NoCall</a> (&quot;spp-no-call&quot;, cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:ab661161beb8274ac7da41c5a8ac33083"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafc7860778280671cf0bafc7477e07af"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#aafc7860778280671cf0bafc7477e07af">NoBackedge</a> (&quot;spp-no-backedge&quot;, cl::Hidden, cl::init(false))</td></tr>
+<tr class="separator:aafc7860778280671cf0bafc7477e07af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a98793f564d1eb27533846241e7eba2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a1a98793f564d1eb27533846241e7eba2">InsertSafepointPoll</a> (Instruction *InsertBefore, std::vector&lt; CallBase * &gt; &amp;ParsePointsNeeded, const TargetLibraryInfo &amp;TLI)</td></tr>
 <tr class="separator:a1a98793f564d1eb27533846241e7eba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a798de004bec543c0f9059f8c5fc78f92"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a798de004bec543c0f9059f8c5fc78f92">needsStatepoint</a> (<a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *Call, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI)</td></tr>
+<tr class="memitem:a798de004bec543c0f9059f8c5fc78f92"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a798de004bec543c0f9059f8c5fc78f92">needsStatepoint</a> (CallBase *Call, const TargetLibraryInfo &amp;TLI)</td></tr>
 <tr class="separator:a798de004bec543c0f9059f8c5fc78f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2cbc07e426705bbdb98c0f6ae7e3f72"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#aa2cbc07e426705bbdb98c0f6ae7e3f72">containsUnconditionalCallSafepoint</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *Header, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *Pred, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;TLI)</td></tr>
+<tr class="memitem:aa2cbc07e426705bbdb98c0f6ae7e3f72"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#aa2cbc07e426705bbdb98c0f6ae7e3f72">containsUnconditionalCallSafepoint</a> (Loop *L, BasicBlock *Header, BasicBlock *Pred, DominatorTree &amp;DT, const TargetLibraryInfo &amp;TLI)</td></tr>
 <tr class="memdesc:aa2cbc07e426705bbdb98c0f6ae7e3f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this loop is known to contain a call safepoint which must unconditionally execute on any iteration of the loop which returns to the loop header via an edge from Pred.  <a href="PlaceSafepoints_8cpp.html#aa2cbc07e426705bbdb98c0f6ae7e3f72">More...</a><br /></td></tr>
 <tr class="separator:aa2cbc07e426705bbdb98c0f6ae7e3f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2003053288ba4f0e1cd9ebf82b6a1987"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a2003053288ba4f0e1cd9ebf82b6a1987">mustBeFiniteCountedLoop</a> (<a class="el" href="classllvm_1_1Loop.html">Loop</a> *L, <a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *SE, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *Pred)</td></tr>
+<tr class="memitem:a2003053288ba4f0e1cd9ebf82b6a1987"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a2003053288ba4f0e1cd9ebf82b6a1987">mustBeFiniteCountedLoop</a> (Loop *L, ScalarEvolution *SE, BasicBlock *Pred)</td></tr>
 <tr class="memdesc:a2003053288ba4f0e1cd9ebf82b6a1987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this loop is known to terminate in a finite number of iterations.  <a href="PlaceSafepoints_8cpp.html#a2003053288ba4f0e1cd9ebf82b6a1987">More...</a><br /></td></tr>
 <tr class="separator:a2003053288ba4f0e1cd9ebf82b6a1987"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe210701ce0a3abfea9278d2538a6470"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#afe210701ce0a3abfea9278d2538a6470">scanOneBB</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Start, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *End, std::vector&lt; <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> * &gt; &amp;Calls, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;Seen, std::vector&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;Worklist)</td></tr>
+<tr class="memitem:afe210701ce0a3abfea9278d2538a6470"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#afe210701ce0a3abfea9278d2538a6470">scanOneBB</a> (Instruction *Start, Instruction *End, std::vector&lt; CallInst * &gt; &amp;Calls, DenseSet&lt; BasicBlock * &gt; &amp;Seen, std::vector&lt; BasicBlock * &gt; &amp;Worklist)</td></tr>
 <tr class="separator:afe210701ce0a3abfea9278d2538a6470"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a826d7a5a20d56ef31ee4111073700c93"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a826d7a5a20d56ef31ee4111073700c93">scanInlinedCode</a> (<a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *Start, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *End, std::vector&lt; <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> * &gt; &amp;Calls, <a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;Seen)</td></tr>
+<tr class="memitem:a826d7a5a20d56ef31ee4111073700c93"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a826d7a5a20d56ef31ee4111073700c93">scanInlinedCode</a> (Instruction *Start, Instruction *End, std::vector&lt; CallInst * &gt; &amp;Calls, DenseSet&lt; BasicBlock * &gt; &amp;Seen)</td></tr>
 <tr class="separator:a826d7a5a20d56ef31ee4111073700c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab79294a2bb06a12d7f4dc32f80b8f935"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#ab79294a2bb06a12d7f4dc32f80b8f935">doesNotRequireEntrySafepointBefore</a> (<a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *Call)</td></tr>
+<tr class="memitem:ab79294a2bb06a12d7f4dc32f80b8f935"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#ab79294a2bb06a12d7f4dc32f80b8f935">doesNotRequireEntrySafepointBefore</a> (CallBase *Call)</td></tr>
 <tr class="memdesc:ab79294a2bb06a12d7f4dc32f80b8f935"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if an entry safepoint is not required before this callsite in the caller function.  <a href="PlaceSafepoints_8cpp.html#ab79294a2bb06a12d7f4dc32f80b8f935">More...</a><br /></td></tr>
 <tr class="separator:ab79294a2bb06a12d7f4dc32f80b8f935"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a893c7586e2537bc37a83a57a0190f67f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a893c7586e2537bc37a83a57a0190f67f">findLocationForEntrySafepoint</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT)</td></tr>
+<tr class="memitem:a893c7586e2537bc37a83a57a0190f67f"><td class="memItemLeft" align="right" valign="top">static Instruction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a893c7586e2537bc37a83a57a0190f67f">findLocationForEntrySafepoint</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, DominatorTree &amp;DT)</td></tr>
 <tr class="separator:a893c7586e2537bc37a83a57a0190f67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61ab641b03f16e1f3ad916913ce89903"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a61ab641b03f16e1f3ad916913ce89903">isGCSafepointPoll</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a61ab641b03f16e1f3ad916913ce89903"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a61ab641b03f16e1f3ad916913ce89903">isGCSafepointPoll</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a61ab641b03f16e1f3ad916913ce89903"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a737f3181d1ae8ed5fe159b4003d024d1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a737f3181d1ae8ed5fe159b4003d024d1">shouldRewriteFunction</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a737f3181d1ae8ed5fe159b4003d024d1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a737f3181d1ae8ed5fe159b4003d024d1">shouldRewriteFunction</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="memdesc:a737f3181d1ae8ed5fe159b4003d024d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this function should be rewritten to include safepoint polls and parseable call sites.  <a href="PlaceSafepoints_8cpp.html#a737f3181d1ae8ed5fe159b4003d024d1">More...</a><br /></td></tr>
 <tr class="separator:a737f3181d1ae8ed5fe159b4003d024d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4021e064e9d2a5e5762d1d4a1dcd7db9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a4021e064e9d2a5e5762d1d4a1dcd7db9">enableEntrySafepoints</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a4021e064e9d2a5e5762d1d4a1dcd7db9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a4021e064e9d2a5e5762d1d4a1dcd7db9">enableEntrySafepoints</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a4021e064e9d2a5e5762d1d4a1dcd7db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade6d0f7cc42acd42e21c6154bd713afa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#ade6d0f7cc42acd42e21c6154bd713afa">enableBackedgeSafepoints</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:ade6d0f7cc42acd42e21c6154bd713afa"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#ade6d0f7cc42acd42e21c6154bd713afa">enableBackedgeSafepoints</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:ade6d0f7cc42acd42e21c6154bd713afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a3b930c659333a27bb598ea5960fe52"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a3a3b930c659333a27bb598ea5960fe52">enableCallSafepoints</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a3a3b930c659333a27bb598ea5960fe52"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a3a3b930c659333a27bb598ea5960fe52">enableCallSafepoints</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:a3a3b930c659333a27bb598ea5960fe52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8896fe5c638a7d7b20f5fa9393b22f32"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a8896fe5c638a7d7b20f5fa9393b22f32">INITIALIZE_PASS_BEGIN</a> (PlaceBackedgeSafepointsImpl, &quot;place-backedge-<a class="el" href="PlaceSafepoints_8cpp.html#ae18fd29bd3983963ebc7076104d82c3e">safepoints</a>-impl&quot;, &quot;Place Backedge Safepoints&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(PlaceBackedgeSafepointsImpl</td></tr>
+<tr class="memitem:a8896fe5c638a7d7b20f5fa9393b22f32"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a8896fe5c638a7d7b20f5fa9393b22f32">INITIALIZE_PASS_BEGIN</a> (PlaceBackedgeSafepointsImpl, &quot;place-backedge-<a class="el" href="PlaceSafepoints_8cpp.html#ae18fd29bd3983963ebc7076104d82c3e">safepoints</a>-impl&quot;, &quot;Place Backedge Safepoints&quot;, false, false) INITIALIZE_PASS_END(PlaceBackedgeSafepointsImpl</td></tr>
 <tr class="separator:a8896fe5c638a7d7b20f5fa9393b22f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42ee45a99de8d656399b81554f477586"><td class="memItemLeft" align="right" valign="top">place backedge <a class="el" href="PlaceSafepoints_8cpp.html#ae18fd29bd3983963ebc7076104d82c3e">safepoints</a> Place Backedge false&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a42ee45a99de8d656399b81554f477586">INITIALIZE_PASS_BEGIN</a> (PlaceSafepoints, &quot;place-safepoints&quot;, &quot;Place Safepoints&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(PlaceSafepoints</td></tr>
+<tr class="memitem:a42ee45a99de8d656399b81554f477586"><td class="memItemLeft" align="right" valign="top">place backedge <a class="el" href="PlaceSafepoints_8cpp.html#ae18fd29bd3983963ebc7076104d82c3e">safepoints</a> Place Backedge false&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a42ee45a99de8d656399b81554f477586">INITIALIZE_PASS_BEGIN</a> (PlaceSafepoints, &quot;place-safepoints&quot;, &quot;Place Safepoints&quot;, false, false) INITIALIZE_PASS_END(PlaceSafepoints</td></tr>
 <tr class="separator:a42ee45a99de8d656399b81554f477586"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a18c9f542c1712e969a8c0d0ab7755198"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a18c9f542c1712e969a8c0d0ab7755198">AllBackedges</a> (&quot;spp-all-backedges&quot;, cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a18c9f542c1712e969a8c0d0ab7755198"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af19488cdbe65bf6c4cc7ff922bdab375"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#af19488cdbe65bf6c4cc7ff922bdab375">CountedLoopTripWidth</a> (&quot;spp-counted-loop-trip-width&quot;, cl::Hidden, cl::init(32))</td></tr>
-<tr class="memdesc:af19488cdbe65bf6c4cc7ff922bdab375"><td class="mdescLeft">&#160;</td><td class="mdescRight">How narrow does the trip count of a loop have to be to have to be considered "counted"? Counted loops do not get safepoints at backedges.  <a href="PlaceSafepoints_8cpp.html#af19488cdbe65bf6c4cc7ff922bdab375">More...</a><br /></td></tr>
-<tr class="separator:af19488cdbe65bf6c4cc7ff922bdab375"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a903a0c956da2425ebdf39f8995f2a900"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a903a0c956da2425ebdf39f8995f2a900">SplitBackedge</a> (&quot;spp-<a class="el" href="CoroSplit_8cpp.html#a6a5f2cd728870f22736c763bbca4c366">split</a>-backedge&quot;, cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a903a0c956da2425ebdf39f8995f2a900"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c12206227b4e8c2c86eb6b358ac6b40"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a4c12206227b4e8c2c86eb6b358ac6b40">NoEntry</a> (&quot;spp-no-entry&quot;, cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:a4c12206227b4e8c2c86eb6b358ac6b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab83017c62afe3ecae730eba7a1920baa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#ab83017c62afe3ecae730eba7a1920baa">NoCall</a> (&quot;spp-no-call&quot;, cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:ab83017c62afe3ecae730eba7a1920baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2cc2564a989cc024c9fec30a0513fac"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#ac2cc2564a989cc024c9fec30a0513fac">NoBackedge</a> (&quot;spp-no-backedge&quot;, cl::Hidden, cl::init(false))</td></tr>
-<tr class="separator:ac2cc2564a989cc024c9fec30a0513fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83835f26b59f297bc9bd9a8356d4d1e6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a83835f26b59f297bc9bd9a8356d4d1e6">GCSafepointPollName</a> = &quot;gc.safepoint_poll&quot;</td></tr>
+<tr class="memitem:a83835f26b59f297bc9bd9a8356d4d1e6"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#a83835f26b59f297bc9bd9a8356d4d1e6">GCSafepointPollName</a> = &quot;gc.safepoint_poll&quot;</td></tr>
 <tr class="separator:a83835f26b59f297bc9bd9a8356d4d1e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd1ccb1bf511e1965414eb1d2e137302"><td class="memItemLeft" align="right" valign="top">place backedge <a class="el" href="PlaceSafepoints_8cpp.html#ae18fd29bd3983963ebc7076104d82c3e">safepoints</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PlaceSafepoints_8cpp.html#abd1ccb1bf511e1965414eb1d2e137302">impl</a></td></tr>
 <tr class="separator:abd1ccb1bf511e1965414eb1d2e137302"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,6 +194,48 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ae2d35fa615ab1ff5472705275e25006d" name="ae2d35fa615ab1ff5472705275e25006d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2d35fa615ab1ff5472705275e25006d">&#9670;&nbsp;</a></span>AllBackedges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; AllBackedges </td>
+          <td>(</td>
+          <td class="paramtype">&quot;spp-all-backedges&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aa2cbc07e426705bbdb98c0f6ae7e3f72" name="aa2cbc07e426705bbdb98c0f6ae7e3f72"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa2cbc07e426705bbdb98c0f6ae7e3f72">&#9670;&nbsp;</a></span>containsUnconditionalCallSafepoint()</h2>
 
@@ -185,33 +246,33 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> containsUnconditionalCallSafepoint </td>
+          <td class="memname">static bool containsUnconditionalCallSafepoint </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>Header</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>Pred</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
+          <td class="paramtype">DominatorTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>&#160;</td>
         </tr>
         <tr>
@@ -232,7 +293,53 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PlaceSafepoints_8cpp_source.html#l00198">198</a> of file <a class="el" href="PlaceSafepoints_8cpp_source.html">PlaceSafepoints.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="Dominators_8cpp_source.html#l00248">llvm::DominatorTree::dominates()</a>, <a class="el" href="GenericDomTree_8h_source.html#l00081">llvm::DomTreeNodeBase&lt; NodeT &gt;::getBlock()</a>, <a class="el" href="GenericDomTree_8h_source.html#l00082">llvm::DomTreeNodeBase&lt; NodeT &gt;::getIDom()</a>, <a class="el" href="GenericDomTree_8h_source.html#l00328">llvm::DominatorTreeBase&lt; NodeT, IsPostDom &gt;::getNode()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="PlaceSafepoints_8cpp_source.html#l00183">needsStatepoint()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="PlaceSafepoints_8cpp_source.html#l00183">needsStatepoint()</a>.</p>
+
+</div>
+</div>
+<a id="a19a8c02b7d170c026b47ad40291527a3" name="a19a8c02b7d170c026b47ad40291527a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19a8c02b7d170c026b47ad40291527a3">&#9670;&nbsp;</a></span>CountedLoopTripWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; int &gt; CountedLoopTripWidth </td>
+          <td>(</td>
+          <td class="paramtype">&quot;spp-counted-loop-trip-width&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(32)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>How narrow does the trip count of a loop have to be to have to be considered "counted"? Counted loops do not get safepoints at backedges. </p>
+
+<p class="reference">Referenced by <a class="el" href="PlaceSafepoints_8cpp_source.html#l00240">mustBeFiniteCountedLoop()</a>.</p>
 
 </div>
 </div>
@@ -246,9 +353,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> doesNotRequireEntrySafepointBefore </td>
+          <td class="memname">static bool doesNotRequireEntrySafepointBefore </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
+          <td class="paramtype">CallBase *&#160;</td>
           <td class="paramname"><em>Call</em></td><td>)</td>
           <td></td>
         </tr>
@@ -278,9 +385,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> enableBackedgeSafepoints </td>
+          <td class="memname">static bool enableBackedgeSafepoints </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -294,7 +401,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PlaceSafepoints_8cpp_source.html#l00460">460</a> of file <a class="el" href="PlaceSafepoints_8cpp_source.html">PlaceSafepoints.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="PlaceSafepoints_8cpp.html#ac2cc2564a989cc024c9fec30a0513fac">NoBackedge</a>.</p>
+<p class="reference">References <a class="el" href="PlaceSafepoints_8cpp.html#aafc7860778280671cf0bafc7477e07af">NoBackedge()</a>.</p>
 
 </div>
 </div>
@@ -308,9 +415,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> enableCallSafepoints </td>
+          <td class="memname">static bool enableCallSafepoints </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -324,7 +431,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PlaceSafepoints_8cpp_source.html#l00461">461</a> of file <a class="el" href="PlaceSafepoints_8cpp_source.html">PlaceSafepoints.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="PlaceSafepoints_8cpp.html#ab83017c62afe3ecae730eba7a1920baa">NoCall</a>.</p>
+<p class="reference">References <a class="el" href="PlaceSafepoints_8cpp.html#ab661161beb8274ac7da41c5a8ac33083">NoCall()</a>.</p>
 
 </div>
 </div>
@@ -338,9 +445,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> enableEntrySafepoints </td>
+          <td class="memname">static bool enableEntrySafepoints </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -354,7 +461,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PlaceSafepoints_8cpp_source.html#l00459">459</a> of file <a class="el" href="PlaceSafepoints_8cpp_source.html">PlaceSafepoints.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="PlaceSafepoints_8cpp.html#a4c12206227b4e8c2c86eb6b358ac6b40">NoEntry</a>.</p>
+<p class="reference">References <a class="el" href="PlaceSafepoints_8cpp.html#a9e89713fbe371ec3075e59f8dbba5dab">NoEntry()</a>.</p>
 
 </div>
 </div>
@@ -368,15 +475,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> * findLocationForEntrySafepoint </td>
+          <td class="memname">static Instruction * findLocationForEntrySafepoint </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
+          <td class="paramtype">DominatorTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -394,7 +501,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PlaceSafepoints_8cpp_source.html#l00383">383</a> of file <a class="el" href="PlaceSafepoints_8cpp_source.html">PlaceSafepoints.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="PlaceSafepoints_8cpp_source.html#l00360">doesNotRequireEntrySafepointBefore()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00246">llvm::BasicBlock::getUniquePredecessor()</a>, <a class="el" href="MD5_8cpp_source.html#l00058">I</a>, and <a class="el" href="IR_2Instruction_8h_source.html#l00128">llvm::Instruction::isTerminator()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="PlaceSafepoints_8cpp_source.html#l00360">doesNotRequireEntrySafepointBefore()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 </div>
 </div>
@@ -502,19 +609,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">place backedge <a class="el" href="PlaceSafepoints_8cpp.html#ae18fd29bd3983963ebc7076104d82c3e">safepoints</a> Place Backedge false place Place static false void InsertSafepointPoll </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>InsertBefore</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classllvm_1_1CallBase.html">CallBase</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; CallBase * &gt; &amp;&#160;</td>
           <td class="paramname"><em>ParsePointsNeeded</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>&#160;</td>
         </tr>
         <tr>
@@ -532,7 +639,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PlaceSafepoints_8cpp_source.html#l00620">620</a> of file <a class="el" href="PlaceSafepoints_8cpp_source.html">PlaceSafepoints.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="Instructions_8h_source.html#l01437">llvm::CallInst::Create()</a>, <a class="el" href="BasicBlock_8h_source.html#l00270">llvm::BasicBlock::end()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="PlaceSafepoints_8cpp_source.html#l00436">GCSafepointPollName</a>, <a class="el" href="IntervalMap_8h_source.html#l00526">llvm::IntervalMapImpl::NodeRef::get()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="classllvm_1_1Type.html#a76b16ba3f021cabcda9ab1319dc7609a">llvm::Type::getVoidTy()</a>, <a class="el" href="InlineFunction_8cpp_source.html#l00087">llvm::InlineFunction()</a>, <a class="el" href="CFG_8cpp_source.html#l00211">llvm::isPotentiallyReachable()</a>, <a class="el" href="PlaceSafepoints_8cpp_source.html#l00183">needsStatepoint()</a>, <a class="el" href="PlaceSafepoints_8cpp_source.html#l00292">scanInlinedCode()</a>, and <a class="el" href="Cloning_8h_source.html#l00193">llvm::InlineFunctionInfo::StaticAllocas</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="PlaceSafepoints_8cpp_source.html#l00436">GCSafepointPollName</a>, <a class="el" href="PlaceSafepoints_8cpp_source.html#l00183">needsStatepoint()</a>, and <a class="el" href="PlaceSafepoints_8cpp_source.html#l00292">scanInlinedCode()</a>.</p>
 
 </div>
 </div>
@@ -546,9 +653,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> isGCSafepointPoll </td>
+          <td class="memname">static bool isGCSafepointPoll </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -576,21 +683,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> mustBeFiniteCountedLoop </td>
+          <td class="memname">static bool mustBeFiniteCountedLoop </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Loop.html">Loop</a> *&#160;</td>
+          <td class="paramtype">Loop *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1ScalarEvolution.html">ScalarEvolution</a> *&#160;</td>
+          <td class="paramtype">ScalarEvolution *&#160;</td>
           <td class="paramname"><em>SE</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>Pred</em>&#160;</td>
         </tr>
         <tr>
@@ -611,7 +718,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PlaceSafepoints_8cpp_source.html#l00240">240</a> of file <a class="el" href="PlaceSafepoints_8cpp_source.html">PlaceSafepoints.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="PlaceSafepoints_8cpp.html#af19488cdbe65bf6c4cc7ff922bdab375">CountedLoopTripWidth</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l03794">llvm::ScalarEvolution::getCouldNotCompute()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l06585">llvm::ScalarEvolution::getExitCount()</a>, <a class="el" href="ScalarEvolution_8cpp_source.html#l06602">llvm::ScalarEvolution::getMaxBackedgeTakenCount()</a>, <a class="el" href="ConstantRange_8cpp_source.html#l00343">llvm::ConstantRange::getUnsignedMax()</a>, <a class="el" href="ScalarEvolution_8h_source.html#l00829">llvm::ScalarEvolution::getUnsignedRange()</a>, <a class="el" href="APInt_8h_source.html#l00449">llvm::APInt::isIntN()</a>, and <a class="el" href="LoopInfo_8h_source.html#l00205">llvm::LoopBase&lt; BlockT, LoopT &gt;::isLoopExiting()</a>.</p>
+<p class="reference">References <a class="el" href="PlaceSafepoints_8cpp.html#a19a8c02b7d170c026b47ad40291527a3">CountedLoopTripWidth()</a>.</p>
 
 </div>
 </div>
@@ -625,15 +732,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> needsStatepoint </td>
+          <td class="memname">static bool needsStatepoint </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallBase.html">CallBase</a> *&#160;</td>
+          <td class="paramtype">CallBase *&#160;</td>
           <td class="paramname"><em>Call</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetLibraryInfo.html">TargetLibraryInfo</a> &amp;&#160;</td>
+          <td class="paramtype">const TargetLibraryInfo &amp;&#160;</td>
           <td class="paramname"><em>TLI</em>&#160;</td>
         </tr>
         <tr>
@@ -651,9 +758,139 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PlaceSafepoints_8cpp_source.html#l00183">183</a> of file <a class="el" href="PlaceSafepoints_8cpp_source.html">PlaceSafepoints.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Local_8cpp_source.html#l02480">llvm::callsGCLeafFunction()</a>, <a class="el" href="Statepoint_8cpp_source.html#l00036">llvm::isGCRelocate()</a>, <a class="el" href="Statepoint_8cpp_source.html#l00046">llvm::isGCResult()</a>, and <a class="el" href="Statepoint_8cpp_source.html#l00020">llvm::isStatepoint()</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="PlaceSafepoints_8cpp_source.html#l00198">containsUnconditionalCallSafepoint()</a>, and <a class="el" href="PlaceSafepoints_8cpp_source.html#l00620">InsertSafepointPoll()</a>.</p>
+
+</div>
+</div>
+<a id="aafc7860778280671cf0bafc7477e07af" name="aafc7860778280671cf0bafc7477e07af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafc7860778280671cf0bafc7477e07af">&#9670;&nbsp;</a></span>NoBackedge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; NoBackedge </td>
+          <td>(</td>
+          <td class="paramtype">&quot;spp-no-backedge&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="PlaceSafepoints_8cpp_source.html#l00460">enableBackedgeSafepoints()</a>.</p>
+
+</div>
+</div>
+<a id="ab661161beb8274ac7da41c5a8ac33083" name="ab661161beb8274ac7da41c5a8ac33083"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab661161beb8274ac7da41c5a8ac33083">&#9670;&nbsp;</a></span>NoCall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; NoCall </td>
+          <td>(</td>
+          <td class="paramtype">&quot;spp-no-call&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="PlaceSafepoints_8cpp_source.html#l00461">enableCallSafepoints()</a>.</p>
+
+</div>
+</div>
+<a id="a9e89713fbe371ec3075e59f8dbba5dab" name="a9e89713fbe371ec3075e59f8dbba5dab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e89713fbe371ec3075e59f8dbba5dab">&#9670;&nbsp;</a></span>NoEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; NoEntry </td>
+          <td>(</td>
+          <td class="paramtype">&quot;spp-no-entry&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="PlaceSafepoints_8cpp_source.html#l00459">enableEntrySafepoints()</a>.</p>
 
 </div>
 </div>
@@ -669,25 +906,25 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void scanInlinedCode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>Start</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>End</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; CallInst * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Calls</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; BasicBlock * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Seen</em>&#160;</td>
         </tr>
         <tr>
@@ -705,7 +942,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PlaceSafepoints_8cpp_source.html#l00292">292</a> of file <a class="el" href="PlaceSafepoints_8cpp_source.html">PlaceSafepoints.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BasicBlock_8h_source.html#l00282">llvm::BasicBlock::back()</a>, <a class="el" href="BasicBlock_8h_source.html#l00268">llvm::BasicBlock::begin()</a>, <a class="el" href="DenseSet_8h_source.html#l00187">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::insert()</a>, and <a class="el" href="PlaceSafepoints_8cpp_source.html#l00265">scanOneBB()</a>.</p>
+<p class="reference">References <a class="el" href="PlaceSafepoints_8cpp_source.html#l00265">scanOneBB()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PlaceSafepoints_8cpp_source.html#l00620">InsertSafepointPoll()</a>.</p>
 
@@ -723,31 +960,31 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void scanOneBB </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>Start</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>End</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classllvm_1_1CallInst.html">CallInst</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; CallInst * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Calls</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DenseSet.html">DenseSet</a>&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">DenseSet&lt; BasicBlock * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Seen</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; BasicBlock * &gt; &amp;&#160;</td>
           <td class="paramname"><em>Worklist</em>&#160;</td>
         </tr>
         <tr>
@@ -765,7 +1002,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PlaceSafepoints_8cpp_source.html#l00265">265</a> of file <a class="el" href="PlaceSafepoints_8cpp_source.html">PlaceSafepoints.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="DenseSet_8h_source.html#l00187">llvm::detail::DenseSetImpl&lt; ValueT, MapTy, ValueInfoT &gt;::insert()</a>, and <a class="el" href="IR_2CFG_8h_source.html#l00259">llvm::successors()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PlaceSafepoints_8cpp_source.html#l00292">scanInlinedCode()</a>.</p>
 
@@ -781,9 +1018,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> shouldRewriteFunction </td>
+          <td class="memname">static bool shouldRewriteFunction </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -804,6 +1041,48 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a4e325820235d58fff55d7d27700f90bd" name="a4e325820235d58fff55d7d27700f90bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e325820235d58fff55d7d27700f90bd">&#9670;&nbsp;</a></span>SplitBackedge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; SplitBackedge </td>
+          <td>(</td>
+          <td class="paramtype">&quot;spp-<a class="el" href="CoroSplit_8cpp.html#a5b2c0184be868c2d4c37d5e56961c5e7">split</a>-backedge&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(false)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="acede0fd61d2e0d5d0202850570a38084" name="acede0fd61d2e0d5d0202850570a38084"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acede0fd61d2e0d5d0202850570a38084">&#9670;&nbsp;</a></span>STATISTIC() <span class="overload">[1/4]</span></h2>
 
@@ -819,7 +1098,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> without <a class="el" href="PlaceSafepoints_8cpp.html#ae18fd29bd3983963ebc7076104d82c3e">safepoints</a> due to <a class="el" href="AMDGPULibCalls_8cpp.html#a91feb1b5d1a9c4e07149041912f83b42">calls</a> in loop&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of <a class="el" href="LoopInfo_8cpp.html#a49ae40a9c91d665793aaed656c26ca30">loops</a> without <a class="el" href="PlaceSafepoints_8cpp.html#ae18fd29bd3983963ebc7076104d82c3e">safepoints</a> due to <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> in loop&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -917,94 +1196,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a18c9f542c1712e969a8c0d0ab7755198" name="a18c9f542c1712e969a8c0d0ab7755198"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18c9f542c1712e969a8c0d0ab7755198">&#9670;&nbsp;</a></span>AllBackedges</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; AllBackedges(&quot;spp-all-backedges&quot;, cl::Hidden, cl::init(false)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;spp-all-backedges&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af19488cdbe65bf6c4cc7ff922bdab375" name="af19488cdbe65bf6c4cc7ff922bdab375"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af19488cdbe65bf6c4cc7ff922bdab375">&#9670;&nbsp;</a></span>CountedLoopTripWidth</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; int &gt; CountedLoopTripWidth(&quot;spp-counted-loop-trip-width&quot;, cl::Hidden, cl::init(32)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;spp-counted-loop-trip-width&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(32)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>How narrow does the trip count of a loop have to be to have to be considered "counted"? Counted loops do not get safepoints at backedges. </p>
-
-<p class="reference">Referenced by <a class="el" href="PlaceSafepoints_8cpp_source.html#l00240">mustBeFiniteCountedLoop()</a>.</p>
-
-</div>
-</div>
 <a id="a59771df77981e87ed0a09221f120f759" name="a59771df77981e87ed0a09221f120f759"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a59771df77981e87ed0a09221f120f759">&#9670;&nbsp;</a></span>false</h2>
 
@@ -1031,7 +1222,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a>* <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> GCSafepointPollName = &quot;gc.safepoint_poll&quot;</td>
+          <td class="memname">const char* const GCSafepointPollName = &quot;gc.safepoint_poll&quot;</td>
         </tr>
       </table>
   </td>
@@ -1060,140 +1251,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="PlaceSafepoints_8cpp_source.html#l00611">611</a> of file <a class="el" href="PlaceSafepoints_8cpp_source.html">PlaceSafepoints.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="RuntimeDyldMachO_8cpp_source.html#l00228">llvm::RuntimeDyldMachOCRTPBase&lt; Impl &gt;::finalizeLoad()</a>, <a class="el" href="Mutex_8h_source.html#l00099">llvm::sys::SmartMutex&lt; mt_only &gt;::lock()</a>, <a class="el" href="RWMutex_8h_source.html#l00118">llvm::sys::SmartRWMutex&lt; mt_only &gt;::lock()</a>, <a class="el" href="RWMutex_8h_source.html#l00097">llvm::sys::SmartRWMutex&lt; mt_only &gt;::lock_shared()</a>, <a class="el" href="Mutex_8h_source.html#l00096">llvm::sys::SmartMutex&lt; mt_only &gt;::SmartMutex()</a>, <a class="el" href="Mutex_8h_source.html#l00126">llvm::sys::SmartMutex&lt; mt_only &gt;::try_lock()</a>, <a class="el" href="Mutex_8h_source.html#l00112">llvm::sys::SmartMutex&lt; mt_only &gt;::unlock()</a>, <a class="el" href="RWMutex_8h_source.html#l00129">llvm::sys::SmartRWMutex&lt; mt_only &gt;::unlock()</a>, and <a class="el" href="RWMutex_8h_source.html#l00107">llvm::sys::SmartRWMutex&lt; mt_only &gt;::unlock_shared()</a>.</p>
-
-</div>
-</div>
-<a id="ac2cc2564a989cc024c9fec30a0513fac" name="ac2cc2564a989cc024c9fec30a0513fac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2cc2564a989cc024c9fec30a0513fac">&#9670;&nbsp;</a></span>NoBackedge</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; NoBackedge(&quot;spp-no-backedge&quot;, cl::Hidden, cl::init(false)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;spp-no-backedge&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="PlaceSafepoints_8cpp_source.html#l00460">enableBackedgeSafepoints()</a>.</p>
-
-</div>
-</div>
-<a id="ab83017c62afe3ecae730eba7a1920baa" name="ab83017c62afe3ecae730eba7a1920baa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab83017c62afe3ecae730eba7a1920baa">&#9670;&nbsp;</a></span>NoCall</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; NoCall(&quot;spp-no-call&quot;, cl::Hidden, cl::init(false)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;spp-no-call&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="PlaceSafepoints_8cpp_source.html#l00461">enableCallSafepoints()</a>.</p>
-
-</div>
-</div>
-<a id="a4c12206227b4e8c2c86eb6b358ac6b40" name="a4c12206227b4e8c2c86eb6b358ac6b40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c12206227b4e8c2c86eb6b358ac6b40">&#9670;&nbsp;</a></span>NoEntry</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; NoEntry(&quot;spp-no-entry&quot;, cl::Hidden, cl::init(false)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;spp-no-entry&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="PlaceSafepoints_8cpp_source.html#l00459">enableEntrySafepoints()</a>.</p>
 
 </div>
 </div>
@@ -1229,52 +1286,10 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a903a0c956da2425ebdf39f8995f2a900" name="a903a0c956da2425ebdf39f8995f2a900"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a903a0c956da2425ebdf39f8995f2a900">&#9670;&nbsp;</a></span>SplitBackedge</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; SplitBackedge(&quot;spp-<a class="el" href="CoroSplit_8cpp.html#a6a5f2cd728870f22736c763bbca4c366">split</a>-backedge&quot;, cl::Hidden, cl::init(false)) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;spp-<a class="el" href="CoroSplit_8cpp.html#a6a5f2cd728870f22736c763bbca4c366">split</a>-backedge&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(false)&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:23 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

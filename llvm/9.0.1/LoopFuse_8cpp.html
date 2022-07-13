@@ -54,35 +54,54 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">LoopFuse.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>This file implements the loop fusion pass.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="LoopFuse_8h_source.html">llvm/Transforms/Scalar/LoopFuse.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DependenceAnalysis_8h_source.html">llvm/Analysis/DependenceAnalysis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DomTreeUpdater_8h_source.html">llvm/Analysis/DomTreeUpdater.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LoopInfo_8h_source.html">llvm/Analysis/LoopInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="OptimizationRemarkEmitter_8h_source.html">llvm/Analysis/OptimizationRemarkEmitter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PostDominators_8h_source.html">llvm/Analysis/PostDominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScalarEvolution_8h_source.html">llvm/Analysis/ScalarEvolution.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScalarEvolutionExpressions_8h_source.html">llvm/Analysis/ScalarEvolutionExpressions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Verifier_8h_source.html">llvm/IR/Verifier.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Utils_8h_source.html">llvm/Transforms/Utils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlockUtils_8h_source.html">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/LoopFuse.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/DependenceAnalysis.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/DomTreeUpdater.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/LoopInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/OptimizationRemarkEmitter.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/PostDominators.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScalarEvolution.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/ScalarEvolutionExpressions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Verifier.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/BasicBlockUtils.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LoopFuse.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="LoopFuse_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2LoopFuse_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Scalar_2LoopFuse_8cpp" id="alib_2Transforms_2Scalar_2LoopFuse_8cpp">
+<area shape="rect" title="This file implements the loop fusion pass." alt="" coords="1818,5,1977,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,176,133"/>
+<area shape="rect" title=" " alt="" coords="201,101,351,126"/>
+<area shape="rect" title=" " alt="" coords="376,93,571,133"/>
+<area shape="rect" title=" " alt="" coords="595,101,829,126"/>
+<area shape="rect" title=" " alt="" coords="854,101,1037,126"/>
+<area shape="rect" title=" " alt="" coords="1061,93,1259,133"/>
+<area shape="rect" title=" " alt="" coords="1283,101,1514,126"/>
+<area shape="rect" title=" " alt="" coords="1539,101,1765,126"/>
+<area shape="rect" title=" " alt="" coords="1790,93,2005,133"/>
+<area shape="rect" title=" " alt="" coords="2029,101,2168,126"/>
+<area shape="rect" title=" " alt="" coords="2193,101,2322,126"/>
+<area shape="rect" title=" " alt="" coords="2347,101,2443,126"/>
+<area shape="rect" title=" " alt="" coords="2467,101,2629,126"/>
+<area shape="rect" title=" " alt="" coords="2654,101,2861,126"/>
+<area shape="rect" title=" " alt="" coords="2885,101,3067,126"/>
+<area shape="rect" title=" " alt="" coords="3092,101,3265,126"/>
+<area shape="rect" title=" " alt="" coords="3290,93,3451,133"/>
+</map>
 </div>
 </div>
 <p><a href="LoopFuse_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -119,7 +138,7 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a35c32c43fec615125cebf56723b18dee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a35c32c43fec615125cebf56723b18dee">STATISTIC</a> (FuseCounter, &quot;Count number of loop fusions performed&quot;)</td></tr>
 <tr class="separator:a35c32c43fec615125cebf56723b18dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77cf7695f4fc4a36cda60a209316d1ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a77cf7695f4fc4a36cda60a209316d1ab">STATISTIC</a> (NumFusionCandidates, &quot;Number of candidates <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> loop fusion&quot;)</td></tr>
+<tr class="memitem:a77cf7695f4fc4a36cda60a209316d1ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a77cf7695f4fc4a36cda60a209316d1ab">STATISTIC</a> (NumFusionCandidates, &quot;Number of candidates for loop fusion&quot;)</td></tr>
 <tr class="separator:a77cf7695f4fc4a36cda60a209316d1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67fd1cf349f1e6d7f93ac47e43c3ccc2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a67fd1cf349f1e6d7f93ac47e43c3ccc2">STATISTIC</a> (InvalidPreheader, &quot;Loop has invalid preheader&quot;)</td></tr>
 <tr class="separator:a67fd1cf349f1e6d7f93ac47e43c3ccc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,25 +172,22 @@ Functions</h2></td></tr>
 <tr class="separator:ada858821a3d3a17462dea0b22161247d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc2a78eda715f2039a9422ba98a9583a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#afc2a78eda715f2039a9422ba98a9583a">STATISTIC</a> (NonEmptyPreheader, &quot;Candidate has a non-empty preheader&quot;)</td></tr>
 <tr class="separator:afc2a78eda715f2039a9422ba98a9583a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a180e2c0b37533488143f7f00d6ee3a83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1raw__ostream.html">llvm::raw_ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a180e2c0b37533488143f7f00d6ee3a83">operator&lt;&lt;</a> (<a class="el" href="classllvm_1_1raw__ostream.html">llvm::raw_ostream</a> &amp;OS, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structFusionCandidate.html">FusionCandidate</a> &amp;FC)</td></tr>
+<tr class="memitem:a4c2248f93d288d0740bbbb4c6667f412"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; <a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50b">FusionDependenceAnalysisChoice</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a4c2248f93d288d0740bbbb4c6667f412">FusionDependenceAnalysis</a> (&quot;loop-fusion-dependence-analysis&quot;, cl::desc(&quot;Which dependence <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> should loop fusion <a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a>?&quot;), cl::values(clEnumValN(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50bae2968bc1b6d284f07e96fac3ce78bc54">FUSION_DEPENDENCE_ANALYSIS_SCEV</a>, &quot;scev&quot;, &quot;Use the scalar <a class="el" href="ScalarEvolution_8cpp.html#afa04c31b8a224e9f4e66ba448f05e9d0">evolution</a> interface&quot;), clEnumValN(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba88a2ef6139ee028e3fa8addb323b3917">FUSION_DEPENDENCE_ANALYSIS_DA</a>, &quot;da&quot;, &quot;Use the dependence <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> interface&quot;), clEnumValN(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba9f38e26f008e10a2cd493e477865cf72">FUSION_DEPENDENCE_ANALYSIS_ALL</a>, &quot;all&quot;, &quot;Use all available analyses&quot;)), cl::Hidden, cl::init(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba9f38e26f008e10a2cd493e477865cf72">FUSION_DEPENDENCE_ANALYSIS_ALL</a>), cl::ZeroOrMore)</td></tr>
+<tr class="separator:a4c2248f93d288d0740bbbb4c6667f412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a596d2b3e44197fe73cf0e26d7aef09d8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a596d2b3e44197fe73cf0e26d7aef09d8">VerboseFusionDebugging</a> (&quot;loop-fusion-verbose-debug&quot;, cl::desc(&quot;Enable verbose debugging for Loop Fusion&quot;), cl::Hidden, cl::init(false), cl::ZeroOrMore)</td></tr>
+<tr class="separator:a596d2b3e44197fe73cf0e26d7aef09d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a180e2c0b37533488143f7f00d6ee3a83"><td class="memItemLeft" align="right" valign="top">llvm::raw_ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a180e2c0b37533488143f7f00d6ee3a83">operator&lt;&lt;</a> (llvm::raw_ostream &amp;OS, const <a class="el" href="structFusionCandidate.html">FusionCandidate</a> &amp;FC)</td></tr>
 <tr class="separator:a180e2c0b37533488143f7f00d6ee3a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accd623d9cfc8c6223a4f7d9461848621"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classllvm_1_1raw__ostream.html">llvm::raw_ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#accd623d9cfc8c6223a4f7d9461848621">operator&lt;&lt;</a> (<a class="el" href="classllvm_1_1raw__ostream.html">llvm::raw_ostream</a> &amp;OS, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> FusionCandidateSet &amp;CandSet)</td></tr>
+<tr class="memitem:accd623d9cfc8c6223a4f7d9461848621"><td class="memItemLeft" align="right" valign="top">llvm::raw_ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#accd623d9cfc8c6223a4f7d9461848621">operator&lt;&lt;</a> (llvm::raw_ostream &amp;OS, const FusionCandidateSet &amp;CandSet)</td></tr>
 <tr class="separator:accd623d9cfc8c6223a4f7d9461848621"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16a6f11524499b8b0fb64b5fbac85d96"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a16a6f11524499b8b0fb64b5fbac85d96">printFusionCandidates</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> FusionCandidateCollection &amp;FusionCandidates)</td></tr>
+<tr class="memitem:a16a6f11524499b8b0fb64b5fbac85d96"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a16a6f11524499b8b0fb64b5fbac85d96">printFusionCandidates</a> (const FusionCandidateCollection &amp;FusionCandidates)</td></tr>
 <tr class="separator:a16a6f11524499b8b0fb64b5fbac85d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d65ec64d2f25ee3f42bb62de8d7963d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a5d65ec64d2f25ee3f42bb62de8d7963d">printLoopVector</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> LoopVector &amp;LV)</td></tr>
+<tr class="memitem:a5d65ec64d2f25ee3f42bb62de8d7963d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a5d65ec64d2f25ee3f42bb62de8d7963d">printLoopVector</a> (const LoopVector &amp;LV)</td></tr>
 <tr class="separator:a5d65ec64d2f25ee3f42bb62de8d7963d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abece9d33dde3e9ac666949d5145e401d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#abece9d33dde3e9ac666949d5145e401d">reportLoopFusion</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structFusionCandidate.html">FusionCandidate</a> &amp;FC0, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structFusionCandidate.html">FusionCandidate</a> &amp;FC1, <a class="el" href="classllvm_1_1OptimizationRemarkEmitter.html">OptimizationRemarkEmitter</a> &amp;ORE)</td></tr>
+<tr class="memitem:abece9d33dde3e9ac666949d5145e401d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#abece9d33dde3e9ac666949d5145e401d">reportLoopFusion</a> (const <a class="el" href="structFusionCandidate.html">FusionCandidate</a> &amp;FC0, const <a class="el" href="structFusionCandidate.html">FusionCandidate</a> &amp;FC1, OptimizationRemarkEmitter &amp;ORE)</td></tr>
 <tr class="separator:abece9d33dde3e9ac666949d5145e401d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73847b4c2a2e6ffc2843e9b5bc66c06e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a73847b4c2a2e6ffc2843e9b5bc66c06e">INITIALIZE_PASS_BEGIN</a> (<a class="el" href="structLoopFuseLegacy.html">LoopFuseLegacy</a>, &quot;loop-fusion&quot;, &quot;Loop Fusion&quot;, false, false) <a class="el" href="classllvm_1_1FunctionPass.html">FunctionPass</a> *llvm</td></tr>
+<tr class="memitem:a73847b4c2a2e6ffc2843e9b5bc66c06e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a73847b4c2a2e6ffc2843e9b5bc66c06e">INITIALIZE_PASS_BEGIN</a> (<a class="el" href="structLoopFuseLegacy.html">LoopFuseLegacy</a>, &quot;loop-fusion&quot;, &quot;Loop Fusion&quot;, false, false) FunctionPass *llvm</td></tr>
 <tr class="separator:a73847b4c2a2e6ffc2843e9b5bc66c06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a4256df5067842528e5a1a3bfed95b974"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50b">FusionDependenceAnalysisChoice</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a4256df5067842528e5a1a3bfed95b974">FusionDependenceAnalysis</a> (&quot;loop-fusion-dependence-analysis&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Which dependence <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> should loop fusion <a class="el" href="Localizer_8cpp.html#a428090a453f41a199ef67fc3f2179fbc">use</a>?&quot;), cl::values(<a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50bae2968bc1b6d284f07e96fac3ce78bc54">FUSION_DEPENDENCE_ANALYSIS_SCEV</a>, &quot;scev&quot;, &quot;Use the scalar <a class="el" href="ScalarEvolution_8cpp.html#afa04c31b8a224e9f4e66ba448f05e9d0">evolution</a> interface&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba88a2ef6139ee028e3fa8addb323b3917">FUSION_DEPENDENCE_ANALYSIS_DA</a>, &quot;da&quot;, &quot;Use the dependence <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> interface&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba9f38e26f008e10a2cd493e477865cf72">FUSION_DEPENDENCE_ANALYSIS_ALL</a>, &quot;all&quot;, &quot;Use all <a class="el" href="MachineSink_8cpp.html#a40cc6a0e0895fa564ee013923209aa85">available</a> analyses&quot;)), cl::Hidden, cl::init(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba9f38e26f008e10a2cd493e477865cf72">FUSION_DEPENDENCE_ANALYSIS_ALL</a>), cl::ZeroOrMore)</td></tr>
-<tr class="separator:a4256df5067842528e5a1a3bfed95b974"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a226174ec3ac8b4b31e40756011d9e589"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoopFuse_8cpp.html#a226174ec3ac8b4b31e40756011d9e589">VerboseFusionDebugging</a> (&quot;loop-fusion-verbose-debug&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable verbose debugging <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> <a class="el" href="classllvm_1_1Loop.html">Loop</a> Fusion&quot;), cl::Hidden, cl::init(false), cl::ZeroOrMore)</td></tr>
-<tr class="separator:a226174ec3ac8b4b31e40756011d9e589"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This file implements the loop fusion pass. </p>
@@ -230,6 +246,66 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a4c2248f93d288d0740bbbb4c6667f412" name="a4c2248f93d288d0740bbbb4c6667f412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c2248f93d288d0740bbbb4c6667f412">&#9670;&nbsp;</a></span>FusionDependenceAnalysis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; <a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50b">FusionDependenceAnalysisChoice</a> &gt; FusionDependenceAnalysis </td>
+          <td>(</td>
+          <td class="paramtype">&quot;loop-fusion-dependence-analysis&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::desc(&quot;Which dependence <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> should loop fusion <a class="el" href="PGOInstrumentation_8cpp.html#a72bccf07dbc39aa2557bf2298d0024a7">use</a>?&quot;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">cl::values</a>(clEnumValN(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50bae2968bc1b6d284f07e96fac3ce78bc54">FUSION_DEPENDENCE_ANALYSIS_SCEV</a>, &quot;scev&quot;, &quot;Use the scalar <a class="el" href="ScalarEvolution_8cpp.html#afa04c31b8a224e9f4e66ba448f05e9d0">evolution</a> interface&quot;), clEnumValN(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba88a2ef6139ee028e3fa8addb323b3917">FUSION_DEPENDENCE_ANALYSIS_DA</a>, &quot;da&quot;, &quot;Use the dependence <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> interface&quot;), clEnumValN(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba9f38e26f008e10a2cd493e477865cf72">FUSION_DEPENDENCE_ANALYSIS_ALL</a>, &quot;all&quot;, &quot;Use all available analyses&quot;))&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::Hidden&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::init(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba9f38e26f008e10a2cd493e477865cf72">FUSION_DEPENDENCE_ANALYSIS_ALL</a>)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl::ZeroOrMore&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a73847b4c2a2e6ffc2843e9b5bc66c06e" name="a73847b4c2a2e6ffc2843e9b5bc66c06e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a73847b4c2a2e6ffc2843e9b5bc66c06e">&#9670;&nbsp;</a></span>INITIALIZE_PASS_BEGIN()</h2>
 
@@ -288,15 +364,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1raw__ostream.html">llvm::raw_ostream</a> &amp; operator&lt;&lt; </td>
+          <td class="memname">llvm::raw_ostream &amp; operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">llvm::raw_ostream</a> &amp;&#160;</td>
+          <td class="paramtype">llvm::raw_ostream &amp;&#160;</td>
           <td class="paramname"><em>OS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structFusionCandidate.html">FusionCandidate</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structFusionCandidate.html">FusionCandidate</a> &amp;&#160;</td>
           <td class="paramname"><em>FC</em>&#160;</td>
         </tr>
         <tr>
@@ -314,6 +390,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopFuse_8cpp_source.html#l00244">244</a> of file <a class="el" href="LoopFuse_8cpp_source.html">LoopFuse.cpp</a>.</p>
 
+<p class="reference">References <a class="el" href="LoopFuse_8cpp_source.html#l00200">FusionCandidate::isValid()</a>, and <a class="el" href="LoopFuse_8cpp_source.html#l00129">FusionCandidate::Preheader</a>.</p>
+
 </div>
 </div>
 <a id="accd623d9cfc8c6223a4f7d9461848621" name="accd623d9cfc8c6223a4f7d9461848621"></a>
@@ -326,15 +404,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1raw__ostream.html">llvm::raw_ostream</a> &amp; operator&lt;&lt; </td>
+          <td class="memname">llvm::raw_ostream &amp; operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1raw__ostream.html">llvm::raw_ostream</a> &amp;&#160;</td>
+          <td class="paramtype">llvm::raw_ostream &amp;&#160;</td>
           <td class="paramname"><em>OS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> FusionCandidateSet &amp;&#160;</td>
+          <td class="paramtype">const FusionCandidateSet &amp;&#160;</td>
           <td class="paramname"><em>CandSet</em>&#160;</td>
         </tr>
         <tr>
@@ -352,8 +430,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopFuse_8cpp_source.html#l00306">306</a> of file <a class="el" href="LoopFuse_8cpp_source.html">LoopFuse.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ARMSubtarget_8cpp.html#a4d4aec1a60ca09085c2b909af09a8c8b">IT</a>.</p>
-
 </div>
 </div>
 <a id="a16a6f11524499b8b0fb64b5fbac85d96" name="a16a6f11524499b8b0fb64b5fbac85d96"></a>
@@ -368,7 +444,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void printFusionCandidates </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> FusionCandidateCollection &amp;&#160;</td>
+          <td class="paramtype">const FusionCandidateCollection &amp;&#160;</td>
           <td class="paramname"><em>FusionCandidates</em></td><td>)</td>
           <td></td>
         </tr>
@@ -381,8 +457,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="LoopFuse_8cpp_source.html#l00316">316</a> of file <a class="el" href="LoopFuse_8cpp_source.html">LoopFuse.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>.</p>
 
 </div>
 </div>
@@ -398,7 +472,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void printLoopVector </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> LoopVector &amp;&#160;</td>
+          <td class="paramtype">const LoopVector &amp;&#160;</td>
           <td class="paramname"><em>LV</em></td><td>)</td>
           <td></td>
         </tr>
@@ -411,8 +485,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="LoopFuse_8cpp_source.html#l00386">386</a> of file <a class="el" href="LoopFuse_8cpp_source.html">LoopFuse.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Debug_8cpp_source.html#l00132">llvm::dbgs()</a>, and <a class="el" href="LoopInfo_8cpp_source.html#l00897">llvm::printLoop()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LoopFuse_8cpp_source.html#l00429">LoopFuser::fuseLoops()</a>.</p>
 
@@ -430,19 +502,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void reportLoopFusion </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structFusionCandidate.html">FusionCandidate</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structFusionCandidate.html">FusionCandidate</a> &amp;&#160;</td>
           <td class="paramname"><em>FC0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structFusionCandidate.html">FusionCandidate</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structFusionCandidate.html">FusionCandidate</a> &amp;&#160;</td>
           <td class="paramname"><em>FC1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1OptimizationRemarkEmitter.html">OptimizationRemarkEmitter</a> &amp;&#160;</td>
+          <td class="paramtype">OptimizationRemarkEmitter &amp;&#160;</td>
           <td class="paramname"><em>ORE</em>&#160;</td>
         </tr>
         <tr>
@@ -460,7 +532,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LoopFuse_8cpp_source.html#l00394">394</a> of file <a class="el" href="LoopFuse_8cpp_source.html">LoopFuse.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="LoopFuse_8cpp_source.html#l00067">DEBUG_TYPE</a>, <a class="el" href="OptimizationRemarkEmitter_8cpp_source.html#l00072">llvm::OptimizationRemarkEmitter::emit()</a>, <a class="el" href="Value_8cpp_source.html#l00214">llvm::Value::getName()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, and <a class="el" href="LoopFuse_8cpp_source.html#l00129">FusionCandidate::Preheader</a>.</p>
+<p class="reference">References <a class="el" href="LoopFuse_8cpp_source.html#l00067">DEBUG_TYPE</a>, and <a class="el" href="LoopFuse_8cpp_source.html#l00129">FusionCandidate::Preheader</a>.</p>
 
 </div>
 </div>
@@ -927,7 +999,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of candidates <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> loop fusion&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of candidates for loop fusion&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -968,9 +1040,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a4256df5067842528e5a1a3bfed95b974" name="a4256df5067842528e5a1a3bfed95b974"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4256df5067842528e5a1a3bfed95b974">&#9670;&nbsp;</a></span>FusionDependenceAnalysis</h2>
+<a id="a596d2b3e44197fe73cf0e26d7aef09d8" name="a596d2b3e44197fe73cf0e26d7aef09d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a596d2b3e44197fe73cf0e26d7aef09d8">&#9670;&nbsp;</a></span>VerboseFusionDebugging()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -979,67 +1050,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50b">FusionDependenceAnalysisChoice</a> &gt; FusionDependenceAnalysis(&quot;loop-fusion-dependence-analysis&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Which dependence <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> should loop fusion <a class="el" href="Localizer_8cpp.html#a428090a453f41a199ef67fc3f2179fbc">use</a>?&quot;), cl::values(<a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50bae2968bc1b6d284f07e96fac3ce78bc54">FUSION_DEPENDENCE_ANALYSIS_SCEV</a>, &quot;scev&quot;, &quot;Use the scalar <a class="el" href="ScalarEvolution_8cpp.html#afa04c31b8a224e9f4e66ba448f05e9d0">evolution</a> interface&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba88a2ef6139ee028e3fa8addb323b3917">FUSION_DEPENDENCE_ANALYSIS_DA</a>, &quot;da&quot;, &quot;Use the dependence <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> interface&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba9f38e26f008e10a2cd493e477865cf72">FUSION_DEPENDENCE_ANALYSIS_ALL</a>, &quot;all&quot;, &quot;Use all <a class="el" href="MachineSink_8cpp.html#a40cc6a0e0895fa564ee013923209aa85">available</a> analyses&quot;)), cl::Hidden, cl::init(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba9f38e26f008e10a2cd493e477865cf72">FUSION_DEPENDENCE_ANALYSIS_ALL</a>), cl::ZeroOrMore) </td>
-          <td>(</td>
-          <td class="paramtype">&quot;loop-fusion-dependence-analysis&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Which dependence <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> should loop fusion <a class="el" href="Localizer_8cpp.html#a428090a453f41a199ef67fc3f2179fbc">use</a>?&quot;)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="DeadArgumentElimination_8cpp.html#a98cce07b0e183ed61a1ea9eef0efe743">cl::values</a>(<a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50bae2968bc1b6d284f07e96fac3ce78bc54">FUSION_DEPENDENCE_ANALYSIS_SCEV</a>, &quot;scev&quot;, &quot;Use the scalar <a class="el" href="ScalarEvolution_8cpp.html#afa04c31b8a224e9f4e66ba448f05e9d0">evolution</a> interface&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba88a2ef6139ee028e3fa8addb323b3917">FUSION_DEPENDENCE_ANALYSIS_DA</a>, &quot;da&quot;, &quot;Use the dependence <a class="el" href="DemandedBits_8cpp.html#a424386ca25576268325092c3f58b45ab">analysis</a> interface&quot;), <a class="el" href="CommandLine_8h.html#a187fd767976b311c09dff5e05ac0c1bc">clEnumValN</a>(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba9f38e26f008e10a2cd493e477865cf72">FUSION_DEPENDENCE_ANALYSIS_ALL</a>, &quot;all&quot;, &quot;Use all <a class="el" href="MachineSink_8cpp.html#a40cc6a0e0895fa564ee013923209aa85">available</a> analyses&quot;))&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::Hidden&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::init(<a class="el" href="LoopFuse_8cpp.html#ab2ce98edbf00ac5582eba4ec2630b50ba9f38e26f008e10a2cd493e477865cf72">FUSION_DEPENDENCE_ANALYSIS_ALL</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cl::ZeroOrMore&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a226174ec3ac8b4b31e40756011d9e589" name="a226174ec3ac8b4b31e40756011d9e589"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a226174ec3ac8b4b31e40756011d9e589">&#9670;&nbsp;</a></span>VerboseFusionDebugging</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a> &gt; VerboseFusionDebugging(&quot;loop-fusion-verbose-debug&quot;, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable verbose debugging <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> <a class="el" href="classllvm_1_1Loop.html">Loop</a> Fusion&quot;), cl::Hidden, cl::init(false), cl::ZeroOrMore) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool &gt; VerboseFusionDebugging </td>
           <td>(</td>
           <td class="paramtype">&quot;loop-fusion-verbose-debug&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -1047,7 +1058,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Enable verbose debugging <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> <a class="el" href="classllvm_1_1Loop.html">Loop</a> Fusion&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;Enable verbose debugging for Loop Fusion&quot;)&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -1088,7 +1099,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

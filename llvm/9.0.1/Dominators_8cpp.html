@@ -56,59 +56,75 @@ $(function() {
   <div class="headertitle"><div class="title">Dominators.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DepthFirstIterator_8h_source.html">llvm/ADT/DepthFirstIterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallPtrSet_8h_source.html">llvm/ADT/SmallPtrSet.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DepthFirstIterator.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallPtrSet.h&quot;</code><br />
 <code>#include &quot;llvm/Config/llvm-config.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="IR_2CFG_8h_source.html">llvm/IR/CFG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GenericDomTreeConstruction_8h_source.html">llvm/Support/GenericDomTreeConstruction.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;llvm/IR/CFG.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/GenericDomTreeConstruction.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Dominators.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Dominators_8cpp__incl.png" border="0" usemap="#alib_2IR_2Dominators_8cpp" alt=""/></div>
+<map name="alib_2IR_2Dominators_8cpp" id="alib_2IR_2Dominators_8cpp">
+<area shape="rect" title=" " alt="" coords="1141,5,1304,31"/>
+<area shape="rect" title=" " alt="" coords="5,86,165,111"/>
+<area shape="rect" title=" " alt="" coords="190,86,402,111"/>
+<area shape="rect" title=" " alt="" coords="426,86,601,111"/>
+<area shape="rect" title=" " alt="" coords="625,86,810,111"/>
+<area shape="rect" title=" " alt="" coords="834,86,945,111"/>
+<area shape="rect" title=" " alt="" coords="969,86,1119,111"/>
+<area shape="rect" title=" " alt="" coords="1143,86,1303,111"/>
+<area shape="rect" title=" " alt="" coords="1327,86,1497,111"/>
+<area shape="rect" title=" " alt="" coords="1521,86,1735,111"/>
+<area shape="rect" title=" " alt="" coords="1760,86,1923,111"/>
+<area shape="rect" title=" " alt="" coords="1947,79,2165,119"/>
+<area shape="rect" title=" " alt="" coords="2189,86,2395,111"/>
+<area shape="rect" title=" " alt="" coords="2420,86,2505,111"/>
+</map>
 </div>
 </div>
 <p><a href="Dominators_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2180255e12b0a1061b66fda7197a06a6"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a2180255e12b0a1061b66fda7197a06a6">llvm::DomTreeBuilder::Calculate&lt; DomTreeBuilder::BBDomTree &gt;</a> (<a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &amp;DT)</td></tr>
+<tr class="memitem:ab6f029538ec0af175fd95fab1f88aec3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#ab6f029538ec0af175fd95fab1f88aec3">VerifyDomInfoX</a> (&quot;verify-dom-info&quot;, cl::location(VerifyDomInfo), cl::Hidden, cl::desc(&quot;Verify dominator <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> (time consuming)&quot;))</td></tr>
+<tr class="separator:ab6f029538ec0af175fd95fab1f88aec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2180255e12b0a1061b66fda7197a06a6"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a2180255e12b0a1061b66fda7197a06a6">llvm::DomTreeBuilder::Calculate&lt; DomTreeBuilder::BBDomTree &gt;</a> (DomTreeBuilder::BBDomTree &amp;DT)</td></tr>
 <tr class="separator:a2180255e12b0a1061b66fda7197a06a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81522f9a7315b9e828a7d30e0fb4cf85"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a81522f9a7315b9e828a7d30e0fb4cf85">llvm::DomTreeBuilder::CalculateWithUpdates&lt; DomTreeBuilder::BBDomTree &gt;</a> (<a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &amp;DT, BBUpdates U)</td></tr>
+<tr class="memitem:a81522f9a7315b9e828a7d30e0fb4cf85"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a81522f9a7315b9e828a7d30e0fb4cf85">llvm::DomTreeBuilder::CalculateWithUpdates&lt; DomTreeBuilder::BBDomTree &gt;</a> (DomTreeBuilder::BBDomTree &amp;DT, BBUpdates U)</td></tr>
 <tr class="separator:a81522f9a7315b9e828a7d30e0fb4cf85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fac961cb4c1a6abcc9833a70e0da6bf"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a7fac961cb4c1a6abcc9833a70e0da6bf">llvm::DomTreeBuilder::Calculate&lt; DomTreeBuilder::BBPostDomTree &gt;</a> (<a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &amp;DT)</td></tr>
+<tr class="memitem:a7fac961cb4c1a6abcc9833a70e0da6bf"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a7fac961cb4c1a6abcc9833a70e0da6bf">llvm::DomTreeBuilder::Calculate&lt; DomTreeBuilder::BBPostDomTree &gt;</a> (DomTreeBuilder::BBPostDomTree &amp;DT)</td></tr>
 <tr class="separator:a7fac961cb4c1a6abcc9833a70e0da6bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6070220b820e82fc8aef505435e8f1e"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#ac6070220b820e82fc8aef505435e8f1e">llvm::DomTreeBuilder::InsertEdge&lt; DomTreeBuilder::BBDomTree &gt;</a> (<a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &amp;DT, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *<a class="el" href="BlockVerifier_8cpp.html#ae45c7d73c0ff5d177b59153ffae77f84">From</a>, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *To)</td></tr>
+<tr class="memitem:ac6070220b820e82fc8aef505435e8f1e"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#ac6070220b820e82fc8aef505435e8f1e">llvm::DomTreeBuilder::InsertEdge&lt; DomTreeBuilder::BBDomTree &gt;</a> (DomTreeBuilder::BBDomTree &amp;DT, BasicBlock *From, BasicBlock *To)</td></tr>
 <tr class="separator:ac6070220b820e82fc8aef505435e8f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37cb26c6ab42b3bba699c4c81272edbd"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a37cb26c6ab42b3bba699c4c81272edbd">llvm::DomTreeBuilder::InsertEdge&lt; DomTreeBuilder::BBPostDomTree &gt;</a> (<a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &amp;DT, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *<a class="el" href="BlockVerifier_8cpp.html#ae45c7d73c0ff5d177b59153ffae77f84">From</a>, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *To)</td></tr>
+<tr class="memitem:a37cb26c6ab42b3bba699c4c81272edbd"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a37cb26c6ab42b3bba699c4c81272edbd">llvm::DomTreeBuilder::InsertEdge&lt; DomTreeBuilder::BBPostDomTree &gt;</a> (DomTreeBuilder::BBPostDomTree &amp;DT, BasicBlock *From, BasicBlock *To)</td></tr>
 <tr class="separator:a37cb26c6ab42b3bba699c4c81272edbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac78e40bd018a93040a8ff4cfc22994ea"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#ac78e40bd018a93040a8ff4cfc22994ea">llvm::DomTreeBuilder::DeleteEdge&lt; DomTreeBuilder::BBDomTree &gt;</a> (<a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &amp;DT, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *<a class="el" href="BlockVerifier_8cpp.html#ae45c7d73c0ff5d177b59153ffae77f84">From</a>, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *To)</td></tr>
+<tr class="memitem:ac78e40bd018a93040a8ff4cfc22994ea"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#ac78e40bd018a93040a8ff4cfc22994ea">llvm::DomTreeBuilder::DeleteEdge&lt; DomTreeBuilder::BBDomTree &gt;</a> (DomTreeBuilder::BBDomTree &amp;DT, BasicBlock *From, BasicBlock *To)</td></tr>
 <tr class="separator:ac78e40bd018a93040a8ff4cfc22994ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ebf7df7248c9593df45b80653d8164c"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a0ebf7df7248c9593df45b80653d8164c">llvm::DomTreeBuilder::DeleteEdge&lt; DomTreeBuilder::BBPostDomTree &gt;</a> (<a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &amp;DT, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *<a class="el" href="BlockVerifier_8cpp.html#ae45c7d73c0ff5d177b59153ffae77f84">From</a>, <a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *To)</td></tr>
+<tr class="memitem:a0ebf7df7248c9593df45b80653d8164c"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a0ebf7df7248c9593df45b80653d8164c">llvm::DomTreeBuilder::DeleteEdge&lt; DomTreeBuilder::BBPostDomTree &gt;</a> (DomTreeBuilder::BBPostDomTree &amp;DT, BasicBlock *From, BasicBlock *To)</td></tr>
 <tr class="separator:a0ebf7df7248c9593df45b80653d8164c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21b4bed24839cfe2453a5bf24be53751"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a21b4bed24839cfe2453a5bf24be53751">llvm::DomTreeBuilder::ApplyUpdates&lt; DomTreeBuilder::BBDomTree &gt;</a> (<a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &amp;DT, <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#ae502af14697ae216363b3dc390e53e35">DomTreeBuilder::BBUpdates</a>)</td></tr>
+<tr class="memitem:a21b4bed24839cfe2453a5bf24be53751"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a21b4bed24839cfe2453a5bf24be53751">llvm::DomTreeBuilder::ApplyUpdates&lt; DomTreeBuilder::BBDomTree &gt;</a> (DomTreeBuilder::BBDomTree &amp;DT, DomTreeBuilder::BBUpdates)</td></tr>
 <tr class="separator:a21b4bed24839cfe2453a5bf24be53751"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5134fca1dd77754110d6d24701a1fc1"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#ac5134fca1dd77754110d6d24701a1fc1">llvm::DomTreeBuilder::ApplyUpdates&lt; DomTreeBuilder::BBPostDomTree &gt;</a> (<a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &amp;DT, <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#ae502af14697ae216363b3dc390e53e35">DomTreeBuilder::BBUpdates</a>)</td></tr>
+<tr class="memitem:ac5134fca1dd77754110d6d24701a1fc1"><td class="memItemLeft" align="right" valign="top">template void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#ac5134fca1dd77754110d6d24701a1fc1">llvm::DomTreeBuilder::ApplyUpdates&lt; DomTreeBuilder::BBPostDomTree &gt;</a> (DomTreeBuilder::BBPostDomTree &amp;DT, DomTreeBuilder::BBUpdates)</td></tr>
 <tr class="separator:ac5134fca1dd77754110d6d24701a1fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70b7d91571e3e5ac29d7ee116efa0fc8"><td class="memItemLeft" align="right" valign="top">template <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a70b7d91571e3e5ac29d7ee116efa0fc8">llvm::DomTreeBuilder::Verify&lt; DomTreeBuilder::BBDomTree &gt;</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &amp;DT, <a class="el" href="classllvm_1_1DominatorTreeBase.html#aad6e57a3b7c184bded15b616e790781f">DomTreeBuilder::BBDomTree::VerificationLevel</a> VL)</td></tr>
+<tr class="memitem:a70b7d91571e3e5ac29d7ee116efa0fc8"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a70b7d91571e3e5ac29d7ee116efa0fc8">llvm::DomTreeBuilder::Verify&lt; DomTreeBuilder::BBDomTree &gt;</a> (const DomTreeBuilder::BBDomTree &amp;DT, DomTreeBuilder::BBDomTree::VerificationLevel VL)</td></tr>
 <tr class="separator:a70b7d91571e3e5ac29d7ee116efa0fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5a5e7c5a7587a2023cb7f86ea90dc6d"><td class="memItemLeft" align="right" valign="top">template <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#ad5a5e7c5a7587a2023cb7f86ea90dc6d">llvm::DomTreeBuilder::Verify&lt; DomTreeBuilder::BBPostDomTree &gt;</a> (<a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &amp;DT, <a class="el" href="classllvm_1_1DominatorTreeBase.html#aad6e57a3b7c184bded15b616e790781f">DomTreeBuilder::BBPostDomTree::VerificationLevel</a> VL)</td></tr>
+<tr class="memitem:ad5a5e7c5a7587a2023cb7f86ea90dc6d"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#ad5a5e7c5a7587a2023cb7f86ea90dc6d">llvm::DomTreeBuilder::Verify&lt; DomTreeBuilder::BBPostDomTree &gt;</a> (const DomTreeBuilder::BBPostDomTree &amp;DT, DomTreeBuilder::BBPostDomTree::VerificationLevel VL)</td></tr>
 <tr class="separator:ad5a5e7c5a7587a2023cb7f86ea90dc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacda2e232718d42c97e8714b26fd40a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#aacda2e232718d42c97e8714b26fd40a1">INITIALIZE_PASS</a> (<a class="el" href="classllvm_1_1DominatorTreeWrapperPass.html">DominatorTreeWrapperPass</a>, &quot;domtree&quot;, &quot;Dominator Tree Construction&quot;, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) <a class="el" href="classbool.html">bool</a> <a class="el" href="classllvm_1_1DominatorTreeWrapperPass.html">DominatorTreeWrapperPass</a></td></tr>
+<tr class="memitem:aacda2e232718d42c97e8714b26fd40a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#aacda2e232718d42c97e8714b26fd40a1">INITIALIZE_PASS</a> (DominatorTreeWrapperPass, &quot;domtree&quot;, &quot;Dominator Tree Construction&quot;, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) bool DominatorTreeWrapperPass</td></tr>
 <tr class="separator:aacda2e232718d42c97e8714b26fd40a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a9de4571c837a2a127682216b762e0b6d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a>, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a9de4571c837a2a127682216b762e0b6d">VerifyDomInfoX</a> (&quot;verify-dom-info&quot;, cl::location(VerifyDomInfo), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Verify dominator <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> (time consuming)&quot;))</td></tr>
-<tr class="separator:a9de4571c837a2a127682216b762e0b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c3fbeb73e85eeba7ca8170412f863a2"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a6c3fbeb73e85eeba7ca8170412f863a2">ExpensiveChecksEnabled</a> = false</td></tr>
+<tr class="memitem:a6c3fbeb73e85eeba7ca8170412f863a2"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Dominators_8cpp.html#a6c3fbeb73e85eeba7ca8170412f863a2">ExpensiveChecksEnabled</a> = false</td></tr>
 <tr class="separator:a6c3fbeb73e85eeba7ca8170412f863a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -121,7 +137,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">INITIALIZE_PASS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTreeWrapperPass.html">DominatorTreeWrapperPass</a>&#160;</td>
+          <td class="paramtype">DominatorTreeWrapperPass&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -169,15 +185,15 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">template void <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a7b97cafefb0bcf47bea2f11598e74291">llvm::DomTreeBuilder::ApplyUpdates</a>&lt; <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &gt; </td>
+          <td class="memname">template void llvm::DomTreeBuilder::ApplyUpdates&lt; DomTreeBuilder::BBDomTree &gt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &amp;&#160;</td>
+          <td class="paramtype">DomTreeBuilder::BBDomTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1DomTreeBuilder.html#ae502af14697ae216363b3dc390e53e35">DomTreeBuilder::BBUpdates</a>&#160;</td>
+          <td class="paramtype">DomTreeBuilder::BBUpdates&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -197,15 +213,15 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">template void <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a7b97cafefb0bcf47bea2f11598e74291">llvm::DomTreeBuilder::ApplyUpdates</a>&lt; <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &gt; </td>
+          <td class="memname">template void llvm::DomTreeBuilder::ApplyUpdates&lt; DomTreeBuilder::BBPostDomTree &gt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &amp;&#160;</td>
+          <td class="paramtype">DomTreeBuilder::BBPostDomTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1DomTreeBuilder.html#ae502af14697ae216363b3dc390e53e35">DomTreeBuilder::BBUpdates</a>&#160;</td>
+          <td class="paramtype">DomTreeBuilder::BBUpdates&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -225,9 +241,9 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">template void <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a73e198fec8305bc64938bc784a8f0d1c">llvm::DomTreeBuilder::Calculate</a>&lt; <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &gt; </td>
+          <td class="memname">template void llvm::DomTreeBuilder::Calculate&lt; DomTreeBuilder::BBDomTree &gt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &amp;&#160;</td>
+          <td class="paramtype">DomTreeBuilder::BBDomTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em></td><td>)</td>
           <td></td>
         </tr>
@@ -243,9 +259,9 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">template void <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a73e198fec8305bc64938bc784a8f0d1c">llvm::DomTreeBuilder::Calculate</a>&lt; <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &gt; </td>
+          <td class="memname">template void llvm::DomTreeBuilder::Calculate&lt; DomTreeBuilder::BBPostDomTree &gt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &amp;&#160;</td>
+          <td class="paramtype">DomTreeBuilder::BBPostDomTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em></td><td>)</td>
           <td></td>
         </tr>
@@ -261,9 +277,9 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">template void <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a21425ba1759b3e091d72ce8333be2ff1">llvm::DomTreeBuilder::CalculateWithUpdates</a>&lt; <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &gt; </td>
+          <td class="memname">template void llvm::DomTreeBuilder::CalculateWithUpdates&lt; DomTreeBuilder::BBDomTree &gt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &amp;&#160;</td>
+          <td class="paramtype">DomTreeBuilder::BBDomTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
@@ -289,21 +305,21 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">template void <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a70aa6f22ccb403c6b716d03783275dfd">llvm::DomTreeBuilder::DeleteEdge</a>&lt; <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &gt; </td>
+          <td class="memname">template void llvm::DomTreeBuilder::DeleteEdge&lt; DomTreeBuilder::BBDomTree &gt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &amp;&#160;</td>
+          <td class="paramtype">DomTreeBuilder::BBDomTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>From</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>To</em>&#160;</td>
         </tr>
         <tr>
@@ -323,21 +339,21 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">template void <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a70aa6f22ccb403c6b716d03783275dfd">llvm::DomTreeBuilder::DeleteEdge</a>&lt; <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &gt; </td>
+          <td class="memname">template void llvm::DomTreeBuilder::DeleteEdge&lt; DomTreeBuilder::BBPostDomTree &gt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &amp;&#160;</td>
+          <td class="paramtype">DomTreeBuilder::BBPostDomTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>From</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>To</em>&#160;</td>
         </tr>
         <tr>
@@ -357,21 +373,21 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">template void <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#ab5e2b97e90221527d92449f4ac5159f6">llvm::DomTreeBuilder::InsertEdge</a>&lt; <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &gt; </td>
+          <td class="memname">template void llvm::DomTreeBuilder::InsertEdge&lt; DomTreeBuilder::BBDomTree &gt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &amp;&#160;</td>
+          <td class="paramtype">DomTreeBuilder::BBDomTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>From</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>To</em>&#160;</td>
         </tr>
         <tr>
@@ -391,21 +407,21 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">template void <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#ab5e2b97e90221527d92449f4ac5159f6">llvm::DomTreeBuilder::InsertEdge</a>&lt; <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &gt; </td>
+          <td class="memname">template void llvm::DomTreeBuilder::InsertEdge&lt; DomTreeBuilder::BBPostDomTree &gt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &amp;&#160;</td>
+          <td class="paramtype">DomTreeBuilder::BBPostDomTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>From</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BasicBlock.html">BasicBlock</a> *&#160;</td>
+          <td class="paramtype">BasicBlock *&#160;</td>
           <td class="paramname"><em>To</em>&#160;</td>
         </tr>
         <tr>
@@ -425,15 +441,15 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">template <a class="el" href="classbool.html">bool</a> <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a1348bf219185f1a9896e890ab4c2061d">llvm::DomTreeBuilder::Verify</a>&lt; <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &gt; </td>
+          <td class="memname">template bool <a class="el" href="SafepointIRVerifier_8cpp.html#ae3cddd13e523553c3411ddd9b91486b9">llvm::DomTreeBuilder::Verify</a>&lt; DomTreeBuilder::BBDomTree &gt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a5e8426a712cdbe61674db7c9a45ff4c5">DomTreeBuilder::BBDomTree</a> &amp;&#160;</td>
+          <td class="paramtype">const DomTreeBuilder::BBDomTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTreeBase.html#aad6e57a3b7c184bded15b616e790781f">DomTreeBuilder::BBDomTree::VerificationLevel</a>&#160;</td>
+          <td class="paramtype">DomTreeBuilder::BBDomTree::VerificationLevel&#160;</td>
           <td class="paramname"><em>VL</em>&#160;</td>
         </tr>
         <tr>
@@ -453,15 +469,15 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">template <a class="el" href="classbool.html">bool</a> <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#a1348bf219185f1a9896e890ab4c2061d">llvm::DomTreeBuilder::Verify</a>&lt; <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &gt; </td>
+          <td class="memname">template bool <a class="el" href="SafepointIRVerifier_8cpp.html#ae3cddd13e523553c3411ddd9b91486b9">llvm::DomTreeBuilder::Verify</a>&lt; DomTreeBuilder::BBPostDomTree &gt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="namespacellvm_1_1DomTreeBuilder.html#aca6f91a92edf9817dbf10580129b4a19">DomTreeBuilder::BBPostDomTree</a> &amp;&#160;</td>
+          <td class="paramtype">const DomTreeBuilder::BBPostDomTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominatorTreeBase.html#aad6e57a3b7c184bded15b616e790781f">DomTreeBuilder::BBPostDomTree::VerificationLevel</a>&#160;</td>
+          <td class="paramtype">DomTreeBuilder::BBPostDomTree::VerificationLevel&#160;</td>
           <td class="paramname"><em>VL</em>&#160;</td>
         </tr>
         <tr>
@@ -474,9 +490,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a6c3fbeb73e85eeba7ca8170412f863a2" name="a6c3fbeb73e85eeba7ca8170412f863a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c3fbeb73e85eeba7ca8170412f863a2">&#9670;&nbsp;</a></span>ExpensiveChecksEnabled</h2>
+<a id="ab6f029538ec0af175fd95fab1f88aec3" name="ab6f029538ec0af175fd95fab1f88aec3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6f029538ec0af175fd95fab1f88aec3">&#9670;&nbsp;</a></span>VerifyDomInfoX()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -485,31 +500,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classbool.html">bool</a> ExpensiveChecksEnabled = false</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Dominators_8cpp_source.html#l00039">39</a> of file <a class="el" href="Dominators_8cpp_source.html">Dominators.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a9de4571c837a2a127682216b762e0b6d" name="a9de4571c837a2a127682216b762e0b6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9de4571c837a2a127682216b762e0b6d">&#9670;&nbsp;</a></span>VerifyDomInfoX</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classbool.html">bool</a>, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a> &gt; VerifyDomInfoX(&quot;verify-dom-info&quot;, cl::location(VerifyDomInfo), cl::Hidden, <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Verify dominator <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> (time consuming)&quot;)) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; bool, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a> &gt; VerifyDomInfoX </td>
           <td>(</td>
           <td class="paramtype">&quot;verify-dom-info&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -529,7 +520,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Verify dominator <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> (time consuming)&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;Verify dominator <a class="el" href="LazyValueInfo_8cpp.html#add11cb1bc38847ce70e526af765dcce7">info</a> (time consuming)&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -547,10 +538,35 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a6c3fbeb73e85eeba7ca8170412f863a2" name="a6c3fbeb73e85eeba7ca8170412f863a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c3fbeb73e85eeba7ca8170412f863a2">&#9670;&nbsp;</a></span>ExpensiveChecksEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool ExpensiveChecksEnabled = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Dominators_8cpp_source.html#l00039">39</a> of file <a class="el" href="Dominators_8cpp_source.html">Dominators.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:15 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

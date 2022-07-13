@@ -73,6 +73,22 @@ $(function() {
 Include dependency graph for regcomp.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="regcomp_8c__incl.png" border="0" usemap="#alib_2Support_2regcomp_8c" alt=""/></div>
+<map name="alib_2Support_2regcomp_8c" id="alib_2Support_2regcomp_8c">
+<area shape="rect" title=" " alt="" coords="361,5,525,31"/>
+<area shape="rect" title=" " alt="" coords="263,152,359,177"/>
+<area shape="rect" title=" " alt="" coords="32,79,102,104"/>
+<area shape="rect" title=" " alt="" coords="127,79,194,104"/>
+<area shape="rect" title=" " alt="" coords="218,79,289,104"/>
+<area shape="rect" title=" " alt="" coords="313,79,384,104"/>
+<area shape="rect" title=" " alt="" coords="408,79,478,104"/>
+<area shape="rect" title=" " alt="" coords="502,79,573,104"/>
+<area shape="rect" href="regex__impl_8h.html" title=" " alt="" coords="598,79,704,104"/>
+<area shape="rect" href="regutils_8h.html" title=" " alt="" coords="700,152,783,177"/>
+<area shape="rect" href="regex2_8h.html" title=" " alt="" coords="780,79,858,104"/>
+<area shape="rect" title=" " alt="" coords="882,79,1033,104"/>
+<area shape="rect" title=" " alt="" coords="704,225,779,251"/>
+<area shape="rect" title=" " alt="" coords="807,152,882,177"/>
+</map>
 </div>
 </div>
 <p><a href="regcomp_8c_source.html">Go to the source code of this file.</a></p>
@@ -88,7 +104,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a4d75c71d09855c3c47f35622b289316f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a4d75c71d09855c3c47f35622b289316f">NPAREN</a>&#160;&#160;&#160;10	/* we need to remember () 1-9 <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> back refs */</td></tr>
+<tr class="memitem:a4d75c71d09855c3c47f35622b289316f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a4d75c71d09855c3c47f35622b289316f">NPAREN</a>&#160;&#160;&#160;10	/* we need to remember () 1-9 for back refs */</td></tr>
 <tr class="separator:a4d75c71d09855c3c47f35622b289316f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa25dac8b80db8b8f03732eeb9ca23934"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#aa25dac8b80db8b8f03732eeb9ca23934">PEEK</a>()&#160;&#160;&#160;(*p-&gt;next)</td></tr>
 <tr class="separator:aa25dac8b80db8b8f03732eeb9ca23934"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,9 +140,9 @@ Macros</h2></td></tr>
 <tr class="separator:a72f2f2b28c8abc20f687eb02b7af4bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9daf6c2c089e7dcee7335b7e8e7a9a27"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a9daf6c2c089e7dcee7335b7e8e7a9a27">MUSTNOTSEE</a>(c,  e)&#160;&#160;&#160;(<a class="el" href="regcomp_8c.html#aeb49e5164a8e40811cc769c1fd331d66">REQUIRE</a>(!<a class="el" href="regcomp_8c.html#ace441594c4bd8da94fd64b1c612ca948">MORE</a>() || <a class="el" href="regcomp_8c.html#aa25dac8b80db8b8f03732eeb9ca23934">PEEK</a>() != (c), e))</td></tr>
 <tr class="separator:a9daf6c2c089e7dcee7335b7e8e7a9a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed59dfea56910669e8ad0dcef8a2ea8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#aed59dfea56910669e8ad0dcef8a2ea8d">EMIT</a>(<a class="el" href="HexagonBitTracker_8cpp.html#a0ee73ba17c3a2cb54752905e99d77357">op</a>,  sopnd)&#160;&#160;&#160;<a class="el" href="regcomp_8c.html#a42f8fec9a1fa9d471abf77a8eead0da1">doemit</a>(p, (<a class="el" href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a>)(<a class="el" href="HexagonBitTracker_8cpp.html#a0ee73ba17c3a2cb54752905e99d77357">op</a>), (<a class="el" href="classsize__t.html">size_t</a>)(sopnd))</td></tr>
+<tr class="memitem:aed59dfea56910669e8ad0dcef8a2ea8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#aed59dfea56910669e8ad0dcef8a2ea8d">EMIT</a>(op,  sopnd)&#160;&#160;&#160;<a class="el" href="regcomp_8c.html#a42f8fec9a1fa9d471abf77a8eead0da1">doemit</a>(p, (<a class="el" href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a>)(op), (size_t)(sopnd))</td></tr>
 <tr class="separator:aed59dfea56910669e8ad0dcef8a2ea8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e44b28c2ebff8b5b41eedff8a4988a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a8e44b28c2ebff8b5b41eedff8a4988a3">INSERT</a>(<a class="el" href="HexagonBitTracker_8cpp.html#a0ee73ba17c3a2cb54752905e99d77357">op</a>,  pos)&#160;&#160;&#160;<a class="el" href="regcomp_8c.html#ab437a1156833e5395a0102102cf93c6f">doinsert</a>(p, (<a class="el" href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a>)(<a class="el" href="HexagonBitTracker_8cpp.html#a0ee73ba17c3a2cb54752905e99d77357">op</a>), <a class="el" href="regcomp_8c.html#a114e866679b13eadadd097635f4fb10d">HERE</a>()-(pos)+1, pos)</td></tr>
+<tr class="memitem:a8e44b28c2ebff8b5b41eedff8a4988a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a8e44b28c2ebff8b5b41eedff8a4988a3">INSERT</a>(op,  pos)&#160;&#160;&#160;<a class="el" href="regcomp_8c.html#ab437a1156833e5395a0102102cf93c6f">doinsert</a>(p, (<a class="el" href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a>)(op), <a class="el" href="regcomp_8c.html#a114e866679b13eadadd097635f4fb10d">HERE</a>()-(pos)+1, pos)</td></tr>
 <tr class="separator:a8e44b28c2ebff8b5b41eedff8a4988a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69e9716ecbad0514d4755e83f2435cce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a69e9716ecbad0514d4755e83f2435cce">AHEAD</a>(pos)&#160;&#160;&#160;<a class="el" href="regcomp_8c.html#ae26e3e26f2a397a734f6b8fac059b356">dofwd</a>(p, pos, <a class="el" href="regcomp_8c.html#a114e866679b13eadadd097635f4fb10d">HERE</a>()-(pos))</td></tr>
 <tr class="separator:a69e9716ecbad0514d4755e83f2435cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,11 +197,11 @@ Functions</h2></td></tr>
 <tr class="separator:a41c76f49aa45896e78b801c95970f43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5782473066b8c574e25e16bd8a9ed067"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a5782473066b8c574e25e16bd8a9ed067">p_b_eclass</a> (struct <a class="el" href="structparse.html">parse</a> *, <a class="el" href="structcset.html">cset</a> *)</td></tr>
 <tr class="separator:a5782473066b8c574e25e16bd8a9ed067"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac24cfdb8cf256d8fc31d63ae5931db44"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classchar.html">char</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#ac24cfdb8cf256d8fc31d63ae5931db44">p_b_symbol</a> (struct <a class="el" href="structparse.html">parse</a> *)</td></tr>
+<tr class="memitem:ac24cfdb8cf256d8fc31d63ae5931db44"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#ac24cfdb8cf256d8fc31d63ae5931db44">p_b_symbol</a> (struct <a class="el" href="structparse.html">parse</a> *)</td></tr>
 <tr class="separator:ac24cfdb8cf256d8fc31d63ae5931db44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21e3f305c59ef8746b818db2f47b3dc4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classchar.html">char</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a21e3f305c59ef8746b818db2f47b3dc4">p_b_coll_elem</a> (struct <a class="el" href="structparse.html">parse</a> *, int)</td></tr>
+<tr class="memitem:a21e3f305c59ef8746b818db2f47b3dc4"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a21e3f305c59ef8746b818db2f47b3dc4">p_b_coll_elem</a> (struct <a class="el" href="structparse.html">parse</a> *, int)</td></tr>
 <tr class="separator:a21e3f305c59ef8746b818db2f47b3dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dbd966fbfc12e58cc293191e863bb6d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classchar.html">char</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a3dbd966fbfc12e58cc293191e863bb6d">othercase</a> (int)</td></tr>
+<tr class="memitem:a3dbd966fbfc12e58cc293191e863bb6d"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a3dbd966fbfc12e58cc293191e863bb6d">othercase</a> (int)</td></tr>
 <tr class="separator:a3dbd966fbfc12e58cc293191e863bb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c380a95a0890b550f221e2184f6cada"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a8c380a95a0890b550f221e2184f6cada">bothcases</a> (struct <a class="el" href="structparse.html">parse</a> *, int)</td></tr>
 <tr class="separator:a8c380a95a0890b550f221e2184f6cada"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,7 +223,7 @@ Functions</h2></td></tr>
 <tr class="separator:afc1d8df71f0b5f0795df5212acfd57c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab04fc18d5a9bd2a4fc001ec92cc28a93"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#ab04fc18d5a9bd2a4fc001ec92cc28a93">nch</a> (struct <a class="el" href="structparse.html">parse</a> *, <a class="el" href="structcset.html">cset</a> *)</td></tr>
 <tr class="separator:ab04fc18d5a9bd2a4fc001ec92cc28a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f409b976df7f4fa192aa05f9e5c673e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a1f409b976df7f4fa192aa05f9e5c673e">mcadd</a> (struct <a class="el" href="structparse.html">parse</a> *, <a class="el" href="structcset.html">cset</a> *, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *)</td></tr>
+<tr class="memitem:a1f409b976df7f4fa192aa05f9e5c673e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a1f409b976df7f4fa192aa05f9e5c673e">mcadd</a> (struct <a class="el" href="structparse.html">parse</a> *, <a class="el" href="structcset.html">cset</a> *, const char *)</td></tr>
 <tr class="separator:a1f409b976df7f4fa192aa05f9e5c673e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af538731f90644c7cc9c9f24ae52f3134"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#af538731f90644c7cc9c9f24ae52f3134">mcinvert</a> (struct <a class="el" href="structparse.html">parse</a> *, <a class="el" href="structcset.html">cset</a> *)</td></tr>
 <tr class="separator:af538731f90644c7cc9c9f24ae52f3134"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,9 +237,9 @@ Functions</h2></td></tr>
 <tr class="separator:a7f555d714dea35fa2b3e00c2e727d0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a388e2f31ac612ec148884cd3143db78c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a388e2f31ac612ec148884cd3143db78c">dupl</a> (struct <a class="el" href="structparse.html">parse</a> *, <a class="el" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a>, <a class="el" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a>)</td></tr>
 <tr class="separator:a388e2f31ac612ec148884cd3143db78c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42f8fec9a1fa9d471abf77a8eead0da1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a42f8fec9a1fa9d471abf77a8eead0da1">doemit</a> (struct <a class="el" href="structparse.html">parse</a> *, <a class="el" href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a>, <a class="el" href="classsize__t.html">size_t</a>)</td></tr>
+<tr class="memitem:a42f8fec9a1fa9d471abf77a8eead0da1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a42f8fec9a1fa9d471abf77a8eead0da1">doemit</a> (struct <a class="el" href="structparse.html">parse</a> *, <a class="el" href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a>, size_t)</td></tr>
 <tr class="separator:a42f8fec9a1fa9d471abf77a8eead0da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab437a1156833e5395a0102102cf93c6f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#ab437a1156833e5395a0102102cf93c6f">doinsert</a> (struct <a class="el" href="structparse.html">parse</a> *, <a class="el" href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a>, <a class="el" href="classsize__t.html">size_t</a>, <a class="el" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a>)</td></tr>
+<tr class="memitem:ab437a1156833e5395a0102102cf93c6f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#ab437a1156833e5395a0102102cf93c6f">doinsert</a> (struct <a class="el" href="structparse.html">parse</a> *, <a class="el" href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a>, size_t, <a class="el" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a>)</td></tr>
 <tr class="separator:ab437a1156833e5395a0102102cf93c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae26e3e26f2a397a734f6b8fac059b356"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#ae26e3e26f2a397a734f6b8fac059b356">dofwd</a> (struct <a class="el" href="structparse.html">parse</a> *, <a class="el" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a>, <a class="el" href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a>)</td></tr>
 <tr class="separator:ae26e3e26f2a397a734f6b8fac059b356"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -235,7 +251,7 @@ Functions</h2></td></tr>
 <tr class="separator:acf3f78aff4143b42112848d8f0dd4d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab868fc2a09cae3dc9ae25baea08db7a4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="regex2_8h.html#a1934207945a1bf71e1355e13cebc601a">sopno</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#ab868fc2a09cae3dc9ae25baea08db7a4">pluscount</a> (struct <a class="el" href="structparse.html">parse</a> *, struct <a class="el" href="structre__guts.html">re_guts</a> *)</td></tr>
 <tr class="separator:ab868fc2a09cae3dc9ae25baea08db7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94efd6ce730ab2988bfd211af4319873"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a94efd6ce730ab2988bfd211af4319873">llvm_regcomp</a> (<a class="el" href="regex__impl_8h.html#a14d8a63433f444e7352b4e931cf33335">llvm_regex_t</a> *preg, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *pattern, int cflags)</td></tr>
+<tr class="memitem:a94efd6ce730ab2988bfd211af4319873"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a94efd6ce730ab2988bfd211af4319873">llvm_regcomp</a> (<a class="el" href="regex__impl_8h.html#a14d8a63433f444e7352b4e931cf33335">llvm_regex_t</a> *preg, const char *pattern, int cflags)</td></tr>
 <tr class="separator:a94efd6ce730ab2988bfd211af4319873"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -244,7 +260,7 @@ Variables</h2></td></tr>
 <tr class="separator:a6dbc3d533054da9187c049907f5dd9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dda07b235599739319ccc11dadeca0d"><td class="memItemLeft" align="right" valign="top">static struct <a class="el" href="structcname.html">cname</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a6dda07b235599739319ccc11dadeca0d">cnames</a> []</td></tr>
 <tr class="separator:a6dda07b235599739319ccc11dadeca0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8eb1ab58fe7e084dbbdcb71c0ecf4c9c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classchar.html">char</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a8eb1ab58fe7e084dbbdcb71c0ecf4c9c">nuls</a> [10]</td></tr>
+<tr class="memitem:a8eb1ab58fe7e084dbbdcb71c0ecf4c9c"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="regcomp_8c.html#a8eb1ab58fe7e084dbbdcb71c0ecf4c9c">nuls</a> [10]</td></tr>
 <tr class="separator:a8eb1ab58fe7e084dbbdcb71c0ecf4c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -408,7 +424,7 @@ Variables</h2></td></tr>
           <td class="memname">#define EMIT</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="HexagonBitTracker_8cpp.html#a0ee73ba17c3a2cb54752905e99d77357">op</a>, </td>
+          <td class="paramname">op, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -419,7 +435,7 @@ Variables</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="regcomp_8c.html#a42f8fec9a1fa9d471abf77a8eead0da1">doemit</a>(p, (<a class="el" href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a>)(<a class="el" href="HexagonBitTracker_8cpp.html#a0ee73ba17c3a2cb54752905e99d77357">op</a>), (<a class="el" href="classsize__t.html">size_t</a>)(sopnd))</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="regcomp_8c.html#a42f8fec9a1fa9d471abf77a8eead0da1">doemit</a>(p, (<a class="el" href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a>)(op), (size_t)(sopnd))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -524,7 +540,7 @@ Variables</h2></td></tr>
           <td class="memname">#define INSERT</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="HexagonBitTracker_8cpp.html#a0ee73ba17c3a2cb54752905e99d77357">op</a>, </td>
+          <td class="paramname">op, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -535,7 +551,7 @@ Variables</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="regcomp_8c.html#ab437a1156833e5395a0102102cf93c6f">doinsert</a>(p, (<a class="el" href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a>)(<a class="el" href="HexagonBitTracker_8cpp.html#a0ee73ba17c3a2cb54752905e99d77357">op</a>), <a class="el" href="regcomp_8c.html#a114e866679b13eadadd097635f4fb10d">HERE</a>()-(pos)+1, pos)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="regcomp_8c.html#ab437a1156833e5395a0102102cf93c6f">doinsert</a>(p, (<a class="el" href="regex2_8h.html#a06b705baf08297be667616dcfd9b63a6">sop</a>)(op), <a class="el" href="regcomp_8c.html#a114e866679b13eadadd097635f4fb10d">HERE</a>()-(pos)+1, pos)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -701,8 +717,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2tommy_2workspace_2llvm_29_80_81_2llvm-9_80_81_8src_2include_2llvm_2ADT_2ilist_node_8h-example.html#a10">/home/tommy/workspace/llvm/9.0.1/llvm-9.0.1.src/include/llvm/ADT/ilist_node.h</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -787,7 +801,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NPAREN&#160;&#160;&#160;10	/* we need to remember () 1-9 <a class="el" href="AArch64ExpandPseudoInsts_8cpp.html#ab425c63346dc1b312c1f40f408d098c3">for</a> back refs */</td>
+          <td class="memname">#define NPAREN&#160;&#160;&#160;10	/* we need to remember () 1-9 for back refs */</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1027,7 +1041,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01193">1193</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="regex2_8h_source.html#l00136">re_guts::csetsize</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regex2_8h_source.html#l00114">cset::hash</a>, <a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#af411b1dc5e26d5cc2fc0ec5829d00f34">if()</a>, <a class="el" href="regex2_8h_source.html#l00113">cset::mask</a>, <a class="el" href="regex2_8h_source.html#l00116">cset::multis</a>, <a class="el" href="regcomp_8c_source.html#l00198">parse::ncsalloc</a>, <a class="el" href="regex2_8h_source.html#l00137">re_guts::ncsets</a>, <a class="el" href="regex2_8h_source.html#l00112">cset::ptr</a>, <a class="el" href="regex__impl_8h_source.html#l00077">REG_ESPACE</a>, <a class="el" href="regex2_8h_source.html#l00139">re_guts::setbits</a>, <a class="el" href="regcomp_8c_source.html#l00261">SETERROR</a>, <a class="el" href="regex2_8h_source.html#l00138">re_guts::sets</a>, and <a class="el" href="regex2_8h_source.html#l00115">cset::smultis</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="regex2_8h_source.html#l00136">re_guts::csetsize</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regex2_8h_source.html#l00114">cset::hash</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#ac09a30d47dd36dfe05dda91e8d67e92f">if()</a>, <a class="el" href="regex2_8h_source.html#l00113">cset::mask</a>, <a class="el" href="regex2_8h_source.html#l00116">cset::multis</a>, <a class="el" href="regcomp_8c_source.html#l00198">parse::ncsalloc</a>, <a class="el" href="regex2_8h_source.html#l00137">re_guts::ncsets</a>, <a class="el" href="regex2_8h_source.html#l00112">cset::ptr</a>, <a class="el" href="regex__impl_8h_source.html#l00077">REG_ESPACE</a>, <a class="el" href="regex2_8h_source.html#l00139">re_guts::setbits</a>, <a class="el" href="regcomp_8c_source.html#l00261">SETERROR</a>, <a class="el" href="regex2_8h_source.html#l00138">re_guts::sets</a>, and <a class="el" href="regex2_8h_source.html#l00115">cset::smultis</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>.</p>
 
@@ -1069,7 +1083,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01046">1046</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00193">parse::end</a>, <a class="el" href="regcomp_8c_source.html#l00192">parse::next</a>, <a class="el" href="regcomp_8c_source.html#l01028">othercase()</a>, and <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00193">parse::end</a>, <a class="el" href="regcomp_8c_source.html#l00192">parse::next</a>, <a class="el" href="regcomp_8c_source.html#l01028">othercase()</a>, and <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l01069">ordinary()</a>.</p>
 
@@ -1141,7 +1155,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classsize__t.html">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>opnd</em>&#160;</td>
         </tr>
         <tr>
@@ -1159,7 +1173,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01474">1474</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="regcomp_8c_source.html#l01545">enlarge()</a>, <a class="el" href="regcomp_8c_source.html#l00194">parse::error</a>, <a class="el" href="HexagonBitTracker_8cpp.html#a0ee73ba17c3a2cb54752905e99d77357">op</a>, <a class="el" href="regex2_8h_source.html#l00072">OPSHIFT</a>, <a class="el" href="regcomp_8c_source.html#l00197">parse::slen</a>, <a class="el" href="regex2_8h_source.html#l00075">SOP</a>, <a class="el" href="regcomp_8c_source.html#l00196">parse::ssize</a>, and <a class="el" href="regcomp_8c_source.html#l00195">parse::strip</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="regcomp_8c_source.html#l01545">enlarge()</a>, <a class="el" href="regcomp_8c_source.html#l00194">parse::error</a>, <a class="el" href="regex2_8h_source.html#l00072">OPSHIFT</a>, <a class="el" href="regcomp_8c_source.html#l00197">parse::slen</a>, <a class="el" href="regex2_8h_source.html#l00075">SOP</a>, <a class="el" href="regcomp_8c_source.html#l00196">parse::ssize</a>, and <a class="el" href="regcomp_8c_source.html#l00195">parse::strip</a>.</p>
 
 </div>
 </div>
@@ -1205,7 +1219,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01531">1531</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00194">parse::error</a>, <a class="el" href="regex2_8h_source.html#l00073">OP</a>, <a class="el" href="regex2_8h_source.html#l00072">OPSHIFT</a>, <a class="el" href="regcomp_8c_source.html#l00195">parse::strip</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00708">value</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00194">parse::error</a>, <a class="el" href="regex2_8h_source.html#l00073">OP</a>, <a class="el" href="regex2_8h_source.html#l00072">OPSHIFT</a>, <a class="el" href="regcomp_8c_source.html#l00195">parse::strip</a>, and <a class="el" href="DeadArgumentElimination_8cpp_source.html#l00708">value</a>.</p>
 
 </div>
 </div>
@@ -1233,7 +1247,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classsize__t.html">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>opnd</em>, </td>
         </tr>
         <tr>
@@ -1257,7 +1271,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01496">1496</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="regcomp_8c_source.html#l00194">parse::error</a>, <a class="el" href="regcomp_8c_source.html#l00270">HERE</a>, <a class="el" href="regcomp_8c_source.html#l00200">NPAREN</a>, <a class="el" href="HexagonBitTracker_8cpp.html#a0ee73ba17c3a2cb54752905e99d77357">op</a>, <a class="el" href="regcomp_8c_source.html#l00201">parse::pbegin</a>, <a class="el" href="regcomp_8c_source.html#l00202">parse::pend</a>, and <a class="el" href="regcomp_8c_source.html#l00195">parse::strip</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="regcomp_8c_source.html#l00194">parse::error</a>, <a class="el" href="regcomp_8c_source.html#l00270">HERE</a>, <a class="el" href="regcomp_8c_source.html#l00200">NPAREN</a>, <a class="el" href="regcomp_8c_source.html#l00201">parse::pbegin</a>, <a class="el" href="regcomp_8c_source.html#l00202">parse::pend</a>, and <a class="el" href="regcomp_8c_source.html#l00195">parse::strip</a>.</p>
 
 </div>
 </div>
@@ -1303,7 +1317,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01448">1448</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="regcomp_8c_source.html#l01545">enlarge()</a>, <a class="el" href="regcomp_8c_source.html#l00270">HERE</a>, <a class="el" href="regcomp_8c_source.html#l00197">parse::slen</a>, <a class="el" href="regcomp_8c_source.html#l00196">parse::ssize</a>, and <a class="el" href="regcomp_8c_source.html#l00195">parse::strip</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="regcomp_8c_source.html#l01545">enlarge()</a>, <a class="el" href="regcomp_8c_source.html#l00270">HERE</a>, <a class="el" href="regcomp_8c_source.html#l00197">parse::slen</a>, <a class="el" href="regcomp_8c_source.html#l00196">parse::ssize</a>, and <a class="el" href="regcomp_8c_source.html#l00195">parse::strip</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l00435">p_ere_exp()</a>, <a class="el" href="regcomp_8c_source.html#l00659">p_simp_re()</a>, and <a class="el" href="regcomp_8c_source.html#l01110">repeat()</a>.</p>
 
@@ -1387,7 +1401,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01596">1596</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00194">parse::error</a>, <a class="el" href="regex2_8h_source.html#l00144">re_guts::iflags</a>, <a class="el" href="regex2_8h_source.html#l00153">re_guts::mlen</a>, <a class="el" href="regex2_8h_source.html#l00152">re_guts::must</a>, <a class="el" href="regex2_8h_source.html#l00095">O_CH</a>, <a class="el" href="regex2_8h_source.html#l00089">O_QUEST</a>, <a class="el" href="regex2_8h_source.html#l00092">OCH_</a>, <a class="el" href="regex2_8h_source.html#l00079">OCHAR</a>, <a class="el" href="regex2_8h_source.html#l00078">OEND</a>, <a class="el" href="regex2_8h_source.html#l00090">OLPAREN</a>, <a class="el" href="regex2_8h_source.html#l00094">OOR2</a>, <a class="el" href="regex2_8h_source.html#l00073">OP</a>, <a class="el" href="regex2_8h_source.html#l00086">OPLUS_</a>, <a class="el" href="regex2_8h_source.html#l00074">OPND</a>, <a class="el" href="regex2_8h_source.html#l00088">OQUEST_</a>, <a class="el" href="regex2_8h_source.html#l00091">ORPAREN</a>, <a class="el" href="regex2_8h_source.html#l00147">REGEX_BAD</a>, <a class="el" href="GlobPattern_8cpp_source.html#l00066">scan()</a>, and <a class="el" href="regex2_8h_source.html#l00135">re_guts::strip</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00194">parse::error</a>, <a class="el" href="regex2_8h_source.html#l00144">re_guts::iflags</a>, <a class="el" href="regex2_8h_source.html#l00153">re_guts::mlen</a>, <a class="el" href="regex2_8h_source.html#l00152">re_guts::must</a>, <a class="el" href="regex2_8h_source.html#l00095">O_CH</a>, <a class="el" href="regex2_8h_source.html#l00089">O_QUEST</a>, <a class="el" href="regex2_8h_source.html#l00092">OCH_</a>, <a class="el" href="regex2_8h_source.html#l00079">OCHAR</a>, <a class="el" href="regex2_8h_source.html#l00078">OEND</a>, <a class="el" href="regex2_8h_source.html#l00090">OLPAREN</a>, <a class="el" href="regex2_8h_source.html#l00094">OOR2</a>, <a class="el" href="regex2_8h_source.html#l00073">OP</a>, <a class="el" href="regex2_8h_source.html#l00086">OPLUS_</a>, <a class="el" href="regex2_8h_source.html#l00074">OPND</a>, <a class="el" href="regex2_8h_source.html#l00088">OQUEST_</a>, <a class="el" href="regex2_8h_source.html#l00091">ORPAREN</a>, <a class="el" href="regex2_8h_source.html#l00147">REGEX_BAD</a>, <a class="el" href="GlobPattern_8cpp_source.html#l00066">scan()</a>, and <a class="el" href="regex2_8h_source.html#l00135">re_guts::strip</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l00292">llvm_regcomp()</a>.</p>
 
@@ -1429,7 +1443,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01307">1307</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="regex2_8h_source.html#l00121">CHIN</a>, <a class="el" href="regex2_8h_source.html#l00136">re_guts::csetsize</a>, <a class="el" href="AArch64ExpandPseudoInsts_8cpp_source.html#l00095">for()</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, and <a class="el" href="regcomp_8c_source.html#l00285">never</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="regex2_8h_source.html#l00121">CHIN</a>, <a class="el" href="regex2_8h_source.html#l00136">re_guts::csetsize</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, and <a class="el" href="regcomp_8c_source.html#l00285">never</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>.</p>
 
@@ -1471,7 +1485,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01254">1254</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="regex2_8h_source.html#l00120">CHsub</a>, <a class="el" href="regex2_8h_source.html#l00136">re_guts::csetsize</a>, <a class="el" href="AArch64ExpandPseudoInsts_8cpp_source.html#l00095">for()</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regex2_8h_source.html#l00137">re_guts::ncsets</a>, and <a class="el" href="regex2_8h_source.html#l00138">re_guts::sets</a>.</p>
+<p class="reference">References <a class="el" href="regex2_8h_source.html#l00120">CHsub</a>, <a class="el" href="regex2_8h_source.html#l00136">re_guts::csetsize</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regex2_8h_source.html#l00137">re_guts::ncsets</a>, and <a class="el" href="regex2_8h_source.html#l00138">re_guts::sets</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l01276">freezeset()</a>, and <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>.</p>
 
@@ -1513,7 +1527,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01276">1276</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="regex2_8h_source.html#l00121">CHIN</a>, <a class="el" href="regex2_8h_source.html#l00136">re_guts::csetsize</a>, <a class="el" href="AArch64ExpandPseudoInsts_8cpp_source.html#l00095">for()</a>, <a class="el" href="regcomp_8c_source.html#l01254">freeset()</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regex2_8h_source.html#l00114">cset::hash</a>, <a class="el" href="regex2_8h_source.html#l00137">re_guts::ncsets</a>, and <a class="el" href="regex2_8h_source.html#l00138">re_guts::sets</a>.</p>
+<p class="reference">References <a class="el" href="regex2_8h_source.html#l00121">CHIN</a>, <a class="el" href="regex2_8h_source.html#l00136">re_guts::csetsize</a>, <a class="el" href="regcomp_8c_source.html#l01254">freeset()</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regex2_8h_source.html#l00114">cset::hash</a>, <a class="el" href="regex2_8h_source.html#l00137">re_guts::ncsets</a>, and <a class="el" href="regex2_8h_source.html#l00138">re_guts::sets</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>.</p>
 
@@ -1576,7 +1590,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>pattern</em>, </td>
         </tr>
         <tr>
@@ -1596,8 +1610,6 @@ Variables</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l00292">292</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
 <p class="reference">References <a class="el" href="regex2_8h_source.html#l00155">re_guts::backrefs</a>, <a class="el" href="regex2_8h_source.html#l00151">re_guts::categories</a>, <a class="el" href="regcomp_8c_source.html#l01423">categorize()</a>, <a class="el" href="regex2_8h_source.html#l00158">re_guts::catspace</a>, <a class="el" href="regex2_8h_source.html#l00140">re_guts::cflags</a>, <a class="el" href="regex2_8h_source.html#l00136">re_guts::csetsize</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="regcomp_8c_source.html#l00193">parse::end</a>, <a class="el" href="regcomp_8c_source.html#l00194">parse::error</a>, <a class="el" href="regcomp_8c_source.html#l01596">findmust()</a>, <a class="el" href="regex2_8h_source.html#l00142">re_guts::firststate</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regcomp_8c.html#a8bd4863aae206f6f9c8b949fbec56885">GOODFLAGS</a>, <a class="el" href="regex2_8h_source.html#l00144">re_guts::iflags</a>, <a class="el" href="regex2_8h_source.html#l00143">re_guts::laststate</a>, <a class="el" href="regfree_8c_source.html#l00050">llvm_regfree()</a>, <a class="el" href="regex2_8h_source.html#l00133">re_guts::magic</a>, <a class="el" href="regex2_8h_source.html#l00047">MAGIC1</a>, <a class="el" href="regex2_8h_source.html#l00134">MAGIC2</a>, <a class="el" href="regex2_8h_source.html#l00153">re_guts::mlen</a>, <a class="el" href="regex2_8h_source.html#l00152">re_guts::must</a>, <a class="el" href="regex2_8h_source.html#l00148">re_guts::nbol</a>, <a class="el" href="regutils_8h_source.html#l00042">NC</a>, <a class="el" href="regex2_8h_source.html#l00150">re_guts::ncategories</a>, <a class="el" href="regcomp_8c_source.html#l00198">parse::ncsalloc</a>, <a class="el" href="regex2_8h_source.html#l00137">re_guts::ncsets</a>, <a class="el" href="regex2_8h_source.html#l00149">re_guts::neol</a>, <a class="el" href="regcomp_8c_source.html#l00192">parse::next</a>, <a class="el" href="regcomp_8c_source.html#l00200">NPAREN</a>, <a class="el" href="regex2_8h_source.html#l00156">re_guts::nplus</a>, <a class="el" href="regex2_8h_source.html#l00154">re_guts::nsub</a>, <a class="el" href="regex2_8h_source.html#l00078">OEND</a>, <a class="el" href="regex2_8h_source.html#l00162">OUT</a>, <a class="el" href="regcomp_8c_source.html#l00628">p_bre()</a>, <a class="el" href="regcomp_8c_source.html#l00392">p_ere()</a>, <a class="el" href="regcomp_8c_source.html#l00610">p_str()</a>, <a class="el" href="regcomp_8c_source.html#l00201">parse::pbegin</a>, <a class="el" href="regcomp_8c_source.html#l00202">parse::pend</a>, <a class="el" href="regcomp_8c_source.html#l01674">pluscount()</a>, <a class="el" href="regex__impl_8h_source.html#l00051">llvm_regex::re_endp</a>, <a class="el" href="regex__impl_8h_source.html#l00052">llvm_regex::re_g</a>, <a class="el" href="regex__impl_8h_source.html#l00049">llvm_regex::re_magic</a>, <a class="el" href="regex__impl_8h_source.html#l00050">llvm_regex::re_nsub</a>, <a class="el" href="regex__impl_8h_source.html#l00080">REG_ASSERT</a>, <a class="el" href="regex__impl_8h_source.html#l00077">REG_ESPACE</a>, <a class="el" href="regex__impl_8h_source.html#l00057">REG_EXTENDED</a>, <a class="el" href="regex__impl_8h_source.html#l00081">REG_INVARG</a>, <a class="el" href="regex__impl_8h_source.html#l00061">REG_NOSPEC</a>, <a class="el" href="regex__impl_8h_source.html#l00062">REG_PEND</a>, <a class="el" href="regex2_8h_source.html#l00147">REGEX_BAD</a>, <a class="el" href="regex2_8h_source.html#l00139">re_guts::setbits</a>, <a class="el" href="regcomp_8c_source.html#l00261">SETERROR</a>, <a class="el" href="regex2_8h_source.html#l00138">re_guts::sets</a>, <a class="el" href="regcomp_8c_source.html#l00197">parse::slen</a>, <a class="el" href="regcomp_8c_source.html#l00196">parse::ssize</a>, <a class="el" href="regcomp_8c_source.html#l00195">parse::strip</a>, <a class="el" href="regcomp_8c_source.html#l01570">stripsnug()</a>, and <a class="el" href="regcomp_8c_source.html#l00271">THERE</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Regex_8cpp_source.html#l00028">llvm::Regex::Regex()</a>.</p>
 
 </div>
 </div>
@@ -1625,7 +1637,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classchar.html">char</a> *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>cp</em>&#160;</td>
         </tr>
         <tr>
@@ -1683,7 +1695,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01379">1379</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, and <a class="el" href="regex2_8h_source.html#l00116">cset::multis</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="regex2_8h_source.html#l00116">cset::multis</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>.</p>
 
@@ -1725,7 +1737,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01366">1366</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, and <a class="el" href="regex2_8h_source.html#l00116">cset::multis</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, and <a class="el" href="regex2_8h_source.html#l00116">cset::multis</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>.</p>
 
@@ -1767,7 +1779,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01323">1323</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="regex2_8h_source.html#l00121">CHIN</a>, <a class="el" href="regex2_8h_source.html#l00136">re_guts::csetsize</a>, <a class="el" href="AArch64ExpandPseudoInsts_8cpp_source.html#l00095">for()</a>, and <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>.</p>
+<p class="reference">References <a class="el" href="regex2_8h_source.html#l00121">CHIN</a>, <a class="el" href="regex2_8h_source.html#l00136">re_guts::csetsize</a>, and <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>.</p>
 
@@ -1799,7 +1811,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01088">1088</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00193">parse::end</a>, <a class="el" href="regcomp_8c_source.html#l00192">parse::next</a>, and <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00193">parse::end</a>, <a class="el" href="regcomp_8c_source.html#l00192">parse::next</a>, and <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l00435">p_ere_exp()</a>, and <a class="el" href="regcomp_8c_source.html#l00659">p_simp_re()</a>.</p>
 
@@ -1857,7 +1869,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classchar.html">char</a> othercase </td>
+          <td class="memname">static char othercase </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>ch</em></td><td>)</td>
@@ -1873,7 +1885,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01028">1028</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l01046">bothcases()</a>, <a class="el" href="regcomp_8c_source.html#l01069">ordinary()</a>, and <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>.</p>
 
@@ -1931,7 +1943,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classchar.html">char</a> p_b_coll_elem </td>
+          <td class="memname">static char p_b_coll_elem </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structparse.html">parse</a> *&#160;</td>
           <td class="paramname"><em>p</em>, </td>
@@ -2015,7 +2027,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classchar.html">char</a> p_b_symbol </td>
+          <td class="memname">static char p_b_symbol </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structparse.html">parse</a> *&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
@@ -2105,7 +2117,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l00796">796</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="regcomp_8c_source.html#l01193">allocset()</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="regex2_8h_source.html#l00140">re_guts::cflags</a>, <a class="el" href="regex2_8h_source.html#l00119">CHadd</a>, <a class="el" href="regex2_8h_source.html#l00121">CHIN</a>, <a class="el" href="regex2_8h_source.html#l00120">CHsub</a>, <a class="el" href="regex2_8h_source.html#l00136">re_guts::csetsize</a>, <a class="el" href="regcomp_8c_source.html#l00255">EAT</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="regcomp_8c_source.html#l00193">parse::end</a>, <a class="el" href="regcomp_8c_source.html#l00194">parse::error</a>, <a class="el" href="regcomp_8c_source.html#l01307">firstch()</a>, <a class="el" href="regcomp_8c_source.html#l01254">freeset()</a>, <a class="el" href="regcomp_8c_source.html#l01276">freezeset()</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regcomp_8c_source.html#l01379">mccase()</a>, <a class="el" href="regcomp_8c_source.html#l01366">mcinvert()</a>, <a class="el" href="regcomp_8c_source.html#l00251">MORE</a>, <a class="el" href="regex2_8h_source.html#l00116">cset::multis</a>, <a class="el" href="regcomp_8c_source.html#l00264">MUSTEAT</a>, <a class="el" href="regcomp_8c_source.html#l01323">nch()</a>, <a class="el" href="regcomp_8c_source.html#l00192">parse::next</a>, <a class="el" href="regcomp_8c_source.html#l00259">NEXTn</a>, <a class="el" href="regex2_8h_source.html#l00083">OANYOF</a>, <a class="el" href="regex2_8h_source.html#l00096">OBOW</a>, <a class="el" href="regex2_8h_source.html#l00097">OEOW</a>, <a class="el" href="regcomp_8c_source.html#l01069">ordinary()</a>, <a class="el" href="regcomp_8c_source.html#l01028">othercase()</a>, <a class="el" href="regcomp_8c_source.html#l00875">p_b_term()</a>, <a class="el" href="regcomp_8c_source.html#l00249">PEEK</a>, <a class="el" href="regex__impl_8h_source.html#l00072">REG_EBRACK</a>, <a class="el" href="regex__impl_8h_source.html#l00058">REG_ICASE</a>, <a class="el" href="regex__impl_8h_source.html#l00060">REG_NEWLINE</a>, and <a class="el" href="regcomp_8c_source.html#l00254">SEETWO</a>.</p>
+<p class="reference">References <a class="el" href="regcomp_8c_source.html#l01193">allocset()</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="regex2_8h_source.html#l00140">re_guts::cflags</a>, <a class="el" href="regex2_8h_source.html#l00119">CHadd</a>, <a class="el" href="regex2_8h_source.html#l00121">CHIN</a>, <a class="el" href="regex2_8h_source.html#l00120">CHsub</a>, <a class="el" href="regex2_8h_source.html#l00136">re_guts::csetsize</a>, <a class="el" href="regcomp_8c_source.html#l00255">EAT</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="regcomp_8c_source.html#l00193">parse::end</a>, <a class="el" href="regcomp_8c_source.html#l00194">parse::error</a>, <a class="el" href="regcomp_8c_source.html#l01307">firstch()</a>, <a class="el" href="regcomp_8c_source.html#l01254">freeset()</a>, <a class="el" href="regcomp_8c_source.html#l01276">freezeset()</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regcomp_8c_source.html#l01379">mccase()</a>, <a class="el" href="regcomp_8c_source.html#l01366">mcinvert()</a>, <a class="el" href="regcomp_8c_source.html#l00251">MORE</a>, <a class="el" href="regex2_8h_source.html#l00116">cset::multis</a>, <a class="el" href="regcomp_8c_source.html#l00264">MUSTEAT</a>, <a class="el" href="regcomp_8c_source.html#l01323">nch()</a>, <a class="el" href="regcomp_8c_source.html#l00192">parse::next</a>, <a class="el" href="regcomp_8c_source.html#l00259">NEXTn</a>, <a class="el" href="regex2_8h_source.html#l00083">OANYOF</a>, <a class="el" href="regex2_8h_source.html#l00096">OBOW</a>, <a class="el" href="regex2_8h_source.html#l00097">OEOW</a>, <a class="el" href="regcomp_8c_source.html#l01069">ordinary()</a>, <a class="el" href="regcomp_8c_source.html#l01028">othercase()</a>, <a class="el" href="regcomp_8c_source.html#l00875">p_b_term()</a>, <a class="el" href="regcomp_8c_source.html#l00249">PEEK</a>, <a class="el" href="regex__impl_8h_source.html#l00072">REG_EBRACK</a>, <a class="el" href="regex__impl_8h_source.html#l00058">REG_ICASE</a>, <a class="el" href="regex__impl_8h_source.html#l00060">REG_NEWLINE</a>, and <a class="el" href="regcomp_8c_source.html#l00254">SEETWO</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l01046">bothcases()</a>, <a class="el" href="regcomp_8c_source.html#l01088">nonnewline()</a>, <a class="el" href="regcomp_8c_source.html#l00435">p_ere_exp()</a>, and <a class="el" href="regcomp_8c_source.html#l00659">p_simp_re()</a>.</p>
 
@@ -2153,7 +2165,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l00628">628</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="regcomp_8c_source.html#l00273">DROP</a>, <a class="el" href="regcomp_8c_source.html#l00255">EAT</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="HexagonShuffler_8cpp_source.html#l00220">first</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regcomp_8c_source.html#l00270">HERE</a>, <a class="el" href="regex2_8h_source.html#l00144">re_guts::iflags</a>, <a class="el" href="regcomp_8c_source.html#l00251">MORE</a>, <a class="el" href="regex2_8h_source.html#l00148">re_guts::nbol</a>, <a class="el" href="regex2_8h_source.html#l00149">re_guts::neol</a>, <a class="el" href="regex2_8h_source.html#l00080">OBOL</a>, <a class="el" href="regex2_8h_source.html#l00081">OEOL</a>, <a class="el" href="regcomp_8c_source.html#l00659">p_simp_re()</a>, <a class="el" href="regex__impl_8h_source.html#l00079">REG_EMPTY</a>, <a class="el" href="regcomp_8c_source.html#l00262">REQUIRE</a>, <a class="el" href="regcomp_8c_source.html#l00254">SEETWO</a>, <a class="el" href="regex2_8h_source.html#l00145">USEBOL</a>, and <a class="el" href="regex2_8h_source.html#l00146">USEEOL</a>.</p>
+<p class="reference">References <a class="el" href="regcomp_8c_source.html#l00273">DROP</a>, <a class="el" href="regcomp_8c_source.html#l00255">EAT</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regcomp_8c_source.html#l00270">HERE</a>, <a class="el" href="regex2_8h_source.html#l00144">re_guts::iflags</a>, <a class="el" href="regcomp_8c_source.html#l00251">MORE</a>, <a class="el" href="regex2_8h_source.html#l00148">re_guts::nbol</a>, <a class="el" href="regex2_8h_source.html#l00149">re_guts::neol</a>, <a class="el" href="regex2_8h_source.html#l00080">OBOL</a>, <a class="el" href="regex2_8h_source.html#l00081">OEOL</a>, <a class="el" href="regcomp_8c_source.html#l00659">p_simp_re()</a>, <a class="el" href="regex__impl_8h_source.html#l00079">REG_EMPTY</a>, <a class="el" href="regcomp_8c_source.html#l00262">REQUIRE</a>, <a class="el" href="regcomp_8c_source.html#l00254">SEETWO</a>, <a class="el" href="regex2_8h_source.html#l00145">USEBOL</a>, and <a class="el" href="regex2_8h_source.html#l00146">USEEOL</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l00292">llvm_regcomp()</a>, and <a class="el" href="regcomp_8c_source.html#l00659">p_simp_re()</a>.</p>
 
@@ -2227,7 +2239,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l00392">392</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="regcomp_8c_source.html#l00268">AHEAD</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00269">ASTERN</a>, <a class="el" href="regcomp_8c_source.html#l00255">EAT</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="HexagonShuffler_8cpp_source.html#l00220">first</a>, <a class="el" href="regcomp_8c_source.html#l00270">HERE</a>, <a class="el" href="regcomp_8c_source.html#l00267">INSERT</a>, <a class="el" href="regcomp_8c_source.html#l00251">MORE</a>, <a class="el" href="regex2_8h_source.html#l00095">O_CH</a>, <a class="el" href="regex2_8h_source.html#l00092">OCH_</a>, <a class="el" href="regex2_8h_source.html#l00093">OOR1</a>, <a class="el" href="regex2_8h_source.html#l00094">OOR2</a>, <a class="el" href="regcomp_8c_source.html#l00435">p_ere_exp()</a>, <a class="el" href="regcomp_8c_source.html#l00249">PEEK</a>, <a class="el" href="regex__impl_8h_source.html#l00079">REG_EMPTY</a>, <a class="el" href="regcomp_8c_source.html#l00262">REQUIRE</a>, <a class="el" href="regcomp_8c_source.html#l00253">SEE</a>, and <a class="el" href="regcomp_8c_source.html#l00271">THERE</a>.</p>
+<p class="reference">References <a class="el" href="regcomp_8c_source.html#l00268">AHEAD</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00269">ASTERN</a>, <a class="el" href="regcomp_8c_source.html#l00255">EAT</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="regcomp_8c_source.html#l00270">HERE</a>, <a class="el" href="regcomp_8c_source.html#l00267">INSERT</a>, <a class="el" href="regcomp_8c_source.html#l00251">MORE</a>, <a class="el" href="regex2_8h_source.html#l00095">O_CH</a>, <a class="el" href="regex2_8h_source.html#l00092">OCH_</a>, <a class="el" href="regex2_8h_source.html#l00093">OOR1</a>, <a class="el" href="regex2_8h_source.html#l00094">OOR2</a>, <a class="el" href="regcomp_8c_source.html#l00435">p_ere_exp()</a>, <a class="el" href="regcomp_8c_source.html#l00249">PEEK</a>, <a class="el" href="regex__impl_8h_source.html#l00079">REG_EMPTY</a>, <a class="el" href="regcomp_8c_source.html#l00262">REQUIRE</a>, <a class="el" href="regcomp_8c_source.html#l00253">SEE</a>, and <a class="el" href="regcomp_8c_source.html#l00271">THERE</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l00292">llvm_regcomp()</a>, and <a class="el" href="regcomp_8c_source.html#l00435">p_ere_exp()</a>.</p>
 
@@ -2259,7 +2271,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l00435">435</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="regcomp_8c_source.html#l00268">AHEAD</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00269">ASTERN</a>, <a class="el" href="regex2_8h_source.html#l00155">re_guts::backrefs</a>, <a class="el" href="regex2_8h_source.html#l00140">re_guts::cflags</a>, <a class="el" href="regcomp_8c_source.html#l01448">dupl()</a>, <a class="el" href="regcomp_8c_source.html#l00255">EAT</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regcomp_8c_source.html#l00260">GETNEXT</a>, <a class="el" href="regcomp_8c_source.html#l00270">HERE</a>, <a class="el" href="regex2_8h_source.html#l00144">re_guts::iflags</a>, <a class="el" href="regcomp_8c_source.html#l00280">INFINITY</a>, <a class="el" href="regcomp_8c_source.html#l00267">INSERT</a>, <a class="el" href="regcomp_8c_source.html#l00251">MORE</a>, <a class="el" href="regcomp_8c_source.html#l00252">MORE2</a>, <a class="el" href="regcomp_8c_source.html#l00264">MUSTEAT</a>, <a class="el" href="regex2_8h_source.html#l00148">re_guts::nbol</a>, <a class="el" href="regex2_8h_source.html#l00149">re_guts::neol</a>, <a class="el" href="regcomp_8c_source.html#l00257">NEXT</a>, <a class="el" href="regcomp_8c_source.html#l01088">nonnewline()</a>, <a class="el" href="regcomp_8c_source.html#l00200">NPAREN</a>, <a class="el" href="regex2_8h_source.html#l00154">re_guts::nsub</a>, <a class="el" href="regex2_8h_source.html#l00085">O_BACK</a>, <a class="el" href="regex2_8h_source.html#l00095">O_CH</a>, <a class="el" href="regex2_8h_source.html#l00087">O_PLUS</a>, <a class="el" href="regex2_8h_source.html#l00089">O_QUEST</a>, <a class="el" href="regex2_8h_source.html#l00082">OANY</a>, <a class="el" href="regex2_8h_source.html#l00084">OBACK_</a>, <a class="el" href="regex2_8h_source.html#l00080">OBOL</a>, <a class="el" href="regex2_8h_source.html#l00092">OCH_</a>, <a class="el" href="regex2_8h_source.html#l00081">OEOL</a>, <a class="el" href="regex2_8h_source.html#l00090">OLPAREN</a>, <a class="el" href="regex2_8h_source.html#l00093">OOR1</a>, <a class="el" href="regex2_8h_source.html#l00094">OOR2</a>, <a class="el" href="regex2_8h_source.html#l00073">OP</a>, <a class="el" href="regex2_8h_source.html#l00086">OPLUS_</a>, <a class="el" href="regex2_8h_source.html#l00088">OQUEST_</a>, <a class="el" href="regcomp_8c_source.html#l01069">ordinary()</a>, <a class="el" href="regex2_8h_source.html#l00091">ORPAREN</a>, <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>, <a class="el" href="regcomp_8c_source.html#l00775">p_count()</a>, <a class="el" href="regcomp_8c_source.html#l00392">p_ere()</a>, <a class="el" href="regcomp_8c_source.html#l00201">parse::pbegin</a>, <a class="el" href="regcomp_8c_source.html#l00249">PEEK</a>, <a class="el" href="regcomp_8c_source.html#l00250">PEEK2</a>, <a class="el" href="regcomp_8c_source.html#l00202">parse::pend</a>, <a class="el" href="regex__impl_8h_source.html#l00075">REG_BADBR</a>, <a class="el" href="regex__impl_8h_source.html#l00078">REG_BADRPT</a>, <a class="el" href="regex__impl_8h_source.html#l00074">REG_EBRACE</a>, <a class="el" href="regex__impl_8h_source.html#l00070">REG_EESCAPE</a>, <a class="el" href="regex__impl_8h_source.html#l00079">REG_EMPTY</a>, <a class="el" href="regex__impl_8h_source.html#l00073">REG_EPAREN</a>, <a class="el" href="regex__impl_8h_source.html#l00071">REG_ESUBREG</a>, <a class="el" href="regex__impl_8h_source.html#l00060">REG_NEWLINE</a>, <a class="el" href="regcomp_8c_source.html#l01110">repeat()</a>, <a class="el" href="regcomp_8c_source.html#l00262">REQUIRE</a>, <a class="el" href="regcomp_8c_source.html#l00253">SEE</a>, <a class="el" href="regcomp_8c_source.html#l00261">SETERROR</a>, <a class="el" href="regcomp_8c_source.html#l00195">parse::strip</a>, <a class="el" href="regcomp_8c_source.html#l00271">THERE</a>, <a class="el" href="regcomp_8c_source.html#l00272">THERETHERE</a>, <a class="el" href="regex2_8h_source.html#l00145">USEBOL</a>, and <a class="el" href="regex2_8h_source.html#l00146">USEEOL</a>.</p>
+<p class="reference">References <a class="el" href="regcomp_8c_source.html#l00268">AHEAD</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00269">ASTERN</a>, <a class="el" href="regex2_8h_source.html#l00155">re_guts::backrefs</a>, <a class="el" href="regex2_8h_source.html#l00140">re_guts::cflags</a>, <a class="el" href="regcomp_8c_source.html#l01448">dupl()</a>, <a class="el" href="regcomp_8c_source.html#l00255">EAT</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regcomp_8c_source.html#l00260">GETNEXT</a>, <a class="el" href="regcomp_8c_source.html#l00270">HERE</a>, <a class="el" href="regex2_8h_source.html#l00144">re_guts::iflags</a>, <a class="el" href="regcomp_8c_source.html#l00280">INFINITY</a>, <a class="el" href="regcomp_8c_source.html#l00267">INSERT</a>, <a class="el" href="regcomp_8c_source.html#l00251">MORE</a>, <a class="el" href="regcomp_8c_source.html#l00252">MORE2</a>, <a class="el" href="regcomp_8c_source.html#l00264">MUSTEAT</a>, <a class="el" href="regex2_8h_source.html#l00148">re_guts::nbol</a>, <a class="el" href="regex2_8h_source.html#l00149">re_guts::neol</a>, <a class="el" href="regcomp_8c_source.html#l00257">NEXT</a>, <a class="el" href="regcomp_8c_source.html#l01088">nonnewline()</a>, <a class="el" href="regcomp_8c_source.html#l00200">NPAREN</a>, <a class="el" href="regex2_8h_source.html#l00154">re_guts::nsub</a>, <a class="el" href="regex2_8h_source.html#l00085">O_BACK</a>, <a class="el" href="regex2_8h_source.html#l00095">O_CH</a>, <a class="el" href="regex2_8h_source.html#l00087">O_PLUS</a>, <a class="el" href="regex2_8h_source.html#l00089">O_QUEST</a>, <a class="el" href="regex2_8h_source.html#l00082">OANY</a>, <a class="el" href="regex2_8h_source.html#l00084">OBACK_</a>, <a class="el" href="regex2_8h_source.html#l00080">OBOL</a>, <a class="el" href="regex2_8h_source.html#l00092">OCH_</a>, <a class="el" href="regex2_8h_source.html#l00081">OEOL</a>, <a class="el" href="regex2_8h_source.html#l00090">OLPAREN</a>, <a class="el" href="regex2_8h_source.html#l00093">OOR1</a>, <a class="el" href="regex2_8h_source.html#l00094">OOR2</a>, <a class="el" href="regex2_8h_source.html#l00073">OP</a>, <a class="el" href="regex2_8h_source.html#l00086">OPLUS_</a>, <a class="el" href="regex2_8h_source.html#l00088">OQUEST_</a>, <a class="el" href="regcomp_8c_source.html#l01069">ordinary()</a>, <a class="el" href="regex2_8h_source.html#l00091">ORPAREN</a>, <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>, <a class="el" href="regcomp_8c_source.html#l00775">p_count()</a>, <a class="el" href="regcomp_8c_source.html#l00392">p_ere()</a>, <a class="el" href="regcomp_8c_source.html#l00201">parse::pbegin</a>, <a class="el" href="regcomp_8c_source.html#l00249">PEEK</a>, <a class="el" href="regcomp_8c_source.html#l00250">PEEK2</a>, <a class="el" href="regcomp_8c_source.html#l00202">parse::pend</a>, <a class="el" href="regex__impl_8h_source.html#l00075">REG_BADBR</a>, <a class="el" href="regex__impl_8h_source.html#l00078">REG_BADRPT</a>, <a class="el" href="regex__impl_8h_source.html#l00074">REG_EBRACE</a>, <a class="el" href="regex__impl_8h_source.html#l00070">REG_EESCAPE</a>, <a class="el" href="regex__impl_8h_source.html#l00079">REG_EMPTY</a>, <a class="el" href="regex__impl_8h_source.html#l00073">REG_EPAREN</a>, <a class="el" href="regex__impl_8h_source.html#l00071">REG_ESUBREG</a>, <a class="el" href="regex__impl_8h_source.html#l00060">REG_NEWLINE</a>, <a class="el" href="regcomp_8c_source.html#l01110">repeat()</a>, <a class="el" href="regcomp_8c_source.html#l00262">REQUIRE</a>, <a class="el" href="regcomp_8c_source.html#l00253">SEE</a>, <a class="el" href="regcomp_8c_source.html#l00261">SETERROR</a>, <a class="el" href="regcomp_8c_source.html#l00195">parse::strip</a>, <a class="el" href="regcomp_8c_source.html#l00271">THERE</a>, <a class="el" href="regcomp_8c_source.html#l00272">THERETHERE</a>, <a class="el" href="regex2_8h_source.html#l00145">USEBOL</a>, and <a class="el" href="regex2_8h_source.html#l00146">USEEOL</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l00392">p_ere()</a>.</p>
 
@@ -2301,7 +2313,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l00659">659</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00269">ASTERN</a>, <a class="el" href="regex2_8h_source.html#l00155">re_guts::backrefs</a>, <a class="el" href="regcomp_8c.html#a5fea9c0bb049b263b4b609b72ef5322c">BACKSL</a>, <a class="el" href="regex2_8h_source.html#l00140">re_guts::cflags</a>, <a class="el" href="regcomp_8c_source.html#l01448">dupl()</a>, <a class="el" href="regcomp_8c_source.html#l00255">EAT</a>, <a class="el" href="regcomp_8c_source.html#l00256">EATTWO</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regcomp_8c_source.html#l00260">GETNEXT</a>, <a class="el" href="regcomp_8c_source.html#l00270">HERE</a>, <a class="el" href="regcomp_8c_source.html#l00280">INFINITY</a>, <a class="el" href="regcomp_8c_source.html#l00267">INSERT</a>, <a class="el" href="regcomp_8c_source.html#l00251">MORE</a>, <a class="el" href="regcomp_8c_source.html#l00257">NEXT</a>, <a class="el" href="regcomp_8c_source.html#l01088">nonnewline()</a>, <a class="el" href="regcomp_8c_source.html#l00200">NPAREN</a>, <a class="el" href="regex2_8h_source.html#l00154">re_guts::nsub</a>, <a class="el" href="regex2_8h_source.html#l00085">O_BACK</a>, <a class="el" href="regex2_8h_source.html#l00087">O_PLUS</a>, <a class="el" href="regex2_8h_source.html#l00089">O_QUEST</a>, <a class="el" href="regex2_8h_source.html#l00082">OANY</a>, <a class="el" href="regex2_8h_source.html#l00084">OBACK_</a>, <a class="el" href="regex2_8h_source.html#l00090">OLPAREN</a>, <a class="el" href="regex2_8h_source.html#l00073">OP</a>, <a class="el" href="regex2_8h_source.html#l00086">OPLUS_</a>, <a class="el" href="regex2_8h_source.html#l00088">OQUEST_</a>, <a class="el" href="regcomp_8c_source.html#l01069">ordinary()</a>, <a class="el" href="regex2_8h_source.html#l00091">ORPAREN</a>, <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>, <a class="el" href="regcomp_8c_source.html#l00628">p_bre()</a>, <a class="el" href="regcomp_8c_source.html#l00775">p_count()</a>, <a class="el" href="regcomp_8c_source.html#l00201">parse::pbegin</a>, <a class="el" href="regcomp_8c_source.html#l00249">PEEK</a>, <a class="el" href="regcomp_8c_source.html#l00202">parse::pend</a>, <a class="el" href="regex__impl_8h_source.html#l00075">REG_BADBR</a>, <a class="el" href="regex__impl_8h_source.html#l00078">REG_BADRPT</a>, <a class="el" href="regex__impl_8h_source.html#l00074">REG_EBRACE</a>, <a class="el" href="regex__impl_8h_source.html#l00070">REG_EESCAPE</a>, <a class="el" href="regex__impl_8h_source.html#l00073">REG_EPAREN</a>, <a class="el" href="regex__impl_8h_source.html#l00071">REG_ESUBREG</a>, <a class="el" href="regex__impl_8h_source.html#l00060">REG_NEWLINE</a>, <a class="el" href="regcomp_8c_source.html#l01110">repeat()</a>, <a class="el" href="regcomp_8c_source.html#l00262">REQUIRE</a>, <a class="el" href="regcomp_8c_source.html#l00254">SEETWO</a>, <a class="el" href="regcomp_8c_source.html#l00261">SETERROR</a>, and <a class="el" href="regcomp_8c_source.html#l00195">parse::strip</a>.</p>
+<p class="reference">References <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00269">ASTERN</a>, <a class="el" href="regex2_8h_source.html#l00155">re_guts::backrefs</a>, <a class="el" href="regcomp_8c.html#a5fea9c0bb049b263b4b609b72ef5322c">BACKSL</a>, <a class="el" href="regex2_8h_source.html#l00140">re_guts::cflags</a>, <a class="el" href="regcomp_8c_source.html#l01448">dupl()</a>, <a class="el" href="regcomp_8c_source.html#l00255">EAT</a>, <a class="el" href="regcomp_8c_source.html#l00256">EATTWO</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="regcomp_8c_source.html#l00199">parse::g</a>, <a class="el" href="regcomp_8c_source.html#l00260">GETNEXT</a>, <a class="el" href="regcomp_8c_source.html#l00270">HERE</a>, <a class="el" href="regcomp_8c_source.html#l00280">INFINITY</a>, <a class="el" href="regcomp_8c_source.html#l00267">INSERT</a>, <a class="el" href="regcomp_8c_source.html#l00251">MORE</a>, <a class="el" href="regcomp_8c_source.html#l00257">NEXT</a>, <a class="el" href="regcomp_8c_source.html#l01088">nonnewline()</a>, <a class="el" href="regcomp_8c_source.html#l00200">NPAREN</a>, <a class="el" href="regex2_8h_source.html#l00154">re_guts::nsub</a>, <a class="el" href="regex2_8h_source.html#l00085">O_BACK</a>, <a class="el" href="regex2_8h_source.html#l00087">O_PLUS</a>, <a class="el" href="regex2_8h_source.html#l00089">O_QUEST</a>, <a class="el" href="regex2_8h_source.html#l00082">OANY</a>, <a class="el" href="regex2_8h_source.html#l00084">OBACK_</a>, <a class="el" href="regex2_8h_source.html#l00090">OLPAREN</a>, <a class="el" href="regex2_8h_source.html#l00073">OP</a>, <a class="el" href="regex2_8h_source.html#l00086">OPLUS_</a>, <a class="el" href="regex2_8h_source.html#l00088">OQUEST_</a>, <a class="el" href="regcomp_8c_source.html#l01069">ordinary()</a>, <a class="el" href="regex2_8h_source.html#l00091">ORPAREN</a>, <a class="el" href="regcomp_8c_source.html#l00796">p_bracket()</a>, <a class="el" href="regcomp_8c_source.html#l00628">p_bre()</a>, <a class="el" href="regcomp_8c_source.html#l00775">p_count()</a>, <a class="el" href="regcomp_8c_source.html#l00201">parse::pbegin</a>, <a class="el" href="regcomp_8c_source.html#l00249">PEEK</a>, <a class="el" href="regcomp_8c_source.html#l00202">parse::pend</a>, <a class="el" href="regex__impl_8h_source.html#l00075">REG_BADBR</a>, <a class="el" href="regex__impl_8h_source.html#l00078">REG_BADRPT</a>, <a class="el" href="regex__impl_8h_source.html#l00074">REG_EBRACE</a>, <a class="el" href="regex__impl_8h_source.html#l00070">REG_EESCAPE</a>, <a class="el" href="regex__impl_8h_source.html#l00073">REG_EPAREN</a>, <a class="el" href="regex__impl_8h_source.html#l00071">REG_ESUBREG</a>, <a class="el" href="regex__impl_8h_source.html#l00060">REG_NEWLINE</a>, <a class="el" href="regcomp_8c_source.html#l01110">repeat()</a>, <a class="el" href="regcomp_8c_source.html#l00262">REQUIRE</a>, <a class="el" href="regcomp_8c_source.html#l00254">SEETWO</a>, <a class="el" href="regcomp_8c_source.html#l00261">SETERROR</a>, and <a class="el" href="regcomp_8c_source.html#l00195">parse::strip</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l00628">p_bre()</a>.</p>
 
@@ -2429,7 +2441,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="regcomp_8c_source.html#l01110">1110</a> of file <a class="el" href="regcomp_8c_source.html">regcomp.c</a>.</p>
 
-<p class="reference">References <a class="el" href="regcomp_8c_source.html#l00268">AHEAD</a>, <a class="el" href="SILowerControlFlow_8cpp.html#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00269">ASTERN</a>, <a class="el" href="regcomp_8c_source.html#l00273">DROP</a>, <a class="el" href="regcomp_8c_source.html#l01448">dupl()</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="regcomp_8c_source.html#l00194">parse::error</a>, <a class="el" href="regcomp_8c_source.html#l00270">HERE</a>, <a class="el" href="regcomp_8c.html#a12c2040f25d8e3a7b9e1c2024c618cb6">INF</a>, <a class="el" href="regcomp_8c_source.html#l00267">INSERT</a>, <a class="el" href="regcomp_8c.html#a01bd739644e8d3cbbb80f37f6ddb8b0e">MAP</a>, <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, <a class="el" href="regex2_8h_source.html#l00095">O_CH</a>, <a class="el" href="regex2_8h_source.html#l00087">O_PLUS</a>, <a class="el" href="regex2_8h_source.html#l00092">OCH_</a>, <a class="el" href="regex2_8h_source.html#l00093">OOR1</a>, <a class="el" href="regex2_8h_source.html#l00094">OOR2</a>, <a class="el" href="regex2_8h_source.html#l00086">OPLUS_</a>, <a class="el" href="regex__impl_8h_source.html#l00080">REG_ASSERT</a>, <a class="el" href="regcomp_8c.html#acf94cdcef32661117a14bbb806832437">REP</a>, <a class="el" href="regcomp_8c_source.html#l01110">repeat()</a>, <a class="el" href="regcomp_8c_source.html#l00261">SETERROR</a>, <a class="el" href="regcomp_8c_source.html#l00271">THERE</a>, and <a class="el" href="regcomp_8c_source.html#l00272">THERETHERE</a>.</p>
+<p class="reference">References <a class="el" href="regcomp_8c_source.html#l00268">AHEAD</a>, <a class="el" href="DeadArgumentElimination_8cpp.html#aa5bfc84fa71b9e3477e24efecb60fae5">assert()</a>, <a class="el" href="regcomp_8c_source.html#l00269">ASTERN</a>, <a class="el" href="regcomp_8c_source.html#l00273">DROP</a>, <a class="el" href="regcomp_8c_source.html#l01448">dupl()</a>, <a class="el" href="regcomp_8c_source.html#l00266">EMIT</a>, <a class="el" href="regcomp_8c_source.html#l00194">parse::error</a>, <a class="el" href="regcomp_8c_source.html#l00270">HERE</a>, <a class="el" href="regcomp_8c.html#a12c2040f25d8e3a7b9e1c2024c618cb6">INF</a>, <a class="el" href="regcomp_8c_source.html#l00267">INSERT</a>, <a class="el" href="regcomp_8c.html#a01bd739644e8d3cbbb80f37f6ddb8b0e">MAP</a>, <a class="el" href="regcomp_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>, <a class="el" href="regex2_8h_source.html#l00095">O_CH</a>, <a class="el" href="regex2_8h_source.html#l00087">O_PLUS</a>, <a class="el" href="regex2_8h_source.html#l00092">OCH_</a>, <a class="el" href="regex2_8h_source.html#l00093">OOR1</a>, <a class="el" href="regex2_8h_source.html#l00094">OOR2</a>, <a class="el" href="regex2_8h_source.html#l00086">OPLUS_</a>, <a class="el" href="regex__impl_8h_source.html#l00080">REG_ASSERT</a>, <a class="el" href="regcomp_8c.html#acf94cdcef32661117a14bbb806832437">REP</a>, <a class="el" href="regcomp_8c_source.html#l01110">repeat()</a>, <a class="el" href="regcomp_8c_source.html#l00261">SETERROR</a>, <a class="el" href="regcomp_8c_source.html#l00271">THERE</a>, and <a class="el" href="regcomp_8c_source.html#l00272">THERETHERE</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="regcomp_8c_source.html#l00435">p_ere_exp()</a>, <a class="el" href="regcomp_8c_source.html#l00659">p_simp_re()</a>, and <a class="el" href="regcomp_8c_source.html#l01110">repeat()</a>.</p>
 
@@ -2650,7 +2662,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classchar.html">char</a> nuls[10]</td>
+          <td class="memname">char nuls[10]</td>
         </tr>
       </table>
   </td>
@@ -2669,7 +2681,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:15 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

@@ -57,20 +57,33 @@ $(function() {
   <div class="headertitle"><div class="title">TypeDumpVisitor.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="TypeDumpVisitor_8h_source.html">llvm/DebugInfo/CodeView/TypeDumpVisitor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallString_8h_source.html">llvm/ADT/SmallString.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CVTypeVisitor_8h_source.html">llvm/DebugInfo/CodeView/CVTypeVisitor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CodeView_2Formatters_8h_source.html">llvm/DebugInfo/CodeView/Formatters.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TypeCollection_8h_source.html">llvm/DebugInfo/CodeView/TypeCollection.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TypeIndex_8h_source.html">llvm/DebugInfo/CodeView/TypeIndex.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TypeRecord_8h_source.html">llvm/DebugInfo/CodeView/TypeRecord.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="FormatVariadic_8h_source.html">llvm/Support/FormatVariadic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ScopedPrinter_8h_source.html">llvm/Support/ScopedPrinter.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/DebugInfo/CodeView/TypeDumpVisitor.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallString.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/CodeView/CVTypeVisitor.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/CodeView/Formatters.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/CodeView/TypeCollection.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/CodeView/TypeIndex.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/CodeView/TypeRecord.h&quot;</code><br />
+<code>#include &quot;llvm/Support/FormatVariadic.h&quot;</code><br />
+<code>#include &quot;llvm/Support/ScopedPrinter.h&quot;</code><br />
 <code>#include &quot;llvm/DebugInfo/CodeView/CodeViewTypes.def&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TypeDumpVisitor.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="TypeDumpVisitor_8cpp__incl.png" border="0" usemap="#alib_2DebugInfo_2CodeView_2TypeDumpVisitor_8cpp" alt=""/></div>
+<map name="alib_2DebugInfo_2CodeView_2TypeDumpVisitor_8cpp" id="alib_2DebugInfo_2CodeView_2TypeDumpVisitor_8cpp">
+<area shape="rect" title=" " alt="" coords="961,5,1139,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,196,133"/>
+<area shape="rect" title=" " alt="" coords="221,101,394,126"/>
+<area shape="rect" title=" " alt="" coords="419,93,609,133"/>
+<area shape="rect" title=" " alt="" coords="633,93,824,133"/>
+<area shape="rect" title=" " alt="" coords="848,93,1039,133"/>
+<area shape="rect" title=" " alt="" coords="1063,93,1253,133"/>
+<area shape="rect" title=" " alt="" coords="1277,93,1468,133"/>
+<area shape="rect" title=" " alt="" coords="1493,101,1711,126"/>
+<area shape="rect" title=" " alt="" coords="1735,101,1946,126"/>
+<area shape="rect" title=" " alt="" coords="1971,93,2161,133"/>
+</map>
 </div>
 </div>
 <p><a href="TypeDumpVisitor_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -81,39 +94,39 @@ Macros</h2></td></tr>
 <tr class="separator:aad48b9f13746c3a1fbf24114e73bc68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79cfedd2c383af694a381edd740890e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(enum_class,  enum)&#160;&#160;&#160;  { #enum, std::underlying_type &lt; enum_class &gt; ::type(enum_class::enum) }</td></tr>
 <tr class="separator:a79cfedd2c383af694a381edd740890e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b05d3547e7db708b50399e317f1c256"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a5b05d3547e7db708b50399e317f1c256">TYPE_RECORD</a>(ename,  value,  <a class="el" href="PPCLoopPreIncPrep_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)</td></tr>
+<tr class="memitem:a5b05d3547e7db708b50399e317f1c256"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a5b05d3547e7db708b50399e317f1c256">TYPE_RECORD</a>(ename,  value,  name)</td></tr>
 <tr class="separator:a5b05d3547e7db708b50399e317f1c256"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a80b7c4ad3b2bd0c43c8f004ab549476d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1StringRef.html">StringRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a80b7c4ad3b2bd0c43c8f004ab549476d">getLeafTypeName</a> (<a class="el" href="namespacellvm_1_1codeview.html#a945d5dcbe78d400d17656726e2f6089b">TypeLeafKind</a> LT)</td></tr>
+<tr class="memitem:a80b7c4ad3b2bd0c43c8f004ab549476d"><td class="memItemLeft" align="right" valign="top">static StringRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a80b7c4ad3b2bd0c43c8f004ab549476d">getLeafTypeName</a> (TypeLeafKind LT)</td></tr>
 <tr class="separator:a80b7c4ad3b2bd0c43c8f004ab549476d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ad635b4c1cbff12fbcc5bd82bccc5e4f3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt; <a class="el" href="namespacellvm_1_1codeview.html#a945d5dcbe78d400d17656726e2f6089b">TypeLeafKind</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#ad635b4c1cbff12fbcc5bd82bccc5e4f3">LeafTypeNames</a> []</td></tr>
+<tr class="memitem:ad635b4c1cbff12fbcc5bd82bccc5e4f3"><td class="memItemLeft" align="right" valign="top">static const EnumEntry&lt; TypeLeafKind &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#ad635b4c1cbff12fbcc5bd82bccc5e4f3">LeafTypeNames</a> []</td></tr>
 <tr class="separator:ad635b4c1cbff12fbcc5bd82bccc5e4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad22c7410f833f9a848caaf84224a1e53"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#ad22c7410f833f9a848caaf84224a1e53">ClassOptionNames</a> []</td></tr>
+<tr class="memitem:ad22c7410f833f9a848caaf84224a1e53"><td class="memItemLeft" align="right" valign="top">static const EnumEntry&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#ad22c7410f833f9a848caaf84224a1e53">ClassOptionNames</a> []</td></tr>
 <tr class="separator:ad22c7410f833f9a848caaf84224a1e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74aae1e96161927c4073061b9fc649b8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a74aae1e96161927c4073061b9fc649b8">MemberAccessNames</a> []</td></tr>
+<tr class="memitem:a74aae1e96161927c4073061b9fc649b8"><td class="memItemLeft" align="right" valign="top">static const EnumEntry&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a74aae1e96161927c4073061b9fc649b8">MemberAccessNames</a> []</td></tr>
 <tr class="separator:a74aae1e96161927c4073061b9fc649b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48fea6294159d40601395c4be1dc2ded"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a48fea6294159d40601395c4be1dc2ded">MethodOptionNames</a> []</td></tr>
+<tr class="memitem:a48fea6294159d40601395c4be1dc2ded"><td class="memItemLeft" align="right" valign="top">static const EnumEntry&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a48fea6294159d40601395c4be1dc2ded">MethodOptionNames</a> []</td></tr>
 <tr class="separator:a48fea6294159d40601395c4be1dc2ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bed3f089488e4a011ed0459deb0605d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a0bed3f089488e4a011ed0459deb0605d">MemberKindNames</a> []</td></tr>
+<tr class="memitem:a0bed3f089488e4a011ed0459deb0605d"><td class="memItemLeft" align="right" valign="top">static const EnumEntry&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a0bed3f089488e4a011ed0459deb0605d">MemberKindNames</a> []</td></tr>
 <tr class="separator:a0bed3f089488e4a011ed0459deb0605d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae43848a93fe171b520dd2a4e239d3479"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#ae43848a93fe171b520dd2a4e239d3479">PtrKindNames</a> []</td></tr>
+<tr class="memitem:ae43848a93fe171b520dd2a4e239d3479"><td class="memItemLeft" align="right" valign="top">static const EnumEntry&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#ae43848a93fe171b520dd2a4e239d3479">PtrKindNames</a> []</td></tr>
 <tr class="separator:ae43848a93fe171b520dd2a4e239d3479"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace23ff51e7c9871b192d0c09c1d7904f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#ace23ff51e7c9871b192d0c09c1d7904f">PtrModeNames</a> []</td></tr>
+<tr class="memitem:ace23ff51e7c9871b192d0c09c1d7904f"><td class="memItemLeft" align="right" valign="top">static const EnumEntry&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#ace23ff51e7c9871b192d0c09c1d7904f">PtrModeNames</a> []</td></tr>
 <tr class="separator:ace23ff51e7c9871b192d0c09c1d7904f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e2ea3f0dcca76c5ef3acf264fe68682"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a1e2ea3f0dcca76c5ef3acf264fe68682">PtrMemberRepNames</a> []</td></tr>
+<tr class="memitem:a1e2ea3f0dcca76c5ef3acf264fe68682"><td class="memItemLeft" align="right" valign="top">static const EnumEntry&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a1e2ea3f0dcca76c5ef3acf264fe68682">PtrMemberRepNames</a> []</td></tr>
 <tr class="separator:a1e2ea3f0dcca76c5ef3acf264fe68682"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b16e18e0e2ad28cde442bd89b68f27b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a1b16e18e0e2ad28cde442bd89b68f27b">TypeModifierNames</a> []</td></tr>
+<tr class="memitem:a1b16e18e0e2ad28cde442bd89b68f27b"><td class="memItemLeft" align="right" valign="top">static const EnumEntry&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a1b16e18e0e2ad28cde442bd89b68f27b">TypeModifierNames</a> []</td></tr>
 <tr class="separator:a1b16e18e0e2ad28cde442bd89b68f27b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e63047cdccdfbce88e43c2ef24feb2d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a1e63047cdccdfbce88e43c2ef24feb2d">CallingConventions</a> []</td></tr>
+<tr class="memitem:a1e63047cdccdfbce88e43c2ef24feb2d"><td class="memItemLeft" align="right" valign="top">static const EnumEntry&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a1e63047cdccdfbce88e43c2ef24feb2d">CallingConventions</a> []</td></tr>
 <tr class="separator:a1e63047cdccdfbce88e43c2ef24feb2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e5a47ee70b92917ed65aaae4f5015ea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a2e5a47ee70b92917ed65aaae4f5015ea">FunctionOptionEnum</a> []</td></tr>
+<tr class="memitem:a2e5a47ee70b92917ed65aaae4f5015ea"><td class="memItemLeft" align="right" valign="top">static const EnumEntry&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a2e5a47ee70b92917ed65aaae4f5015ea">FunctionOptionEnum</a> []</td></tr>
 <tr class="separator:a2e5a47ee70b92917ed65aaae4f5015ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3916e57d26701405b0c277e66551643c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a3916e57d26701405b0c277e66551643c">LabelTypeEnum</a> []</td></tr>
+<tr class="memitem:a3916e57d26701405b0c277e66551643c"><td class="memItemLeft" align="right" valign="top">static const EnumEntry&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TypeDumpVisitor_8cpp.html#a3916e57d26701405b0c277e66551643c">LabelTypeEnum</a> []</td></tr>
 <tr class="separator:a3916e57d26701405b0c277e66551643c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -197,7 +210,7 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="PPCLoopPreIncPrep_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>&#160;</td>
+          <td class="paramname">name&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -207,8 +220,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">case</span> ename:                                                                  \</div>
-<div class="line">    <span class="keywordflow">return</span> #<a class="code hl_variable" href="PPCLoopPreIncPrep_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>;</div>
-<div class="ttc" id="aPPCLoopPreIncPrep_8cpp_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="PPCLoopPreIncPrep_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a></div><div class="ttdeci">static const char * name</div><div class="ttdef"><b>Definition:</b> <a href="PPCLoopPreIncPrep_8cpp_source.html#l00108">PPCLoopPreIncPrep.cpp:108</a></div></div>
+<div class="line">    <span class="keywordflow">return</span> #name;</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -223,9 +235,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classllvm_1_1StringRef.html">StringRef</a> getLeafTypeName </td>
+          <td class="memname">static StringRef getLeafTypeName </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacellvm_1_1codeview.html#a945d5dcbe78d400d17656726e2f6089b">TypeLeafKind</a>&#160;</td>
+          <td class="paramtype">TypeLeafKind&#160;</td>
           <td class="paramname"><em>LT</em></td><td>)</td>
           <td></td>
         </tr>
@@ -238,8 +250,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00149">149</a> of file <a class="el" href="TypeDumpVisitor_8cpp_source.html">TypeDumpVisitor.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00192">llvm::codeview::TypeDumpVisitor::visitMemberBegin()</a>, and <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00173">llvm::codeview::TypeDumpVisitor::visitTypeBegin()</a>.</p>
 
 </div>
 </div>
@@ -254,7 +264,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt;uint8_t&gt; CallingConventions[]</td>
+          <td class="memname">const EnumEntry&lt;uint8_t&gt; CallingConventions[]</td>
         </tr>
       </table>
   </td>
@@ -264,57 +274,32 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64ae951a05533be2babbb396aea3564ab89">NearC</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64ae792654939e52c17395ffcea6e70f180">FarC</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a09124137046489e5f0534403f338eb90">NearPascal</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64ae3532c126cf8f468c01d23a72c9a6ef0">FarPascal</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a19b7e0b714b145fd8827a8736e94c5ab">NearFast</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a082cc82a7612fc6d78d27abfbddd734c">FarFast</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64aa52fc60a0c3dfffdfad51328757858db">NearStdCall</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a5c24502dfcbafadaa2fc482478ab23df">FarStdCall</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64aafeb1de1b56d6abac596df9a45ccc7e9">NearSysCall</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a825b270d32ef6cc5a066c58f3fa0e1f5">FarSysCall</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64ad146128f949c25687412b8b4c65fae72">ThisCall</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a7a4ab20e9cf750df40a8694cab6f3965">MipsCall</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="AArch64MCAsmInfo_8cpp.html#ad9974102ac4ab550bae0600eca728899a9683fc965be285edded4502f972f9d19">Generic</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64abef11a6a34f10bbd420b7aa4176b78ac">AlphaCall</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a3351947c161b7cd97b18bf1ad30f23d5">PpcCall</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64ae6feb0ddd12e03d31d809e67aa98f0b0">SHCall</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a3457ed33dd9db9afd30bc7fe9ad1f2b2">ArmCall</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a1b0de7e81b62599b757d98a100e8fa04">AM33Call</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a5077cc689ae156f62a7df9ad3c80455a">TriCall</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a70d0de4ad403ae3e5b4adca43900306c">SH5Call</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a41482ac66dc8f55197bd347a25dce915">M32RCall</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64acebf968297fea31b0c42289d793a0c86">ClrCall</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a0125cf5f3ca38b312ca5d3b511c45a13">Inline</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">CallingConvention</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a3d5872e1c128c452929e0fceda72cff3">NearVector</a>),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, NearC),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, FarC),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, NearPascal),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, FarPascal),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, NearFast),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, FarFast),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, NearStdCall),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, FarStdCall),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, NearSysCall),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, FarSysCall),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, ThisCall),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, MipsCall),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, Generic),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, AlphaCall),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, PpcCall),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, SHCall),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, ArmCall),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, AM33Call),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, TriCall),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, SH5Call),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, M32RCall),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, ClrCall),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, Inline),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(CallingConvention, NearVector),</div>
 <div class="line">}</div>
-<div class="ttc" id="aAArch64MCAsmInfo_8cpp_html_ad9974102ac4ab550bae0600eca728899a9683fc965be285edded4502f972f9d19"><div class="ttname"><a href="AArch64MCAsmInfo_8cpp.html#ad9974102ac4ab550bae0600eca728899a9683fc965be285edded4502f972f9d19">Generic</a></div><div class="ttdeci">@ Generic</div><div class="ttdef"><b>Definition:</b> <a href="AArch64MCAsmInfo_8cpp_source.html#l00023">AArch64MCAsmInfo.cpp:23</a></div></div>
 <div class="ttc" id="aTypeDumpVisitor_8cpp_html_a79cfedd2c383af694a381edd740890e7"><div class="ttname"><a href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a></div><div class="ttdeci">#define ENUM_ENTRY(enum_class, enum)</div><div class="ttdef"><b>Definition:</b> <a href="TypeDumpVisitor_8cpp_source.html#l00028">TypeDumpVisitor.cpp:28</a></div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64">llvm::codeview::CallingConvention</a></div><div class="ttdeci">CallingConvention</div><div class="ttdoc">These values correspond to the CV_call_e enumeration, and are documented at the following locations: ...</div><div class="ttdef"><b>Definition:</b> <a href="CodeView_8h_source.html#l00173">CodeView.h:173</a></div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64a0125cf5f3ca38b312ca5d3b511c45a13"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a0125cf5f3ca38b312ca5d3b511c45a13">llvm::codeview::CallingConvention::Inline</a></div><div class="ttdeci">@ Inline</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64a082cc82a7612fc6d78d27abfbddd734c"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a082cc82a7612fc6d78d27abfbddd734c">llvm::codeview::CallingConvention::FarFast</a></div><div class="ttdeci">@ FarFast</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64a09124137046489e5f0534403f338eb90"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a09124137046489e5f0534403f338eb90">llvm::codeview::CallingConvention::NearPascal</a></div><div class="ttdeci">@ NearPascal</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64a19b7e0b714b145fd8827a8736e94c5ab"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a19b7e0b714b145fd8827a8736e94c5ab">llvm::codeview::CallingConvention::NearFast</a></div><div class="ttdeci">@ NearFast</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64a1b0de7e81b62599b757d98a100e8fa04"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a1b0de7e81b62599b757d98a100e8fa04">llvm::codeview::CallingConvention::AM33Call</a></div><div class="ttdeci">@ AM33Call</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64a3351947c161b7cd97b18bf1ad30f23d5"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a3351947c161b7cd97b18bf1ad30f23d5">llvm::codeview::CallingConvention::PpcCall</a></div><div class="ttdeci">@ PpcCall</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64a3457ed33dd9db9afd30bc7fe9ad1f2b2"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a3457ed33dd9db9afd30bc7fe9ad1f2b2">llvm::codeview::CallingConvention::ArmCall</a></div><div class="ttdeci">@ ArmCall</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64a3d5872e1c128c452929e0fceda72cff3"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a3d5872e1c128c452929e0fceda72cff3">llvm::codeview::CallingConvention::NearVector</a></div><div class="ttdeci">@ NearVector</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64a41482ac66dc8f55197bd347a25dce915"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a41482ac66dc8f55197bd347a25dce915">llvm::codeview::CallingConvention::M32RCall</a></div><div class="ttdeci">@ M32RCall</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64a5077cc689ae156f62a7df9ad3c80455a"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a5077cc689ae156f62a7df9ad3c80455a">llvm::codeview::CallingConvention::TriCall</a></div><div class="ttdeci">@ TriCall</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64a5c24502dfcbafadaa2fc482478ab23df"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a5c24502dfcbafadaa2fc482478ab23df">llvm::codeview::CallingConvention::FarStdCall</a></div><div class="ttdeci">@ FarStdCall</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64a70d0de4ad403ae3e5b4adca43900306c"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a70d0de4ad403ae3e5b4adca43900306c">llvm::codeview::CallingConvention::SH5Call</a></div><div class="ttdeci">@ SH5Call</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64a7a4ab20e9cf750df40a8694cab6f3965"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a7a4ab20e9cf750df40a8694cab6f3965">llvm::codeview::CallingConvention::MipsCall</a></div><div class="ttdeci">@ MipsCall</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64a825b270d32ef6cc5a066c58f3fa0e1f5"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64a825b270d32ef6cc5a066c58f3fa0e1f5">llvm::codeview::CallingConvention::FarSysCall</a></div><div class="ttdeci">@ FarSysCall</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64aa52fc60a0c3dfffdfad51328757858db"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64aa52fc60a0c3dfffdfad51328757858db">llvm::codeview::CallingConvention::NearStdCall</a></div><div class="ttdeci">@ NearStdCall</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64aafeb1de1b56d6abac596df9a45ccc7e9"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64aafeb1de1b56d6abac596df9a45ccc7e9">llvm::codeview::CallingConvention::NearSysCall</a></div><div class="ttdeci">@ NearSysCall</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64abef11a6a34f10bbd420b7aa4176b78ac"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64abef11a6a34f10bbd420b7aa4176b78ac">llvm::codeview::CallingConvention::AlphaCall</a></div><div class="ttdeci">@ AlphaCall</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64acebf968297fea31b0c42289d793a0c86"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64acebf968297fea31b0c42289d793a0c86">llvm::codeview::CallingConvention::ClrCall</a></div><div class="ttdeci">@ ClrCall</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64ad146128f949c25687412b8b4c65fae72"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64ad146128f949c25687412b8b4c65fae72">llvm::codeview::CallingConvention::ThisCall</a></div><div class="ttdeci">@ ThisCall</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64ae3532c126cf8f468c01d23a72c9a6ef0"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64ae3532c126cf8f468c01d23a72c9a6ef0">llvm::codeview::CallingConvention::FarPascal</a></div><div class="ttdeci">@ FarPascal</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64ae6feb0ddd12e03d31d809e67aa98f0b0"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64ae6feb0ddd12e03d31d809e67aa98f0b0">llvm::codeview::CallingConvention::SHCall</a></div><div class="ttdeci">@ SHCall</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64ae792654939e52c17395ffcea6e70f180"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64ae792654939e52c17395ffcea6e70f180">llvm::codeview::CallingConvention::FarC</a></div><div class="ttdeci">@ FarC</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a5ccb3a995186bdab13527baaee7e4f64ae951a05533be2babbb396aea3564ab89"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a5ccb3a995186bdab13527baaee7e4f64ae951a05533be2babbb396aea3564ab89">llvm::codeview::CallingConvention::NearC</a></div><div class="ttdeci">@ NearC</div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00110">110</a> of file <a class="el" href="TypeDumpVisitor_8cpp_source.html">TypeDumpVisitor.cpp</a>.</p>
 
@@ -330,7 +315,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt;uint16_t&gt; ClassOptionNames[]</td>
+          <td class="memname">const EnumEntry&lt;uint16_t&gt; ClassOptionNames[]</td>
         </tr>
       </table>
   </td>
@@ -340,31 +325,19 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5a">ClassOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aaa1977c3f68d4d3bbfe14d0e51a575482">Packed</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5a">ClassOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa6df427d10ced170429c407317356800c">HasConstructorOrDestructor</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5a">ClassOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa6c7813302cb4e344823952999dd52859">HasOverloadedOperator</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5a">ClassOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa13c479c348969ab459513a4bfd559bb9">Nested</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5a">ClassOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa7f67a4011b21d9ae7471351c38db2597">ContainsNestedClass</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5a">ClassOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa8c104df916cac8868cd4e82cccb8adb2">HasOverloadedAssignmentOperator</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5a">ClassOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aadb77a6e068212caaabc47dbf4cab280f">HasConversionOperator</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5a">ClassOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa7e37f2aff533091462989c02c0cac8a1">ForwardReference</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5a">ClassOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa423f62fd0413b98ab4dd487ec060e628">Scoped</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5a">ClassOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa1d847ff214177f9339928f7be873cd38">HasUniqueName</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5a">ClassOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa9b965a5a6e503feba7eda0d4e32fc98c">Sealed</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5a">ClassOptions</a>, Intrinsic),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ClassOptions, Packed),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ClassOptions, HasConstructorOrDestructor),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ClassOptions, HasOverloadedOperator),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ClassOptions, Nested),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ClassOptions, ContainsNestedClass),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ClassOptions, HasOverloadedAssignmentOperator),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ClassOptions, HasConversionOperator),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ClassOptions, ForwardReference),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ClassOptions, Scoped),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ClassOptions, HasUniqueName),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ClassOptions, Sealed),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ClassOptions, Intrinsic),</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a4e60e0c351f13aade28b451480c44e5a"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5a">llvm::codeview::ClassOptions</a></div><div class="ttdeci">ClassOptions</div><div class="ttdef"><b>Definition:</b> <a href="CodeView_8h_source.html#l00201">CodeView.h:201</a></div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a4e60e0c351f13aade28b451480c44e5aa13c479c348969ab459513a4bfd559bb9"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa13c479c348969ab459513a4bfd559bb9">llvm::codeview::ClassOptions::Nested</a></div><div class="ttdeci">@ Nested</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a4e60e0c351f13aade28b451480c44e5aa1d847ff214177f9339928f7be873cd38"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa1d847ff214177f9339928f7be873cd38">llvm::codeview::ClassOptions::HasUniqueName</a></div><div class="ttdeci">@ HasUniqueName</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a4e60e0c351f13aade28b451480c44e5aa423f62fd0413b98ab4dd487ec060e628"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa423f62fd0413b98ab4dd487ec060e628">llvm::codeview::ClassOptions::Scoped</a></div><div class="ttdeci">@ Scoped</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a4e60e0c351f13aade28b451480c44e5aa6c7813302cb4e344823952999dd52859"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa6c7813302cb4e344823952999dd52859">llvm::codeview::ClassOptions::HasOverloadedOperator</a></div><div class="ttdeci">@ HasOverloadedOperator</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a4e60e0c351f13aade28b451480c44e5aa6df427d10ced170429c407317356800c"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa6df427d10ced170429c407317356800c">llvm::codeview::ClassOptions::HasConstructorOrDestructor</a></div><div class="ttdeci">@ HasConstructorOrDestructor</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a4e60e0c351f13aade28b451480c44e5aa7e37f2aff533091462989c02c0cac8a1"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa7e37f2aff533091462989c02c0cac8a1">llvm::codeview::ClassOptions::ForwardReference</a></div><div class="ttdeci">@ ForwardReference</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a4e60e0c351f13aade28b451480c44e5aa7f67a4011b21d9ae7471351c38db2597"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa7f67a4011b21d9ae7471351c38db2597">llvm::codeview::ClassOptions::ContainsNestedClass</a></div><div class="ttdeci">@ ContainsNestedClass</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a4e60e0c351f13aade28b451480c44e5aa8c104df916cac8868cd4e82cccb8adb2"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa8c104df916cac8868cd4e82cccb8adb2">llvm::codeview::ClassOptions::HasOverloadedAssignmentOperator</a></div><div class="ttdeci">@ HasOverloadedAssignmentOperator</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a4e60e0c351f13aade28b451480c44e5aa9b965a5a6e503feba7eda0d4e32fc98c"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa9b965a5a6e503feba7eda0d4e32fc98c">llvm::codeview::ClassOptions::Sealed</a></div><div class="ttdeci">@ Sealed</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a4e60e0c351f13aade28b451480c44e5aaa1977c3f68d4d3bbfe14d0e51a575482"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aaa1977c3f68d4d3bbfe14d0e51a575482">llvm::codeview::ClassOptions::Packed</a></div><div class="ttdeci">@ Packed</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a4e60e0c351f13aade28b451480c44e5aadb77a6e068212caaabc47dbf4cab280f"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aadb77a6e068212caaabc47dbf4cab280f">llvm::codeview::ClassOptions::HasConversionOperator</a></div><div class="ttdeci">@ HasConversionOperator</div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00031">31</a> of file <a class="el" href="TypeDumpVisitor_8cpp_source.html">TypeDumpVisitor.cpp</a>.</p>
 
@@ -380,7 +353,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt;uint8_t&gt; FunctionOptionEnum[]</td>
+          <td class="memname">const EnumEntry&lt;uint8_t&gt; FunctionOptionEnum[]</td>
         </tr>
       </table>
   </td>
@@ -390,14 +363,10 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a819edb1b54a1cf56e9a04ddbb6285947">FunctionOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a819edb1b54a1cf56e9a04ddbb6285947a26d48870e5a81da69a4db20960a9e10d">CxxReturnUdt</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a819edb1b54a1cf56e9a04ddbb6285947">FunctionOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a819edb1b54a1cf56e9a04ddbb6285947a678d0a4421b60dc59999ac02837496a6">Constructor</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a819edb1b54a1cf56e9a04ddbb6285947">FunctionOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a819edb1b54a1cf56e9a04ddbb6285947ac5326f7e5aa919ddbb48b873b05fb4f0">ConstructorWithVirtualBases</a>),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(FunctionOptions, CxxReturnUdt),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(FunctionOptions, Constructor),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(FunctionOptions, ConstructorWithVirtualBases),</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a819edb1b54a1cf56e9a04ddbb6285947"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a819edb1b54a1cf56e9a04ddbb6285947">llvm::codeview::FunctionOptions</a></div><div class="ttdeci">FunctionOptions</div><div class="ttdef"><b>Definition:</b> <a href="CodeView_8h_source.html#l00244">CodeView.h:244</a></div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a819edb1b54a1cf56e9a04ddbb6285947a26d48870e5a81da69a4db20960a9e10d"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a819edb1b54a1cf56e9a04ddbb6285947a26d48870e5a81da69a4db20960a9e10d">llvm::codeview::FunctionOptions::CxxReturnUdt</a></div><div class="ttdeci">@ CxxReturnUdt</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a819edb1b54a1cf56e9a04ddbb6285947a678d0a4421b60dc59999ac02837496a6"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a819edb1b54a1cf56e9a04ddbb6285947a678d0a4421b60dc59999ac02837496a6">llvm::codeview::FunctionOptions::Constructor</a></div><div class="ttdeci">@ Constructor</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a819edb1b54a1cf56e9a04ddbb6285947ac5326f7e5aa919ddbb48b873b05fb4f0"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a819edb1b54a1cf56e9a04ddbb6285947ac5326f7e5aa919ddbb48b873b05fb4f0">llvm::codeview::FunctionOptions::ConstructorWithVirtualBases</a></div><div class="ttdeci">@ ConstructorWithVirtualBases</div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00137">137</a> of file <a class="el" href="TypeDumpVisitor_8cpp_source.html">TypeDumpVisitor.cpp</a>.</p>
 
@@ -413,7 +382,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt;uint16_t&gt; LabelTypeEnum[]</td>
+          <td class="memname">const EnumEntry&lt;uint16_t&gt; LabelTypeEnum[]</td>
         </tr>
       </table>
   </td>
@@ -423,11 +392,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#aed2e29ac9478aebf676ae99db3744dd9">LabelType</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#aed2e29ac9478aebf676ae99db3744dd9aa535711d028372f87fdbce03cd43b25d">Near</a>), <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#aed2e29ac9478aebf676ae99db3744dd9">LabelType</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#aed2e29ac9478aebf676ae99db3744dd9acfcd41f0c1804fb7778f8f01301223f6">Far</a>),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(LabelType, Near), <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(LabelType, Far),</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_aed2e29ac9478aebf676ae99db3744dd9"><div class="ttname"><a href="namespacellvm_1_1codeview.html#aed2e29ac9478aebf676ae99db3744dd9">llvm::codeview::LabelType</a></div><div class="ttdeci">LabelType</div><div class="ttdoc">Equivalent to CV_LABEL_TYPE_e.</div><div class="ttdef"><b>Definition:</b> <a href="CodeView_8h_source.html#l00292">CodeView.h:292</a></div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_aed2e29ac9478aebf676ae99db3744dd9aa535711d028372f87fdbce03cd43b25d"><div class="ttname"><a href="namespacellvm_1_1codeview.html#aed2e29ac9478aebf676ae99db3744dd9aa535711d028372f87fdbce03cd43b25d">llvm::codeview::LabelType::Near</a></div><div class="ttdeci">@ Near</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_aed2e29ac9478aebf676ae99db3744dd9acfcd41f0c1804fb7778f8f01301223f6"><div class="ttname"><a href="namespacellvm_1_1codeview.html#aed2e29ac9478aebf676ae99db3744dd9acfcd41f0c1804fb7778f8f01301223f6">llvm::codeview::LabelType::Far</a></div><div class="ttdeci">@ Far</div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00143">143</a> of file <a class="el" href="TypeDumpVisitor_8cpp_source.html">TypeDumpVisitor.cpp</a>.</p>
 
@@ -443,7 +409,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt;<a class="el" href="namespacellvm_1_1codeview.html#a945d5dcbe78d400d17656726e2f6089b">TypeLeafKind</a>&gt; LeafTypeNames[]</td>
+          <td class="memname">const EnumEntry&lt;TypeLeafKind&gt; LeafTypeNames[]</td>
         </tr>
       </table>
   </td>
@@ -459,8 +425,6 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00023">23</a> of file <a class="el" href="TypeDumpVisitor_8cpp_source.html">TypeDumpVisitor.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00192">llvm::codeview::TypeDumpVisitor::visitMemberBegin()</a>, <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00173">llvm::codeview::TypeDumpVisitor::visitTypeBegin()</a>, and <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00459">llvm::codeview::TypeDumpVisitor::visitUnknownType()</a>.</p>
-
 </div>
 </div>
 <a id="a74aae1e96161927c4073061b9fc649b8" name="a74aae1e96161927c4073061b9fc649b8"></a>
@@ -473,7 +437,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt;uint8_t&gt; MemberAccessNames[]</td>
+          <td class="memname">const EnumEntry&lt;uint8_t&gt; MemberAccessNames[]</td>
         </tr>
       </table>
   </td>
@@ -483,14 +447,10 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a86888a0082bafa16b982170695ebb881">MemberAccess</a>, <a class="code hl_variable" href="namespacellvm.html#a6497a581a4f7152729c29a368ac7d7be">None</a>), <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a86888a0082bafa16b982170695ebb881">MemberAccess</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a86888a0082bafa16b982170695ebb881a47f9082fc380ca62d531096aa1d110f1">Private</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a86888a0082bafa16b982170695ebb881">MemberAccess</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a86888a0082bafa16b982170695ebb881a56f0605c9795b173abd2e34fab7fc164">Protected</a>), <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a86888a0082bafa16b982170695ebb881">MemberAccess</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a86888a0082bafa16b982170695ebb881a3d067bedfe2f4677470dd6ccf64d05ed">Public</a>),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MemberAccess, <a class="code hl_enumvalue" href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">None</a>), <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MemberAccess, Private),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MemberAccess, Protected), <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MemberAccess, Public),</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a86888a0082bafa16b982170695ebb881"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a86888a0082bafa16b982170695ebb881">llvm::codeview::MemberAccess</a></div><div class="ttdeci">MemberAccess</div><div class="ttdoc">Source-level access specifier. (CV_access_e)</div><div class="ttdef"><b>Definition:</b> <a href="CodeView_8h_source.html#l00260">CodeView.h:260</a></div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a86888a0082bafa16b982170695ebb881a3d067bedfe2f4677470dd6ccf64d05ed"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a86888a0082bafa16b982170695ebb881a3d067bedfe2f4677470dd6ccf64d05ed">llvm::codeview::MemberAccess::Public</a></div><div class="ttdeci">@ Public</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a86888a0082bafa16b982170695ebb881a47f9082fc380ca62d531096aa1d110f1"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a86888a0082bafa16b982170695ebb881a47f9082fc380ca62d531096aa1d110f1">llvm::codeview::MemberAccess::Private</a></div><div class="ttdeci">@ Private</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a86888a0082bafa16b982170695ebb881a56f0605c9795b173abd2e34fab7fc164"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a86888a0082bafa16b982170695ebb881a56f0605c9795b173abd2e34fab7fc164">llvm::codeview::MemberAccess::Protected</a></div><div class="ttdeci">@ Protected</div></div>
-<div class="ttc" id="anamespacellvm_html_a6497a581a4f7152729c29a368ac7d7be"><div class="ttname"><a href="namespacellvm.html#a6497a581a4f7152729c29a368ac7d7be">llvm::None</a></div><div class="ttdeci">const NoneType None</div><div class="ttdef"><b>Definition:</b> <a href="None_8h_source.html#l00023">None.h:23</a></div></div>
+<div class="ttc" id="aPassManagerBuilder_8cpp_html_a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="PassManagerBuilder_8cpp.html#a4521240b09299fd4d5bbf6954459c9d7a6adf97f83acf6453d4a6a4b1070f3754">CFLAAType::None</a></div><div class="ttdeci">@ None</div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00046">46</a> of file <a class="el" href="TypeDumpVisitor_8cpp_source.html">TypeDumpVisitor.cpp</a>.</p>
 
@@ -506,7 +466,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt;uint16_t&gt; MemberKindNames[]</td>
+          <td class="memname">const EnumEntry&lt;uint16_t&gt; MemberKindNames[]</td>
         </tr>
       </table>
   </td>
@@ -516,22 +476,14 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7">MethodKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7a7d3cf600bf044a1aaf9324807bd8d13e">Vanilla</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7">MethodKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7a615e6f9baca5553d44683a098d342b70">Virtual</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7">MethodKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7a84a8921b25f505d0d2077aeb5db4bc16">Static</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7">MethodKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7a930a91848917f92cf7e2f8d744fa4177">Friend</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7">MethodKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7ab195ef30e97fd79fc09350e5528d0ede">IntroducingVirtual</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7">MethodKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7a446ad400e3326d442810032ad6e8af73">PureVirtual</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7">MethodKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7af60013c9b6ecfec449aeace857155e4c">PureIntroducingVirtual</a>),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MethodKind, Vanilla),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MethodKind, Virtual),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MethodKind, Static),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MethodKind, Friend),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MethodKind, IntroducingVirtual),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MethodKind, PureVirtual),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MethodKind, PureIntroducingVirtual),</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a168a6021abac4aa4ac613129e7fc38c7"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7">llvm::codeview::MethodKind</a></div><div class="ttdeci">MethodKind</div><div class="ttdoc">Part of member attribute flags. (CV_methodprop_e)</div><div class="ttdef"><b>Definition:</b> <a href="CodeView_8h_source.html#l00268">CodeView.h:268</a></div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a168a6021abac4aa4ac613129e7fc38c7a446ad400e3326d442810032ad6e8af73"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7a446ad400e3326d442810032ad6e8af73">llvm::codeview::MethodKind::PureVirtual</a></div><div class="ttdeci">@ PureVirtual</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a168a6021abac4aa4ac613129e7fc38c7a615e6f9baca5553d44683a098d342b70"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7a615e6f9baca5553d44683a098d342b70">llvm::codeview::MethodKind::Virtual</a></div><div class="ttdeci">@ Virtual</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a168a6021abac4aa4ac613129e7fc38c7a7d3cf600bf044a1aaf9324807bd8d13e"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7a7d3cf600bf044a1aaf9324807bd8d13e">llvm::codeview::MethodKind::Vanilla</a></div><div class="ttdeci">@ Vanilla</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a168a6021abac4aa4ac613129e7fc38c7a84a8921b25f505d0d2077aeb5db4bc16"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7a84a8921b25f505d0d2077aeb5db4bc16">llvm::codeview::MethodKind::Static</a></div><div class="ttdeci">@ Static</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a168a6021abac4aa4ac613129e7fc38c7a930a91848917f92cf7e2f8d744fa4177"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7a930a91848917f92cf7e2f8d744fa4177">llvm::codeview::MethodKind::Friend</a></div><div class="ttdeci">@ Friend</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a168a6021abac4aa4ac613129e7fc38c7ab195ef30e97fd79fc09350e5528d0ede"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7ab195ef30e97fd79fc09350e5528d0ede">llvm::codeview::MethodKind::IntroducingVirtual</a></div><div class="ttdeci">@ IntroducingVirtual</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a168a6021abac4aa4ac613129e7fc38c7af60013c9b6ecfec449aeace857155e4c"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a168a6021abac4aa4ac613129e7fc38c7af60013c9b6ecfec449aeace857155e4c">llvm::codeview::MethodKind::PureIntroducingVirtual</a></div><div class="ttdeci">@ PureIntroducingVirtual</div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00059">59</a> of file <a class="el" href="TypeDumpVisitor_8cpp_source.html">TypeDumpVisitor.cpp</a>.</p>
 
@@ -547,7 +499,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt;uint16_t&gt; MethodOptionNames[]</td>
+          <td class="memname">const EnumEntry&lt;uint16_t&gt; MethodOptionNames[]</td>
         </tr>
       </table>
   </td>
@@ -557,17 +509,12 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a728fe3ed02de6938b9ae302f54d8626f">MethodOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a728fe3ed02de6938b9ae302f54d8626fa798cbab92e12849302dd4ac8992e2bfc">Pseudo</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a728fe3ed02de6938b9ae302f54d8626f">MethodOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a728fe3ed02de6938b9ae302f54d8626fa61ccc9ea342170d2c279beb3220522de">NoInherit</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a728fe3ed02de6938b9ae302f54d8626f">MethodOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a728fe3ed02de6938b9ae302f54d8626faeb97294cb8143cf71dff5e37d62dd6e8">NoConstruct</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a728fe3ed02de6938b9ae302f54d8626f">MethodOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a728fe3ed02de6938b9ae302f54d8626fa8815388be62c71a9521910cfde9bef4f">CompilerGenerated</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a728fe3ed02de6938b9ae302f54d8626f">MethodOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a4e60e0c351f13aade28b451480c44e5aa9b965a5a6e503feba7eda0d4e32fc98c">Sealed</a>),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MethodOptions, Pseudo),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MethodOptions, NoInherit),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MethodOptions, NoConstruct),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MethodOptions, CompilerGenerated),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(MethodOptions, Sealed),</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a728fe3ed02de6938b9ae302f54d8626f"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a728fe3ed02de6938b9ae302f54d8626f">llvm::codeview::MethodOptions</a></div><div class="ttdeci">MethodOptions</div><div class="ttdoc">Equivalent to CV_fldattr_t bitfield.</div><div class="ttdef"><b>Definition:</b> <a href="CodeView_8h_source.html#l00279">CodeView.h:279</a></div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a728fe3ed02de6938b9ae302f54d8626fa61ccc9ea342170d2c279beb3220522de"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a728fe3ed02de6938b9ae302f54d8626fa61ccc9ea342170d2c279beb3220522de">llvm::codeview::MethodOptions::NoInherit</a></div><div class="ttdeci">@ NoInherit</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a728fe3ed02de6938b9ae302f54d8626fa798cbab92e12849302dd4ac8992e2bfc"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a728fe3ed02de6938b9ae302f54d8626fa798cbab92e12849302dd4ac8992e2bfc">llvm::codeview::MethodOptions::Pseudo</a></div><div class="ttdeci">@ Pseudo</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a728fe3ed02de6938b9ae302f54d8626fa8815388be62c71a9521910cfde9bef4f"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a728fe3ed02de6938b9ae302f54d8626fa8815388be62c71a9521910cfde9bef4f">llvm::codeview::MethodOptions::CompilerGenerated</a></div><div class="ttdeci">@ CompilerGenerated</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a728fe3ed02de6938b9ae302f54d8626faeb97294cb8143cf71dff5e37d62dd6e8"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a728fe3ed02de6938b9ae302f54d8626faeb97294cb8143cf71dff5e37d62dd6e8">llvm::codeview::MethodOptions::NoConstruct</a></div><div class="ttdeci">@ NoConstruct</div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00051">51</a> of file <a class="el" href="TypeDumpVisitor_8cpp_source.html">TypeDumpVisitor.cpp</a>.</p>
 
@@ -583,7 +530,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt;uint8_t&gt; PtrKindNames[]</td>
+          <td class="memname">const EnumEntry&lt;uint8_t&gt; PtrKindNames[]</td>
         </tr>
       </table>
   </td>
@@ -593,34 +540,20 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080a">PointerKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aae1b8d658391b355e860e3aa1ef0ac482">Near16</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080a">PointerKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aa79df62b1dfd84cd56ac8ad438abbc126">Far16</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080a">PointerKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aad06f3d12de36ebc1e72a00643a9ade07">Huge16</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080a">PointerKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aab3bfe953bfb2f36017557185f948a1b5">BasedOnSegment</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080a">PointerKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aaa564866a4c1df6235d3a124430929172">BasedOnValue</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080a">PointerKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aa83e99fe20281bcde7b3d7a6b2336445f">BasedOnSegmentValue</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080a">PointerKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aa071eb0e80824bb866a8a0654b487961e">BasedOnAddress</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080a">PointerKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aac08874dd752ebcdede967b5aebe3329e">BasedOnSegmentAddress</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080a">PointerKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aa3d555aa9006b1e1ac8a88c448d4c825f">BasedOnType</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080a">PointerKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aa31a8df2d4e05a1d2f6f6e93e34dfb7c1">BasedOnSelf</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080a">PointerKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aa7e1037efe515b2b04876873517634dcc">Near32</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080a">PointerKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aa7bff4d28ff3adac9dc1cc3e37fc7a8d1">Far32</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080a">PointerKind</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aade03ccc52b8b2f5c2235661459f6eea0">Near64</a>),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerKind, Near16),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerKind, Far16),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerKind, Huge16),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerKind, BasedOnSegment),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerKind, BasedOnValue),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerKind, BasedOnSegmentValue),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerKind, BasedOnAddress),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerKind, BasedOnSegmentAddress),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerKind, BasedOnType),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerKind, BasedOnSelf),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerKind, Near32),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerKind, Far32),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerKind, Near64),</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a38961178be5c492f779ec9ff5929080a"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080a">llvm::codeview::PointerKind</a></div><div class="ttdeci">PointerKind</div><div class="ttdoc">Equivalent to CV_ptrtype_e.</div><div class="ttdef"><b>Definition:</b> <a href="CodeView_8h_source.html#l00331">CodeView.h:331</a></div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a38961178be5c492f779ec9ff5929080aa071eb0e80824bb866a8a0654b487961e"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aa071eb0e80824bb866a8a0654b487961e">llvm::codeview::PointerKind::BasedOnAddress</a></div><div class="ttdeci">@ BasedOnAddress</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a38961178be5c492f779ec9ff5929080aa31a8df2d4e05a1d2f6f6e93e34dfb7c1"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aa31a8df2d4e05a1d2f6f6e93e34dfb7c1">llvm::codeview::PointerKind::BasedOnSelf</a></div><div class="ttdeci">@ BasedOnSelf</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a38961178be5c492f779ec9ff5929080aa3d555aa9006b1e1ac8a88c448d4c825f"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aa3d555aa9006b1e1ac8a88c448d4c825f">llvm::codeview::PointerKind::BasedOnType</a></div><div class="ttdeci">@ BasedOnType</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a38961178be5c492f779ec9ff5929080aa79df62b1dfd84cd56ac8ad438abbc126"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aa79df62b1dfd84cd56ac8ad438abbc126">llvm::codeview::PointerKind::Far16</a></div><div class="ttdeci">@ Far16</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a38961178be5c492f779ec9ff5929080aa7bff4d28ff3adac9dc1cc3e37fc7a8d1"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aa7bff4d28ff3adac9dc1cc3e37fc7a8d1">llvm::codeview::PointerKind::Far32</a></div><div class="ttdeci">@ Far32</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a38961178be5c492f779ec9ff5929080aa7e1037efe515b2b04876873517634dcc"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aa7e1037efe515b2b04876873517634dcc">llvm::codeview::PointerKind::Near32</a></div><div class="ttdeci">@ Near32</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a38961178be5c492f779ec9ff5929080aa83e99fe20281bcde7b3d7a6b2336445f"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aa83e99fe20281bcde7b3d7a6b2336445f">llvm::codeview::PointerKind::BasedOnSegmentValue</a></div><div class="ttdeci">@ BasedOnSegmentValue</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a38961178be5c492f779ec9ff5929080aaa564866a4c1df6235d3a124430929172"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aaa564866a4c1df6235d3a124430929172">llvm::codeview::PointerKind::BasedOnValue</a></div><div class="ttdeci">@ BasedOnValue</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a38961178be5c492f779ec9ff5929080aab3bfe953bfb2f36017557185f948a1b5"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aab3bfe953bfb2f36017557185f948a1b5">llvm::codeview::PointerKind::BasedOnSegment</a></div><div class="ttdeci">@ BasedOnSegment</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a38961178be5c492f779ec9ff5929080aac08874dd752ebcdede967b5aebe3329e"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aac08874dd752ebcdede967b5aebe3329e">llvm::codeview::PointerKind::BasedOnSegmentAddress</a></div><div class="ttdeci">@ BasedOnSegmentAddress</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a38961178be5c492f779ec9ff5929080aad06f3d12de36ebc1e72a00643a9ade07"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aad06f3d12de36ebc1e72a00643a9ade07">llvm::codeview::PointerKind::Huge16</a></div><div class="ttdeci">@ Huge16</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a38961178be5c492f779ec9ff5929080aade03ccc52b8b2f5c2235661459f6eea0"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aade03ccc52b8b2f5c2235661459f6eea0">llvm::codeview::PointerKind::Near64</a></div><div class="ttdeci">@ Near64</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a38961178be5c492f779ec9ff5929080aae1b8d658391b355e860e3aa1ef0ac482"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a38961178be5c492f779ec9ff5929080aae1b8d658391b355e860e3aa1ef0ac482">llvm::codeview::PointerKind::Near16</a></div><div class="ttdeci">@ Near16</div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00069">69</a> of file <a class="el" href="TypeDumpVisitor_8cpp_source.html">TypeDumpVisitor.cpp</a>.</p>
 
@@ -636,7 +569,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt;uint16_t&gt; PtrMemberRepNames[]</td>
+          <td class="memname">const EnumEntry&lt;uint16_t&gt; PtrMemberRepNames[]</td>
         </tr>
       </table>
   </td>
@@ -646,26 +579,16 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dd">PointerToMemberRepresentation</a>, <a class="code hl_enumvalue" href="NVPTXISelLowering_8cpp.html#ae1a90b5d85643644483b2ca70da4d13fa4e81c184ac3ad48a389cd4454c4a05bb">Unknown</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dd">PointerToMemberRepresentation</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dda5d5e503ea7e7e734efc707b38c164bb4">SingleInheritanceData</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dd">PointerToMemberRepresentation</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dda0f5e1c8100349251b6d196f7a29b0315">MultipleInheritanceData</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dd">PointerToMemberRepresentation</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7ddab1504b8da65a6f6504fa211e8e1bc4c6">VirtualInheritanceData</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dd">PointerToMemberRepresentation</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7ddad6aaabcf3f11085cf804f75ea797e25e">GeneralData</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dd">PointerToMemberRepresentation</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dda9ab2da5a8aa252c06b75d66a98037c6b">SingleInheritanceFunction</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dd">PointerToMemberRepresentation</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7ddac89e9e73f5a2136281e232659e0dbeb8">MultipleInheritanceFunction</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dd">PointerToMemberRepresentation</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7ddac657f976c7aad6a49765e9e15d0e954a">VirtualInheritanceFunction</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dd">PointerToMemberRepresentation</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dda9725aea22574273bbed6ef9642f37171">GeneralFunction</a>),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerToMemberRepresentation, Unknown),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerToMemberRepresentation, SingleInheritanceData),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerToMemberRepresentation, MultipleInheritanceData),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerToMemberRepresentation, VirtualInheritanceData),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerToMemberRepresentation, GeneralData),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerToMemberRepresentation, SingleInheritanceFunction),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerToMemberRepresentation, MultipleInheritanceFunction),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerToMemberRepresentation, VirtualInheritanceFunction),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerToMemberRepresentation, GeneralFunction),</div>
 <div class="line">}</div>
-<div class="ttc" id="aNVPTXISelLowering_8cpp_html_ae1a90b5d85643644483b2ca70da4d13fa4e81c184ac3ad48a389cd4454c4a05bb"><div class="ttname"><a href="NVPTXISelLowering_8cpp.html#ae1a90b5d85643644483b2ca70da4d13fa4e81c184ac3ad48a389cd4454c4a05bb">Unknown</a></div><div class="ttdeci">@ Unknown</div><div class="ttdef"><b>Definition:</b> <a href="NVPTXISelLowering_8cpp_source.html#l04572">NVPTXISelLowering.cpp:4571</a></div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a524c6566f0266fbbbe1c7ed25882c7dd"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dd">llvm::codeview::PointerToMemberRepresentation</a></div><div class="ttdeci">PointerToMemberRepresentation</div><div class="ttdoc">Equivalent to CV_pmtype_e.</div><div class="ttdef"><b>Definition:</b> <a href="CodeView_8h_source.html#l00371">CodeView.h:371</a></div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a524c6566f0266fbbbe1c7ed25882c7dda0f5e1c8100349251b6d196f7a29b0315"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dda0f5e1c8100349251b6d196f7a29b0315">llvm::codeview::PointerToMemberRepresentation::MultipleInheritanceData</a></div><div class="ttdeci">@ MultipleInheritanceData</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a524c6566f0266fbbbe1c7ed25882c7dda5d5e503ea7e7e734efc707b38c164bb4"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dda5d5e503ea7e7e734efc707b38c164bb4">llvm::codeview::PointerToMemberRepresentation::SingleInheritanceData</a></div><div class="ttdeci">@ SingleInheritanceData</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a524c6566f0266fbbbe1c7ed25882c7dda9725aea22574273bbed6ef9642f37171"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dda9725aea22574273bbed6ef9642f37171">llvm::codeview::PointerToMemberRepresentation::GeneralFunction</a></div><div class="ttdeci">@ GeneralFunction</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a524c6566f0266fbbbe1c7ed25882c7dda9ab2da5a8aa252c06b75d66a98037c6b"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7dda9ab2da5a8aa252c06b75d66a98037c6b">llvm::codeview::PointerToMemberRepresentation::SingleInheritanceFunction</a></div><div class="ttdeci">@ SingleInheritanceFunction</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a524c6566f0266fbbbe1c7ed25882c7ddab1504b8da65a6f6504fa211e8e1bc4c6"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7ddab1504b8da65a6f6504fa211e8e1bc4c6">llvm::codeview::PointerToMemberRepresentation::VirtualInheritanceData</a></div><div class="ttdeci">@ VirtualInheritanceData</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a524c6566f0266fbbbe1c7ed25882c7ddac657f976c7aad6a49765e9e15d0e954a"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7ddac657f976c7aad6a49765e9e15d0e954a">llvm::codeview::PointerToMemberRepresentation::VirtualInheritanceFunction</a></div><div class="ttdeci">@ VirtualInheritanceFunction</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a524c6566f0266fbbbe1c7ed25882c7ddac89e9e73f5a2136281e232659e0dbeb8"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7ddac89e9e73f5a2136281e232659e0dbeb8">llvm::codeview::PointerToMemberRepresentation::MultipleInheritanceFunction</a></div><div class="ttdeci">@ MultipleInheritanceFunction</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a524c6566f0266fbbbe1c7ed25882c7ddad6aaabcf3f11085cf804f75ea797e25e"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a524c6566f0266fbbbe1c7ed25882c7ddad6aaabcf3f11085cf804f75ea797e25e">llvm::codeview::PointerToMemberRepresentation::GeneralData</a></div><div class="ttdeci">@ GeneralData</div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00093">93</a> of file <a class="el" href="TypeDumpVisitor_8cpp_source.html">TypeDumpVisitor.cpp</a>.</p>
 
@@ -681,7 +604,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt;uint8_t&gt; PtrModeNames[]</td>
+          <td class="memname">const EnumEntry&lt;uint8_t&gt; PtrModeNames[]</td>
         </tr>
       </table>
   </td>
@@ -691,18 +614,12 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbc">PointerMode</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbca61cf8510205077b6f5491d38cd44c0f7">Pointer</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbc">PointerMode</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbca3408011d07d71eb98afa178eae72faf6">LValueReference</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbc">PointerMode</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbcaadf8be6fd2059290188a2c4b791edcd1">PointerToDataMember</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbc">PointerMode</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbcada5a6fc5693ed8a5e467c414ca2589d3">PointerToMemberFunction</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbc">PointerMode</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbcaa68a3262ced5b445f2a5a1953c279116">RValueReference</a>),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerMode, Pointer),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerMode, LValueReference),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerMode, PointerToDataMember),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerMode, PointerToMemberFunction),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(PointerMode, RValueReference),</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a0bfa8e65ecd85f3151f84bb53ad4bcbc"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbc">llvm::codeview::PointerMode</a></div><div class="ttdeci">PointerMode</div><div class="ttdoc">Equivalent to CV_ptrmode_e.</div><div class="ttdef"><b>Definition:</b> <a href="CodeView_8h_source.html#l00348">CodeView.h:348</a></div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a0bfa8e65ecd85f3151f84bb53ad4bcbca3408011d07d71eb98afa178eae72faf6"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbca3408011d07d71eb98afa178eae72faf6">llvm::codeview::PointerMode::LValueReference</a></div><div class="ttdeci">@ LValueReference</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a0bfa8e65ecd85f3151f84bb53ad4bcbca61cf8510205077b6f5491d38cd44c0f7"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbca61cf8510205077b6f5491d38cd44c0f7">llvm::codeview::PointerMode::Pointer</a></div><div class="ttdeci">@ Pointer</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a0bfa8e65ecd85f3151f84bb53ad4bcbcaa68a3262ced5b445f2a5a1953c279116"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbcaa68a3262ced5b445f2a5a1953c279116">llvm::codeview::PointerMode::RValueReference</a></div><div class="ttdeci">@ RValueReference</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a0bfa8e65ecd85f3151f84bb53ad4bcbcaadf8be6fd2059290188a2c4b791edcd1"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbcaadf8be6fd2059290188a2c4b791edcd1">llvm::codeview::PointerMode::PointerToDataMember</a></div><div class="ttdeci">@ PointerToDataMember</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_a0bfa8e65ecd85f3151f84bb53ad4bcbcada5a6fc5693ed8a5e467c414ca2589d3"><div class="ttname"><a href="namespacellvm_1_1codeview.html#a0bfa8e65ecd85f3151f84bb53ad4bcbcada5a6fc5693ed8a5e467c414ca2589d3">llvm::codeview::PointerMode::PointerToMemberFunction</a></div><div class="ttdeci">@ PointerToMemberFunction</div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00085">85</a> of file <a class="el" href="TypeDumpVisitor_8cpp_source.html">TypeDumpVisitor.cpp</a>.</p>
 
@@ -718,7 +635,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="structllvm_1_1EnumEntry.html">EnumEntry</a>&lt;uint16_t&gt; TypeModifierNames[]</td>
+          <td class="memname">const EnumEntry&lt;uint16_t&gt; TypeModifierNames[]</td>
         </tr>
       </table>
   </td>
@@ -728,13 +645,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#acf5c2920c8a10eeb1d8c5d3a9c2adfb6">ModifierOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#acf5c2920c8a10eeb1d8c5d3a9c2adfb6a79ceee9f8e3c1f0cc74223e05d2448bf">Const</a>), <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#acf5c2920c8a10eeb1d8c5d3a9c2adfb6">ModifierOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#acf5c2920c8a10eeb1d8c5d3a9c2adfb6a3e3af98b6b48c7e593d8d18863e3333b">Volatile</a>),</div>
-<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(<a class="code hl_enumeration" href="namespacellvm_1_1codeview.html#acf5c2920c8a10eeb1d8c5d3a9c2adfb6">ModifierOptions</a>, <a class="code hl_enumvalue" href="namespacellvm_1_1codeview.html#acf5c2920c8a10eeb1d8c5d3a9c2adfb6a9f19679888db198f8dd45606487e6cd6">Unaligned</a>),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ModifierOptions, Const), <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ModifierOptions, Volatile),</div>
+<div class="line">    <a class="code hl_define" href="TypeDumpVisitor_8cpp.html#a79cfedd2c383af694a381edd740890e7">ENUM_ENTRY</a>(ModifierOptions, Unaligned),</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_acf5c2920c8a10eeb1d8c5d3a9c2adfb6"><div class="ttname"><a href="namespacellvm_1_1codeview.html#acf5c2920c8a10eeb1d8c5d3a9c2adfb6">llvm::codeview::ModifierOptions</a></div><div class="ttdeci">ModifierOptions</div><div class="ttdoc">Equivalent to CV_modifier_t.</div><div class="ttdef"><b>Definition:</b> <a href="CodeView_8h_source.html#l00299">CodeView.h:299</a></div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_acf5c2920c8a10eeb1d8c5d3a9c2adfb6a3e3af98b6b48c7e593d8d18863e3333b"><div class="ttname"><a href="namespacellvm_1_1codeview.html#acf5c2920c8a10eeb1d8c5d3a9c2adfb6a3e3af98b6b48c7e593d8d18863e3333b">llvm::codeview::ModifierOptions::Volatile</a></div><div class="ttdeci">@ Volatile</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_acf5c2920c8a10eeb1d8c5d3a9c2adfb6a79ceee9f8e3c1f0cc74223e05d2448bf"><div class="ttname"><a href="namespacellvm_1_1codeview.html#acf5c2920c8a10eeb1d8c5d3a9c2adfb6a79ceee9f8e3c1f0cc74223e05d2448bf">llvm::codeview::ModifierOptions::Const</a></div><div class="ttdeci">@ Const</div></div>
-<div class="ttc" id="anamespacellvm_1_1codeview_html_acf5c2920c8a10eeb1d8c5d3a9c2adfb6a9f19679888db198f8dd45606487e6cd6"><div class="ttname"><a href="namespacellvm_1_1codeview.html#acf5c2920c8a10eeb1d8c5d3a9c2adfb6a9f19679888db198f8dd45606487e6cd6">llvm::codeview::ModifierOptions::Unaligned</a></div><div class="ttdeci">@ Unaligned</div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="TypeDumpVisitor_8cpp_source.html#l00105">105</a> of file <a class="el" href="TypeDumpVisitor_8cpp_source.html">TypeDumpVisitor.cpp</a>.</p>
 
@@ -743,7 +656,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:14 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

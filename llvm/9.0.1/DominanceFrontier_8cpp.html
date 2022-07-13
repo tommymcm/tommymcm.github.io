@@ -57,20 +57,33 @@ $(function() {
   <div class="headertitle"><div class="title">DominanceFrontier.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="DominanceFrontier_8h_source.html">llvm/Analysis/DominanceFrontier.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DominanceFrontierImpl_8h_source.html">llvm/Analysis/DominanceFrontierImpl.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/DominanceFrontier.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/DominanceFrontierImpl.h&quot;</code><br />
 <code>#include &quot;llvm/Config/llvm-config.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PassManager_8h_source.html">llvm/IR/PassManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Compiler_8h_source.html">llvm/Support/Compiler.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raw__ostream_8h_source.html">llvm/Support/raw_ostream.h</a>&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/PassManager.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Compiler.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Support/raw_ostream.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for DominanceFrontier.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="DominanceFrontier_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2DominanceFrontier_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2DominanceFrontier_8cpp" id="alib_2Analysis_2DominanceFrontier_8cpp">
+<area shape="rect" title=" " alt="" coords="969,5,1219,31"/>
+<area shape="rect" title=" " alt="" coords="5,86,255,111"/>
+<area shape="rect" title=" " alt="" coords="279,79,517,119"/>
+<area shape="rect" title=" " alt="" coords="541,86,727,111"/>
+<area shape="rect" title=" " alt="" coords="751,86,911,111"/>
+<area shape="rect" title=" " alt="" coords="935,86,1074,111"/>
+<area shape="rect" title=" " alt="" coords="1099,86,1268,111"/>
+<area shape="rect" title=" " alt="" coords="1293,86,1389,111"/>
+<area shape="rect" title=" " alt="" coords="1413,86,1591,111"/>
+<area shape="rect" title=" " alt="" coords="1615,86,1778,111"/>
+<area shape="rect" title=" " alt="" coords="1803,86,2009,111"/>
+</map>
 </div>
 </div>
 <p><a href="DominanceFrontier_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -78,12 +91,11 @@ Include dependency graph for DominanceFrontier.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acd2bd1fe4668f13c491f65a4229d9187"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DominanceFrontier_8cpp.html#acd2bd1fe4668f13c491f65a4229d9187">INITIALIZE_PASS_BEGIN</a> (<a class="el" href="classllvm_1_1DominanceFrontierWrapperPass.html">DominanceFrontierWrapperPass</a>, &quot;domfrontier&quot;, &quot;Dominance Frontier Construction&quot;, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(<a class="el" href="classllvm_1_1DominanceFrontierWrapperPass.html">DominanceFrontierWrapperPass</a></td></tr>
+<tr class="memitem:acd2bd1fe4668f13c491f65a4229d9187"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DominanceFrontier_8cpp.html#acd2bd1fe4668f13c491f65a4229d9187">INITIALIZE_PASS_BEGIN</a> (DominanceFrontierWrapperPass, &quot;domfrontier&quot;, &quot;Dominance Frontier Construction&quot;, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>, <a class="el" href="BlockFrequencyInfo_8cpp.html#af1bff759151fc332f9c9021578b15be6">true</a>) INITIALIZE_PASS_END(DominanceFrontierWrapperPass</td></tr>
 <tr class="separator:acd2bd1fe4668f13c491f65a4229d9187"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -105,7 +117,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">INITIALIZE_PASS_BEGIN </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DominanceFrontierWrapperPass.html">DominanceFrontierWrapperPass</a>&#160;</td>
+          <td class="paramtype">DominanceFrontierWrapperPass&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -194,7 +206,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:12 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

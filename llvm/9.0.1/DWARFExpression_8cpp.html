@@ -57,11 +57,11 @@ $(function() {
   <div class="headertitle"><div class="title">DWARFExpression.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="DWARFExpression_8h_source.html">llvm/DebugInfo/DWARF/DWARFExpression.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DWARFUnit_8h_source.html">llvm/DebugInfo/DWARF/DWARFUnit.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dwarf_8h_source.html">llvm/BinaryFormat/Dwarf.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MCRegisterInfo_8h_source.html">llvm/MC/MCRegisterInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Format_8h_source.html">llvm/Support/Format.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/DebugInfo/DWARF/DWARFExpression.h&quot;</code><br />
+<code>#include &quot;llvm/DebugInfo/DWARF/DWARFUnit.h&quot;</code><br />
+<code>#include &quot;llvm/BinaryFormat/Dwarf.h&quot;</code><br />
+<code>#include &quot;llvm/MC/MCRegisterInfo.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Format.h&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -69,6 +69,17 @@ $(function() {
 Include dependency graph for DWARFExpression.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="DWARFExpression_8cpp__incl.png" border="0" usemap="#alib_2DebugInfo_2DWARF_2DWARFExpression_8cpp" alt=""/></div>
+<map name="alib_2DebugInfo_2DWARF_2DWARFExpression_8cpp" id="alib_2DebugInfo_2DWARF_2DWARFExpression_8cpp">
+<area shape="rect" title=" " alt="" coords="736,5,908,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,180,133"/>
+<area shape="rect" title=" " alt="" coords="204,93,379,133"/>
+<area shape="rect" title=" " alt="" coords="403,101,601,126"/>
+<area shape="rect" title=" " alt="" coords="625,101,817,126"/>
+<area shape="rect" title=" " alt="" coords="841,101,1008,126"/>
+<area shape="rect" title=" " alt="" coords="1033,101,1102,126"/>
+<area shape="rect" title=" " alt="" coords="1126,101,1193,126"/>
+<area shape="rect" title=" " alt="" coords="1217,101,1280,126"/>
+</map>
 </div>
 </div>
 <p><a href="DWARFExpression_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -76,29 +87,28 @@ Include dependency graph for DWARFExpression.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a87ede20212bc6a7adf2560b8022161fe"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="structllvm_1_1DWARFExpression_1_1Operation_1_1Description.html">DWARFExpression::Operation::Description</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a87ede20212bc6a7adf2560b8022161fe">llvm::DescVector</a></td></tr>
+<tr class="memitem:a87ede20212bc6a7adf2560b8022161fe"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; DWARFExpression::Operation::Description &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a87ede20212bc6a7adf2560b8022161fe">llvm::DescVector</a></td></tr>
 <tr class="separator:a87ede20212bc6a7adf2560b8022161fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa9b932e11900d8af16acf4cf9e92ce9e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespacellvm.html#a87ede20212bc6a7adf2560b8022161fe">DescVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#aa9b932e11900d8af16acf4cf9e92ce9e">llvm::getDescriptions</a> ()</td></tr>
 <tr class="separator:aa9b932e11900d8af16acf4cf9e92ce9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0870e8866f9f76a9951e6475c285d39e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structllvm_1_1DWARFExpression_1_1Operation_1_1Description.html">DWARFExpression::Operation::Description</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a0870e8866f9f76a9951e6475c285d39e">llvm::getOpDesc</a> (<a class="el" href="classunsigned.html">unsigned</a> OpCode)</td></tr>
+<tr class="memitem:a0870e8866f9f76a9951e6475c285d39e"><td class="memItemLeft" align="right" valign="top">static DWARFExpression::Operation::Description&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a0870e8866f9f76a9951e6475c285d39e">llvm::getOpDesc</a> (unsigned OpCode)</td></tr>
 <tr class="separator:a0870e8866f9f76a9951e6475c285d39e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76ef2725bead079d43143b7a70d2a3d2"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a76ef2725bead079d43143b7a70d2a3d2">llvm::getRefAddrSize</a> (uint8_t AddrSize, uint16_t Version)</td></tr>
 <tr class="separator:a76ef2725bead079d43143b7a70d2a3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d130bb96ec4c82bf384d00b65e19259"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a6d130bb96ec4c82bf384d00b65e19259">llvm::prettyPrintRegisterOp</a> (<a class="el" href="classllvm_1_1raw__ostream.html">raw_ostream</a> &amp;OS, uint8_t Opcode, uint64_t Operands[2], <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1MCRegisterInfo.html">MCRegisterInfo</a> *<a class="el" href="AArch64AdvSIMDScalarPass_8cpp.html#aacd2ab195054a3e6a74bfbb9d5d571c8">MRI</a>, <a class="el" href="classbool.html">bool</a> isEH)</td></tr>
+<tr class="memitem:a6d130bb96ec4c82bf384d00b65e19259"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html#a6d130bb96ec4c82bf384d00b65e19259">llvm::prettyPrintRegisterOp</a> (raw_ostream &amp;OS, uint8_t Opcode, uint64_t Operands[2], const MCRegisterInfo *MRI, bool isEH)</td></tr>
 <tr class="separator:a6d130bb96ec4c82bf384d00b65e19259"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:14 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:44 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

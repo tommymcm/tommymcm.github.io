@@ -59,22 +59,37 @@ $(function() {
   <div class="headertitle"><div class="title">DivRemPairs.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="DivRemPairs_8h_source.html">llvm/Transforms/Scalar/DivRemPairs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DenseMap_8h_source.html">llvm/ADT/DenseMap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MapVector_8h_source.html">llvm/ADT/MapVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalsModRef_8h_source.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TargetTransformInfo_8h_source.html">llvm/Analysis/TargetTransformInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Dominators_8h_source.html">llvm/IR/Dominators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DebugCounter_8h_source.html">llvm/Support/DebugCounter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BypassSlowDivision_8h_source.html">llvm/Transforms/Utils/BypassSlowDivision.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/DivRemPairs.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/DenseMap.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/MapVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/TargetTransformInfo.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Dominators.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/DebugCounter.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils/BypassSlowDivision.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for DivRemPairs.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="DivRemPairs_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2DivRemPairs_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Scalar_2DivRemPairs_8cpp" id="alib_2Transforms_2Scalar_2DivRemPairs_8cpp">
+<area shape="rect" title=" " alt="" coords="1109,5,1267,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,176,133"/>
+<area shape="rect" title=" " alt="" coords="201,101,367,126"/>
+<area shape="rect" title=" " alt="" coords="391,101,558,126"/>
+<area shape="rect" title=" " alt="" coords="582,101,733,126"/>
+<area shape="rect" title=" " alt="" coords="757,93,947,133"/>
+<area shape="rect" title=" " alt="" coords="972,93,1191,133"/>
+<area shape="rect" title=" " alt="" coords="1215,101,1375,126"/>
+<area shape="rect" title=" " alt="" coords="1399,101,1537,126"/>
+<area shape="rect" title=" " alt="" coords="1561,101,1657,126"/>
+<area shape="rect" title=" " alt="" coords="1681,101,1895,126"/>
+<area shape="rect" title=" " alt="" coords="1919,101,2102,126"/>
+<area shape="rect" title=" " alt="" coords="2126,93,2295,133"/>
+</map>
 </div>
 </div>
 <p><a href="DivRemPairs_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -92,26 +107,26 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a52666b84652fc277b8a53aea9a4a2be0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DivRemPairs_8cpp.html#a52666b84652fc277b8a53aea9a4a2be0">DivRemWorklistTy</a> = <a class="el" href="classllvm_1_1SmallVector.html">SmallVector</a>&lt; <a class="el" href="structDivRemPairWorklistEntry.html">DivRemPairWorklistEntry</a>, 4 &gt;</td></tr>
+<tr class="memitem:a52666b84652fc277b8a53aea9a4a2be0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DivRemPairs_8cpp.html#a52666b84652fc277b8a53aea9a4a2be0">DivRemWorklistTy</a> = <a class="el" href="classSmallVector.html">SmallVector</a>&lt; <a class="el" href="structDivRemPairWorklistEntry.html">DivRemPairWorklistEntry</a>, 4 &gt;</td></tr>
 <tr class="separator:a52666b84652fc277b8a53aea9a4a2be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a2dce93455da9adba7bf8bcd3f1da1d2c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DivRemPairs_8cpp.html#a2dce93455da9adba7bf8bcd3f1da1d2c">STATISTIC</a> (NumPairs, &quot;Number of div/rem pairs&quot;)</td></tr>
 <tr class="separator:a2dce93455da9adba7bf8bcd3f1da1d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fcd3873e0c9636a4519024a74e8bf73"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DivRemPairs_8cpp.html#a0fcd3873e0c9636a4519024a74e8bf73">STATISTIC</a> (NumHoisted, &quot;Number of <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> hoisted&quot;)</td></tr>
+<tr class="memitem:a0fcd3873e0c9636a4519024a74e8bf73"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DivRemPairs_8cpp.html#a0fcd3873e0c9636a4519024a74e8bf73">STATISTIC</a> (NumHoisted, &quot;Number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> hoisted&quot;)</td></tr>
 <tr class="separator:a0fcd3873e0c9636a4519024a74e8bf73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f08e4162fbf26db1595ed5cf7c2a235"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DivRemPairs_8cpp.html#a8f08e4162fbf26db1595ed5cf7c2a235">STATISTIC</a> (NumDecomposed, &quot;Number of <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> decomposed&quot;)</td></tr>
+<tr class="memitem:a8f08e4162fbf26db1595ed5cf7c2a235"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DivRemPairs_8cpp.html#a8f08e4162fbf26db1595ed5cf7c2a235">STATISTIC</a> (NumDecomposed, &quot;Number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> decomposed&quot;)</td></tr>
 <tr class="separator:a8f08e4162fbf26db1595ed5cf7c2a235"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa89aea3953264c7ce68749d157ec1dd3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DivRemPairs_8cpp.html#aa89aea3953264c7ce68749d157ec1dd3">DEBUG_COUNTER</a> (DRPCounter, &quot;div-rem-<a class="el" href="ProvenanceAnalysisEvaluator_8cpp.html#ab51485a0b99294aec654e99c9672958a">pairs</a>-transform&quot;, &quot;Controls <a class="el" href="WarnMissedTransforms_8cpp.html#a118c69dcb143e00e7d63d23ebc83d8d1">transformations</a> in div-rem-<a class="el" href="ProvenanceAnalysisEvaluator_8cpp.html#ab51485a0b99294aec654e99c9672958a">pairs</a> pass&quot;)</td></tr>
 <tr class="separator:aa89aea3953264c7ce68749d157ec1dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ea228d1a2a12e3dc0542b388e3e3492"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="DivRemPairs_8cpp.html#a52666b84652fc277b8a53aea9a4a2be0">DivRemWorklistTy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DivRemPairs_8cpp.html#a4ea228d1a2a12e3dc0542b388e3e3492">getWorklist</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:a4ea228d1a2a12e3dc0542b388e3e3492"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="DivRemPairs_8cpp.html#a52666b84652fc277b8a53aea9a4a2be0">DivRemWorklistTy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DivRemPairs_8cpp.html#a4ea228d1a2a12e3dc0542b388e3e3492">getWorklist</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="memdesc:a4ea228d1a2a12e3dc0542b388e3e3492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find matching pairs of integer div/rem ops (they have the same numerator, denominator, and signedness).  <a href="DivRemPairs_8cpp.html#a4ea228d1a2a12e3dc0542b388e3e3492">More...</a><br /></td></tr>
 <tr class="separator:a4ea228d1a2a12e3dc0542b388e3e3492"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e3883483a49e3be2520667d933b25f8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DivRemPairs_8cpp.html#a6e3883483a49e3be2520667d933b25f8">optimizeDivRem</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;TTI, <a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;DT)</td></tr>
+<tr class="memitem:a6e3883483a49e3be2520667d933b25f8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DivRemPairs_8cpp.html#a6e3883483a49e3be2520667d933b25f8">optimizeDivRem</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, const TargetTransformInfo &amp;TTI, const DominatorTree &amp;DT)</td></tr>
 <tr class="memdesc:a6e3883483a49e3be2520667d933b25f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find matching pairs of integer div/rem ops (they have the same numerator, denominator, and signedness).  <a href="DivRemPairs_8cpp.html#a6e3883483a49e3be2520667d933b25f8">More...</a><br /></td></tr>
 <tr class="separator:a6e3883483a49e3be2520667d933b25f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb589ff33ce8f36c48b0ec4308f3bc5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DivRemPairs_8cpp.html#adb589ff33ce8f36c48b0ec4308f3bc5e">INITIALIZE_PASS_BEGIN</a> (DivRemPairsLegacyPass, &quot;div-rem-pairs&quot;, &quot;Hoist/decompose integer division and remainder&quot;, false, false) <a class="el" href="PassSupport_8h.html#a74ce8276b89067e806f67c45a6d92575">INITIALIZE_PASS_END</a>(DivRemPairsLegacyPass</td></tr>
+<tr class="memitem:adb589ff33ce8f36c48b0ec4308f3bc5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DivRemPairs_8cpp.html#adb589ff33ce8f36c48b0ec4308f3bc5e">INITIALIZE_PASS_BEGIN</a> (DivRemPairsLegacyPass, &quot;div-rem-pairs&quot;, &quot;Hoist/decompose integer division and remainder&quot;, false, false) INITIALIZE_PASS_END(DivRemPairsLegacyPass</td></tr>
 <tr class="separator:adb589ff33ce8f36c48b0ec4308f3bc5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -148,7 +163,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="DivRemPairs_8cpp.html#a52666b84652fc277b8a53aea9a4a2be0">DivRemWorklistTy</a> =  <a class="el" href="classllvm_1_1SmallVector.html">SmallVector</a>&lt;<a class="el" href="structDivRemPairWorklistEntry.html">DivRemPairWorklistEntry</a>, 4&gt;</td>
+          <td class="memname">using <a class="el" href="DivRemPairs_8cpp.html#a52666b84652fc277b8a53aea9a4a2be0">DivRemWorklistTy</a> =  <a class="el" href="classSmallVector.html">SmallVector</a>&lt;<a class="el" href="structDivRemPairWorklistEntry.html">DivRemPairWorklistEntry</a>, 4&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -204,7 +219,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="DivRemPairs_8cpp.html#a52666b84652fc277b8a53aea9a4a2be0">DivRemWorklistTy</a> getWorklist </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -221,7 +236,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DivRemPairs_8cpp_source.html#l00073">73</a> of file <a class="el" href="DivRemPairs_8cpp_source.html">DivRemPairs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SmallVector_8h_source.html#l00641">llvm::SmallVectorImpl&lt; T &gt;::emplace_back()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="MD5_8cpp_source.html#l00058">I</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DivRemPairs_8cpp_source.html#l00130">optimizeDivRem()</a>.</p>
 
@@ -283,21 +298,21 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> optimizeDivRem </td>
+          <td class="memname">static bool optimizeDivRem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1TargetTransformInfo.html">TargetTransformInfo</a> &amp;&#160;</td>
+          <td class="paramtype">const TargetTransformInfo &amp;&#160;</td>
           <td class="paramname"><em>TTI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="AArch64PromoteConstant_8cpp.html#a90f8350fecae261c25be85d38b451bff">const</a> <a class="el" href="classllvm_1_1DominatorTree.html">DominatorTree</a> &amp;&#160;</td>
+          <td class="paramtype">const DominatorTree &amp;&#160;</td>
           <td class="paramname"><em>DT</em>&#160;</td>
         </tr>
         <tr>
@@ -320,9 +335,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DivRemPairs_8cpp_source.html#l00130">130</a> of file <a class="el" href="DivRemPairs_8cpp_source.html">DivRemPairs.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Dominators_8cpp_source.html#l00248">llvm::DominatorTree::dominates()</a>, <a class="el" href="BuiltinGCs_8cpp.html#ab5899ca200d34e3cc6bb09ebce5e5b3c">E</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00067">llvm::Instruction::eraseFromParent()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="DivRemPairs_8cpp_source.html#l00073">getWorklist()</a>, <a class="el" href="TargetTransformInfo_8cpp_source.html#l00320">llvm::TargetTransformInfo::hasDivRemOp()</a>, <a class="el" href="IR_2Instruction_8cpp_source.html#l00079">llvm::Instruction::insertAfter()</a>, <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>, <a class="el" href="Value_8cpp_source.html#l00285">llvm::Value::setName()</a>, <a class="el" href="DebugCounter_8h_source.html#l00073">llvm::DebugCounter::shouldExecute()</a>, <a class="el" href="ErlangGCPrinter_8cpp.html#a7ad930f7345a8faa5e6132305e2a6f49">X</a>, and <a class="el" href="OcamlGCPrinter_8cpp.html#a93c84752b140ee7b31646fc34cfa0dc2">Y</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="DivRemPairs_8cpp_source.html#l00267">llvm::DivRemPairsPass::run()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="DivRemPairs_8cpp_source.html#l00073">getWorklist()</a>, <a class="el" href="Hello_8cpp.html#a5e1a2e7ef3f32b337808eafe48a5b6ac">X()</a>, and <a class="el" href="Hello_8cpp.html#ac3d32b43305241160f8c774e4ce25824">Y()</a>.</p>
 
 </div>
 </div>
@@ -341,7 +354,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> decomposed&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> decomposed&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -369,7 +382,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Number of <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> hoisted&quot;&#160;</td>
+          <td class="paramtype">&quot;Number of <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> hoisted&quot;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -457,14 +470,12 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DivRemPairs_8cpp_source.html#l00261">261</a> of file <a class="el" href="DivRemPairs_8cpp_source.html">DivRemPairs.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="APInt_8cpp_source.html#l02553">llvm::APInt::tcDivide()</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:22 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

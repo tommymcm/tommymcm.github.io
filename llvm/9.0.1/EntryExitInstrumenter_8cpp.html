@@ -56,39 +56,51 @@ $(function() {
   <div class="headertitle"><div class="title">EntryExitInstrumenter.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="EntryExitInstrumenter_8h_source.html">llvm/Transforms/Utils/EntryExitInstrumenter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GlobalsModRef_8h_source.html">llvm/Analysis/GlobalsModRef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DebugInfoMetadata_8h_source.html">llvm/IR/DebugInfoMetadata.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Module_8h_source.html">llvm/IR/Module.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Type_8h_source.html">llvm/IR/Type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Utils_8h_source.html">llvm/Transforms/Utils.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Utils/EntryExitInstrumenter.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/GlobalsModRef.h&quot;</code><br />
+<code>#include &quot;llvm/IR/DebugInfoMetadata.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Module.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Type.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Utils.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for EntryExitInstrumenter.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="EntryExitInstrumenter_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Utils_2EntryExitInstrumenter_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Utils_2EntryExitInstrumenter_8cpp" id="alib_2Transforms_2Utils_2EntryExitInstrumenter_8cpp">
+<area shape="rect" title=" " alt="" coords="807,5,1002,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,185,133"/>
+<area shape="rect" title=" " alt="" coords="209,93,400,133"/>
+<area shape="rect" title=" " alt="" coords="425,101,638,126"/>
+<area shape="rect" title=" " alt="" coords="662,101,801,126"/>
+<area shape="rect" title=" " alt="" coords="825,101,985,126"/>
+<area shape="rect" title=" " alt="" coords="1009,101,1141,126"/>
+<area shape="rect" title=" " alt="" coords="1166,101,1281,126"/>
+<area shape="rect" title=" " alt="" coords="1305,101,1401,126"/>
+<area shape="rect" title=" " alt="" coords="1425,101,1598,126"/>
+</map>
 </div>
 </div>
 <p><a href="EntryExitInstrumenter_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8a33641adf01cc2d816a68c0a888bfa5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EntryExitInstrumenter_8cpp.html#a8a33641adf01cc2d816a68c0a888bfa5">insertCall</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;CurFn, <a class="el" href="classllvm_1_1StringRef.html">StringRef</a> Func, <a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *InsertionPt, <a class="el" href="classllvm_1_1DebugLoc.html">DebugLoc</a> DL)</td></tr>
+<tr class="memitem:a8a33641adf01cc2d816a68c0a888bfa5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EntryExitInstrumenter_8cpp.html#a8a33641adf01cc2d816a68c0a888bfa5">insertCall</a> (Function &amp;CurFn, StringRef Func, Instruction *InsertionPt, DebugLoc DL)</td></tr>
 <tr class="separator:a8a33641adf01cc2d816a68c0a888bfa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3985f1f39349428d17f0d2b81ebc6349"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EntryExitInstrumenter_8cpp.html#a3985f1f39349428d17f0d2b81ebc6349">runOnFunction</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a class="el" href="classbool.html">bool</a> PostInlining)</td></tr>
+<tr class="memitem:a3985f1f39349428d17f0d2b81ebc6349"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EntryExitInstrumenter_8cpp.html#a3985f1f39349428d17f0d2b81ebc6349">runOnFunction</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, bool PostInlining)</td></tr>
 <tr class="separator:a3985f1f39349428d17f0d2b81ebc6349"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c3d5f58ad1766c67da2d304b22894f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EntryExitInstrumenter_8cpp.html#a0c3d5f58ad1766c67da2d304b22894f4">INITIALIZE_PASS</a> (EntryExitInstrumenter, &quot;ee-instrument&quot;, &quot;Instrument <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a>/exit with <a class="el" href="AMDGPULibCalls_8cpp.html#a91feb1b5d1a9c4e07149041912f83b42">calls</a> to e.g. <a class="el" href="EntryExitInstrumenter_8cpp.html#ab47f71c39e9a8e6a2dfdd26dcbab9602">mcount</a>() (pre inlining)&quot;, false, false) INITIALIZE_PASS(PostInlineEntryExitInstrumenter</td></tr>
+<tr class="memitem:a0c3d5f58ad1766c67da2d304b22894f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EntryExitInstrumenter_8cpp.html#a0c3d5f58ad1766c67da2d304b22894f4">INITIALIZE_PASS</a> (EntryExitInstrumenter, &quot;ee-instrument&quot;, &quot;Instrument <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a>/exit with <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to e.g. <a class="el" href="EntryExitInstrumenter_8cpp.html#ab47f71c39e9a8e6a2dfdd26dcbab9602">mcount</a>() (pre inlining)&quot;, false, false) INITIALIZE_PASS(PostInlineEntryExitInstrumenter</td></tr>
 <tr class="separator:a0c3d5f58ad1766c67da2d304b22894f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab47f71c39e9a8e6a2dfdd26dcbab9602"><td class="memItemLeft" align="right" valign="top">post <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> ee Instrument <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> exit with <a class="el" href="AMDGPULibCalls_8cpp.html#a91feb1b5d1a9c4e07149041912f83b42">calls</a> to e g&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EntryExitInstrumenter_8cpp.html#ab47f71c39e9a8e6a2dfdd26dcbab9602">mcount</a> () &quot; &quot;(post inlining)&quot;</td></tr>
+<tr class="memitem:ab47f71c39e9a8e6a2dfdd26dcbab9602"><td class="memItemLeft" align="right" valign="top">post <a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a> ee Instrument <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> exit with <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to e g&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EntryExitInstrumenter_8cpp.html#ab47f71c39e9a8e6a2dfdd26dcbab9602">mcount</a> () &quot; &quot;(post inlining)&quot;</td></tr>
 <tr class="separator:ab47f71c39e9a8e6a2dfdd26dcbab9602"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:acb9c335e22ffcd4405602cd7abb8e775"><td class="memItemLeft" align="right" valign="top">post <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> ee&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a></td></tr>
+<tr class="memitem:acb9c335e22ffcd4405602cd7abb8e775"><td class="memItemLeft" align="right" valign="top">post <a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a> ee&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EntryExitInstrumenter_8cpp.html#acb9c335e22ffcd4405602cd7abb8e775">instrument</a></td></tr>
 <tr class="separator:acb9c335e22ffcd4405602cd7abb8e775"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf6d78ba8b3ff8cd8d041f7d0aa3a748"><td class="memItemLeft" align="right" valign="top">post <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> ee Instrument <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> exit with <a class="el" href="AMDGPULibCalls_8cpp.html#a91feb1b5d1a9c4e07149041912f83b42">calls</a> to e g&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EntryExitInstrumenter_8cpp.html#abf6d78ba8b3ff8cd8d041f7d0aa3a748">false</a></td></tr>
+<tr class="memitem:abf6d78ba8b3ff8cd8d041f7d0aa3a748"><td class="memItemLeft" align="right" valign="top">post <a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a> ee Instrument <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> exit with <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to e g&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EntryExitInstrumenter_8cpp.html#abf6d78ba8b3ff8cd8d041f7d0aa3a748">false</a></td></tr>
 <tr class="separator:abf6d78ba8b3ff8cd8d041f7d0aa3a748"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -113,7 +125,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Instrument <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a>/exit with <a class="el" href="AMDGPULibCalls_8cpp.html#a91feb1b5d1a9c4e07149041912f83b42">calls</a> to e.g. <a class="el" href="EntryExitInstrumenter_8cpp.html#ab47f71c39e9a8e6a2dfdd26dcbab9602">mcount</a>() (pre inlining)&quot;&#160;</td>
+          <td class="paramtype">&quot;Instrument <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a>/exit with <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to e.g. <a class="el" href="EntryExitInstrumenter_8cpp.html#ab47f71c39e9a8e6a2dfdd26dcbab9602">mcount</a>() (pre inlining)&quot;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -150,25 +162,25 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void insertCall </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>CurFn</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1StringRef.html">StringRef</a>&#160;</td>
+          <td class="paramtype">StringRef&#160;</td>
           <td class="paramname"><em>Func</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Instruction.html">Instruction</a> *&#160;</td>
+          <td class="paramtype">Instruction *&#160;</td>
           <td class="paramname"><em>InsertionPt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1DebugLoc.html">DebugLoc</a>&#160;</td>
+          <td class="paramtype">DebugLoc&#160;</td>
           <td class="paramname"><em>DL</em>&#160;</td>
         </tr>
         <tr>
@@ -186,7 +198,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="EntryExitInstrumenter_8cpp_source.html#l00020">20</a> of file <a class="el" href="EntryExitInstrumenter_8cpp_source.html">EntryExitInstrumenter.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BuiltinGCs_8cpp.html#a694d9607a781d330039787de0726acc0">C</a>, <a class="el" href="Instructions_8h_source.html#l01437">llvm::CallInst::Create()</a>, <a class="el" href="IntervalMap_8h_source.html#l00526">llvm::IntervalMapImpl::NodeRef::get()</a>, <a class="el" href="Constants_8cpp_source.html#l00631">llvm::ConstantInt::get()</a>, <a class="el" href="Constants_8cpp_source.html#l01782">llvm::ConstantExpr::getBitCast()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00032">llvm::BasicBlock::getContext()</a>, <a class="el" href="Function_8cpp_source.html#l01043">llvm::Intrinsic::getDeclaration()</a>, <a class="el" href="classllvm_1_1Type.html#ac0690fc781a93e3208e8048355f0e9a6">llvm::Type::getInt32Ty()</a>, <a class="el" href="classllvm_1_1Type.html#aa9dbd26362b0b38277bca4f8c02fb4f9">llvm::Type::getInt8PtrTy()</a>, <a class="el" href="GlobalValue_8h_source.html#l00575">llvm::GlobalValue::getParent()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="classllvm_1_1Type.html#a76b16ba3f021cabcda9ab1319dc7609a">llvm::Type::getVoidTy()</a>, <a class="el" href="Testing_2Support_2Error_8cpp_source.html#l00139">llvm::report_fatal_error()</a>, and <a class="el" href="IR_2Instruction_8h_source.html#l00318">llvm::Instruction::setDebugLoc()</a>.</p>
+<p class="reference">References <a class="el" href="Error_8cpp_source.html#l00139">llvm::report_fatal_error()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EntryExitInstrumenter_8cpp_source.html#l00065">runOnFunction()</a>.</p>
 
@@ -199,7 +211,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">post <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> ee Instrument <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> exit with <a class="el" href="AMDGPULibCalls_8cpp.html#a91feb1b5d1a9c4e07149041912f83b42">calls</a> to e g mcount </td>
+          <td class="memname">post <a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a> ee Instrument <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> exit with <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to e g mcount </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -219,15 +231,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> runOnFunction </td>
+          <td class="memname">static bool runOnFunction </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
+          <td class="paramtype">Function &amp;&#160;</td>
           <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>PostInlining</em>&#160;</td>
         </tr>
         <tr>
@@ -245,9 +257,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="EntryExitInstrumenter_8cpp_source.html#l00065">65</a> of file <a class="el" href="EntryExitInstrumenter_8cpp_source.html">EntryExitInstrumenter.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="StringRef_8h_source.html#l00126">llvm::StringRef::empty()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="Attributes_8h_source.html#l00340">llvm::AttributeList::FunctionIndex</a>, <a class="el" href="DebugLoc_8cpp_source.html#l00021">llvm::DebugLoc::get()</a>, <a class="el" href="ilist__node_8h_source.html#l00274">llvm::ilist_node_with_parent&lt; NodeTy, ParentTy, Options &gt;::getPrevNode()</a>, and <a class="el" href="EntryExitInstrumenter_8cpp_source.html#l00020">insertCall()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="AMDGPUPerfHintAnalysis_8cpp_source.html#l00062">INITIALIZE_PASS()</a>, <a class="el" href="EntryExitInstrumenter_8cpp_source.html#l00166">llvm::EntryExitInstrumenterPass::run()</a>, and <a class="el" href="LegacyPassManager_8cpp_source.html#l01680">llvm::FPPassManager::runOnModule()</a>.</p>
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, and <a class="el" href="EntryExitInstrumenter_8cpp_source.html#l00020">insertCall()</a>.</p>
 
 </div>
 </div>
@@ -259,7 +269,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">post <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> ee Instrument <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> exit with <a class="el" href="AMDGPULibCalls_8cpp.html#a91feb1b5d1a9c4e07149041912f83b42">calls</a> to e g false</td>
+          <td class="memname">post <a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a> ee Instrument <a class="el" href="MemDepPrinter_8cpp.html#a470d8721ad7c3b718e9daeabdaeb4700">function</a> <a class="el" href="MustExecute_8cpp.html#ac00fd2bd5d2febf1f9988294a6c56b33">entry</a> exit with <a class="el" href="IndirectCallPromotion_8cpp.html#a2a505f61ea2bfe13d570c21b8a0bc6b7">calls</a> to e g false</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -275,7 +285,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">post <a class="el" href="AMDGPUInline_8cpp.html#a8ab678e6bfedae6c302ddf02d3698746">inline</a> ee instrument</td>
+          <td class="memname">post <a class="el" href="AlwaysInliner_8cpp.html#a46ccdc20c42bb5ae5b9d313e12a68421">inline</a> ee instrument</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -287,7 +297,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:23 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

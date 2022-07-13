@@ -52,31 +52,49 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">LowerExpectIntrinsic.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="LowerExpectIntrinsic_8h_source.html">llvm/Transforms/Scalar/LowerExpectIntrinsic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SmallVector_8h_source.html">llvm/ADT/SmallVector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Statistic_8h_source.html">llvm/ADT/Statistic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="iterator__range_8h_source.html">llvm/ADT/iterator_range.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicBlock_8h_source.html">llvm/IR/BasicBlock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Constants_8h_source.html">llvm/IR/Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Function_8h_source.html">llvm/IR/Function.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Instructions_8h_source.html">llvm/IR/Instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Intrinsics_8h_source.html">llvm/IR/Intrinsics.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LLVMContext_8h_source.html">llvm/IR/LLVMContext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MDBuilder_8h_source.html">llvm/IR/MDBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Metadata_8h_source.html">llvm/IR/Metadata.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Pass_8h_source.html">llvm/Pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CommandLine_8h_source.html">llvm/Support/CommandLine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Debug_8h_source.html">llvm/Support/Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="llvm_2Transforms_2Scalar_8h_source.html">llvm/Transforms/Scalar.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Transforms/Scalar/LowerExpectIntrinsic.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/SmallVector.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/Statistic.h&quot;</code><br />
+<code>#include &quot;llvm/ADT/iterator_range.h&quot;</code><br />
+<code>#include &quot;llvm/IR/BasicBlock.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Constants.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Function.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Instructions.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Intrinsics.h&quot;</code><br />
+<code>#include &quot;llvm/IR/LLVMContext.h&quot;</code><br />
+<code>#include &quot;llvm/IR/MDBuilder.h&quot;</code><br />
+<code>#include &quot;llvm/IR/Metadata.h&quot;</code><br />
+<code>#include &quot;llvm/Pass.h&quot;</code><br />
+<code>#include &quot;llvm/Support/CommandLine.h&quot;</code><br />
+<code>#include &quot;llvm/Support/Debug.h&quot;</code><br />
+<code>#include &quot;llvm/Transforms/Scalar.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LowerExpectIntrinsic.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="LowerExpectIntrinsic_8cpp__incl.png" border="0" usemap="#alib_2Transforms_2Scalar_2LowerExpectIntrinsic_8cpp" alt=""/></div>
+<map name="alib_2Transforms_2Scalar_2LowerExpectIntrinsic_8cpp" id="alib_2Transforms_2Scalar_2LowerExpectIntrinsic_8cpp">
+<area shape="rect" title=" " alt="" coords="1381,5,1569,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,179,133"/>
+<area shape="rect" title=" " alt="" coords="203,101,378,126"/>
+<area shape="rect" title=" " alt="" coords="402,101,553,126"/>
+<area shape="rect" title=" " alt="" coords="577,101,767,126"/>
+<area shape="rect" title=" " alt="" coords="792,101,947,126"/>
+<area shape="rect" title=" " alt="" coords="971,101,1120,126"/>
+<area shape="rect" title=" " alt="" coords="1144,101,1283,126"/>
+<area shape="rect" title=" " alt="" coords="1307,101,1467,126"/>
+<area shape="rect" title=" " alt="" coords="1491,101,1634,126"/>
+<area shape="rect" title=" " alt="" coords="1658,101,1827,126"/>
+<area shape="rect" title=" " alt="" coords="1851,101,2002,126"/>
+<area shape="rect" title=" " alt="" coords="2027,101,2173,126"/>
+<area shape="rect" title=" " alt="" coords="2197,101,2293,126"/>
+<area shape="rect" title=" " alt="" coords="2318,101,2533,126"/>
+<area shape="rect" title=" " alt="" coords="2557,101,2720,126"/>
+<area shape="rect" title=" " alt="" coords="2745,101,2927,126"/>
+</map>
 </div>
 </div>
 <p><a href="LowerExpectIntrinsic_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -88,29 +106,26 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a84c8c3ba81c1ae4709aef0242323c499"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#a84c8c3ba81c1ae4709aef0242323c499">STATISTIC</a> (ExpectIntrinsicsHandled, &quot;Number of 'expect' intrinsic <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> handled&quot;)</td></tr>
+<tr class="memitem:a84c8c3ba81c1ae4709aef0242323c499"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#a84c8c3ba81c1ae4709aef0242323c499">STATISTIC</a> (ExpectIntrinsicsHandled, &quot;Number of 'expect' intrinsic <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> handled&quot;)</td></tr>
 <tr class="separator:a84c8c3ba81c1ae4709aef0242323c499"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab61a60817533b84f369d2623e0593ec7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#ab61a60817533b84f369d2623e0593ec7">handleSwitchExpect</a> (<a class="el" href="classllvm_1_1SwitchInst.html">SwitchInst</a> &amp;<a class="el" href="SIInstrInfo_8cpp.html#a0dfd55eaf0bcb495f09ecf8c55b256b2a6cbe5ff42f143903e1c67abf94613791">SI</a>)</td></tr>
+<tr class="memitem:a5dea1c0620a626500f2f35ddeee37f8f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#a5dea1c0620a626500f2f35ddeee37f8f">LikelyBranchWeight</a> (&quot;likely-branch-weight&quot;, cl::Hidden, cl::init(2000), cl::desc(&quot;Weight of the branch likely to be taken (default = 2000)&quot;))</td></tr>
+<tr class="separator:a5dea1c0620a626500f2f35ddeee37f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80448c6f7d118bce65678f1c9566bed0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#a80448c6f7d118bce65678f1c9566bed0">UnlikelyBranchWeight</a> (&quot;unlikely-branch-weight&quot;, cl::Hidden, cl::init(1), cl::desc(&quot;Weight of the branch unlikely to be taken (default = 1)&quot;))</td></tr>
+<tr class="separator:a80448c6f7d118bce65678f1c9566bed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab61a60817533b84f369d2623e0593ec7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#ab61a60817533b84f369d2623e0593ec7">handleSwitchExpect</a> (SwitchInst &amp;SI)</td></tr>
 <tr class="separator:ab61a60817533b84f369d2623e0593ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea5dd05a61257355d99f96d8d6dc9f94"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#aea5dd05a61257355d99f96d8d6dc9f94">handlePhiDef</a> (<a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *Expect)</td></tr>
+<tr class="memitem:aea5dd05a61257355d99f96d8d6dc9f94"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#aea5dd05a61257355d99f96d8d6dc9f94">handlePhiDef</a> (CallInst *Expect)</td></tr>
 <tr class="memdesc:aea5dd05a61257355d99f96d8d6dc9f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler for PHINodes that define the value argument to an @llvm.expect call.  <a href="LowerExpectIntrinsic_8cpp.html#aea5dd05a61257355d99f96d8d6dc9f94">More...</a><br /></td></tr>
 <tr class="separator:aea5dd05a61257355d99f96d8d6dc9f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ac9067dc7c125cd83855df3e480e04c"><td class="memTemplParams" colspan="2">template&lt;class BrSelInst &gt; </td></tr>
-<tr class="memitem:a6ac9067dc7c125cd83855df3e480e04c"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#a6ac9067dc7c125cd83855df3e480e04c">handleBrSelExpect</a> (BrSelInst &amp;BSI)</td></tr>
+<tr class="memitem:a6ac9067dc7c125cd83855df3e480e04c"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#a6ac9067dc7c125cd83855df3e480e04c">handleBrSelExpect</a> (BrSelInst &amp;BSI)</td></tr>
 <tr class="separator:a6ac9067dc7c125cd83855df3e480e04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a390dfaf67ef6d58f12f5a19ee938c60f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#a390dfaf67ef6d58f12f5a19ee938c60f">handleBranchExpect</a> (<a class="el" href="classllvm_1_1BranchInst.html">BranchInst</a> &amp;BI)</td></tr>
+<tr class="memitem:a390dfaf67ef6d58f12f5a19ee938c60f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#a390dfaf67ef6d58f12f5a19ee938c60f">handleBranchExpect</a> (BranchInst &amp;BI)</td></tr>
 <tr class="separator:a390dfaf67ef6d58f12f5a19ee938c60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2fd6546e0f1cc42311962f4ad4b29cd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#ad2fd6546e0f1cc42311962f4ad4b29cd">lowerExpectIntrinsic</a> (<a class="el" href="classllvm_1_1Function.html">Function</a> &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
+<tr class="memitem:ad2fd6546e0f1cc42311962f4ad4b29cd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#ad2fd6546e0f1cc42311962f4ad4b29cd">lowerExpectIntrinsic</a> (Function &amp;<a class="el" href="MD5_8cpp.html#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</td></tr>
 <tr class="separator:ad2fd6546e0f1cc42311962f4ad4b29cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a674f7929c2b3901ebf25494b31c97f2d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#a674f7929c2b3901ebf25494b31c97f2d">INITIALIZE_PASS</a> (LowerExpectIntrinsic, &quot;lower-expect&quot;, &quot;Lower 'expect' Intrinsics&quot;, false, false) <a class="el" href="classllvm_1_1FunctionPass.html">FunctionPass</a> *llvm</td></tr>
+<tr class="memitem:a674f7929c2b3901ebf25494b31c97f2d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#a674f7929c2b3901ebf25494b31c97f2d">INITIALIZE_PASS</a> (LowerExpectIntrinsic, &quot;lower-expect&quot;, &quot;Lower 'expect' Intrinsics&quot;, false, false) FunctionPass *llvm</td></tr>
 <tr class="separator:a674f7929c2b3901ebf25494b31c97f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:aae93c90b6047163d33af8cc1bd57a193"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classuint32__t.html">uint32_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#aae93c90b6047163d33af8cc1bd57a193">LikelyBranchWeight</a> (&quot;likely-branch-weight&quot;, cl::Hidden, cl::init(2000), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Weight of the branch likely to be taken (default = 2000)&quot;))</td></tr>
-<tr class="separator:aae93c90b6047163d33af8cc1bd57a193"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a351a1280d0bfece4f72e806eba12d284"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classuint32__t.html">uint32_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LowerExpectIntrinsic_8cpp.html#a351a1280d0bfece4f72e806eba12d284">UnlikelyBranchWeight</a> (&quot;unlikely-branch-weight&quot;, cl::Hidden, cl::init(1), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Weight of the branch unlikely to be taken (default = 1)&quot;))</td></tr>
-<tr class="separator:a351a1280d0bfece4f72e806eba12d284"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad78e062f62e0d6e453941fb4ca843e4d" name="ad78e062f62e0d6e453941fb4ca843e4d"></a>
@@ -140,9 +155,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> handleBranchExpect </td>
+          <td class="memname">static bool handleBranchExpect </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1BranchInst.html">BranchInst</a> &amp;&#160;</td>
+          <td class="paramtype">BranchInst &amp;&#160;</td>
           <td class="paramname"><em>BI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -155,8 +170,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00299">299</a> of file <a class="el" href="LowerExpectIntrinsic_8cpp_source.html">LowerExpectIntrinsic.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Instructions_8h_source.html#l03043">llvm::BranchInst::isUnconditional()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00306">lowerExpectIntrinsic()</a>.</p>
 
@@ -174,7 +187,7 @@ template&lt;class BrSelInst &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> handleBrSelExpect </td>
+          <td class="memname">static bool handleBrSelExpect </td>
           <td>(</td>
           <td class="paramtype">BrSelInst &amp;&#160;</td>
           <td class="paramname"><em>BSI</em></td><td>)</td>
@@ -190,7 +203,7 @@ template&lt;class BrSelInst &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00232">232</a> of file <a class="el" href="LowerExpectIntrinsic_8cpp_source.html">LowerExpectIntrinsic.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MDBuilder_8cpp_source.html#l00037">llvm::MDBuilder::createBranchWeights()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="Constants_8h_source.html#l00142">llvm::ConstantInt::getBitWidth()</a>, <a class="el" href="InstrTypes_8h_source.html#l01287">llvm::CallBase::getCalledFunction()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="Function_8h_source.html#l00193">llvm::Function::getIntrinsicID()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="InstrTypes_8h_source.html#l00807">llvm::CmpInst::getPredicate()</a>, <a class="el" href="Constants_8h_source.html#l00148">llvm::ConstantInt::getZExtValue()</a>, <a class="el" href="InstrTypes_8h_source.html#l00753">llvm::CmpInst::ICMP_EQ</a>, <a class="el" href="InstrTypes_8h_source.html#l00754">llvm::CmpInst::ICMP_NE</a>, <a class="el" href="LowerExpectIntrinsic_8cpp.html#aae93c90b6047163d33af8cc1bd57a193">LikelyBranchWeight</a>, <a class="el" href="LLVMContext_8h_source.html#l00077">llvm::LLVMContext::MD_prof</a>, <a class="el" href="User_8h_source.html#l00174">llvm::User::setOperand()</a>, and <a class="el" href="LowerExpectIntrinsic_8cpp.html#a351a1280d0bfece4f72e806eba12d284">UnlikelyBranchWeight</a>.</p>
+<p class="reference">References <a class="el" href="LowerExpectIntrinsic_8cpp.html#a5dea1c0620a626500f2f35ddeee37f8f">LikelyBranchWeight()</a>, and <a class="el" href="LowerExpectIntrinsic_8cpp.html#a80448c6f7d118bce65678f1c9566bed0">UnlikelyBranchWeight()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00306">lowerExpectIntrinsic()</a>.</p>
 
@@ -208,7 +221,7 @@ template&lt;class BrSelInst &gt; </div>
         <tr>
           <td class="memname">static void handlePhiDef </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1CallInst.html">CallInst</a> *&#160;</td>
+          <td class="paramtype">CallInst *&#160;</td>
           <td class="paramname"><em>Expect</em></td><td>)</td>
           <td></td>
         </tr>
@@ -225,7 +238,7 @@ template&lt;class BrSelInst &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00093">93</a> of file <a class="el" href="LowerExpectIntrinsic_8cpp_source.html">LowerExpectIntrinsic.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="AMDGPULibCalls_8cpp_source.html#l00230">Arg</a>, <a class="el" href="MDBuilder_8cpp_source.html#l00037">llvm::MDBuilder::createBranchWeights()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="InstrTypes_8h_source.html#l00402">llvm::BinaryOperator::getOpcode()</a>, <a class="el" href="User_8h_source.html#l00169">llvm::User::getOperand()</a>, <a class="el" href="BasicBlock_8h_source.html#l00106">llvm::BasicBlock::getParent()</a>, <a class="el" href="IR_2Instruction_8h_source.html#l00066">llvm::Instruction::getParent()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00233">llvm::BasicBlock::getSinglePredecessor()</a>, <a class="el" href="Instructions_8h_source.html#l03058">llvm::BranchInst::getSuccessor()</a>, <a class="el" href="BasicBlock_8cpp_source.html#l00137">llvm::BasicBlock::getTerminator()</a>, <a class="el" href="Constants_8h_source.html#l00137">llvm::ConstantInt::getValue()</a>, <a class="el" href="Instructions_8h_source.html#l03044">llvm::BranchInst::isConditional()</a>, <a class="el" href="Instructions_8h_source.html#l03043">llvm::BranchInst::isUnconditional()</a>, <a class="el" href="LowerExpectIntrinsic_8cpp.html#aae93c90b6047163d33af8cc1bd57a193">LikelyBranchWeight</a>, <a class="el" href="llvm_2Support_2ErrorHandling_8h_source.html#l00135">llvm_unreachable</a>, <a class="el" href="LLVMContext_8h_source.html#l00077">llvm::LLVMContext::MD_prof</a>, <a class="el" href="SmallVector_8h_source.html#l00211">llvm::SmallVectorTemplateBase&lt; T, bool &gt;::push_back()</a>, <a class="el" href="STLExtras_8h_source.html#l00273">llvm::reverse()</a>, <a class="el" href="Metadata_8cpp_source.html#l01222">llvm::Instruction::setMetadata()</a>, and <a class="el" href="LowerExpectIntrinsic_8cpp.html#a351a1280d0bfece4f72e806eba12d284">UnlikelyBranchWeight</a>.</p>
+<p class="reference">References <a class="el" href="LowerExpectIntrinsic_8cpp.html#a5dea1c0620a626500f2f35ddeee37f8f">LikelyBranchWeight()</a>, and <a class="el" href="LowerExpectIntrinsic_8cpp.html#a80448c6f7d118bce65678f1c9566bed0">UnlikelyBranchWeight()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00306">lowerExpectIntrinsic()</a>.</p>
 
@@ -241,9 +254,9 @@ template&lt;class BrSelInst &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> handleSwitchExpect </td>
+          <td class="memname">static bool handleSwitchExpect </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1SwitchInst.html">SwitchInst</a> &amp;&#160;</td>
+          <td class="paramtype">SwitchInst &amp;&#160;</td>
           <td class="paramname"><em>SI</em></td><td>)</td>
           <td></td>
         </tr>
@@ -257,7 +270,7 @@ template&lt;class BrSelInst &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00056">56</a> of file <a class="el" href="LowerExpectIntrinsic_8cpp_source.html">LowerExpectIntrinsic.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="MDBuilder_8cpp_source.html#l00037">llvm::MDBuilder::createBranchWeights()</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="InstrTypes_8h_source.html#l01287">llvm::CallBase::getCalledFunction()</a>, <a class="el" href="Instructions_8h_source.html#l03190">llvm::SwitchInst::CaseHandleImpl&lt; SwitchInstT, ConstantIntT, BasicBlockT &gt;::getCaseIndex()</a>, <a class="el" href="Value_8cpp_source.html#l00732">llvm::Value::getContext()</a>, <a class="el" href="Function_8h_source.html#l00193">llvm::Function::getIntrinsicID()</a>, <a class="el" href="LowerExpectIntrinsic_8cpp.html#aae93c90b6047163d33af8cc1bd57a193">LikelyBranchWeight</a>, <a class="el" href="LLVMContext_8h_source.html#l00077">llvm::LLVMContext::MD_prof</a>, <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>, and <a class="el" href="LowerExpectIntrinsic_8cpp.html#a351a1280d0bfece4f72e806eba12d284">UnlikelyBranchWeight</a>.</p>
+<p class="reference">References <a class="el" href="LowerExpectIntrinsic_8cpp.html#a5dea1c0620a626500f2f35ddeee37f8f">LikelyBranchWeight()</a>, and <a class="el" href="LowerExpectIntrinsic_8cpp.html#a80448c6f7d118bce65678f1c9566bed0">UnlikelyBranchWeight()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00306">lowerExpectIntrinsic()</a>.</p>
 
@@ -311,8 +324,8 @@ template&lt;class BrSelInst &gt; </div>
 
 </div>
 </div>
-<a id="ad2fd6546e0f1cc42311962f4ad4b29cd" name="ad2fd6546e0f1cc42311962f4ad4b29cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2fd6546e0f1cc42311962f4ad4b29cd">&#9670;&nbsp;</a></span>lowerExpectIntrinsic()</h2>
+<a id="a5dea1c0620a626500f2f35ddeee37f8f" name="a5dea1c0620a626500f2f35ddeee37f8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dea1c0620a626500f2f35ddeee37f8f">&#9670;&nbsp;</a></span>LikelyBranchWeight()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -321,68 +334,7 @@ template&lt;class BrSelInst &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classbool.html">bool</a> lowerExpectIntrinsic </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classllvm_1_1Function.html">Function</a> &amp;&#160;</td>
-          <td class="paramname"><em>F</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00306">306</a> of file <a class="el" href="LowerExpectIntrinsic_8cpp_source.html">LowerExpectIntrinsic.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="IR_2Instruction_8cpp_source.html#l00067">llvm::Instruction::eraseFromParent()</a>, <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="InstrTypes_8h_source.html#l01241">llvm::CallBase::getArgOperand()</a>, <a class="el" href="InstrTypes_8h_source.html#l01287">llvm::CallBase::getCalledFunction()</a>, <a class="el" href="Function_8h_source.html#l00193">llvm::Function::getIntrinsicID()</a>, <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00299">handleBranchExpect()</a>, <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00232">handleBrSelExpect()</a>, <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00093">handlePhiDef()</a>, <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00056">handleSwitchExpect()</a>, <a class="el" href="Value_8cpp_source.html#l00429">llvm::Value::replaceAllUsesWith()</a>, and <a class="el" href="SIInstrInfo_8cpp_source.html#l06142">SI</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00350">llvm::LowerExpectIntrinsicPass::run()</a>.</p>
-
-</div>
-</div>
-<a id="a84c8c3ba81c1ae4709aef0242323c499" name="a84c8c3ba81c1ae4709aef0242323c499"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84c8c3ba81c1ae4709aef0242323c499">&#9670;&nbsp;</a></span>STATISTIC()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">STATISTIC </td>
-          <td>(</td>
-          <td class="paramtype">ExpectIntrinsicsHandled&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&quot;Number of 'expect' intrinsic <a class="el" href="InstructionSelect_8cpp.html#a474a9c43838a295e112a1f8864e03813">instructions</a> handled&quot;&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="aae93c90b6047163d33af8cc1bd57a193" name="aae93c90b6047163d33af8cc1bd57a193"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae93c90b6047163d33af8cc1bd57a193">&#9670;&nbsp;</a></span>LikelyBranchWeight</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classuint32__t.html">uint32_t</a> &gt; LikelyBranchWeight(&quot;likely-branch-weight&quot;, cl::Hidden, cl::init(2000), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Weight of the branch likely to be taken (default = 2000)&quot;)) </td>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; uint32_t &gt; LikelyBranchWeight </td>
           <td>(</td>
           <td class="paramtype">&quot;likely-branch-weight&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -402,7 +354,7 @@ template&lt;class BrSelInst &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Weight of the branch likely to be taken (default = 2000)&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;Weight of the branch likely to be taken (default = 2000)&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -422,8 +374,8 @@ template&lt;class BrSelInst &gt; </div>
 
 </div>
 </div>
-<a id="a351a1280d0bfece4f72e806eba12d284" name="a351a1280d0bfece4f72e806eba12d284"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a351a1280d0bfece4f72e806eba12d284">&#9670;&nbsp;</a></span>UnlikelyBranchWeight</h2>
+<a id="ad2fd6546e0f1cc42311962f4ad4b29cd" name="ad2fd6546e0f1cc42311962f4ad4b29cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2fd6546e0f1cc42311962f4ad4b29cd">&#9670;&nbsp;</a></span>lowerExpectIntrinsic()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -432,7 +384,65 @@ template&lt;class BrSelInst &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classllvm_1_1cl_1_1opt.html">cl::opt</a>&lt; <a class="el" href="classuint32__t.html">uint32_t</a> &gt; UnlikelyBranchWeight(&quot;unlikely-branch-weight&quot;, cl::Hidden, cl::init(1), <a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Weight of the branch unlikely to be taken (default = 1)&quot;)) </td>
+          <td class="memname">static bool lowerExpectIntrinsic </td>
+          <td>(</td>
+          <td class="paramtype">Function &amp;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00306">306</a> of file <a class="el" href="LowerExpectIntrinsic_8cpp_source.html">LowerExpectIntrinsic.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MD5_8cpp_source.html#l00055">F</a>, <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00299">handleBranchExpect()</a>, <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00232">handleBrSelExpect()</a>, <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00093">handlePhiDef()</a>, and <a class="el" href="LowerExpectIntrinsic_8cpp_source.html#l00056">handleSwitchExpect()</a>.</p>
+
+</div>
+</div>
+<a id="a84c8c3ba81c1ae4709aef0242323c499" name="a84c8c3ba81c1ae4709aef0242323c499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84c8c3ba81c1ae4709aef0242323c499">&#9670;&nbsp;</a></span>STATISTIC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">STATISTIC </td>
+          <td>(</td>
+          <td class="paramtype">ExpectIntrinsicsHandled&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;Number of 'expect' intrinsic <a class="el" href="InstructionCombining_8cpp.html#a9360db2a972441c49cdbbabb5b20cc27">instructions</a> handled&quot;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a80448c6f7d118bce65678f1c9566bed0" name="a80448c6f7d118bce65678f1c9566bed0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80448c6f7d118bce65678f1c9566bed0">&#9670;&nbsp;</a></span>UnlikelyBranchWeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="PGOMemOPSizeOpt_8cpp.html#a9d9e3af0f29b78d5b6eae235741fbcbb">cl::opt</a>&lt; uint32_t &gt; UnlikelyBranchWeight </td>
           <td>(</td>
           <td class="paramtype">&quot;unlikely-branch-weight&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -452,7 +462,7 @@ template&lt;class BrSelInst &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structllvm_1_1cl_1_1desc.html">cl::desc</a>(&quot;Weight of the branch unlikely to be taken (default = 1)&quot;)&#160;</td>
+          <td class="paramtype">cl::desc(&quot;Weight of the branch unlikely to be taken (default = 1)&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -475,7 +485,7 @@ template&lt;class BrSelInst &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:23 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:45 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>

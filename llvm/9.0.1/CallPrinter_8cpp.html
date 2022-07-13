@@ -57,13 +57,19 @@ $(function() {
   <div class="headertitle"><div class="title">CallPrinter.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="CallPrinter_8h_source.html">llvm/Analysis/CallPrinter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CallGraph_8h_source.html">llvm/Analysis/CallGraph.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DOTGraphTraitsPass_8h_source.html">llvm/Analysis/DOTGraphTraitsPass.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;llvm/Analysis/CallPrinter.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/CallGraph.h&quot;</code><br />
+<code>#include &quot;llvm/Analysis/DOTGraphTraitsPass.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for CallPrinter.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="CallPrinter_8cpp__incl.png" border="0" usemap="#alib_2Analysis_2CallPrinter_8cpp" alt=""/></div>
+<map name="alib_2Analysis_2CallPrinter_8cpp" id="alib_2Analysis_2CallPrinter_8cpp">
+<area shape="rect" title=" " alt="" coords="221,5,415,31"/>
+<area shape="rect" title=" " alt="" coords="5,86,199,111"/>
+<area shape="rect" title=" " alt="" coords="223,86,413,111"/>
+<area shape="rect" title=" " alt="" coords="438,79,654,119"/>
+</map>
 </div>
 </div>
 <p><a href="CallPrinter_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -78,12 +84,11 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
-<tr class="memdesc:namespacellvm"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents lattice values for constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a89869b22336646d05a04adf18733c2c1"><td class="memItemLeft" align="right" valign="top">INITIALIZE_PASS(CallGraphViewer, &quot;view-callgraph&quot;, &quot;View call graph&quot;, false, false) <a class="el" href="classchar.html">char</a> CallGraphDOTPrinter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallPrinter_8cpp.html#a89869b22336646d05a04adf18733c2c1">INITIALIZE_PASS</a> (CallGraphDOTPrinter, &quot;dot-callgraph&quot;, &quot;Print call <a class="el" href="GraphWriter_8h.html#a89977f015078f369e5f78938fa625536">graph</a> to '<a class="el" href="GraphWriter_8h.html#a5d1f2256d166c5b53232dc63951ac2d6">dot</a>' file&quot;, false, false) <a class="el" href="classllvm_1_1ModulePass.html">ModulePass</a> *llvm</td></tr>
+<tr class="memitem:a89869b22336646d05a04adf18733c2c1"><td class="memItemLeft" align="right" valign="top">INITIALIZE_PASS(CallGraphViewer, &quot;view-callgraph&quot;, &quot;View call graph&quot;, false, false) char CallGraphDOTPrinter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallPrinter_8cpp.html#a89869b22336646d05a04adf18733c2c1">INITIALIZE_PASS</a> (CallGraphDOTPrinter, &quot;dot-callgraph&quot;, &quot;Print call <a class="el" href="CallGraph_8cpp.html#a016230b7988939e72659c0af84ce5aad">graph</a> to 'dot' file&quot;, false, false) ModulePass *llvm</td></tr>
 <tr class="separator:a89869b22336646d05a04adf18733c2c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -94,7 +99,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">INITIALIZE_PASS(CallGraphViewer, &quot;view-callgraph&quot;, &quot;View call graph&quot;, false, false) <a class="el" href="classchar.html">char</a> CallGraphDOTPrinter INITIALIZE_PASS </td>
+          <td class="memname">INITIALIZE_PASS(CallGraphViewer, &quot;view-callgraph&quot;, &quot;View call graph&quot;, false, false) char CallGraphDOTPrinter INITIALIZE_PASS </td>
           <td>(</td>
           <td class="paramtype">CallGraphDOTPrinter&#160;</td>
           <td class="paramname">, </td>
@@ -108,7 +113,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Print call <a class="el" href="GraphWriter_8h.html#a89977f015078f369e5f78938fa625536">graph</a> to '<a class="el" href="GraphWriter_8h.html#a5d1f2256d166c5b53232dc63951ac2d6">dot</a>' file&quot;&#160;</td>
+          <td class="paramtype">&quot;Print call <a class="el" href="CallGraph_8cpp.html#a016230b7988939e72659c0af84ce5aad">graph</a> to 'dot' file&quot;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -138,7 +143,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 13 2022 11:25:11 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+Generated on Wed Jul 13 2022 12:44:43 for LLVM by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
 </small></address>
 </body>
 </html>
