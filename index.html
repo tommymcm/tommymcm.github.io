@@ -100,34 +100,7 @@
           <strong>Research</strong>
         </h2>
 
-                        <!-- PAPER -->
-        <h3>
-          Getting a Handle on Unmanaged Memory
-        </h3>
-        <label for="sn-memoir" class="sidenote-toggle">Click me for more details...</label>
-        <input type="checkbox" id="sn-noelle" class="sidenote-toggle">
-        <p>
-          <em class="authors">
-            Nick Wanninger, <b>Tommy McMichen</b>, Simone Campanoni, and Peter Dinda
-          </em>
-          <br>
-          <a href="https://www.asplos-conference.org/asplos2024/" target="_blank">
-            <span class="conference">
-              ASPLOS 2024
-            </span>
-          </a>
-          <br>
-          The inability to relocate objects in unmanaged languages brings with it a menagerie of problems.
-          Perhaps the most impactful is memory fragmentation, which has long plagued applications such as databases and web servers.
-          These issues either fester or require Herculean programmer effort to address on a per-application basis because, in general, heap objects cannot be moved in unmanaged languages.
-          In contrast, managed languages like C# cleanly address fragmentation through the use of compacting garbage collection techniques built upon heap object movement.
-          In this work, we bridge this gap between unmanaged and managed languages through the use of <em>handles</em>, a level of indirection allowing heap object movement.
-          Handles open the door to seamlessly employ runtime features from managed languages in existing, unmodified code written in unmanaged languages.
-          We describe a new compiler and runtime system, <span class="sc">Alaska</span>, which automatically transforms pointer-based code to utilize handles, with optimizations to reduce performance impact.
-          A codesigned runtime system manages this level of indirection and exploits heap object movement via an extensible service interface.
-          We evaluate one such service, which eliminates fragmentation on the heap via compaction, reducing memory usage by up to 40% in Redis.
-        </p>
-
+        
 
         <!-- PAPER -->
         <h3>
@@ -172,6 +145,35 @@
           At its core, <span class="sc">MemOIR</span> decouples the memory used to <em>store data</em> from the memory used to <em>logically organize data</em>.
           We use <span class="cs">MemOIR</span> to explore novel static analyses and transformations of collections at the element-level.
         </p>
+
+        <!-- PAPER -->
+        <h3>
+          Getting a Handle on Unmanaged Memory
+        </h3>
+        <label for="sn-memoir" class="sidenote-toggle">Click me for more details...</label>
+        <input type="checkbox" id="sn-noelle" class="sidenote-toggle">
+        <p>
+          <em class="authors">
+            Nick Wanninger, <b>Tommy McMichen</b>, Simone Campanoni, and Peter Dinda
+          </em>
+          <br>
+          <a href="https://www.asplos-conference.org/asplos2024/" target="_blank">
+            <span class="conference">
+              ASPLOS 2024
+            </span>
+          </a>
+          <br>
+          The inability to relocate objects in unmanaged languages brings with it a menagerie of problems.
+          Perhaps the most impactful is memory fragmentation, which has long plagued applications such as databases and web servers.
+          These issues either fester or require Herculean programmer effort to address on a per-application basis because, in general, heap objects cannot be moved in unmanaged languages.
+          In contrast, managed languages like C# cleanly address fragmentation through the use of compacting garbage collection techniques built upon heap object movement.
+          In this work, we bridge this gap between unmanaged and managed languages through the use of <em>handles</em>, a level of indirection allowing heap object movement.
+          Handles open the door to seamlessly employ runtime features from managed languages in existing, unmodified code written in unmanaged languages.
+          We describe a new compiler and runtime system, <span class="sc">Alaska</span>, which automatically transforms pointer-based code to utilize handles, with optimizations to reduce performance impact.
+          A codesigned runtime system manages this level of indirection and exploits heap object movement via an extensible service interface.
+          We evaluate one such service, which eliminates fragmentation on the heap via compaction, reducing memory usage by up to 40% in Redis.
+        </p>
+
         
         <!-- PAPER -->
         <h3>
