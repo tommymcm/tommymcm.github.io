@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Fork of Git Repo - Tommy McMichen</title>
+
+  <!-- LaTeX.css -->
+  <link rel="stylesheet" href="/assets/css/latex.css/style.css">
+  
+  <!-- prism -->
+  <link rel="stylesheet" href="/assets/css/prismjs/prism.css">
+
+  <!-- MathJax -->
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+
+  <!-- Customizations -->
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml">
+  
+</head>
+<body class="libertinus">
+
+  <header class="sticky-top">
+  <details>
+    <summary>
+      <font size="4em">
+        ☰
+      </font>
+    </summary>
+    <nav>
+      <a href="/" class="nav-item">Home</a>
+      <a href="/research/" class="nav-item">Research</a>
+      <a href="/cv/" class="nav-item">C/V</a>
+      <!-- <a href="/talks/" class="nav-item">Talks</a> -->
+      <!-- <a href="/teaching/" class="nav-item">Teaching</a> -->
+      <a href="/posts/" class="nav-item">Blog</a>
+      <a href="/memoir" class="nav-item">MEMOIR</a>
+    </nav>
+  </details>
+
+  <center>
+    <nav class="desktop-nav">
+      <a href="/" class="nav-item">Home</a>
+      <a href="/research/" class="nav-item">Research</a>
+      <a href="/cv/" class="nav-item">C/V</a>
+      <!-- <a href="/talks/" class="nav-item">Talks</a> -->
+      <!-- <a href="/teaching/" class="nav-item">Teaching</a> -->
+      <a href="/posts/" class="nav-item">Blog</a>
+      <a href="/memoir" class="nav-item">MEMOIR</a>
+    </nav>      
+  </center>
+</header>
+
+
+  <main>
+    <article>
+  <h1>Private Fork of Git Repo</h1>
+  
+  
+<p>I find myself creating a private fork of public repositories rather frequently.
+There are a variety of benefits to this over just create a public fork and working there, but that's not what this post is about.
+I have found two solutions to this problem, which I will go over in this post.</p>
+<h2><code>git-private-fork</code></h2>
+<p>The first solution works when making a private fork of any git repository:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Clone the version control data of the public repository.</span>
+<span class="token function">git</span> clone <span class="token parameter variable">--bare</span> <span class="token variable">${PUBLIC_REPO}</span> <span class="token variable">${PUBLIC_REPO_DIR}</span>
+
+<span class="token comment"># Enter the cloned directory</span>
+<span class="token builtin class-name">cd</span> <span class="token variable">${PUBLIC_REPO_DIR}</span>
+
+<span class="token comment"># Push an exact copy of the git repository.</span>
+<span class="token function">git</span> push <span class="token parameter variable">--mirror</span> <span class="token variable">${PRIVATE_REPO}</span>
+
+<span class="token comment"># Leave the cloned directory</span>
+<span class="token function">popd</span>
+
+<span class="token comment"># Clean up.</span>
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> <span class="token variable">${PUBLIC_REPO_DIR}</span>
+
+<span class="token function">git</span> clone <span class="token variable">${PRIVATE_REPO}</span> <span class="token variable">${PRIVATE_REPO_DIR}</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-z</span> <span class="token variable">${SET_UPSTREAM+x}</span> <span class="token punctuation">]</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token function">pushd</span> <span class="token variable">${PRIVATE_REPO_DIR}</span>
+    <span class="token function">git</span> remote <span class="token function">add</span> upstream <span class="token variable">${PUBLIC_REPO}</span>
+    <span class="token function">git</span> remote set-url <span class="token parameter variable">--push</span> upstream DISABLE
+    <span class="token function">popd</span>
+<span class="token keyword">fi</span></code></pre>
+<p>I will usually go ahead and set the public repo as my upstream too:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token function">add</span> upstream <span class="token variable">${PUBLIC_REPO}</span>
+<span class="token function">git</span> remote set-url <span class="token parameter variable">--push</span> upstream DISABLE</code></pre>
+<p>You can find this solution with some other little improvements at <a href="https://github.com/tommymcm/git-tools/">github.com/tommymcm/git-tools/</a>.
+Feel free to open any issues/PRs there.</p>
+<h2>GitHub Import</h2>
+<p>There is one known issue though, which comes up when forking rather large repositories (like <code>llvm/llvm-project</code>).
+For large repositories, you may hit single-push limits (2GiB on GitHub).
+I have toyed around with making a general-purpose solution in <code>git-private-fork</code>, but I couldn't ever get one that handled all the edge cases (rate-limits, size-limits, granularity).</p>
+<p>Instead of fixing that, I typically just fallback to importing the repository on GitHub.
+Disclaimer, that I don't know of a solution for other hosts like gitlab or codeberg because I don't use them.
+I'd assume they have a similar feature though.</p>
+<p>To create your private fork by importing, go to <a href="https://github.com/new/import">github.com/new/import</a>.
+It's self explanatory.</p>
+<p>Disclaimer, this is a pretty slow process for large repositories.
+However, it's the perfect thing to run while you go grab lunch, or write a blog post.</p>
+<h2>Acknowledgments</h2>
+<p>I'd like to thank <a href="https://gist.github.com/0xjac">0xjac</a> and <a href="https://gist.github.com/ConfoundingVariables">ConfoundingVariables</a> on GitHub for providing the original solutions in a <a href="https://gist.github.com/0xjac/85097472043b697ab57ba1b1c7530274">Gist</a> and the <a href="https://gist.github.com/0xjac/85097472043b697ab57ba1b1c7530274?permalink_comment_id=4717207#gistcomment-4717207">comments</a>.</p>
+
+  
+</article>
+  </main>
+
+</body>
+</html>

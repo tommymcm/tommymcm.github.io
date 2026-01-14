@@ -10,6 +10,60 @@
     
     
       <item>
+        <title>Private Fork of Git Repo</title>
+        <description>&lt;p&gt;I find myself creating a private fork of public repositories rather frequently.
+There are a variety of benefits to this over just create a public fork and working there, but that&#39;s not what this post is about.
+I have found two solutions to this problem, which I will go over in this post.&lt;/p&gt;
+&lt;h2&gt;&lt;code&gt;git-private-fork&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;The first solution works when making a private fork of any git repository:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Clone the version control data of the public repository.&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone &lt;span class=&quot;token parameter variable&quot;&gt;--bare&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${PUBLIC_REPO}&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${PUBLIC_REPO_DIR}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# Enter the cloned directory&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${PUBLIC_REPO_DIR}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# Push an exact copy of the git repository.&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push &lt;span class=&quot;token parameter variable&quot;&gt;--mirror&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${PRIVATE_REPO}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# Leave the cloned directory&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;popd&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# Clean up.&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-rf&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${PUBLIC_REPO_DIR}&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone &lt;span class=&quot;token variable&quot;&gt;${PRIVATE_REPO}&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${PRIVATE_REPO_DIR}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-z&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${SET_UPSTREAM+x}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;pushd&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${PRIVATE_REPO_DIR}&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; remote &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; upstream &lt;span class=&quot;token variable&quot;&gt;${PUBLIC_REPO}&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; remote set-url &lt;span class=&quot;token parameter variable&quot;&gt;--push&lt;/span&gt; upstream DISABLE
+    &lt;span class=&quot;token function&quot;&gt;popd&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I will usually go ahead and set the public repo as my upstream too:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; remote &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; upstream &lt;span class=&quot;token variable&quot;&gt;${PUBLIC_REPO}&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; remote set-url &lt;span class=&quot;token parameter variable&quot;&gt;--push&lt;/span&gt; upstream DISABLE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can find this solution with some other little improvements at &lt;a href=&quot;https://github.com/tommymcm/git-tools/&quot;&gt;github.com/tommymcm/git-tools/&lt;/a&gt;.
+Feel free to open any issues/PRs there.&lt;/p&gt;
+&lt;h2&gt;GitHub Import&lt;/h2&gt;
+&lt;p&gt;There is one known issue though, which comes up when forking rather large repositories (like &lt;code&gt;llvm/llvm-project&lt;/code&gt;).
+For large repositories, you may hit single-push limits (2GiB on GitHub).
+I have toyed around with making a general-purpose solution in &lt;code&gt;git-private-fork&lt;/code&gt;, but I couldn&#39;t ever get one that handled all the edge cases (rate-limits, size-limits, granularity).&lt;/p&gt;
+&lt;p&gt;Instead of fixing that, I typically just fallback to importing the repository on GitHub.
+Disclaimer, that I don&#39;t know of a solution for other hosts like gitlab or codeberg because I don&#39;t use them.
+I&#39;d assume they have a similar feature though.&lt;/p&gt;
+&lt;p&gt;To create your private fork by importing, go to &lt;a href=&quot;https://github.com/new/import&quot;&gt;github.com/new/import&lt;/a&gt;.
+It&#39;s self explanatory.&lt;/p&gt;
+&lt;p&gt;Disclaimer, this is a pretty slow process for large repositories.
+However, it&#39;s the perfect thing to run while you go grab lunch, or write a blog post.&lt;/p&gt;
+&lt;h2&gt;Acknowledgments&lt;/h2&gt;
+&lt;p&gt;I&#39;d like to thank &lt;a href=&quot;https://gist.github.com/0xjac&quot;&gt;0xjac&lt;/a&gt; and &lt;a href=&quot;https://gist.github.com/ConfoundingVariables&quot;&gt;ConfoundingVariables&lt;/a&gt; on GitHub for providing the original solutions in a &lt;a href=&quot;https://gist.github.com/0xjac/85097472043b697ab57ba1b1c7530274&quot;&gt;Gist&lt;/a&gt; and the &lt;a href=&quot;https://gist.github.com/0xjac/85097472043b697ab57ba1b1c7530274?permalink_comment_id=4717207#gistcomment-4717207&quot;&gt;comments&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <link>https://mcmichen.cc/posts/github-private-fork/</link>
+        <guid>https://mcmichen.cc/posts/github-private-fork/</guid>
+        <pubDate>Wed, 14 Jan 2026 24:00:00 GMT</pubDate>
+      </item>
+    
+      <item>
         <title>Deploying Eleventy site with GitHub Actions</title>
         <description>&lt;p&gt;I recently moved my website from hand-written HTML over to &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;Eleventy&lt;/a&gt;.
 It&#39;s been really nice to work with, the transition process is smooth, and their template system is intuitive.
