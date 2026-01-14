@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Running Out-of-Tree LLVM Passes at LTO - Tommy McMichen</title>
+
+  <!-- LaTeX.css -->
+  <link rel="stylesheet" href="/assets/css/latex.css/style.css">
+  
+  <!-- prism -->
+  <link rel="stylesheet" href="/assets/css/prismjs/prism.css">
+
+  <!-- MathJax -->
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+
+  <!-- Customizations -->
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml">
+  
+</head>
+<body class="libertinus">
+
+  <header class="sticky-top">
+  <details>
+    <summary>
+      <font size="4em">
+        ☰
+      </font>
+    </summary>
+    <nav>
+      <a href="/" class="nav-item">Home</a>
+      <a href="/research/" class="nav-item">Research</a>
+      <a href="/cv/" class="nav-item">C/V</a>
+      <!-- <a href="/talks/" class="nav-item">Talks</a> -->
+      <!-- <a href="/teaching/" class="nav-item">Teaching</a> -->
+      <a href="/posts/" class="nav-item">Blog</a>
+      <a href="/memoir" class="nav-item">MEMOIR</a>
+    </nav>
+  </details>
+
+  <center>
+    <nav class="desktop-nav">
+      <a href="/" class="nav-item">Home</a>
+      <a href="/research/" class="nav-item">Research</a>
+      <a href="/cv/" class="nav-item">C/V</a>
+      <!-- <a href="/talks/" class="nav-item">Talks</a> -->
+      <!-- <a href="/teaching/" class="nav-item">Teaching</a> -->
+      <a href="/posts/" class="nav-item">Blog</a>
+      <a href="/memoir" class="nav-item">MEMOIR</a>
+    </nav>      
+  </center>
+</header>
+
+
+  <main>
+    <article>
+  <h1>Running Out-of-Tree LLVM Passes at LTO</h1>
+  
+  
+<p>I had a long time trying to find the proper way to run LLVM pass plugins at LTO.
+There were a lot of times where I found a solution and it turned out to be flimsy and break under some circumstances, or not fully support all the features I needed.
+This post gives your my solution and concludes with some thoughts about <em>why</em> this solution works.
+If anyone knows that I am correct/wrong please confirm/correct me.
+Otherwise, take the explanation with a grain of salt, I have not extensively tested it.</p>
+<h2>My Solution</h2>
+<p>In the examples, I will use a hypothetical LLVM pass plugin where:</p>
+<ul>
+<li><code>MyPlugin.so</code> is the shared object containing the LLVM pass plugin.</li>
+<li><code>MyPass</code> is the name of a pass in the plugin (registered with the new pass manager).</li>
+<li><code>--my-flag</code> is a compiler flag that is registered in the plugin.</li>
+</ul>
+<p>A typical invocation of this pass using <code>opt</code> would look like:</p>
+<pre class="language-bash"><code class="language-bash">opt -load-pass-plugin<span class="token operator">=</span>MyPlugin.so <span class="token punctuation">\</span>
+    <span class="token parameter variable">-passes</span><span class="token operator">=</span><span class="token string">'MyPass'</span> <span class="token punctuation">\</span>
+    --my-flag <span class="token punctuation">\</span>
+    <span class="token punctuation">..</span>.</code></pre>
+<p>So, if you want to run this pass under the linker, it would look a little different:</p>
+<pre class="language-bash"><code class="language-bash">ld.lld --load-pass-plugin<span class="token operator">=</span>MyPlugin.so <span class="token punctuation">\</span>
+       --lto-newpm-passes<span class="token operator">=</span><span class="token string">'MyPass'</span> <span class="token punctuation">\</span>
+       <span class="token parameter variable">-mllvm</span><span class="token operator">=</span>-load<span class="token operator">=</span>MyPlugin.so <span class="token punctuation">\</span>
+       <span class="token parameter variable">-mllvm</span><span class="token operator">=</span>--my-flag <span class="token punctuation">\</span>
+       <span class="token punctuation">..</span>.</code></pre>
+<p>The above solution comes from an <code>lld</code> test: https://github.com/llvm/llvm-project/blob/main/lld/test/ELF/lto/ltopasses-extension.ll</p>
+<p>So now, let's do the same thing for <code>clang</code> with LTO enabled:</p>
+<pre class="language-bash"><code class="language-bash">clang <span class="token parameter variable">-flto</span><span class="token operator">=</span>full -fuse-ld<span class="token operator">=</span>lld <span class="token punctuation">\</span>
+      -Wl,--load-pass-plugin<span class="token operator">=</span>MyPlugin.so <span class="token punctuation">\</span>
+      -Wl,--lto-newpm-passes<span class="token operator">=</span><span class="token string">'MyPass'</span> <span class="token punctuation">\</span>
+      -Wl,-mllvm<span class="token operator">=</span>-load<span class="token operator">=</span>MyPlugin.so <span class="token punctuation">\</span>
+      -Wl,-mllvm<span class="token operator">=</span>--my-flag <span class="token punctuation">\</span>
+      <span class="token punctuation">..</span>.</code></pre>
+<h2>My Understanding</h2>
+<p>The first <code>-load-pass-plugin=MyPlugin.so</code> loads your pass plugin with lld, which runs pipeline parsing on <code>--lto-newpm-passes='MyPass'</code> to construct the <code>llvm::PassBuilder</code>.
+So, if you did not load your plugin, this would result in an error during parsing.</p>
+<p>The second <code>-mllvm=-load=MyPlugin.so</code> is passed to the actual invocation of the LLVM optimizer, making your pass plugin available internally.
+From my debugging, you only need this <code>-load</code> to populate your flags (e.g., <code>--my-flag</code>), the first <code>-load-pass-plugin</code> is sufficient to run your pass without flags.</p>
+<p>I ran a couple of tests to back up these claims:</p>
+<p>Omitting the first <code>-load-pass-plugin=MyPlugin.so</code>:</p>
+<pre class="language-bash"><code class="language-bash">LLVM ERROR: unable to parse pass pipeline description <span class="token string">'MyPass'</span><span class="token builtin class-name">:</span> unknown pass name <span class="token string">'MyPass'</span></code></pre>
+<p>Omitting the second <code>-mllvm=-load=MyPlugin.so</code>:</p>
+<pre class="language-bash"><code class="language-bash">ld.lld: error: --mllvm: ld.lld: Unknown <span class="token builtin class-name">command</span> line argument <span class="token string">'--my-flag'</span><span class="token builtin class-name">.</span></code></pre>
+<h2>Concluding Remarks</h2>
+<p>LLVM's new pass manager is very {un,under}documented, I will try to share my own experiences with it here when I learn something new.
+If you similarly get something to work, it would be great if you could share it with the community!
+I have found a surprising lack of community notes (blog posts, mailing lists, etc.) about the new pass manager, which is a little concerning.
+There are a lot of &quot;weird&quot; LLVM use cases and a critical mass of documentation is one way we can get around individually debugging the same mechanism ad infinitum.</p>
+
+  
+</article>
+  </main>
+
+</body>
+</html>
