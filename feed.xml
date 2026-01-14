@@ -10,6 +10,60 @@
     
     
       <item>
+        <title>Running Out-of-Tree LLVM Passes at LTO</title>
+        <description>&lt;p&gt;I had a long time trying to find the proper way to run LLVM pass plugins at LTO.
+There were a lot of times where I found a solution and it turned out to be flimsy and break under some circumstances, or not fully support all the features I needed.
+This post gives your my solution and concludes with some thoughts about &lt;em&gt;why&lt;/em&gt; this solution works.
+If anyone knows that I am correct/wrong please confirm/correct me.
+Otherwise, take the explanation with a grain of salt, I have not extensively tested it.&lt;/p&gt;
+&lt;h2&gt;My Solution&lt;/h2&gt;
+&lt;p&gt;In the examples, I will use a hypothetical LLVM pass plugin where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MyPlugin.so&lt;/code&gt; is the shared object containing the LLVM pass plugin.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MyPass&lt;/code&gt; is the name of a pass in the plugin (registered with the new pass manager).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--my-flag&lt;/code&gt; is a compiler flag that is registered in the plugin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A typical invocation of this pass using &lt;code&gt;opt&lt;/code&gt; would look like:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;opt -load-pass-plugin&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;MyPlugin.so &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+    &lt;span class=&quot;token parameter variable&quot;&gt;-passes&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;MyPass&#39;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+    --my-flag &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So, if you want to run this pass under the linker, it would look a little different:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ld.lld --load-pass-plugin&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;MyPlugin.so &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+       --lto-newpm-passes&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;MyPass&#39;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+       &lt;span class=&quot;token parameter variable&quot;&gt;-mllvm&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;-load&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;MyPlugin.so &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+       &lt;span class=&quot;token parameter variable&quot;&gt;-mllvm&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;--my-flag &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+       &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The above solution comes from an &lt;code&gt;lld&lt;/code&gt; test: https://github.com/llvm/llvm-project/blob/main/lld/test/ELF/lto/ltopasses-extension.ll&lt;/p&gt;
+&lt;p&gt;So now, let&#39;s do the same thing for &lt;code&gt;clang&lt;/code&gt; with LTO enabled:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;clang &lt;span class=&quot;token parameter variable&quot;&gt;-flto&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;full -fuse-ld&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;lld &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+      -Wl,--load-pass-plugin&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;MyPlugin.so &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+      -Wl,--lto-newpm-passes&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;MyPass&#39;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+      -Wl,-mllvm&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;-load&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;MyPlugin.so &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+      -Wl,-mllvm&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;--my-flag &lt;span class=&quot;token punctuation&quot;&gt;&#92;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;My Understanding&lt;/h2&gt;
+&lt;p&gt;The first &lt;code&gt;-load-pass-plugin=MyPlugin.so&lt;/code&gt; loads your pass plugin with lld, which runs pipeline parsing on &lt;code&gt;--lto-newpm-passes=&#39;MyPass&#39;&lt;/code&gt; to construct the &lt;code&gt;llvm::PassBuilder&lt;/code&gt;.
+So, if you did not load your plugin, this would result in an error during parsing.&lt;/p&gt;
+&lt;p&gt;The second &lt;code&gt;-mllvm=-load=MyPlugin.so&lt;/code&gt; is passed to the actual invocation of the LLVM optimizer, making your pass plugin available internally.
+From my debugging, you only need this &lt;code&gt;-load&lt;/code&gt; to populate your flags (e.g., &lt;code&gt;--my-flag&lt;/code&gt;), the first &lt;code&gt;-load-pass-plugin&lt;/code&gt; is sufficient to run your pass without flags.&lt;/p&gt;
+&lt;p&gt;I ran a couple of tests to back up these claims:&lt;/p&gt;
+&lt;p&gt;Omitting the first &lt;code&gt;-load-pass-plugin=MyPlugin.so&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;LLVM ERROR: unable to parse pass pipeline description &lt;span class=&quot;token string&quot;&gt;&#39;MyPass&#39;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; unknown pass name &lt;span class=&quot;token string&quot;&gt;&#39;MyPass&#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Omitting the second &lt;code&gt;-mllvm=-load=MyPlugin.so&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ld.lld: error: --mllvm: ld.lld: Unknown &lt;span class=&quot;token builtin class-name&quot;&gt;command&lt;/span&gt; line argument &lt;span class=&quot;token string&quot;&gt;&#39;--my-flag&#39;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Concluding Remarks&lt;/h2&gt;
+&lt;p&gt;LLVM&#39;s new pass manager is very {un,under}documented, I will try to share my own experiences with it here when I learn something new.
+If you similarly get something to work, it would be great if you could share it with the community!
+I have found a surprising lack of community notes (blog posts, mailing lists, etc.) about the new pass manager, which is a little concerning.
+There are a lot of &amp;quot;weird&amp;quot; LLVM use cases and a critical mass of documentation is one way we can get around individually debugging the same mechanism ad infinitum.&lt;/p&gt;
+</description>
+        <link>https://mcmichen.cc/posts/llvm-lto-custom-pass/</link>
+        <guid>https://mcmichen.cc/posts/llvm-lto-custom-pass/</guid>
+        <pubDate>Wed, 14 Jan 2026 24:00:00 GMT</pubDate>
+      </item>
+    
+      <item>
         <title>Private Fork of Git Repo</title>
         <description>&lt;p&gt;I find myself creating a private fork of public repositories rather frequently.
 There are a variety of benefits to this over just create a public fork and working there, but that&#39;s not what this post is about.
