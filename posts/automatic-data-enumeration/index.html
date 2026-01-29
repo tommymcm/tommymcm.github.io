@@ -10,7 +10,7 @@
   
   <!-- prism -->
   <link rel="stylesheet" href="/assets/css/prismjs/prism.css">
-  <link href="/assets/css/prism-gruvbox-light.css" rel="stylesheet" />
+  <link href="/assets/css/prism-latex.css" rel="stylesheet" />
 
   <!-- MathJax -->
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -181,9 +181,12 @@ seen_twice <span class="token operator">=</span> bitset<span class="token punctu
         id_3 <span class="token operator">=</span> enc<span class="token punctuation">(</span>enum_A<span class="token punctuation">,</span> item<span class="token punctuation">)</span>
         seen_twice<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>id_3<span class="token punctuation">)</span> <span class="token comment"># redundant, replace id_3 with id_1</span>
         </code></pre>
-<p>There are more optimization, with full details available in the <a href="/files/papers/ADE_CGO_2026.pdf">paper</a>.</p>
+<p>There are more optimization, with full details available in Section 3 of the <a href="/files/papers/ADE_CGO_2026.pdf">paper</a>.</p>
 <h3>Evaluation</h3>
-<p>So that's all great, but how about the performance results?</p>
+<p>So that's all great, but how about the performance?
+In short, ADE provides significant performance improvements in the majority of our benchmarks.
+While ADE incurs an increase in memory usage for a few cases, we find that the majority of benchmarks experience no memory explosion, with some seeing significant memory savings!
+For a more detailed evaluation on both Intel and ARM machines, along with comparisons to Abseil swiss tables, see Section 5 of the <a href="/files/papers/ADE_CGO_2026.pdf">paper</a>.</p>
 <figure>
 <img src="/assets/images/ADE-speedup-Intel.png" loading="lazy">
 <figcaption>Whole-program speedup of ADE over std::unordered_set.</figcaption>
@@ -192,21 +195,29 @@ seen_twice <span class="token operator">=</span> bitset<span class="token punctu
 <img src="/assets/images/ADE-maxrss-Intel.png" loading="lazy">
 <figcaption>Maximum resident set size of ADE over std::unordered_set.</figcaption>
 </figure>
-<p>Choosing an implementation for each collection is a critical decision, with performance, memory and energy tradeoffs that need to be balanced for each use case.
-Specialized implementations offer significant benefits over their general-purpose counterparts, but also require certain properties of the data they store, such as uniqueness or ordering.
-To employ them, developers must either possess domain knowledge or transform their data to exhibit the desired property, which is a tedious, manual process.
-One such transformation—commonly used in data mining and program analysis—is data enumeration, where data items are assigned unique identifiers to enable fast equality checks and compact memory layout.
-In this paper, we present an automated approach to data enumeration, eliminating the need for manual developer effort.
-Our implementation in the MEMOIR compiler achieves speedups of 2.16× on average (up to 8.72×) and reduces peak memory consumption by 5.6% on average (up to 50.7%).
-This work shows that automated techniques can manufacture data properties to unlock specialized collection implementations, pushing the envelope of collection-oriented optimization.</p>
+<h3>Tuning</h3>
+<p>In addition to fully automatic ADE, we provide ways for users to guide the optimization.
+This lets you enable/disable enumeration for a collection, and prevent/force sharing between collections.
+By overriding the static cost model, users can fine tune data enumeration for their specific application.</p>
+<p>We did a brief case study for LLVM Andersen-style points-to analysis (PTA).
+In short, we identified a case where sharing with a specific collection was detrimental to performance.
+The full details and exploration are in Section 5, RQ4 of the <a href="/files/papers/ADE_CGO_2026.pdf">paper</a>.</p>
+<p>By injecting a single <code>noshare</code> directive, ADE achieved a speedup of <em>78x</em> (13.7x over fully automatic ADE).
+In addition to the performance gains, memory usage (max resident set size) was reduced by <em>71%</em> (compared to 49% reduction with fully automatic ADE).</p>
+<h3>Conclusion</h3>
+<p>Automatic Data Enumeration provides a fully automatic, transparent solution to one class of memory optimization in the compiler.
+With ADE we are able to achieve significant performance improvements without the need for developer input, though tuning can unlock further savings.
+Thanks to MEMOIR, the <a href="https://github.com/arcana-lab/memoir">implementation</a> is straightforward (and <em>fun!</em>).
+I believe that data enumeration is just one of many memory optimizations that can be automated by the compiler, and I hope for a future where developers can trust the compiler to handle most of them.</p>
 <h3>Further Reading</h3>
-<p>For more information, see the paper:</p>
+<p>For more information, see the <a href="/files/papers/ADE_CGO_2026.pdf">paper</a>:</p>
 <pre class="language-tex"><code class="language-tex">@inproceedings<span class="token punctuation">{</span>MEMOIR-ADE:McMichen_Campanoni:2026,
     title=<span class="token punctuation">{</span>Automatic Data Enumeration for Fast Collections<span class="token punctuation">}</span>,
     authors=<span class="token punctuation">{</span>McMichen, Tommy and Campanoni, Simone<span class="token punctuation">}</span>,
     booktitle=<span class="token punctuation">{</span>CGO<span class="token punctuation">}</span>,
     year=<span class="token punctuation">{</span>2026<span class="token punctuation">}</span>,
 <span class="token punctuation">}</span></code></pre>
+<p>To see how we implemented ADE in the MEMOIR compiler, see the <a href="https://github.com/arcana-lab/memoir">open-source repository</a>.</p>
 
   
 </article>

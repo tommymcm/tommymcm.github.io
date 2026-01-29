@@ -10,6 +10,163 @@
     
     
       <item>
+        <title>Automatic Data Enumeration for Fast Collections</title>
+        <description>&lt;p&gt;This post is based on a &lt;a href=&quot;/files/papers/ADE_CGO_2026.pdf&quot;&gt;paper&lt;/a&gt; of the same name, published at CGO 2026.&lt;/p&gt;
+&lt;p&gt;Data collections are everywhere!
+They provide a powerful abstraction to organize data, simplifying software development and maintenance.
+However, choosing how we &lt;em&gt;implement&lt;/em&gt; each collection in our program is critical for both performance and memory usage.&lt;/p&gt;
+&lt;p&gt;While general-purpose data collections (the ones in the C++ STL, Abseil, etc.) provide drop-in replacements for quick performance tuning, the real value comes from &lt;em&gt;specialized&lt;/em&gt; implementations.
+Specialized implementations (bitsets, prefix trees, bloom filters) provide superior performance and memory usage compared to their general-purpose counterparts.
+However, they require additional constraints on the kind of data stored, and the methods used to access them.&lt;/p&gt;
+&lt;p&gt;For example, let&#39;s look at bitsets.
+In this domain, other implementations pale in comparison, as shown in the speedup table below.
+However, a bitset requires dense (or better yet, contiguous), integer keys.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Implementation&lt;/th&gt;
+&lt;th&gt;Insert&lt;/th&gt;
+&lt;th&gt;Remove&lt;/th&gt;
+&lt;th&gt;Union&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;std::unordered_set&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;absl::flat_hash_set&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;1.61&lt;/td&gt;
+&lt;td&gt;0.40&lt;/td&gt;
+&lt;td&gt;1.71&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;boost::dynamic_bitset&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;9.08&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;1.24&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;5817.38&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Those are some pretty nice performance boosts, and if my set is dense enough we&#39;ll get good memory savings too.
+But, what if I&#39;m in a domain that doesn&#39;t have the necessary guarantees to use a bitset?
+Is there any hope for the folks processing non-integer data types, or sparse domains?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The good news:&lt;/em&gt; &lt;strong&gt;There is.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The bad news:&lt;/em&gt; &lt;strong&gt;It&#39;s not free.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Data Enumeration&lt;/h3&gt;
+&lt;p&gt;If we don&#39;t have inherent data properties guaranteed by our domain to rely on, we can instead &lt;strong&gt;engineer the desired property&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Take the following code, which iterates over a list of strings (&lt;code&gt;items&lt;/code&gt;) and prints unique items by tracking duplicates in a set (&lt;code&gt;seen&lt;/code&gt;).&lt;/p&gt;
+&lt;pre class=&quot;language-py&quot;&gt;&lt;code class=&quot;language-py&quot;&gt;items &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;foo&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;bar&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;foo&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+seen &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; item &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; items&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; seen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;has&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;item&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        seen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;insert&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;item&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;item&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If we want to use a &lt;code&gt;bitset&lt;/code&gt; instead of a &lt;code&gt;set&lt;/code&gt;, we can do a bit of transformation (shown below).
+First, we&#39;ll assign unique identifiers to each item and maintain a bidirectional mapping (&lt;code&gt;enc&lt;/code&gt; and &lt;code&gt;dec&lt;/code&gt;) to convert between the ID and the actual data.
+Then, we convert the data stored in our input array to use IDs (&lt;code&gt;items&lt;/code&gt;).
+Now that we are iterating over IDs (which we&#39;ve assigned to be contiguous), we can convert &lt;code&gt;seen&lt;/code&gt; into a bitset.
+Finally, we need to patch up any use that requires the original (the &lt;code&gt;print&lt;/code&gt; statement) by decoding the identifier.
+Et voilà!&lt;/p&gt;
+&lt;pre class=&quot;language-py&quot;&gt;&lt;code class=&quot;language-py&quot;&gt;enc &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;foo&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;bar&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+dec &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;foo&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;    &lt;span class=&quot;token string&quot;&gt;&quot;bar&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+items &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+seen &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; bitset&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; items&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; seen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;has&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        seen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;insert&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        item &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dec&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;item&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We&#39;ve successfully converted our program to use a bitset, instead of a set.
+Now, we can reap the performance and memory benefits!
+Additionally, we can perform comparisons between our items much faster by using their ID instead of the string.&lt;/p&gt;
+&lt;p&gt;However, we&#39;ve gotten ourselves into a bit of a pickle now by applying this manually.
+I have to juggle my IDs and values everywhere in the program.
+Additionally, I need to make &lt;code&gt;enc&lt;/code&gt; and &lt;code&gt;dec&lt;/code&gt; available anywhere that I need to translate between IDs and values.
+Furthermore, I&#39;m left with a bit of a performance headache figuring out if I should use IDs or values in different parts of my program.
+Yeesh, this sounds like the job for a compiler!&lt;/p&gt;
+&lt;h3&gt;Automatic Data Enumeration&lt;/h3&gt;
+&lt;p&gt;Instead of performing data enumeration manually, I propose that we do it automatically.
+Looking at the example above, the transformation itself is rather mechanical.
+We just need the proper substrate to implement it.
+LLVM is a bit too low-level, and there&#39;s no existing MLIR dialect for this stuff, but I&#39;ve heard of a cool new compiler IR on the block: &lt;a href=&quot;/memoir&quot;&gt;MEMOIR&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;MEMOIR is nice here because it preserves high-level semantics about data collections, which we&#39;ll need to transform how we store our data.
+Additionally, its SSA form makes the analysis we need very easy.
+Sounds like the &lt;em&gt;perfect&lt;/em&gt; substrate to implement &lt;strong&gt;Automatic Data Enumeration (ADE)&lt;/strong&gt;.
+I won&#39;t get into all the nitty gritty about &lt;em&gt;how&lt;/em&gt; we mechanize the data enumeration transformation here, but I will give the high-level overview.&lt;/p&gt;
+&lt;p&gt;Fundamentally, ADE transforms the program to build an &lt;em&gt;on-the-fly&lt;/em&gt; enumeration (the bidirectional mapping from IDs to values).
+This means that whenever you encode a value for the first time, it will be assigned a unique identifier.
+ADE is responsible for determining where we should use IDs instead of values, and then inserting translations using the enumeration.
+As you would expect, this introduces a lot of &lt;em&gt;redundant translations&lt;/em&gt;, which can be eliminated:&lt;/p&gt;
+&lt;pre class=&quot;language-py&quot;&gt;&lt;code class=&quot;language-py&quot;&gt;enum_A &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+seen &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; bitset&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; item &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; items&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    id_1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; enc&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;enum_A&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; item&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; seen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;has&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id_1&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        id_2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; enc&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;enum_A&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; item&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# redundant, replace id_2 with id_1&lt;/span&gt;
+        seen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;insert&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id_2&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Eliminating redundant translations is the main performance driver of ADE, so we introduce a few transformations that introduces more redundancy.
+One of these is sharing (shown below), where we have two sets share the same enumeration.
+Sharing has the added benefit of amortizing the cost of constructing the enumeration.&lt;/p&gt;
+&lt;pre class=&quot;language-py&quot;&gt;&lt;code class=&quot;language-py&quot;&gt;enum_A &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+seen &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; bitset&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+seen_twice &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; bitset&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; item &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; items&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    id_1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; enc&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;enum_A&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; item&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    id_2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; enc&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;enum_A&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; item&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# redundant, replace id_2 with id_1&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; seen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;has&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id_1&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        seen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;insert&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id_1&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; seen_twice&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;has&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id_2&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        id_3 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; enc&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;enum_A&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; item&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        seen_twice&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;insert&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id_3&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# redundant, replace id_3 with id_1&lt;/span&gt;
+        &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There are more optimization, with full details available in Section 3 of the &lt;a href=&quot;/files/papers/ADE_CGO_2026.pdf&quot;&gt;paper&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Evaluation&lt;/h3&gt;
+&lt;p&gt;So that&#39;s all great, but how about the performance?
+In short, ADE provides significant performance improvements in the majority of our benchmarks.
+While ADE incurs an increase in memory usage for a few cases, we find that the majority of benchmarks experience no memory explosion, with some seeing significant memory savings!
+For a more detailed evaluation on both Intel and ARM machines, along with comparisons to Abseil swiss tables, see Section 5 of the &lt;a href=&quot;/files/papers/ADE_CGO_2026.pdf&quot;&gt;paper&lt;/a&gt;.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/images/ADE-speedup-Intel.png&quot; loading=&quot;lazy&quot;&gt;
+&lt;figcaption&gt;Whole-program speedup of ADE over std::unordered_set.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/images/ADE-maxrss-Intel.png&quot; loading=&quot;lazy&quot;&gt;
+&lt;figcaption&gt;Maximum resident set size of ADE over std::unordered_set.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h3&gt;Tuning&lt;/h3&gt;
+&lt;p&gt;In addition to fully automatic ADE, we provide ways for users to guide the optimization.
+This lets you enable/disable enumeration for a collection, and prevent/force sharing between collections.
+By overriding the static cost model, users can fine tune data enumeration for their specific application.&lt;/p&gt;
+&lt;p&gt;We did a brief case study for LLVM Andersen-style points-to analysis (PTA).
+In short, we identified a case where sharing with a specific collection was detrimental to performance.
+The full details and exploration are in Section 5, RQ4 of the &lt;a href=&quot;/files/papers/ADE_CGO_2026.pdf&quot;&gt;paper&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;By injecting a single &lt;code&gt;noshare&lt;/code&gt; directive, ADE achieved a speedup of &lt;em&gt;78x&lt;/em&gt; (13.7x over fully automatic ADE).
+In addition to the performance gains, memory usage (max resident set size) was reduced by &lt;em&gt;71%&lt;/em&gt; (compared to 49% reduction with fully automatic ADE).&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Automatic Data Enumeration provides a fully automatic, transparent solution to one class of memory optimization in the compiler.
+With ADE we are able to achieve significant performance improvements without the need for developer input, though tuning can unlock further savings.
+Thanks to MEMOIR, the &lt;a href=&quot;https://github.com/arcana-lab/memoir&quot;&gt;implementation&lt;/a&gt; is straightforward (and &lt;em&gt;fun!&lt;/em&gt;).
+I believe that data enumeration is just one of many memory optimizations that can be automated by the compiler, and I hope for a future where developers can trust the compiler to handle most of them.&lt;/p&gt;
+&lt;h3&gt;Further Reading&lt;/h3&gt;
+&lt;p&gt;For more information, see the &lt;a href=&quot;/files/papers/ADE_CGO_2026.pdf&quot;&gt;paper&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class=&quot;language-tex&quot;&gt;&lt;code class=&quot;language-tex&quot;&gt;@inproceedings&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;MEMOIR-ADE:McMichen_Campanoni:2026,
+    title=&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;Automatic Data Enumeration for Fast Collections&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;,
+    authors=&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;McMichen, Tommy and Campanoni, Simone&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;,
+    booktitle=&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;CGO&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;,
+    year=&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;2026&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;,
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To see how we implemented ADE in the MEMOIR compiler, see the &lt;a href=&quot;https://github.com/arcana-lab/memoir&quot;&gt;open-source repository&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <link>https://mcmichen.cc/posts/automatic-data-enumeration/</link>
+        <guid>https://mcmichen.cc/posts/automatic-data-enumeration/</guid>
+        <pubDate>Thu, 29 Jan 2026 24:00:00 GMT</pubDate>
+      </item>
+    
+      <item>
         <title>Running Out-of-Tree LLVM Passes at LTO</title>
         <description>&lt;p&gt;I had a long time trying to find the proper way to run LLVM pass plugins at LTO.
 There were a lot of times where I found a solution and it turned out to be flimsy and break under some circumstances, or not fully support all the features I needed.
