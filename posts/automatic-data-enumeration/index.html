@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automatic Data Enumeration for Fast Collections - Tommy McMichen</title>
+
+  <!-- LaTeX.css -->
+  <link rel="stylesheet" href="/assets/css/latex.css/style.css">
+  
+  <!-- prism -->
+  <link rel="stylesheet" href="/assets/css/prismjs/prism.css">
+
+  <!-- MathJax -->
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+
+  <!-- Customizations -->
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml">
+  
+</head>
+<body class="libertinus">
+
+  <header class="sticky-top">
+  <details>
+    <summary>
+      <font size="4em">
+        ☰
+      </font>
+    </summary>
+    <nav>
+      <a href="/" class="nav-item">Home</a>
+      <a href="/research/" class="nav-item">Research</a>
+      <a href="/cv/" class="nav-item">C/V</a>
+      <!-- <a href="/talks/" class="nav-item">Talks</a> -->
+      <!-- <a href="/teaching/" class="nav-item">Teaching</a> -->
+      <a href="/posts/" class="nav-item">Blog</a>
+      <a href="/memoir" class="nav-item">MEMOIR</a>
+    </nav>
+  </details>
+
+  <center>
+    <nav class="desktop-nav">
+      <a href="/" class="nav-item">Home</a>
+      <a href="/research/" class="nav-item">Research</a>
+      <a href="/cv/" class="nav-item">C/V</a>
+      <!-- <a href="/talks/" class="nav-item">Talks</a> -->
+      <!-- <a href="/teaching/" class="nav-item">Teaching</a> -->
+      <a href="/posts/" class="nav-item">Blog</a>
+      <a href="/memoir" class="nav-item">MEMOIR</a>
+    </nav>      
+  </center>
+</header>
+
+
+  <main>
+    <article>
+  <h1>Automatic Data Enumeration for Fast Collections</h1>
+  
+  
+<p>This post is based on a <a href="/files/papers/ADE_CGO_2026.pdf">paper</a> of the same name, published at CGO 2026.</p>
+<p>Data collections are everywhere!
+They provide a powerful abstraction to organize data, simplifying software development and maintenance.
+However, choosing how we <em>implement</em> each collection in our program is critical for both performance and memory usage.</p>
+<p>While general-purpose data collections (the ones in the C++ STL, Abseil, etc.) provide drop-in replacements for quick performance tuning, the real value comes from <em>specialized</em> implementations.
+Specialized implementations (bitsets, prefix trees, bloom filters) provide superior performance and memory usage compared to their general-purpose counterparts.
+However, they require additional constraints on the kind of data stored, and the methods used to access them.</p>
+<p>For example, let's look at bitsets.
+In this domain, other implementations pale in comparison, as shown in the speedup table below.
+However, a bitset requires dense (or better yet, contiguous), integer keys.</p>
+<table>
+<thead>
+<tr>
+<th>Implementation</th>
+<th>Insert</th>
+<th>Remove</th>
+<th>Union</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>std::unordered_set</code></td>
+<td>1.00</td>
+<td>1.00</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td><code>absl::flat_hash_set</code></td>
+<td>1.61</td>
+<td>0.40</td>
+<td>1.71</td>
+</tr>
+<tr>
+<td><code>boost::dynamic_bitset</code></td>
+<td><strong>9.08</strong></td>
+<td><strong>1.24</strong></td>
+<td><strong>5817.38</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Those are some pretty nice performance boosts, and if my set is dense enough we'll get good memory savings too.
+But, what if I'm in a domain that doesn't have the necessary guarantees to use a bitset?
+Is there any hope for the folks processing non-integer data types, or sparse domains?</p>
+<p><em>The good news:</em> <strong>There is.</strong></p>
+<p><em>The bad news:</em> <strong>It's not free.</strong></p>
+<h3>Data Enumeration</h3>
+<p>If we don't have inherent data properties guaranteed by our domain to rely on, we can instead <strong>engineer the desired property</strong>.</p>
+<p>Take the following code, which iterates over a list of strings (<code>items</code>) and prints unique items by tracking duplicates in a set (<code>seen</code>).</p>
+<pre class="language-py"><code class="language-py">items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"foo"</span><span class="token punctuation">,</span> <span class="token string">"bar"</span><span class="token punctuation">,</span> <span class="token string">"foo"</span><span class="token punctuation">]</span>
+seen <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> items<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> seen<span class="token punctuation">.</span>has<span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        seen<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span></code></pre>
+<p>If we want to use a <code>bitset</code> instead of a <code>set</code>, we can do a bit of transformation (shown below).
+First, we'll assign unique identifiers to each item and maintain a bidirectional mapping (<code>enc</code> and <code>dec</code>) to convert between the ID and the actual data.
+Then, we convert the data stored in our input array to use IDs (<code>items</code>).
+Now that we are iterating over IDs (which we've assigned to be contiguous), we can convert <code>seen</code> into a bitset.
+Finally, we need to patch up any use that requires the original (the <code>print</code> statement) by decoding the identifier.
+Et voilà!</p>
+<pre class="language-py"><code class="language-py">enc <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"foo"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"bar"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span>
+dec <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"foo"</span><span class="token punctuation">,</span>    <span class="token string">"bar"</span><span class="token punctuation">]</span>
+items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+seen <span class="token operator">=</span> bitset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> items<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> seen<span class="token punctuation">.</span>has<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        seen<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+        item <span class="token operator">=</span> dec<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span></code></pre>
+<p>We've successfully converted our program to use a bitset, instead of a set.
+Now, we can reap the performance and memory benefits!
+Additionally, we can perform comparisons between our items much faster by using their ID instead of the string.</p>
+<p>However, we've gotten ourselves into a bit of a pickle now by applying this manually.
+I have to juggle my IDs and values everywhere in the program.
+Additionally, I need to make <code>enc</code> and <code>dec</code> available anywhere that I need to translate between IDs and values.
+Furthermore, I'm left with a bit of a performance headache figuring out if I should use IDs or values in different parts of my program.
+Yeesh, this sounds like the job for a compiler!</p>
+<h3>Automatic Data Enumeration</h3>
+<p>Instead of performing data enumeration manually, I propose that we do it automatically.
+Looking at the example above, the transformation itself is rather mechanical.
+We just need the proper substrate to implement it.
+LLVM is a bit too low-level, and there's no existing MLIR dialect for this stuff, but I've heard of a cool new compiler IR on the block: <a href="/memoir">MEMOIR</a>!</p>
+<p>MEMOIR is nice here because it preserves high-level semantics about data collections, which we'll need to transform how we store our data.
+Additionally, its SSA form makes the analysis we need very easy.
+Sounds like the <em>perfect</em> substrate to implement <strong>Automatic Data Enumeration (ADE)</strong>.
+I won't get into all the nitty gritty about <em>how</em> we mechanize the data enumeration transformation here, but I will give the high-level overview.</p>
+<p>Fundamentally, ADE transforms the program to build an <em>on-the-fly</em> enumeration (the bidirectional mapping from IDs to values).
+This means that whenever you encode a value for the first time, it will be assigned a unique identifier.
+ADE is responsible for determining where we should use IDs instead of values, and then inserting translations using the enumeration.
+As you would expect, this introduces a lot of <em>redundant translations</em>, which can be eliminated:</p>
+<pre class="language-py"><code class="language-py">enum_A <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+seen <span class="token operator">=</span> bitset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> items<span class="token punctuation">:</span>
+    id_1 <span class="token operator">=</span> enc<span class="token punctuation">(</span>enum_A<span class="token punctuation">,</span> item<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> seen<span class="token punctuation">.</span>has<span class="token punctuation">(</span>id_1<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        id_2 <span class="token operator">=</span> enc<span class="token punctuation">(</span>enum_A<span class="token punctuation">,</span> item<span class="token punctuation">)</span> <span class="token comment"># redundant, replace id_2 with id_1</span>
+        seen<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>id_2<span class="token punctuation">)</span></code></pre>
+<p>Eliminating redundant translations is the main performance driver of ADE, so we introduce a few transformations that introduces more redundancy.
+One of these is sharing (shown below), where we have two sets share the same enumeration.
+Sharing has the added benefit of amortizing the cost of constructing the enumeration.</p>
+<pre class="language-py"><code class="language-py">enum_A <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+seen <span class="token operator">=</span> bitset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+seen_twice <span class="token operator">=</span> bitset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> items<span class="token punctuation">:</span>
+    id_1 <span class="token operator">=</span> enc<span class="token punctuation">(</span>enum_A<span class="token punctuation">,</span> item<span class="token punctuation">)</span>
+    id_2 <span class="token operator">=</span> enc<span class="token punctuation">(</span>enum_A<span class="token punctuation">,</span> item<span class="token punctuation">)</span> <span class="token comment"># redundant, replace id_2 with id_1</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> seen<span class="token punctuation">.</span>has<span class="token punctuation">(</span>id_1<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        seen<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>id_1<span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> <span class="token keyword">not</span> seen_twice<span class="token punctuation">.</span>has<span class="token punctuation">(</span>id_2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        id_3 <span class="token operator">=</span> enc<span class="token punctuation">(</span>enum_A<span class="token punctuation">,</span> item<span class="token punctuation">)</span>
+        seen_twice<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>id_3<span class="token punctuation">)</span> <span class="token comment"># redundant, replace id_3 with id_1</span>
+        </code></pre>
+<p>There are more optimization, with full details available in the <a href="/files/papers/ADE_CGO_2026.pdf">paper</a>.</p>
+<h3>Evaluation</h3>
+<p>So that's all great, but how about the performance results?</p>
+<figure>
+<img src="/assets/images/ADE-speedup-Intel.png" loading="lazy">
+<figcaption>Whole-program speedup of ADE over std::unordered_set.</figcaption>
+</figure>
+<figure>
+<img src="/assets/images/ADE-maxrss-Intel.png" loading="lazy">
+<figcaption>Maximum resident set size of ADE over std::unordered_set.</figcaption>
+</figure>
+<p>Choosing an implementation for each collection is a critical decision, with performance, memory and energy tradeoffs that need to be balanced for each use case.
+Specialized implementations offer significant benefits over their general-purpose counterparts, but also require certain properties of the data they store, such as uniqueness or ordering.
+To employ them, developers must either possess domain knowledge or transform their data to exhibit the desired property, which is a tedious, manual process.
+One such transformation—commonly used in data mining and program analysis—is data enumeration, where data items are assigned unique identifiers to enable fast equality checks and compact memory layout.
+In this paper, we present an automated approach to data enumeration, eliminating the need for manual developer effort.
+Our implementation in the MEMOIR compiler achieves speedups of 2.16× on average (up to 8.72×) and reduces peak memory consumption by 5.6% on average (up to 50.7%).
+This work shows that automated techniques can manufacture data properties to unlock specialized collection implementations, pushing the envelope of collection-oriented optimization.</p>
+<h3>Further Reading</h3>
+<p>For more information, see the paper:</p>
+<pre class="language-tex"><code class="language-tex">@inproceedings<span class="token punctuation">{</span>MEMOIR-ADE:McMichen_Campanoni:2026,
+    title=<span class="token punctuation">{</span>Automatic Data Enumeration for Fast Collections<span class="token punctuation">}</span>,
+    authors=<span class="token punctuation">{</span>McMichen, Tommy and Campanoni, Simone<span class="token punctuation">}</span>,
+    booktitle=<span class="token punctuation">{</span>CGO<span class="token punctuation">}</span>,
+    year=<span class="token punctuation">{</span>2026<span class="token punctuation">}</span>,
+<span class="token punctuation">}</span></code></pre>
+
+  
+</article>
+  </main>
+
+</body>
+</html>
