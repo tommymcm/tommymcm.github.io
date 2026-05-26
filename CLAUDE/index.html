@@ -1,0 +1,29 @@
+<h1>CLAUDE.md</h1>
+<p>This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.</p>
+<h2>Project</h2>
+<p>Personal academic website built with <a href="https://www.11ty.dev/">Eleventy</a> (v3), templated in Nunjucks, with a LaTeX-generated CV. Content is data-driven via JSON files in <code>_data/</code>.</p>
+<h2>Commands</h2>
+<ul>
+<li><code>make deps</code> — install dependencies (uses Bun, not npm/yarn)</li>
+<li><code>make serve</code> — start the dev server with live reload</li>
+<li><code>make build</code> — full build (runs <code>bun run eleventy</code>)</li>
+<li><code>make cv.pdf</code> — build site and compile CV from LaTeX to PDF (requires <code>pdflatex</code>)</li>
+</ul>
+<p>Always use <code>bun</code> (not <code>npm</code> or <code>yarn</code>) if invoking package manager commands directly.</p>
+<h2>CV compilation</h2>
+<p>The CV is generated from <code>cv/cv.tex.njk</code> (a Nunjucks template that produces LaTeX). The <code>.eleventy.js</code> <code>after</code> hook runs <code>pdflatex</code> twice automatically during build to resolve references. This requires a working LaTeX installation (<code>texlive-latex-base</code>, <code>texlive-latex-extra</code>, <code>texlive-fonts-recommended</code>). <code>TEXINPUTS</code> is set to include <code>_site/assets/images/</code> so image paths resolve correctly.</p>
+<h2>Content structure</h2>
+<p>All structured content lives in <code>_data/</code>:</p>
+<ul>
+<li><code>publications.json</code> — research publications (fields: <code>title</code>, <code>authors</code>, <code>venue</code>, <code>year</code>, <code>pdf</code>, <code>doi</code>, <code>artifact</code>, <code>abstract</code>, <code>tags</code>, <code>selected</code>, <code>projects</code>)</li>
+<li><code>team.json</code> — team members (fields: <code>name</code>, <code>url</code>, <code>role</code>, <code>projects</code>, <code>image</code>)</li>
+<li><code>posters.json</code> — conference posters</li>
+<li><code>site.json</code> / <code>metadata.json</code> — site-wide metadata and RSS config</li>
+</ul>
+<p>Nunjucks templates in <code>_includes/</code> filter this data by <code>projectName</code> to render per-project pages.</p>
+<h2>Custom Eleventy filters</h2>
+<p>Defined in <code>.eleventy.js</code>: <code>formatAuthors</code> (bolds &quot;Tommy McMichen&quot;), <code>texEscape</code> / <code>texFormatAuthors</code> (LaTeX-safe equivalents), <code>sortByYear</code>, <code>dateFormat</code>, <code>toWWW</code>, and standard array utilities (<code>map</code>, <code>head</code>, <code>flatten</code>, <code>unique</code>, <code>sort</code>).</p>
+<h2>Deployment</h2>
+<p>CI (<code>.github/workflows/deploy.yml</code>) deploys from <code>main</code> to a separate public GitHub Pages repo (<code>tommymcm/tommymcm.github.io</code>) using the <code>PAGES_DEPLOY_TOKEN</code> secret. Do not push secrets or tokens into source.</p>
+<h2>Build output</h2>
+<p><code>_site/</code> is the generated output directory — it is gitignored and should never be edited directly.</p>

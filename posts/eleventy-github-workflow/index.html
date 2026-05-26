@@ -6,7 +6,7 @@
   <title>Deploying Eleventy site with GitHub Actions - Tommy McMichen</title>
 
   <!-- LaTeX.css -->
-  <link rel="stylesheet" href="/assets/css/latex.css/style.css">
+  <link rel="stylesheet" href="/assets/css/pico.css/style.css">
   
   <!-- prism -->
   <link rel="stylesheet" href="/assets/css/prismjs/prism.css">
@@ -32,56 +32,79 @@
 </head>
 <body class="libertinus">
 
-  <header class="sticky-top">
-  <details>
-    <summary>
-      <font size="4em">
-        ☰
-      </font>
-    </summary>
-    <nav>
-      <a href="/" class="nav-item">Home</a>
-      <a href="/research/" class="nav-item">Research</a>
-      <a href="/cv/" class="nav-item">C/V</a>
-      <!-- <a href="/talks/" class="nav-item">Talks</a> -->
-      <!-- <a href="/teaching/" class="nav-item">Teaching</a> -->
-      <a href="/posts/" class="nav-item">Blog</a>
-      <a href="/memoir" class="nav-item">MEMOIR</a>
-      <a href="/birdbrain" class="nav-item">Birdbrain</a>
-    </nav>
-  </details>
+  
 
-  <center>
-    <nav class="desktop-nav">
-      <a href="/" class="nav-item">Home</a>
-      <a href="/research/" class="nav-item">Research</a>
-      <a href="/cv/" class="nav-item">C/V</a>
-      <!-- <a href="/talks/" class="nav-item">Talks</a> -->
-      <!-- <a href="/teaching/" class="nav-item">Teaching</a> -->
-      <a href="/posts/" class="nav-item">Blog</a>
-      <a href="/memoir" class="nav-item">MEMOIR</a>
-      <a href="/birdbrain" class="nav-item">Birdbrain</a>
-    </nav>      
+
+
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a href="/">
+          <strong>Tommy M<sup>c</sup>Michen</strong>
+        </a>
+      </li>
+    </ul>
+    <ul>
+      
+        <li>
+          <a href="/research/"
+             style="--highlight-color: var(--t-blue); --highlight-color-light: var(--t-blue-light);">
+            Research
+          </a>
+        </li>
+      
+        <li>
+          <a href="/cv/"
+             style="--highlight-color: var(--t-orange); --highlight-color-light: var(--t-orange-light);">
+            C/V
+          </a>
+        </li>
+      
+        <li>
+          <a href="/posts/"
+             style="--highlight-color: var(--t-red); --highlight-color-light: var(--t-red-light);">
+            Blog
+          </a>
+        </li>
+      
+        <li>
+          <a href="/projects/memoir/"
+             style="--highlight-color: var(--t-green); --highlight-color-light: var(--t-green-light);">
+            MEMOIR
+          </a>
+        </li>
+      
+        <li>
+          <a href="/projects/birdbrain/"
+             style="--highlight-color: var(--t-pink); --highlight-color-light: var(--t-pink-light);">
+            Birdbrain
+          </a>
+        </li>
+      
+    </ul>
+
+    </nav>
   </center>
 </header>
 
 
   <main>
     <article>
-  <h1>Deploying Eleventy site with GitHub Actions</h1>
+
+  <center>
+    <h1>
+      Deploying Eleventy site with GitHub Actions
+    </h1>
+  </center>
   
   
 <p>I recently moved my website from hand-written HTML over to <a href="https://www.11ty.dev/">Eleventy</a>.
 It's been really nice to work with, the transition process is smooth, and their template system is intuitive.
-I'm now able to generate all of my web content from a single source of JSON files!
-<label for="sn-1" class="sidenote-toggle sidenote-number"></label>
-<input type="checkbox" id="sn-1" class="sidenote-toggle" />
-<span class="sidenote">You can find the source code <a href="https://www.github.com/tommymcm/materials">here</a>.</span></p>
+I'm now able to generate all of my web content from a single source of JSON files! <span class="sidenote-wrapper"><sup>1</sup><span class="sidenote"><sup>1</sup> You can find the source code <a href="https://www.github.com/tommymcm/materials">here</a></span></span></p>
 <p>After finishing up my port, I was interested in automate the process of publishing changes, which is what this post is about.
 I originally did this work with two repos because I wanted to have the materials (unpublished papers, course materials, etc.) not be public.
-Since then, I moved over to a public repo to avoid hitting any GitHub Action limits<label for="sn-2" class="sidenote-toggle sidenote-number"></label>
-<input type="checkbox" id="sn-2" class="sidenote-toggle" />
-<span class="sidenote">I am a penny pincher.</span>
+Since then, I moved over to a public repo to avoid hitting any GitHub Action limits<span class="sidenote-wrapper"><sup>2</sup><span class="sidenote"><sup>2</sup> I am a penny pincher.</span></span>
 and use a private fork to hold uinpublished items.</p>
 <p>Here's the step-by-step process that I took:</p>
 <h3>1. Create a Personal Access Token (PAT)</h3>
@@ -148,6 +171,7 @@ and use a private fork to hold uinpublished items.</p>
 
   
 </article>
+
   </main>
 
 </body>

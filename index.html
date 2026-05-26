@@ -6,7 +6,7 @@
   <title>Tommy McMichen</title>
 
   <!-- LaTeX.css -->
-  <link rel="stylesheet" href="/assets/css/latex.css/style.css">
+  <link rel="stylesheet" href="/assets/css/pico.css/style.css">
   
   <!-- prism -->
   <link rel="stylesheet" href="/assets/css/prismjs/prism.css">
@@ -32,98 +32,238 @@
 </head>
 <body class="libertinus">
 
-  <header class="sticky-top">
-  <details>
-    <summary>
-      <font size="4em">
-        ☰
-      </font>
-    </summary>
-    <nav>
-      <a href="/" class="nav-item">Home</a>
-      <a href="/research/" class="nav-item">Research</a>
-      <a href="/cv/" class="nav-item">C/V</a>
-      <!-- <a href="/talks/" class="nav-item">Talks</a> -->
-      <!-- <a href="/teaching/" class="nav-item">Teaching</a> -->
-      <a href="/posts/" class="nav-item">Blog</a>
-      <a href="/memoir" class="nav-item">MEMOIR</a>
-      <a href="/birdbrain" class="nav-item">Birdbrain</a>
-    </nav>
-  </details>
+  
 
-  <center>
-    <nav class="desktop-nav">
-      <a href="/" class="nav-item">Home</a>
-      <a href="/research/" class="nav-item">Research</a>
-      <a href="/cv/" class="nav-item">C/V</a>
-      <!-- <a href="/talks/" class="nav-item">Talks</a> -->
-      <!-- <a href="/teaching/" class="nav-item">Teaching</a> -->
-      <a href="/posts/" class="nav-item">Blog</a>
-      <a href="/memoir" class="nav-item">MEMOIR</a>
-      <a href="/birdbrain" class="nav-item">Birdbrain</a>
-    </nav>      
+
+
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a href="/">
+          <strong>Tommy M<sup>c</sup>Michen</strong>
+        </a>
+      </li>
+    </ul>
+    <ul>
+      
+        <li>
+          <a href="/research/"
+             style="--highlight-color: var(--t-blue); --highlight-color-light: var(--t-blue-light);">
+            Research
+          </a>
+        </li>
+      
+        <li>
+          <a href="/cv/"
+             style="--highlight-color: var(--t-orange); --highlight-color-light: var(--t-orange-light);">
+            C/V
+          </a>
+        </li>
+      
+        <li>
+          <a href="/posts/"
+             style="--highlight-color: var(--t-red); --highlight-color-light: var(--t-red-light);">
+            Blog
+          </a>
+        </li>
+      
+        <li>
+          <a href="/projects/memoir/"
+             style="--highlight-color: var(--t-green); --highlight-color-light: var(--t-green-light);">
+            MEMOIR
+          </a>
+        </li>
+      
+        <li>
+          <a href="/projects/birdbrain/"
+             style="--highlight-color: var(--t-pink); --highlight-color-light: var(--t-pink-light);">
+            Birdbrain
+          </a>
+        </li>
+      
+    </ul>
+
+    </nav>
   </center>
 </header>
 
 
   <main>
-    <article>
-  <!-- CONTENT -->
-  <center>
-<h1>Tommy M<sup>c</sup>Michen</h1>
-<img src="/assets/images/personal_photo.jpg" class="home-photo"/>
-<p><a href="mailto:mcmichen@u.northwestern.edu">Currently looking for postdoc opportunities, please reach out.</a></p>
-</center>
-<p>I am a Ph.D. candidate at Northwestern University with a B.S. in Computer Engineering and Computer Science from Rose-Hulman Institute of Technology. I study compilers, specifically the design of intermediate representations. My research aims to broaden the optimization space of compilers through intermediate representations that grant empowering degrees of freedom through strong guarantees. Currently, I focus on doing this for data collections (lists, sets, maps) using <span class="sc">MemOIR</span>. I am broadly interested in static analysis, runtime system co-design, programming languages, and memory models.</p>
-<h2>Selected Publications</h2>
-<h3><a href=/files/papers/ADE_CGO_2026.pdf download>Automatic Data Enumeration for Fast Data Collections</a></h3>
-<p><b>Tommy McMichen</b>, Simone Campanoni</p>
-<p>Choosing an implementation for each data collection in a program is critical for performance, memory usage and energy consumption. Specialized implementations offer significant benefits over their general-purpose counterparts, but require certain properties of the data they store, such as uniqueness or ordering. To employ them, developers must either possess domain knowledge or transform their data to exhibit the desired property. One such transformation is data enumeration, where data items are assigned unique identifiers to enable fast equality checks and compact memory layout. In this paper, we automate data enumeration in the MemOIR compiler, achieving speedups of 2.16× on average (up to 8.72×) and reducing peak memory consumption by 5.6% on average (up to 50.7%). This work shows that automated techniques can manufacture data properties to unlock specialized collection implementations, pushing the envelope of collection-oriented optimization.</p>
-<h3><a href=/files/papers/BITSPEC_ASPLOS_2025.pdf download>Saving Energy with Per-Variable Bitwidth Speculation</a></h3>
-<p><b>Tommy McMichen</b>, David Dlott, Panitan Wongse-ammat, Nathan Greiner, Hussain Khajanchi, Russ Joseph, Simone Campanoni</p>
-<p>Tiny devices have become ubiquitous in people's daily lives. Their applications dictate tight energy budgets, but also require reasonable performance to meet user expectations. To this end, the hardware of tiny devices has been highly optimized, making further optimizations difficult. In this work, we identify a missed opportunity: the bitwidth selection of program variables. Today's compilers directly translate the bitwidth specified in the source code to the binary. However, we observe that most variables do not utilize the full bitwidth specified in the source code for the majority of execution. To leverage this opportunity, we propose BitSpec: a system that performs fine-grained speculation on the bitwidth of program variables. BitSpec is implemented as a compiler-architecture co-design, where the compiler transparently reduces the bitwidth of program variables to their expected needs and the hardware monitors speculative variables, reporting misspeculation to the software, which re-executes at the original bitwidth, ensuring correctness. BitSpec reduces energy consumption by 9.9% on average, up to 28.2%.</p>
-<h3><a href=/files/papers/MEMOIR_CGO_2024.pdf download>Representing Data Collections in an SSA Form</a></h3>
-<p><b>Tommy McMichen</b>, Nathan Greiner, Peter Zhong, Federico Sossai, Atmn Patel, Simone Campanoni</p>
-<p>Choosing an implementation for each data collection in a program is critical for performance, memory usage and energy consumption. Specialized implementations offer significant benefits over their general-purpose counterparts, but require certain properties of the data they store, such as uniqueness or ordering. To employ them, developers must either possess domain knowledge or transform their data to exhibit the desired property. One such transformation is data enumeration, where data items are assigned unique identifiers to enable fast equality checks and compact memory layout. In this paper, we automate data enumeration in the MemOIR compiler, achieving speedups of 2.16× on average (up to 8.72×) and reducing peak memory consumption by 5.6% on average (up to 50.7%). This work shows that automated techniques can manufacture data properties to unlock specialized collection implementations, pushing the envelope of collection-oriented optimization.</p>
-<h3><a href=/files/papers/ALASKA_ASPLOS_2024.pdf download>Getting a Handle on Unmanaged Memory</a></h3>
-<p>Nick Wanninger, <b>Tommy McMichen</b>, Simone Campanoni, Peter Dinda</p>
-<p>The inability to relocate objects in unmanaged languages brings with it a menagerie of problems. Perhaps the most impactful is memory fragmentation, which has long plagued applications such as databases and web servers. These issues either fester or require Herculean programmer effort to address on a per-application basis because, in general, heap objects cannot be moved in unmanaged languages. In this work, we bridge this gap between unmanaged and managed languages through the use of handles, a level of indirection allowing heap object movement. Handles open the door to seamlessly employ runtime features from managed languages in existing, unmodified code written in unmanaged languages. We describe a new compiler and runtime system, Alaska, which automatically transforms pointer-based code to utilize handles, with optimizations to reduce performance impact. A codesigned runtime system manages this level of indirection and exploits heap object movement via an extensible service interface. We evaluate one such service, which eliminates fragmentation on the heap via compaction, reducing memory usage by up to 40% in Redis.</p>
+    
+<div style="display: flex; align-items: left; gap: 5%;">
+  <img src="/assets/images/personal_photo.jpg" class="home-photo"/>
+  <hgroup>
+    <h1>Tommy M<sup>c</sup>Michen</h1>
+    <h5>Ph.D. Candidate</h5>
+    <h5>Northwestern University</h5>
+    <div style="margin-top: 0.25rem;"></div>
+    <h6>
+      <a href="mailto:mcmichen@u.northwestern.edu">
+        <i>mcmichen@u.northwestern.edu</i>
+      </a>
+    </h6>
+    <div style="margin-top: 0.5rem;"></div>
+    <h6>
+      <a href="https://calendar.app.google/VtP2qCsigNoXgLmA7">
+        <i>Schedule a meeting</i>
+      </a>
+    </h6>
+    <span></span>
+  </hgroup>
+</div>
 
-
-  <!-- CONTACT -->
-  <div id="contact" class="footnotes">
-    <p id="fn1">
-      <sup>1</sup> Feel free to email me at
-      <a class="footer-nav-icon" href="mailto:mcmichen@u.northwestern.edu">
-        mcmichen@u.northwestern.edu
-      </a>
-    </p>
-    <p id="fn2">
-      <sup>2</sup> Set up an appointment on my 
-      <a class="footer-nav-icon" href="https://calendar.app.google/VtP2qCsigNoXgLmA7">
-        Google Calendar.
-      </a>
-    </p>
-    <p id="fn3">
-      <sup>3</sup> Follow my work on
-      <a class="footer-nav-icon" href="https://github.com/tommymcm" target="_blank">
-        GitHub.
-      </a>
-    </p>
-    <p id="fn4">
-      <sup>4</sup> Connect with me on
-      <a class="footer-nav-icon" href="https://www.linkedin.com/in/tommy-mcmichen-57048a128" target="_blank">
-        LinkedIn.
-      </a>
-    </p>
-    <p id="fn5">
-      <sup>5</sup> See what I'm up to on
-      <a rel="me" class="footer-nav-icon" href="https://discuss.systems/@tommy" target="_blank">
-        Mastodon
-      </a>
-    </p>
-  </div>
+<br>
+  
+<article>
+  I am a Ph.D. candidate at Northwestern University with a B.S. in Computer Engineering and Computer Science from Rose-Hulman Institute of Technology. I study compilers, specifically the design of intermediate representations. My research aims to broaden the optimization space of compilers through intermediate representations that grant empowering degrees of freedom through strong guarantees. Currently, I focus on doing this for data collections (lists, sets, maps) using MEMOIR. I am broadly interested in static analysis, runtime system co-design, programming languages, and memory models.
 </article>
+
+<article>
+  <h2>Selected Publications</h2>
+
+  <hr />
+  
+  
+
+  
+
+  
+
+  
+
+  <details>
+    <summary>
+      <b>Automatic Data Enumeration for Fast Data Collections</b>
+    </summary>
+    <p>
+      <small>
+        <i><b>Tommy McMichen</b>, Simone Campanoni</i>
+        <br>
+          Choosing an implementation for each data collection in a program is critical for performance, memory usage and energy consumption. Specialized implementations offer significant benefits over their general-purpose counterparts, but require certain properties of the data they store, such as uniqueness or ordering. To employ them, developers must either possess domain knowledge or transform their data to exhibit the desired property. One such transformation is data enumeration, where data items are assigned unique identifiers to enable fast equality checks and compact memory layout. In this paper, we automate data enumeration in the MemOIR compiler, achieving speedups of 2.16× on average (up to 8.72×) and reducing peak memory consumption by 5.6% on average (up to 50.7%). This work shows that automated techniques can manufacture data properties to unlock specialized collection implementations, pushing the envelope of collection-oriented optimization.
+      </small
+    </p>  
+  </details>
+
+  <hr />
+  
+  
+
+  
+
+  
+
+  <details>
+    <summary>
+      <b>Saving Energy with Per-Variable Bitwidth Speculation</b>
+    </summary>
+    <p>
+      <small>
+        <i><b>Tommy McMichen</b>, David Dlott, Panitan Wongse-ammat, Nathan Greiner, Hussain Khajanchi, Russ Joseph, Simone Campanoni</i>
+        <br>
+          Tiny devices have become ubiquitous in people&#39;s daily lives. Their applications dictate tight energy budgets, but also require reasonable performance to meet user expectations. To this end, the hardware of tiny devices has been highly optimized, making further optimizations difficult. In this work, we identify a missed opportunity: the bitwidth selection of program variables. Today&#39;s compilers directly translate the bitwidth specified in the source code to the binary. However, we observe that most variables do not utilize the full bitwidth specified in the source code for the majority of execution. To leverage this opportunity, we propose BitSpec: a system that performs fine-grained speculation on the bitwidth of program variables. BitSpec is implemented as a compiler-architecture co-design, where the compiler transparently reduces the bitwidth of program variables to their expected needs and the hardware monitors speculative variables, reporting misspeculation to the software, which re-executes at the original bitwidth, ensuring correctness. BitSpec reduces energy consumption by 9.9% on average, up to 28.2%.
+      </small
+    </p>  
+  </details>
+
+  <hr />
+  
+  
+
+  
+
+  
+
+  <details>
+    <summary>
+      <b>Representing Data Collections in an SSA Form</b>
+    </summary>
+    <p>
+      <small>
+        <i><b>Tommy McMichen</b>, Nathan Greiner, Peter Zhong, Federico Sossai, Atmn Patel, Simone Campanoni</i>
+        <br>
+          Choosing an implementation for each data collection in a program is critical for performance, memory usage and energy consumption. Specialized implementations offer significant benefits over their general-purpose counterparts, but require certain properties of the data they store, such as uniqueness or ordering. To employ them, developers must either possess domain knowledge or transform their data to exhibit the desired property. One such transformation is data enumeration, where data items are assigned unique identifiers to enable fast equality checks and compact memory layout. In this paper, we automate data enumeration in the MemOIR compiler, achieving speedups of 2.16× on average (up to 8.72×) and reducing peak memory consumption by 5.6% on average (up to 50.7%). This work shows that automated techniques can manufacture data properties to unlock specialized collection implementations, pushing the envelope of collection-oriented optimization.
+      </small
+    </p>  
+  </details>
+
+  <hr />
+  
+  
+
+  
+
+  
+
+  <details>
+    <summary>
+      <b>Getting a Handle on Unmanaged Memory</b>
+    </summary>
+    <p>
+      <small>
+        <i>Nick Wanninger, <b>Tommy McMichen</b>, Simone Campanoni, Peter Dinda</i>
+        <br>
+          The inability to relocate objects in unmanaged languages brings with it a menagerie of problems. Perhaps the most impactful is memory fragmentation, which has long plagued applications such as databases and web servers. These issues either fester or require Herculean programmer effort to address on a per-application basis because, in general, heap objects cannot be moved in unmanaged languages. In this work, we bridge this gap between unmanaged and managed languages through the use of handles, a level of indirection allowing heap object movement. Handles open the door to seamlessly employ runtime features from managed languages in existing, unmodified code written in unmanaged languages. We describe a new compiler and runtime system, Alaska, which automatically transforms pointer-based code to utilize handles, with optimizations to reduce performance impact. A codesigned runtime system manages this level of indirection and exploits heap object movement via an extensible service interface. We evaluate one such service, which eliminates fragmentation on the heap via compaction, reducing memory usage by up to 40% in Redis.
+      </small
+    </p>  
+  </details>
+
+  <hr />
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</article>
+
+<article>
+  <h2>Find me online</h2>
+
+  <div class="grid">
+    <article>
+      <center>
+        <h4>
+          <a href="https://github.com/tommymcm" target="_blank">
+            GitHub
+          </a>
+        </h4>
+      </center>
+    </article>
+
+    <article>
+      <center>
+        <h4>
+          <a href="https://www.linkedin.com/in/tommy-mcmichen-57048a128" target="_blank">
+            LinkedIn
+          </a>
+        </h4>
+      </center> 
+    </article>
+
+    <article>
+      <center>
+        <h4>
+          <a rel="me" href="https://discuss.systems/@tommy" target="_blank">
+            Mastodon
+          </a>
+        </h4>
+      </center>
+    </article>
+  </div>
+  
+</article>
+
 
   </main>
 
